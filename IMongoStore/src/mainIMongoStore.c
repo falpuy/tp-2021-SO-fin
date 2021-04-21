@@ -3,19 +3,16 @@
 int main() {
 
     arch_config = config_create(CONFIG_PATH);
-    logger = log_create("logMainIMS.log","IMS",1,LOG_LEVEL_INFO);
-
+    logger = log_create("./logs/logMainIMS.log","IMS",1,LOG_LEVEL_INFO);
 
     setearConfiguraciones();
 
+    signal(SIGINT, finalizarProceso);
 
     //Checkear si FS existe y sino crearlo
     //Crear Servidor
 
     _select(datosConfig->puerto, handler,logger);
-
-
-    finalizarProceso(logger, arch_config);
 
     return 0;
 }
@@ -24,7 +21,7 @@ void setearConfiguraciones(){
     datosConfig = malloc(sizeof(configIMS));
     int tamanioString;
 
-    if(_check_config(arch_config,keysConfig) ==0){
+    if(!_check_config(arch_config,keysConfig)){
         log_error(logger, "No están todos los parametros en el archivo de configuracion");
     };
 
@@ -43,15 +40,15 @@ void setearConfiguraciones(){
 
 }
 
-void finalizarProceso(){
+void finalizarProceso(int val){
     log_destroy(logger);
     config_destroy(arch_config);
-
 
     free(datosConfig->puntoMontaje);
     free(datosConfig->puerto);
     free(datosConfig);
-        
+
+    exit(EXIT_FAILURE);
 }
 
 void handler(){

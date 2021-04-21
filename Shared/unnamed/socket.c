@@ -132,32 +132,31 @@ int _dlisten(int socket) {
 int _send_message(int socket, char *identifier, int command, void *payload, int pay_len, t_log *logger) {
 
 	// Envio el id de proceso
-	log_info(logger, "Sending.. %s, %d", identifier, strlen(identifier));
 	if (send(socket, identifier, strlen(identifier), 0) < 0) {
-		log_error(logger, "[SHARED LIBRARY]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻");
+		log_error(logger, "[Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻");
 		return 0;
 	}
 
 	// Envio el opcode
 	if (send(socket, &command, sizeof(int), 0) < 0) {
-		log_error(logger, "[SHARED LIBRARY]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻");
+		log_error(logger, "[Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻");
 		return 0;
 	}
 
 	// Envio el tamanio del buffer
 	if (send(socket, &pay_len, sizeof(int), 0) < 0) {
-		log_error(logger, "[SHARED LIBRARY]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻");
+		log_error(logger, "[Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻");
 		return 0;
 	}
 
 	// Envio el buffer
 	if (send(socket, payload, pay_len, 0) < 0) {
-		log_error(logger, "[SHARED LIBRARY]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻");
+		log_error(logger, "[Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻");
 		return 0;
 	}
 	
-	log_info(logger, "[SHARED LIBRARY]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.");
-	// log_info(logger, "[SHARED LIBRARY]: Mensaje enviado correctamente. (╯°o°)ᕗ");
+	log_info(logger, "[Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.");
+	
 	return 1;
 }
 

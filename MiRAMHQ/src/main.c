@@ -14,7 +14,11 @@ int main() {
 
     log_info(logger, "(╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..");
 
-     _select("9000", handler, logger);
+    // Creo el mapa
+    create_map(logger);
+
+    // Creo el server
+    _select("9000", handler, logger);
 
     return EXIT_SUCCESS;
 }

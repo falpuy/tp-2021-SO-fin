@@ -114,3 +114,38 @@
 [INFO] 17:10:14:843 RAM/(9626:9626): Recibi la siguiente operacion de TST: 999
 [INFO] 17:10:14:844 RAM/(9626:9626): Message: HOLA
 [INFO] 17:10:14:862 RAM/(9626:9626): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:28:06:049 RAM/(10130:10130): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:28:06:049 RAM/(10130:10130): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:28:06:049 RAM/(10130:10130): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:28:43:160 RAM/(10148:10148): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:28:43:161 RAM/(10148:10148): Iniciando la creacion del mapa..
+[INFO] 17:28:43:164 RAM/(10148:10148): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:28:43:164 RAM/(10148:10148): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:28:51:839 RAM/(10173:10173): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:28:51:840 RAM/(10173:10173): Iniciando la creacion del mapa..
+[INFO] 17:28:51:842 RAM/(10173:10173): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:28:51:842 RAM/(10173:10173): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:31:02:337 RAM/(10212:10212): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:31:02:337 RAM/(10212:10212): Iniciando la creacion del mapa..
+[INFO] 17:31:02:339 RAM/(10212:10212): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:31:02:339 RAM/(10212:10212): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:32:31:166 RAM/(10232:10232): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:32:31:166 RAM/(10232:10232): Iniciando la creacion del mapa..
+[INFO] 17:32:31:168 RAM/(10232:10232): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:32:31:168 RAM/(10232:10232): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:32:39:149 RAM/(10243:10243): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:32:39:190 RAM/(10243:10243): Iniciando la creacion del mapa..
+[INFO] 17:32:39:440 RAM/(10243:10243): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:32:39:440 RAM/(10243:10243): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:34:02:732 RAM/(10276:10276): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:34:02:772 RAM/(10276:10276): Iniciando la creacion del mapa..
+[INFO] 17:34:03:038 RAM/(10276:10276): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:34:03:040 RAM/(10276:10276): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:39:38:680 RAM/(10418:10418): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:39:38:681 RAM/(10418:10418): Iniciando la creacion del mapa..
+[INFO] 17:39:38:682 RAM/(10418:10418): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:39:38:682 RAM/(10418:10418): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:39:55:890 RAM/(10435:10435): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:39:55:930 RAM/(10435:10435): Iniciando la creacion del mapa..
+[INFO] 17:39:56:184 RAM/(10435:10435): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:39:56:185 RAM/(10435:10435): [Shared Library]: Esperando conexiones en el puerto: 9000

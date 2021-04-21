@@ -9,6 +9,7 @@
 #include <unnamed/select.h>
 #include <unnamed/validation.h>
 #include "./include/handler.h"
+#include "./include/level.h"
 
 #define CONFIG_PATH "./src/settings.config"
 #define ARCHIVO_LOG "./logs/info.log"

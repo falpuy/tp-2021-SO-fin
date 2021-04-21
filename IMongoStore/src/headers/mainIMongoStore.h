@@ -9,8 +9,9 @@
     #include <unnamed/select.h>
     #include <unnamed/validation.h>
     #include <string.h>
+    #include <signal.h>
 
-    #define CONFIG_PATH "configuracion.config"
+    #define CONFIG_PATH "./src/configuracion.config"
     #define PROGRAM "IMS" // Se utiliza para el protocolo
 
     typedef struct{

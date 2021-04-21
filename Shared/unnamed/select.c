@@ -95,7 +95,7 @@ void _select(char* port, void (*func)(), t_log *logger) {
 
             if (FD_ISSET( sd, &readfds)){
                 // Aca se obtiene el id de proceso como primer mensaje
-                id = malloc(ID_SIZE);
+                id = malloc(ID_SIZE + 1);
                 if (recv( sd, id, ID_SIZE, 0) <= 0) {
                     
 /* -------------------------------- Se perdio la conexion -------------------------------- */
@@ -117,20 +117,23 @@ void _select(char* port, void (*func)(), t_log *logger) {
                     
                     // Agrego un \0 al final
                     id[ ID_SIZE ] = '\0';
-                    log_info(logger, "ID: %s", id);
+                    // log_info(logger, "ID: %s", id);
 
                     // Obtengo el codigo de operacion
                     if (recv( sd, &opcode, sizeof(int), 0) > 0) {
+                        // log_info(logger, "CODE: %d", opcode);
                         // SI EL COMANDO ES IGUAL A STRING_COMMAND SIGNIFICA QUE SE ENVIO UN STRING
                         if(opcode == STRING_COMMAND) {
                             // Obtengo el tamanio del buffer que contiene los datos del struct enviado
                             if (recv( sd, &b_size, sizeof(int), 0) > 0) {
+                                // log_info(logger, "BSIZE: %d", b_size);
                                 
                                 // Creo el buffer para guardar los datos
-                                message = malloc(b_size);
+                                message = malloc(b_size + 1);
                                 // Obtengo el message
                                 if (recv( sd, message, b_size, 0) > 0) {
                                     message[ b_size ] = '\0';
+                                    // log_info(logger, "MSG: %s", message);
 
                                     // Calling external function with the current file descriptor, process id, operation code and payload
                                     func(sd, id, opcode, message, logger);

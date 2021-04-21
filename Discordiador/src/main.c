@@ -3,8 +3,11 @@
 int main() {
 
     char *logger_path;
-    t_log *logger;
-    t_config * config = config_create(CONFIG_PATH);
+    config = config_create(CONFIG_PATH);
+
+    // Esta funcion se llama al presionar ctrl+c en la terminal.
+    // Permite eliminar con la funcion "liberar_memoria" la memoria de los procesos que no finalizan correctamente
+    signal(SIGINT, liberar_memoria);
 
     if (config_has_property(config, "ARCHIVO_LOG")) {
         logger_path = config_get_string_value(config, "ARCHIVO_LOG");
@@ -20,5 +23,11 @@ int main() {
     config_destroy(config);
     log_destroy(logger);
 
-    return 0;
+    return EXIT_SUCCESS;
+}
+
+void liberar_memoria(int num) {
+  log_destroy(logger);
+  config_destroy(config);
+  exit(EXIT_FAILURE);
 }

@@ -6,6 +6,6 @@
 #include <commons/log.h>
 
 #define CONFIG_PATH "./src/settings.config"
-#define PROGRAM "DIS" // Se utiliza para el protocolo
+#define PROGRAM "RAM" // Se utiliza para el protocolo
 
 #endif

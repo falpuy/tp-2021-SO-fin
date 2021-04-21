@@ -4,8 +4,9 @@
 #include <stdio.h>
 #include <commons/config.h>
 #include <commons/log.h>
+#include <unnamed/socket.h>
 
 #define CONFIG_PATH "./src/settings.config"
-#define PROGRAM "DIS" // Se utiliza para el protocolo
+#define PROGRAM "IMS" // Se utiliza para el protocolo
 
 #endif

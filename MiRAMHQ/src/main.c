@@ -2,21 +2,26 @@
 
 int main() {
 
-    char *logger_path;
-    t_log *logger;
-    t_config * config = config_create(CONFIG_PATH);
+    config = config_create(CONFIG_PATH);
+    logger = log_create(ARCHIVO_LOG, PROGRAM, 1, LOG_LEVEL_TRACE);
 
-    if (config_has_property(config, "ARCHIVO_LOG")) {
-        logger_path = config_get_string_value(config, "ARCHIVO_LOG");
-        logger = log_create(logger_path, PROGRAM, 1, LOG_LEVEL_TRACE); 
+    signal(SIGINT, liberar_memoria);
 
-        log_info(logger, "(╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..");
-    } else {
-        perror("Error en archivo de configuracion..");
+    if (!_check_config(config, KEYS)) {
+        log_error(logger, "Error en archivo de configuracion..");
+        liberar_memoria(0);
     }
 
-    config_destroy(config);
-    log_destroy(logger);
+    log_info(logger, "(╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..");
 
-    return 0;
+     _select("9000", handler, logger);
+
+    return EXIT_SUCCESS;
+}
+
+void liberar_memoria(int num) {
+  log_destroy(logger);
+  config_destroy(config);
+
+  exit(EXIT_FAILURE);
 }

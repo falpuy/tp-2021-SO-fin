@@ -16,7 +16,7 @@ void _select(char* port, void (*func)(), t_log *logger) {
     char *message;
 
     // Identificador del proceso que envia el mensaje
-    char *id = malloc(ID_SIZE);
+    char *id;
 
     // Codigo de operacion
     int opcode;
@@ -95,6 +95,7 @@ void _select(char* port, void (*func)(), t_log *logger) {
 
             if (FD_ISSET( sd, &readfds)){
                 // Aca se obtiene el id de proceso como primer mensaje
+                id = malloc(ID_SIZE);
                 if (recv( sd, id, ID_SIZE, 0) <= 0) {
                     
 /* -------------------------------- Se perdio la conexion -------------------------------- */
@@ -134,6 +135,7 @@ void _select(char* port, void (*func)(), t_log *logger) {
                                     // Calling external function with the current file descriptor, process id, operation code and payload
                                     func(sd, id, opcode, message, logger);
                                     free(message);
+                                    free(id);
                                 }
                             }
                         } else {
@@ -148,6 +150,7 @@ void _select(char* port, void (*func)(), t_log *logger) {
                                     // Calling external function with the current file descriptor, process id, operation code and payload
                                     func(sd, id, opcode, buffer, logger);
                                     free(buffer);
+                                    free(id);
                                 }
                             }
                         }
@@ -157,6 +160,5 @@ void _select(char* port, void (*func)(), t_log *logger) {
             }
         }
     }
-
     FD_ZERO(&readfds);
 }

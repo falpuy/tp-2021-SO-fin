@@ -25,7 +25,8 @@
 typedef struct {
   char *identifier;
   int command;
-  char *payload;
+  char *message;
+  void *payload;
   int pay_len;
 } t_mensaje;
 
@@ -116,6 +117,6 @@ int _send_message(int socket, char *identifier, int command, void *payload, int 
   );
 
  */
-t_mensaje *_receive_message(char *buffer);
+t_mensaje *_receive_message(int socket, t_log *logger);
 
 #endif

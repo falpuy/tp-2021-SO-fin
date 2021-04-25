@@ -160,30 +160,38 @@ int _send_message(int socket, char *identifier, int command, void *payload, int 
 	return 1;
 }
 
-t_mensaje *_receive_message(char *buffer) {
+t_mensaje *_receive_message(int socket, t_log *logger) {
 
 	t_mensaje *temp = malloc(sizeof(t_mensaje));
-
-	int offset = 0;
   
-  temp -> identifier = malloc(3);
+	temp -> identifier = malloc(3);
+	recv(socket, temp -> identifier, 3, 0);
+	temp -> identifier[3] = '\0';
 
-  memcpy(temp -> identifier, buffer, 3);
-  offset += 3;
+	log_info(logger, "Proceso: %s", temp -> identifier);
 
-  temp -> identifier[offset] = '\0';
+	recv(socket, &(temp -> command), sizeof(int), 0);
 
-  memcpy(&(temp -> command), buffer + offset, sizeof(int));
-  offset += sizeof(int);
+	log_info(logger, "Comando: %d", temp -> command);
 
-  memcpy(&(temp -> pay_len), buffer + offset, sizeof(int));
-  offset += sizeof(int);
+	recv(socket, &(temp -> pay_len), sizeof(int), 0);
 
-  temp -> payload = malloc(temp -> pay_len);
+	log_info(logger, "Tamanio: %d", temp -> pay_len);
 
-  memcpy(temp -> payload, buffer + offset, temp -> pay_len);
+	if (temp -> command == 999) {
+		
+		temp -> message = malloc(temp -> pay_len);
+		recv(socket, temp -> message, temp -> pay_len, 0);
+		temp -> message[temp -> pay_len] = '\0';
 
-  temp -> payload[temp -> pay_len] = '\0';
+		log_info(logger, "String: %s", temp -> message);
+
+	} else {
+
+		temp -> payload = malloc(temp -> pay_len);
+		recv(socket, temp -> payload, temp -> pay_len, 0);
+
+	}
 
 	return temp;
 }

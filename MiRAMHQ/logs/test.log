@@ -40,3 +40,15 @@
 [INFO] 17:10:14:803 TEST/(9627:9627): Intentando conexion a IP: 127.0.0.1 y PORT: 9000 ..
 [INFO] 17:10:14:838 TEST/(9627:9627): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
 [INFO] 17:10:14:839 TEST/(9627:9627): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:27:06:747 TEST/(11801:11801): Intentando conexion a IP: 127.0.0.1 y PORT: 9000 ..
+[INFO] 17:27:06:747 TEST/(11801:11801): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:29:00:254 TEST/(11816:11816): Intentando conexion a IP: 127.0.0.1 y PORT: 9000 ..
+[INFO] 17:29:00:255 TEST/(11816:11816): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:29:00:255 TEST/(11816:11816): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:43:52:652 TEST/(12109:12109): Intentando conexion a IP: 127.0.0.1 y PORT: 9000 ..
+[INFO] 17:43:52:652 TEST/(12109:12109): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:43:52:652 TEST/(12109:12109): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:43:52:653 TEST/(12109:12109): Proceso: RAM
+[INFO] 17:43:52:653 TEST/(12109:12109): Comando: 999
+[INFO] 17:43:52:653 TEST/(12109:12109): Tamanio: 2
+[INFO] 17:43:52:653 TEST/(12109:12109): String: ok

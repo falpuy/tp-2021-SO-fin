@@ -149,3 +149,39 @@
 [INFO] 17:39:55:930 RAM/(10435:10435): Iniciando la creacion del mapa..
 [INFO] 17:39:56:184 RAM/(10435:10435): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
 [INFO] 17:39:56:185 RAM/(10435:10435): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 15:39:24:969 RAM/(11370:11370): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 15:39:24:970 RAM/(11370:11370): Iniciando la creacion del mapa..
+[INFO] 15:39:24:972 RAM/(11370:11370): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 15:39:24:972 RAM/(11370:11370): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 15:40:03:612 RAM/(11405:11405): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 15:40:03:612 RAM/(11405:11405): Iniciando la creacion del mapa..
+[INFO] 15:40:03:614 RAM/(11405:11405): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 15:40:03:614 RAM/(11405:11405): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 15:40:10:461 RAM/(11411:11411): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 15:40:10:495 RAM/(11411:11411): Iniciando la creacion del mapa..
+[INFO] 15:40:10:691 RAM/(11411:11411): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 15:40:10:691 RAM/(11411:11411): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 15:40:23:973 RAM/(11428:11428): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 15:40:24:012 RAM/(11428:11428): Iniciando la creacion del mapa..
+[INFO] 15:40:24:252 RAM/(11428:11428): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 15:40:24:253 RAM/(11428:11428): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:26:46:775 RAM/(11778:11778): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:26:46:775 RAM/(11778:11778): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:26:46:775 RAM/(11778:11778): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:27:06:747 RAM/(11778:11778): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 41398
+[INFO] 17:27:06:748 RAM/(11778:11778): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:29:00:254 RAM/(11778:11778): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 41400
+[INFO] 17:29:00:255 RAM/(11778:11778): Recibi la siguiente operacion de DIS: 999
+[INFO] 17:29:00:255 RAM/(11778:11778): Message: asdasdasdasd
+[INFO] 17:29:00:255 RAM/(11778:11778): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:43:04:276 RAM/(12064:12064): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:43:04:277 RAM/(12064:12064): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:43:04:277 RAM/(12064:12064): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:43:45:040 RAM/(12097:12097): (╯°o°)ᕗ Mi RAM HQ ejecutando correctamente..
+[INFO] 17:43:45:040 RAM/(12097:12097): [Shared Library]: Se creo un socket listenner en el puerto: 9000 
+[INFO] 17:43:45:040 RAM/(12097:12097): [Shared Library]: Esperando conexiones en el puerto: 9000
+[INFO] 17:43:52:652 RAM/(12097:12097): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 41406
+[INFO] 17:43:52:652 RAM/(12097:12097): Recibi la siguiente operacion de DIS: 999
+[INFO] 17:43:52:653 RAM/(12097:12097): Message: asdasdasdasd
+[INFO] 17:43:52:653 RAM/(12097:12097): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:43:52:653 RAM/(12097:12097): [Shared Library]: El cliente 5 se desconecto.

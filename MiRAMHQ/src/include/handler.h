@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <commons/log.h>
+#include <string.h>
+#include <unnamed/socket.h>
 
 enum comandos {
     INICIAR_TRIPULANTE = 500,
@@ -11,7 +13,6 @@ enum comandos {
     ENVIAR_PROXIMA_TAREA = 520,
     EXPULSAR_TRIPULANTE = 530,
     MENSAJE = 999
-
 };
 
 void handler (int fd, char *id, int opcode, char *buffer, t_log *logger);

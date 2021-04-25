@@ -12,6 +12,7 @@ void handler(int fd, char *id, int opcode, char *buffer, t_log *logger) {
             break;
         case MENSAJE:
             log_info(logger, "Message: %s", buffer);
+            _send_message(fd, "RAM", 999, "ok", strlen("ok"), logger);
         break;
         
         default:

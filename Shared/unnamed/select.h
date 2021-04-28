@@ -40,7 +40,7 @@
  * @example:
  *      Call with _select("9000", myFunction, logger);
  *
- *      void myFunction(int fd, char *id, int opcode, char *buffer, t_log *logger);
+ *      void myFunction(int fd, char *id, int opcode, void *buffer, t_log *logger);
  */
 
 void _select(char* port, void (*func)(), t_log *logger);

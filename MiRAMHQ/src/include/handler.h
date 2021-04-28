@@ -15,6 +15,6 @@ enum comandos {
     MENSAJE = 999
 };
 
-void handler (int fd, char *id, int opcode, char *buffer, t_log *logger);
+void handler (int fd, char *id, int opcode, void *buffer, t_log *logger);
 
 #endif

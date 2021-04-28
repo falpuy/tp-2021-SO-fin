@@ -162,9 +162,11 @@ int _send_message(int socket, char *identifier, int command, void *payload, int 
 
 t_mensaje *_receive_message(int socket, t_log *logger) {
 
+	log_info(logger, "Recibi el siguiente mensaje..");
+
 	t_mensaje *temp = malloc(sizeof(t_mensaje));
   
-	temp -> identifier = malloc(3);
+	temp -> identifier = malloc(4);
 	recv(socket, temp -> identifier, 3, 0);
 	temp -> identifier[3] = '\0';
 
@@ -178,19 +180,11 @@ t_mensaje *_receive_message(int socket, t_log *logger) {
 
 	log_info(logger, "Tamanio: %d", temp -> pay_len);
 
+	temp -> payload = malloc(temp -> command == 999 ? temp -> pay_len + 1 : temp -> pay_len);
+	recv(socket, temp -> payload, temp -> pay_len, 0);
 	if (temp -> command == 999) {
-		
-		temp -> message = malloc(temp -> pay_len);
-		recv(socket, temp -> message, temp -> pay_len, 0);
-		temp -> message[temp -> pay_len] = '\0';
-
-		log_info(logger, "String: %s", temp -> message);
-
-	} else {
-
-		temp -> payload = malloc(temp -> pay_len);
-		recv(socket, temp -> payload, temp -> pay_len, 0);
-
+		memset(temp -> payload + temp -> pay_len, '\0', 1);
+		log_info(logger, "String: %s", temp -> payload);
 	}
 
 	return temp;

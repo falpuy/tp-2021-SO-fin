@@ -1,6 +1,6 @@
 #include "./handler.h"
 
-void handler(int fd, char *id, int opcode, char *buffer, t_log *logger) {
+void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 
     switch (opcode){

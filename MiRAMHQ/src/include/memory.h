@@ -23,7 +23,6 @@ typedef struct {
 
 typedef struct {
     uint32_t pid;
-    int task_size;
     void *tasks;
 } pcb;
 

@@ -14,7 +14,6 @@
 
 // typedef struct {
 //     uint32_t pid;
-//     int task_size;
 //     void *tasks;
 // } pcb;
 
@@ -27,20 +26,21 @@
 //     uint32_t next;
 // } tcb;
 
+int tasks_size;
+
 pcb *deserialize_pcb(void *buffer) {
     pcb *patota = malloc(sizeof(pcb));
-    int size;
     int offset = 0;
 
     memcpy(&patota -> pid, buffer + offset, sizeof(uint32_t));
     offset += sizeof(uint32_t);
 
-    memcpy(&size, buffer + offset, sizeof(int));
+    memcpy(&tasks_size, buffer + offset, sizeof(int));
     offset += sizeof(int);
 
-    patota -> tasks = malloc(size);
+    patota -> tasks = malloc(tasks_size);
 
-    memcpy(patota->tasks, buffer + offset, size);
+    memcpy(patota->tasks, buffer + offset, tasks_size);
 
     retrun pcb;
 }
@@ -52,11 +52,47 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         case INICIAR_TRIPULANTE:
             // Será el encargado de crear la o las estructuras administrativas necesarias para que un tripulante pueda ejecutar.
             // En caso de que no se encuentre creada la patota a la que pertenece, deberá solicitar el listado de tareas.
-
+        break;
         case RECIBIR_TAREAS_PATOTA:
+            // recibirá el listado de tareas de la patota y los almacenará en la memoria.
+
+            // deserializo el payload
             pcb *patota = deserialize_pcb(buffer);
+            
+            // Obtengo el size del buffer a guardar en memoria
+            int total_size = sizeof(uint32_t) + tasks_size;
+            
+            // Busco una direccion en memoria con el tamanio necesario para guardar el buffer
+            int addr = get_available_location(memory, total_size);
+            
+            // Creo el segmento asociado
+            segment *new_segment = malloc(sizeof(segment));
+            new_segment -> baseAddr = addr;
+            new_segment -> limit = addr + total_size;
+            
+            // Agrego el segmento a la lista
+            list_add(segmentTable, new_segment);
+            
+            // Obtengo el id del segmento en la lista
+            int table_index = get_index(segmentTable, patota -> pid);
+            
+            // Asocio el segmento al pcb
+            p_info *info = malloc(sizeof(p_info));
+            info -> id = patota -> pid;
+            info -> nroSegmento = table_index;
+            
+            // Agrego los datos a la memoria
+            add_pcb(memory, pcb);
+            
+            // Devolver primer tarea
+            int t_size;
+            memcpy(&t_size, patota -> tasks, sizeof(int));
+            char *task = malloc(t_size);
+            memcpy(task, patota -> tasks + sizeof(int), t_size);
 
+            _send_message(fd, "RAM", INICIAR_TRIPULANTE, task, t_size);
 
+        break;
         case RECIBIR_UBICACION_TRIPULANTE:
         case ENVIAR_PROXIMA_TAREA:
         case EXPULSAR_TRIPULANTE:

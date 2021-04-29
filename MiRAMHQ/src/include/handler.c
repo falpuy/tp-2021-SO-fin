@@ -5,6 +5,7 @@
 //     uint32_t nroSegmento;
 // } p_info;
 
+// t_list *infoTable;
 // t_list *segmentTable;
 
 // typedef struct {
@@ -52,6 +53,15 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         case INICIAR_TRIPULANTE:
             // Será el encargado de crear la o las estructuras administrativas necesarias para que un tripulante pueda ejecutar.
             // En caso de que no se encuentre creada la patota a la que pertenece, deberá solicitar el listado de tareas.
+
+            // Creo el tripulante
+
+            // Busco la patota en la tabla de segmentos
+
+            // Si existe, devuelvo la primer tarea y actualizo la memoria????
+
+            // Si no existe, hago un send para pedir las tareas
+
         break;
         case RECIBIR_TAREAS_PATOTA:
             // recibirá el listado de tareas de la patota y los almacenará en la memoria.
@@ -73,13 +83,20 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // Agrego el segmento a la lista
             list_add(segmentTable, new_segment);
             
+            /* REVISAR SI ES NECESARIA ESTA PARTE
+
             // Obtengo el id del segmento en la lista
-            int table_index = get_index(segmentTable, patota -> pid);
+            int table_index = get_index(segmentTable, patota -> pid, 0); // 0 segmento | 1 info proceso
             
             // Asocio el segmento al pcb
             p_info *info = malloc(sizeof(p_info));
             info -> id = patota -> pid;
             info -> nroSegmento = table_index;
+
+            // Guardo la info del pcb
+            list_add(infoTable, info);
+
+            */
             
             // Agrego los datos a la memoria
             add_pcb(memory, pcb);

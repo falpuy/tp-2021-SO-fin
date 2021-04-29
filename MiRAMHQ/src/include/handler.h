@@ -5,6 +5,7 @@
 #include <commons/log.h>
 #include <string.h>
 #include <unnamed/socket.h>
+#include "memory.h"
 
 enum comandos {
     INICIAR_TRIPULANTE = 500,

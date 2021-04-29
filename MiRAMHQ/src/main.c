@@ -17,8 +17,11 @@ int main() {
     // Creo el mapa
     // create_map(logger);
 
+    // Inicializo la memoria
+    memory = memory_init(config_get_string_value(config, "TAMANIO_MEMORIA"));
+
     // Creo el server
-    _select("9000", handler, logger);
+    _select(config_get_string_value(config, "PUERTO"), handler, logger);
 
     return EXIT_SUCCESS;
 }

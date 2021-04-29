@@ -23,11 +23,13 @@ typedef struct {
 
 typedef struct {
     uint32_t pid;
+    int task_size;
     void *tasks;
 } pcb;
 
 typedef struct {
     uint32_t tid;
+    uint32_t pid;
     char status;
     uint32_t xpos;
     uint32_t ypos;

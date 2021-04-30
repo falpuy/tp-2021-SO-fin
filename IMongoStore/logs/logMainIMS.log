@@ -40,3 +40,5 @@
 [INFO] 14:04:39:967 IMS/(7877:7877): [Shared Library]: Esperando conexiones en el puerto: 5001
 [INFO] 14:12:06:572 IMS/(7969:7969): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
 [INFO] 14:12:06:573 IMS/(7969:7969): [Shared Library]: Esperando conexiones en el puerto: 5001
+[ERROR] 19:02:59:530 IMS/(7427:7427): [Shared Library]: Error al obtener info de la conexion
+[ERROR] 19:04:30:133 IMS/(7504:7504): [Shared Library]: Error al obtener info de la conexion

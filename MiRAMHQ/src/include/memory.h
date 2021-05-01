@@ -11,12 +11,14 @@ void *virtualMemory;
 
 typedef struct {
     uint32_t id;
+    uint32_t isTask;
     uint32_t nroSegmento;
 } p_info;
 
 t_list *segmentTable;
 
 typedef struct {
+    uint32_t nroSegmento;
     uint32_t baseAddr;
     uint32_t limit;
 } segment;

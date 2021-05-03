@@ -16,7 +16,7 @@ int main(){
 
     _send_message(socket,"TST",1,bufferAMandar,sizeof(int)+strlen(buffer) , log);
 
-
+    free(buffer);
 
     return 0;
 }

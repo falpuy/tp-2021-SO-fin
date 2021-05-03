@@ -3,16 +3,16 @@
 
     #include <stdio.h>
     #include <stdlib.h>
-    #include <commons/config.h>
-    #include <commons/log.h>
     #include <unnamed/socket.h>
     #include <unnamed/select.h>
-    #include <unnamed/validation.h>
-    #include <string.h>
     #include <signal.h>
+    //#include "../headers/preparacionFS.h"
+    #include <pthread.h>
+    #include "atenderTripulantes.h"
+    #include <commons/config.h>
 
-    #define CONFIG_PATH "./src/configuracion.config"
-    #define PROGRAM "IMS" // Se utiliza para el protocolo
+    #define CONFIG_PATH "../configuraciones/configuracion.config"
+    #define PROGRAM "IMS"
 
     typedef struct{
         char* puntoMontaje;
@@ -20,20 +20,15 @@
         int tiempoSincronizacion;
     }configIMS;
 
-    char *keysConfig[] = {
-         "PUNTO_MONTAJE",
-         "PUERTO",
-         "TIEMPO_SINCRONIZACION",
-    };
-
     configIMS* datosConfig;
 
     t_config* arch_config;
     t_log* logger;
+    pthread_t threadSelect;
 
     void setearConfiguraciones();
     void finalizarProceso();
-    void handler();
+
 
 
 

@@ -1,0 +1,57 @@
+[INFO] 23:34:13:702 IMS/(11220:11220): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:34:13:703 IMS/(11220:11220): [Shared Library]: Esperando conexiones en el puerto: 5001
+[INFO] 23:34:33:216 IMS/(11220:11220): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 56490
+[INFO] 23:34:33:217 IMS/(11220:11220): comando: 1702129253
+[INFO] 23:34:33:217 IMS/(11220:11220): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:38:28:142 IMS/(12055:12055): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:38:28:143 IMS/(12055:12055): [Shared Library]: Esperando conexiones en el puerto: 5001
+[INFO] 23:38:36:487 IMS/(12055:12055): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 56496
+[INFO] 23:38:36:554 IMS/(12055:12055): comando: 1
+[INFO] 23:38:36:554 IMS/(12055:12055): hola
+[INFO] 23:38:36:554 IMS/(12055:12055): 
+[INFO] 23:38:36:555 IMS/(12055:12055): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:44:10:013 IMS/(12744:12744): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:44:10:014 IMS/(12744:12744): [Shared Library]: Esperando conexiones en el puerto: 5001
+[INFO] 23:44:13:390 IMS/(12744:12744): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 56504
+[INFO] 23:44:13:391 IMS/(12744:12744): comando: 1
+[INFO] 23:44:13:391 IMS/(12744:12744): hola
+[INFO] 23:44:13:392 IMS/(12744:12744): testingSerializacionA] 23:44)
+[INFO] 23:44:13:392 IMS/(12744:12744): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:45:09:670 IMS/(12875:12875): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:45:09:671 IMS/(12875:12875): [Shared Library]: Esperando conexiones en el puerto: 5001
+[INFO] 23:45:11:807 IMS/(12875:12875): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 56506
+[INFO] 23:45:11:808 IMS/(12875:12875): comando: 1
+[INFO] 23:45:11:808 IMS/(12875:12875): hola
+[INFO] 23:45:11:808 IMS/(12875:12875): testingSerializacionA
+[INFO] 23:45:11:809 IMS/(12875:12875): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:47:35:996 IMS/(13183:13183): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:47:35:996 IMS/(13183:13183): [Shared Library]: Esperando conexiones en el puerto: 5001
+[INFO] 23:47:39:453 IMS/(13183:13183): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 56510
+[INFO] 23:47:39:454 IMS/(13183:13183): comando: 1
+[INFO] 23:47:39:454 IMS/(13183:13183): hola
+[INFO] 23:47:39:455 IMS/(13183:13183): testingSerializacionA
+[INFO] 23:47:39:455 IMS/(13183:13183): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:03:15:494 IMS/(15194:15194): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:03:15:496 IMS/(15194:15194): [Shared Library]: Esperando conexiones en el puerto: 5001
+[INFO] 00:12:22:455 IMS/(3734:3734): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:12:22:456 IMS/(3734:3734): [Shared Library]: Esperando conexiones en el puerto: 5001
+[INFO] 00:12:33:707 IMS/(3734:3734): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 42964
+[INFO] 00:12:33:708 IMS/(3734:3734): comando: 1
+[INFO] 00:12:33:709 IMS/(3734:3734): hola
+[INFO] 00:12:33:709 IMS/(3734:3734): testingSerializacion
+[INFO] 00:12:33:710 IMS/(3734:3734): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:13:21:714 IMS/(3734:3734): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 42966
+[INFO] 00:13:21:715 IMS/(3734:3734): comando: 1
+[INFO] 00:13:21:715 IMS/(3734:3734): hola
+[INFO] 00:13:21:716 IMS/(3734:3734): testingSerializacion
+[INFO] 00:13:21:716 IMS/(3734:3734): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:13:50:806 IMS/(3734:3734): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 42968
+[INFO] 00:13:50:807 IMS/(3734:3734): comando: 1
+[INFO] 00:13:50:808 IMS/(3734:3734): hola
+[INFO] 00:13:50:808 IMS/(3734:3734): testingSerializacionA
+[INFO] 00:13:50:809 IMS/(3734:3734): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:14:56:898 IMS/(3734:3734): [Shared Library]: Nueva conexion con id: 5, ip: 127.0.0.1, port: 42972
+[INFO] 00:14:56:900 IMS/(3734:3734): comando: 1
+[INFO] 00:14:56:900 IMS/(3734:3734): hola
+[INFO] 00:14:56:901 IMS/(3734:3734): testingSerializacion
+[INFO] 00:14:56:901 IMS/(3734:3734): [Shared Library]: El cliente 5 se desconecto.

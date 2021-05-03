@@ -3,7 +3,7 @@
 int main() {
 
     arch_config = config_create(CONFIG_PATH);
-    logger = log_create("./logs/logIMS.log","IMS",1,LOG_LEVEL_INFO);
+    logger = log_create("../logs/logIMS.log","IMS",1,LOG_LEVEL_INFO);
     
     signal(SIGINT, finalizarProceso);
     //signal(SIGUSR1, avisarDiscordiador;

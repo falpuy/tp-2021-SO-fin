@@ -11,7 +11,7 @@
     #include "atenderTripulantes.h"
     #include <commons/config.h>
 
-    #define CONFIG_PATH "../configuraciones/configuracion.config"
+    #define CONFIG_PATH "./configuraciones/configuracion.config"
     #define PROGRAM "IMS"
 
     typedef struct{

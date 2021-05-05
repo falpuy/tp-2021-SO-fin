@@ -45,6 +45,6 @@ void save_element(void *memory, int type, void *object);
 // Devuele un buffer con los datos del struct SIN deserializar
 void* get_element(void *memory, segment *address);
 
-pcb *deserialize_pcb(void *buffer, int tasks_size);
+pcb *deserialize_pcb(void *buffer, int *tasks_size);
 
 #endif

@@ -1,34 +1,5 @@
 #include "./handler.h"
 
-// typedef struct {
-//     uint32_t id;
-//     uint32_t isTask;
-//     uint32_t nroSegmento;
-// } p_info;
-
-// t_list *infoTable;
-// t_list *segmentTable;
-
-// typedef struct {
-//     uint32_t nroSegmento;
-//     uint32_t baseAddr;
-//     uint32_t limit;
-// } segment;
-
-// typedef struct {
-//     uint32_t pid;
-//     void *tasks;
-// } pcb;
-
-// typedef struct {
-//     uint32_t tid;
-//     uint32_t pid;
-//     char status;
-//     uint32_t xpos;
-//     uint32_t ypos;
-//     uint32_t next;
-// } tcb;
-
 void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 
@@ -51,7 +22,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // recibirá el listado de tareas de la patota y los almacenará en la memoria.
 
             // deserializo el payload
-            pcb *patota = deserialize_pcb(buffer);
+            pcb *patota = deserialize_pcb(buffer, &tasks_size);
             
             // ------------ PCB ID ------------ //
 

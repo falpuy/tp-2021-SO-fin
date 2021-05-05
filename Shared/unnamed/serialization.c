@@ -12,7 +12,7 @@ int get_type(char *type) {
 
 void *_serialize(int size, char *format, ...) {
     if (!string_starts_with(format, "%")) {
-        printf("\nError: Incorrect Format\n");
+        fprintf(stderr, "[Shared Library]: Incorrect Format\n");
         return NULL;
     }
 
@@ -40,14 +40,29 @@ void *_serialize(int size, char *format, ...) {
     // Inicializo la lista
     va_start(lista_argumentos, format);
 
+    // Verifico primero los parametros que se enviaron
     for(int i = 1; i <= arg_c; i++) {
-        printf("Getting type of %s..\n", types[i]);
+
+        if(get_type(types[i]) < 0) {
+            printf("[Shared Library]: %s Format Does not exist\n", types[i]);
+            free(stream);
+            for(int j = 0; j <= arg_c; j++){
+                free(types[j]);
+            }
+            free(types);
+            va_end(lista_argumentos);
+            return NULL;
+        }
+    }
+
+    for(int i = 1; i <= arg_c; i++) {
+
         switch(get_type(types[i])) {
 
             case STRING:
-                printf("Got a string..\n");
+                // printf("Got a string..\n");
                 string = va_arg(lista_argumentos, char *);
-                printf("String: %s\n", string);
+                printf("[Shared Library]: Serializing type of String: %s\n", string);
 
                 stringLength = strlen(string);
                 memcpy(stream + offset, &stringLength, sizeof(int));
@@ -58,9 +73,9 @@ void *_serialize(int size, char *format, ...) {
             break;
             
             case INT:
-                printf("Got an Integer..\n");
+                // printf("Got an Integer..\n");
                 value = va_arg(lista_argumentos, int);
-                printf("INT: %d\n", value);
+                printf("[Shared Library]: Serializing type of Int: %d\n", value);
 
                 memcpy(stream + offset, &value, sizeof(int));
                 offset += sizeof(int);
@@ -68,9 +83,9 @@ void *_serialize(int size, char *format, ...) {
             break;
             
             case CHAR:
-                printf("Got a Characater..\n");
+                // printf("Got a Characater..\n");
                 c_value = va_arg(lista_argumentos, int);
-                printf("CHAR: %c\n", c_value);
+                printf("[Shared Library]: Serializing type of Char: %c\n", c_value);
 
                 memcpy(stream + offset, &c_value, sizeof(char));
                 offset += sizeof(char);
@@ -78,9 +93,9 @@ void *_serialize(int size, char *format, ...) {
             break;
             
             case DOUBLE:
-                printf("Got a Double..\n");
+                // printf("Got a Double..\n");
                 d_value = va_arg(lista_argumentos, double);
-                printf("DOUBLE: %f\n", d_value);
+                printf("[Shared Library]: Serializing type of Double: %f\n", d_value);
 
                 memcpy(stream + offset, &d_value, sizeof(double));
                 offset += sizeof(double);
@@ -88,9 +103,9 @@ void *_serialize(int size, char *format, ...) {
             break;
 
             case UINT32:
-                printf("Got an 32b Unsigned Int..\n");
+                // printf("Got an 32b Unsigned Int..\n");
                 u_value = va_arg(lista_argumentos, uint32_t);
-                printf("UINT32: %d\n", u_value);
+                printf("[Shared Library]: Serializing type of UInt32_t: %d\n", u_value);
 
                 memcpy(stream + offset, &u_value, sizeof(uint32_t));
                 offset += sizeof(uint32_t);
@@ -98,14 +113,19 @@ void *_serialize(int size, char *format, ...) {
             break;
 
             default:
-                printf("\nError: %s Format Does not exist\n", types[i]);
+                printf("[Shared Library]: %s Format Does not exist\n", types[i]);
+                free(stream);
+                for(int j = 0; j <= arg_c; j++){
+                    free(types[j]);
+                }
+                free(types);
+                va_end(lista_argumentos);
                 return NULL;
         }
 
     }
 
     for(int j = 0; j <= arg_c; j++){
-        printf("Freeing the memory allocated by Types: %d\n", j);
         free(types[j]);
     }
     free(types);

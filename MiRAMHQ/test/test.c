@@ -29,11 +29,13 @@ int main() {
 
     _send_message(socket_memoria, "DIS", 999, "asdasdasdasd", strlen("asdasdasdasd"), logger);
 
-    t_mensaje *mensaje = _receive_message(socket_memoria, logger);
+    // t_mensaje *mensaje = _receive_message(socket_memoria, logger);
 
-    free(mensaje -> identifier);
-    free(mensaje -> payload);
-    free(mensaje);
+    // free(mensaje -> identifier);
+    // free(mensaje -> payload);
+    // free(mensaje);
+
+    close(socket_memoria);
 
     log_destroy(logger);
 

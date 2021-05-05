@@ -1,23 +1,22 @@
-#include "main.h"
+#include "headers/main.h"
 
 int main() {
-
-    arch_config = config_create(CONFIG_PATH);
-    logger = log_create("../logs/logIMS.log","IMS",1,LOG_LEVEL_INFO);
-    
-    signal(SIGINT, finalizarProceso);
-    //signal(SIGUSR1, avisarDiscordiador;
+    crearSuperBloqueTest();
+    setearConfiguraciones();
 
     
-    setearConfiguraciones(logger, arch_config);
-    //crearEstructurasFS(logger);
-    _select(datosConfig->puerto, handler,logger);
 
+    inicializacionFS(logIMS);
+    
+   //int puertoEscucha = _create_socket_listenner(datosConfig->config,log);
+    finalizarProceso();
     return 0;
 }
 
 
-void setearConfiguraciones(t_log* logger, t_config* arch_config){
+void setearConfiguraciones(){
+    arch_config = config_create(CONFIG_PATH);
+    logIMS = log_create(LOG_PATH,"IMS",1,LOG_LEVEL_INFO);
     datosConfig = malloc(sizeof(configIMS));
     int tamanioString;
 
@@ -34,15 +33,14 @@ void setearConfiguraciones(t_log* logger, t_config* arch_config){
     datosConfig->tiempoSincronizacion = config_get_int_value(arch_config,"TIEMPO_SINCRONIZACION");
 }
 
-
-
-void finalizarProceso(int val){
-    log_destroy(logger);
+void finalizarProceso(){
+    log_destroy(logIMS);
     config_destroy(arch_config);
 
     free(datosConfig->puntoMontaje);
     free(datosConfig->puerto);
     free(datosConfig);
 
-    exit(EXIT_FAILURE);
+    //rmdir("/home/utnso/Escritorio/TP_Operativos/tp-2021-1c-Unnamed-Group/IMongoStore/Filesystem/Bitacoras");
+    exit(EXIT_SUCCESS);
 }

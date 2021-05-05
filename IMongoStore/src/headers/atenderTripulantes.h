@@ -3,7 +3,6 @@
 
     #include <stdio.h>
     #include <stdlib.h>
-    #include <commons/log.h>
     #include <unnamed/serialization.h>
     #include <unnamed/select.h>
     #include <unnamed/socket.h>
@@ -24,6 +23,7 @@
         GENERAR_BASURA,
         DESCARTAR_BASURA   
     };
+    
     
     
     void handler(int client, char* identificador, int comando, void* payload, t_log* logger);

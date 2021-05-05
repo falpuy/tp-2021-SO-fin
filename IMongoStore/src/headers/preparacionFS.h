@@ -9,17 +9,35 @@
     #include <unnamed/validation.h>
     #include <unistd.h>
     #include <commons/string.h>
+    #include <stdint.h>
+    #include <commons/bitarray.h>
+    #include <sys/mman.h>
+    #include <sys/stat.h>
+    #include <fcntl.h>
+    #include <stdarg.h>
 
+    typedef struct{
+        char* puntoMontaje;
+        char* puerto;
+        int tiempoSincronizacion;
+    }configIMS;
 
+    configIMS* datosConfig;
+    void* p_bitmap;
 
-    int cantidadBloques;
-    int tamanioBloque;
+    uint32_t cantidadBloques;
+    uint32_t tamanioBloque;
+    
+    FILE* arch_bloques;
+    FILE* superBloque;
 
-
-
-    char* pathArchivo(char* puntoDeMontaje, char* nombreArchivo);
-    void setearConfiguracion();
-    void crearEstructurasFS();
+    void crearSuperBloqueTest();
+    void validarExistenciaFS(t_log* log);
+    void inicializacionFS(t_log* log);
+    void generarBitmap(t_log* log);
+    void guardarEspacioBitmap(t_log* log);
+    void setearMetadataFS(t_log* log);
+    void testearQueTodoFunco(t_log* log);
 
 
 #endif

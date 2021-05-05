@@ -55,3 +55,304 @@
 [INFO] 00:14:56:900 IMS/(3734:3734): hola
 [INFO] 00:14:56:901 IMS/(3734:3734): testingSerializacion
 [INFO] 00:14:56:901 IMS/(3734:3734): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:34:42:424 IMS/(18863:18863): No se encontró archivo Blocks.ims entonces se crea uno
+[ERROR] 16:35:04:590 IMS/(18912:18912): No se encontró archivo Blocks.ims entonces se crea uno
+[ERROR] 16:42:59:132 IMS/(20036:20036): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 16:45:42:151 IMS/(20417:20417): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 16:45:42:153 IMS/(20417:20417): Se buscaron los valores de la metadata en superBloque
+[INFO] 16:45:42:153 IMS/(20417:20417): Cantidad de Bloques: 8
+ Tamaño de bloque:32 
+
+[ERROR] 16:45:51:600 IMS/(20445:20445): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 16:45:51:601 IMS/(20445:20445): Se buscaron los valores de la metadata en superBloque
+[INFO] 16:45:51:602 IMS/(20445:20445): 
+Cantidad de Bloques: 8
+ Tamaño de bloque:32 
+
+[ERROR] 16:45:58:186 IMS/(20467:20467): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 16:45:58:187 IMS/(20467:20467): Se buscaron los valores de la metadata en superBloque
+[INFO] 16:45:58:187 IMS/(20467:20467): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[ERROR] 16:58:04:391 IMS/(22178:22178): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 16:58:04:393 IMS/(22178:22178): Se buscaron los valores de la metadata en superBloque
+[INFO] 16:58:04:393 IMS/(22178:22178): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 16:58:04:393 IMS/(22178:22178): Se crea archivo Blocks.ims
+[INFO] 16:58:04:395 IMS/(22178:22178): Se crea las Bitácoras
+[ERROR] 17:00:47:357 IMS/(22651:22651): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:00:47:358 IMS/(22651:22651): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:00:47:358 IMS/(22651:22651): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:00:47:359 IMS/(22651:22651): Se crea archivo Blocks.ims
+[INFO] 17:00:47:360 IMS/(22651:22651): Se crea las Bitácoras
+[ERROR] 17:01:08:207 IMS/(22698:22698): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:01:08:209 IMS/(22698:22698): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:01:08:209 IMS/(22698:22698): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:01:08:209 IMS/(22698:22698): Se crea archivo Blocks.ims
+[ERROR] 17:02:54:335 IMS/(22951:22951): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:02:54:337 IMS/(22951:22951): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:02:54:337 IMS/(22951:22951): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:02:54:338 IMS/(22951:22951): Se crea archivo Blocks.ims
+[INFO] 17:02:54:339 IMS/(22951:22951): Se crea las Bitácoras
+[ERROR] 17:03:22:231 IMS/(23028:23028): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:03:22:233 IMS/(23028:23028): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:03:22:233 IMS/(23028:23028): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:03:22:233 IMS/(23028:23028): Se crea archivo Blocks.ims
+[INFO] 17:03:22:235 IMS/(23028:23028): Se crea las Bitácoras
+[ERROR] 17:03:41:742 IMS/(23083:23083): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:03:41:743 IMS/(23083:23083): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:03:41:744 IMS/(23083:23083): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:03:41:744 IMS/(23083:23083): Se crea archivo Blocks.ims
+[INFO] 17:03:41:745 IMS/(23083:23083): Se crea las Bitácoras
+[ERROR] 17:04:55:648 IMS/(23233:23233): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:04:55:650 IMS/(23233:23233): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:04:55:651 IMS/(23233:23233): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:04:55:651 IMS/(23233:23233): Se crea archivo Blocks.ims
+[INFO] 17:04:55:653 IMS/(23233:23233): Se crea las Bitácoras
+[ERROR] 17:06:16:286 IMS/(23402:23402): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:06:16:288 IMS/(23402:23402): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:06:16:288 IMS/(23402:23402): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:06:16:288 IMS/(23402:23402): Se crea archivo Blocks.ims
+[INFO] 17:06:16:289 IMS/(23402:23402): Se crea las Bitácoras
+[ERROR] 17:06:53:062 IMS/(23486:23486): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:06:53:064 IMS/(23486:23486): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:06:53:065 IMS/(23486:23486): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:06:53:065 IMS/(23486:23486): Se crea archivo Blocks.ims
+[INFO] 17:06:53:066 IMS/(23486:23486): Se crea las Bitácoras
+[INFO] 17:08:56:497 IMS/(23816:23816): Existe archivo Blocks.ims. Se levanta Filesystem anterior
+[ERROR] 17:09:11:975 IMS/(23853:23853): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:09:11:977 IMS/(23853:23853): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:09:11:977 IMS/(23853:23853): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:09:11:977 IMS/(23853:23853): Se crea archivo Blocks.ims
+[INFO] 17:09:11:979 IMS/(23853:23853): Se crea las Bitácoras
+[INFO] 17:30:04:590 IMS/(27135:27135): Existe archivo Blocks.ims. Se levanta Filesystem anterior
+[ERROR] 17:31:07:799 IMS/(27290:27290): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 17:31:07:801 IMS/(27290:27290): Se buscaron los valores de la metadata en superBloque
+[INFO] 17:31:07:801 IMS/(27290:27290): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 17:31:07:801 IMS/(27290:27290): Se crea archivo Blocks.ims
+[INFO] 17:31:07:803 IMS/(27290:27290): Se crea las Bitácoras
+[ERROR] 18:27:34:343 IMS/(2301:2301): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 18:27:34:352 IMS/(2301:2301): Se buscaron los valores de la metadata en superBloque
+[INFO] 18:27:34:353 IMS/(2301:2301): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 18:27:34:353 IMS/(2301:2301): Generando bitmap asociado a filesystem..
+[INFO] 18:27:34:354 IMS/(2301:2301): Se asigno el bloque 1
+[INFO] 18:27:34:355 IMS/(2301:2301): Se asigno el bloque 2
+[ERROR] 18:28:09:865 IMS/(2411:2411): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 18:28:09:867 IMS/(2411:2411): Se buscaron los valores de la metadata en superBloque
+[INFO] 18:28:09:868 IMS/(2411:2411): 
+Cantidad de Bloques: 8
+Tamaño de bloque:32 
+
+[INFO] 18:28:09:868 IMS/(2411:2411): Generando bitmap asociado a filesystem..
+[INFO] 18:28:09:869 IMS/(2411:2411): Se asigno el bloque 1
+[INFO] 18:28:09:870 IMS/(2411:2411): Se asigno el bloque 2
+[ERROR] 18:45:46:255 IMS/(4588:4588): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 18:46:25:188 IMS/(4668:4668): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 18:46:28:932 IMS/(4688:4688): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 18:46:50:319 IMS/(4742:4742): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 20:58:50:798 IMS/(16269:16269): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 20:59:00:342 IMS/(16289:16289): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 21:00:16:252 IMS/(16401:16401): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 21:02:13:588 IMS/(16570:16570): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 21:02:35:345 IMS/(16605:16605): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[ERROR] 21:04:06:513 IMS/(16854:16854): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:04:06:515 IMS/(16854:16854): 16
+[ERROR] 21:04:38:235 IMS/(16901:16901): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:04:38:237 IMS/(16901:16901): 16
+[ERROR] 21:05:29:124 IMS/(16993:16993): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:05:29:125 IMS/(16993:16993): 16
+[ERROR] 21:05:37:486 IMS/(17013:17013): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:05:37:487 IMS/(17013:17013): 16
+[ERROR] 21:06:01:128 IMS/(17044:17044): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:06:01:129 IMS/(17044:17044): 16
+[ERROR] 21:06:03:551 IMS/(17058:17058): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:06:03:552 IMS/(17058:17058): 16
+[ERROR] 21:07:51:501 IMS/(17218:17218): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:07:51:502 IMS/(17218:17218): 64
+[ERROR] 21:08:00:262 IMS/(17239:17239): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:08:00:264 IMS/(17239:17239): 64
+[ERROR] 21:08:11:526 IMS/(17252:17252): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:08:11:592 IMS/(17252:17252): 64
+[ERROR] 21:08:32:307 IMS/(17289:17289): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:08:32:369 IMS/(17289:17289): 64
+[ERROR] 21:08:56:660 IMS/(17329:17329): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:08:56:721 IMS/(17329:17329): 64
+[ERROR] 21:09:37:604 IMS/(17390:17390): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:09:37:683 IMS/(17390:17390): 64
+[ERROR] 21:09:53:702 IMS/(17420:17420): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:09:53:772 IMS/(17420:17420): 64
+[ERROR] 21:10:08:109 IMS/(17448:17448): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:10:08:187 IMS/(17448:17448): 64
+[ERROR] 21:10:24:004 IMS/(17470:17470): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 21:10:24:070 IMS/(17470:17470): 64
+[ERROR] 22:13:01:028 IMS/(22600:22600): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:13:01:030 IMS/(22600:22600): Se buscaron valores del superbloque. TamañoBloque:16 y CantidadBloques:64
+[ERROR] 22:13:22:387 IMS/(22639:22639): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:13:22:389 IMS/(22639:22639): Se buscaron valores del superbloque. TamañoBloque:0 y CantidadBloques:0
+[ERROR] 22:13:42:607 IMS/(22673:22673): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:13:42:612 IMS/(22673:22673): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[ERROR] 22:15:57:420 IMS/(22853:22853): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:15:57:421 IMS/(22853:22853): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:15:57:423 IMS/(22853:22853): hola
+[ERROR] 22:16:56:950 IMS/(22940:22940): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:16:56:953 IMS/(22940:22940): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:16:56:956 IMS/(22940:22940): Hola
+[ERROR] 22:21:17:106 IMS/(23291:23291): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:21:17:107 IMS/(23291:23291): Se buscaron valores del superbloque. TamañoBloque:0 y CantidadBloques:0
+[INFO] 22:21:17:107 IMS/(23291:23291): Guarde espacio para el bitmap en superbloque
+[ERROR] 22:21:27:157 IMS/(23314:23314): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:21:27:158 IMS/(23314:23314): Se buscaron valores del superbloque. TamañoBloque:0 y CantidadBloques:0
+[INFO] 22:21:27:158 IMS/(23314:23314): Guarde espacio para el bitmap en superbloque
+[ERROR] 22:21:53:148 IMS/(23349:23349): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:21:53:149 IMS/(23349:23349): Se buscaron valores del superbloque. TamañoBloque:0 y CantidadBloques:0
+[INFO] 22:21:53:149 IMS/(23349:23349): Guarde espacio para el bitmap en superbloque
+[ERROR] 22:21:56:813 IMS/(23364:23364): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:21:56:814 IMS/(23364:23364): Se buscaron valores del superbloque. TamañoBloque:0 y CantidadBloques:0
+[INFO] 22:21:56:814 IMS/(23364:23364): Guarde espacio para el bitmap en superbloque
+[ERROR] 22:32:11:136 IMS/(24203:24203): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:32:11:137 IMS/(24203:24203): Se buscaron valores del superbloque. TamañoBloque:0 y CantidadBloques:0
+[INFO] 22:32:11:137 IMS/(24203:24203): Guarde espacio para el bitmap en superbloque
+[INFO] 22:32:11:138 IMS/(24203:24203): hoee
+[ERROR] 22:34:53:407 IMS/(24413:24413): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:34:53:409 IMS/(24413:24413): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:34:53:411 IMS/(24413:24413): Guarde espacio para el bitmap en superbloque
+[ERROR] 22:35:19:575 IMS/(24457:24457): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:35:19:577 IMS/(24457:24457): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:35:19:579 IMS/(24457:24457): Guarde espacio para el bitmap en superbloque
+[INFO] 22:35:19:579 IMS/(24457:24457): hoee
+[ERROR] 22:40:16:501 IMS/(24850:24850): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:40:16:502 IMS/(24850:24850): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:40:16:504 IMS/(24850:24850): Guarde espacio para el bitmap en superbloque
+[ERROR] 22:41:05:994 IMS/(24924:24924): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:41:05:996 IMS/(24924:24924): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:41:05:997 IMS/(24924:24924): Guarde espacio para el bitmap en superbloque
+[INFO] 22:41:05:998 IMS/(24924:24924): holaaaaa
+[INFO] 22:41:05:998 IMS/(24924:24924): holaaaaa
+[INFO] 22:41:05:999 IMS/(24924:24924): holaaaaa
+[INFO] 22:41:05:999 IMS/(24924:24924): holaaaaa
+[ERROR] 22:41:44:004 IMS/(24987:24987): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:41:44:006 IMS/(24987:24987): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:41:44:007 IMS/(24987:24987): Guarde espacio para el bitmap en superbloque
+[INFO] 22:41:44:008 IMS/(24987:24987): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[INFO] 22:41:44:008 IMS/(24987:24987): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[INFO] 22:41:44:008 IMS/(24987:24987): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[INFO] 22:41:44:009 IMS/(24987:24987): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[INFO] 22:41:44:009 IMS/(24987:24987): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[ERROR] 22:42:02:050 IMS/(25021:25021): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:42:02:051 IMS/(25021:25021): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:42:02:053 IMS/(25021:25021): Guarde espacio para el bitmap en superbloque
+[INFO] 22:42:02:054 IMS/(25021:25021): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[INFO] 22:42:02:054 IMS/(25021:25021): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[INFO] 22:42:02:054 IMS/(25021:25021): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[INFO] 22:42:02:055 IMS/(25021:25021): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[INFO] 22:42:02:055 IMS/(25021:25021): aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[ERROR] 22:43:34:759 IMS/(25163:25163): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:43:34:761 IMS/(25163:25163): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:43:34:762 IMS/(25163:25163): Guarde espacio para el bitmap en superbloque
+[ERROR] 22:44:10:823 IMS/(25225:25225): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:44:10:824 IMS/(25225:25225): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:44:10:825 IMS/(25225:25225): Guarde espacio para el bitmap en superbloque
+[INFO] 22:44:10:827 IMS/(25225:25225): Setee bitmap en 0 todo
+[ERROR] 22:56:34:296 IMS/(26430:26430): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:56:34:300 IMS/(26430:26430): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:56:34:303 IMS/(26430:26430): Guarde espacio para el bitmap en superbloque
+[INFO] 22:56:34:305 IMS/(26430:26430): Setee bitmap en 0 todo
+[ERROR] 22:59:51:919 IMS/(26734:26734): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 22:59:51:922 IMS/(26734:26734): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 22:59:51:926 IMS/(26734:26734): Guarde espacio para el bitmap en superbloque
+[INFO] 22:59:51:928 IMS/(26734:26734): Setee bitmap en 0 todo
+[INFO] 22:59:51:928 IMS/(26734:26734): 0
+[INFO] 22:59:51:929 IMS/(26734:26734): 0
+[INFO] 22:59:51:929 IMS/(26734:26734): 0
+[INFO] 22:59:51:929 IMS/(26734:26734): 0
+[INFO] 22:59:51:930 IMS/(26734:26734): 0
+[INFO] 22:59:51:930 IMS/(26734:26734): 0
+[INFO] 22:59:51:930 IMS/(26734:26734): 0
+[INFO] 22:59:51:931 IMS/(26734:26734): 0
+[INFO] 22:59:51:931 IMS/(26734:26734): 0
+[INFO] 22:59:51:932 IMS/(26734:26734): 0
+[INFO] 22:59:51:932 IMS/(26734:26734): 0
+[INFO] 22:59:51:932 IMS/(26734:26734): 0
+[INFO] 22:59:51:933 IMS/(26734:26734): 0
+[INFO] 22:59:51:933 IMS/(26734:26734): 0
+[INFO] 22:59:51:940 IMS/(26734:26734): 0
+[INFO] 22:59:51:941 IMS/(26734:26734): 0
+[INFO] 22:59:51:941 IMS/(26734:26734): Testo bits Success
+[ERROR] 23:00:44:854 IMS/(26823:26823): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 23:00:44:857 IMS/(26823:26823): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 23:00:44:860 IMS/(26823:26823): Guarde espacio para el bitmap en superbloque
+[INFO] 23:00:44:861 IMS/(26823:26823): Setee bitmap en 0 todo......16
+[INFO] 23:00:44:862 IMS/(26823:26823): 0
+[INFO] 23:00:44:862 IMS/(26823:26823): 0
+[INFO] 23:00:44:862 IMS/(26823:26823): 0
+[INFO] 23:00:44:863 IMS/(26823:26823): 0
+[INFO] 23:00:44:863 IMS/(26823:26823): 0
+[INFO] 23:00:44:863 IMS/(26823:26823): 0
+[INFO] 23:00:44:864 IMS/(26823:26823): 0
+[INFO] 23:00:44:864 IMS/(26823:26823): 0
+[INFO] 23:00:44:865 IMS/(26823:26823): 0
+[INFO] 23:00:44:865 IMS/(26823:26823): 0
+[INFO] 23:00:44:866 IMS/(26823:26823): 0
+[INFO] 23:00:44:866 IMS/(26823:26823): 0
+[INFO] 23:00:44:867 IMS/(26823:26823): 0
+[INFO] 23:00:44:867 IMS/(26823:26823): 0
+[INFO] 23:00:44:868 IMS/(26823:26823): 0
+[INFO] 23:00:44:884 IMS/(26823:26823): 0
+[INFO] 23:00:44:884 IMS/(26823:26823): Testo bits Success
+[ERROR] 23:12:57:539 IMS/(27776:27776): No se encontró archivo Blocks.ims entonces no existe un Filesystem anterior. Se crea Uno
+[INFO] 23:12:57:609 IMS/(27776:27776): Se buscaron valores del superbloque. TamañoBloque:64 y CantidadBloques:16
+[INFO] 23:12:57:618 IMS/(27776:27776): Guarde espacio para el bitmap en superbloque
+[INFO] 23:12:57:623 IMS/(27776:27776): Setee bitmap en 0 todo......16
+[INFO] 23:12:57:626 IMS/(27776:27776): 0
+[INFO] 23:12:57:635 IMS/(27776:27776): 0
+[INFO] 23:12:57:639 IMS/(27776:27776): 0
+[INFO] 23:12:57:640 IMS/(27776:27776): 0
+[INFO] 23:12:57:640 IMS/(27776:27776): 0
+[INFO] 23:12:57:641 IMS/(27776:27776): 0
+[INFO] 23:12:57:641 IMS/(27776:27776): 0
+[INFO] 23:12:57:641 IMS/(27776:27776): 0
+[INFO] 23:12:57:641 IMS/(27776:27776): 0
+[INFO] 23:12:57:642 IMS/(27776:27776): 0
+[INFO] 23:12:57:642 IMS/(27776:27776): 0
+[INFO] 23:12:57:643 IMS/(27776:27776): 0
+[INFO] 23:12:57:644 IMS/(27776:27776): 0
+[INFO] 23:12:57:645 IMS/(27776:27776): 0
+[INFO] 23:12:57:646 IMS/(27776:27776): 0
+[INFO] 23:12:57:646 IMS/(27776:27776): 0
+[INFO] 23:12:57:647 IMS/(27776:27776): Testo bits Success

@@ -1,4 +1,4 @@
-#include "atenderTripulantes.h"
+#include "./headers/atenderTripulantes.h"
 
 
 
@@ -7,21 +7,17 @@ log_info(logger,"comando: %d", comando);
     switch(comando){
         case MOVER_TRIPULANTE: // de X|Y --> X'|Y'
             //Escribir en Bitacora/TripulanteID.ims
-            log_info(logger,"hola");
             
-            int offset;
-            char*buffer1;
+            //deserializacion para testear payload="testearSerializacion"
+            // int offset;
+            // char*buffer1;
 
-            memcpy(&offset, payload, sizeof(int));
-            printf("%d",offset);
-            buffer1 = malloc(offset + 1);
-            memcpy(buffer1,payload + sizeof(int),offset);
-            buffer1[offset] = '\0';
+            // memcpy(&offset, payload, sizeof(int));
+            // buffer1 = malloc(offset + 1);
+            // memcpy(buffer1,payload + sizeof(int),offset);
+            // buffer1[offset] = '\0';
 
-            // FALTA DESERIALIZAR ACA ->  buffer = "17testSerializacion"
-            // String directo solo funciona si mandas comando 999 y no serializas el buffer
-            // _send_message(999, "string sin serializar", SIZE)
-            log_info(logger,"%s",buffer1);
+            //log_info(logger,"%s",buffer1);
 
             break;
         

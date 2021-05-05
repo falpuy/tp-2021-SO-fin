@@ -10,10 +10,12 @@ void _start_server(char *port, void (*callback)(), t_log *logger) {
     int lsocket = _create_socket_listenner(port, logger);
 	
     // Try to specify maximum of n pending connections for the master socket
-    if (_listen(lsocket, MAX_CON, logger) < 0) {
+    if (listen(lsocket, MAX_CON) < 0) {
         log_error(logger, "[Shared Library]: Ocurrio un error en el listen \n (╯°o°）╯︵ ┻━┻");
         exit(EXIT_FAILURE);
     }
+
+    log_info(logger, "[Shared Library]: Esperando conexiones en puerto: %s", port);
 
     addrlen = sizeof(address);
 
@@ -81,7 +83,7 @@ void _thread_function(t_data *connection) {
                         }
 
                         // Calling external function with the current file descriptor, process id, operation code and payload
-                        connection -> func(connection -> socket, id, comando, buffer, logger);
+                        connection -> func(connection -> socket, id, comando, buffer, connection -> logger);
                         free(buffer);
                         free(id);
                     }

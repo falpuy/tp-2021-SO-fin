@@ -25,15 +25,15 @@ int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
 
-    int socket_memoria =  _connect("127.0.0.1", "9000", logger);
+    int socket_memoria =  _connect("127.0.0.1", "5001", logger);
 
     _send_message(socket_memoria, "DIS", 999, "asdasdasdasd", strlen("asdasdasdasd"), logger);
 
-    // t_mensaje *mensaje = _receive_message(socket_memoria, logger);
+    t_mensaje *mensaje = _receive_message(socket_memoria, logger);
 
-    // free(mensaje -> identifier);
-    // free(mensaje -> payload);
-    // free(mensaje);
+    free(mensaje -> identifier);
+    free(mensaje -> payload);
+    free(mensaje);
 
     close(socket_memoria);
 

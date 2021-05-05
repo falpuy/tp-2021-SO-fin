@@ -29,25 +29,6 @@
 //     uint32_t next;
 // } tcb;
 
-int tasks_size;
-
-pcb *deserialize_pcb(void *buffer) {
-    pcb *patota = malloc(sizeof(pcb));
-    int offset = 0;
-
-    memcpy(&patota -> pid, buffer + offset, sizeof(uint32_t));
-    offset += sizeof(uint32_t);
-
-    memcpy(&tasks_size, buffer + offset, sizeof(int));
-    offset += sizeof(int);
-
-    patota -> tasks = malloc(tasks_size);
-
-    memcpy(patota->tasks, buffer + offset, tasks_size);
-
-    retrun pcb;
-}
-
 void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 
@@ -65,13 +46,14 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // Si no existe, hago un send para pedir las tareas
 
         break;
+        /*
         case RECIBIR_TAREAS_PATOTA:
             // recibirá el listado de tareas de la patota y los almacenará en la memoria.
 
             // deserializo el payload
             pcb *patota = deserialize_pcb(buffer);
             
-            /* ------------ PCB ID ------------ */
+            // ------------ PCB ID ------------ //
 
             int total_size = sizeof(uint32_t);
 
@@ -102,7 +84,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // Agrego los datos a la memoria
             save_data(memory, new_segment, pcb -> id, total_size);
 
-            /* ------------ PCB TASKS ------------ */
+            // ------------ PCB TASKS ------------ //
 
             total_size = tasks_size;
 
@@ -137,14 +119,17 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             memcpy(task, patota -> tasks + sizeof(int), t_size);
 
             // Limpiar la memoria de la primer task ?????
-
             // Actualizar el address del segmento ????
+
+            // Actualizo el puntero qe devuelve las tareas.
+
             // Agrego el segmento a la lista
             list_add(segmentTable, task_segment);
 
             _send_message(fd, "RAM", INICIAR_TRIPULANTE, task, t_size);
 
         break;
+        */
         case RECIBIR_UBICACION_TRIPULANTE:
         case ENVIAR_PROXIMA_TAREA:
         case EXPULSAR_TRIPULANTE:

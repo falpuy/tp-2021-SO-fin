@@ -6,7 +6,7 @@
 #include <signal.h>
 #include <commons/config.h>
 #include <commons/log.h>
-#include <unnamed/select.h>
+#include <unnamed/server.h>
 #include <unnamed/validation.h>
 #include "./include/handler.h"
 #include "./include/level.h"
@@ -24,6 +24,14 @@ char *KEYS[] = {
     "ALGORITMO_REEMPLAZO",
     "PUERTO"
 };
+
+// MEMORIA
+void *memory;
+void *virtualMemory;
+
+// SEGMENTACION
+int tasks_size;
+t_list *segmentTable;
 
 t_log *logger;
 t_config * config;

@@ -1,1 +1,16 @@
 [INFO] 18:06:27:482 consola/(4810:4810): 127.0.0.1, 5001, 127.0.0.1, 5001
+[INFO] 18:06:49:857 consola/(4875:4875): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:09:33:225 consola/(7282:7282): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:09:45:142 consola/(7282:7282): hola
+[INFO] 19:11:08:194 consola/(7507:7507): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:11:18:070 consola/(7507:7507): hola
+[INFO] 19:11:18:071 consola/(7507:7507): ENTRO INICIAR PATO
+[INFO] 19:11:18:071 consola/(7507:7507): ENTRO LISTAR
+[INFO] 19:11:41:166 consola/(7578:7578): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:11:50:998 consola/(7578:7578): hola
+[INFO] 19:11:50:998 consola/(7578:7578): ENTRO INICIAR PATO
+[INFO] 19:12:05:359 consola/(7578:7578): hola
+[INFO] 19:12:05:360 consola/(7578:7578): ENTRO LISTAR
+[INFO] 19:12:12:805 consola/(7578:7578): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 19:12:17:616 consola/(7578:7578): hola
+[INFO] 19:12:17:617 consola/(7578:7578): Salimos de la consola

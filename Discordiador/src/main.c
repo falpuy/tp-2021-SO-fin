@@ -27,12 +27,16 @@ int main () {
     quantum_RR = config_get_int_value (config, "QUANTUM");
     duracion_sabotaje = config_get_int_value (config, "DURACION_SABOTAJE");
     ciclo_CPU = config_get_int_value (config, "RETARDO_CICLO_CPU");
-    log_info(logger, "%s, %s, %s, %s", ip_RAM, puerto_RAM, ip_IMS, puerto_IMS);
+    log_info(logger, "%s, %s, %s, %s, %d, %s, %d, %d, %d", ip_RAM, puerto_RAM, ip_IMS, 
+    puerto_IMS, grado_multitarea, algoritmo, quantum_RR, duracion_sabotaje, ciclo_CPU);
 
-    //conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-    //conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
+    conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+    conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
 
-    //funcionConsola (logger);
+    funcionConsola (logger);
+
+    //terminar_proceso(int conexion, t_log* logger, t_config* config);
+
     return 0;
 }
 

@@ -31,7 +31,7 @@
 // 	*/
 // 	int nivel_gui_dibujar(NIVEL* nivel);
 
-void create_map(t_log *logger) {
+/*void create_map(t_log *logger) {
     log_info(logger, "Iniciando la creacion del mapa..");
     nivel_gui_inicializar();
 
@@ -42,4 +42,4 @@ void create_map(t_log *logger) {
     nivel_destruir(nivel);
     nivel_gui_terminar();
 
-}
+}*/

@@ -1,0 +1,35 @@
+[INFO] 21:06:07:798 RAM/(15104:15104): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:06:07:800 RAM/(15104:15104): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:06:07:805 RAM/(15104:15104): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:36:47:779 RAM/(23333:23333): Mi RAM HQ ejecutando correctamente..
+[INFO] 20:36:47:779 RAM/(23333:23333): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:36:47:780 RAM/(23333:23333): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:45:20:891 RAM/(23333:23333): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:45:20:893 RAM/(23333:23770): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:45:20:893 RAM/(23333:23770): Recibi la siguiente operacion de GTS: 510
+[INFO] 20:45:20:893 RAM/(23333:23770): No se pudo realizar la operacion 510
+[INFO] 20:45:20:894 RAM/(23333:23770): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:50:45:434 RAM/(24074:24074): Mi RAM HQ ejecutando correctamente..
+[INFO] 20:50:45:435 RAM/(24074:24074): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:50:45:435 RAM/(24074:24074): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:51:05:958 RAM/(24074:24074): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:51:05:960 RAM/(24074:24088): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:51:05:960 RAM/(24074:24088): Recibi la siguiente operacion de GTS: 510
+[INFO] 20:51:05:960 RAM/(24074:24088): entre en el case
+[INFO] 20:51:05:960 RAM/(24074:24088): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:31:09:900 RAM/(25711:25711): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:31:09:901 RAM/(25711:25711): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:31:09:901 RAM/(25711:25711): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:31:20:625 RAM/(25711:25711): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:31:20:628 RAM/(25711:25719): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:31:20:628 RAM/(25711:25719): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:31:20:628 RAM/(25711:25719): entre en el case
+[INFO] 21:31:20:628 RAM/(25711:25719): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:32:11:625 RAM/(25767:25767): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:32:11:626 RAM/(25767:25767): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:32:11:626 RAM/(25767:25767): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:32:15:739 RAM/(25767:25767): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:32:15:740 RAM/(25767:25769): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:32:15:740 RAM/(25767:25769): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:32:15:740 RAM/(25767:25769): entre en el case
+[INFO] 21:32:15:741 RAM/(25767:25769): [Shared Library]: El cliente 5 se desconecto.

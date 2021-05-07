@@ -16,6 +16,12 @@ enum comandos {
     MENSAJE = 999
 };
 
+//pcb para testear porque no se que es void* tasks
+typedef struct {
+    int idPat;
+    char* tripulantes[];
+}falsoPCB;
+
 void handler (int fd, char *id, int opcode, void *buffer, t_log *logger);
 
 #endif

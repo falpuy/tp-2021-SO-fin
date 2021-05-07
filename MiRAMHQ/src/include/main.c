@@ -20,13 +20,13 @@ int main() {
     //
 
     // Inicializo la memoria
-    memory = memory_init(config_get_string_value(config, "TAMANIO_MEMORIA"));
+    memory = memory_init(atoi(config_get_string_value(config, "TAMANIO_MEMORIA")));
 
     // Creo el mapa
     // create_map(logger);
 
     // Creo el server
-    _select(config_get_string_value(config, "PUERTO"), handler, logger);
+    _start_server(config_get_string_value(config, "PUERTO"), handler, logger);
 
     return EXIT_SUCCESS;
 }
@@ -35,4 +35,7 @@ void liberar_memoria(int num) {
   log_destroy(logger);
   config_destroy(config); 
 
- 
+  free(memory);
+
+  exit(EXIT_FAILURE);
+}

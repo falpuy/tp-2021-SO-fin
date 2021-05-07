@@ -1,0 +1,187 @@
+[INFO] 21:37:56:861 RAM/(26129:26129): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:37:56:861 RAM/(26129:26129): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:37:56:862 RAM/(26129:26129): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:38:58:582 RAM/(26129:26129): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:38:58:585 RAM/(26129:26194): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:38:58:585 RAM/(26129:26194): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:38:58:585 RAM/(26129:26194): entre en el case
+[INFO] 21:40:21:278 RAM/(26272:26272): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:40:21:279 RAM/(26272:26272): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:40:21:279 RAM/(26272:26272): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:40:24:678 RAM/(26272:26272): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:40:24:679 RAM/(26272:26277): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:40:24:680 RAM/(26272:26277): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:40:24:680 RAM/(26272:26277): entre en el case
+[INFO] 21:40:24:680 RAM/(26272:26277): 10
+[INFO] 21:40:24:680 RAM/(26272:26277): 10 (null) (null)
+[INFO] 21:40:24:681 RAM/(26272:26277): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:42:58:972 RAM/(26409:26409): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:42:58:972 RAM/(26409:26409): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:42:58:972 RAM/(26409:26409): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:43:02:999 RAM/(26409:26409): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:43:03:002 RAM/(26409:26414): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:43:03:003 RAM/(26409:26414): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:43:03:003 RAM/(26409:26414): entre en el case
+[INFO] 21:43:03:003 RAM/(26409:26414): 10
+[INFO] 21:43:03:003 RAM/(26409:26414): 
+[INFO] 21:43:03:003 RAM/(26409:26414): 10  (null)
+[INFO] 21:43:03:004 RAM/(26409:26414): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:45:42:560 RAM/(26534:26534): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:45:42:561 RAM/(26534:26534): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:45:42:561 RAM/(26534:26534): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:45:44:975 RAM/(26534:26534): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:45:44:976 RAM/(26534:26539): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:45:44:976 RAM/(26534:26539): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:45:44:976 RAM/(26534:26539): entre en el case
+[INFO] 21:45:44:977 RAM/(26534:26539): 10
+[INFO] 21:45:44:977 RAM/(26534:26539): delf
+[INFO] 21:45:44:978 RAM/(26534:26539): 10 delf (null)
+[INFO] 21:45:44:978 RAM/(26534:26539): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:46:12:135 RAM/(26585:26585): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:46:12:136 RAM/(26585:26585): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:46:12:136 RAM/(26585:26585): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:46:14:585 RAM/(26585:26585): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:46:14:586 RAM/(26585:26590): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:46:14:587 RAM/(26585:26590): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:46:14:587 RAM/(26585:26590): entre en el case
+[INFO] 21:46:14:587 RAM/(26585:26590): 10
+[INFO] 21:46:14:588 RAM/(26585:26590): delf
+[INFO] 21:46:14:588 RAM/(26585:26590): 10 delf (null)
+[INFO] 21:46:14:588 RAM/(26585:26590): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:47:50:351 RAM/(26685:26685): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:47:50:352 RAM/(26685:26685): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:47:50:352 RAM/(26685:26685): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:47:52:527 RAM/(26685:26685): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:47:52:529 RAM/(26685:26687): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:47:52:530 RAM/(26685:26687): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:47:52:530 RAM/(26685:26687): entre en el case
+[INFO] 21:47:52:530 RAM/(26685:26687): 10
+[INFO] 21:47:52:530 RAM/(26685:26687): delf
+[INFO] 21:47:52:531 RAM/(26685:26687): 10 delf (null)
+[INFO] 21:47:52:531 RAM/(26685:26687): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:49:39:526 RAM/(26782:26782): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:49:39:527 RAM/(26782:26782): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:49:39:527 RAM/(26782:26782): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:49:42:703 RAM/(26782:26782): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:49:42:703 RAM/(26782:26784): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:49:42:704 RAM/(26782:26784): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:49:42:705 RAM/(26782:26784): entre en el case
+[INFO] 21:49:42:705 RAM/(26782:26784): 10
+[INFO] 21:49:42:705 RAM/(26782:26784): delf
+[INFO] 21:49:42:705 RAM/(26782:26784): 10 delf (null)
+[INFO] 21:49:42:705 RAM/(26782:26784): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:50:16:174 RAM/(26832:26832): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:50:16:175 RAM/(26832:26832): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:50:16:175 RAM/(26832:26832): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:50:18:279 RAM/(26832:26832): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:50:18:279 RAM/(26832:26837): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:50:18:280 RAM/(26832:26837): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:50:18:280 RAM/(26832:26837): entre en el case
+[INFO] 21:50:18:281 RAM/(26832:26837): 10
+[INFO] 21:50:18:281 RAM/(26832:26837): delf
+[INFO] 21:50:18:281 RAM/(26832:26837): 10 delf (null)
+[INFO] 21:50:18:281 RAM/(26832:26837): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:51:27:992 RAM/(26908:26908): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:51:27:992 RAM/(26908:26908): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:51:27:993 RAM/(26908:26908): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:51:33:600 RAM/(26908:26908): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:51:33:601 RAM/(26908:26924): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:51:33:601 RAM/(26908:26924): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:51:33:602 RAM/(26908:26924): entre en el case
+[INFO] 21:51:33:602 RAM/(26908:26924): 10
+[INFO] 21:51:33:602 RAM/(26908:26924): delf
+[INFO] 21:51:33:602 RAM/(26908:26924): 10 delf (null)
+[INFO] 21:51:33:602 RAM/(26908:26924): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:52:38:990 RAM/(26978:26978): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:52:38:991 RAM/(26978:26978): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:52:38:991 RAM/(26978:26978): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:52:43:456 RAM/(26978:26978): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:52:43:458 RAM/(26978:26991): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:52:43:458 RAM/(26978:26991): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:52:43:459 RAM/(26978:26991): entre en el case
+[INFO] 21:52:43:459 RAM/(26978:26991): 10
+[INFO] 21:52:43:459 RAM/(26978:26991): delfi
+[INFO] 21:52:43:459 RAM/(26978:26991): 10 delfi (null)
+[INFO] 21:52:43:459 RAM/(26978:26991): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:55:08:911 RAM/(27115:27115): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:55:08:912 RAM/(27115:27115): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:55:08:913 RAM/(27115:27115): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:55:11:801 RAM/(27115:27115): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:55:11:801 RAM/(27115:27117): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:55:11:802 RAM/(27115:27117): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:55:11:803 RAM/(27115:27117): entre en el case
+[INFO] 21:55:11:803 RAM/(27115:27117): 10
+[INFO] 21:55:11:803 RAM/(27115:27117): 10 delfi (null)
+[INFO] 21:55:11:804 RAM/(27115:27117): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:58:41:080 RAM/(27285:27285): Mi RAM HQ ejecutando correctamente..
+[INFO] 21:58:41:080 RAM/(27285:27285): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:58:41:081 RAM/(27285:27285): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:58:43:858 RAM/(27285:27285): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:58:43:858 RAM/(27285:27290): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:58:43:859 RAM/(27285:27290): Recibi la siguiente operacion de GTS: 510
+[INFO] 21:58:43:859 RAM/(27285:27290): entre en el case
+[INFO] 21:58:43:860 RAM/(27285:27290): 10
+[INFO] 21:58:43:860 RAM/(27285:27290): delfi
+[INFO] 21:58:43:860 RAM/(27285:27290): 
+[INFO] 21:58:43:860 RAM/(27285:27290): 10 delfi 
+[INFO] 21:58:43:860 RAM/(27285:27290): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:00:02:458 RAM/(27374:27374): Mi RAM HQ ejecutando correctamente..
+[INFO] 22:00:02:459 RAM/(27374:27374): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:00:02:459 RAM/(27374:27374): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:00:05:147 RAM/(27374:27374): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:00:05:149 RAM/(27374:27379): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:00:05:149 RAM/(27374:27379): Recibi la siguiente operacion de GTS: 510
+[INFO] 22:00:05:150 RAM/(27374:27379): entre en el case
+[INFO] 22:00:05:150 RAM/(27374:27379): 10
+[INFO] 22:00:05:150 RAM/(27374:27379): delfi
+[INFO] 22:00:05:150 RAM/(27374:27379): 
+[INFO] 22:00:05:150 RAM/(27374:27379): 10 delfi 
+[INFO] 22:00:05:151 RAM/(27374:27379): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:02:42:158 RAM/(27503:27503): Mi RAM HQ ejecutando correctamente..
+[INFO] 22:02:42:159 RAM/(27503:27503): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:02:42:159 RAM/(27503:27503): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:02:44:371 RAM/(27503:27503): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:02:44:373 RAM/(27503:27508): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:02:44:373 RAM/(27503:27508): Recibi la siguiente operacion de GTS: 510
+[INFO] 22:02:44:374 RAM/(27503:27508): entre en el case
+[INFO] 22:02:44:374 RAM/(27503:27508): 10
+[INFO] 22:02:44:374 RAM/(27503:27508): delfi
+[INFO] 22:02:44:375 RAM/(27503:27508): 
+[INFO] 22:02:44:375 RAM/(27503:27508): 10 delfi 
+[INFO] 22:02:44:375 RAM/(27503:27508): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:03:28:531 RAM/(27563:27563): Mi RAM HQ ejecutando correctamente..
+[INFO] 22:03:28:531 RAM/(27563:27563): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:03:28:531 RAM/(27563:27563): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:03:31:587 RAM/(27563:27563): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:03:31:588 RAM/(27563:27568): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:03:31:588 RAM/(27563:27568): Recibi la siguiente operacion de GTS: 510
+[INFO] 22:03:31:588 RAM/(27563:27568): entre en el case
+[INFO] 22:03:31:588 RAM/(27563:27568): 10
+[INFO] 22:03:31:589 RAM/(27563:27568): delfi
+[INFO] 22:03:31:589 RAM/(27563:27568): 
+[INFO] 22:03:31:589 RAM/(27563:27568): 10 delfi 
+[INFO] 22:03:31:589 RAM/(27563:27568): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:05:13:053 RAM/(27681:27681): Mi RAM HQ ejecutando correctamente..
+[INFO] 22:05:13:054 RAM/(27681:27681): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:05:13:054 RAM/(27681:27681): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:05:15:827 RAM/(27681:27681): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:05:15:830 RAM/(27681:27686): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:05:15:830 RAM/(27681:27686): Recibi la siguiente operacion de GTS: 510
+[INFO] 22:05:15:830 RAM/(27681:27686): entre en el case
+[INFO] 22:05:15:830 RAM/(27681:27686): 10
+[INFO] 22:05:15:830 RAM/(27681:27686): delfi
+[INFO] 22:05:15:830 RAM/(27681:27686): 
+[INFO] 22:05:15:831 RAM/(27681:27686): 10 delfi 
+[INFO] 22:05:15:831 RAM/(27681:27686): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:08:15:863 RAM/(27824:27824): Mi RAM HQ ejecutando correctamente..
+[INFO] 22:08:15:863 RAM/(27824:27824): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:08:15:863 RAM/(27824:27824): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:08:18:021 RAM/(27824:27824): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:08:18:023 RAM/(27824:27826): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:08:18:024 RAM/(27824:27826): Recibi la siguiente operacion de GTS: 510
+[INFO] 22:08:18:024 RAM/(27824:27826): entre en el case
+[INFO] 22:08:18:025 RAM/(27824:27826): 10
+[INFO] 22:08:18:025 RAM/(27824:27826): delfi
+[INFO] 22:08:18:025 RAM/(27824:27826): 
+[INFO] 22:08:18:026 RAM/(27824:27826): 10 delfi 
+[INFO] 22:08:18:026 RAM/(27824:27826): [Shared Library]: El cliente 5 se desconecto.

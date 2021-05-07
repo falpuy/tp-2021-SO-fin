@@ -1,53 +1,5 @@
 #include "./handler.h"
 
-// typedef struct {
-//     uint32_t id;
-//     uint32_t isTask;
-//     uint32_t nroSegmento;
-// } p_info;
-
-// t_list *infoTable;
-// t_list *segmentTable;
-
-// typedef struct {
-//     uint32_t nroSegmento;
-//     uint32_t baseAddr;
-//     uint32_t limit;
-// } segment;
-
-// typedef struct {
-//     uint32_t pid;
-//     void *tasks;
-// } pcb;
-
-// typedef struct {
-//     uint32_t tid;
-//     uint32_t pid;
-//     char status;
-//     uint32_t xpos;
-//     uint32_t ypos;
-//     uint32_t next;
-// } tcb;
-
-int tasks_size;
-
-pcb *deserialize_pcb(void *buffer) {
-    pcb *patota = malloc(sizeof(pcb));
-    int offset = 0;
-
-    memcpy(&patota -> pid, buffer + offset, sizeof(uint32_t));
-    offset += sizeof(uint32_t);
-
-    memcpy(&tasks_size, buffer + offset, sizeof(int));
-    offset += sizeof(int);
-
-    patota -> tasks = malloc(tasks_size);
-
-    memcpy(patota->tasks, buffer + offset, tasks_size);
-
-    retrun pcb;
-}
-
 void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 
@@ -65,13 +17,50 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // Si no existe, hago un send para pedir las tareas
 
         break;
+
+        case RECIBIR_TAREAS_PATOTA:
+
+         //pcb *patota = deserialize_pcb(buffer, &tasks_size);
+        log_info(logger, "entre en el case");
+
+        //ejemplo falsoPCB, tiene un int y un vector de char* que tiene dos char*
+        //
+        //variables
+        int offset = 0;
+        falsoPCB* pcb = malloc(sizeof(falsoPCB));
+        int temp = 0;
+        //sacamos el int
+        memcpy(&offset, buffer, sizeof(int));
+        pcb->idPat = offset;
+        log_info(logger, "%d", pcb->idPat); //log para testear que salga bien
+        //sacamos el primer string
+        offset=sizeof(int)*2;
+        memcpy(&temp, buffer + sizeof(int), sizeof(int));
+        pcb->tripulantes[0] = malloc(temp + 1);
+        memcpy(pcb->tripulantes[0], buffer + offset, temp);
+        pcb->tripulantes[0][temp+1] = '\0';
+        offset+=temp;
+        offset+=1;
+        log_info(logger, "%s", pcb->tripulantes[0]); //log para testear que salga bien
+        //sacamos el segundo string (aca hay algo que no funca btw)
+        memcpy(&temp, buffer + offset, sizeof(int));
+        offset+=sizeof(int);
+        pcb->tripulantes[1] = malloc(temp + 1);
+        memcpy(pcb->tripulantes[1], buffer + offset, temp);
+        pcb->tripulantes[1][temp] = '\0';
+        log_info(logger, "%s", pcb->tripulantes[1]); //log para testear que salga bien
+
+        log_info(logger, "%d %s %s", pcb->idPat, pcb->tripulantes[0], pcb->tripulantes[1]); //log que muestra todo el pcb falso de testeo
+
+        break;
+        /*
         case RECIBIR_TAREAS_PATOTA:
             // recibirá el listado de tareas de la patota y los almacenará en la memoria.
 
             // deserializo el payload
-            pcb *patota = deserialize_pcb(buffer);
+            pcb *patota = deserialize_pcb(buffer, &tasks_size);
             
-            /* ------------ PCB ID ------------ */
+            // ------------ PCB ID ------------ //
 
             int total_size = sizeof(uint32_t);
 
@@ -102,7 +91,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // Agrego los datos a la memoria
             save_data(memory, new_segment, pcb -> id, total_size);
 
-            /* ------------ PCB TASKS ------------ */
+            // ------------ PCB TASKS ------------ //
 
             total_size = tasks_size;
 
@@ -137,14 +126,17 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             memcpy(task, patota -> tasks + sizeof(int), t_size);
 
             // Limpiar la memoria de la primer task ?????
-
             // Actualizar el address del segmento ????
+
+            // Actualizo el puntero qe devuelve las tareas.
+
             // Agrego el segmento a la lista
             list_add(segmentTable, task_segment);
 
             _send_message(fd, "RAM", INICIAR_TRIPULANTE, task, t_size);
 
         break;
+        */
         case RECIBIR_UBICACION_TRIPULANTE:
         case ENVIAR_PROXIMA_TAREA:
         case EXPULSAR_TRIPULANTE:

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unnamed/socket.h>
+#include <unnamed/serialization.h>
 #include <commons/log.h>
 
 int status = 1;
@@ -21,19 +22,53 @@ int recvCounter = 0;
 
 int main() {
 
-    printf("Enviando mensaje...");
-
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
 
-    int socket_memoria =  _connect("127.0.0.1", "9000", logger);
+    // -------------- TEST SERIALIZACION -------------- //
+    void *buffer;
+    int b_size;
 
-    _send_message(socket_memoria, "DIS", 999, "asdasdasdasd", strlen("asdasdasdasd"), logger);
+    char *str = "HOLA!!!";
+    b_size = sizeof(int) + strlen(str);
+    buffer = _serialize(b_size, "%s", str);
+    free(buffer);
 
-    t_mensaje *mensaje = _receive_message(socket_memoria, logger);
+    b_size = sizeof(int);
+    buffer = _serialize(b_size, "%d", 25);
+    free(buffer);
 
-    free(mensaje -> identifier);
-    free(mensaje -> payload);
-    free(mensaje);
+    b_size = sizeof(char);
+    buffer = _serialize(b_size, "%c", 'Z');
+    free(buffer);
+
+    b_size = sizeof(double);
+    buffer = _serialize(b_size, "%f", 100.33494);
+    free(buffer);
+
+    b_size = sizeof(uint32_t);
+    buffer = _serialize(b_size, "%u", 32);
+    free(buffer);
+
+    // Error de formato
+    b_size = sizeof(uint32_t);
+    buffer = _serialize(b_size, "%d%s%p%k", 32);
+    free(buffer);
+
+    // ---------------- TEST CONEXION ----------------- //
+
+    // int socket_memoria =  _connect("127.0.0.1", "5001", logger);
+
+    // _send_message(socket_memoria, "DIS", 999, "asdasdasdasd", strlen("asdasdasdasd"), logger);
+
+    // t_mensaje *mensaje = _receive_message(socket_memoria, logger);
+
+    // free(mensaje -> identifier);
+    // free(mensaje -> payload);
+    // free(mensaje);
+
+    // close(socket_memoria);
+
+    // -------------------------------------------- //
 
     log_destroy(logger);
 

@@ -31,16 +31,14 @@
  * 
  * @params: 
  *      port -> Puerto en el que se van a escuchar las conexiones
- *      func -> Funcion custom a ejecutar en cada interaccion [use func(sd, buffer)]
- *          sd -> File Descriptor
- *          buffer -> Mensaje recibido de la conexion
- *          logger -> logger del proceso
+ *      func -> Funcion custom a ejecutar en cada interaccion
+ 
+ *          void myFunction(int fd, char *id, int opcode, void *buffer, t_log *logger);
+
  *      b_size -> Longitud maxima del string a recibir
  *
  * @example:
  *      Call with _select("9000", myFunction, logger);
- *
- *      void myFunction(int fd, char *id, int opcode, void *buffer, t_log *logger);
  */
 
 void _select(char* port, void (*func)(), t_log *logger);

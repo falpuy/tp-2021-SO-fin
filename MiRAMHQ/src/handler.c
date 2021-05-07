@@ -58,7 +58,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // recibirá el listado de tareas de la patota y los almacenará en la memoria.
 
             // deserializo el payload
-            pcb *patota = deserialize_pcb(buffer, &tasks_size);
+            pcb *patota = deserialize_pcb(buffer);
             
             // ------------ PCB ID ------------ //
 

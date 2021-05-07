@@ -19,13 +19,10 @@ int main(){
      //crear log 
 
      t_log* logger = log_create("test.log", "GTS", 1, LOG_LEVEL_INFO);
-     t_config* config = config_create("../src/include/settings.config");
-
-     char* puerto = config_get_string_value(config, "PUERTO");
      
      //connectarme a memoria(puerto 5001) _connect
 
-     int socket = _connect("127.0.0.1",puerto,logger);
+     int socket = _connect("127.0.0.1", "5001",logger);
 
      //crear pcb
 

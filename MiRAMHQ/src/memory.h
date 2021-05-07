@@ -21,7 +21,7 @@ typedef struct {
 
 typedef struct {
     uint32_t pid;
-    void *tasks;
+    uint32_t tasks;
 } pcb;
 
 typedef struct {

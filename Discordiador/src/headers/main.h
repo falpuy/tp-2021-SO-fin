@@ -10,5 +10,6 @@
 #include<readline/readline.h>
 #include<sys/socket.h>
 #include "consola.h"
+#include "planificador.h"
 
 #endif 

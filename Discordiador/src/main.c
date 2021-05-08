@@ -33,7 +33,7 @@ int main () {
     conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
 
-    funcionConsola (logger);
+    funcionConsola (logger, conexion_RAM, conexion_IMS);
 
     //terminar_proceso(int conexion, t_log* logger, t_config* config);
 

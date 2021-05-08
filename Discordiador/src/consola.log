@@ -14,3 +14,42 @@
 [INFO] 19:12:12:805 consola/(7578:7578): El mensaje ingresado no corresponde a una acción propia del Discordiador
 [INFO] 19:12:17:616 consola/(7578:7578): hola
 [INFO] 19:12:17:617 consola/(7578:7578): Salimos de la consola
+[INFO] 15:25:45:803 consola/(5673:5673): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:25:45:805 consola/(5673:5673): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 15:25:45:805 consola/(5673:5673): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:25:45:806 consola/(5673:5673): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 15:25:45:806 consola/(5673:5673): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:26:29:381 consola/(5673:5673): ENTRO LISTAR
+[INFO] 15:26:29:382 consola/(5673:5673): --------------------------------------------------------------------
+[INFO] 15:26:29:382 consola/(5673:5673): Estado de la Nave: 08/05/21 15:26:29
+[INFO] 15:26:38:717 consola/(5673:5673): Salimos de la consola
+[INFO] 15:27:02:440 consola/(5847:5847): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:27:02:441 consola/(5847:5847): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 15:27:02:441 consola/(5847:5847): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:27:02:442 consola/(5847:5847): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 15:27:02:448 consola/(5847:5847): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:27:07:377 consola/(5847:5847): Salimos de la consola
+[INFO] 15:27:20:293 consola/(5885:5885): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:27:20:299 consola/(5885:5885): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 15:27:20:300 consola/(5885:5885): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:27:20:300 consola/(5885:5885): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 15:27:20:301 consola/(5885:5885): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:27:23:412 consola/(5885:5885): Salimos de la consola
+[INFO] 18:02:14:458 consola/(5968:5968): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:02:14:459 consola/(5968:5968): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:02:14:460 consola/(5968:5968): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:02:14:460 consola/(5968:5968): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:02:14:466 consola/(5968:5968): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:02:17:821 consola/(5968:5968): Salimos de la consola
+[INFO] 18:02:34:219 consola/(6012:6012): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:02:34:220 consola/(6012:6012): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:02:34:225 consola/(6012:6012): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:02:34:225 consola/(6012:6012): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:02:34:226 consola/(6012:6012): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:02:36:901 consola/(6012:6012): Salimos de la consola
+[INFO] 18:03:03:112 consola/(6074:6074): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:03:03:113 consola/(6074:6074): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:03:03:113 consola/(6074:6074): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:03:03:114 consola/(6074:6074): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:03:03:115 consola/(6074:6074): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:03:05:667 consola/(6074:6074): Salimos de la consola

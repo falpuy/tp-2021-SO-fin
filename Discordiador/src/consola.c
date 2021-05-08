@@ -2,7 +2,7 @@
 
 // crear hilo
 
-void funcionConsola(t_log* logger) {
+void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
     int validador = 1;
     char* leido;
     char* vector_mensajes_consola[]= {"INICIAR_PLANIFICACION","PAUSAR_PLANIFICACION","INICIAR_PATOTA","LISTAR_TRIPULANTES","EXPULSAR_TRIPULANTE","OBTENER_BITACORA","SALIR"};
@@ -21,7 +21,6 @@ void funcionConsola(t_log* logger) {
 
             for(i=0; i<LARGO; i++) {
                 if (!strcmp(parametros[0], vector_mensajes_consola[i])) {
-                    log_info(logger, "hola");
                     instruccion_consola = i;
                     break;
                 }
@@ -42,7 +41,7 @@ void funcionConsola(t_log* logger) {
                     break;
 
                 case 2: //INICIAR_PATOTA
-                    // INICIAR_PATOTA 5 /home/utnso/tareas/tareasPatota5.txt 1|1 3|4
+                    // Ej: INICIAR_PATOTA 5 /home/utnso/tareas/tareasPatota5.txt 1|1 3|4
                     //abrir y copiar en una lista o buffer parametros[2]
                     log_info(logger, "ENTRO INICIAR PATO");
                     tamanioBuffer = sizeof(int);
@@ -52,18 +51,21 @@ void funcionConsola(t_log* logger) {
                     //buffer especial para las ubicaciones
                     // buffer=12-34-567-1
                     _send_message(conexion_RAM, "DIS", 710, buffer, tamanioBuffer, logger);
-                    mensajeRecibido = _receive_message(conexion_IMS, logger);
-                    log_info(logger, "SALIÓ %s", mensajeRecibido -> payload);
+                    //mensajeRecibido = _receive_message(conexion_IMS, logger);
+                    //log_info(logger, "SALIÓ %s", mensajeRecibido -> payload);
                     
                 // crear pcb, agregarlo a nuestra lista de control, avisarle/mandarselo a Mi-RAM HQ
+                   
+
                 // crear hilos/tripulantes, crear un TCB por hilo, enviar este TCB a NEW, agregar el TCB a nuestra lista de control
                     break;
 
                 case 3: //LISTAR_TRIPULANTES
                     log_info(logger, "ENTRO LISTAR");
                     log_info(logger, "--------------------------------------------------------------------");
-                    log_info(logger, "Estado de la Nave: ");
-                    //fecha y hora actual
+                    char* hora_y_fecha_actual;
+                    hora_y_fecha_actual = temporal_get_string_time("%d/%m/%y %H:%M:%S");
+                    log_info(logger, "Estado de la Nave: %s", hora_y_fecha_actual);
                     while (/*lista de tripulantes no vacía*/) {
                     log_info(logger, "Tripulante: %d", /*id del nodo*/);
                     log_info(logger, "Patota: %d", /*patota del nodo*/);
@@ -108,6 +110,9 @@ void funcionConsola(t_log* logger) {
                 default:
                     log_info(logger, "El mensaje ingresado no corresponde a una acción propia del Discordiador");
                     break;
+            }
+            if (!validador) {
+                break;
             }
         }
     }

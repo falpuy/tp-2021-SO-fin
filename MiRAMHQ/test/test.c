@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unnamed/socket.h>
 #include <unnamed/serialization.h>
 #include <commons/log.h>
@@ -24,35 +25,168 @@ int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
 
-    // -------------- TEST SERIALIZACION -------------- //
+
+    // ---------------- TEST ARCHIVOS ----------------- //
+
+
+    FILE * fp;
+    char * line = NULL;
+    size_t len = 0;
+    ssize_t read;
+
     void *buffer;
-    int b_size;
+    int b_size = 0;
+    int offset = 0;
+    int new_size;
+    void *temp;
 
-    char *str = "HOLA!!!";
-    b_size = sizeof(int) + strlen(str);
-    buffer = _serialize(b_size, "%s", str);
+    fp = fopen("./tareas.txt", "r");
+    if (fp == NULL)
+        exit(EXIT_FAILURE);
+
+    while ((read = getline(&line, &len, fp)) != -1) {
+
+        // printf("Length: %d - String: %s", read, line);
+
+        if (line[ read - 1 ] == '\n') {
+            read--;
+            memset(line + read, 0, 1);
+        }
+
+        new_size = sizeof(int) + read;
+        
+        temp = _serialize(new_size, "%s", line);
+
+        if (!b_size) {
+
+            b_size = new_size;
+            buffer = malloc(b_size);
+        } else {
+
+            b_size += new_size;
+            buffer = realloc(buffer, b_size);
+        }
+        
+        memcpy(buffer + offset, temp, new_size);
+        offset += new_size;
+
+        free(temp);
+    }
+
+    fclose(fp);
+    if (line)
+        free(line);
+
+    // Agregar id de pcb al que pertenece
+    // _send(buffer, offset);
+
+    // Prueba Deserializacion
+
+    char *tarea;
+    int size_tarea;
+    int off = 0;
+    int i = 0;
+
+    while (off < offset) {
+
+        memcpy(&size_tarea, buffer + off, sizeof(int));
+        off += sizeof(int);
+
+        tarea = malloc(size_tarea + 1);
+        memcpy(tarea, buffer + off, size_tarea);
+        off += size_tarea;
+        tarea[size_tarea] = '\0';
+
+        log_info(logger, "Tarea %d - len %d: %s", i++, size_tarea, tarea);
+        free(tarea);
+
+    }
+
     free(buffer);
 
-    b_size = sizeof(int);
-    buffer = _serialize(b_size, "%d", 25);
-    free(buffer);
 
-    b_size = sizeof(char);
-    buffer = _serialize(b_size, "%c", 'Z');
-    free(buffer);
+    // -------------- TEST SERIALIZACION -------------- //
+    
 
-    b_size = sizeof(double);
-    buffer = _serialize(b_size, "%f", 100.33494);
-    free(buffer);
+    // void *buffer;
+    // int b_size;
 
-    b_size = sizeof(uint32_t);
-    buffer = _serialize(b_size, "%u", 32);
-    free(buffer);
+    // char *str = "HOLA!!!";
+    // b_size = sizeof(int) + strlen(str);
+    // buffer = _serialize(b_size, "%s", str);
 
-    // Error de formato
-    b_size = sizeof(uint32_t);
-    buffer = _serialize(b_size, "%d%s%p%k", 32);
-    free(buffer);
+    // char *str2 = "CHAU!!!";
+    // int b_size2 = sizeof(int) + strlen(str2);
+    // buffer = realloc(buffer, b_size + b_size2);
+    // void * temp = _serialize(b_size2, "%s", str2);
+    // memcpy(buffer + b_size, temp, b_size2);
+    
+
+    // log_info(logger, "Deserializando...");
+
+    // char *otroBuffer;
+    // int offset = 0;
+    // int size;
+
+    // memcpy(&size, buffer + offset, sizeof(int));
+    // offset += sizeof(int);
+    // log_info(logger, "Size primer string: %d", size);
+
+    // otroBuffer = malloc(size + 1);
+    // memcpy(otroBuffer, buffer + offset, size);
+    // offset += size;
+    // otroBuffer[offset] = '\0';
+
+    // log_info(logger, "String: %s", otroBuffer);
+    // free(otroBuffer);
+
+    // memcpy(&size, buffer + offset, sizeof(int));
+    // log_info(logger, "Size 2 string: %d - %d|%d", size, offset, b_size);
+    // offset += sizeof(int);
+
+    // otroBuffer = malloc(size + 1);
+    // memcpy(otroBuffer, buffer + offset, size);
+    // offset += size;
+    // otroBuffer[offset] = '\0';
+
+    // log_info(logger, "String 2: %s", otroBuffer);
+    // free(otroBuffer);
+
+    // free (temp);
+    // free(buffer);
+    
+    //  ------------------------- TEST CASES
+
+    // void *buffer;
+    // int b_size;
+
+    // char *str = "HOLA!!!";
+    // b_size = sizeof(int) + strlen(str);
+    // buffer = _serialize(b_size, "%s", str);
+    // free(buffer);
+
+    // b_size = sizeof(int);
+    // buffer = _serialize(b_size, "%d", 25);
+    // free(buffer);
+
+    // b_size = sizeof(char);
+    // buffer = _serialize(b_size, "%c", 'Z');
+    // free(buffer);
+
+    // b_size = sizeof(double);
+    // buffer = _serialize(b_size, "%f", 100.33494);
+    // free(buffer);
+
+    // b_size = sizeof(uint32_t);
+    // buffer = _serialize(b_size, "%u", 32);
+    // free(buffer);
+
+    // // Error de formato
+    // b_size = sizeof(uint32_t);
+    // buffer = _serialize(b_size, "%d%s%p%k", 32);
+    // free(buffer);
+
+    
 
     // ---------------- TEST CONEXION ----------------- //
 

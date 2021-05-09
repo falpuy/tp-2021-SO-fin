@@ -12,7 +12,7 @@
 //#include "./include/level.h"
 
 #define CONFIG_PATH "settings.config"
-#define ARCHIVO_LOG "info.log"
+#define ARCHIVO_LOG "../logs/info.log"
 #define PROGRAM "RAM" // Se utiliza para el protocolo
 
 char *KEYS[] = {

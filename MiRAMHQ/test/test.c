@@ -122,24 +122,53 @@ void memory_compaction(void *memory, int mem_size, t_list* segmentTable) {
 
     segment *temp;
 
+    t_queue * aux_table;
+
+    int data_size;
+
+    int offset = 0;
+
+    int segment_id = 0;
+
 	if ((segmentTable -> elements_count > 0) && (mem_size >= 0)) {
 
 		t_link_element *element = segmentTable -> head;
 		temp = element -> data;
 
-        t_link_element *element = segmentTable -> head;
-        t_link_element *aux = NULL;
+        aux_memory = malloc(mem_size);
+        aux_table = queue_create();
+
         while (element != NULL) {
-            aux = element -> next;
-            closure(element -> data);
-            element = aux;
+
+            data_size = temp -> limit - temp ->baseAddr;
+
+            printf("Copiando elementos.. %d - %d - %d\n", temp -> nroSegmento, temp -> baseAddr, temp -> limit);
+            
+            // Copio los datos del segmento en la memoria auxiliar
+            memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+
+            segment *new_segment = malloc(sizeof(segment));
+            new_segment -> nroSegmento = segment_id++;
+            new_segment -> baseAddr = offset;
+            new_segment -> limit = offset + data_size - 1;
+
+            printf("Creando nuevo Segmento.. %d - %d - %d\n", new_segment -> nroSegmento, new_segment -> baseAddr, new_segment -> limit);
+
+            queue_push(aux_table, new_segment);
+
+            offset += data_size;
+
+            element = element -> next;
+            temp = element -> data;
         }
-
-
-		return temp -> limit;
 	}
 
-	return -1;
+    printf("HERE!");
+	// Asigno los punteros respectivos a memoria y segmentTable
+
+    memory = aux_memory;
+
+    segmentTable = aux_table -> elements;
 
 }
 
@@ -191,19 +220,19 @@ int main() {
 
     uno -> nroSegmento = 2;
     uno -> baseAddr = 1;
-    uno -> limit = 5;
+    uno -> limit = 4;
 
     dos -> nroSegmento = 3;
     dos -> baseAddr = 10;
-    dos -> limit = 14;
+    dos -> limit = 13;
 
     tres -> nroSegmento = 5;
     tres -> baseAddr = 15;
-    tres -> limit = 19;
+    tres -> limit = 18;
 
     cuatro -> nroSegmento = 7;
     cuatro -> baseAddr = 22;
-    cuatro -> limit = 26;
+    cuatro -> limit = 25;
 
     memcpy(memory + uno -> baseAddr, &temp, uno -> limit - uno -> baseAddr);
     temp = 10;
@@ -225,7 +254,7 @@ int main() {
     int segment_counter = 0;
 
     // Tamanio del segmento que quiero guardar
-    int total_size = 5;
+    int total_size = 6;
     
     // Valida si encontre un segmento libre o no
     int found_segment = 0;
@@ -251,6 +280,24 @@ int main() {
     if(!found_segment) {
         printf("No encontre ningun segmento libre.. Iniciando compactacion.\n");
         memory_compaction(memory, m_size, segmentTable -> elements);
+
+        // Busco espacio libre en la memoria
+        for(int i = 0; i < m_size; i ++) {
+            if (memcmp(memory + i, "\0", 1)) {
+                printf("Direccion ocupada: %d\n", i);
+                limit = get_segment_limit(segmentTable -> elements, i);
+                printf("Final de segmento: %d\n", limit);
+                i = limit;
+                segment_counter = 0;
+            } else {
+                printf("Direccion vacia: %d\n", i);
+                segment_counter ++;
+                if (segment_counter == total_size) {
+                    found_segment = 1;
+                    printf("Encontre un segmento disponible\n");
+                }
+            }
+        }
     }
 
     queue_destroy_and_destroy_elements(segmentTable, destroyer);

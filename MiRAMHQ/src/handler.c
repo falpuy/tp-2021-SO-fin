@@ -10,6 +10,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 
             // Recibo el id de la patota correspondiente al tripulante
 
+            // Busco el segmento/info relacionado a la patota
             // Si no existe la patota
                 // pido las tareas de la patota X
 
@@ -91,7 +92,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         /*
         case RECIBIR_TAREAS_PATOTA:
 
-            // creo el segmento de las tareas asociado al pcb
+            // creo el segmento e info de las tareas asociado al pcb
             // Busco espacio libre para tareas
             
             // si hay espacio
@@ -154,7 +155,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                     // Envio mensaje de Error
 
 
-            // -------------------------------------------------------------------------//
+            // ------------------------------------ IGNORE -------------------------------------//
 
             // recibirá el listado de tareas de la patota y los almacenará en la memoria.
 
@@ -252,14 +253,14 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             break;
         case ENVIAR_PROXIMA_TAREA:
 
-            // Buscar segmento de tcp
+            // Buscar segmento de tcb
             // Buscar segmento de tareas
             // Validar si la direccion de la proxima tarea en el tcb es menor al limite del segmento de tareas (si hay mas tareas para hacer)
             // Si no hay mas tareas
                 // Envio mensaje de error
             // Si hay tareas
                 // Leo una tarea con el segmento del tcb
-                // Actualizo el tcb en memoria y en la lista de segmentos
+                // Actualizo el tcb en memoria
                 // Envio proxima tarea
 
             break;
@@ -267,7 +268,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 
             // Busco el segmento del tcb
             // Elimino el segmento de memoria
-            // Elimino el segmento de la lista de segmentos
+            // Elimino el segmento de la lista de segmentos y de info
 
             //// Elimino el tcb del mapa
 

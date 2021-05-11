@@ -151,7 +151,8 @@ void memory_compaction(void *memory, int mem_size, t_queue* segmentTable) {
             // Copio los datos del segmento en la memoria auxiliar
             memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
 
-            new_number = segment_id++;
+            // New segment index
+            // new_number = segment_id++;
             new_base = offset;
             new_limit = offset + data_size;
 
@@ -159,7 +160,8 @@ void memory_compaction(void *memory, int mem_size, t_queue* segmentTable) {
 
             offset += data_size;
 
-            temp -> nroSegmento = new_number;
+            // Saving last index value
+            // temp -> nroSegmento = new_number;
             temp -> baseAddr = new_base;
             temp -> limit = new_limit;
 
@@ -201,6 +203,25 @@ int memory_seek(void *memory, int mem_size, t_queue *segmentTable, int total_siz
             }
         }
     }
+    return -1;
+}
+
+int get_last_index (t_queue *segmentTable) {
+
+    segment *temp;
+
+    if (segmentTable -> elements -> elements_count > 0) {
+
+		t_link_element *element = segmentTable -> elements -> head;
+
+        while (element != NULL) {
+            temp = element -> data;
+            element = element -> next;
+        }
+
+        return temp -> nroSegmento;
+    }
+
     return -1;
 }
 

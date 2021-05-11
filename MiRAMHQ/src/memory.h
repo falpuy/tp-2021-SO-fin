@@ -7,13 +7,16 @@
 #include <string.h>
 #include <commons/collections/list.h>
 
-typedef struct {
-    uint32_t id;
-    uint32_t type;
-    uint32_t nroSegmento;
-} p_info;
+// Es mas facil buscar directamente en los segmentos y asociarlos directamente al objeto
+// typedef struct {
+//     uint32_t id;
+//     uint32_t type;
+//     uint32_t nroSegmento;
+// } p_info;
 
 typedef struct {
+    uint32_t id; // ID de proceso
+    uint32_t type; // Tipo de proceso/tarea/tcb
     uint32_t nroSegmento;
     uint32_t baseAddr;
     uint32_t limit;

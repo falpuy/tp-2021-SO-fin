@@ -68,7 +68,8 @@ void *find_info_by_id(t_list* self, int id) {
 
         while (temp -> id != id) {
 			element = element->next;
-            temp = element -> data;
+            if (element != NULL)
+                temp = element -> data;
 		}
 
 		return element -> data;
@@ -86,7 +87,8 @@ void *find_segment_by_number(t_list* self, int index) {
 
         while (temp -> nroSegmento != index) {
 			element = element->next;
-            temp = element -> data;
+            if (element != NULL)
+                temp = element -> data;
 		}
 
 		return element -> data;
@@ -104,7 +106,8 @@ int get_segment_limit(t_list* self, int start) {
 
         while (temp -> baseAddr != start) {
 			element = element->next;
-            temp = element -> data;
+            if (element != NULL)
+                temp = element -> data;
 		}
 
 
@@ -117,12 +120,10 @@ void destroyer(void *item) {
     free(item);
 }
 
-void memory_compaction(void *memory, int mem_size, t_list* segmentTable) {
+void memory_compaction(void *memory, int mem_size, t_queue* segmentTable) {
     void *aux_memory;
 
     segment *temp;
-
-    t_queue * aux_table;
 
     int data_size;
 
@@ -130,13 +131,16 @@ void memory_compaction(void *memory, int mem_size, t_list* segmentTable) {
 
     int segment_id = 0;
 
-	if ((segmentTable -> elements_count > 0) && (mem_size >= 0)) {
+    int new_number;
+    int new_base;
+    int new_limit;
 
-		t_link_element *element = segmentTable -> head;
+	if ((segmentTable -> elements -> elements_count > 0) && (mem_size >= 0)) {
+
+		t_link_element *element = segmentTable -> elements -> head;
 		temp = element -> data;
 
         aux_memory = malloc(mem_size);
-        aux_table = queue_create();
 
         while (element != NULL) {
 
@@ -147,29 +151,57 @@ void memory_compaction(void *memory, int mem_size, t_list* segmentTable) {
             // Copio los datos del segmento en la memoria auxiliar
             memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
 
-            segment *new_segment = malloc(sizeof(segment));
-            new_segment -> nroSegmento = segment_id++;
-            new_segment -> baseAddr = offset;
-            new_segment -> limit = offset + data_size - 1;
+            new_number = segment_id++;
+            new_base = offset;
+            new_limit = offset + data_size;
 
-            printf("Creando nuevo Segmento.. %d - %d - %d\n", new_segment -> nroSegmento, new_segment -> baseAddr, new_segment -> limit);
-
-            queue_push(aux_table, new_segment);
+            printf("Creando nuevo Segmento.. %d - %d - %d\n", new_number, new_base, new_limit);
 
             offset += data_size;
 
+            temp -> nroSegmento = new_number;
+            temp -> baseAddr = new_base;
+            temp -> limit = new_limit;
+
             element = element -> next;
-            temp = element -> data;
+            if (element != NULL)
+                temp = element -> data;
+            
         }
+
+        memset(memory, 0, mem_size);
+        memcpy(memory, aux_memory, mem_size);
+
+        free(aux_memory);
 	}
+}
 
-    printf("HERE!");
-	// Asigno los punteros respectivos a memoria y segmentTable
+int memory_seek(void *memory, int mem_size, t_queue *segmentTable, int total_size) {
+    // Auxiliar para guardar el limite de cada segmento ocupado
+    int limit;
 
-    memory = aux_memory;
+    // Contador de bytes libres en la memoria
+    int segment_counter = 0;
 
-    segmentTable = aux_table -> elements;
-
+    // Busco espacio libre en la memoria
+    for(int i = 0; i < mem_size; i ++) {
+        if (memcmp(memory + i, "\0", 1)) {
+            printf("Direccion ocupada: %d\n", i);
+            limit = get_segment_limit(segmentTable -> elements, i);
+            if (limit < 0) return -1;
+            printf("Final de segmento: %d\n", limit);
+            i = limit - 1;
+            segment_counter = 0;
+        } else {
+            printf("Direccion vacia: %d\n", i);
+            segment_counter ++;
+            if (segment_counter == total_size) {
+                printf("Encontre un segmento disponible: %d\n", i - (total_size - 1));
+                return i - (total_size - 1);
+            }
+        }
+    }
+    return -1;
 }
 
 int main() {
@@ -220,19 +252,19 @@ int main() {
 
     uno -> nroSegmento = 2;
     uno -> baseAddr = 1;
-    uno -> limit = 4;
+    uno -> limit = 5;
 
     dos -> nroSegmento = 3;
     dos -> baseAddr = 10;
-    dos -> limit = 13;
+    dos -> limit = 14;
 
     tres -> nroSegmento = 5;
     tres -> baseAddr = 15;
-    tres -> limit = 18;
+    tres -> limit = 19;
 
     cuatro -> nroSegmento = 7;
     cuatro -> baseAddr = 22;
-    cuatro -> limit = 25;
+    cuatro -> limit = 26;
 
     memcpy(memory + uno -> baseAddr, &temp, uno -> limit - uno -> baseAddr);
     temp = 10;
@@ -247,57 +279,22 @@ int main() {
     queue_push(segmentTable, tres);
     queue_push(segmentTable, cuatro);
 
-    // Auxiliar para guardar el limite de cada segmento ocupado
-    int limit;
-
-    // Contador de bytes libres en la memoria
-    int segment_counter = 0;
-
     // Tamanio del segmento que quiero guardar
     int total_size = 6;
+
+    printf("Buscando un segmento de tamanio: %d\n", total_size);
     
     // Valida si encontre un segmento libre o no
-    int found_segment = 0;
+    int found_segment = memory_seek(memory, m_size, segmentTable, total_size);
 
-    // Busco espacio libre en la memoria
-    for(int i = 0; i < m_size; i ++) {
-        if (memcmp(memory + i, "\0", 1)) {
-            printf("Direccion ocupada: %d\n", i);
-            limit = get_segment_limit(segmentTable -> elements, i);
-            printf("Final de segmento: %d\n", limit);
-            i = limit;
-            segment_counter = 0;
-        } else {
-            printf("Direccion vacia: %d\n", i);
-            segment_counter ++;
-            if (segment_counter == total_size) {
-                found_segment = 1;
-                printf("Encontre un segmento disponible\n");
-            }
-        }
-    }
-
-    if(!found_segment) {
+    if(found_segment < 0) {
         printf("No encontre ningun segmento libre.. Iniciando compactacion.\n");
-        memory_compaction(memory, m_size, segmentTable -> elements);
 
-        // Busco espacio libre en la memoria
-        for(int i = 0; i < m_size; i ++) {
-            if (memcmp(memory + i, "\0", 1)) {
-                printf("Direccion ocupada: %d\n", i);
-                limit = get_segment_limit(segmentTable -> elements, i);
-                printf("Final de segmento: %d\n", limit);
-                i = limit;
-                segment_counter = 0;
-            } else {
-                printf("Direccion vacia: %d\n", i);
-                segment_counter ++;
-                if (segment_counter == total_size) {
-                    found_segment = 1;
-                    printf("Encontre un segmento disponible\n");
-                }
-            }
-        }
+        memory_compaction(memory, m_size, segmentTable);
+
+        printf("Buscando un segmento de tamanio: %d\n", total_size);
+
+        found_segment = memory_seek(memory, m_size, segmentTable, total_size);
     }
 
     queue_destroy_and_destroy_elements(segmentTable, destroyer);

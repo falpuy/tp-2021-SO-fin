@@ -3,6 +3,8 @@
 #include <unnamed/socket.h>
 #include <unnamed/serialization.h>
 #include <commons/log.h>
+#include <commons/collections/list.h>
+#include <commons/collections/queue.h>
 
 int status = 1;
 int recvCounter = 0;
@@ -21,13 +23,276 @@ int recvCounter = 0;
 //   }
 // }
 
+enum tipo_segmento {
+    PCB,
+    TCB,
+    TASK
+};
+
+typedef struct {
+    uint32_t id;
+    uint32_t type;
+    uint32_t nroSegmento;
+} p_info;
+
+typedef struct {
+    uint32_t nroSegmento;
+    uint32_t baseAddr;
+    uint32_t limit;
+} segment;
+
+uint32_t global_index;
+uint32_t global_segment;
+uint32_t global_type;
+
+void mostrarInfo (void *element) {
+    p_info *info = element;
+    printf("ID: %d\n", info -> id);
+    printf("Type: %d\n", info -> type);
+    printf("Segment: %d\n", info -> nroSegmento);
+}
+
+void mostrarSegemento (void *element) {
+    segment *segmento = element;
+    printf("Start: %d\n", segmento -> baseAddr);
+    printf("End: %d\n", segmento -> limit);
+    printf("Segment: %d\n", segmento -> nroSegmento);
+}
+
+void *find_info_by_id(t_list* self, int id) {
+    p_info *temp;
+	if ((self->elements_count > 0) && (id >= 0)) {
+
+		t_link_element *element = self->head;
+		temp = element -> data;
+
+        while (temp -> id != id) {
+			element = element->next;
+            temp = element -> data;
+		}
+
+		return element -> data;
+	}
+	return NULL;
+}
+
+void *find_segment_by_number(t_list* self, int index) {
+    segment *temp;
+
+	if ((self->elements_count > 0) && (index >= 0)) {
+
+		t_link_element *element = self->head;
+		temp = element -> data;
+
+        while (temp -> nroSegmento != index) {
+			element = element->next;
+            temp = element -> data;
+		}
+
+		return element -> data;
+	}
+	return NULL;
+}
+
+int get_segment_limit(t_list* self, int start) {
+    segment *temp;
+
+	if ((self->elements_count > 0) && (start >= 0)) {
+
+		t_link_element *element = self->head;
+		temp = element -> data;
+
+        while (temp -> baseAddr != start) {
+			element = element->next;
+            temp = element -> data;
+		}
+
+
+		return temp -> limit;
+	}
+	return -1;
+}
+
+void destroyer(void *item) {
+    free(item);
+}
+
+void memory_compaction(void *memory, int mem_size, t_list* segmentTable) {
+    void *aux_memory;
+
+    segment *temp;
+
+	if ((segmentTable -> elements_count > 0) && (mem_size >= 0)) {
+
+		t_link_element *element = segmentTable -> head;
+		temp = element -> data;
+
+        t_link_element *element = segmentTable -> head;
+        t_link_element *aux = NULL;
+        while (element != NULL) {
+            aux = element -> next;
+            closure(element -> data);
+            element = aux;
+        }
+
+
+		return temp -> limit;
+	}
+
+	return -1;
+
+}
+
 int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
 
+    // ---------------- TEST MEMORY SPACE ----------------- //
+
+    // int m_size = 10;
+    // void *memory = malloc(m_size);
+
+    // int temp = 8;
+    // int temp2 = 7;
+
+    // memcpy(memory, &temp, sizeof(int));
+    // // memcpy(memory + 1, &temp2, sizeof(int));
+    
+    // int start = 0;
+    // int end = 0;
+
+    // // Delete space allocated by data in hq memory
+    // // memset(memory + start, '\0', end - start);
+
+    // for(int i = 0; i < m_size; i ++) {
+    //     if (memcmp(memory + i, "\0", 1)) {
+    //         printf("Direccion ocupada: %d\n", i);
+    //     } else {
+    //         printf("Direccion vacia: %d\n", i);
+    //     }
+    // }
+
+    // int otro;
+    // memcpy(&otro, memory, sizeof(int));
+
+    // printf("Traje de memoria: %d", otro);
+
+    int m_size = 30;
+    void *memory = malloc(m_size);
+
+    t_queue *segmentTable = queue_create();
+
+    int temp = 8;
+
+    segment *uno = malloc(sizeof(segment));
+    segment *dos = malloc(sizeof(segment));
+    segment *tres = malloc(sizeof(segment));
+    segment *cuatro = malloc(sizeof(segment));
+
+    uno -> nroSegmento = 2;
+    uno -> baseAddr = 1;
+    uno -> limit = 5;
+
+    dos -> nroSegmento = 3;
+    dos -> baseAddr = 10;
+    dos -> limit = 14;
+
+    tres -> nroSegmento = 5;
+    tres -> baseAddr = 15;
+    tres -> limit = 19;
+
+    cuatro -> nroSegmento = 7;
+    cuatro -> baseAddr = 22;
+    cuatro -> limit = 26;
+
+    memcpy(memory + uno -> baseAddr, &temp, uno -> limit - uno -> baseAddr);
+    temp = 10;
+    memcpy(memory + dos -> baseAddr, &temp, dos -> limit - dos -> baseAddr);
+    temp = 12;
+    memcpy(memory + tres -> baseAddr, &temp, tres -> limit - tres -> baseAddr);
+    temp = 14;
+    memcpy(memory + cuatro -> baseAddr, &temp, cuatro -> limit - cuatro -> baseAddr);
+
+    queue_push(segmentTable, uno);
+    queue_push(segmentTable, dos);
+    queue_push(segmentTable, tres);
+    queue_push(segmentTable, cuatro);
+
+    // Auxiliar para guardar el limite de cada segmento ocupado
+    int limit;
+
+    // Contador de bytes libres en la memoria
+    int segment_counter = 0;
+
+    // Tamanio del segmento que quiero guardar
+    int total_size = 5;
+    
+    // Valida si encontre un segmento libre o no
+    int found_segment = 0;
+
+    // Busco espacio libre en la memoria
+    for(int i = 0; i < m_size; i ++) {
+        if (memcmp(memory + i, "\0", 1)) {
+            printf("Direccion ocupada: %d\n", i);
+            limit = get_segment_limit(segmentTable -> elements, i);
+            printf("Final de segmento: %d\n", limit);
+            i = limit;
+            segment_counter = 0;
+        } else {
+            printf("Direccion vacia: %d\n", i);
+            segment_counter ++;
+            if (segment_counter == total_size) {
+                found_segment = 1;
+                printf("Encontre un segmento disponible\n");
+            }
+        }
+    }
+
+    if(!found_segment) {
+        printf("No encontre ningun segmento libre.. Iniciando compactacion.\n");
+        memory_compaction(memory, m_size, segmentTable -> elements);
+    }
+
+    queue_destroy_and_destroy_elements(segmentTable, destroyer);
+
+    free(memory);
+
+    // ---------------- TEST QUEUES ----------------- //
+
+    // t_queue *listaInfo = queue_create();
+    // t_queue *segmentTable = queue_create();
+
+    // segment *segmento = malloc(sizeof(segment));
+    // segmento -> nroSegmento = 1;
+    // segmento -> baseAddr = 0;
+    // segmento -> limit = 14;
+
+    // p_info *info = malloc(sizeof(p_info));
+    // info -> nroSegmento = 1;
+    // info -> id = 0;
+    // info -> type = PCB;
+
+    // queue_push(listaInfo, info);
+    // queue_push(segmentTable, segmento);
+
+    // list_iterate(listaInfo -> elements, mostrarInfo);
+    // list_iterate(segmentTable -> elements, mostrarSegemento);
+
+    // p_info *infoTest = find_info_by_id(listaInfo -> elements, 0);
+
+    // segment *segmentTest = find_segment_by_number(segmentTable -> elements, infoTest -> nroSegmento);
+
+    // printf("Segmento test: %d\n", segmentTest -> limit);
+
+    // free(info);
+    // free(segmento);
+
+    // queue_destroy(listaInfo);
+    // queue_destroy(segmentTable);
+
 
     // ---------------- TEST ARCHIVOS ----------------- //
-
+/*
 
     FILE * fp;
     char * line = NULL;
@@ -103,7 +368,7 @@ int main() {
     }
 
     free(buffer);
-
+*/
 
     // -------------- TEST SERIALIZACION -------------- //
     

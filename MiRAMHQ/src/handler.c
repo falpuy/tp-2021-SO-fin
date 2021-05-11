@@ -8,13 +8,48 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // Será el encargado de crear la o las estructuras administrativas necesarias para que un tripulante pueda ejecutar.
             // En caso de que no se encuentre creada la patota a la que pertenece, deberá solicitar el listado de tareas.
 
-            // Creo el tripulante
+            // Recibo el id de la patota correspondiente al tripulante
 
-            // Busco la patota en la tabla de segmentos
+            // Si no existe la patota
+                // pido las tareas de la patota X
 
-            // Si existe, devuelvo la primer tarea y actualizo la memoria????
+            // Si existe la patota
 
-            // Si no existe, hago un send para pedir las tareas
+                // Me traigo ese segmento de patota para usar la direccion de las tareas
+                // Busco la primer tarea de la lista correspondiente al pcb del tripulante
+                // Creo el segmento del tripulante
+                // asigno la ubicacion de la siguiente tarea al segmento
+                // Busco espacio libre
+
+                // Si hay espacio
+                    // guardo el segmento
+                    // Agrego el segmento a la lista
+                    // Devuelvo la tarea del tripulante
+
+                    //// Agrego el tcb en el mapa
+                
+                // Si no hay espacio
+                    // Realizo compactacion
+                    // Busco espacio libre
+                    
+                    // Si hay espacio
+                        // guardo el segmento
+                        // Agrego el segmento a la lista
+                        // Devuelvo la tarea del tripulante
+
+                        //// Agrego el tcb en el mapa
+                    
+                    // No hay espacio
+                        // Envio mensaje de Error
+
+            // ------------- Analizar Caso ------------- //
+
+            // verifico si existe el segmento del tripulante
+                // Si existe el tripulante
+                    // Verifico si tiene la direccion a la proxima tarea a ejecutar
+                    // Busco la tarea correspondiente a la direccion (o la primer tarea, si no tiene)
+                    // Actualizo el segmento con la proxima tarea
+                    // Devuelvo la tarea del tripulante
 
         break;
 
@@ -55,6 +90,72 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         break;
         /*
         case RECIBIR_TAREAS_PATOTA:
+
+            // creo el segmento de las tareas asociado al pcb
+            // Busco espacio libre para tareas
+            
+            // si hay espacio
+                // Guardo las tareas en memoria
+
+                --------- PCB ---------
+                // Creo el segmento para el pcb
+                // Asocio la direccion de inicio de las tareas al pcb
+                // Busco espacio para el segmento de pcb
+                
+                // si hay espacio
+                    // Guardo el pcb en memoria
+                    // Agrego el segmento pcb a la lista
+                    // Agrego el segmento tareas a la lista
+                    // Envio mensaje de OK
+                
+                // Si no hay espacio
+                    // Realizo compactacion
+                    // Busco espacio libre
+                    
+                    // Si hay
+                        // Guardo el pcb en memoria
+                        // Agrego el segmento pcb a la lista
+                        // Agrego el segmento tareas a la lista
+                        // Envio mensaje de OK
+                    
+                    // si no hay
+                        // Elimino el segmento de tareas guardado en memoria
+                        // No guardo los segmentos en la lista de segmentos
+                        // Envio mensaje de Error
+
+            
+            // Si no hay espacio
+                // Realizo compactacion
+                // Busco espacio libre
+                
+                // Si hay
+                    // Guardo las tareas en memoria
+
+                    --------- PCB ---------
+                    // Creo el segmento para el pcb
+                    // Asocio la direccion de inicio de las tareas al pcb
+                    // Busco espacio para el segmento de pcb
+                    
+                    // si hay espacio
+                        // Guardo el pcb en memoria
+                        // Agrego el segmento pcb a la lista
+                        // Agrego el segmento tareas a la lista
+                        // Envio mensaje de OK
+                    
+                    // Si no hay espacio
+                        // Elimino el segmento de tareas guardado en memoria
+                        // No guardo los segmentos en la lista de segmentos
+                        // Envio mensaje de Error
+
+                
+                // si no hay
+                    // Elimino el segmento de tareas guardado en memoria
+                    // No guardo los segmentos en la lista de segmentos
+                    // Envio mensaje de Error
+
+
+            // -------------------------------------------------------------------------//
+
             // recibirá el listado de tareas de la patota y los almacenará en la memoria.
 
             // deserializo el payload
@@ -138,8 +239,40 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         break;
         */
         case RECIBIR_UBICACION_TRIPULANTE:
+
+            // Busco el segmento del tcb
+            // Actualizo la ubicacion
+            // Actualizo el tcb en memoria
+            // Actualizo el tcb en la lista de segmentos
+            
+            //// Actualizo el tcb en el mapa
+
+            // Envio mensaje de OK
+
+            break;
         case ENVIAR_PROXIMA_TAREA:
+
+            // Buscar segmento de tcp
+            // Buscar segmento de tareas
+            // Validar si la direccion de la proxima tarea en el tcb es menor al limite del segmento de tareas (si hay mas tareas para hacer)
+            // Si no hay mas tareas
+                // Envio mensaje de error
+            // Si hay tareas
+                // Leo una tarea con el segmento del tcb
+                // Actualizo el tcb en memoria y en la lista de segmentos
+                // Envio proxima tarea
+
+            break;
         case EXPULSAR_TRIPULANTE:
+
+            // Busco el segmento del tcb
+            // Elimino el segmento de memoria
+            // Elimino el segmento de la lista de segmentos
+
+            //// Elimino el tcb del mapa
+
+            // Envio mensaje de OK
+
             break;
         case MENSAJE:
             log_info(logger, "Message: %s", buffer);

@@ -10,7 +10,8 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 
             // Recibo el id de la patota correspondiente al tripulante
 
-            // Busco el segmento/info relacionado a la patota
+            // Busco la tabla de segmentos en el diccionario -> dictionary_has_key()
+
             // Si no existe la patota
                 // pido las tareas de la patota X
 
@@ -92,21 +93,27 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         /*
         case RECIBIR_TAREAS_PATOTA:
 
+            // Recibo ID_PATOTA + LISTA_TAREAS
+            
             // creo el segmento e info de las tareas asociado al pcb
+
             // Busco espacio libre para tareas
             
             // si hay espacio
                 // Guardo las tareas en memoria
+                // Actualizo el segmento de tareas con base | limite
 
                 --------- PCB ---------
                 // Creo el segmento para el pcb
-                // Asocio la direccion de inicio de las tareas al pcb
+                // Asocio la direccion de inicio de las tareas al pcb -> base
                 // Busco espacio para el segmento de pcb
                 
                 // si hay espacio
+
                     // Guardo el pcb en memoria
                     // Agrego el segmento pcb a la lista
                     // Agrego el segmento tareas a la lista
+                    // Agregar la lista de segmentos al diccionario
                     // Envio mensaje de OK
                 
                 // Si no hay espacio
@@ -240,11 +247,18 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         break;
         */
         case RECIBIR_UBICACION_TRIPULANTE:
+            //ID_PATOTA, ID_TCB, POS_X, POS_Y
 
-            // Busco el segmento del tcb
-            // Actualizo la ubicacion
-            // Actualizo el tcb en memoria
-            // Actualizo el tcb en la lista de segmentos
+            // Recibo id tcb
+            // Recibo id patota
+            // Buscar la tabla de segmentos correspondiente al id de patota
+            
+            // t_queue *tabla_temp = get_tabla_pcb(id_pcb)
+
+            // Busco la info del tcb por id, y busco el segmento con el nroSegmento
+            // Me traigo la info de memoria en un struct tcb
+            // actualizo los datos del struct
+            // Reemplazo los datos del tcb en la misma posicion de memoria
             
             //// Actualizo el tcb en el mapa
 

@@ -156,7 +156,7 @@ void memory_compaction(void *memory, int mem_size, t_queue* segmentTable) {
             new_base = offset;
             new_limit = offset + data_size;
 
-            printf("Creando nuevo Segmento.. %d - %d - %d\n", new_number, new_base, new_limit);
+            printf("Creando nuevo Segmento.. %d - %d - %d\n", temp -> nroSegmento, new_base, new_limit);
 
             offset += data_size;
 

@@ -7,6 +7,12 @@
 #include <string.h>
 #include <commons/collections/list.h>
 
+enum tipo_segmento {
+    PCB,
+    TCB,
+    TASK
+};
+
 // type -> tcb | pcb | task
 typedef struct {
     uint32_t id;

@@ -7,6 +7,8 @@
 #include <commons/collections/queue.h>
 #include <commons/collections/dictionary.h>
 #include <commons/string.h>
+#include <commons/error.h>
+#include <commons/memory.h>
 
 int status = 1;
 int recvCounter = 0;
@@ -313,6 +315,78 @@ int get_last_index (t_queue *segmentTable) {
     return -1;
 }
 
+void *find_tcb_segment(int id, char *key, t_dictionary *table) {
+    segment *temp;
+
+    t_queue *self = dictionary_get(table, key);
+
+	if ((self -> elements -> elements_count > 0) && (id >= 0)) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        while (element != NULL) {
+
+            if (temp -> id == id && temp -> type == TCB) {
+                return element -> data;
+            }
+
+			element = element->next;
+            if (element != NULL)
+                temp = element -> data;
+		}
+	}
+	return NULL;
+}
+
+void *find_task_segment(char *key, t_dictionary *table) {
+    segment *temp;
+
+    t_queue *self = dictionary_get(table, key);
+
+	if (self -> elements -> elements_count > 0) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        while (element != NULL) {
+
+            if (temp -> type == TASK) {
+                return element -> data;
+            }
+
+			element = element->next;
+            if (element != NULL)
+                temp = element -> data;
+		}
+	}
+	return NULL;
+}
+
+void *find_pcb_segment(char *key, t_dictionary *table) {
+    segment *temp;
+
+    t_queue *self = dictionary_get(table, key);
+
+	if (self -> elements -> elements_count > 0) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        while (element != NULL) {
+
+            if (temp -> type == PCB) {
+                return element -> data;
+            }
+
+			element = element->next;
+            if (element != NULL)
+                temp = element -> data;
+		}
+	}
+	return NULL;
+}
+
 int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
@@ -349,7 +423,7 @@ int main() {
 
     // ---------------- TEST MEMORY SEEK & MEMORY COMPACTION WITH DICTIONARY ----------------- //
 
-    /*
+    
 
     int m_size = 30;
     void *memory = malloc(m_size);
@@ -416,14 +490,30 @@ int main() {
         found_segment = memory_seek(memory, m_size, table_collection, total_size);
     }
 
+    // char *mem_hexstring(void *source, size_t length);
+    // void mem_hexdump(void *source, size_t length);
+    printf("\nProceso: %d\t\tSegmento: %d\t\tInicio: %p\t\tTam: %db", tres -> id, tres -> nroSegmento, (memory + tres -> baseAddr), tres -> limit - tres -> baseAddr);
+    
+    // printf("\n\n--- Testing mem_hexstring() ---");
+
+    // char *test_hex = mem_hexstring(memory + tres -> baseAddr, tres -> limit - tres -> baseAddr);
+    
+    // printf("\n%s", test_hex);
+
+    // printf("\n\n--- Testing mem_hexdump() ---\n");
+
+    // mem_hexdump(memory + tres -> baseAddr, tres -> limit - tres -> baseAddr);
+
     dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
     // queue_destroy_and_destroy_elements(segmentTable, destroyer);
 
     free(memory);
 
-    */
+    
 
     // ---------------- TEST QUEUES ----------------- //
+
+    /*
 
     // t_queue *listaInfo = queue_create();
     t_queue *segmentTable = queue_create();
@@ -441,6 +531,13 @@ int main() {
     segmento2 -> nroSegmento = 2;
     segmento2 -> baseAddr = 14;
     segmento2 -> limit = 20;
+    
+    segment *segmento3 = malloc(sizeof(segment));
+    segmento3 -> id = 1;
+    segmento3 -> type = TASK;
+    segmento3 -> nroSegmento = 3;
+    segmento3 -> baseAddr = 20;
+    segmento3 -> limit = 32;
 
     // No conviene usar p_info porque los id de TCB se pueden repetir al igual que el nro de segmento
     // En mejor agregar el id al segmento y filtrar por procesos en el diccionario
@@ -458,11 +555,12 @@ int main() {
     // queue_push(listaInfo, info);
     queue_push(segmentTable, segmento);
     queue_push(segmentTable, segmento2);
+    queue_push(segmentTable, segmento3);
 
     t_dictionary *table = dictionary_create();
 
-    char *index = string_new();
-    index = string_itoa(segmento -> id);
+    // char *index = string_new();
+    char *index = string_itoa(segmento -> id);
 
     dictionary_put(table, index, segmentTable);
 
@@ -473,17 +571,28 @@ int main() {
 
     // p_info *infoTest = find_info_by_id(listaInfo -> elements, 0);
 
-    // segment *segmentTest = find_segment_by_number(segmentTable -> elements, infoTest -> nroSegmento);
+    // Parametros -> KEY de la tabla de segmentos en el diccionario (ID PCB), ID del objeto buscado (PCB|TCB), tipo de dato a buscar (PCB|TCB|TASK), diccionario
+    // segment *segmentTest = find_segment_by_id(id_pcb, id_tcb, TCB, table);
+    segment *segmentTCB = find_tcb_segment(1, index, table);
 
-    // printf("Segmento test: %d\n", segmentTest -> limit);
+    segment *segmentTask = find_task_segment(index, table);
 
+    segment *segmentPCB = find_pcb_segment(index, table);
+
+    printf("Segmento PCB: %d\n", segmentPCB -> baseAddr);
+    printf("Segmento TASK: %d\n", segmentTask -> baseAddr);
+    printf("Segmento TCB: %d\n", segmentTCB -> baseAddr);
+
+
+    free(index);
     // free(info);
-    free(segmento);
-    free(segmento2);
+    // free(segmento);
+    // free(segmento2);
 
     // queue_destroy(listaInfo);
     dictionary_destroy_and_destroy_elements(table, table_destroyer);
 
+    */
 
     // ---------------- TEST ARCHIVOS ----------------- //
 /*

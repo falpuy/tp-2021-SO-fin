@@ -248,6 +248,25 @@ int memory_seek(void *memory, int mem_size, t_dictionary *collection, int total_
     return -1;
 }
 
+int get_last_index (t_queue *segmentTable) {
+
+    segment *temp;
+
+    if (segmentTable -> elements -> elements_count > 0) {
+
+		t_link_element *element = segmentTable -> elements -> head;
+
+        while (element != NULL) {
+            temp = element -> data;
+            element = element -> next;
+        }
+
+        return temp -> nroSegmento;
+    }
+
+    return -1;
+}
+
 int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);

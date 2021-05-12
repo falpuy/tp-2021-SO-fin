@@ -31,7 +31,7 @@ void *virtualMemory;
 
 // SEGMENTACION
 int tasks_size;
-t_list *segmentTable;
+t_queue *segmentTable;
 
 t_log *logger;
 t_config * config;

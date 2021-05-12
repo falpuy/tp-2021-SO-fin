@@ -10,6 +10,8 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 
             // Recibo el id de la patota correspondiente al tripulante
 
+            // Busco la tabla de segmentos en el diccionario -> dictionary_has_key()
+
             // Si no existe la patota
                 // pido las tareas de la patota X
 
@@ -91,21 +93,27 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         /*
         case RECIBIR_TAREAS_PATOTA:
 
-            // creo el segmento de las tareas asociado al pcb
+            // Recibo ID_PATOTA + LISTA_TAREAS
+            
+            // creo el segmento e info de las tareas asociado al pcb
+
             // Busco espacio libre para tareas
             
             // si hay espacio
                 // Guardo las tareas en memoria
+                // Actualizo el segmento de tareas con base | limite
 
                 --------- PCB ---------
                 // Creo el segmento para el pcb
-                // Asocio la direccion de inicio de las tareas al pcb
+                // Asocio la direccion de inicio de las tareas al pcb -> base
                 // Busco espacio para el segmento de pcb
                 
                 // si hay espacio
+
                     // Guardo el pcb en memoria
                     // Agrego el segmento pcb a la lista
                     // Agrego el segmento tareas a la lista
+                    // Agregar la lista de segmentos al diccionario
                     // Envio mensaje de OK
                 
                 // Si no hay espacio
@@ -154,7 +162,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                     // Envio mensaje de Error
 
 
-            // -------------------------------------------------------------------------//
+            // ------------------------------------ IGNORE -------------------------------------//
 
             // recibirá el listado de tareas de la patota y los almacenará en la memoria.
 
@@ -239,11 +247,18 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         break;
         */
         case RECIBIR_UBICACION_TRIPULANTE:
+            //ID_PATOTA, ID_TCB, POS_X, POS_Y
 
-            // Busco el segmento del tcb
-            // Actualizo la ubicacion
-            // Actualizo el tcb en memoria
-            // Actualizo el tcb en la lista de segmentos
+            // Recibo id tcb
+            // Recibo id patota
+            // Buscar la tabla de segmentos correspondiente al id de patota
+            
+            // t_queue *tabla_temp = get_tabla_pcb(id_pcb)
+
+            // Busco la info del tcb por id, y busco el segmento con el nroSegmento
+            // Me traigo la info de memoria en un struct tcb
+            // actualizo los datos del struct
+            // Reemplazo los datos del tcb en la misma posicion de memoria
             
             //// Actualizo el tcb en el mapa
 
@@ -252,14 +267,14 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             break;
         case ENVIAR_PROXIMA_TAREA:
 
-            // Buscar segmento de tcp
+            // Buscar segmento de tcb
             // Buscar segmento de tareas
             // Validar si la direccion de la proxima tarea en el tcb es menor al limite del segmento de tareas (si hay mas tareas para hacer)
             // Si no hay mas tareas
                 // Envio mensaje de error
             // Si hay tareas
                 // Leo una tarea con el segmento del tcb
-                // Actualizo el tcb en memoria y en la lista de segmentos
+                // Actualizo el tcb en memoria
                 // Envio proxima tarea
 
             break;
@@ -267,7 +282,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 
             // Busco el segmento del tcb
             // Elimino el segmento de memoria
-            // Elimino el segmento de la lista de segmentos
+            // Elimino el segmento de la lista de segmentos y de info
 
             //// Elimino el tcb del mapa
 

@@ -5,6 +5,7 @@
 #include <commons/log.h>
 #include <commons/collections/list.h>
 #include <commons/collections/queue.h>
+#include <commons/collections/dictionary.h>
 
 int status = 1;
 int recvCounter = 0;
@@ -96,34 +97,64 @@ void *find_segment_by_number(t_list* self, int index) {
 	return NULL;
 }
 
-int get_segment_limit(t_list* self, int start) {
+int get_segment_limit(t_dictionary* self, int start) {
+
     segment *temp;
 
-	if ((self->elements_count > 0) && (start >= 0)) {
+    t_queue *aux;
 
-		t_link_element *element = self->head;
-		temp = element -> data;
+    // Recorro el diccionario
+    int table_index;
 
-        while (temp -> baseAddr != start) {
-			element = element->next;
-            if (element != NULL)
+	for (table_index = 0; table_index < self->table_max_size; table_index++) {
+		t_hash_element *element = self->elements[table_index];
+		t_hash_element *next_element = NULL;
+
+		while (element != NULL) {
+
+			next_element = element->next;
+
+            aux = element -> data;
+
+            if ((aux -> elements -> elements_count > 0) && (start >= 0)) {
+
+                t_link_element *element = aux -> elements -> head;
                 temp = element -> data;
+
+                while (temp -> baseAddr != start && element != NULL) {
+
+                    element = element->next;
+                    if (element != NULL)
+                        temp = element -> data;
+                }
+
+                if (temp -> baseAddr == start)
+                    return temp -> limit;
+            }
+
+			element = next_element;
 		}
-
-
-		return temp -> limit;
 	}
-	return -1;
+
+    return -1;
 }
 
 void destroyer(void *item) {
     free(item);
 }
 
-void memory_compaction(void *memory, int mem_size, t_queue* segmentTable) {
-    void *aux_memory;
+void table_destroyer(void *item) {
+
+    queue_destroy_and_destroy_elements(item, destroyer);
+
+}
+
+void memory_compaction(void *memory, int mem_size, t_dictionary* self) {
+    void *aux_memory = malloc(mem_size);
 
     segment *temp;
+
+    t_queue *aux;
 
     int data_size;
 
@@ -131,52 +162,65 @@ void memory_compaction(void *memory, int mem_size, t_queue* segmentTable) {
 
     int segment_id = 0;
 
-    int new_number;
     int new_base;
     int new_limit;
 
-	if ((segmentTable -> elements -> elements_count > 0) && (mem_size >= 0)) {
+    int table_index;
 
-		t_link_element *element = segmentTable -> elements -> head;
-		temp = element -> data;
+	for (table_index = 0; table_index < self->table_max_size; table_index++) {
+		t_hash_element *element = self->elements[table_index];
+		t_hash_element *next_element = NULL;
 
-        aux_memory = malloc(mem_size);
+		while (element != NULL) {
 
-        while (element != NULL) {
+			next_element = element->next;
 
-            data_size = temp -> limit - temp ->baseAddr;
+            aux = element -> data;
 
-            printf("Copiando elementos.. %d - %d - %d\n", temp -> nroSegmento, temp -> baseAddr, temp -> limit);
-            
-            // Copio los datos del segmento en la memoria auxiliar
-            memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+            if ((aux -> elements -> elements_count > 0) && (mem_size >= 0)) {
 
-            new_number = segment_id++;
-            new_base = offset;
-            new_limit = offset + data_size;
-
-            printf("Creando nuevo Segmento.. %d - %d - %d\n", new_number, new_base, new_limit);
-
-            offset += data_size;
-
-            temp -> nroSegmento = new_number;
-            temp -> baseAddr = new_base;
-            temp -> limit = new_limit;
-
-            element = element -> next;
-            if (element != NULL)
+                t_link_element *element = aux -> elements -> head;
                 temp = element -> data;
-            
+
+                while (element != NULL) {
+
+                    data_size = temp -> limit - temp ->baseAddr;
+
+                    printf("Copiando elementos.. %d - %d - %d\n", temp -> nroSegmento, temp -> baseAddr, temp -> limit);
+                    
+                    // Copio los datos del segmento en la memoria auxiliar
+                    memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+
+                    new_base = offset;
+                    new_limit = offset + data_size;
+
+                    printf("Creando nuevo Segmento.. %d - %d - %d\n", temp -> nroSegmento, new_base, new_limit);
+
+                    offset += data_size;
+
+                    temp -> baseAddr = new_base;
+                    temp -> limit = new_limit;
+
+                    element = element->next;
+                    if (element != NULL)
+                        temp = element -> data;
+                    
+                }
+            }
+            element = next_element;
         }
 
+	}
+
+    if (!dictionary_is_empty(self)) {
         memset(memory, 0, mem_size);
         memcpy(memory, aux_memory, mem_size);
+    }
 
-        free(aux_memory);
-	}
+    free(aux_memory);
 }
 
-int memory_seek(void *memory, int mem_size, t_queue *segmentTable, int total_size) {
+int memory_seek(void *memory, int mem_size, t_dictionary *collection, int total_size) {
     // Auxiliar para guardar el limite de cada segmento ocupado
     int limit;
 
@@ -187,7 +231,7 @@ int memory_seek(void *memory, int mem_size, t_queue *segmentTable, int total_siz
     for(int i = 0; i < mem_size; i ++) {
         if (memcmp(memory + i, "\0", 1)) {
             printf("Direccion ocupada: %d\n", i);
-            limit = get_segment_limit(segmentTable -> elements, i);
+            limit = get_segment_limit(collection, i);
             if (limit < 0) return -1;
             printf("Final de segmento: %d\n", limit);
             i = limit - 1;
@@ -241,7 +285,10 @@ int main() {
     int m_size = 30;
     void *memory = malloc(m_size);
 
-    t_queue *segmentTable = queue_create();
+    t_queue *segmentTable1 = queue_create();
+    t_queue *segmentTable2 = queue_create();
+
+    t_dictionary *table_collection = dictionary_create();
 
     int temp = 8;
 
@@ -274,10 +321,13 @@ int main() {
     temp = 14;
     memcpy(memory + cuatro -> baseAddr, &temp, cuatro -> limit - cuatro -> baseAddr);
 
-    queue_push(segmentTable, uno);
-    queue_push(segmentTable, dos);
-    queue_push(segmentTable, tres);
-    queue_push(segmentTable, cuatro);
+    queue_push(segmentTable1, uno);
+    queue_push(segmentTable1, dos);
+    queue_push(segmentTable2, tres);
+    queue_push(segmentTable2, cuatro);
+
+    dictionary_put(table_collection, "1", segmentTable1);
+    dictionary_put(table_collection, "2", segmentTable2);
 
     // Tamanio del segmento que quiero guardar
     int total_size = 6;
@@ -285,19 +335,20 @@ int main() {
     printf("Buscando un segmento de tamanio: %d\n", total_size);
     
     // Valida si encontre un segmento libre o no
-    int found_segment = memory_seek(memory, m_size, segmentTable, total_size);
+    int found_segment = memory_seek(memory, m_size, table_collection, total_size);
 
     if(found_segment < 0) {
         printf("No encontre ningun segmento libre.. Iniciando compactacion.\n");
 
-        memory_compaction(memory, m_size, segmentTable);
+        memory_compaction(memory, m_size, table_collection);
 
         printf("Buscando un segmento de tamanio: %d\n", total_size);
 
-        found_segment = memory_seek(memory, m_size, segmentTable, total_size);
+        found_segment = memory_seek(memory, m_size, table_collection, total_size);
     }
 
-    queue_destroy_and_destroy_elements(segmentTable, destroyer);
+    dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
+    // queue_destroy_and_destroy_elements(segmentTable, destroyer);
 
     free(memory);
 

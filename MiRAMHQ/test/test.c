@@ -80,7 +80,7 @@ void mostrarSegemento (void *element) {
     printf("Type: %s\n", get_segment_type(segmento -> type));
     printf("Start: %d\n", segmento -> baseAddr);
     printf("End: %d\n", segmento -> limit);
-    printf("Segment: %d\n", segmento -> nroSegmento);
+    printf("Segment: %d\n\n", segmento -> nroSegmento);
 }
 
 void show_dictionary(t_dictionary *self) {
@@ -93,6 +93,9 @@ void show_dictionary(t_dictionary *self) {
 	for (table_index = 0; table_index < self->table_max_size; table_index++) {
 		t_hash_element *element = self->elements[table_index];
 		t_hash_element *next_element = NULL;
+
+        if (element != NULL)
+            printf("\nKEY: %s\n\n", element -> key);
 
 		while (element != NULL) {
 
@@ -471,6 +474,12 @@ int main() {
 
     dictionary_put(table_collection, "1", segmentTable1);
     dictionary_put(table_collection, "2", segmentTable2);
+
+    printf("\n------- Printing Dictionary -------\n");
+
+    show_dictionary(table_collection);
+    
+    printf("\n------- ------------------- -------\n");
 
     // Tamanio del segmento que quiero guardar
     int total_size = 6;

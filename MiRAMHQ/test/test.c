@@ -6,6 +6,7 @@
 #include <commons/collections/list.h>
 #include <commons/collections/queue.h>
 #include <commons/collections/dictionary.h>
+#include <commons/string.h>
 
 int status = 1;
 int recvCounter = 0;
@@ -37,6 +38,8 @@ typedef struct {
 } p_info;
 
 typedef struct {
+    uint32_t id;
+    uint32_t type;
     uint32_t nroSegmento;
     uint32_t baseAddr;
     uint32_t limit;
@@ -53,11 +56,54 @@ void mostrarInfo (void *element) {
     printf("Segment: %d\n", info -> nroSegmento);
 }
 
+char *get_segment_type(uint32_t segment_type) {
+    switch(segment_type) {
+        case PCB:
+            return "PCB";
+        break;
+        case TCB:
+            return "TCB";
+        break;
+        case TASK:
+            return "TASK";
+        break;
+    }
+
+    return "N/A";
+}
+
 void mostrarSegemento (void *element) {
     segment *segmento = element;
+    printf("ID: %d\n", segmento -> id);
+    printf("Type: %s\n", get_segment_type(segmento -> type));
     printf("Start: %d\n", segmento -> baseAddr);
     printf("End: %d\n", segmento -> limit);
     printf("Segment: %d\n", segmento -> nroSegmento);
+}
+
+void show_dictionary(t_dictionary *self) {
+
+    t_queue *aux;
+
+    // Recorro el diccionario
+    int table_index;
+
+	for (table_index = 0; table_index < self->table_max_size; table_index++) {
+		t_hash_element *element = self->elements[table_index];
+		t_hash_element *next_element = NULL;
+
+		while (element != NULL) {
+
+			next_element = element->next;
+
+            aux = element -> data;
+
+            list_iterate(aux -> elements, mostrarSegemento);
+
+			element = next_element;
+		}
+	}
+
 }
 
 void *find_info_by_id(t_list* self, int id) {
@@ -301,6 +347,10 @@ int main() {
 
     // printf("Traje de memoria: %d", otro);
 
+    // ---------------- TEST MEMORY SEEK & MEMORY COMPACTION WITH DICTIONARY ----------------- //
+
+    /*
+
     int m_size = 30;
     void *memory = malloc(m_size);
 
@@ -371,26 +421,55 @@ int main() {
 
     free(memory);
 
+    */
+
     // ---------------- TEST QUEUES ----------------- //
 
     // t_queue *listaInfo = queue_create();
-    // t_queue *segmentTable = queue_create();
+    t_queue *segmentTable = queue_create();
 
-    // segment *segmento = malloc(sizeof(segment));
-    // segmento -> nroSegmento = 1;
-    // segmento -> baseAddr = 0;
-    // segmento -> limit = 14;
+    segment *segmento = malloc(sizeof(segment));
+    segmento -> id = 1;
+    segmento -> type = PCB;
+    segmento -> nroSegmento = 1;
+    segmento -> baseAddr = 0;
+    segmento -> limit = 14;
+    
+    segment *segmento2 = malloc(sizeof(segment));
+    segmento2 -> id = 1;
+    segmento2 -> type = TCB;
+    segmento2 -> nroSegmento = 2;
+    segmento2 -> baseAddr = 14;
+    segmento2 -> limit = 20;
+
+    // No conviene usar p_info porque los id de TCB se pueden repetir al igual que el nro de segmento
+    // En mejor agregar el id al segmento y filtrar por procesos en el diccionario
 
     // p_info *info = malloc(sizeof(p_info));
     // info -> nroSegmento = 1;
-    // info -> id = 0;
+    // info -> id = 10;
     // info -> type = PCB;
 
+    // p_info *info = malloc(sizeof(p_info));
+    // info -> nroSegmento = 8;
+    // info -> id = 1;
+    // info -> type = TCB;
+
     // queue_push(listaInfo, info);
-    // queue_push(segmentTable, segmento);
+    queue_push(segmentTable, segmento);
+    queue_push(segmentTable, segmento2);
+
+    t_dictionary *table = dictionary_create();
+
+    char *index = string_new();
+    index = string_itoa(segmento -> id);
+
+    dictionary_put(table, index, segmentTable);
 
     // list_iterate(listaInfo -> elements, mostrarInfo);
     // list_iterate(segmentTable -> elements, mostrarSegemento);
+
+    show_dictionary(table);
 
     // p_info *infoTest = find_info_by_id(listaInfo -> elements, 0);
 
@@ -399,10 +478,11 @@ int main() {
     // printf("Segmento test: %d\n", segmentTest -> limit);
 
     // free(info);
-    // free(segmento);
+    free(segmento);
+    free(segmento2);
 
     // queue_destroy(listaInfo);
-    // queue_destroy(segmentTable);
+    dictionary_destroy_and_destroy_elements(table, table_destroyer);
 
 
     // ---------------- TEST ARCHIVOS ----------------- //

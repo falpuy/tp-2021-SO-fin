@@ -9,6 +9,7 @@
 #include <commons/string.h>
 #include <commons/error.h>
 #include <commons/memory.h>
+#include<ctype.h>
 
 int status = 1;
 int recvCounter = 0;
@@ -390,6 +391,48 @@ void *find_pcb_segment(char *key, t_dictionary *table) {
 	return NULL;
 }
 
+char get_char_value(void *buffer, int index) {
+
+    char temp;
+
+    memcpy(&temp, buffer + index, 1);
+
+    return temp;
+}
+
+void *get_next_task(void *memory, int start_address, int limit_address) {
+
+    // printf("Values - Start: %d - End: %d\n", start_address, limit_address);
+
+    void *aux_tareas = malloc(limit_address - start_address + 1);
+    memcpy(aux_tareas, memory + start_address, limit_address - start_address);
+    memset(aux_tareas + limit_address, '\0', 1);
+
+    // printf("Lista: %s\n", aux_tareas);
+
+    int counter = 0;
+    
+    // Get one byte of the memory as a CHAR
+    // char test_c = get_char_value(aux_tareas, counter);
+
+    while (memcmp(aux_tareas + counter, ";", 1) && aux_tareas + counter != NULL && counter < limit_address) {
+        // printf("CHAR: %c\n", get_char_value(aux_tareas, counter));
+        counter++;
+    }
+    while (!isalpha(get_char_value(aux_tareas, counter)) && aux_tareas + counter != NULL && counter < limit_address){
+        // printf("CHAR: %c\n", get_char_value(aux_tareas, counter));
+        counter++;
+    }
+
+    void *recv_task = malloc(counter + 1);
+    memcpy(recv_task, aux_tareas, counter);
+    memset(recv_task + counter, '\0', 1);
+
+    free(aux_tareas);
+
+    return recv_task;
+}
+
 int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
@@ -426,7 +469,7 @@ int main() {
 
     // ---------------- TEST MEMORY SEEK & MEMORY COMPACTION WITH DICTIONARY ----------------- //
 
-    
+    /*
 
     int m_size = 30;
     void *memory = malloc(m_size);
@@ -443,33 +486,47 @@ int main() {
     segment *tres = malloc(sizeof(segment));
     segment *cuatro = malloc(sizeof(segment));
 
-    uno -> nroSegmento = 2;
+    uno -> nroSegmento = get_last_index (segmentTable1) + 1;
     uno -> baseAddr = 1;
     uno -> limit = 5;
-
-    dos -> nroSegmento = 3;
-    dos -> baseAddr = 10;
-    dos -> limit = 14;
-
-    tres -> nroSegmento = 5;
-    tres -> baseAddr = 15;
-    tres -> limit = 19;
-
-    cuatro -> nroSegmento = 7;
-    cuatro -> baseAddr = 22;
-    cuatro -> limit = 26;
+    uno -> id = 1;
+    uno -> type = PCB;
 
     memcpy(memory + uno -> baseAddr, &temp, uno -> limit - uno -> baseAddr);
+
+    queue_push(segmentTable1, uno);
+
+    dos -> nroSegmento = get_last_index (segmentTable1) + 1;
+    dos -> baseAddr = 10;
+    dos -> limit = 14;
+    dos -> id = 1;
+    dos -> type = TCB;
+
     temp = 10;
     memcpy(memory + dos -> baseAddr, &temp, dos -> limit - dos -> baseAddr);
+
+    queue_push(segmentTable1, dos);
+
+    tres -> nroSegmento = get_last_index (segmentTable2) + 1;
+    tres -> baseAddr = 15;
+    tres -> limit = 19;
+    tres -> id = 2;
+    tres -> type = PCB;
+
     temp = 12;
     memcpy(memory + tres -> baseAddr, &temp, tres -> limit - tres -> baseAddr);
+
+    queue_push(segmentTable2, tres);
+
+    cuatro -> nroSegmento = get_last_index (segmentTable2) + 1;
+    cuatro -> baseAddr = 22;
+    cuatro -> limit = 26;
+    cuatro -> id = 1;
+    cuatro -> type = TASK;
+    
     temp = 14;
     memcpy(memory + cuatro -> baseAddr, &temp, cuatro -> limit - cuatro -> baseAddr);
 
-    queue_push(segmentTable1, uno);
-    queue_push(segmentTable1, dos);
-    queue_push(segmentTable2, tres);
     queue_push(segmentTable2, cuatro);
 
     dictionary_put(table_collection, "1", segmentTable1);
@@ -518,7 +575,7 @@ int main() {
 
     free(memory);
 
-    
+    */
 
     // ---------------- TEST QUEUES ----------------- //
 
@@ -604,18 +661,25 @@ int main() {
     */
 
     // ---------------- TEST ARCHIVOS ----------------- //
-/*
+
 
     FILE * fp;
     char * line = NULL;
     size_t len = 0;
     ssize_t read;
 
-    void *buffer;
     int b_size = 0;
     int offset = 0;
     int new_size;
     void *temp;
+
+    void *buffer = malloc(sizeof(int));
+
+    int id_pcb = 21;
+
+    memcpy(buffer + offset, &id_pcb, sizeof(int));
+    offset += sizeof(int);
+    b_size += sizeof(int);
 
     fp = fopen("./tareas.txt", "r");
     if (fp == NULL)
@@ -634,15 +698,15 @@ int main() {
         
         temp = _serialize(new_size, "%s", line);
 
-        if (!b_size) {
+        // if (!b_size) {
 
-            b_size = new_size;
-            buffer = malloc(b_size);
-        } else {
+        //     b_size = new_size;
+        //     buffer = malloc(b_size);
+        // } else {
 
-            b_size += new_size;
-            buffer = realloc(buffer, b_size);
-        }
+        b_size += new_size;
+        buffer = realloc(buffer, b_size);
+        // }
         
         memcpy(buffer + offset, temp, new_size);
         offset += new_size;
@@ -664,6 +728,15 @@ int main() {
     int off = 0;
     int i = 0;
 
+    int test_id;
+
+    char *lista_tareas = string_new();
+
+    memcpy(&test_id, buffer + off, sizeof(int));
+    off += sizeof(int);
+
+    log_info(logger, "ID PCB: %d", test_id);
+
     while (off < offset) {
 
         memcpy(&size_tarea, buffer + off, sizeof(int));
@@ -675,12 +748,37 @@ int main() {
         tarea[size_tarea] = '\0';
 
         log_info(logger, "Tarea %d - len %d: %s", i++, size_tarea, tarea);
+
+        string_append(&lista_tareas, tarea);
+
         free(tarea);
 
     }
 
     free(buffer);
-*/
+
+    log_info(logger, "Lista final en memoria: %s", lista_tareas);
+
+    // -------- Recorrer las tareas en memoria
+
+    // GENERAR_OXIGENO 12;3;2;5CONSUMIR_OXIGENO 120;2;3;1GENERAR_COMIDA 4;2;3;1CONSUMIR_COMIDA 1;2;3;4GENERAR_BASURA 12;2;3;5DESCARTAR_BASURA 10;3;1;7
+    int start_task = 0;
+    char *recv_task = get_next_task(lista_tareas, start_task, strlen(lista_tareas));
+
+    log_info(logger, "Tarea: %s - Size: %d", recv_task, strlen(recv_task));
+    
+    // free(recv_task);
+
+    start_task = strlen(recv_task);
+     free(recv_task);
+    recv_task = get_next_task(lista_tareas, start_task, strlen(lista_tareas));
+
+    log_info(logger, "Tarea: %s - Size: %d", recv_task, strlen(recv_task));
+    
+    free(recv_task);
+
+    free(lista_tareas);
+
 
     // -------------- TEST SERIALIZACION -------------- //
     

@@ -698,15 +698,8 @@ int main() {
         
         temp = _serialize(new_size, "%s", line);
 
-        // if (!b_size) {
-
-        //     b_size = new_size;
-        //     buffer = malloc(b_size);
-        // } else {
-
         b_size += new_size;
         buffer = realloc(buffer, b_size);
-        // }
         
         memcpy(buffer + offset, temp, new_size);
         offset += new_size;

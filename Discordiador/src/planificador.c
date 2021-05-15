@@ -6,50 +6,74 @@
 // crear hilo
 
 void funcionPlanificador(t_log* logger) {
-    // cola de estados (queue)
-    //Poner en el main.h como globales las colas 
-    t_queue* NEW; //main.h
     NEW = queue_create();
-    t_queue* READY;
     READY = queue_create();
-    t_queue* EXEC;
     EXEC = queue_create();
-    t_queue* BLOQ_IO;
     BLOQ_IO = queue_create();
-    t_queue* BLOQ_EMER;
     BLOQ_EMER = queue_create();
-    t_queue* EXIT;
     EXIT = queue_create();
-
-    // nuestra lista de PCB y TCB
-    
-    t_list* listaPCB;
-
-    typedef struct
-    {
-	int TID = 0; //Identificador del Tripulante
-    char* status; //Estado del Tripulante
-    int posicionX = 0; // Posición del tripulante en el Eje X
-    int posicionY = 0; // Posición del tripulante en el Eje Y
-    char* instruccion_actual; // Nombre de la tarea que estamos ejecutando
-    }TCB;
-
-    typedef struct
-    {
-	int PID = 0; //Identificador de la Patota
-    char* bufferTarea; //Buffer con las tareas de la patota -> el que le mandamos a RAM
-    t_list* listaTCB;
-    }PCB;
 
     listaPCB = list_create();
 }
 
-TCB* crear_TCB(int posX, int posY, int id, char* tarea)
+void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger) {
+    FILE * fp;
+    char * line = NULL;
+    size_t len = 0;
+    ssize_t read;
+
+    int b_size = 0;
+    int offset = 0;
+    int new_size;
+    void *temp;
+
+    void *buffer = malloc(sizeof(int));
+
+    memcpy(buffer + offset, &id_pcb, sizeof(int));
+    offset += sizeof(int);
+    b_size += sizeof(int);
+
+    fp = fopen(ruta_archivo, "r");
+    if (fp == NULL)
+        exit(EXIT_FAILURE);
+
+    while ((read = getline(&line, &len, fp)) != -1) {
+
+        // printf("Length: %d - String: %s", read, line);
+
+        if (line[ read - 1 ] == '\n') {
+            read--;
+            memset(line + read, 0, 1);
+        }
+
+        new_size = sizeof(int) + read;
+        
+        temp = _serialize(new_size, "%s", line);
+
+        b_size += new_size;
+        buffer = realloc(buffer, b_size);
+        
+        memcpy(buffer + offset, temp, new_size);
+        offset += new_size;
+
+        free(temp);
+    }
+
+    fclose(fp);
+    if (line)
+        free(line);
+
+    _send_message(conexion_RAM, "DIS", 510, buffer, offset, logger);
+
+    free(buffer);
+}
+
+TCB* crear_TCB(int idP, int posX, int posY, int idT, char* tarea)
 {
     TCB* nuevoTCB = malloc (sizeof(TCB));
-	nuevoTCB -> TID = id;
-    nuevoTCB -> status = malloc (strlen("BLOCK_EMER") + 1); //BLOCK_EMER es el estado con el nombre largo en cuanto a caracteres
-	strcpy(nuevoTCB -> status, "NEW");
+	nuevoTCB -> TID = idT;
+    nuevoTCB -> PID = idP;
+    nuevoTCB -> status = 'N';
     nuevoTCB -> posicionX = posX;
     nuevoTCB -> posicionY = posY;
     nuevoTCB -> instruccion_actual = malloc (strlen(tarea) + 1);
@@ -57,20 +81,22 @@ TCB* crear_TCB(int posX, int posY, int id, char* tarea)
     return nuevoTCB;
 }
 
-PCB* crear_PCB(char* buffer_tareas, char** parametros, &int contadorPCBs)
+PCB* crear_PCB(char** parametros, &int contadorPCBs, int conexion_RAM, int conexion_IMS)
 {                        
     int cant_tripulantes = parametros[1];
     contadorPCBs++;
     PCB* nuevoPCB = malloc(sizeof(PCB));
     nuevoPCB -> PID = contadorPCBs;
     nuevoPCB -> listaTCB = list_create();
+    nuevoPCB -> rutaTareas = malloc (strlen(parametros[2]) + 1);
+    strcpy(nuevoPCB -> rutaTareas, parametros[2]);
     int posX = 0;
     int posY = 0;
     bool hayParametros = true;
     for(int i = 1; i<=cant_tripulantes; i++)
     {
         if (hayParametros) {
-            if (strcmp(parametros[2+i], NULL) == 0) {//Si no exite ese elemento/índice del vector, las posiciones son 0|0
+            if (strcmp(parametros[2s+i], NULL) == 0) {//Si no exite ese elemento/índice del vector, las posiciones son 0|0
                     hayParametros = false;
             }
             else {
@@ -79,11 +105,37 @@ PCB* crear_PCB(char* buffer_tareas, char** parametros, &int contadorPCBs)
                 posY = atoi(posicion[1]);
             }
         }
-    int TID = (nuevoPCB -> PID) * 100 + i;
-    //send y recv a memoria 
-    nuevoTCB = crear_TCB(posX, posY, TID, /*tarea*/);
-    list_add (nuevoPCB -> listaTCB, (void*) nuevoTCB);
-    queue_push (NEW, nuevoTCB);
+        int TID = (nuevoPCB -> PID) * 100 + i;
+        
+        int tamanioBuffer;
+        void* buffer;
+        t_mensaje *mensajeRecibido;
+        tamanioBuffer = sizeof(int)*4 + sizeof(char);
+        buffer = _serialize(tamanioBuffer, "%d","%d","%d","%d","%c", contadorPCBs, TID, posX, posY, 'N');
+        _send_message(conexion_RAM, "DIS", 500, buffer, tamanioBuffer, logger);
+        mensajeRecibido = _receive_message(conexion_RAM, logger);
+        int comando = mensajeRecibido -> command;
+        char* temp_tarea;
+
+        if (comando == 200) {
+            temp_tarea = malloc (strlen(mensajeRecibido -> payload) + 1);
+            strcpy(temp_tarea, mensajeRecibido -> payload);}
+        else if (comando == 201) {
+            send_tareas(contadorPCBs, parametros[2]);
+            //recv!
+            _send_message(conexion_RAM, "DIS", 500, buffer, tamanioBuffer, logger);
+            mensajeRecibido = _receive_message(conexion_RAM, logger);
+            temp_tarea = malloc (strlen(mensajeRecibido -> payload) + 1);
+            strcpy(temp_tarea, mensajeRecibido -> payload);}
+        else if (comando == 202) {
+            log_info(logger, "No hay suficiente memoria para iniciar otro tripulante");
+            break;}
+
+        TCB* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, TID, temp_tarea);
+        list_add (nuevoPCB -> listaTCB, (void*) nuevoTCB);
+        queue_push (NEW, nuevoTCB);
+        free(buffer);
+        free(temp_tarea);
     }
     return nuevoPCB;
 }

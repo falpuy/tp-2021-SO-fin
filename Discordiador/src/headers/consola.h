@@ -13,6 +13,8 @@
     #include<unnamed/socket.h>
 
     #define LARGO 7 //es lo mismo que const int largo = 7
+    void mostrarTripulante(TCB* tripulante, t_log* logger);
+    void mostrarListaTripulantes(t_list* patotas, t_log* logger);
     void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS);
 
 #endif

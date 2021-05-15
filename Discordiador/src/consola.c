@@ -1,6 +1,36 @@
 #include "headers/consola.h"
+#include "headers/planificador.h"
 
 // crear hilo
+
+void mostrarTripulante(TCB* tripulante, t_log* logger){
+    log_info(logger, "Tripulante: %d\t", tripulante -> TID);
+    log_info(logger, "Patota: %d\t", tripulante -> PID);
+    switch(tripulante -> status){
+        case 'N':
+            log_info(logger, "Status: NEW\n");
+            break;
+        case 'R':
+            log_info(logger, "Status: READY\n");
+            break;
+        case 'E':
+            log_info(logger, "Status: EXEC\n");
+            break;
+        case 'I':
+            log_info(logger, "Status: BLOQ IO\n");
+            break;
+        case 'M':
+            log_info(logger, "Status: BLOQ EMERGENCIA\n");
+            break;
+        case 'X':
+            log_info(logger, "Status: EXIT\n");
+            break;
+    }
+}
+
+void mostrarListaTripulantes(t_list* patotas, t_log* logger){
+    list_iterate(patotas -> listaTCB, mostrarTripulante);
+}
 
 void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
     int validador = 1;
@@ -28,8 +58,15 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
 
             switch (instruccion_consola) {
                 case 0: //INICIAR_PLANIFICACION
-                log_info(logger, "ENTRO INICIAR PLANI");
-                // si hay nodos en new, los pasa a ready 
+                    log_info(logger, "ENTRO INICIAR PLANI");
+                    while (NEW != NULL) // si hay nodos en new, los pasa a ready
+                    {
+                        TCB* aux_TCB = malloc (sizeof(TCB));
+                        aux_TCB = queue_peek(NEW);
+                        queue_pop(NEW);
+                        queue_push(READY, aux_TCB);
+                        free(aux_TCB);
+                    }
                     break;
 
                 case 1: //PAUSAR_PLANIFICACION
@@ -41,28 +78,13 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                     break;
 
                 case 2: //INICIAR_PATOTA
-                    // Ej: INICIAR_PATOTA 5 /home/utnso/tareas/tareasPatota5.txt 1|1 3|4 1|1 3|4 1|1 
-                    //abrir y copiar en una lista o buffer parametros[2]
                     log_info(logger, "ENTRO INICIAR PATO");
-                    tamanioBuffer = sizeof(int);
-                    buffer = _serialize(tamanioBuffer, "%d", parametros[1]);
-                    
-                    FILE* archivo_tareas;
-                    char* ruta_tareas = malloc (strlen(parametros[2])+1);
-                    strcpy (ruta_tareas, parametros[2]);
-                    archivo_tareas = fopen(ruta_tareas, "r");
-                    // primero separar por \n -> luego por ; -> finalmente por espacios (en el primer miembro, el de la funcion)
-                    //TAREA PARAMETRO1 PARAMETRO2 PARAMETRO3;POS X;POS Y;TIEMPO
-                    //contenido adentro del string, COMO no se
 
-                    // Cerrar archivo
-                    _send_message(conexion_RAM, "DIS", 710, buffer, tamanioBuffer, logger);
-
-                    PCB* nuevoPCB = crear_PCB (/*tareas*/, parametros, contadorPCBs);
+                    PCB* nuevoPCB = crear_PCB (parametros, contadorPCBs, conexion_RAM, conexion_IMS);
                     list_add (listaPCB, (void*) nuevoPCB);
                     
-                // crear pcb, agregarlo a nuestra lista de control, avisarle/mandarselo a Mi-RAM HQ
-                // crear hilos/tripulantes, crear un TCB por hilo, enviar este TCB a NEW, agregar el TCB a nuestra lista de control
+                //avisarle/mandarle PCB a Mi-RAM HQ
+                // crear hilos
                     break;
 
                 case 3: //LISTAR_TRIPULANTES
@@ -71,11 +93,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                     char* hora_y_fecha_actual;
                     hora_y_fecha_actual = temporal_get_string_time("%d/%m/%y %H:%M:%S");
                     log_info(logger, "Estado de la Nave: %s", hora_y_fecha_actual);
-                    while (/*lista de tripulantes no vacía*/) {
-                    log_info(logger, "Tripulante: %d", /*id del nodo*/);
-                    log_info(logger, "Patota: %d", /*patota del nodo*/);
-                    log_info(logger, "Status: %s", /*status del nodo*/);
-                    }
+                    list_iterate(listaPCB, mostrarListaTripulantes);
                     log_info(logger, "--------------------------------------------------------------------");
                     break;
 

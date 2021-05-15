@@ -13,4 +13,10 @@
     #include<sys/socket.h>
     #include<unnamed/socket.h>
 
+    int contadorPCBs = 0;
+    void funcionPlanificador(t_log* logger);
+    TCB* crear_TCB(int posX, int posY, int id, char* tarea);
+    PCB* crear_PCB(char* buffer_tareas, char** parametros, &int contadorPCBs);
+
+
 #endif

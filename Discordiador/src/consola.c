@@ -41,22 +41,27 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                     break;
 
                 case 2: //INICIAR_PATOTA
-                    // Ej: INICIAR_PATOTA 5 /home/utnso/tareas/tareasPatota5.txt 1|1 3|4
+                    // Ej: INICIAR_PATOTA 5 /home/utnso/tareas/tareasPatota5.txt 1|1 3|4 1|1 3|4 1|1 
                     //abrir y copiar en una lista o buffer parametros[2]
                     log_info(logger, "ENTRO INICIAR PATO");
                     tamanioBuffer = sizeof(int);
                     buffer = _serialize(tamanioBuffer, "%d", parametros[1]);
-                     
-                    // 12|34 567|1
-                    //buffer especial para las ubicaciones
-                    // buffer=12-34-567-1
+                    
+                    FILE* archivo_tareas;
+                    char* ruta_tareas = malloc (strlen(parametros[2])+1);
+                    strcpy (ruta_tareas, parametros[2]);
+                    archivo_tareas = fopen(ruta_tareas, "r");
+                    // primero separar por \n -> luego por ; -> finalmente por espacios (en el primer miembro, el de la funcion)
+                    //TAREA PARAMETRO1 PARAMETRO2 PARAMETRO3;POS X;POS Y;TIEMPO
+                    //contenido adentro del string, COMO no se
+
+                    // Cerrar archivo
                     _send_message(conexion_RAM, "DIS", 710, buffer, tamanioBuffer, logger);
-                    //mensajeRecibido = _receive_message(conexion_IMS, logger);
-                    //log_info(logger, "SALIÓ %s", mensajeRecibido -> payload);
+
+                    PCB* nuevoPCB = crear_PCB (/*tareas*/, parametros, contadorPCBs);
+                    list_add (listaPCB, (void*) nuevoPCB);
                     
                 // crear pcb, agregarlo a nuestra lista de control, avisarle/mandarselo a Mi-RAM HQ
-                   
-
                 // crear hilos/tripulantes, crear un TCB por hilo, enviar este TCB a NEW, agregar el TCB a nuestra lista de control
                     break;
 

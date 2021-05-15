@@ -249,44 +249,96 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         case RECIBIR_UBICACION_TRIPULANTE:
             //ID_PATOTA, ID_TCB, POS_X, POS_Y
 
+            log_info(logger, "entre al case rut"); 
             // Recibo id tcb
-            // Recibo id patota
-            // Buscar la tabla de segmentos correspondiente al id de patota
+            char* idPCB = recibir_pbc(buffer);
             
-            // t_queue *tabla_temp = get_tabla_pcb(id_pcb)
+            // Buscar la tabla de segmentos correspondiente al id de patota
+            t_queue* segmentos = dictionary_get(diccionario, idPCB);
 
             // Busco la info del tcb por id, y busco el segmento con el nroSegmento
+            int idTCB = recibir_tcb(buffer);
+            segment* segmento = get_tcb_by_id(segmentos, idTCB);
             // Me traigo la info de memoria en un struct tcb
+            tcb* nuestroTCB = get_tcb_from_memory(segmento);
             // actualizo los datos del struct
-            // Reemplazo los datos del tcb en la misma posicion de memoria
-            
-            //// Actualizo el tcb en el mapa
+            /*typedef struct {
+                uint32_t tid;
+                uint32_t pid;
+                char status;
+                uint32_t xpos;
+                uint32_t ypos;
+                uint32_t next;
+            } tcb;*/
 
+            nuestroTCB->xpos = recibir_posicion(buffer);
+            nuestroTCB->ypos = recibir_posicion(buffer);
+            // Reemplazo los datos del tcb en la misma posicion de memoria
+            guardar_tcb_memory(segmento, nuestroTCB, memory, memory_size);
+            //// Actualizo el tcb en el mapa
+            //actualizar_mapa(nuestroTCB);
+            tcb_destroy(nuestroTCB); //free
             // Envio mensaje de OK
+            _send_message(fd,"RAM", 200, "ok", 2, logger);
 
             break;
         case ENVIAR_PROXIMA_TAREA:
-
+            //idpcb, idtcb
             // Buscar segmento de tcb
+            log_info(logger, "entre al case rut"); 
+            // Recibo id tcb
+            char* idPCB = recibir_pbc(buffer);
+            // Buscar la tabla de segmentos correspondiente al id de patota
+            t_queue* segmentos = dictionary_get(diccionario, idPCB);
+
+            // Busco la info del tcb por id, y busco el segmento con el nroSegmento
+            int idTCB = recibir_tcb(buffer);
+            segment* segmento_tcb = get_tcb_by_id(segmentos, idTCB);
+             // Me traigo la info de memoria en un struct tcb
+            tcb* nuestroTCB = get_tcb_from_memory(segmento_tcb);
             // Buscar segmento de tareas
+            segment* segmento_tareas = get_tareas_by_idPCB(segmentos, idPCB);
             // Validar si la direccion de la proxima tarea en el tcb es menor al limite del segmento de tareas (si hay mas tareas para hacer)
+            int limite = confirmar_limite_tarea(segmento_tarea, nuestroTCB->next);
             // Si no hay mas tareas
                 // Envio mensaje de error
+            if(limite < 0){
+                _send_message(fd, "RAM", 999, "Error, no hay mas tareas", tam_ese_string, logger);
+            }
             // Si hay tareas
+            else{
                 // Leo una tarea con el segmento del tcb
+                char* tarea = get_tarea_from_segmento_tareas(segmento_tareas);
+                nuestroTCB->next = tarea;
                 // Actualizo el tcb en memoria
+                guardar_tcb_memory(segmento, nuestroTCB, memory, memory_size);
                 // Envio proxima tarea
+                char* buffer_a_enviar = serialize(tarea);
+                _send_message(fd, "RAM", 520, buffer_a_enviar, sizeof(buffer_a_enviar), logger);
+            }
 
             break;
         case EXPULSAR_TRIPULANTE:
-
+            //idpcb, idtcb
             // Busco el segmento del tcb
+            log_info(logger, "entre al case rut"); 
+            // Recibo id tcb
+            char* idPCB = recibir_pbc(buffer);
+            // Buscar la tabla de segmentos correspondiente al id de patota
+            t_queue* segmentos = dictionary_get(diccionario, idPCB);
+
+            // Busco la info del tcb por id, y busco el segmento con el nroSegmento
+            int idTCB = recibir_tcb(buffer);
+            segment* segmento_tcb = get_tcb_by_id(segmentos, idTCB);
+            tcb* nuestroTCB = get_tcb_from_memory(segmento_tcb);
             // Elimino el segmento de memoria
+            borrar_tcb_memory(segmento_tcb, nuestroTCB, memory, memory_size);
             // Elimino el segmento de la lista de segmentos y de info
-
+            eliminar_segmento(segmentos, segmento_tcb);
             //// Elimino el tcb del mapa
-
+            eliminar_tripulante_mapa();
             // Envio mensaje de OK
+            _send_message(fd, "RAM", 999, "Tripulante expulsado con exito", sizeof("Tripulante expulsado con exito"), logger);
 
             break;
         case MENSAJE:

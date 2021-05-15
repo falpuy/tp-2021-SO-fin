@@ -474,17 +474,17 @@ int remove_segment_from_memory(void *memory, int mem_size, segment *segmento) {
 int save_tcb_in_memory(void *memory, int mem_size, segment *segmento, tcb *data) {
     int offset = 0;
     if (segmento -> limit < mem_size) {
-        memcpy(memory + segmento -> baseAddr + offset, &(data -> tid), sizeof(uint32_t));
+        memcpy(memory + segmento -> baseAddr + offset, data -> tid, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(memory + segmento -> baseAddr + offset, &(data -> pid), sizeof(uint32_t));
+        memcpy(memory + segmento -> baseAddr + offset, data -> pid, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(memory + segmento -> baseAddr + offset, &(data -> status), sizeof(char));
+        memcpy(memory + segmento -> baseAddr + offset, data -> status, sizeof(char));
         offset = sizeof(char);
-        memcpy(memory + segmento -> baseAddr + offset, &(data -> xpos), sizeof(uint32_t));
+        memcpy(memory + segmento -> baseAddr + offset, data -> xpos, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(memory + segmento -> baseAddr + offset, &(data -> ypos), sizeof(uint32_t));
+        memcpy(memory + segmento -> baseAddr + offset, data -> ypos, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(memory + segmento -> baseAddr + offset, &(data -> next), sizeof(uint32_t));
+        memcpy(memory + segmento -> baseAddr + offset, data -> next, sizeof(uint32_t));
         offset = sizeof(uint32_t);
 
         return 1;
@@ -499,17 +499,17 @@ tcb *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
     int offset = 0;
 
     if (segmento -> limit < mem_size) {
-        memcpy(&(temp -> tid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        memcpy(temp -> tid, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(&(temp -> pid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        memcpy(temp -> pid, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(&(temp -> status), memory + segmento -> baseAddr + offset, sizeof(char));
+        memcpy(temp -> status, memory + segmento -> baseAddr + offset, sizeof(char));
         offset = sizeof(char);
-        memcpy(&(temp -> xpos), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        memcpy(temp -> xpos, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(&(temp -> ypos), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        memcpy(temp -> ypos, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(&(temp -> next), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        memcpy(temp -> next, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
 
         return temp;
@@ -521,9 +521,9 @@ tcb *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
 int save_pcb_in_memory(void *memory, int mem_size, segment *segmento, pcb *data) {
     int offset = 0;
     if (segmento -> limit < mem_size) {
-        memcpy(memory + segmento -> baseAddr + offset, &(data -> pid), sizeof(uint32_t));
+        memcpy(memory + segmento -> baseAddr + offset, data -> pid, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(memory + segmento -> baseAddr + offset, &(data -> tasks), sizeof(uint32_t));
+        memcpy(memory + segmento -> baseAddr + offset, data -> tasks, sizeof(uint32_t));
         offset = sizeof(uint32_t);
 
         return 1;
@@ -532,14 +532,14 @@ int save_pcb_in_memory(void *memory, int mem_size, segment *segmento, pcb *data)
     return -1;
 }
 
-pcb *get_pcb_from_memory(void *memory, int mem_size, segment *segmento) {
+pcb *save_pcb_in_memory(void *memory, int mem_size, segment *segmento) {
     int offset = 0;
 
     pcb *temp = malloc(sizeof(pcb));
     if (segmento -> limit < mem_size) {
-        memcpy(&(temp -> pid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        memcpy(temp -> pid, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
-        memcpy(&(temp -> tasks), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        memcpy(temp -> tasks, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
 
         return temp;
@@ -564,393 +564,12 @@ int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
 
-    // ---------------- TEST MEMORY SPACE ----------------- //
+    // --------------- TEST PAGINCACION --------------- //
 
-    // int m_size = 10;
-    // void *memory = malloc(m_size);
-
-    // int temp = 8;
-    // int temp2 = 7;
-
-    // memcpy(memory, &temp, sizeof(int));
-    // // memcpy(memory + 1, &temp2, sizeof(int));
     
-    // int start = 0;
-    // int end = 0;
-
-    // // Delete space allocated by data in hq memory
-    // // memset(memory + start, '\0', end - start);
-
-    // for(int i = 0; i < m_size; i ++) {
-    //     if (memcmp(memory + i, "\0", 1)) {
-    //         printf("Direccion ocupada: %d\n", i);
-    //     } else {
-    //         printf("Direccion vacia: %d\n", i);
-    //     }
-    // }
-
-    // int otro;
-    // memcpy(&otro, memory, sizeof(int));
-
-    // printf("Traje de memoria: %d", otro);
-
-    // ---------------- TEST MEMORY SEEK & MEMORY COMPACTION WITH DICTIONARY ----------------- //
-
-    /*
-
-    int m_size = 30;
-    void *memory = malloc(m_size);
-
-    t_queue *segmentTable1 = queue_create();
-    t_queue *segmentTable2 = queue_create();
-
-    t_dictionary *table_collection = dictionary_create();
-
-    int temp = 8;
-
-    segment *uno = malloc(sizeof(segment));
-    segment *dos = malloc(sizeof(segment));
-    segment *tres = malloc(sizeof(segment));
-    segment *cuatro = malloc(sizeof(segment));
-
-    uno -> nroSegmento = get_last_index (segmentTable1) + 1;
-    uno -> baseAddr = 1;
-    uno -> limit = 5;
-    uno -> id = 1;
-    uno -> type = PCB;
-
-    memcpy(memory + uno -> baseAddr, &temp, uno -> limit - uno -> baseAddr);
-
-    queue_push(segmentTable1, uno);
-
-    dos -> nroSegmento = get_last_index (segmentTable1) + 1;
-    dos -> baseAddr = 10;
-    dos -> limit = 14;
-    dos -> id = 1;
-    dos -> type = TCB;
-
-    temp = 10;
-    memcpy(memory + dos -> baseAddr, &temp, dos -> limit - dos -> baseAddr);
-
-    queue_push(segmentTable1, dos);
-
-    tres -> nroSegmento = get_last_index (segmentTable2) + 1;
-    tres -> baseAddr = 15;
-    tres -> limit = 19;
-    tres -> id = 2;
-    tres -> type = PCB;
-
-    temp = 12;
-    memcpy(memory + tres -> baseAddr, &temp, tres -> limit - tres -> baseAddr);
-
-    queue_push(segmentTable2, tres);
-
-    cuatro -> nroSegmento = get_last_index (segmentTable2) + 1;
-    cuatro -> baseAddr = 22;
-    cuatro -> limit = 26;
-    cuatro -> id = 1;
-    cuatro -> type = TASK;
-    
-    temp = 14;
-    memcpy(memory + cuatro -> baseAddr, &temp, cuatro -> limit - cuatro -> baseAddr);
-
-    queue_push(segmentTable2, cuatro);
-
-    dictionary_put(table_collection, "1", segmentTable1);
-    dictionary_put(table_collection, "2", segmentTable2);
-
-    printf("\n------- Printing Dictionary -------\n");
-
-    show_dictionary(table_collection);
-    
-    printf("\n------- ------------------- -------\n");
-
-    // Tamanio del segmento que quiero guardar
-    int total_size = 6;
-
-    printf("Buscando un segmento de tamanio: %d\n", total_size);
-    
-    // Valida si encontre un segmento libre o no
-    int found_segment = memory_seek(memory, m_size, table_collection, total_size);
-
-    if(found_segment < 0) {
-        printf("No encontre ningun segmento libre.. Iniciando compactacion.\n");
-
-        memory_compaction(memory, m_size, table_collection);
-
-        printf("Buscando un segmento de tamanio: %d\n", total_size);
-
-        found_segment = memory_seek(memory, m_size, table_collection, total_size);
-    }
-
-    // char *mem_hexstring(void *source, size_t length);
-    // void mem_hexdump(void *source, size_t length);
-    printf("\nProceso: %d\t\tSegmento: %d\t\tInicio: %p\t\tTam: %db", tres -> id, tres -> nroSegmento, (memory + tres -> baseAddr), tres -> limit - tres -> baseAddr);
-    
-    // printf("\n\n--- Testing mem_hexstring() ---");
-
-    // char *test_hex = mem_hexstring(memory + tres -> baseAddr, tres -> limit - tres -> baseAddr);
-    
-    // printf("\n%s", test_hex);
-
-    // printf("\n\n--- Testing mem_hexdump() ---\n");
-
-    // mem_hexdump(memory + tres -> baseAddr, tres -> limit - tres -> baseAddr);
-
-    dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
-    // queue_destroy_and_destroy_elements(segmentTable, destroyer);
-
-    free(memory);
-
-    */
-
-    // ---------------- TEST QUEUES ----------------- //
-
-    /*
-
-    // t_queue *listaInfo = queue_create();
-    t_queue *segmentTable = queue_create();
-
-    segment *segmento = malloc(sizeof(segment));
-    segmento -> id = 1;
-    segmento -> type = PCB;
-    segmento -> nroSegmento = 1;
-    segmento -> baseAddr = 0;
-    segmento -> limit = 14;
-    
-    segment *segmento2 = malloc(sizeof(segment));
-    segmento2 -> id = 1;
-    segmento2 -> type = TCB;
-    segmento2 -> nroSegmento = 2;
-    segmento2 -> baseAddr = 14;
-    segmento2 -> limit = 20;
-    
-    segment *segmento3 = malloc(sizeof(segment));
-    segmento3 -> id = 1;
-    segmento3 -> type = TASK;
-    segmento3 -> nroSegmento = 3;
-    segmento3 -> baseAddr = 20;
-    segmento3 -> limit = 32;
-
-    // No conviene usar p_info porque los id de TCB se pueden repetir al igual que el nro de segmento
-    // En mejor agregar el id al segmento y filtrar por procesos en el diccionario
-
-    // p_info *info = malloc(sizeof(p_info));
-    // info -> nroSegmento = 1;
-    // info -> id = 10;
-    // info -> type = PCB;
-
-    // p_info *info = malloc(sizeof(p_info));
-    // info -> nroSegmento = 8;
-    // info -> id = 1;
-    // info -> type = TCB;
-
-    // queue_push(listaInfo, info);
-    queue_push(segmentTable, segmento);
-    queue_push(segmentTable, segmento2);
-    queue_push(segmentTable, segmento3);
-
-    t_dictionary *table = dictionary_create();
-
-    // char *index = string_new();
-    char *index = string_itoa(segmento -> id);
-
-    dictionary_put(table, index, segmentTable);
-
-    // list_iterate(listaInfo -> elements, mostrarInfo);
-    // list_iterate(segmentTable -> elements, mostrarSegemento);
-
-    show_dictionary(table);
-
-    // p_info *infoTest = find_info_by_id(listaInfo -> elements, 0);
-
-    // Parametros -> KEY de la tabla de segmentos en el diccionario (ID PCB), ID del objeto buscado (PCB|TCB), tipo de dato a buscar (PCB|TCB|TASK), diccionario
-    // segment *segmentTest = find_segment_by_id(id_pcb, id_tcb, TCB, table);
-    segment *segmentTCB = find_tcb_segment(1, index, table);
-
-    segment *segmentTask = find_task_segment(index, table);
-
-    segment *segmentPCB = find_pcb_segment(index, table);
-
-    printf("Segmento PCB: %d\n", segmentPCB -> baseAddr);
-    printf("Segmento TASK: %d\n", segmentTask -> baseAddr);
-    printf("Segmento TCB: %d\n", segmentTCB -> baseAddr);
-
-
-    free(index);
-    // free(info);
-    // free(segmento);
-    // free(segmento2);
-
-    // queue_destroy(listaInfo);
-    dictionary_destroy_and_destroy_elements(table, table_destroyer);
-
-    */
-
-    // ---------------- TEST ARCHIVOS ----------------- //
-
-
-    FILE * fp;
-    char * line = NULL;
-    size_t len = 0;
-    ssize_t read;
-
-    int b_size = 0;
-    int offset = 0;
-    int new_size;
-    void *temp;
-
-    void *buffer = malloc(sizeof(int));
-
-    int id_pcb = 21;
-
-    memcpy(buffer + offset, &id_pcb, sizeof(int));
-    offset += sizeof(int);
-    b_size += sizeof(int);
-
-    fp = fopen("./tareas.txt", "r");
-    if (fp == NULL)
-        exit(EXIT_FAILURE);
-
-    while ((read = getline(&line, &len, fp)) != -1) {
-
-        // printf("Length: %d - String: %s", read, line);
-
-        if (line[ read - 1 ] == '\n') {
-            read--;
-            memset(line + read, 0, 1);
-        }
-
-        new_size = sizeof(int) + read;
-        
-        temp = _serialize(new_size, "%s", line);
-
-        b_size += new_size;
-        buffer = realloc(buffer, b_size);
-        
-        memcpy(buffer + offset, temp, new_size);
-        offset += new_size;
-
-        free(temp);
-    }
-
-    fclose(fp);
-    if (line)
-        free(line);
-
-    // Agregar id de pcb al que pertenece
-    // _send(buffer, offset);
-
-    // Prueba Deserializacion
-
-    char *tarea;
-    int size_tarea;
-    int off = 0;
-    int i = 0;
-
-    int test_id;
-
-    char *lista_tareas = string_new();
-
-    memcpy(&test_id, buffer + off, sizeof(int));
-    off += sizeof(int);
-
-    log_info(logger, "ID PCB: %d", test_id);
-
-    while (off < offset) {
-
-        memcpy(&size_tarea, buffer + off, sizeof(int));
-        off += sizeof(int);
-
-        tarea = malloc(size_tarea + 1);
-        memcpy(tarea, buffer + off, size_tarea);
-        off += size_tarea;
-        tarea[size_tarea] = '\0';
-
-        log_info(logger, "Tarea %d - len %d: %s", i++, size_tarea, tarea);
-
-        string_append(&lista_tareas, tarea);
-
-        free(tarea);
-
-    }
-
-    free(buffer);
-
-    log_info(logger, "Lista final en memoria: %s", lista_tareas);
-
-    // -------- Recorrer las tareas en memoria
-
-    // GENERAR_OXIGENO 12;3;2;5CONSUMIR_OXIGENO 120;2;3;1GENERAR_COMIDA 4;2;3;1CONSUMIR_COMIDA 1;2;3;4GENERAR_BASURA 12;2;3;5DESCARTAR_BASURA 10;3;1;7
-    int start_task = 0;
-    char *recv_task = get_next_task(lista_tareas, start_task, strlen(lista_tareas));
-
-    log_info(logger, "Tarea: %s - Size: %d", recv_task, strlen(recv_task));
-    
-    // free(recv_task);
-
-    start_task = strlen(recv_task);
-     free(recv_task);
-    recv_task = get_next_task(lista_tareas, start_task, strlen(lista_tareas));
-
-    log_info(logger, "Tarea: %s - Size: %d", recv_task, strlen(recv_task));
-    
-    free(recv_task);
-
-    free(lista_tareas);
 
 
     // -------------- TEST SERIALIZACION -------------- //
-    
-
-    // void *buffer;
-    // int b_size;
-
-    // char *str = "HOLA!!!";
-    // b_size = sizeof(int) + strlen(str);
-    // buffer = _serialize(b_size, "%s", str);
-
-    // char *str2 = "CHAU!!!";
-    // int b_size2 = sizeof(int) + strlen(str2);
-    // buffer = realloc(buffer, b_size + b_size2);
-    // void * temp = _serialize(b_size2, "%s", str2);
-    // memcpy(buffer + b_size, temp, b_size2);
-    
-
-    // log_info(logger, "Deserializando...");
-
-    // char *otroBuffer;
-    // int offset = 0;
-    // int size;
-
-    // memcpy(&size, buffer + offset, sizeof(int));
-    // offset += sizeof(int);
-    // log_info(logger, "Size primer string: %d", size);
-
-    // otroBuffer = malloc(size + 1);
-    // memcpy(otroBuffer, buffer + offset, size);
-    // offset += size;
-    // otroBuffer[offset] = '\0';
-
-    // log_info(logger, "String: %s", otroBuffer);
-    // free(otroBuffer);
-
-    // memcpy(&size, buffer + offset, sizeof(int));
-    // log_info(logger, "Size 2 string: %d - %d|%d", size, offset, b_size);
-    // offset += sizeof(int);
-
-    // otroBuffer = malloc(size + 1);
-    // memcpy(otroBuffer, buffer + offset, size);
-    // offset += size;
-    // otroBuffer[offset] = '\0';
-
-    // log_info(logger, "String 2: %s", otroBuffer);
-    // free(otroBuffer);
-
-    // free (temp);
-    // free(buffer);
-    
-    //  ------------------------- TEST CASES
 
     // void *buffer;
     // int b_size;
@@ -1003,46 +622,3 @@ int main() {
 
     return 0;
 }
-
-// int main()
-// {
-//     // char str[] = "comando blabla [1,2,3,4,5] bla bla";
-//     // remove_all_chars(str, '[');
-//     // remove_all_chars(str, ']');
-//     void *str = malloc(strlen("STRING DE PRUEBBA\0"));
-
-//     memcpy(str, "STRING DE PRUEBBA\0", strlen("STRING DE PRUEBBA\0"));
-
-//     printf("str '%s'\n", str);
-    
-//     int start = 3;
-//     int end = 6;
-
-//     // Delete space allocated by data in hq memory
-//     memset(str + start, '\0', end - start);
-
-//     printf("str '%s'\n", str + end);
-
-//     for(int i = 0; i < strlen("STRING DE PRUEBBA\0"); i ++) {
-//         if (memcmp(str + i, "\0", 1)) {
-//             printf("CHAR: %s\n", (char*)&(str[i]));
-//         } else {
-//             printf("EMPTY: %s\n", (char*)&(str[i]));
-//         }
-//     }
-
-//     // Search for free spaces
-//     // for -> primero elemento vacio
-//     // for -> validar qe haya elementos vacios desde el primero q matchea
-//     // hhasta el tamanio necesario
-//     // si se encuentra una valor distinto de vacio en el medio de la segunda busqueda
-//     // colocar el primer for a partir de este valor y seguir buscando hhasta finalizar
-
-//     // Trim all values in memory
-//     // Use segment table to iterate the memory
-//     // Copy all values inside a new buffer next to each other
-//     // delete the memory buffer and set the new values
-
-//     free(str);
-//     return 0;
-// }

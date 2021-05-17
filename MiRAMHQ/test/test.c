@@ -560,6 +560,58 @@ int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *dat
     return -1;
 }
 
+void send_tareas(int id_pcb, char *ruta_archivo) {
+    FILE * fp;
+    char * line = NULL;
+    size_t len = 0;
+    ssize_t read;
+
+    int b_size = 0;
+    int offset = 0;
+    int new_size;
+    void *temp;
+
+    void *buffer = malloc(sizeof(int));
+
+    memcpy(buffer + offset, &id_pcb, sizeof(int));
+    offset += sizeof(int);
+    b_size += sizeof(int);
+
+    fp = fopen(ruta_archivo, "r");
+    if (fp == NULL)
+        exit(EXIT_FAILURE);
+
+    while ((read = getline(&line, &len, fp)) != -1) {
+
+        // printf("Length: %d - String: %s", read, line);
+
+        if (line[ read - 1 ] == '\n') {
+            read--;
+            memset(line + read, 0, 1);
+        }
+
+        new_size = sizeof(int) + read;
+        
+        temp = _serialize(new_size, "%s", line);
+
+        b_size += new_size;
+        buffer = realloc(buffer, b_size);
+        
+        memcpy(buffer + offset, temp, new_size);
+        offset += new_size;
+
+        free(temp);
+    }
+
+    fclose(fp);
+    if (line)
+        free(line);
+
+    _send_message(socket_memoria, "DIS", 510, buffer, offset);
+
+    free(buffer);
+}
+
 int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
@@ -789,6 +841,8 @@ int main() {
 
     // ---------------- TEST ARCHIVOS ----------------- //
 
+    send_tareas(41, "./tareas.txt");
+/*
 
     FILE * fp;
     char * line = NULL;
@@ -898,7 +952,7 @@ int main() {
     free(recv_task);
 
     free(lista_tareas);
-
+*/
 
     // -------------- TEST SERIALIZACION -------------- //
     

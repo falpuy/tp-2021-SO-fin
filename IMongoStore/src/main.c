@@ -1,13 +1,8 @@
 #include "headers/main.h"
 
 int main() {
-    crearSuperBloqueTest();
     setearConfiguraciones();
-
-    
-
     inicializacionFS(logIMS);
-    
    //int puertoEscucha = _create_socket_listenner(datosConfig->config,log);
     finalizarProceso();
     return 0;

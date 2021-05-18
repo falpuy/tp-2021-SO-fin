@@ -27,17 +27,17 @@
 
     uint32_t cantidadBloques;
     uint32_t tamanioBloque;
+    int flag_existiaSB;
     
     FILE* arch_bloques;
     FILE* superBloque;
 
-    void crearSuperBloqueTest();
-    void validarExistenciaFS(t_log* log);
+
     void inicializacionFS(t_log* log);
     void generarBitmap(t_log* log);
     void guardarEspacioBitmap(t_log* log);
-    void setearMetadataFS(t_log* log);
-    void testearQueTodoFunco(t_log* log);
+    void validarBlocks(t_log* log);
+    void validarSuperBloque(t_log* log);
 
 
 #endif

@@ -356,3 +356,399 @@ Tamaño de bloque:32
 [INFO] 23:12:57:646 IMS/(27776:27776): 0
 [INFO] 23:12:57:646 IMS/(27776:27776): 0
 [INFO] 23:12:57:647 IMS/(27776:27776): Testo bits Success
+[INFO] 18:29:12:547 IMS/(30271:30271): No se encontró archivo superBloque.ims
+[INFO] 18:29:12:548 IMS/(30271:30271): Ingresar tamaño de cada bloque
+[INFO] 18:29:19:637 IMS/(30271:30271): Ingresar cantidad de bloques
+[INFO] 18:29:24:558 IMS/(30298:30298): Se encontró el archivo superBloque.ims
+[INFO] 18:30:31:216 IMS/(30442:30442): Se encontró el archivo superBloque.ims
+[INFO] 18:30:31:218 IMS/(30442:30442): El tamaño del bloque que estaba es: 24
+[INFO] 18:30:31:219 IMS/(30442:30442): La cantidad de bloques que estaba es: 0
+[INFO] 18:30:52:391 IMS/(30486:30486): Se encontró el archivo superBloque.ims
+[INFO] 18:30:52:394 IMS/(30486:30486): El tamaño del bloque que estaba es: 24
+[INFO] 18:30:52:395 IMS/(30486:30486): La cantidad de bloques que estaba es: 10
+[INFO] 18:31:05:585 IMS/(30517:30517): No se encontró archivo superBloque.ims
+[INFO] 18:31:05:586 IMS/(30517:30517): Ingresar tamaño de cada bloque
+[INFO] 18:31:09:377 IMS/(30517:30517): Ingresar cantidad de bloques
+[INFO] 18:31:16:808 IMS/(30542:30542): Se encontró el archivo superBloque.ims
+[INFO] 18:31:16:811 IMS/(30542:30542): El tamaño del bloque que estaba es: 35
+[INFO] 18:31:16:811 IMS/(30542:30542): La cantidad de bloques que estaba es: 10
+[INFO] 19:47:40:587 IMS/(8052:8052): validando existencia de superbloque.ims....
+[INFO] 19:47:40:589 IMS/(8052:8052): Se encontró el archivo superBloque.ims
+[INFO] 19:47:40:592 IMS/(8052:8052): Se procede a validar la existencia de archivo Blocks.ims
+[ERROR] 19:47:40:593 IMS/(8052:8052): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:47:40:599 IMS/(8052:8052): Guarde espacio para el bitmap en superbloque
+[INFO] 19:47:40:602 IMS/(8052:8052): Setee bitmap en 0 todo......0
+[INFO] 19:47:40:602 IMS/(8052:8052): Testo bits Success
+[INFO] 19:50:58:243 IMS/(8534:8534): validando existencia de superbloque.ims....
+[INFO] 19:50:58:245 IMS/(8534:8534): Se encontró el archivo superBloque.ims
+[INFO] 19:50:58:245 IMS/(8534:8534): Se procede a validar la existencia de archivo Blocks.ims
+[INFO] 19:50:58:246 IMS/(8534:8534): Existe archivo Blocks.ims. Se levanta Filesystem anterior
+[INFO] 19:52:49:559 IMS/(8790:8790): validando existencia de superbloque.ims....
+[INFO] 19:52:49:560 IMS/(8790:8790): Se encontró el archivo superBloque.ims
+[INFO] 19:52:49:563 IMS/(8790:8790): Se procede a validar la existencia de archivo Blocks.ims
+[ERROR] 19:52:49:565 IMS/(8790:8790): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:52:49:575 IMS/(8790:8790): Guarde espacio para el bitmap en superbloque
+[INFO] 19:52:49:577 IMS/(8790:8790): Setee bitmap en 0 todo......0
+[INFO] 19:52:49:585 IMS/(8790:8790): Testo bits Success
+[INFO] 19:55:15:504 IMS/(9026:9026): validando existencia de superbloque.ims....
+[INFO] 19:55:15:506 IMS/(9026:9026): Se encontró el archivo superBloque.ims
+[INFO] 19:55:15:509 IMS/(9026:9026): Se procede a validar la existencia de archivo Blocks.ims
+[INFO] 19:55:15:510 IMS/(9026:9026): Existe archivo Blocks.ims. Se levanta Filesystem anterior
+[INFO] 19:56:49:714 IMS/(9182:9182): validando existencia de superbloque.ims....
+[INFO] 19:56:49:716 IMS/(9182:9182): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 19:56:49:718 IMS/(9182:9182): Ingresar tamaño de cada bloque
+[INFO] 19:56:52:610 IMS/(9182:9182): Ingresar cantidad de bloques
+[INFO] 19:57:24:133 IMS/(9231:9231): validando existencia de superbloque.ims....
+[INFO] 19:57:24:135 IMS/(9231:9231): Se encontró el archivo superBloque.ims
+[INFO] 19:57:24:135 IMS/(9231:9231): Se procede a validar la existencia de archivo Blocks.ims
+[ERROR] 19:57:24:139 IMS/(9231:9231): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:57:24:165 IMS/(9231:9231): Guarde espacio para el bitmap en superbloque
+[INFO] 19:57:24:168 IMS/(9231:9231): hola
+[INFO] 19:57:24:169 IMS/(9231:9231): hola
+[INFO] 19:57:24:169 IMS/(9231:9231): hola
+[INFO] 19:57:24:170 IMS/(9231:9231): hola
+[INFO] 19:57:24:170 IMS/(9231:9231): Setee bitmap en 0 todo......0
+[INFO] 20:50:09:184 IMS/(13751:13751): Validando existencia de superbloque.ims....
+[INFO] 20:50:09:185 IMS/(13751:13751): Se encontró el archivo superBloque.ims
+[INFO] 20:50:09:189 IMS/(13751:13751): Se muestra los datos del superBloque
+. Tamaño de bloque:  0.
+Cantidad de bloques: 0
+
+[INFO] 20:50:09:190 IMS/(13751:13751): Validando existencia de Blocks.ims....
+[INFO] 20:50:09:191 IMS/(13751:13751): Existe archivo Blocks.ims.
+[INFO] 20:50:09:194 IMS/(13751:13751): Guarde espacio para el bitmap en superbloque
+[INFO] 20:50:09:196 IMS/(13751:13751): Setee bitmap en 0 todo......0
+[INFO] 20:50:42:420 IMS/(13800:13800): Validando existencia de superbloque.ims....
+[ERROR] 20:50:42:421 IMS/(13800:13800): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 20:50:42:422 IMS/(13800:13800): Ingresar tamaño de cada bloque
+[INFO] 20:50:46:505 IMS/(13800:13800): Ingresar cantidad de bloques
+[INFO] 20:50:48:278 IMS/(13800:13800): Se creó archivo superBloque.ims
+[INFO] 20:50:48:278 IMS/(13800:13800): Validando existencia de Blocks.ims....
+[ERROR] 20:50:48:279 IMS/(13800:13800): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 20:50:48:281 IMS/(13800:13800): Se creó archivo Blocks.ims
+[INFO] 20:50:48:283 IMS/(13800:13800): Guarde espacio para el bitmap en superbloque
+[INFO] 20:53:05:407 IMS/(13997:13997): Validando existencia de superbloque.ims....
+[INFO] 20:53:05:408 IMS/(13997:13997): Se encontró el archivo superBloque.ims
+[INFO] 20:53:05:412 IMS/(13997:13997): Se muestra los datos del superBloque
+. Tamaño de bloque:  0.
+Cantidad de bloques: 0
+
+[INFO] 20:53:05:413 IMS/(13997:13997): Validando existencia de Blocks.ims....
+[INFO] 20:53:05:414 IMS/(13997:13997): Existe archivo Blocks.ims.
+[INFO] 20:53:05:415 IMS/(13997:13997): Guarde espacio para el bitmap en superbloque
+[INFO] 20:53:05:416 IMS/(13997:13997): Setee bitmap en 0 todo......0
+[INFO] 20:56:20:727 IMS/(14353:14353): Validando existencia de superbloque.ims....
+[ERROR] 20:56:20:729 IMS/(14353:14353): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 20:56:20:729 IMS/(14353:14353): Ingresar tamaño de cada bloque
+[INFO] 20:56:23:414 IMS/(14353:14353): Ingresar cantidad de bloques
+[INFO] 20:56:24:703 IMS/(14353:14353): Se creó archivo superBloque.ims
+[INFO] 20:56:29:725 IMS/(14366:14366): Validando existencia de superbloque.ims....
+[INFO] 20:56:29:726 IMS/(14366:14366): Se encontró el archivo superBloque.ims
+[INFO] 20:56:29:729 IMS/(14366:14366): Se muestra los datos del superBloque
+. Tamaño de bloque:  10.
+Cantidad de bloques: 0
+
+[INFO] 20:57:11:533 IMS/(14429:14429): Validando existencia de superbloque.ims....
+[ERROR] 20:57:11:534 IMS/(14429:14429): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 20:57:11:534 IMS/(14429:14429): Ingresar tamaño de cada bloque
+[INFO] 20:57:12:953 IMS/(14429:14429): Ingresar cantidad de bloques
+[INFO] 20:57:13:900 IMS/(14429:14429): Se creó archivo superBloque.ims
+[INFO] 20:57:15:778 IMS/(14438:14438): Validando existencia de superbloque.ims....
+[INFO] 20:57:15:779 IMS/(14438:14438): Se encontró el archivo superBloque.ims
+[INFO] 20:57:15:784 IMS/(14438:14438): Se muestra los datos del superBloque
+. Tamaño de bloque:  10.
+Cantidad de bloques: 2
+
+[INFO] 20:57:54:517 IMS/(14495:14495): Validando existencia de superbloque.ims....
+[ERROR] 20:57:54:519 IMS/(14495:14495): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 20:57:54:519 IMS/(14495:14495): Ingresar tamaño de cada bloque
+[INFO] 20:57:55:789 IMS/(14495:14495): Ingresar cantidad de bloques
+[INFO] 20:57:56:155 IMS/(14495:14495): Se creó archivo superBloque.ims
+[INFO] 20:57:58:531 IMS/(14502:14502): Validando existencia de superbloque.ims....
+[INFO] 20:57:58:533 IMS/(14502:14502): Se encontró el archivo superBloque.ims
+[INFO] 20:57:58:535 IMS/(14502:14502): Se muestra los datos del superBloque.
+Tamaño de bloque:  10.
+Cantidad de bloques:   2
+
+[INFO] 20:58:53:758 IMS/(14585:14585): Validando existencia de superbloque.ims....
+[ERROR] 20:58:53:760 IMS/(14585:14585): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 20:58:53:762 IMS/(14585:14585): Ingresar tamaño de cada bloque
+[INFO] 20:58:54:912 IMS/(14585:14585): Ingresar cantidad de bloques
+[INFO] 20:58:55:713 IMS/(14585:14585): Se creó archivo superBloque.ims
+[INFO] 20:58:55:713 IMS/(14585:14585): Validando existencia de Blocks.ims....
+[ERROR] 20:58:55:714 IMS/(14585:14585): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 20:58:55:715 IMS/(14585:14585): Se creó archivo Blocks.ims
+[INFO] 20:58:59:714 IMS/(14592:14592): Validando existencia de superbloque.ims....
+[INFO] 20:58:59:715 IMS/(14592:14592): Se encontró el archivo superBloque.ims
+[INFO] 20:58:59:717 IMS/(14592:14592): Se muestra los datos del superBloque.
+Tamaño de bloque:10
+Cantidad de bloques:3
+
+[INFO] 20:58:59:720 IMS/(14592:14592): Validando existencia de Blocks.ims....
+[INFO] 20:58:59:721 IMS/(14592:14592): Existe archivo Blocks.ims.
+[INFO] 21:00:22:736 IMS/(14708:14708): Validando existencia de superbloque.ims....
+[ERROR] 21:00:22:737 IMS/(14708:14708): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 21:00:22:738 IMS/(14708:14708): Ingresar tamaño de cada bloque
+[INFO] 21:00:24:519 IMS/(14708:14708): Ingresar cantidad de bloques
+[INFO] 21:00:26:451 IMS/(14708:14708): Se creó archivo superBloque.ims
+[INFO] 21:00:26:451 IMS/(14708:14708): Validando existencia de Blocks.ims....
+[ERROR] 21:00:26:451 IMS/(14708:14708): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 21:00:26:453 IMS/(14708:14708): Se creó archivo Blocks.ims
+[INFO] 21:00:28:741 IMS/(14718:14718): Validando existencia de superbloque.ims....
+[INFO] 21:00:28:742 IMS/(14718:14718): Se encontró el archivo superBloque.ims
+[INFO] 21:00:28:746 IMS/(14718:14718): Se muestra los datos del superBloque.
+Tamaño de bloque:10
+Cantidad de bloques:30
+
+[INFO] 21:00:28:747 IMS/(14718:14718): Validando existencia de Blocks.ims....
+[INFO] 21:00:28:748 IMS/(14718:14718): Existe archivo Blocks.ims.
+[INFO] 21:01:11:487 IMS/(14779:14779): Validando existencia de superbloque.ims....
+[ERROR] 21:01:11:489 IMS/(14779:14779): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 21:01:11:489 IMS/(14779:14779): Ingresar tamaño de cada bloque
+[INFO] 21:01:16:749 IMS/(14779:14779): Ingresar cantidad de bloques
+[INFO] 21:01:18:476 IMS/(14779:14779): Se creó archivo superBloque.ims
+[INFO] 21:01:18:477 IMS/(14779:14779): Validando existencia de Blocks.ims....
+[ERROR] 21:01:18:478 IMS/(14779:14779): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 21:01:18:481 IMS/(14779:14779): Se creó archivo Blocks.ims
+[INFO] 21:01:18:483 IMS/(14779:14779): Guarde espacio para el bitmap en superbloque
+[INFO] 21:02:12:042 IMS/(14868:14868): Validando existencia de superbloque.ims....
+[INFO] 21:02:12:043 IMS/(14868:14868): Se encontró el archivo superBloque.ims
+[INFO] 21:02:12:046 IMS/(14868:14868): Se muestra los datos del superBloque.
+Tamaño de bloque:-1216528368
+Cantidad de bloques:0
+
+[INFO] 21:02:12:048 IMS/(14868:14868): Validando existencia de Blocks.ims....
+[INFO] 21:02:12:049 IMS/(14868:14868): Existe archivo Blocks.ims.
+[INFO] 21:02:12:051 IMS/(14868:14868): Guarde espacio para el bitmap en superbloque
+[INFO] 21:02:12:051 IMS/(14868:14868): h
+[INFO] 21:02:12:052 IMS/(14868:14868): h
+[INFO] 21:02:12:052 IMS/(14868:14868): h
+[INFO] 21:02:12:053 IMS/(14868:14868): h
+[INFO] 21:02:12:053 IMS/(14868:14868): h
+[INFO] 21:02:12:053 IMS/(14868:14868): Setee bitmap en 0 todo......0
+[INFO] 21:06:09:484 IMS/(15337:15337): Validando existencia de superbloque.ims....
+[INFO] 21:06:09:486 IMS/(15337:15337): Se encontró el archivo superBloque.ims
+[INFO] 21:06:09:493 IMS/(15337:15337): Se muestra los datos del superBloque.
+Tamaño de bloque:-1216720880
+Cantidad de bloques:0
+
+[INFO] 21:06:09:493 IMS/(15337:15337): Validando existencia de Blocks.ims....
+[INFO] 21:06:09:494 IMS/(15337:15337): Existe archivo Blocks.ims.
+[INFO] 21:06:09:496 IMS/(15337:15337): Guarde espacio para el bitmap en superbloque
+[INFO] 21:06:09:497 IMS/(15337:15337): Setee bitmap en 0 todo......0
+[INFO] 21:06:24:683 IMS/(15365:15365): Validando existencia de superbloque.ims....
+[INFO] 21:06:24:684 IMS/(15365:15365): Se encontró el archivo superBloque.ims
+[INFO] 21:06:24:687 IMS/(15365:15365): Se muestra los datos del superBloque.
+Tamaño de bloque:-1217269744
+Cantidad de bloques:0
+
+[INFO] 21:06:24:689 IMS/(15365:15365): Validando existencia de Blocks.ims....
+[INFO] 21:06:24:690 IMS/(15365:15365): Existe archivo Blocks.ims.
+[INFO] 21:06:24:692 IMS/(15365:15365): Guarde espacio para el bitmap en superbloque
+[INFO] 21:06:24:693 IMS/(15365:15365): Setee bitmap en 0 todo......0
+[INFO] 21:06:50:569 IMS/(15404:15404): Validando existencia de superbloque.ims....
+[INFO] 21:06:50:570 IMS/(15404:15404): Se encontró el archivo superBloque.ims
+[INFO] 21:06:50:573 IMS/(15404:15404): Se muestra los datos del superBloque.
+Tamaño de bloque:-1217335280
+Cantidad de bloques:0
+
+[INFO] 21:06:50:573 IMS/(15404:15404): Validando existencia de Blocks.ims....
+[INFO] 21:06:50:576 IMS/(15404:15404): Existe archivo Blocks.ims.
+[INFO] 21:06:50:578 IMS/(15404:15404): Guarde espacio para el bitmap en superbloque
+[INFO] 21:06:50:579 IMS/(15404:15404): Setee bitmap en 0 todo......0
+[INFO] 21:06:52:612 IMS/(15412:15412): Validando existencia de superbloque.ims....
+[INFO] 21:06:52:613 IMS/(15412:15412): Se encontró el archivo superBloque.ims
+[INFO] 21:06:52:615 IMS/(15412:15412): Se muestra los datos del superBloque.
+Tamaño de bloque:-1217003504
+Cantidad de bloques:0
+
+[INFO] 21:06:52:616 IMS/(15412:15412): Validando existencia de Blocks.ims....
+[INFO] 21:06:52:616 IMS/(15412:15412): Existe archivo Blocks.ims.
+[INFO] 21:06:52:620 IMS/(15412:15412): Guarde espacio para el bitmap en superbloque
+[INFO] 21:06:52:621 IMS/(15412:15412): holi
+[INFO] 21:06:52:622 IMS/(15412:15412): Setee bitmap en 0 todo......0
+[INFO] 21:07:23:553 IMS/(15458:15458): Validando existencia de superbloque.ims....
+[INFO] 21:07:23:554 IMS/(15458:15458): Se encontró el archivo superBloque.ims
+[INFO] 21:07:23:556 IMS/(15458:15458): Se muestra los datos del superBloque.
+Tamaño de bloque:-1216876528
+Cantidad de bloques:0
+
+[INFO] 21:07:23:556 IMS/(15458:15458): Validando existencia de Blocks.ims....
+[INFO] 21:07:23:559 IMS/(15458:15458): Existe archivo Blocks.ims.
+[INFO] 21:07:23:561 IMS/(15458:15458): Guarde espacio para el bitmap en superbloque
+[INFO] 21:07:23:562 IMS/(15458:15458): Setee bitmap en 0 todo......0
+[INFO] 21:07:35:992 IMS/(15484:15484): Validando existencia de superbloque.ims....
+[INFO] 21:07:35:994 IMS/(15484:15484): Se encontró el archivo superBloque.ims
+[INFO] 21:07:35:999 IMS/(15484:15484): Se muestra los datos del superBloque.
+Tamaño de bloque:-1216503792
+Cantidad de bloques:0
+
+[INFO] 21:07:35:999 IMS/(15484:15484): Validando existencia de Blocks.ims....
+[INFO] 21:07:36:000 IMS/(15484:15484): Existe archivo Blocks.ims.
+[INFO] 21:07:36:002 IMS/(15484:15484): Guarde espacio para el bitmap en superbloque
+[INFO] 21:07:36:003 IMS/(15484:15484): Setee bitmap en 0 todo......0
+[INFO] 21:07:52:640 IMS/(15511:15511): Validando existencia de superbloque.ims....
+[INFO] 21:07:52:645 IMS/(15511:15511): Se encontró el archivo superBloque.ims
+[INFO] 21:07:52:649 IMS/(15511:15511): Se muestra los datos del superBloque.
+Tamaño de bloque:-1216638960
+Cantidad de bloques:0
+
+[INFO] 21:07:52:650 IMS/(15511:15511): Validando existencia de Blocks.ims....
+[INFO] 21:07:52:651 IMS/(15511:15511): Existe archivo Blocks.ims.
+[INFO] 21:07:52:654 IMS/(15511:15511): Guarde espacio para el bitmap en superbloque
+[INFO] 21:07:52:666 IMS/(15511:15511): Setee bitmap en 0 todo......0
+[INFO] 21:09:59:303 IMS/(15694:15694): Validando existencia de superbloque.ims....
+[INFO] 21:09:59:305 IMS/(15694:15694): Se encontró el archivo superBloque.ims
+[INFO] 21:09:59:311 IMS/(15694:15694): Se muestra los datos del superBloque.
+Tamaño de bloque:-1216589808
+Cantidad de bloques:0
+
+[INFO] 21:09:59:312 IMS/(15694:15694): Validando existencia de Blocks.ims....
+[INFO] 21:09:59:313 IMS/(15694:15694): Existe archivo Blocks.ims.
+[INFO] 21:09:59:316 IMS/(15694:15694): Guarde espacio para el bitmap en superbloque
+[INFO] 21:09:59:318 IMS/(15694:15694): Setee bitmap en 0 todo......0
+[INFO] 21:11:11:280 IMS/(15791:15791): Validando existencia de superbloque.ims....
+[INFO] 21:11:11:281 IMS/(15791:15791): Se encontró el archivo superBloque.ims
+[INFO] 21:11:11:283 IMS/(15791:15791): Se muestra los datos del superBloque.
+Tamaño de bloque:-1216884720
+Cantidad de bloques:0
+
+[INFO] 21:11:11:284 IMS/(15791:15791): Validando existencia de Blocks.ims....
+[INFO] 21:11:11:285 IMS/(15791:15791): Existe archivo Blocks.ims.
+[INFO] 21:11:11:286 IMS/(15791:15791): Guarde espacio para el bitmap en superbloque
+[INFO] 21:12:09:062 IMS/(15874:15874): Validando existencia de superbloque.ims....
+[INFO] 21:12:09:063 IMS/(15874:15874): Se encontró el archivo superBloque.ims
+[INFO] 21:12:09:074 IMS/(15874:15874): Se muestra los datos del superBloque.
+Tamaño de bloque:-1217343472
+Cantidad de bloques:0
+
+[INFO] 21:12:09:074 IMS/(15874:15874): Validando existencia de Blocks.ims....
+[INFO] 21:12:09:075 IMS/(15874:15874): Existe archivo Blocks.ims.
+[INFO] 21:12:09:076 IMS/(15874:15874): Guarde espacio para el bitmap en superbloque
+[INFO] 21:12:09:080 IMS/(15874:15874): Setee bitmap en 0 todo......-1217728512
+[INFO] 21:12:34:520 IMS/(15913:15913): Validando existencia de superbloque.ims....
+[ERROR] 21:12:34:521 IMS/(15913:15913): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 21:12:34:522 IMS/(15913:15913): Ingresar tamaño de cada bloque
+[INFO] 21:12:42:472 IMS/(15931:15931): Validando existencia de superbloque.ims....
+[ERROR] 21:12:42:473 IMS/(15931:15931): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 21:12:42:473 IMS/(15931:15931): Ingresar tamaño de cada bloque
+[INFO] 21:12:44:567 IMS/(15931:15931): Ingresar cantidad de bloques
+[INFO] 21:12:45:530 IMS/(15931:15931): Se creó archivo superBloque.ims
+[INFO] 21:12:45:530 IMS/(15931:15931): Validando existencia de Blocks.ims....
+[ERROR] 21:12:45:530 IMS/(15931:15931): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 21:12:45:532 IMS/(15931:15931): Se creó archivo Blocks.ims
+[INFO] 21:12:45:534 IMS/(15931:15931): Guarde espacio para el bitmap en superbloque
+[INFO] 21:12:45:538 IMS/(15931:15931): holi
+[INFO] 21:13:42:385 IMS/(16014:16014): Validando existencia de superbloque.ims....
+[INFO] 21:13:42:386 IMS/(16014:16014): Se encontró el archivo superBloque.ims
+[INFO] 21:13:42:392 IMS/(16014:16014): Se muestra los datos del superBloque.
+Tamaño de bloque:-1216995312
+Cantidad de bloques:0
+
+[INFO] 21:13:42:393 IMS/(16014:16014): Validando existencia de Blocks.ims....
+[INFO] 21:13:42:394 IMS/(16014:16014): Existe archivo Blocks.ims.
+[INFO] 21:13:42:398 IMS/(16014:16014): Guarde espacio para el bitmap en superbloque
+[INFO] 21:13:42:399 IMS/(16014:16014): Setee bitmap en 0 todo......-1217380352
+[INFO] 21:36:34:502 IMS/(18000:18000): Validando existencia de superbloque.ims....
+[INFO] 21:36:34:504 IMS/(18000:18000): Se encontró el archivo superBloque.ims
+[INFO] 21:36:34:527 IMS/(18000:18000): Se muestra los datos del superBloque.
+Tamaño de bloque:-1217175536
+Cantidad de bloques:0
+
+[INFO] 21:36:34:527 IMS/(18000:18000): Validando existencia de Blocks.ims....
+[INFO] 21:36:34:528 IMS/(18000:18000): Existe archivo Blocks.ims.
+[INFO] 21:36:34:533 IMS/(18000:18000): Guarde espacio para el bitmap en superbloque
+[INFO] 21:36:34:534 IMS/(18000:18000): Setee bitmap en 0 todo......-1217560576
+[INFO] 21:37:03:847 IMS/(18058:18058): Validando existencia de superbloque.ims....
+[ERROR] 21:37:03:848 IMS/(18058:18058): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 21:37:03:848 IMS/(18058:18058): Ingresar tamaño de cada bloque
+[INFO] 21:37:05:337 IMS/(18058:18058): Ingresar cantidad de bloques
+[INFO] 21:37:06:070 IMS/(18058:18058): Se creó archivo superBloque.ims
+[INFO] 21:37:06:070 IMS/(18058:18058): Validando existencia de Blocks.ims....
+[ERROR] 21:37:06:071 IMS/(18058:18058): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 21:37:06:072 IMS/(18058:18058): Se creó archivo Blocks.ims
+[INFO] 21:37:06:076 IMS/(18058:18058): Guarde espacio para el bitmap en superbloque
+[INFO] 21:37:06:076 IMS/(18058:18058): holi
+[INFO] 21:37:06:077 IMS/(18058:18058): holi
+[INFO] 21:37:06:077 IMS/(18058:18058): holi
+[INFO] 21:37:06:077 IMS/(18058:18058): holi
+[INFO] 21:37:06:078 IMS/(18058:18058): holi
+[INFO] 21:37:06:078 IMS/(18058:18058): holi
+[INFO] 21:37:06:078 IMS/(18058:18058): holi
+[INFO] 21:37:06:078 IMS/(18058:18058): holi
+[INFO] 21:37:06:078 IMS/(18058:18058): holi
+[INFO] 21:37:06:078 IMS/(18058:18058): holi
+[INFO] 21:37:06:078 IMS/(18058:18058): holi
+[INFO] 21:37:06:079 IMS/(18058:18058): holi
+[INFO] 21:37:06:079 IMS/(18058:18058): holi
+[INFO] 21:37:06:079 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:081 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:082 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): holi
+[INFO] 21:37:06:083 IMS/(18058:18058): Setee bitmap en 0 todo......-1217290219
+[INFO] 21:37:06:083 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:084 IMS/(18058:18058): 0
+[INFO] 21:37:06:085 IMS/(18058:18058): 0
+[INFO] 21:37:06:085 IMS/(18058:18058): 0
+[INFO] 21:37:06:085 IMS/(18058:18058): 0
+[INFO] 21:37:06:085 IMS/(18058:18058): 0
+[INFO] 21:37:06:085 IMS/(18058:18058): 0
+[INFO] 21:37:06:085 IMS/(18058:18058): 0
+[INFO] 21:37:06:085 IMS/(18058:18058): 0
+[INFO] 21:37:06:085 IMS/(18058:18058): 0
+[INFO] 21:48:35:460 IMS/(19223:19223): Validando existencia de superbloque.ims....
+[ERROR] 21:48:35:461 IMS/(19223:19223): No se encontró archivo superBloque.ims. Se crea archivo
+[INFO] 21:48:35:461 IMS/(19223:19223): Ingresar tamaño de cada bloque
+[INFO] 21:48:36:928 IMS/(19223:19223): Ingresar cantidad de bloques
+[INFO] 21:48:37:767 IMS/(19223:19223): Se creó archivo superBloque.ims
+[INFO] 21:48:37:767 IMS/(19223:19223): Validando existencia de Blocks.ims....
+[ERROR] 21:48:37:767 IMS/(19223:19223): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 21:48:37:768 IMS/(19223:19223): Se creó archivo Blocks.ims
+[INFO] 21:48:37:771 IMS/(19223:19223): Guarde espacio para el bitmap en superbloque
+[INFO] 21:48:37:772 IMS/(19223:19223): Setee bitmap en 0 todo. (Cantidad de bloques en bitmap-->-1217757174)
+[INFO] 21:48:37:772 IMS/(19223:19223): 0
+[INFO] 21:48:37:772 IMS/(19223:19223): 0
+[INFO] 21:48:37:772 IMS/(19223:19223): 0
+[INFO] 21:48:37:772 IMS/(19223:19223): 0
+[INFO] 21:48:37:773 IMS/(19223:19223): 0
+[INFO] 21:48:37:773 IMS/(19223:19223): 0
+[INFO] 21:48:37:773 IMS/(19223:19223): 0
+[INFO] 21:48:37:773 IMS/(19223:19223): 0
+[INFO] 21:48:37:773 IMS/(19223:19223): 0
+[INFO] 21:48:37:773 IMS/(19223:19223): 0

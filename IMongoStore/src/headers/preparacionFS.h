@@ -27,7 +27,7 @@
 
     uint32_t cantidadBloques;
     uint32_t tamanioBloque;
-    int flag_existiaSB;
+
     
     FILE* arch_bloques;
     FILE* superBloque;

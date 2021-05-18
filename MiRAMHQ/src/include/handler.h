@@ -5,6 +5,7 @@
 #include <commons/log.h>
 #include <string.h>
 #include <unnamed/socket.h>
+#include "memory.h"
 
 enum comandos {
     INICIAR_TRIPULANTE = 500,
@@ -15,6 +16,6 @@ enum comandos {
     MENSAJE = 999
 };
 
-void handler (int fd, char *id, int opcode, char *buffer, t_log *logger);
+void handler (int fd, char *id, int opcode, void *buffer, t_log *logger);
 
 #endif

@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <stdarg.h>
 #include <string.h>
 #include <commons/string.h>
@@ -11,7 +12,8 @@ enum {
     STRING = 0,
     INT,
     CHAR,
-    FLOAT
+    DOUBLE,
+    UINT32,
 };
 
 /**
@@ -29,8 +31,17 @@ enum {
  *      
  *      ... -> variables correspondientes al formato especificado
  *
- * @example:
+ * @usage:
  *      Call with _serialize(sizeof(int), "%d", 25);
+ * 
+ * @format:
+ * 
+ *     "s" -> STRING
+ *     "d" -> INT
+ *     "c" -> CHAR
+ *     "f" -> DOUBLE
+ *     "u" -> UINT32
+ * 
  */
 void *_serialize(int size, char *format, ...);
 

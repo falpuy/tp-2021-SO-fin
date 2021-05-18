@@ -4,19 +4,17 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <string.h>
 #include <commons/collections/list.h>
-
-void *memory;
-void *virtualMemory;
 
 typedef struct {
     uint32_t id;
+    uint32_t isTask;
     uint32_t nroSegmento;
 } p_info;
 
-t_list *segmentTable;
-
 typedef struct {
+    uint32_t nroSegmento;
     uint32_t baseAddr;
     uint32_t limit;
 } segment;
@@ -28,6 +26,7 @@ typedef struct {
 
 typedef struct {
     uint32_t tid;
+    uint32_t pid;
     char status;
     uint32_t xpos;
     uint32_t ypos;
@@ -41,9 +40,11 @@ void *memory_init(int size);
 void memory_destroy(void *memory, t_list *segmentTable);
 
 // Guarda un struct en la memoria | type -> PCB | TCB | TASK
-void save_element(int type, void *object);
+void save_element(void *memory, int type, void *object);
 
 // Devuele un buffer con los datos del struct SIN deserializar
 void* get_element(void *memory, segment *address);
+
+pcb *deserialize_pcb(void *buffer, int tasks_size);
 
 #endif

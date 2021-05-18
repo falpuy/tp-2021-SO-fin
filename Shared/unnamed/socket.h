@@ -25,7 +25,6 @@
 typedef struct {
   char *identifier;
   int command;
-  char *message;
   void *payload;
   int pay_len;
 } t_mensaje;

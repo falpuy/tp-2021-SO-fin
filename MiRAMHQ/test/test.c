@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unnamed/socket.h>
+#include <unnamed/serialization.h>
 #include <commons/log.h>
 
 int status = 1;
@@ -21,17 +22,98 @@ int recvCounter = 0;
 
 int main() {
 
-    printf("Enviando mensaje...");
-
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
 
-    int socket_memoria =  _connect("127.0.0.1", "9000", logger);
+    // -------------- TEST SERIALIZACION -------------- //
+    void *buffer;
+    int b_size;
 
-    _send_message(socket_memoria, "DIS", 999, "asdasdasdasd", strlen("asdasdasdasd"), logger);
+    char *str = "HOLA!!!";
+    b_size = sizeof(int) + strlen(str);
+    buffer = _serialize(b_size, "%s", str);
+    free(buffer);
 
-    t_mensaje *mensaje = _receive_message(socket_memoria, logger);
+    b_size = sizeof(int);
+    buffer = _serialize(b_size, "%d", 25);
+    free(buffer);
+
+    b_size = sizeof(char);
+    buffer = _serialize(b_size, "%c", 'Z');
+    free(buffer);
+
+    b_size = sizeof(double);
+    buffer = _serialize(b_size, "%f", 100.33494);
+    free(buffer);
+
+    b_size = sizeof(uint32_t);
+    buffer = _serialize(b_size, "%u", 32);
+    free(buffer);
+
+    // Error de formato
+    b_size = sizeof(uint32_t);
+    buffer = _serialize(b_size, "%d%s%p%k", 32);
+    free(buffer);
+
+    // ---------------- TEST CONEXION ----------------- //
+
+    // int socket_memoria =  _connect("127.0.0.1", "5001", logger);
+
+    // _send_message(socket_memoria, "DIS", 999, "asdasdasdasd", strlen("asdasdasdasd"), logger);
+
+    // t_mensaje *mensaje = _receive_message(socket_memoria, logger);
+
+    // free(mensaje -> identifier);
+    // free(mensaje -> payload);
+    // free(mensaje);
+
+    // close(socket_memoria);
+
+    // -------------------------------------------- //
 
     log_destroy(logger);
 
     return 0;
 }
+
+// int main()
+// {
+//     // char str[] = "comando blabla [1,2,3,4,5] bla bla";
+//     // remove_all_chars(str, '[');
+//     // remove_all_chars(str, ']');
+//     void *str = malloc(strlen("STRING DE PRUEBBA\0"));
+
+//     memcpy(str, "STRING DE PRUEBBA\0", strlen("STRING DE PRUEBBA\0"));
+
+//     printf("str '%s'\n", str);
+    
+//     int start = 3;
+//     int end = 6;
+
+//     // Delete space allocated by data in hq memory
+//     memset(str + start, '\0', end - start);
+
+//     printf("str '%s'\n", str + end);
+
+//     for(int i = 0; i < strlen("STRING DE PRUEBBA\0"); i ++) {
+//         if (memcmp(str + i, "\0", 1)) {
+//             printf("CHAR: %s\n", (char*)&(str[i]));
+//         } else {
+//             printf("EMPTY: %s\n", (char*)&(str[i]));
+//         }
+//     }
+
+//     // Search for free spaces
+//     // for -> primero elemento vacio
+//     // for -> validar qe haya elementos vacios desde el primero q matchea
+//     // hhasta el tamanio necesario
+//     // si se encuentra una valor distinto de vacio en el medio de la segunda busqueda
+//     // colocar el primer for a partir de este valor y seguir buscando hhasta finalizar
+
+//     // Trim all values in memory
+//     // Use segment table to iterate the memory
+//     // Copy all values inside a new buffer next to each other
+//     // delete the memory buffer and set the new values
+
+//     free(str);
+//     return 0;
+// }

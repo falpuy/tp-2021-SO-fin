@@ -22,8 +22,6 @@ void *_serialize(int size, char *format, ...) {
     char *string;
     int stringLength;
     int value;
-<<<<<<< HEAD
-=======
     char c_value;
     double d_value;
 
@@ -40,16 +38,6 @@ void *_serialize(int size, char *format, ...) {
     // Inicializo la lista
     va_start(lista_argumentos, format);
 
-<<<<<<< HEAD
-    for(int i = 1; i <= arg_c; i++) {
-        printf("Getting type of %s..\n", types[i]);
-        switch(get_type(types[i])) {
-
-            case STRING:
-                printf("Got a string..\n");
-                string = va_arg(lista_argumentos, char *);
-                printf("String: %s\n", string);
-=======
     // Verifico primero los parametros que se enviaron
     for(int i = 1; i <= arg_c; i++) {
 
@@ -73,7 +61,6 @@ void *_serialize(int size, char *format, ...) {
                 // printf("Got a string..\n");
                 string = va_arg(lista_argumentos, char *);
                 printf("[Shared Library]: Serializing type of String: %s\n", string);
->>>>>>> main
 
                 stringLength = strlen(string);
                 memcpy(stream + offset, &stringLength, sizeof(int));
@@ -81,30 +68,16 @@ void *_serialize(int size, char *format, ...) {
                 memcpy(stream + offset, string, stringLength);
                 offset += stringLength;
 
-<<<<<<< HEAD
-                break;
-            case INT:
-                printf("Got an Int..\n");
-                value = va_arg(lista_argumentos, int);
-                printf("INT: %d\n", value);
-=======
             break;
             
             case INT:
                 // printf("Got an Integer..\n");
                 value = va_arg(lista_argumentos, int);
                 printf("[Shared Library]: Serializing type of Int: %d\n", value);
->>>>>>> main
 
                 memcpy(stream + offset, &value, sizeof(int));
                 offset += sizeof(int);
 
-<<<<<<< HEAD
-                break;
-
-            default:
-                printf("\nError: %s Format Does not exist\n", types[i]);
-=======
             break;
             
             case CHAR:
@@ -145,17 +118,12 @@ void *_serialize(int size, char *format, ...) {
                 }
                 free(types);
                 va_end(lista_argumentos);
->>>>>>> main
                 return NULL;
         }
 
     }
 
     for(int j = 0; j <= arg_c; j++){
-<<<<<<< HEAD
-        printf("Freeing the memory allocated by Types: %d\n", j);
-=======
->>>>>>> main
         free(types[j]);
     }
     free(types);

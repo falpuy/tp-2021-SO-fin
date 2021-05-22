@@ -3,6 +3,8 @@
 
     #include <stdio.h>
     #include <stdlib.h>
+    #include <commons/string.h>
+    #include <string.h>
     #include <unnamed/serialization.h>
     #include <unnamed/select.h>
     #include <unnamed/socket.h>

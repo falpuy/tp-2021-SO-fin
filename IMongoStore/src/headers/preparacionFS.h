@@ -15,29 +15,20 @@
     #include <sys/stat.h>
     #include <fcntl.h>
     #include <stdarg.h>
+    #include <sys/types.h>
+    #include <dirent.h>
+    #include "syncFile.h"
 
-    typedef struct{
-        char* puntoMontaje;
-        char* puerto;
-        int tiempoSincronizacion;
-    }configIMS;
 
-    configIMS* datosConfig;
     void* p_bitmap;
 
-    uint32_t cantidadBloques;
-    uint32_t tamanioBloque;
-
-    
-    FILE* arch_bloques;
-    FILE* superBloque;
-
-
     void inicializacionFS(t_log* log);
+    void validarDirectorioFS(t_log* log);
     void generarBitmap(t_log* log);
     void guardarEspacioBitmap(t_log* log);
     void validarBlocks(t_log* log);
     void validarSuperBloque(t_log* log);
+    void mapearBlocks(t_log* log);
 
 
 #endif

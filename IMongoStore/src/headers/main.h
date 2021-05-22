@@ -4,7 +4,7 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <unnamed/socket.h>
-    #include <unnamed/select.h>
+    #include <unnamed/server.h>
     #include <signal.h>
     #include <pthread.h>
     #include "atenderTripulantes.h"
@@ -18,16 +18,11 @@
     #define PROGRAM "IMS"
 
 
-
     t_log* logIMS;
     t_config* arch_config;
     pthread_t threadSelect;
 
     void setearConfiguraciones();
     void finalizarProceso();
-
-
-
-
 
 #endif

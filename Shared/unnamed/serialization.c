@@ -24,6 +24,7 @@ void *_serialize(int size, char *format, ...) {
     int value;
     char c_value;
     double d_value;
+    uint32_t u_value;
 
     int arg_c = 0;
 

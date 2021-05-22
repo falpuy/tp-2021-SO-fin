@@ -41,6 +41,6 @@
     void funcionPlanificador(t_log* logger);
     void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger);
     TCB* crear_TCB(int idP, int posX, int posY, int idT, char* tarea);
-    PCB* crear_PCB(char** parametros, &int contadorPCBs, int conexion_RAM, int conexion_IMS);
+    //PCB* crear_PCB(char** parametros, int conexion_RAM, int conexion_IMS);
 
 #endif

@@ -78,10 +78,11 @@ TCB* crear_TCB(int idP, int posX, int posY, int idT, char* tarea)
     nuevoTCB -> posicionY = posY;
     nuevoTCB -> instruccion_actual = malloc (strlen(tarea) + 1);
     strcpy(nuevoTCB -> instruccion_actual, tarea);
+    nuevoTCB -> instruccion_actual[strlen(tarea)]='\0';
     return nuevoTCB;
 }
 
-PCB* crear_PCB(char** parametros, &int contadorPCBs, int conexion_RAM, int conexion_IMS)
+/*PCB* crear_PCB(char** parametros, int conexion_RAM, int conexion_IMS)
 {                        
     int cant_tripulantes = parametros[1];
     contadorPCBs++;
@@ -90,13 +91,14 @@ PCB* crear_PCB(char** parametros, &int contadorPCBs, int conexion_RAM, int conex
     nuevoPCB -> listaTCB = list_create();
     nuevoPCB -> rutaTareas = malloc (strlen(parametros[2]) + 1);
     strcpy(nuevoPCB -> rutaTareas, parametros[2]);
+    nuevoPCB -> rutaTareas[strlen(parametros[2])]='\0';
     int posX = 0;
     int posY = 0;
     bool hayParametros = true;
     for(int i = 1; i<=cant_tripulantes; i++)
     {
         if (hayParametros) {
-            if (strcmp(parametros[2s+i], NULL) == 0) {//Si no exite ese elemento/índice del vector, las posiciones son 0|0
+            if (strcmp(parametros[2+i], NULL) == 0) {//Si no exite ese elemento/índice del vector, las posiciones son 0|0
                     hayParametros = false;
             }
             else {
@@ -138,7 +140,7 @@ PCB* crear_PCB(char** parametros, &int contadorPCBs, int conexion_RAM, int conex
         free(temp_tarea);
     }
     return nuevoPCB;
-}
+}*/
 
 /*void funcionEliminarListaPatotas(void* nodoPatota) {
 

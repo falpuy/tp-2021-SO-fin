@@ -53,3 +53,9 @@
 [INFO] 18:03:03:114 consola/(6074:6074): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
 [ERROR] 18:03:03:115 consola/(6074:6074): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
 [INFO] 18:03:05:667 consola/(6074:6074): Salimos de la consola
+[INFO] 17:45:14:153 consola/(5105:5105): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:45:14:155 consola/(5105:5105): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:45:14:155 consola/(5105:5105): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:45:14:156 consola/(5105:5105): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 17:45:14:156 consola/(5105:5105): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:45:24:041 consola/(5105:5105): Salimos de la consola

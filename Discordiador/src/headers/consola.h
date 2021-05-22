@@ -11,6 +11,7 @@
     #include<readline/readline.h>
     #include<sys/socket.h>
     #include<unnamed/socket.h>
+    #include<unnamed/serialization.h>
     //#include "headers/planificador.h"
 
     #define LARGO 7 //es lo mismo que const int largo = 7

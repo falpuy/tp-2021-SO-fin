@@ -1,0 +1,18 @@
+[INFO] 18:39:13:014 test/(8298:8298): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:39:13:015 test/(8298:8298): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:45:42:510 test/(9025:9025): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:45:42:511 test/(9025:9025): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:48:58:632 test/(9025:9025): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:48:58:634 test/(9025:9411): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:50:47:281 test/(9025:9411): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:51:23:175 test/(9679:9679): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:51:23:181 test/(9679:9679): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:51:38:343 test/(9679:9679): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:51:38:345 test/(9679:9715): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:54:03:987 test/(9985:9985): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:54:03:989 test/(9985:9985): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:57:20:837 test/(10484:10484): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:57:20:838 test/(10484:10484): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:57:46:673 test/(10484:10484): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:57:46:678 test/(10484:10541): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:57:53:585 test/(10484:10541): me llegó un comando :)

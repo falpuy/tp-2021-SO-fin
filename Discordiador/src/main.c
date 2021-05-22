@@ -31,10 +31,10 @@ int main () {
     puerto_IMS, grado_multitarea, algoritmo, quantum_RR, duracion_sabotaje, ciclo_CPU);
 
     conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-    conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
+    //conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
 
-    //funcionConsola (logger, conexion_RAM, conexion_IMS);
-    funcionPlanificador(logger);
+    funcionConsola (logger, conexion_RAM, conexion_IMS);
+    //funcionPlanificador(logger);
 
     //terminar_proceso(int conexion, t_log* logger, t_config* config,);
     //agregar los destroy de las colas y listas

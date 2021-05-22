@@ -59,3 +59,29 @@
 [INFO] 17:45:14:156 consola/(5105:5105): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
 [ERROR] 17:45:14:156 consola/(5105:5105): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
 [INFO] 17:45:24:041 consola/(5105:5105): Salimos de la consola
+[INFO] 18:48:58:630 consola/(9410:9410): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:48:58:631 consola/(9410:9410): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:48:58:632 consola/(9410:9410): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:49:07:979 consola/(9410:9410): ENTRO OBTENER
+[ERROR] 18:49:07:980 consola/(9410:9410): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 18:49:07:980 consola/(9410:9410): Recibi el siguiente mensaje..
+[INFO] 18:49:07:980 consola/(9410:9410): Proceso: �S[
+[INFO] 18:49:07:981 consola/(9410:9410): Comando: 925907513
+[INFO] 18:49:07:981 consola/(9410:9410): Tamanio: 1545732096
+[INFO] 18:49:07:981 consola/(9410:9410): BITACORA: 
+[INFO] 18:51:38:341 consola/(9714:9714): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:51:38:342 consola/(9714:9714): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:51:38:343 consola/(9714:9714): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:51:44:552 consola/(9714:9714): ENTRO OBTENER
+[ERROR] 18:51:44:553 consola/(9714:9714): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 18:54:08:925 consola/(9714:9714): Salimos de la consola
+[INFO] 18:54:14:559 consola/(10011:10011): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:54:14:560 consola/(10011:10011): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:54:14:561 consola/(10011:10011): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:55:11:223 consola/(10011:10011): Salimos de la consola
+[INFO] 18:57:46:672 consola/(10540:10540): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:57:46:672 consola/(10540:10540): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:57:46:673 consola/(10540:10540): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:57:53:584 consola/(10540:10540): ENTRO OBTENER
+[INFO] 18:57:53:585 consola/(10540:10540): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:58:18:761 consola/(10540:10540): Salimos de la consola

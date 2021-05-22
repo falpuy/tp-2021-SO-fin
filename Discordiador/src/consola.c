@@ -58,7 +58,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
             switch (instruccion_consola) {
                 case 0: //INICIAR_PLANIFICACION
                     log_info(logger, "ENTRO INICIAR PLANI");
-                    /*while (NEW != NULL) // si hay nodos en new, los pasa a ready
+                    while (NEW != NULL) // si hay nodos en NEW, los pasa a Ready
                     {
                         TCB* aux_TCB = malloc (sizeof(TCB));
                         aux_TCB = queue_peek(NEW);
@@ -66,7 +66,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                         queue_push(READY, aux_TCB);
                         aux_TCB -> status = 'R';
                         free(aux_TCB);
-                    }*/
+                    }
                     break;
 
                 case 1: //PAUSAR_PLANIFICACION
@@ -74,15 +74,15 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 //No se puede cambiar tripulantes de estado, los que están en exec se detienen, sólo se pueden iniciar patotas
                 // y listar tripulantes.
                 // comprobar si ya esta andando o si ya se pauso (o si nunca empezo)
-                    /*while (EXEC != NULL) // si hay nodos en exec, los pasa a ready o a new
+                    while (EXEC != NULL) // si hay nodos en exec, los pasa a ready
                     {
                         TCB* aux_TCB = malloc (sizeof(TCB));
                         aux_TCB = queue_peek(EXEC);
                         queue_pop(EXEC);
-                        queue_push(NEW, aux_TCB);
-                        aux_TCB -> status = 'N';
+                        queue_push(READY, aux_TCB);
+                        aux_TCB -> status = 'R';
                         free(aux_TCB);
-                    }*/
+                    }
                     break;
 
                 case 2: //INICIAR_PATOTA
@@ -107,7 +107,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
 
                 case 4: //EXPULSAR_TRIPULANTE
                     log_info(logger, "ENTRO EXPULSAR");
-                    /*if (!planificacion_pausada) {
+                    if (!planificacion_pausada) {
                         tamanioBuffer = sizeof(int);
                         buffer = malloc (tamanioBuffer);
                         buffer = _serialize(tamanioBuffer, "%d", parametros[1]);
@@ -116,7 +116,10 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                         //log_info(logger, "SALIÓ %s", mensajeRecibido -> payload);
                         //sacar de la lista correspondiente al tripulante y ponerlo en exit
                         #define LONGITUD 5
-                        t_queue** vectorDeColas = [NEW, READY, EXEC, BLOQ_IO, BLOQ_EMER];
+                        funcion(NEW, );
+                        funcion(READY);
+                        //poner nombres de colas en minúscula
+                        t_queue** vectorDeColas = {NEW, READY, EXEC, BLOQ_IO, BLOQ_EMER};
                         int k;
                         TCB* aux_TCB = malloc (sizeof(TCB));
                         for (k= 0; k<LONGITUD; k++) {
@@ -147,16 +150,15 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
 
                 case 5: // OBTENER_BITACORA
                     log_info(logger, "ENTRO OBTENER");
-                    /*tamanioBuffer = sizeof(int);
-                    buffer = malloc (tamanioBuffer);
+                    tamanioBuffer = sizeof(int);
                     buffer = _serialize(tamanioBuffer, "%d", parametros[1]);
                     _send_message(conexion_IMS, "DIS", 750, buffer, tamanioBuffer, logger);
-                    mensajeRecibido = _receive_message(conexion_IMS, logger);
-                    log_info(logger, "BITACORA: %s", mensajeRecibido -> payload);
+                    //mensajeRecibido = _receive_message(conexion_IMS, logger);
+                    //log_info(logger, "BITACORA: %s", mensajeRecibido -> payload);
                     // después vemos qué mostramos con Delfi
                     free(parametros[0]);
                     free(parametros[1]);
-                    free(parametros);*/
+                    free(parametros);
                     break;
                 
                 case 6: // SALIR

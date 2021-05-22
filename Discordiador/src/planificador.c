@@ -82,7 +82,7 @@ TCB* crear_TCB(int idP, int posX, int posY, int idT, char* tarea)
     return nuevoTCB;
 }
 
-/*PCB* crear_PCB(char** parametros, int conexion_RAM, int conexion_IMS)
+PCB* crear_PCB(char** parametros, int conexion_RAM, int conexion_IMS)
 {                        
     int cant_tripulantes = parametros[1];
     contadorPCBs++;
@@ -111,7 +111,7 @@ TCB* crear_TCB(int idP, int posX, int posY, int idT, char* tarea)
         
         int tamanioBuffer;
         void* buffer;
-        t_mensaje *mensajeRecibido;
+        t_mensaje *mensajeRecibido = malloc (sizeof(t_mensaje));
         tamanioBuffer = sizeof(int)*4 + sizeof(char);
         buffer = _serialize(tamanioBuffer, "%d","%d","%d","%d","%c", contadorPCBs, TID, posX, posY, 'N');
         _send_message(conexion_RAM, "DIS", 500, buffer, tamanioBuffer, logger);
@@ -119,28 +119,29 @@ TCB* crear_TCB(int idP, int posX, int posY, int idT, char* tarea)
         int comando = mensajeRecibido -> command;
         char* temp_tarea;
 
-        if (comando == 200) {
+        if (comando == 100) {
             temp_tarea = malloc (strlen(mensajeRecibido -> payload) + 1);
             strcpy(temp_tarea, mensajeRecibido -> payload);}
-        else if (comando == 201) {
+        else if (comando == 401) {
             send_tareas(contadorPCBs, parametros[2]);
             //recv!
             _send_message(conexion_RAM, "DIS", 500, buffer, tamanioBuffer, logger);
             mensajeRecibido = _receive_message(conexion_RAM, logger);
             temp_tarea = malloc (strlen(mensajeRecibido -> payload) + 1);
             strcpy(temp_tarea, mensajeRecibido -> payload);}
-        else if (comando == 202) {
+        else if (comando == 402) {
             log_info(logger, "No hay suficiente memoria para iniciar otro tripulante");
             break;}
 
         TCB* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, TID, temp_tarea);
         list_add (nuevoPCB -> listaTCB, (void*) nuevoTCB);
         queue_push (NEW, nuevoTCB);
+        nuevoTCB -> status = 'N';
         free(buffer);
         free(temp_tarea);
     }
     return nuevoPCB;
-}*/
+}
 
 /*void funcionEliminarListaPatotas(void* nodoPatota) {
 

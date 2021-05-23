@@ -11,12 +11,11 @@
     #include <commons/log.h>
 
     #include <commons/config.h>
-    #include "preparacionFS.h"
+    //#include "preparacionFS.h"
 
     #define CONFIG_PATH "../configuraciones/configuracion.config"
     #define LOG_PATH "../logs/logIMS.log"
     #define PROGRAM "IMS"
-
 
     t_log* logIMS;
     t_config* arch_config;
@@ -24,5 +23,7 @@
 
     void setearConfiguraciones();
     void finalizarProceso();
+    char* path(char* str);
+
 
 #endif

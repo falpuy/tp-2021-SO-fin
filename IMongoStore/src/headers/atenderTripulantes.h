@@ -8,14 +8,17 @@
     #include <unnamed/serialization.h>
     #include <unnamed/select.h>
     #include <unnamed/socket.h>
+    #include <math.h>
+    #include <commons/config.h>
 
     
     enum COMANDOS{
-        MOVER_TRIPULANTE = 1,
-        COMIENZA_EJECUCION_TAREA = 2,
-        FINALIZA_TAREA = 3,
-        ATENDER_SABOTAJE = 4,
-        RESUELTO_SABOTAJE = 5
+        OBTENER_BITACORA = 760 ,
+        MOVER_TRIPULANTE ,
+        COMIENZA_EJECUCION_TAREA,
+        FINALIZA_TAREA,
+        ATENDER_SABOTAJE,
+        RESUELTO_SABOTAJE
     };
 
     enum TAREAS_TRIPULANTE{
@@ -24,11 +27,21 @@
         GENERAR_COMIDA,
         GENERAR_BASURA,
         DESCARTAR_BASURA   
-    };
-    
-    
-    
-    void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
 
+    };
+
+    typedef struct{
+        char* puntoMontaje;
+        char* puerto;
+        int tiempoSincronizacion;
+        uint32_t cantidadBloques;
+        uint32_t tamanioBloque;    
+    }configIMS;
+
+    configIMS* datosConfig;
+    
+    char* path(char* str);
+    void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
+    int cantidad_bloques(char* string);
 
 #endif

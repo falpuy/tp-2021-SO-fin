@@ -5,6 +5,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <commons/config.h>
+#include <math.h>
 
 
 int main(){
@@ -44,16 +46,37 @@ int main(){
 
         // close(testB);
 
-    //-------------------TEST CONEXION POR POOL THREADS (FUNCION GRUPO)
+    //-------------------TEST CONEXION POR POOL THREADS (FUNCION GRUPO) !FUNCIONA
     
-    //-------------------TEST SERIALIZACION PAYLOAD Y DESERIALIZACION
+    //-------------------TEST SERIALIZACION PAYLOAD Y DESERIALIZACION !FUNCIONA
 
-    //-------------------TEST CREAR STRING DE COMANDO Y TRATAR DE GUARDAR EN BLOQUES MAXIMOS (PARA BLOCKS.IMS)
+    //-------------------TEST CREAR BITACORA COMO CONFIG !FUNCA
     
-    
-    
-    
+        // FILE* testing = fopen("config.ims","w");
+        // fclose(testing);
 
+        // t_config* bitacora = config_create("config.ims");
+        // //t_dictionary* diccionario = dictionary_create();
+	    
+        // dictionary_put(bitacora->properties, "SIZE", "132");
+        
+        
+        // //SIZE=132
+        // // BLOCK_COUNT=3
+        // // BLOCKS=[1,2,3]
+        // // MD5_ARCHIVO=BD1014D173BA92CC014850A7087E254E
+
+	    // config_save_in_file(bitacora,"config.ims");
+
+    //-------------------TEST ceiling
+    
+    // double valor1 = 23;
+    // int valor2 = 8;
+    // double total = ceil(valor1/(double) valor2);
+    // printf("%f\n",total);
+
+
+    // printf("%d\n",(int) total);
 
 
 

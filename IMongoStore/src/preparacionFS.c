@@ -81,8 +81,6 @@ void validarBlocks(t_log* log){
     }else{
         log_info(log,"Existe archivo Blocks.ims.");
     }
-
-
 }
 
 

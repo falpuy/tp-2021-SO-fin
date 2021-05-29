@@ -7,20 +7,32 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         case INICIAR_TRIPULANTE:
             // Será el encargado de crear la o las estructuras administrativas necesarias para que un tripulante pueda ejecutar.
             // En caso de que no se encuentre creada la patota a la que pertenece, deberá solicitar el listado de tareas.
-
+            
             // Recibo el id de la patota correspondiente al tripulante
+            char* idPCB = recibir_pbc(buffer);
 
             // Busco la tabla de segmentos en el diccionario -> dictionary_has_key()
 
             // Si no existe la patota
                 // pido las tareas de la patota X
+            if (!dictionary_has_key(diccionario, idPCB)){
+                //COMANDO ERROR: NO EXISTE LA PATOTA, ENVIAR TAREAS PARA CREARLA --> 550
+                _send_message(fd, "RAM", 550 , "", 1 ,logger);
+            }
 
             // Si existe la patota
+            else {
 
                 // Me traigo ese segmento de patota para usar la direccion de las tareas
+                t_queue* segmento_patota = dictionary_get(diccionario, idPCB);
                 // Busco la primer tarea de la lista correspondiente al pcb del tripulante
+                segment* tareas = obtener_tareas(segmento_patota);
+                unit32_t proximaTarea = asignar_primer_tarea(tareas);
                 // Creo el segmento del tripulante
+                tcb nuevoTripulante = crear_tripulante(idPCB);
                 // asigno la ubicacion de la siguiente tarea al segmento
+                nuevoTripulante->next = proximaTarea;
+                segment* tripulante = crear_segmento(nuevoTripulante);
                 // Busco espacio libre
 
                 // Si hay espacio
@@ -43,6 +55,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                     
                     // No hay espacio
                         // Envio mensaje de Error
+            }
 
             // ------------- Analizar Caso ------------- //
 

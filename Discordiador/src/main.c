@@ -1,19 +1,6 @@
 #include "headers/main.h"
 
 int main () {
-    int conexion_RAM;
-    int conexion_IMS;
-    char* ip_RAM;
-    char* puerto_RAM;
-    char* ip_IMS;
-    char* puerto_IMS;
-    int grado_multitarea;
-    char* algoritmo;
-    int quantum_RR;
-    int duracion_sabotaje;
-    int ciclo_CPU;
-
-    t_log* logger;
     logger = log_create("consola.log", "consola", 1, LOG_LEVEL_INFO);
 
     t_config* config;
@@ -33,8 +20,12 @@ int main () {
     conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     //conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
 
+
+    //pthread_create(&hReadyaExec, NULL, funcionhReadyaExec, logger);
+    //pthread_join(&hReadyaExec, NULL);
+
+    funcionPlanificador (logger);
     funcionConsola (logger, conexion_RAM, conexion_IMS);
-    //funcionPlanificador(logger);
 
     //terminar_proceso(int conexion, t_log* logger, t_config* config,);
     //agregar los destroy de las colas y listas

@@ -85,3 +85,483 @@
 [INFO] 18:57:53:584 consola/(10540:10540): ENTRO OBTENER
 [INFO] 18:57:53:585 consola/(10540:10540): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 18:58:18:761 consola/(10540:10540): Salimos de la consola
+[INFO] 16:32:08:460 consola/(8928:8928): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:32:08:462 consola/(8928:8928): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 16:32:08:463 consola/(8928:8928): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:32:08:463 consola/(8928:8928): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 16:32:08:463 consola/(8928:8928): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:32:14:335 consola/(8928:8928): Salimos de la consola
+[INFO] 16:33:25:328 consola/(9128:9128): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:33:25:328 consola/(9128:9128): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:33:25:329 consola/(9128:9128): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:33:25:330 consola/(9128:9128): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 16:33:25:336 consola/(9128:9128): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:33:48:363 consola/(9128:9128): ENTRO INICIAR PATO
+[INFO] 16:38:20:965 consola/(9833:9833): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:38:20:967 consola/(9833:9833): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:38:20:967 consola/(9833:9833): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:38:20:975 consola/(9833:9833): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 16:38:20:976 consola/(9833:9833): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:43:10:264 consola/(9833:9833): ENTRO INICIAR PATO
+[INFO] 16:44:16:008 consola/(10263:10263): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:44:16:009 consola/(10263:10263): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:44:16:010 consola/(10263:10263): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:44:16:010 consola/(10263:10263): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 16:44:16:011 consola/(10263:10263): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:44:36:214 consola/(10263:10263): ENTRO INICIAR PATO
+[INFO] 16:45:03:568 consola/(10372:10372): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:45:03:569 consola/(10372:10372): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:45:03:570 consola/(10372:10372): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:45:03:571 consola/(10372:10372): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 16:45:03:573 consola/(10372:10372): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:45:14:115 consola/(10372:10372): ENTRO OBTENER
+[INFO] 16:45:40:300 consola/(10372:10372): Salimos de la consola
+[INFO] 16:45:51:438 consola/(10476:10476): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:45:51:439 consola/(10476:10476): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:45:51:440 consola/(10476:10476): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:45:51:440 consola/(10476:10476): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 16:45:51:441 consola/(10476:10476): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:45:57:739 consola/(10476:10476): ENTRO OBTENER
+[INFO] 16:46:19:608 consola/(10476:10476): ENTRO INICIAR PATO
+[INFO] 16:46:36:632 consola/(10580:10580): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:46:36:638 consola/(10580:10580): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:46:36:639 consola/(10580:10580): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:46:36:640 consola/(10580:10580): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 16:46:36:641 consola/(10580:10580): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:46:50:289 consola/(10580:10580): ENTRO OBTENER
+[INFO] 16:47:02:074 consola/(10580:10580): Salimos de la consola
+[INFO] 16:47:15:190 consola/(10703:10703): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:47:15:191 consola/(10703:10703): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:47:15:192 consola/(10703:10703): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:47:15:193 consola/(10703:10703): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 16:47:15:200 consola/(10703:10703): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:48:07:500 consola/(10703:10703): ENTRO INICIAR PATO
+[INFO] 16:48:29:496 consola/(10885:10885): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:48:29:497 consola/(10885:10885): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:48:29:498 consola/(10885:10885): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:48:38:541 consola/(10885:10885): ENTRO INICIAR PATO
+[INFO] 16:49:09:005 consola/(10975:10975): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:49:09:007 consola/(10975:10975): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:49:09:007 consola/(10975:10975): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:49:14:790 consola/(10975:10975): ENTRO INICIAR PATO
+[INFO] 16:49:14:791 consola/(10975:10975): hasta acá bien
+[INFO] 16:49:34:443 consola/(11040:11040): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:49:34:444 consola/(11040:11040): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:49:34:444 consola/(11040:11040): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:50:04:998 consola/(11040:11040): ENTRO INICIAR PATO
+[INFO] 17:12:28:610 consola/(11162:11162): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:12:28:611 consola/(11162:11162): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:12:28:616 consola/(11162:11162): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:12:43:528 consola/(11162:11162): ENTRO INICIAR PATO
+[INFO] 17:12:43:529 consola/(11162:11162): hasta acá bien
+[INFO] 17:12:43:529 consola/(11162:11162): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:12:43:529 consola/(11162:11162): Recibi el siguiente mensaje..
+[INFO] 17:14:41:728 consola/(11468:11468): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:41:729 consola/(11468:11468): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:14:41:736 consola/(11468:11468): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:14:54:020 consola/(11468:11468): ENTRO INICIAR PATO
+[INFO] 17:14:54:020 consola/(11468:11468): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:17:196 consola/(11540:11540): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:15:17:197 consola/(11540:11540): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:15:17:198 consola/(11540:11540): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:23:37:263 consola/(11690:11690): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:23:37:270 consola/(11690:11690): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:23:37:270 consola/(11690:11690): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:24:00:915 consola/(11690:11690): ENTRO INICIAR PATO
+[INFO] 17:24:00:916 consola/(11690:11690): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:24:00:916 consola/(11690:11690): hasta aca esta bien
+[INFO] 17:24:19:877 consola/(11803:11803): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:24:19:878 consola/(11803:11803): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:24:19:879 consola/(11803:11803): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:24:32:534 consola/(11803:11803): ENTRO INICIAR PATO
+[INFO] 17:24:32:535 consola/(11803:11803): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:24:32:537 consola/(11803:11803): hasta aca esta bien
+[INFO] 17:24:52:161 consola/(11915:11915): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:24:52:162 consola/(11915:11915): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:24:52:163 consola/(11915:11915): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:25:02:562 consola/(11915:11915): ENTRO INICIAR PATO
+[INFO] 17:25:02:564 consola/(11915:11915): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:25:02:564 consola/(11915:11915): hasta aca esta bien
+[INFO] 17:25:22:393 consola/(11993:11993): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:25:22:395 consola/(11993:11993): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:25:22:396 consola/(11993:11993): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:25:34:032 consola/(11993:11993): ENTRO INICIAR PATO
+[INFO] 17:25:34:033 consola/(11993:11993): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:03:367 consola/(12108:12108): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:26:03:369 consola/(12108:12108): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:26:03:371 consola/(12108:12108): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:26:21:115 consola/(12108:12108): ENTRO INICIAR PATO
+[INFO] 17:26:21:116 consola/(12108:12108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:43:864 consola/(12205:12205): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:26:43:866 consola/(12205:12205): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:26:43:867 consola/(12205:12205): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:26:54:438 consola/(12205:12205): ENTRO INICIAR PATO
+[INFO] 17:26:54:439 consola/(12205:12205): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:54:439 consola/(12205:12205): hasta aca esta bien
+[INFO] 17:26:54:440 consola/(12205:12205): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:54:440 consola/(12205:12205): hasta aca esta bien
+[INFO] 17:28:05:525 consola/(12403:12403): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:28:05:526 consola/(12403:12403): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:28:05:527 consola/(12403:12403): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:28:16:043 consola/(12403:12403): ENTRO INICIAR PATO
+[INFO] 17:28:16:043 consola/(12403:12403): ��8:16:043
+[INFO] 17:28:16:044 consola/(12403:12403): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:28:16:045 consola/(12403:12403): hasta aca esta bien
+[INFO] 17:28:16:046 consola/(12403:12403): ��8:16:045
+[INFO] 17:28:16:046 consola/(12403:12403): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:28:16:047 consola/(12403:12403): hasta aca esta bien
+[INFO] 17:52:28:481 consola/(12533:12533): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:52:28:484 consola/(12533:12533): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:52:28:485 consola/(12533:12533): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:52:39:691 consola/(12533:12533): ENTRO INICIAR PATO
+[INFO] 17:52:39:692 consola/(12533:12533): 101
+[INFO] 17:52:39:692 consola/(12533:12533): 1
+[INFO] 17:52:39:692 consola/(12533:12533): 1
+[INFO] 17:52:39:693 consola/(12533:12533): 1
+[INFO] 17:52:39:693 consola/(12533:12533): �2:39:691
+[INFO] 17:52:39:693 consola/(12533:12533): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:52:39:694 consola/(12533:12533): hasta aca esta bien
+[INFO] 17:52:39:694 consola/(12533:12533): 102
+[INFO] 17:52:39:694 consola/(12533:12533): 1
+[INFO] 17:52:39:694 consola/(12533:12533): 3
+[INFO] 17:52:39:695 consola/(12533:12533): 4
+[INFO] 17:52:39:695 consola/(12533:12533): �2:39:694
+[INFO] 17:52:39:695 consola/(12533:12533): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:52:39:695 consola/(12533:12533): hasta aca esta bien
+[INFO] 20:47:24:644 consola/(3633:3633): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:47:25:135 consola/(3633:3633): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:47:25:181 consola/(3633:3633): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 20:48:55:643 consola/(3633:3633): ENTRO INICIAR PATO
+[INFO] 20:48:55:665 consola/(3633:3633): 101
+[INFO] 20:48:55:678 consola/(3633:3633): 1
+[INFO] 20:48:55:680 consola/(3633:3633): 1
+[INFO] 20:48:55:686 consola/(3633:3633): 1
+[INFO] 20:48:55:755 consola/(3633:3633): �
+[INFO] 20:48:55:787 consola/(3633:3633): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:48:55:863 consola/(3633:3633): hasta aca esta bien
+[INFO] 20:48:55:866 consola/(3633:3633): 102
+[INFO] 20:48:55:873 consola/(3633:3633): 1
+[INFO] 20:48:55:875 consola/(3633:3633): 3
+[INFO] 20:48:55:876 consola/(3633:3633): 4
+[INFO] 20:48:55:878 consola/(3633:3633): �
+[INFO] 20:48:55:889 consola/(3633:3633): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:48:55:895 consola/(3633:3633): hasta aca esta bien
+[INFO] 21:12:34:611 consola/(4136:4136): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 21:12:35:025 consola/(4136:4136): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 21:12:35:051 consola/(4136:4136): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 21:13:36:868 consola/(4136:4136): ENTRO INICIAR PATO
+[INFO] 21:13:36:892 consola/(4136:4136): 101
+[INFO] 21:13:36:902 consola/(4136:4136): 1
+[INFO] 21:13:36:905 consola/(4136:4136): 1
+[INFO] 21:13:36:907 consola/(4136:4136): 1
+[INFO] 21:13:36:950 consola/(4136:4136): Ø
+[INFO] 21:13:36:981 consola/(4136:4136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:13:37:006 consola/(4136:4136): hasta aca esta bien
+[INFO] 21:13:37:018 consola/(4136:4136): 102
+[INFO] 21:13:37:031 consola/(4136:4136): 1
+[INFO] 21:13:37:041 consola/(4136:4136): 3
+[INFO] 21:13:37:049 consola/(4136:4136): 4
+[INFO] 21:13:37:051 consola/(4136:4136): Ø
+[INFO] 21:13:37:058 consola/(4136:4136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:13:37:068 consola/(4136:4136): hasta aca esta bien
+[INFO] 21:13:37:079 consola/(4136:4136): 103
+[INFO] 21:13:37:095 consola/(4136:4136): 1
+[INFO] 21:13:37:101 consola/(4136:4136): 3
+[INFO] 21:13:37:103 consola/(4136:4136): 4
+[INFO] 21:13:37:117 consola/(4136:4136): Ø
+[INFO] 21:13:37:119 consola/(4136:4136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:13:37:121 consola/(4136:4136): hasta aca esta bien
+[INFO] 21:13:37:131 consola/(4136:4136): 104
+[INFO] 21:13:37:132 consola/(4136:4136): 1
+[INFO] 21:13:37:133 consola/(4136:4136): 3
+[INFO] 21:13:37:145 consola/(4136:4136): 4
+[INFO] 21:13:37:150 consola/(4136:4136): Ø
+[INFO] 21:13:37:164 consola/(4136:4136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:13:37:167 consola/(4136:4136): hasta aca esta bien
+[INFO] 21:13:37:177 consola/(4136:4136): 105
+[INFO] 21:13:37:181 consola/(4136:4136): 1
+[INFO] 21:13:37:182 consola/(4136:4136): 3
+[INFO] 21:13:37:184 consola/(4136:4136): 4
+[INFO] 21:13:37:198 consola/(4136:4136): Ø
+[INFO] 21:13:37:199 consola/(4136:4136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:13:37:202 consola/(4136:4136): hasta aca esta bien
+[INFO] 21:15:04:590 consola/(4136:4136): Salimos de la consola
+[INFO] 21:15:37:070 consola/(4515:4515): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 21:15:37:516 consola/(4515:4515): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 21:15:37:540 consola/(4515:4515): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 21:16:03:349 consola/(4515:4515): ENTRO INICIAR PATO
+[INFO] 21:16:03:382 consola/(4515:4515): 101
+[INFO] 21:16:03:385 consola/(4515:4515): 1
+[INFO] 21:16:03:399 consola/(4515:4515): 1
+[INFO] 21:16:03:407 consola/(4515:4515): 1
+[INFO] 21:16:03:458 consola/(4515:4515): 
+[INFO] 21:16:03:477 consola/(4515:4515): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:16:03:534 consola/(4515:4515): hasta aca esta bien
+[INFO] 21:16:03:538 consola/(4515:4515): 102
+[INFO] 21:16:03:540 consola/(4515:4515): 1
+[INFO] 21:16:03:541 consola/(4515:4515): 3
+[INFO] 21:16:03:543 consola/(4515:4515): 4
+[INFO] 21:16:03:552 consola/(4515:4515): 
+[INFO] 21:16:03:554 consola/(4515:4515): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:16:03:561 consola/(4515:4515): hasta aca esta bien
+[INFO] 21:16:03:585 consola/(4515:4515): 103
+[INFO] 21:16:03:587 consola/(4515:4515): 1
+[INFO] 21:16:03:588 consola/(4515:4515): 3
+[INFO] 21:16:03:602 consola/(4515:4515): 4
+[INFO] 21:16:03:606 consola/(4515:4515): 
+[INFO] 21:16:03:612 consola/(4515:4515): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:16:03:615 consola/(4515:4515): hasta aca esta bien
+[INFO] 21:16:03:617 consola/(4515:4515): 104
+[INFO] 21:16:03:620 consola/(4515:4515): 1
+[INFO] 21:16:03:622 consola/(4515:4515): 3
+[INFO] 21:16:03:623 consola/(4515:4515): 4
+[INFO] 21:16:03:636 consola/(4515:4515): 
+[INFO] 21:16:03:647 consola/(4515:4515): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:16:03:649 consola/(4515:4515): hasta aca esta bien
+[INFO] 21:16:03:657 consola/(4515:4515): 105
+[INFO] 21:16:03:658 consola/(4515:4515): 1
+[INFO] 21:16:03:663 consola/(4515:4515): 3
+[INFO] 21:16:03:670 consola/(4515:4515): 4
+[INFO] 21:16:03:682 consola/(4515:4515): 
+[INFO] 21:16:03:683 consola/(4515:4515): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:16:03:686 consola/(4515:4515): hasta aca esta bien
+[INFO] 21:16:57:265 consola/(4515:4515): Salimos de la consola
+[INFO] 21:17:14:642 consola/(4730:4730): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 21:17:15:104 consola/(4730:4730): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 21:17:15:139 consola/(4730:4730): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 21:17:30:414 consola/(4730:4730): ENTRO INICIAR PATO
+[INFO] 21:17:30:451 consola/(4730:4730): 101
+[INFO] 21:17:30:454 consola/(4730:4730): 1
+[INFO] 21:17:30:456 consola/(4730:4730): 1
+[INFO] 21:17:30:459 consola/(4730:4730): 1
+[INFO] 21:17:30:539 consola/(4730:4730): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:17:30:596 consola/(4730:4730): hasta aca esta bien
+[INFO] 21:17:30:600 consola/(4730:4730): 102
+[INFO] 21:17:30:602 consola/(4730:4730): 1
+[INFO] 21:17:30:603 consola/(4730:4730): 3
+[INFO] 21:17:30:605 consola/(4730:4730): 4
+[INFO] 21:17:30:617 consola/(4730:4730): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:17:30:621 consola/(4730:4730): hasta aca esta bien
+[INFO] 21:17:30:630 consola/(4730:4730): 103
+[INFO] 21:17:30:632 consola/(4730:4730): 1
+[INFO] 21:17:30:645 consola/(4730:4730): 3
+[INFO] 21:17:30:649 consola/(4730:4730): 4
+[INFO] 21:17:30:652 consola/(4730:4730): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:17:30:664 consola/(4730:4730): hasta aca esta bien
+[INFO] 21:17:30:670 consola/(4730:4730): 104
+[INFO] 21:17:30:674 consola/(4730:4730): 1
+[INFO] 21:17:30:676 consola/(4730:4730): 3
+[INFO] 21:17:30:677 consola/(4730:4730): 4
+[INFO] 21:17:30:680 consola/(4730:4730): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:17:30:682 consola/(4730:4730): hasta aca esta bien
+[INFO] 21:17:30:684 consola/(4730:4730): 105
+[INFO] 21:17:30:685 consola/(4730:4730): 1
+[INFO] 21:17:30:687 consola/(4730:4730): 3
+[INFO] 21:17:30:689 consola/(4730:4730): 4
+[INFO] 21:17:30:705 consola/(4730:4730): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:17:30:720 consola/(4730:4730): hasta aca esta bien
+[INFO] 22:10:36:713 consola/(4730:4730): Salimos de la consola
+[INFO] 17:24:59:218 consola/(4837:4837): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:24:59:227 consola/(4837:4837): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:24:59:229 consola/(4837:4837): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:26:00:047 consola/(4837:4837): ENTRO INICIAR PATO
+[INFO] 17:26:00:049 consola/(4837:4837): 101
+[INFO] 17:26:00:049 consola/(4837:4837): 1
+[INFO] 17:26:00:050 consola/(4837:4837): 1
+[INFO] 17:26:00:050 consola/(4837:4837): 1
+[INFO] 17:26:00:050 consola/(4837:4837): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:00:051 consola/(4837:4837): 102
+[INFO] 17:26:00:051 consola/(4837:4837): 1
+[INFO] 17:26:00:052 consola/(4837:4837): 3
+[INFO] 17:26:00:052 consola/(4837:4837): 4
+[INFO] 17:26:00:053 consola/(4837:4837): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:00:054 consola/(4837:4837): 103
+[INFO] 17:26:00:055 consola/(4837:4837): 1
+[INFO] 17:26:00:055 consola/(4837:4837): 0
+[INFO] 17:26:00:055 consola/(4837:4837): 0
+[INFO] 17:26:00:056 consola/(4837:4837): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:00:056 consola/(4837:4837): 104
+[INFO] 17:26:00:057 consola/(4837:4837): 1
+[INFO] 17:26:00:057 consola/(4837:4837): 0
+[INFO] 17:26:00:057 consola/(4837:4837): 0
+[INFO] 17:26:00:058 consola/(4837:4837): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:00:059 consola/(4837:4837): 105
+[INFO] 17:26:00:059 consola/(4837:4837): 1
+[INFO] 17:26:00:059 consola/(4837:4837): 0
+[INFO] 17:26:00:059 consola/(4837:4837): 0
+[INFO] 17:26:00:060 consola/(4837:4837): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:26:24:579 consola/(4837:4837): ENTRO LISTAR
+[INFO] 17:26:24:580 consola/(4837:4837): --------------------------------------------------------------------
+[INFO] 17:26:24:580 consola/(4837:4837): Estado de la Nave: 29/05/21 17:26:24
+[INFO] 17:26:24:581 consola/(4837:4837): Tripulante: 101	
+[INFO] 17:26:24:581 consola/(4837:4837): Patota: 1	
+[INFO] 17:26:24:581 consola/(4837:4837): Status: NEW
+
+[INFO] 17:26:24:581 consola/(4837:4837): Tripulante: 102	
+[INFO] 17:26:24:582 consola/(4837:4837): Patota: 1	
+[INFO] 17:26:24:582 consola/(4837:4837): Status: NEW
+
+[INFO] 17:26:24:582 consola/(4837:4837): Tripulante: 103	
+[INFO] 17:26:24:582 consola/(4837:4837): Patota: 1	
+[INFO] 17:26:24:583 consola/(4837:4837): Status: NEW
+
+[INFO] 17:26:24:583 consola/(4837:4837): Tripulante: 104	
+[INFO] 17:26:24:583 consola/(4837:4837): Patota: 1	
+[INFO] 17:26:24:583 consola/(4837:4837): Status: NEW
+
+[INFO] 17:26:24:584 consola/(4837:4837): Tripulante: 105	
+[INFO] 17:26:24:584 consola/(4837:4837): Patota: 1	
+[INFO] 17:26:24:584 consola/(4837:4837): Status: NEW
+
+[INFO] 17:26:24:585 consola/(4837:4837): --------------------------------------------------------------------
+[INFO] 18:13:27:729 consola/(5476:5476): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:13:27:731 consola/(5476:5476): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:13:27:731 consola/(5476:5476): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:14:03:830 consola/(5561:5561): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:14:03:831 consola/(5561:5561): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:14:03:836 consola/(5561:5561): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:14:26:665 consola/(5561:5561): ENTRO INICIAR PATO
+[INFO] 18:14:26:666 consola/(5561:5561): 101
+[INFO] 18:14:26:667 consola/(5561:5561): 1
+[INFO] 18:14:26:667 consola/(5561:5561): 1
+[INFO] 18:14:26:667 consola/(5561:5561): 1
+[INFO] 18:14:26:668 consola/(5561:5561): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:26:669 consola/(5561:5561): 102
+[INFO] 18:14:26:669 consola/(5561:5561): 1
+[INFO] 18:14:26:669 consola/(5561:5561): 3
+[INFO] 18:14:26:670 consola/(5561:5561): 4
+[INFO] 18:14:26:670 consola/(5561:5561): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:26:671 consola/(5561:5561): 103
+[INFO] 18:14:26:672 consola/(5561:5561): 1
+[INFO] 18:14:26:672 consola/(5561:5561): 0
+[INFO] 18:14:26:673 consola/(5561:5561): 0
+[INFO] 18:14:26:674 consola/(5561:5561): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:26:674 consola/(5561:5561): 104
+[INFO] 18:14:26:674 consola/(5561:5561): 1
+[INFO] 18:14:26:675 consola/(5561:5561): 0
+[INFO] 18:14:26:675 consola/(5561:5561): 0
+[INFO] 18:14:26:675 consola/(5561:5561): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:26:676 consola/(5561:5561): 105
+[INFO] 18:14:26:676 consola/(5561:5561): 1
+[INFO] 18:14:26:676 consola/(5561:5561): 0
+[INFO] 18:14:26:680 consola/(5561:5561): 0
+[INFO] 18:14:26:681 consola/(5561:5561): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:35:051 consola/(5561:5561): ENTRO INICIAR PLANI
+[INFO] 18:14:53:412 consola/(5561:5561): ENTRO EXPULSAR
+[INFO] 18:14:53:413 consola/(5561:5561): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:15:55:892 consola/(5762:5762): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:15:57:357 consola/(5762:5762): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:15:57:436 consola/(5762:5762): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:34:14:609 consola/(5945:5945): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:34:15:545 consola/(5945:5945): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:34:15:625 consola/(5945:5945): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:34:28:937 consola/(5945:5945): ENTRO INICIAR PATO
+[INFO] 18:34:28:947 consola/(5945:5945): 101
+[INFO] 18:34:28:954 consola/(5945:5945): 1
+[INFO] 18:34:28:970 consola/(5945:5945): 1
+[INFO] 18:34:28:973 consola/(5945:5945): 1
+[INFO] 18:34:29:078 consola/(5945:5945): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:34:29:138 consola/(5945:5945): 102
+[INFO] 18:34:29:140 consola/(5945:5945): 1
+[INFO] 18:34:29:141 consola/(5945:5945): 3
+[INFO] 18:34:29:143 consola/(5945:5945): 4
+[INFO] 18:34:29:148 consola/(5945:5945): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:34:29:178 consola/(5945:5945): 103
+[INFO] 18:34:29:185 consola/(5945:5945): 1
+[INFO] 18:34:29:188 consola/(5945:5945): 0
+[INFO] 18:34:29:194 consola/(5945:5945): 0
+[INFO] 18:34:29:199 consola/(5945:5945): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:34:29:203 consola/(5945:5945): 104
+[INFO] 18:34:29:204 consola/(5945:5945): 1
+[INFO] 18:34:29:206 consola/(5945:5945): 0
+[INFO] 18:34:29:207 consola/(5945:5945): 0
+[INFO] 18:34:29:226 consola/(5945:5945): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:34:29:232 consola/(5945:5945): 105
+[INFO] 18:34:29:241 consola/(5945:5945): 1
+[INFO] 18:34:29:243 consola/(5945:5945): 0
+[INFO] 18:34:29:244 consola/(5945:5945): 0
+[INFO] 18:34:29:260 consola/(5945:5945): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:34:37:689 consola/(5945:5945): ENTRO INICIAR PLANI
+[INFO] 18:34:50:311 consola/(5945:5945): ENTRO EXPULSAR
+[INFO] 18:34:50:317 consola/(5945:5945): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:35:45:356 consola/(6145:6145): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:35:45:802 consola/(6145:6145): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:35:45:850 consola/(6145:6145): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:36:06:769 consola/(6145:6145): ENTRO INICIAR PATO
+[INFO] 18:36:06:843 consola/(6145:6145): 101
+[INFO] 18:36:06:863 consola/(6145:6145): 1
+[INFO] 18:36:06:893 consola/(6145:6145): 1
+[INFO] 18:36:06:913 consola/(6145:6145): 1
+[INFO] 18:36:07:192 consola/(6145:6145): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:36:07:334 consola/(6145:6145): 102
+[INFO] 18:36:07:341 consola/(6145:6145): 1
+[INFO] 18:36:07:349 consola/(6145:6145): 3
+[INFO] 18:36:07:362 consola/(6145:6145): 4
+[INFO] 18:36:07:377 consola/(6145:6145): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:36:07:415 consola/(6145:6145): 103
+[INFO] 18:36:07:423 consola/(6145:6145): 1
+[INFO] 18:36:07:433 consola/(6145:6145): 0
+[INFO] 18:36:07:441 consola/(6145:6145): 0
+[INFO] 18:36:07:451 consola/(6145:6145): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:36:07:495 consola/(6145:6145): 104
+[INFO] 18:36:07:502 consola/(6145:6145): 1
+[INFO] 18:36:07:518 consola/(6145:6145): 0
+[INFO] 18:36:07:521 consola/(6145:6145): 0
+[INFO] 18:36:07:547 consola/(6145:6145): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:36:07:580 consola/(6145:6145): 105
+[INFO] 18:36:07:617 consola/(6145:6145): 1
+[INFO] 18:36:07:634 consola/(6145:6145): 0
+[INFO] 18:36:07:654 consola/(6145:6145): 0
+[INFO] 18:36:07:728 consola/(6145:6145): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:36:18:840 consola/(6145:6145): ENTRO INICIAR PLANI
+[INFO] 18:36:29:141 consola/(6145:6145): ENTRO EXPULSAR
+[INFO] 18:36:29:147 consola/(6145:6145): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:36:29:149 consola/(6145:6145): hasta aca bien
+[INFO] 18:36:29:168 consola/(6145:6145): hasta aca bien
+[INFO] 18:36:29:174 consola/(6145:6145): hasta aca bien
+[INFO] 18:47:33:869 consola/(6671:6671): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:47:35:109 consola/(6671:6671): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:47:35:210 consola/(6671:6671): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:48:00:959 consola/(6705:6705): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:48:01:356 consola/(6705:6705): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:48:01:390 consola/(6705:6705): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:48:15:465 consola/(6705:6705): ENTRO INICIAR PATO
+[INFO] 18:48:15:497 consola/(6705:6705): 101
+[INFO] 18:48:15:501 consola/(6705:6705): 1
+[INFO] 18:48:15:505 consola/(6705:6705): 1
+[INFO] 18:48:15:514 consola/(6705:6705): 1
+[INFO] 18:48:15:632 consola/(6705:6705): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:48:15:700 consola/(6705:6705): 102
+[INFO] 18:48:15:702 consola/(6705:6705): 1
+[INFO] 18:48:15:703 consola/(6705:6705): 3
+[INFO] 18:48:15:705 consola/(6705:6705): 4
+[INFO] 18:48:15:719 consola/(6705:6705): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:48:15:725 consola/(6705:6705): 103
+[INFO] 18:48:15:743 consola/(6705:6705): 1
+[INFO] 18:48:15:757 consola/(6705:6705): 0
+[INFO] 18:48:15:764 consola/(6705:6705): 0
+[INFO] 18:48:15:767 consola/(6705:6705): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:48:15:772 consola/(6705:6705): 104
+[INFO] 18:48:15:775 consola/(6705:6705): 1
+[INFO] 18:48:15:777 consola/(6705:6705): 0
+[INFO] 18:48:15:778 consola/(6705:6705): 0
+[INFO] 18:48:15:785 consola/(6705:6705): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:48:15:796 consola/(6705:6705): 105
+[INFO] 18:48:15:803 consola/(6705:6705): 1
+[INFO] 18:48:15:809 consola/(6705:6705): 0
+[INFO] 18:48:15:811 consola/(6705:6705): 0
+[INFO] 18:48:15:843 consola/(6705:6705): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:48:24:459 consola/(6705:6705): ENTRO INICIAR PLANI
+[INFO] 18:48:35:895 consola/(6705:6705): ENTRO EXPULSAR
+[INFO] 18:48:35:901 consola/(6705:6705): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:48:35:904 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:914 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:930 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:945 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:957 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:961 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:963 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:968 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:970 consola/(6705:6705): hasta aca bien
+[INFO] 18:48:35:973 consola/(6705:6705): se expulsara el tripulante 104
+[INFO] 21:22:22:524 consola/(6705:6705): Salimos de la consola

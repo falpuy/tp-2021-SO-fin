@@ -2,9 +2,10 @@
 
 // crear hilo
 
-/*void mostrarTripulante(TCB* tripulante, t_log* logger){
-    log_info(logger, "Tripulante: %d\t", tripulante -> TID);
-    log_info(logger, "Patota: %d\t", tripulante -> PID);
+void mostrarTripulante(void* elemento){
+    tcb* tripulante = (tcb*) elemento;
+    log_info(logger, "Tripulante: %d\t", tripulante -> tid);
+    log_info(logger, "Patota: %d\t", tripulante -> pid);
     switch(tripulante -> status){
         case 'N':
             log_info(logger, "Status: NEW\n");
@@ -27,18 +28,34 @@
     }
 }
 
-void mostrarListaTripulantes(t_list* patotas, t_log* logger){
+void mostrarListaTripulantes(void* elemento){
+    pcb* patotas = (pcb*) elemento;
     list_iterate(patotas -> listaTCB, mostrarTripulante);
-}*/
+}
+
+bool buscarTripulante (void* elemento){
+    log_info(logger, "hasta aca bien");
+    tcb* tripulante = (tcb*) elemento;
+    log_info(logger, "hasta aca bien");
+    return tripulante -> tid == atoi(parametros[1]);
+}
 
 void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
+    contadorPCBs = 0;
+    /*contNew = 0;
+    contReady = 0;
+    contExec = 0;
+    contBloqIO = 0;
+    contBloqEmer = 0;
+    contExit = 0;*/
     int validador = 1;
+    int planificacion_pausada = 1;
     char* leido;
     char* vector_mensajes_consola[]= {"INICIAR_PLANIFICACION","PAUSAR_PLANIFICACION","INICIAR_PATOTA","LISTAR_TRIPULANTES","EXPULSAR_TRIPULANTE","OBTENER_BITACORA","SALIR"};
 
     while(validador) {
         while(strcmp(leido = readline("> "), "") != 0) { //mientras se ingrese algo por consola
-            char** parametros = string_split(leido," "); //char**: vector de strings, cada elemento del vector es un parametro, menos el primero que es el mensaje!
+            parametros = string_split(leido," "); //char**: vector de strings, cada elemento del vector es un parametro, menos el primero que es el mensaje!
 
             free(leido);
 
@@ -58,15 +75,18 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
             switch (instruccion_consola) {
                 case 0: //INICIAR_PLANIFICACION
                     log_info(logger, "ENTRO INICIAR PLANI");
-                    while (NEW != NULL) // si hay nodos en NEW, los pasa a Ready
+                    planificacion_pausada = 0;
+                    /*while (cola_new != NULL) // si hay nodos en New, los pasa a Ready
                     {
-                        TCB* aux_TCB = malloc (sizeof(TCB));
-                        aux_TCB = queue_peek(NEW);
-                        queue_pop(NEW);
-                        queue_push(READY, aux_TCB);
+                        tcb* aux_TCB = malloc (sizeof(tcb));
+                        aux_TCB = queue_peek(cola_new);
+                        queue_pop(cola_new);
+                        queue_push(ready, aux_TCB);
                         aux_TCB -> status = 'R';
                         free(aux_TCB);
-                    }
+                        //contReady++;
+                        //contNew--;
+                    }*/
                     break;
 
                 case 1: //PAUSAR_PLANIFICACION
@@ -74,22 +94,22 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 //No se puede cambiar tripulantes de estado, los que están en exec se detienen, sólo se pueden iniciar patotas
                 // y listar tripulantes.
                 // comprobar si ya esta andando o si ya se pauso (o si nunca empezo)
-                    while (EXEC != NULL) // si hay nodos en exec, los pasa a ready
+                    /*while (exec != NULL) // si hay nodos en exec, los pasa a ready
                     {
                         TCB* aux_TCB = malloc (sizeof(TCB));
-                        aux_TCB = queue_peek(EXEC);
-                        queue_pop(EXEC);
-                        queue_push(READY, aux_TCB);
+                        aux_TCB = queue_peek(exec);
+                        queue_pop(exec);
+                        queue_push(ready, aux_TCB);
                         aux_TCB -> status = 'R';
                         free(aux_TCB);
-                    }
+                    }*/
                     break;
 
                 case 2: //INICIAR_PATOTA
                     log_info(logger, "ENTRO INICIAR PATO");
 
-                   /* PCB* nuevoPCB = crear_PCB (parametros, contadorPCBs, conexion_RAM, conexion_IMS);
-                    list_add (listaPCB, (void*) nuevoPCB);*/
+                    pcb* nuevoPCB = crear_PCB (parametros, conexion_RAM, logger);
+                    list_add (listaPCB, (void*) nuevoPCB);
                     
                 //avisarle/mandarle PCB a Mi-RAM HQ
                 // crear hilos
@@ -97,12 +117,12 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
 
                 case 3: //LISTAR_TRIPULANTES
                     log_info(logger, "ENTRO LISTAR");
-                    /*log_info(logger, "--------------------------------------------------------------------");
+                    log_info(logger, "--------------------------------------------------------------------");
                     char* hora_y_fecha_actual;
                     hora_y_fecha_actual = temporal_get_string_time("%d/%m/%y %H:%M:%S");
                     log_info(logger, "Estado de la Nave: %s", hora_y_fecha_actual);
                     list_iterate(listaPCB, mostrarListaTripulantes);
-                    log_info(logger, "--------------------------------------------------------------------");*/
+                    log_info(logger, "--------------------------------------------------------------------");
                     break;
 
                 case 4: //EXPULSAR_TRIPULANTE
@@ -115,7 +135,17 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                         //mensajeRecibido = _receive_message(conexion_IMS, logger); capaz no es necesario
                         //log_info(logger, "SALIÓ %s", mensajeRecibido -> payload);
                         //sacar de la lista correspondiente al tripulante y ponerlo en exit
-                        #define LONGITUD 5
+
+                        //Retorna el primer valor encontrado, el cual haga que condition devuelva != 0
+	                    //void *list_find(t_list *, bool(*closure)(void*));
+
+                        tcb* tripulanteAExpulsar = malloc (sizeof(tcb));
+                        log_info(logger, "hasta aca bien");
+                        tripulanteAExpulsar = list_find (cola_new->elements, buscarTripulante);
+                        log_info(logger, "se expulsara el tripulante %d", tripulanteAExpulsar -> tid);}
+                        
+                        
+                        /*#define LONGITUD 5
                         funcion(NEW, );
                         funcion(READY);
                         //poner nombres de colas en minúscula
@@ -143,8 +173,8 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                         free(parametros[1]);
                         free(parametros);
                         free(aux_TCB);
-                    }
-                    else{log_info(logger, "La planificación está pausada, no se puede expulsar a un tripulante");}*/
+                    }*/
+                    else{log_info(logger, "La planificación está pausada, no se puede expulsar a un tripulante");}
                          
                     break;
 
@@ -152,7 +182,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                     log_info(logger, "ENTRO OBTENER");
                     tamanioBuffer = sizeof(int);
                     buffer = _serialize(tamanioBuffer, "%d", parametros[1]);
-                    _send_message(conexion_IMS, "DIS", 750, buffer, tamanioBuffer, logger);
+                    _send_message(conexion_RAM, "DIS", 750, buffer, tamanioBuffer, logger);
                     //mensajeRecibido = _receive_message(conexion_IMS, logger);
                     //log_info(logger, "BITACORA: %s", mensajeRecibido -> payload);
                     // después vemos qué mostramos con Delfi
@@ -164,6 +194,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 case 6: // SALIR
                     log_info(logger, "Salimos de la consola");
                     validador = 0;
+                    //hacer los destroy de los config, logs, listas, colas, todo
                     break;
 
                 default:

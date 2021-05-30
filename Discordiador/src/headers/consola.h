@@ -12,11 +12,12 @@
     #include<sys/socket.h>
     #include<unnamed/socket.h>
     #include<unnamed/serialization.h>
-    //#include "headers/planificador.h"
+    #include"planificador.h"
 
     #define LARGO 7 //es lo mismo que const int largo = 7
-    //void mostrarTripulante(TCB* tripulante, t_log* logger);
-    //void mostrarListaTripulantes(t_list* patotas, t_log* logger);
+    t_log* logger;
+    void mostrarTripulante(void* elemento);
+    void mostrarListaTripulantes(void* elemento);
     void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS);
 
 #endif

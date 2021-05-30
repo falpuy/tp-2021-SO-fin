@@ -16,3 +16,253 @@
 [INFO] 18:57:46:673 test/(10484:10484): [Shared Library]: Nueva conexion ID: 5
 [INFO] 18:57:46:678 test/(10484:10541): [Shared Library]: Starting new thread for connection handling. Client ID: 5
 [INFO] 18:57:53:585 test/(10484:10541): me llegó un comando :)
+[INFO] 14:53:21:860 test/(3755:3755): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 14:53:21:862 test/(3755:3755): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:09:10:298 test/(8555:8555): 12
+[INFO] 16:09:10:299 test/(8555:8555): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:09:10:300 test/(8555:8555): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:09:30:160 test/(8605:8605): 12
+[INFO] 16:11:08:332 test/(8834:8834): 13
+[INFO] 16:33:14:882 test/(9068:9068): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:33:14:883 test/(9068:9068): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:33:25:329 test/(9068:9068): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:33:25:330 test/(9068:9129): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:33:48:982 test/(9068:9129): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:38:06:382 test/(9795:9795): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:38:06:383 test/(9795:9795): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:38:20:967 test/(9795:9795): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:38:20:975 test/(9795:9834): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:43:10:849 test/(9795:9834): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:44:02:385 test/(10229:10229): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:44:02:386 test/(10229:10229): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:44:16:010 test/(10229:10229): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:44:16:010 test/(10229:10264): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:44:36:782 test/(10229:10264): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:44:53:987 test/(10344:10344): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:44:53:988 test/(10344:10344): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:45:03:570 test/(10344:10344): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:45:03:584 test/(10344:10373): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:45:40:305 test/(10344:10373): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:45:46:690 test/(10460:10460): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:45:46:690 test/(10460:10460): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:45:51:440 test/(10460:10460): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:45:51:440 test/(10460:10477): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:46:20:198 test/(10460:10477): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:46:28:826 test/(10558:10558): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:46:28:827 test/(10558:10558): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:46:36:639 test/(10558:10558): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:46:36:640 test/(10558:10581): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:47:02:075 test/(10558:10581): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:47:09:794 test/(10682:10682): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:47:09:795 test/(10682:10682): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:47:15:192 test/(10682:10682): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:47:15:193 test/(10682:10704): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:48:08:114 test/(10682:10704): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:48:21:475 test/(10860:10860): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:48:21:476 test/(10860:10860): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:48:29:497 test/(10860:10860): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:48:29:498 test/(10860:10886): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:48:39:130 test/(10860:10886): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:49:01:976 test/(10953:10953): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:49:01:976 test/(10953:10953): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:49:09:007 test/(10953:10953): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:49:09:018 test/(10953:10976): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:49:15:623 test/(10953:10976): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:49:28:709 test/(11019:11019): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:49:28:710 test/(11019:11019): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:49:34:444 test/(11019:11019): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:49:34:446 test/(11019:11041): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:50:05:625 test/(11019:11041): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:12:20:585 test/(11137:11137): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:12:20:591 test/(11137:11137): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:12:28:616 test/(11137:11137): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:12:28:618 test/(11137:11163): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:12:43:529 test/(11137:11163): me llegó para iniciar_patota :)
+[INFO] 17:13:26:454 test/(11137:11163): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:13:32:860 test/(11293:11293): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:13:32:861 test/(11293:11293): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:14:41:736 test/(11293:11293): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:14:41:738 test/(11293:11469): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:14:54:021 test/(11293:11469): me llegó para iniciar_patota :)
+[INFO] 17:14:54:689 test/(11293:11469): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:15:13:832 test/(11533:11533): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:15:13:834 test/(11533:11533): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:15:17:198 test/(11533:11533): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:15:17:199 test/(11533:11541): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:23:23:927 test/(11533:11541): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:23:30:441 test/(11668:11668): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:23:30:441 test/(11668:11668): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:23:37:270 test/(11668:11668): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:23:37:272 test/(11668:11691): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:24:00:916 test/(11668:11691): me llegó para iniciar_patota :)
+[INFO] 17:24:01:563 test/(11668:11691): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:24:11:806 test/(11778:11778): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:24:11:807 test/(11778:11778): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:24:19:879 test/(11778:11778): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:24:19:880 test/(11778:11804): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:24:32:536 test/(11778:11804): me llegó para iniciar_patota :)
+[INFO] 17:24:34:633 test/(11778:11804): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:24:46:109 test/(11896:11896): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:24:46:110 test/(11896:11896): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:24:52:162 test/(11896:11896): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:24:52:171 test/(11896:11916): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:25:02:564 test/(11896:11916): me llegó para iniciar_patota :)
+[INFO] 17:25:03:189 test/(11896:11916): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:25:14:536 test/(11967:11967): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:25:14:536 test/(11967:11967): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:25:22:396 test/(11967:11967): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:25:22:400 test/(11967:11994): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:25:34:033 test/(11967:11994): me llegó para iniciar_patota :)
+[INFO] 17:25:34:657 test/(11967:11994): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:25:54:567 test/(12080:12080): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:25:54:571 test/(12080:12080): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:26:03:371 test/(12080:12080): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:26:03:375 test/(12080:12109): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:26:21:117 test/(12080:12109): me llegó para iniciar_patota :)
+[INFO] 17:26:23:306 test/(12080:12109): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:26:34:812 test/(12172:12172): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:26:34:813 test/(12172:12172): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:26:43:867 test/(12172:12172): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:26:43:867 test/(12172:12206): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:26:54:439 test/(12172:12206): me llegó para iniciar_patota :)
+[INFO] 17:26:54:440 test/(12172:12206): me llegó para iniciar_patota :)
+[INFO] 17:26:55:107 test/(12172:12206): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:27:58:821 test/(12381:12381): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:27:58:821 test/(12381:12381): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:28:05:527 test/(12381:12381): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:28:05:530 test/(12381:12404): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:28:16:045 test/(12381:12404): me llegó para iniciar_patota :)
+[INFO] 17:28:16:046 test/(12381:12404): me llegó para iniciar_patota :)
+[INFO] 17:28:16:697 test/(12381:12404): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:52:21:414 test/(12509:12509): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:52:21:415 test/(12509:12509): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:52:28:485 test/(12509:12509): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:52:28:486 test/(12509:12534): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:52:39:693 test/(12509:12534): me llegó para iniciar_patota :)
+[INFO] 17:52:39:695 test/(12509:12534): me llegó para iniciar_patota :)
+[INFO] 17:52:40:293 test/(12509:12534): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:45:26:021 test/(3363:3363): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:45:26:023 test/(3363:3363): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:47:25:154 test/(3363:3363): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:47:25:157 test/(3363:3640): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:48:55:785 test/(3363:3640): me llegó para iniciar_patota :)
+[INFO] 20:48:55:885 test/(3363:3640): me llegó para iniciar_patota :)
+[INFO] 20:49:05:092 test/(3363:3640): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:12:21:436 test/(4108:4108): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:12:21:441 test/(4108:4108): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:12:35:046 test/(4108:4108): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:12:35:049 test/(4108:4143): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:13:36:980 test/(4108:4143): me llegó para iniciar_patota :)
+[INFO] 21:13:37:057 test/(4108:4143): me llegó para iniciar_patota :)
+[INFO] 21:13:37:119 test/(4108:4143): me llegó para iniciar_patota :)
+[INFO] 21:13:37:158 test/(4108:4143): me llegó para iniciar_patota :)
+[INFO] 21:13:37:200 test/(4108:4143): me llegó para iniciar_patota :)
+[INFO] 21:15:04:829 test/(4108:4143): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:15:24:891 test/(4493:4493): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:15:24:892 test/(4493:4493): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:15:37:535 test/(4493:4493): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:15:37:549 test/(4493:4525): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:16:03:476 test/(4493:4525): me llegó para iniciar_patota :)
+[INFO] 21:16:03:554 test/(4493:4525): me llegó para iniciar_patota :)
+[INFO] 21:16:03:611 test/(4493:4525): me llegó para iniciar_patota :)
+[INFO] 21:16:03:646 test/(4493:4525): me llegó para iniciar_patota :)
+[INFO] 21:16:03:684 test/(4493:4525): me llegó para iniciar_patota :)
+[INFO] 21:16:57:518 test/(4493:4525): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:17:03:147 test/(4705:4705): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:17:03:153 test/(4705:4705): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:17:15:124 test/(4705:4705): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:17:15:137 test/(4705:4745): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:17:30:536 test/(4705:4745): me llegó para iniciar_patota :)
+[INFO] 21:17:30:537 test/(4705:4745): 1 101 1 1 N
+[INFO] 21:17:30:616 test/(4705:4745): me llegó para iniciar_patota :)
+[INFO] 21:17:30:616 test/(4705:4745): 1 102 3 4 N
+[INFO] 21:17:30:651 test/(4705:4745): me llegó para iniciar_patota :)
+[INFO] 21:17:30:651 test/(4705:4745): 1 103 3 4 N
+[INFO] 21:17:30:680 test/(4705:4745): me llegó para iniciar_patota :)
+[INFO] 21:17:30:680 test/(4705:4745): 1 104 3 4 N
+[INFO] 21:17:30:699 test/(4705:4745): me llegó para iniciar_patota :)
+[INFO] 21:17:30:699 test/(4705:4745): 1 105 3 4 N
+[INFO] 13:28:55:175 test/(3970:3970): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 13:28:55:176 test/(3970:3970): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:24:59:229 test/(3970:3970): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:24:59:231 test/(3970:4838): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:26:00:051 test/(3970:4838): me llegó para iniciar_patota :)
+[INFO] 17:26:00:051 test/(3970:4838): 1 101 1 1 N
+[INFO] 17:26:00:054 test/(3970:4838): me llegó para iniciar_patota :)
+[INFO] 17:26:00:055 test/(3970:4838): 1 102 3 4 N
+[INFO] 17:26:00:056 test/(3970:4838): me llegó para iniciar_patota :)
+[INFO] 17:26:00:057 test/(3970:4838): 1 103 0 0 N
+[INFO] 17:26:00:058 test/(3970:4838): me llegó para iniciar_patota :)
+[INFO] 17:26:00:058 test/(3970:4838): 1 104 0 0 N
+[INFO] 17:26:00:060 test/(3970:4838): me llegó para iniciar_patota :)
+[INFO] 17:26:00:060 test/(3970:4838): 1 105 0 0 N
+[INFO] 17:26:58:847 test/(3970:4838): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:11:20:781 test/(5206:5206): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:11:20:782 test/(5206:5206): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:13:27:731 test/(5206:5206): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:13:27:742 test/(5206:5477): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:13:42:200 test/(5206:5477): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:13:56:630 test/(5542:5542): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:13:56:631 test/(5542:5542): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:14:03:836 test/(5542:5542): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:14:03:838 test/(5542:5562): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:14:26:668 test/(5542:5562): me llegó para iniciar_patota :)
+[INFO] 18:14:26:669 test/(5542:5562): 1 101 1 1 N
+[INFO] 18:14:26:670 test/(5542:5562): me llegó para iniciar_patota :)
+[INFO] 18:14:26:671 test/(5542:5562): 1 102 3 4 N
+[INFO] 18:14:26:674 test/(5542:5562): me llegó para iniciar_patota :)
+[INFO] 18:14:26:674 test/(5542:5562): 1 103 0 0 N
+[INFO] 18:14:26:675 test/(5542:5562): me llegó para iniciar_patota :)
+[INFO] 18:14:26:676 test/(5542:5562): 1 104 0 0 N
+[INFO] 18:14:26:681 test/(5542:5562): me llegó para iniciar_patota :)
+[INFO] 18:14:26:681 test/(5542:5562): 1 105 0 0 N
+[INFO] 18:14:53:413 test/(5542:5562): me llegó un comando para expulsar un tripulante :(
+[INFO] 18:14:54:119 test/(5542:5562): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:15:57:392 test/(5542:5542): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:15:57:416 test/(5542:5787): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 18:16:31:375 test/(5542:5787): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 18:34:15:598 test/(5542:5542): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:34:15:605 test/(5542:6048): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:34:29:076 test/(5542:6048): me llegó para iniciar_patota :)
+[INFO] 18:34:29:076 test/(5542:6048): 1 101 1 1 N
+[INFO] 18:34:29:147 test/(5542:6048): me llegó para iniciar_patota :)
+[INFO] 18:34:29:148 test/(5542:6048): 1 102 3 4 N
+[INFO] 18:34:29:198 test/(5542:6048): me llegó para iniciar_patota :)
+[INFO] 18:34:29:199 test/(5542:6048): 1 103 0 0 N
+[INFO] 18:34:29:225 test/(5542:6048): me llegó para iniciar_patota :)
+[INFO] 18:34:29:225 test/(5542:6048): 1 104 0 0 N
+[INFO] 18:34:29:259 test/(5542:6048): me llegó para iniciar_patota :)
+[INFO] 18:34:29:259 test/(5542:6048): 1 105 0 0 N
+[INFO] 18:34:50:316 test/(5542:6048): me llegó un comando para expulsar un tripulante :(
+[INFO] 18:35:02:332 test/(5542:6048): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:35:45:824 test/(5542:5542): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:35:45:844 test/(5542:6149): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 18:36:07:187 test/(5542:6149): me llegó para iniciar_patota :)
+[INFO] 18:36:07:188 test/(5542:6149): 1 101 1 1 N
+[INFO] 18:36:07:376 test/(5542:6149): me llegó para iniciar_patota :)
+[INFO] 18:36:07:376 test/(5542:6149): 1 102 3 4 N
+[INFO] 18:36:07:449 test/(5542:6149): me llegó para iniciar_patota :)
+[INFO] 18:36:07:450 test/(5542:6149): 1 103 0 0 N
+[INFO] 18:36:07:546 test/(5542:6149): me llegó para iniciar_patota :)
+[INFO] 18:36:07:546 test/(5542:6149): 1 104 0 0 N
+[INFO] 18:36:07:721 test/(5542:6149): me llegó para iniciar_patota :)
+[INFO] 18:36:07:746 test/(5542:6149): 1 105 0 0 N
+[INFO] 18:36:29:146 test/(5542:6149): me llegó un comando para expulsar un tripulante :(
+[INFO] 18:36:30:043 test/(5542:6149): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 18:47:35:173 test/(5542:5542): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:47:35:183 test/(5542:6678): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:47:49:745 test/(5542:6678): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:48:01:369 test/(5542:5542): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:48:01:379 test/(5542:6709): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 18:48:15:623 test/(5542:6709): me llegó para iniciar_patota :)
+[INFO] 18:48:15:624 test/(5542:6709): 1 101 1 1 N
+[INFO] 18:48:15:718 test/(5542:6709): me llegó para iniciar_patota :)
+[INFO] 18:48:15:719 test/(5542:6709): 1 102 3 4 N
+[INFO] 18:48:15:766 test/(5542:6709): me llegó para iniciar_patota :)
+[INFO] 18:48:15:767 test/(5542:6709): 1 103 0 0 N
+[INFO] 18:48:15:783 test/(5542:6709): me llegó para iniciar_patota :)
+[INFO] 18:48:15:784 test/(5542:6709): 1 104 0 0 N
+[INFO] 18:48:15:833 test/(5542:6709): me llegó para iniciar_patota :)
+[INFO] 18:48:15:834 test/(5542:6709): 1 105 0 0 N
+[INFO] 18:48:35:900 test/(5542:6709): me llegó un comando para expulsar un tripulante :(
+[INFO] 21:22:22:729 test/(5542:6709): [Shared Library]: El cliente 7 se desconecto.

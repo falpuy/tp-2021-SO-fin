@@ -12,35 +12,65 @@
     #include<readline/readline.h>
     #include<sys/socket.h>
     #include<unnamed/socket.h>
+    #include<unnamed/serialization.h>
 
-    t_queue* NEW;
-    t_queue* READY;
-    t_queue* EXEC;
-    t_queue* BLOQ_IO;
-    t_queue* BLOQ_EMER;
-    t_queue* EXIT;
+    int conexion_RAM;
+    int conexion_IMS;
+    char* ip_RAM;
+    char* puerto_RAM;
+    char* ip_IMS;
+    char* puerto_IMS;
+    int grado_multitarea;
+    char* algoritmo;
+    int quantum_RR;
+    int duracion_sabotaje;
+    int ciclo_CPU;
+
+    /*pthread_t hReadyaExec;
+    pthread_t hExecaBloqEmer;
+    pthread_t hExecaBloqIO
+    pthread_t hBloqEmeraReady;
+    pthread_t hBloqIOaReady;
+    pthread_t hExecaExit;
+
+    int contNew;
+    int contReady;
+    int contExec;
+    int contBloqIO;
+    int contBloqEmer;
+    int contExit;*/
+
+    char** parametros;
+
+    int contadorPCBs;
+
+    t_queue* cola_new;
+    t_queue* ready;
+    t_queue* exec;
+    t_queue* bloq_io;
+    t_queue* bloq_emer;
+    t_queue* cola_exit;
     typedef struct
-        {
-        int TID = 0; //Identificador del Tripulante
-        int PID = 0; //Identificador de la Patota
+    {
+        int tid; //Identificador del Tripulante
+        int pid; //Identificador de la Patota
         char status; //Estado del Tripulante
-        int posicionX = 0; // Posición del tripulante en el Eje X
-        int posicionY = 0; // Posición del tripulante en el Eje Y
+        int posicionX; // Posición del tripulante en el Eje X
+        int posicionY; // Posición del tripulante en el Eje Y
         char* instruccion_actual; // Nombre de la tarea que estamos ejecutando
-        }TCB;
+    }tcb;
     typedef struct
-        {
-        int PID = 0; //Identificador de la Patota
+    {
+        int pid; //Identificador de la Patota
         char* rutaTareas; //Ruta del archivo de tareas
         t_list* listaTCB;
-        }PCB;
+    }pcb;
 
     t_list* listaPCB;
 
-    int contadorPCBs = 0;
     void funcionPlanificador(t_log* logger);
     void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger);
-    TCB* crear_TCB(int idP, int posX, int posY, int idT, char* tarea);
-    //PCB* crear_PCB(char** parametros, int conexion_RAM, int conexion_IMS);
+    tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea);
+    pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger);
 
 #endif

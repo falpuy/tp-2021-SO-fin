@@ -12,7 +12,7 @@
 #include <commons/string.h>
 #include <unistd.h> 
 
-char* path = "~/Escritorio/TP/tp-2021-1c-Unnamed-Group/IMongoStore/test";
+char* path = "/home/utnso/Escritorio/TP/tp-2021-1c-Unnamed-Group/IMongoStore/test";
 
 // char* string_from_format(const char* format, ...) {
 // 	char* nuevo;
@@ -44,8 +44,8 @@ char* path = "~/Escritorio/TP/tp-2021-1c-Unnamed-Group/IMongoStore/test";
 
 
 int main(){
-    mkdir("Bitacoras", 0664);
-    char* p_tripulante = string_from_format("%s/%s", path, "Tripulante.ims");
+    mkdir("Bitacoras", 0766);
+    char* p_tripulante = string_from_format("%s/%s", path, "Bitacoras/Tripulante.ims");
 
     printf("%s", p_tripulante);
     // if(access(p_tripulante,F_OK)<0){
@@ -55,6 +55,8 @@ int main(){
     int creaFile = open(p_tripulante, O_CREAT | O_RDWR,0664);
     if(creaFile < 0){
         perror("Error: ");
+    }else{
+        printf("hola");
     }
     //close(creaFile);
     // }

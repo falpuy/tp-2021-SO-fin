@@ -11,6 +11,7 @@
     #include <math.h>
     #include <commons/config.h>
     #include "syncFile.h"
+    #include <commons/log.h>
 
     
     enum COMANDOS{
@@ -35,8 +36,9 @@
     
     char* pathCompleto(const char* str, ...);
     void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
-    int cantidad_bloques(char* string);
+    int cantidad_bloques(char* string, t_log* logger);
     char* funcionStrMover(int posX_v, int posY_v, int posX_n, int posY_n);
-    void crearMetadataBitacora(char* path_tripulante);
+    void crearMetadataBitacora(char* path_tripulante, t_log* logger);
+    int validarBitsLibre(int cantidadBloquesAUsar, t_log* log);
 
 #endif

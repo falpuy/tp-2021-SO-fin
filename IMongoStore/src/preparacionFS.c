@@ -10,14 +10,12 @@ void inicializacionFS(t_log* log){
 
 void validarDirectorioFS(t_log* log){
     log_info(log, "Validando Existencia de directorios...");
-    sleep(2);
     DIR* dir = opendir("../Filesystem");
     if(ENOENT == errno){
         log_info(log, "No existe directorio: Filesystem. Se crea.");
-        sleep(2);
-        mkdir("../Filesystem", 0664);
-        mkdir("../Filesystem/Bitacoras",0664);
-        mkdir("../Filesystem/Files",0664);
+        mkdir("../Filesystem", 0777);
+        mkdir("../Filesystem/Bitacoras",0777);
+        mkdir("../Filesystem/Files",0777);
         closedir(dir);
     }
     else{
@@ -31,7 +29,7 @@ void validarSuperBloque(t_log* log){
     log_info(log, "Validando existencia de Superbloque.ims....");
     log_info(log, "-----------------------------------------------------");
 
-    sleep(2);
+    
 
     if(access("../Filesystem/SuperBloque.ims",F_OK) < 0){
         log_error(log, "No se encontró archivo SuperBloque.ims. Se crea archivo");
@@ -106,11 +104,10 @@ void validarSuperBloque(t_log* log){
 
 void validarBlocks(t_log* log){
     log_info(log, "Validando existencia de Blocks.ims....");
-    sleep(2);
+    
 
     if(access("../Filesystem/Blocks.ims",F_OK) < 0){
         log_error(log, "No se encontró archivo Blocks.ims. Se crea archivo");
-        sleep(2);
         
         blocks = open("../Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
         int tamanioAGuardar = (tamanioBloque * cantidadBloques)*1;
@@ -142,7 +139,7 @@ void validarBlocks(t_log* log){
 void generarBitmap(t_log* log){
 
     log_info(log, "Generando bitmap...");
-    sleep(2);
+    
 
     arch_bitmap = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
     bitmap_memory = mmap(NULL, sizeof(int) * 2 + (cantidadBloques / 8), PROT_READ | PROT_WRITE, MAP_SHARED, arch_bitmap, 0);

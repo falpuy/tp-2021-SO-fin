@@ -24512,3 +24512,1137 @@ Cantidad de bloques: 0
 [INFO] 18:55:53:379 IMS/(22643:22645): -----------------------------------------------------
 [INFO] 18:55:53:386 IMS/(22643:22645): No existe archivo en bitácora..Se crea archivo para este tripulante...
 [INFO] 18:55:53:393 IMS/(22643:22645): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:46:46:727 IMS/(31628:31628): Validando Existencia de directorios...
+[INFO] 23:46:48:730 IMS/(31628:31628): Ya existe directorio
+[INFO] 23:46:48:731 IMS/(31628:31628): -----------------------------------------------------
+[INFO] 23:46:48:731 IMS/(31628:31628): Validando existencia de Superbloque.ims....
+[INFO] 23:46:48:732 IMS/(31628:31628): -----------------------------------------------------
+[INFO] 23:46:50:734 IMS/(31628:31628): Se encontró el archivo superBloque.ims
+[INFO] 23:46:50:736 IMS/(31628:31628): -----------------------------------------------------
+[INFO] 23:46:50:736 IMS/(31628:31628): Se muestra los datos del superBloque.
+[INFO] 23:46:50:737 IMS/(31628:31628): Tamaño de bloque: 64
+[INFO] 23:46:50:737 IMS/(31628:31628): Cantidad de bloques: 64
+[INFO] 23:46:50:737 IMS/(31628:31628): -----------------------------------------------------
+[INFO] 23:46:50:738 IMS/(31628:31628): Validando existencia de Blocks.ims....
+[INFO] 23:46:52:739 IMS/(31628:31628): -----------------------------------------------------
+[INFO] 23:46:52:740 IMS/(31628:31628): Existe archivo Blocks.ims.
+[INFO] 23:46:52:740 IMS/(31628:31628): -----------------------------------------------------
+[INFO] 23:46:52:740 IMS/(31628:31628): Generando bitmap...
+[INFO] 23:46:54:744 IMS/(31628:31628): ------------------------------------------------
+[INFO] 23:46:54:744 IMS/(31628:31628): Se crea servidor......
+[INFO] 23:46:55:746 IMS/(31628:31628): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:46:55:746 IMS/(31628:31628): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:47:30:303 IMS/(31628:31628): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:47:30:304 IMS/(31628:31653): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:47:30:305 IMS/(31628:31653): LLegó nuevo comando: 762
+[INFO] 23:47:30:306 IMS/(31628:31653): -----------------------------------------------------
+[INFO] 23:47:30:309 IMS/(31628:31653): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 23:47:30:310 IMS/(31628:31653): Tarea:         
+[INFO] 23:47:30:310 IMS/(31628:31653): Posicion en X: 7495
+[INFO] 23:47:30:310 IMS/(31628:31653): Posicion en Y: 3840
+[INFO] 23:47:30:311 IMS/(31628:31653): Tiempo:        1313163008
+[INFO] 23:47:30:311 IMS/(31628:31653): -----------------------------------------------------
+[INFO] 23:47:30:311 IMS/(31628:31653): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:47:56:639 IMS/(31628:31628): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:47:56:640 IMS/(31628:31656): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:47:56:641 IMS/(31628:31656): LLegó nuevo comando: 762
+[INFO] 23:47:56:654 IMS/(31628:31656): -----------------------------------------------------
+[INFO] 23:47:56:655 IMS/(31628:31656): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 23:47:56:656 IMS/(31628:31656): Tarea:         
+[INFO] 23:47:56:663 IMS/(31628:31656): Posicion en X: 7495
+[INFO] 23:47:56:665 IMS/(31628:31656): Posicion en Y: 3840
+[INFO] 23:47:56:666 IMS/(31628:31656): Tiempo:        1313163008
+[INFO] 23:47:56:666 IMS/(31628:31656): -----------------------------------------------------
+[INFO] 23:47:56:666 IMS/(31628:31656): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:48:57:145 IMS/(31672:31672): Validando Existencia de directorios...
+[INFO] 23:48:59:147 IMS/(31672:31672): Ya existe directorio
+[INFO] 23:48:59:148 IMS/(31672:31672): -----------------------------------------------------
+[INFO] 23:48:59:148 IMS/(31672:31672): Validando existencia de Superbloque.ims....
+[INFO] 23:48:59:148 IMS/(31672:31672): -----------------------------------------------------
+[INFO] 23:49:01:151 IMS/(31672:31672): Se encontró el archivo superBloque.ims
+[INFO] 23:49:01:152 IMS/(31672:31672): -----------------------------------------------------
+[INFO] 23:49:01:152 IMS/(31672:31672): Se muestra los datos del superBloque.
+[INFO] 23:49:01:153 IMS/(31672:31672): Tamaño de bloque: 64
+[INFO] 23:49:01:153 IMS/(31672:31672): Cantidad de bloques: 64
+[INFO] 23:49:01:153 IMS/(31672:31672): -----------------------------------------------------
+[INFO] 23:49:01:153 IMS/(31672:31672): Validando existencia de Blocks.ims....
+[INFO] 23:49:03:155 IMS/(31672:31672): -----------------------------------------------------
+[INFO] 23:49:03:156 IMS/(31672:31672): Existe archivo Blocks.ims.
+[INFO] 23:49:03:156 IMS/(31672:31672): -----------------------------------------------------
+[INFO] 23:49:03:156 IMS/(31672:31672): Generando bitmap...
+[INFO] 23:49:05:160 IMS/(31672:31672): ------------------------------------------------
+[INFO] 23:49:05:160 IMS/(31672:31672): Se crea servidor......
+[INFO] 23:49:06:161 IMS/(31672:31672): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:49:06:161 IMS/(31672:31672): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:49:09:118 IMS/(31672:31672): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:49:09:119 IMS/(31672:31676): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:49:09:120 IMS/(31672:31676): LLegó nuevo comando: 762
+[INFO] 23:49:09:122 IMS/(31672:31676): -----------------------------------------------------
+[INFO] 23:49:09:122 IMS/(31672:31676): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 23:49:09:135 IMS/(31672:31676): Tarea:         
+[INFO] 23:49:09:138 IMS/(31672:31676): Posicion en X: 7495
+[INFO] 23:49:09:143 IMS/(31672:31676): Posicion en Y: 3840
+[INFO] 23:49:09:143 IMS/(31672:31676): Tiempo:        1313163008
+[INFO] 23:49:09:144 IMS/(31672:31676): -----------------------------------------------------
+[INFO] 23:49:09:144 IMS/(31672:31676): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:49:58:782 IMS/(31696:31696): Validando Existencia de directorios...
+[INFO] 23:50:00:785 IMS/(31696:31696): Ya existe directorio
+[INFO] 23:50:00:786 IMS/(31696:31696): -----------------------------------------------------
+[INFO] 23:50:00:786 IMS/(31696:31696): Validando existencia de Superbloque.ims....
+[INFO] 23:50:00:786 IMS/(31696:31696): -----------------------------------------------------
+[INFO] 23:50:02:788 IMS/(31696:31696): Se encontró el archivo superBloque.ims
+[INFO] 23:50:02:790 IMS/(31696:31696): -----------------------------------------------------
+[INFO] 23:50:02:791 IMS/(31696:31696): Se muestra los datos del superBloque.
+[INFO] 23:50:02:791 IMS/(31696:31696): Tamaño de bloque: 64
+[INFO] 23:50:02:792 IMS/(31696:31696): Cantidad de bloques: 64
+[INFO] 23:50:02:792 IMS/(31696:31696): -----------------------------------------------------
+[INFO] 23:50:02:793 IMS/(31696:31696): Validando existencia de Blocks.ims....
+[INFO] 23:50:04:795 IMS/(31696:31696): -----------------------------------------------------
+[INFO] 23:50:04:795 IMS/(31696:31696): Existe archivo Blocks.ims.
+[INFO] 23:50:04:796 IMS/(31696:31696): -----------------------------------------------------
+[INFO] 23:50:04:796 IMS/(31696:31696): Generando bitmap...
+[INFO] 23:50:06:799 IMS/(31696:31696): ------------------------------------------------
+[INFO] 23:50:06:800 IMS/(31696:31696): Se crea servidor......
+[INFO] 23:50:07:801 IMS/(31696:31696): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:50:07:802 IMS/(31696:31696): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:50:11:476 IMS/(31696:31696): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:50:11:477 IMS/(31696:31698): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:50:11:477 IMS/(31696:31698): LLegó nuevo comando: 762
+[INFO] 23:50:11:479 IMS/(31696:31698): -----------------------------------------------------
+[INFO] 23:50:11:480 IMS/(31696:31698): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 23:50:11:492 IMS/(31696:31698): Tam tarea:         15
+[INFO] 23:50:11:494 IMS/(31696:31698): Tarea:         
+[INFO] 23:50:11:495 IMS/(31696:31698): Posicion en X: 7495
+[INFO] 23:50:11:495 IMS/(31696:31698): Posicion en Y: 3840
+[INFO] 23:50:11:495 IMS/(31696:31698): Tiempo:        1313163008
+[INFO] 23:50:11:503 IMS/(31696:31698): -----------------------------------------------------
+[INFO] 23:50:11:503 IMS/(31696:31698): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:51:21:433 IMS/(31713:31713): Validando Existencia de directorios...
+[INFO] 23:51:23:436 IMS/(31713:31713): Ya existe directorio
+[INFO] 23:51:23:436 IMS/(31713:31713): -----------------------------------------------------
+[INFO] 23:51:23:436 IMS/(31713:31713): Validando existencia de Superbloque.ims....
+[INFO] 23:51:23:436 IMS/(31713:31713): -----------------------------------------------------
+[INFO] 23:51:25:438 IMS/(31713:31713): Se encontró el archivo superBloque.ims
+[INFO] 23:51:25:440 IMS/(31713:31713): -----------------------------------------------------
+[INFO] 23:51:25:440 IMS/(31713:31713): Se muestra los datos del superBloque.
+[INFO] 23:51:25:440 IMS/(31713:31713): Tamaño de bloque: 64
+[INFO] 23:51:25:440 IMS/(31713:31713): Cantidad de bloques: 64
+[INFO] 23:51:25:440 IMS/(31713:31713): -----------------------------------------------------
+[INFO] 23:51:25:441 IMS/(31713:31713): Validando existencia de Blocks.ims....
+[INFO] 23:51:27:442 IMS/(31713:31713): -----------------------------------------------------
+[INFO] 23:51:27:442 IMS/(31713:31713): Existe archivo Blocks.ims.
+[INFO] 23:51:27:443 IMS/(31713:31713): -----------------------------------------------------
+[INFO] 23:51:27:443 IMS/(31713:31713): Generando bitmap...
+[INFO] 23:51:29:445 IMS/(31713:31713): ------------------------------------------------
+[INFO] 23:51:29:446 IMS/(31713:31713): Se crea servidor......
+[INFO] 23:51:30:447 IMS/(31713:31713): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:51:30:448 IMS/(31713:31713): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:51:33:531 IMS/(31713:31713): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:51:33:532 IMS/(31713:31716): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:51:33:533 IMS/(31713:31716): LLegó nuevo comando: 762
+[INFO] 23:51:33:546 IMS/(31713:31716): -----------------------------------------------------
+[INFO] 23:51:33:547 IMS/(31713:31716): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 23:51:33:550 IMS/(31713:31716): Tam tarea:         15
+[INFO] 23:51:33:555 IMS/(31713:31716): Tarea:         
+[INFO] 23:51:33:555 IMS/(31713:31716): Posicion en X: 7495
+[INFO] 23:51:33:556 IMS/(31713:31716): Posicion en Y: 3840
+[INFO] 23:51:33:556 IMS/(31713:31716): Tiempo:        1313163008
+[INFO] 23:51:33:556 IMS/(31713:31716): -----------------------------------------------------
+[INFO] 23:51:33:556 IMS/(31713:31716): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:54:04:582 IMS/(31927:31927): Validando Existencia de directorios...
+[INFO] 23:54:06:584 IMS/(31927:31927): Ya existe directorio
+[INFO] 23:54:06:585 IMS/(31927:31927): -----------------------------------------------------
+[INFO] 23:54:06:585 IMS/(31927:31927): Validando existencia de Superbloque.ims....
+[INFO] 23:54:06:586 IMS/(31927:31927): -----------------------------------------------------
+[INFO] 23:54:08:587 IMS/(31927:31927): Se encontró el archivo superBloque.ims
+[INFO] 23:54:08:588 IMS/(31927:31927): -----------------------------------------------------
+[INFO] 23:54:08:589 IMS/(31927:31927): Se muestra los datos del superBloque.
+[INFO] 23:54:08:589 IMS/(31927:31927): Tamaño de bloque: 64
+[INFO] 23:54:08:589 IMS/(31927:31927): Cantidad de bloques: 64
+[INFO] 23:54:08:589 IMS/(31927:31927): -----------------------------------------------------
+[INFO] 23:54:08:590 IMS/(31927:31927): Validando existencia de Blocks.ims....
+[INFO] 23:54:10:591 IMS/(31927:31927): -----------------------------------------------------
+[INFO] 23:54:10:591 IMS/(31927:31927): Existe archivo Blocks.ims.
+[INFO] 23:54:10:592 IMS/(31927:31927): -----------------------------------------------------
+[INFO] 23:54:10:592 IMS/(31927:31927): Generando bitmap...
+[INFO] 23:54:12:595 IMS/(31927:31927): ------------------------------------------------
+[INFO] 23:54:12:595 IMS/(31927:31927): Se crea servidor......
+[INFO] 23:54:13:596 IMS/(31927:31927): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:54:13:597 IMS/(31927:31927): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:54:20:124 IMS/(31927:31927): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:54:20:126 IMS/(31927:31929): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:54:20:126 IMS/(31927:31929): LLegó nuevo comando: 762
+[INFO] 23:54:20:128 IMS/(31927:31929): -----------------------------------------------------
+[INFO] 23:54:20:128 IMS/(31927:31929): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 23:54:20:128 IMS/(31927:31929): Tam tarea:         15
+[INFO] 23:54:20:129 IMS/(31927:31929): Tarea:         
+[INFO] 23:54:20:129 IMS/(31927:31929): -----------------------------------------------------
+[INFO] 23:54:20:141 IMS/(31927:31929): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:54:48:309 IMS/(31951:31951): Validando Existencia de directorios...
+[INFO] 23:54:50:312 IMS/(31951:31951): Ya existe directorio
+[INFO] 23:54:50:312 IMS/(31951:31951): -----------------------------------------------------
+[INFO] 23:54:50:312 IMS/(31951:31951): Validando existencia de Superbloque.ims....
+[INFO] 23:54:50:313 IMS/(31951:31951): -----------------------------------------------------
+[INFO] 23:54:52:314 IMS/(31951:31951): Se encontró el archivo superBloque.ims
+[INFO] 23:54:52:316 IMS/(31951:31951): -----------------------------------------------------
+[INFO] 23:54:52:317 IMS/(31951:31951): Se muestra los datos del superBloque.
+[INFO] 23:54:52:317 IMS/(31951:31951): Tamaño de bloque: 64
+[INFO] 23:54:52:317 IMS/(31951:31951): Cantidad de bloques: 64
+[INFO] 23:54:52:317 IMS/(31951:31951): -----------------------------------------------------
+[INFO] 23:54:52:318 IMS/(31951:31951): Validando existencia de Blocks.ims....
+[INFO] 23:54:54:319 IMS/(31951:31951): -----------------------------------------------------
+[INFO] 23:54:54:320 IMS/(31951:31951): Existe archivo Blocks.ims.
+[INFO] 23:54:54:320 IMS/(31951:31951): -----------------------------------------------------
+[INFO] 23:54:54:320 IMS/(31951:31951): Generando bitmap...
+[INFO] 23:54:56:324 IMS/(31951:31951): ------------------------------------------------
+[INFO] 23:54:56:325 IMS/(31951:31951): Se crea servidor......
+[INFO] 23:54:57:326 IMS/(31951:31951): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:54:57:326 IMS/(31951:31951): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:55:02:648 IMS/(31951:31951): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:55:02:650 IMS/(31951:31961): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:55:02:650 IMS/(31951:31961): LLegó nuevo comando: 762
+[INFO] 23:55:02:652 IMS/(31951:31961): -----------------------------------------------------
+[INFO] 23:55:02:666 IMS/(31951:31961): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 23:55:02:667 IMS/(31951:31961): Tam tarea:         15
+[INFO] 23:55:02:667 IMS/(31951:31961): Tarea:         
+[INFO] 23:55:02:667 IMS/(31951:31961): -----------------------------------------------------
+[INFO] 23:55:02:667 IMS/(31951:31961): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:55:41:161 IMS/(31973:31973): Validando Existencia de directorios...
+[INFO] 23:55:43:164 IMS/(31973:31973): Ya existe directorio
+[INFO] 23:55:43:164 IMS/(31973:31973): -----------------------------------------------------
+[INFO] 23:55:43:165 IMS/(31973:31973): Validando existencia de Superbloque.ims....
+[INFO] 23:55:43:165 IMS/(31973:31973): -----------------------------------------------------
+[INFO] 23:55:45:167 IMS/(31973:31973): Se encontró el archivo superBloque.ims
+[INFO] 23:55:45:169 IMS/(31973:31973): -----------------------------------------------------
+[INFO] 23:55:45:169 IMS/(31973:31973): Se muestra los datos del superBloque.
+[INFO] 23:55:45:169 IMS/(31973:31973): Tamaño de bloque: 64
+[INFO] 23:55:45:169 IMS/(31973:31973): Cantidad de bloques: 64
+[INFO] 23:55:45:169 IMS/(31973:31973): -----------------------------------------------------
+[INFO] 23:55:45:170 IMS/(31973:31973): Validando existencia de Blocks.ims....
+[INFO] 23:55:47:172 IMS/(31973:31973): -----------------------------------------------------
+[INFO] 23:55:47:173 IMS/(31973:31973): Existe archivo Blocks.ims.
+[INFO] 23:55:47:173 IMS/(31973:31973): -----------------------------------------------------
+[INFO] 23:55:47:173 IMS/(31973:31973): Generando bitmap...
+[INFO] 23:55:49:177 IMS/(31973:31973): ------------------------------------------------
+[INFO] 23:55:49:178 IMS/(31973:31973): Se crea servidor......
+[INFO] 23:55:50:180 IMS/(31973:31973): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:55:50:180 IMS/(31973:31973): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:55:52:296 IMS/(31973:31973): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:55:52:297 IMS/(31973:31975): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:55:52:298 IMS/(31973:31975): LLegó nuevo comando: 762
+[INFO] 23:55:52:300 IMS/(31973:31975): -----------------------------------------------------
+[INFO] 23:55:52:300 IMS/(31973:31975): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 00:01:26:376 IMS/(32097:32097): Validando Existencia de directorios...
+[INFO] 00:01:28:379 IMS/(32097:32097): No existe directorio: Filesystem. Se crea.
+[INFO] 00:01:30:387 IMS/(32097:32097): -----------------------------------------------------
+[INFO] 00:01:30:387 IMS/(32097:32097): Validando existencia de Superbloque.ims....
+[INFO] 00:01:30:388 IMS/(32097:32097): -----------------------------------------------------
+[ERROR] 00:01:32:389 IMS/(32097:32097): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 00:01:32:389 IMS/(32097:32097): Ingresar el tamaño de cada bloque
+[INFO] 00:01:33:699 IMS/(32097:32097): Ingresar la cantidad de bloques
+[INFO] 00:01:34:456 IMS/(32097:32097): -----------------------------------------------------
+[INFO] 00:01:34:456 IMS/(32097:32097): Se creó archivo superBloque.ims
+[INFO] 00:01:34:456 IMS/(32097:32097): -----------------------------------------------------
+[INFO] 00:01:34:457 IMS/(32097:32097): Validando existencia de Blocks.ims....
+[ERROR] 00:01:36:459 IMS/(32097:32097): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 00:01:38:531 IMS/(32097:32097): -----------------------------------------------------
+[INFO] 00:01:38:532 IMS/(32097:32097): Se creó archivo Blocks.ims
+[INFO] 00:01:38:532 IMS/(32097:32097): -----------------------------------------------------
+[INFO] 00:01:38:533 IMS/(32097:32097): Generando bitmap...
+[INFO] 00:01:40:537 IMS/(32097:32097): ------------------------------------------------
+[INFO] 00:01:40:537 IMS/(32097:32097): Se crea servidor......
+[INFO] 00:01:41:539 IMS/(32097:32097): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:01:41:539 IMS/(32097:32097): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:02:07:689 IMS/(32097:32097): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:02:07:691 IMS/(32097:32106): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:02:07:691 IMS/(32097:32106): LLegó nuevo comando: 761
+[INFO] 00:02:07:693 IMS/(32097:32106): -----------------------------------------------------
+[INFO] 00:02:07:709 IMS/(32097:32106): Llego comando: Mover Tripulante.....
+[INFO] 00:02:07:713 IMS/(32097:32106): ID Tripulante:         1
+[INFO] 00:02:07:713 IMS/(32097:32106): Posicion Vieja en X:   2
+[INFO] 00:02:07:714 IMS/(32097:32106): Posicion Vieja en Y:   8
+[INFO] 00:02:07:714 IMS/(32097:32106): Posicion Nueva en X:   3
+[INFO] 00:02:07:714 IMS/(32097:32106): Posicion Nueva en Y:   5
+[INFO] 00:02:07:714 IMS/(32097:32106): -----------------------------------------------------
+[INFO] 00:02:07:714 IMS/(32097:32106): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:04:29:301 IMS/(32149:32149): Validando Existencia de directorios...
+[INFO] 00:04:31:303 IMS/(32149:32149): Ya existe directorio
+[INFO] 00:04:31:304 IMS/(32149:32149): -----------------------------------------------------
+[INFO] 00:04:31:304 IMS/(32149:32149): Validando existencia de Superbloque.ims....
+[INFO] 00:04:31:304 IMS/(32149:32149): -----------------------------------------------------
+[INFO] 00:04:33:307 IMS/(32149:32149): Se encontró el archivo superBloque.ims
+[INFO] 00:04:33:309 IMS/(32149:32149): -----------------------------------------------------
+[INFO] 00:04:33:309 IMS/(32149:32149): Se muestra los datos del superBloque.
+[INFO] 00:04:33:309 IMS/(32149:32149): Tamaño de bloque: 64
+[INFO] 00:04:33:310 IMS/(32149:32149): Cantidad de bloques: 64
+[INFO] 00:04:33:310 IMS/(32149:32149): -----------------------------------------------------
+[INFO] 00:04:33:310 IMS/(32149:32149): Validando existencia de Blocks.ims....
+[INFO] 00:04:35:312 IMS/(32149:32149): -----------------------------------------------------
+[INFO] 00:04:35:312 IMS/(32149:32149): Existe archivo Blocks.ims.
+[INFO] 00:04:35:312 IMS/(32149:32149): -----------------------------------------------------
+[INFO] 00:04:35:312 IMS/(32149:32149): Generando bitmap...
+[INFO] 00:04:37:315 IMS/(32149:32149): ------------------------------------------------
+[INFO] 00:04:37:315 IMS/(32149:32149): Se crea servidor......
+[INFO] 00:04:38:316 IMS/(32149:32149): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:04:38:316 IMS/(32149:32149): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:04:44:084 IMS/(32149:32149): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:04:44:085 IMS/(32149:32151): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:04:44:086 IMS/(32149:32151): LLegó nuevo comando: 761
+[INFO] 00:04:44:088 IMS/(32149:32151): -----------------------------------------------------
+[INFO] 00:04:44:100 IMS/(32149:32151): Llego comando: Mover Tripulante.....
+[INFO] 00:04:44:107 IMS/(32149:32151): ID Tripulante:         1
+[INFO] 00:04:44:107 IMS/(32149:32151): Posicion Vieja en X:   2
+[INFO] 00:04:44:108 IMS/(32149:32151): Posicion Vieja en Y:   8
+[INFO] 00:04:44:108 IMS/(32149:32151): Posicion Nueva en X:   3
+[INFO] 00:04:44:108 IMS/(32149:32151): Posicion Nueva en Y:   5
+[INFO] 00:04:44:108 IMS/(32149:32151): -----------------------------------------------------
+[INFO] 00:04:44:108 IMS/(32149:32151): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:07:39:713 IMS/(32189:32189): Validando Existencia de directorios...
+[INFO] 00:07:41:715 IMS/(32189:32189): Ya existe directorio
+[INFO] 00:07:41:716 IMS/(32189:32189): -----------------------------------------------------
+[INFO] 00:07:41:716 IMS/(32189:32189): Validando existencia de Superbloque.ims....
+[INFO] 00:07:41:716 IMS/(32189:32189): -----------------------------------------------------
+[INFO] 00:07:43:719 IMS/(32189:32189): Se encontró el archivo superBloque.ims
+[INFO] 00:07:43:720 IMS/(32189:32189): -----------------------------------------------------
+[INFO] 00:07:43:721 IMS/(32189:32189): Se muestra los datos del superBloque.
+[INFO] 00:07:43:722 IMS/(32189:32189): Tamaño de bloque: 64
+[INFO] 00:07:43:722 IMS/(32189:32189): Cantidad de bloques: 64
+[INFO] 00:07:43:722 IMS/(32189:32189): -----------------------------------------------------
+[INFO] 00:07:43:723 IMS/(32189:32189): Validando existencia de Blocks.ims....
+[INFO] 00:07:45:724 IMS/(32189:32189): -----------------------------------------------------
+[INFO] 00:07:45:725 IMS/(32189:32189): Existe archivo Blocks.ims.
+[INFO] 00:07:45:725 IMS/(32189:32189): -----------------------------------------------------
+[INFO] 00:07:45:726 IMS/(32189:32189): Generando bitmap...
+[INFO] 00:07:47:729 IMS/(32189:32189): ------------------------------------------------
+[INFO] 00:07:47:729 IMS/(32189:32189): Se crea servidor......
+[INFO] 00:07:48:731 IMS/(32189:32189): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:07:48:732 IMS/(32189:32189): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:07:50:995 IMS/(32189:32189): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:07:50:997 IMS/(32189:32192): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:07:50:998 IMS/(32189:32192): LLegó nuevo comando: 761
+[INFO] 00:07:51:014 IMS/(32189:32192): -----------------------------------------------------
+[INFO] 00:07:51:015 IMS/(32189:32192): Llego comando: Mover Tripulante.....
+[INFO] 00:07:51:015 IMS/(32189:32192): ID Tripulante:         1
+[INFO] 00:07:51:015 IMS/(32189:32192): Posicion Vieja en X:   2
+[INFO] 00:07:51:015 IMS/(32189:32192): Posicion Vieja en Y:   8
+[INFO] 00:07:51:017 IMS/(32189:32192): Posicion Nueva en X:   3
+[INFO] 00:07:51:017 IMS/(32189:32192): Posicion Nueva en Y:   5
+[INFO] 00:07:51:018 IMS/(32189:32192): -----------------------------------------------------
+[INFO] 00:07:51:018 IMS/(32189:32192): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:08:30:134 IMS/(32196:32196): Validando Existencia de directorios...
+[INFO] 00:08:32:235 IMS/(32196:32196): Ya existe directorio
+[INFO] 00:08:32:240 IMS/(32196:32196): -----------------------------------------------------
+[INFO] 00:08:32:242 IMS/(32196:32196): Validando existencia de Superbloque.ims....
+[INFO] 00:08:32:242 IMS/(32196:32196): -----------------------------------------------------
+[INFO] 00:08:34:247 IMS/(32196:32196): Se encontró el archivo superBloque.ims
+[INFO] 00:08:34:254 IMS/(32196:32196): -----------------------------------------------------
+[INFO] 00:08:34:255 IMS/(32196:32196): Se muestra los datos del superBloque.
+[INFO] 00:08:34:256 IMS/(32196:32196): Tamaño de bloque: 64
+[INFO] 00:08:34:256 IMS/(32196:32196): Cantidad de bloques: 64
+[INFO] 00:08:34:257 IMS/(32196:32196): -----------------------------------------------------
+[INFO] 00:08:34:261 IMS/(32196:32196): Validando existencia de Blocks.ims....
+[INFO] 00:08:36:264 IMS/(32196:32196): -----------------------------------------------------
+[INFO] 00:08:36:265 IMS/(32196:32196): Existe archivo Blocks.ims.
+[INFO] 00:08:36:266 IMS/(32196:32196): -----------------------------------------------------
+[INFO] 00:08:36:268 IMS/(32196:32196): Generando bitmap...
+[INFO] 00:08:38:286 IMS/(32196:32196): ------------------------------------------------
+[INFO] 00:08:38:293 IMS/(32196:32196): Se crea servidor......
+[INFO] 00:08:39:353 IMS/(32196:32196): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:08:39:355 IMS/(32196:32196): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:08:40:878 IMS/(32196:32196): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:08:40:925 IMS/(32196:32198): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:08:40:937 IMS/(32196:32198): LLegó nuevo comando: 761
+[INFO] 00:08:40:964 IMS/(32196:32198): -----------------------------------------------------
+[INFO] 00:08:40:965 IMS/(32196:32198): Llego comando: Mover Tripulante.....
+[INFO] 00:08:40:967 IMS/(32196:32198): ID Tripulante:         1
+[INFO] 00:08:40:968 IMS/(32196:32198): Posicion Vieja en X:   2
+[INFO] 00:08:40:969 IMS/(32196:32198): Posicion Vieja en Y:   8
+[INFO] 00:08:40:972 IMS/(32196:32198): Posicion Nueva en X:   3
+[INFO] 00:08:40:973 IMS/(32196:32198): Posicion Nueva en Y:   5
+[INFO] 00:08:40:974 IMS/(32196:32198): -----------------------------------------------------
+[INFO] 00:08:41:000 IMS/(32196:32198): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:17:16:716 IMS/(32295:32295): Validando Existencia de directorios...
+[INFO] 00:17:18:720 IMS/(32295:32295): Ya existe directorio
+[INFO] 00:17:18:721 IMS/(32295:32295): -----------------------------------------------------
+[INFO] 00:17:18:722 IMS/(32295:32295): Validando existencia de Superbloque.ims....
+[INFO] 00:17:18:723 IMS/(32295:32295): -----------------------------------------------------
+[INFO] 00:17:20:725 IMS/(32295:32295): Se encontró el archivo superBloque.ims
+[INFO] 00:17:20:727 IMS/(32295:32295): -----------------------------------------------------
+[INFO] 00:17:20:728 IMS/(32295:32295): Se muestra los datos del superBloque.
+[INFO] 00:17:20:728 IMS/(32295:32295): Tamaño de bloque: 64
+[INFO] 00:17:20:729 IMS/(32295:32295): Cantidad de bloques: 64
+[INFO] 00:17:20:730 IMS/(32295:32295): -----------------------------------------------------
+[INFO] 00:17:20:730 IMS/(32295:32295): Validando existencia de Blocks.ims....
+[INFO] 00:17:22:732 IMS/(32295:32295): -----------------------------------------------------
+[INFO] 00:17:22:733 IMS/(32295:32295): Existe archivo Blocks.ims.
+[INFO] 00:17:22:733 IMS/(32295:32295): -----------------------------------------------------
+[INFO] 00:17:22:733 IMS/(32295:32295): Generando bitmap...
+[INFO] 00:17:24:737 IMS/(32295:32295): ------------------------------------------------
+[INFO] 00:17:24:737 IMS/(32295:32295): Se crea servidor......
+[INFO] 00:17:25:739 IMS/(32295:32295): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:17:25:740 IMS/(32295:32295): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:17:30:895 IMS/(32295:32295): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:17:30:897 IMS/(32295:32297): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:17:30:908 IMS/(32295:32297): LLegó nuevo comando: 761
+[INFO] 00:17:30:914 IMS/(32295:32297): -----------------------------------------------------
+[INFO] 00:17:30:915 IMS/(32295:32297): Llego comando: Mover Tripulante.....
+[INFO] 00:17:30:916 IMS/(32295:32297): ID Tripulante:         1
+[INFO] 00:17:30:917 IMS/(32295:32297): Posicion Vieja en X:   2
+[INFO] 00:17:30:917 IMS/(32295:32297): Posicion Vieja en Y:   8
+[INFO] 00:17:30:917 IMS/(32295:32297): Posicion Nueva en X:   3
+[INFO] 00:17:30:918 IMS/(32295:32297): Posicion Nueva en Y:   5
+[INFO] 00:17:30:918 IMS/(32295:32297): -----------------------------------------------------
+[INFO] 00:17:30:918 IMS/(32295:32297): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:20:09:535 IMS/(32324:32324): Validando Existencia de directorios...
+[INFO] 00:20:11:538 IMS/(32324:32324): Ya existe directorio
+[INFO] 00:20:11:539 IMS/(32324:32324): -----------------------------------------------------
+[INFO] 00:20:11:539 IMS/(32324:32324): Validando existencia de Superbloque.ims....
+[INFO] 00:20:11:539 IMS/(32324:32324): -----------------------------------------------------
+[INFO] 00:20:13:541 IMS/(32324:32324): Se encontró el archivo superBloque.ims
+[INFO] 00:20:13:543 IMS/(32324:32324): -----------------------------------------------------
+[INFO] 00:20:13:544 IMS/(32324:32324): Se muestra los datos del superBloque.
+[INFO] 00:20:13:544 IMS/(32324:32324): Tamaño de bloque: 64
+[INFO] 00:20:13:544 IMS/(32324:32324): Cantidad de bloques: 64
+[INFO] 00:20:13:545 IMS/(32324:32324): -----------------------------------------------------
+[INFO] 00:20:13:545 IMS/(32324:32324): Validando existencia de Blocks.ims....
+[INFO] 00:20:15:548 IMS/(32324:32324): -----------------------------------------------------
+[INFO] 00:20:15:548 IMS/(32324:32324): Existe archivo Blocks.ims.
+[INFO] 00:20:15:549 IMS/(32324:32324): -----------------------------------------------------
+[INFO] 00:20:15:549 IMS/(32324:32324): Generando bitmap...
+[INFO] 00:20:17:554 IMS/(32324:32324): ------------------------------------------------
+[INFO] 00:20:17:554 IMS/(32324:32324): Se crea servidor......
+[INFO] 00:20:18:556 IMS/(32324:32324): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:20:18:557 IMS/(32324:32324): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:20:20:578 IMS/(32324:32324): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:20:20:579 IMS/(32324:32326): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:20:20:594 IMS/(32324:32326): LLegó nuevo comando: 761
+[INFO] 00:20:20:595 IMS/(32324:32326): -----------------------------------------------------
+[INFO] 00:20:20:595 IMS/(32324:32326): Llego comando: Mover Tripulante.....
+[INFO] 00:20:20:603 IMS/(32324:32326): ID Tripulante:         1
+[INFO] 00:20:20:604 IMS/(32324:32326): Posicion Vieja en X:   2
+[INFO] 00:20:20:604 IMS/(32324:32326): Posicion Vieja en Y:   8
+[INFO] 00:20:20:604 IMS/(32324:32326): Posicion Nueva en X:   3
+[INFO] 00:20:20:605 IMS/(32324:32326): Posicion Nueva en Y:   5
+[INFO] 00:20:20:605 IMS/(32324:32326): -----------------------------------------------------
+[INFO] 00:20:20:605 IMS/(32324:32326): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:21:15:548 IMS/(32342:32342): Validando Existencia de directorios...
+[INFO] 00:21:17:551 IMS/(32342:32342): No existe directorio: Filesystem. Se crea.
+[INFO] 00:21:19:558 IMS/(32342:32342): -----------------------------------------------------
+[INFO] 00:21:19:559 IMS/(32342:32342): Validando existencia de Superbloque.ims....
+[INFO] 00:21:19:559 IMS/(32342:32342): -----------------------------------------------------
+[ERROR] 00:21:21:562 IMS/(32342:32342): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 00:21:21:562 IMS/(32342:32342): Ingresar el tamaño de cada bloque
+[INFO] 00:21:24:009 IMS/(32342:32342): Ingresar la cantidad de bloques
+[INFO] 00:21:24:911 IMS/(32342:32342): -----------------------------------------------------
+[INFO] 00:21:24:912 IMS/(32342:32342): Se creó archivo superBloque.ims
+[INFO] 00:21:24:912 IMS/(32342:32342): -----------------------------------------------------
+[INFO] 00:21:24:912 IMS/(32342:32342): Validando existencia de Blocks.ims....
+[ERROR] 00:21:26:915 IMS/(32342:32342): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 00:21:28:984 IMS/(32342:32342): -----------------------------------------------------
+[INFO] 00:21:28:985 IMS/(32342:32342): Se creó archivo Blocks.ims
+[INFO] 00:21:28:985 IMS/(32342:32342): -----------------------------------------------------
+[INFO] 00:21:28:985 IMS/(32342:32342): Generando bitmap...
+[INFO] 00:21:30:989 IMS/(32342:32342): ------------------------------------------------
+[INFO] 00:21:30:990 IMS/(32342:32342): Se crea servidor......
+[INFO] 00:21:31:992 IMS/(32342:32342): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:21:31:992 IMS/(32342:32342): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:21:35:220 IMS/(32342:32342): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:21:35:222 IMS/(32342:32344): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:21:35:238 IMS/(32342:32344): LLegó nuevo comando: 761
+[INFO] 00:21:35:239 IMS/(32342:32344): -----------------------------------------------------
+[INFO] 00:21:35:239 IMS/(32342:32344): Llego comando: Mover Tripulante.....
+[INFO] 00:21:35:239 IMS/(32342:32344): ID Tripulante:         1
+[INFO] 00:21:35:239 IMS/(32342:32344): Posicion Vieja en X:   2
+[INFO] 00:21:35:240 IMS/(32342:32344): Posicion Vieja en Y:   8
+[INFO] 00:21:35:240 IMS/(32342:32344): Posicion Nueva en X:   3
+[INFO] 00:21:35:241 IMS/(32342:32344): Posicion Nueva en Y:   5
+[INFO] 00:21:35:241 IMS/(32342:32344): -----------------------------------------------------
+[INFO] 00:21:35:242 IMS/(32342:32344): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:22:09:768 IMS/(32349:32349): Validando Existencia de directorios...
+[INFO] 00:22:11:932 IMS/(32349:32349): Ya existe directorio
+[INFO] 00:22:11:942 IMS/(32349:32349): -----------------------------------------------------
+[INFO] 00:22:11:944 IMS/(32349:32349): Validando existencia de Superbloque.ims....
+[INFO] 00:22:11:946 IMS/(32349:32349): -----------------------------------------------------
+[INFO] 00:22:13:951 IMS/(32349:32349): Se encontró el archivo superBloque.ims
+[INFO] 00:22:13:961 IMS/(32349:32349): -----------------------------------------------------
+[INFO] 00:22:13:967 IMS/(32349:32349): Se muestra los datos del superBloque.
+[INFO] 00:22:13:969 IMS/(32349:32349): Tamaño de bloque: 64
+[INFO] 00:22:13:971 IMS/(32349:32349): Cantidad de bloques: 64
+[INFO] 00:22:13:973 IMS/(32349:32349): -----------------------------------------------------
+[INFO] 00:22:13:974 IMS/(32349:32349): Validando existencia de Blocks.ims....
+[INFO] 00:22:15:978 IMS/(32349:32349): -----------------------------------------------------
+[INFO] 00:22:15:980 IMS/(32349:32349): Existe archivo Blocks.ims.
+[INFO] 00:22:15:982 IMS/(32349:32349): -----------------------------------------------------
+[INFO] 00:22:15:984 IMS/(32349:32349): Generando bitmap...
+[INFO] 00:22:18:005 IMS/(32349:32349): ------------------------------------------------
+[INFO] 00:22:18:013 IMS/(32349:32349): Se crea servidor......
+[INFO] 00:22:19:117 IMS/(32349:32349): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:22:19:119 IMS/(32349:32349): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:22:22:369 IMS/(32349:32349): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:22:22:450 IMS/(32349:32352): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:22:22:464 IMS/(32349:32352): LLegó nuevo comando: 761
+[INFO] 00:22:22:471 IMS/(32349:32352): -----------------------------------------------------
+[INFO] 00:22:22:472 IMS/(32349:32352): Llego comando: Mover Tripulante.....
+[INFO] 00:22:22:473 IMS/(32349:32352): ID Tripulante:         1
+[INFO] 00:22:22:478 IMS/(32349:32352): Posicion Vieja en X:   2
+[INFO] 00:22:22:480 IMS/(32349:32352): Posicion Vieja en Y:   8
+[INFO] 00:22:22:482 IMS/(32349:32352): Posicion Nueva en X:   3
+[INFO] 00:22:22:483 IMS/(32349:32352): Posicion Nueva en Y:   5
+[INFO] 00:22:22:483 IMS/(32349:32352): -----------------------------------------------------
+[INFO] 00:22:22:508 IMS/(32349:32352): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:23:47:292 IMS/(32366:32366): Validando Existencia de directorios...
+[INFO] 00:23:49:295 IMS/(32366:32366): Ya existe directorio
+[INFO] 00:23:49:296 IMS/(32366:32366): -----------------------------------------------------
+[INFO] 00:23:49:296 IMS/(32366:32366): Validando existencia de Superbloque.ims....
+[INFO] 00:23:49:297 IMS/(32366:32366): -----------------------------------------------------
+[INFO] 00:23:51:298 IMS/(32366:32366): Se encontró el archivo superBloque.ims
+[INFO] 00:23:51:300 IMS/(32366:32366): -----------------------------------------------------
+[INFO] 00:23:51:301 IMS/(32366:32366): Se muestra los datos del superBloque.
+[INFO] 00:23:51:301 IMS/(32366:32366): Tamaño de bloque: 64
+[INFO] 00:23:51:302 IMS/(32366:32366): Cantidad de bloques: 64
+[INFO] 00:23:51:302 IMS/(32366:32366): -----------------------------------------------------
+[INFO] 00:23:51:303 IMS/(32366:32366): Validando existencia de Blocks.ims....
+[INFO] 00:23:53:305 IMS/(32366:32366): -----------------------------------------------------
+[INFO] 00:23:53:306 IMS/(32366:32366): Existe archivo Blocks.ims.
+[INFO] 00:23:53:306 IMS/(32366:32366): -----------------------------------------------------
+[INFO] 00:23:53:306 IMS/(32366:32366): Generando bitmap...
+[INFO] 00:23:55:309 IMS/(32366:32366): ------------------------------------------------
+[INFO] 00:23:55:310 IMS/(32366:32366): Se crea servidor......
+[INFO] 00:23:56:312 IMS/(32366:32366): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:23:56:313 IMS/(32366:32366): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:23:59:709 IMS/(32366:32366): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:23:59:712 IMS/(32366:32369): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:23:59:726 IMS/(32366:32369): LLegó nuevo comando: 761
+[INFO] 00:23:59:727 IMS/(32366:32369): -----------------------------------------------------
+[INFO] 00:23:59:727 IMS/(32366:32369): Llego comando: Mover Tripulante.....
+[INFO] 00:23:59:727 IMS/(32366:32369): ID Tripulante:         1
+[INFO] 00:23:59:730 IMS/(32366:32369): Posicion Vieja en X:   2
+[INFO] 00:23:59:731 IMS/(32366:32369): Posicion Vieja en Y:   8
+[INFO] 00:23:59:731 IMS/(32366:32369): Posicion Nueva en X:   3
+[INFO] 00:23:59:732 IMS/(32366:32369): Posicion Nueva en Y:   5
+[INFO] 00:23:59:732 IMS/(32366:32369): -----------------------------------------------------
+[INFO] 00:23:59:733 IMS/(32366:32369): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:24:08:657 IMS/(32373:32373): Validando Existencia de directorios...
+[INFO] 00:24:10:854 IMS/(32373:32373): Ya existe directorio
+[INFO] 00:24:10:863 IMS/(32373:32373): -----------------------------------------------------
+[INFO] 00:24:10:865 IMS/(32373:32373): Validando existencia de Superbloque.ims....
+[INFO] 00:24:10:867 IMS/(32373:32373): -----------------------------------------------------
+[INFO] 00:24:12:872 IMS/(32373:32373): Se encontró el archivo superBloque.ims
+[INFO] 00:24:12:881 IMS/(32373:32373): -----------------------------------------------------
+[INFO] 00:24:12:882 IMS/(32373:32373): Se muestra los datos del superBloque.
+[INFO] 00:24:12:884 IMS/(32373:32373): Tamaño de bloque: 64
+[INFO] 00:24:12:889 IMS/(32373:32373): Cantidad de bloques: 64
+[INFO] 00:24:12:891 IMS/(32373:32373): -----------------------------------------------------
+[INFO] 00:24:12:892 IMS/(32373:32373): Validando existencia de Blocks.ims....
+[INFO] 00:24:14:897 IMS/(32373:32373): -----------------------------------------------------
+[INFO] 00:24:14:900 IMS/(32373:32373): Existe archivo Blocks.ims.
+[INFO] 00:24:14:902 IMS/(32373:32373): -----------------------------------------------------
+[INFO] 00:24:14:904 IMS/(32373:32373): Generando bitmap...
+[INFO] 00:24:16:925 IMS/(32373:32373): ------------------------------------------------
+[INFO] 00:24:16:927 IMS/(32373:32373): Se crea servidor......
+[INFO] 00:24:18:060 IMS/(32373:32373): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:24:18:063 IMS/(32373:32373): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:24:18:880 IMS/(32373:32373): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:24:18:952 IMS/(32373:32376): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:24:18:970 IMS/(32373:32376): LLegó nuevo comando: 761
+[INFO] 00:24:18:977 IMS/(32373:32376): -----------------------------------------------------
+[INFO] 00:24:18:978 IMS/(32373:32376): Llego comando: Mover Tripulante.....
+[INFO] 00:24:18:980 IMS/(32373:32376): ID Tripulante:         1
+[INFO] 00:24:18:982 IMS/(32373:32376): Posicion Vieja en X:   2
+[INFO] 00:24:18:984 IMS/(32373:32376): Posicion Vieja en Y:   8
+[INFO] 00:24:18:985 IMS/(32373:32376): Posicion Nueva en X:   3
+[INFO] 00:24:18:996 IMS/(32373:32376): Posicion Nueva en Y:   5
+[INFO] 00:24:18:997 IMS/(32373:32376): -----------------------------------------------------
+[INFO] 00:24:19:045 IMS/(32373:32376): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:24:57:794 IMS/(32393:32393): Validando Existencia de directorios...
+[INFO] 00:24:59:797 IMS/(32393:32393): Ya existe directorio
+[INFO] 00:24:59:798 IMS/(32393:32393): -----------------------------------------------------
+[INFO] 00:24:59:798 IMS/(32393:32393): Validando existencia de Superbloque.ims....
+[INFO] 00:24:59:798 IMS/(32393:32393): -----------------------------------------------------
+[INFO] 00:25:01:800 IMS/(32393:32393): Se encontró el archivo superBloque.ims
+[INFO] 00:25:01:802 IMS/(32393:32393): -----------------------------------------------------
+[INFO] 00:25:01:802 IMS/(32393:32393): Se muestra los datos del superBloque.
+[INFO] 00:25:01:802 IMS/(32393:32393): Tamaño de bloque: 64
+[INFO] 00:25:01:803 IMS/(32393:32393): Cantidad de bloques: 64
+[INFO] 00:25:01:803 IMS/(32393:32393): -----------------------------------------------------
+[INFO] 00:25:01:803 IMS/(32393:32393): Validando existencia de Blocks.ims....
+[INFO] 00:25:03:805 IMS/(32393:32393): -----------------------------------------------------
+[INFO] 00:25:03:806 IMS/(32393:32393): Existe archivo Blocks.ims.
+[INFO] 00:25:03:806 IMS/(32393:32393): -----------------------------------------------------
+[INFO] 00:25:03:806 IMS/(32393:32393): Generando bitmap...
+[INFO] 00:25:05:810 IMS/(32393:32393): ------------------------------------------------
+[INFO] 00:25:05:810 IMS/(32393:32393): Se crea servidor......
+[INFO] 00:25:06:812 IMS/(32393:32393): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:25:06:813 IMS/(32393:32393): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:25:08:426 IMS/(32393:32393): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:25:08:429 IMS/(32393:32397): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:25:08:430 IMS/(32393:32397): LLegó nuevo comando: 761
+[INFO] 00:25:08:434 IMS/(32393:32397): -----------------------------------------------------
+[INFO] 00:25:08:435 IMS/(32393:32397): Llego comando: Mover Tripulante.....
+[INFO] 00:25:08:436 IMS/(32393:32397): ID Tripulante:         1
+[INFO] 00:25:08:438 IMS/(32393:32397): Posicion Vieja en X:   2
+[INFO] 00:25:08:446 IMS/(32393:32397): Posicion Vieja en Y:   8
+[INFO] 00:25:08:446 IMS/(32393:32397): Posicion Nueva en X:   3
+[INFO] 00:25:08:446 IMS/(32393:32397): Posicion Nueva en Y:   5
+[INFO] 00:25:08:447 IMS/(32393:32397): -----------------------------------------------------
+[INFO] 00:25:08:451 IMS/(32393:32397): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:27:01:514 IMS/(32429:32429): Validando Existencia de directorios...
+[INFO] 00:27:03:517 IMS/(32429:32429): Ya existe directorio
+[INFO] 00:27:03:518 IMS/(32429:32429): -----------------------------------------------------
+[INFO] 00:27:03:519 IMS/(32429:32429): Validando existencia de Superbloque.ims....
+[INFO] 00:27:03:519 IMS/(32429:32429): -----------------------------------------------------
+[INFO] 00:27:05:521 IMS/(32429:32429): Se encontró el archivo superBloque.ims
+[INFO] 00:27:05:524 IMS/(32429:32429): -----------------------------------------------------
+[INFO] 00:27:05:524 IMS/(32429:32429): Se muestra los datos del superBloque.
+[INFO] 00:27:05:525 IMS/(32429:32429): Tamaño de bloque: 64
+[INFO] 00:27:05:526 IMS/(32429:32429): Cantidad de bloques: 64
+[INFO] 00:27:05:526 IMS/(32429:32429): -----------------------------------------------------
+[INFO] 00:27:05:527 IMS/(32429:32429): Validando existencia de Blocks.ims....
+[INFO] 00:27:07:529 IMS/(32429:32429): -----------------------------------------------------
+[INFO] 00:27:07:529 IMS/(32429:32429): Existe archivo Blocks.ims.
+[INFO] 00:27:07:530 IMS/(32429:32429): -----------------------------------------------------
+[INFO] 00:27:07:530 IMS/(32429:32429): Generando bitmap...
+[INFO] 00:27:09:534 IMS/(32429:32429): ------------------------------------------------
+[INFO] 00:27:09:534 IMS/(32429:32429): Se crea servidor......
+[INFO] 00:27:10:535 IMS/(32429:32429): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:27:10:536 IMS/(32429:32429): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:27:15:746 IMS/(32429:32429): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:27:15:747 IMS/(32429:32433): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:27:15:761 IMS/(32429:32433): LLegó nuevo comando: 761
+[INFO] 00:27:15:764 IMS/(32429:32433): -----------------------------------------------------
+[INFO] 00:27:15:767 IMS/(32429:32433): Llego comando: Mover Tripulante.....
+[INFO] 00:27:15:767 IMS/(32429:32433): ID Tripulante:         1
+[INFO] 00:27:15:768 IMS/(32429:32433): Posicion Vieja en X:   2
+[INFO] 00:27:15:768 IMS/(32429:32433): Posicion Vieja en Y:   8
+[INFO] 00:27:15:768 IMS/(32429:32433): Posicion Nueva en X:   3
+[INFO] 00:27:15:768 IMS/(32429:32433): Posicion Nueva en Y:   5
+[INFO] 00:27:15:769 IMS/(32429:32433): -----------------------------------------------------
+[INFO] 00:27:15:769 IMS/(32429:32433): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:29:15:443 IMS/(32458:32458): Validando Existencia de directorios...
+[INFO] 00:29:17:445 IMS/(32458:32458): Ya existe directorio
+[INFO] 00:29:17:446 IMS/(32458:32458): -----------------------------------------------------
+[INFO] 00:29:17:446 IMS/(32458:32458): Validando existencia de Superbloque.ims....
+[INFO] 00:29:17:446 IMS/(32458:32458): -----------------------------------------------------
+[INFO] 00:29:19:449 IMS/(32458:32458): Se encontró el archivo superBloque.ims
+[INFO] 00:29:19:455 IMS/(32458:32458): -----------------------------------------------------
+[INFO] 00:29:19:456 IMS/(32458:32458): Se muestra los datos del superBloque.
+[INFO] 00:29:19:457 IMS/(32458:32458): Tamaño de bloque: 64
+[INFO] 00:29:19:457 IMS/(32458:32458): Cantidad de bloques: 64
+[INFO] 00:29:19:458 IMS/(32458:32458): -----------------------------------------------------
+[INFO] 00:29:19:458 IMS/(32458:32458): Validando existencia de Blocks.ims....
+[INFO] 00:29:21:460 IMS/(32458:32458): -----------------------------------------------------
+[INFO] 00:29:21:461 IMS/(32458:32458): Existe archivo Blocks.ims.
+[INFO] 00:29:21:461 IMS/(32458:32458): -----------------------------------------------------
+[INFO] 00:29:21:461 IMS/(32458:32458): Generando bitmap...
+[INFO] 00:29:23:464 IMS/(32458:32458): ------------------------------------------------
+[INFO] 00:29:23:465 IMS/(32458:32458): Se crea servidor......
+[INFO] 00:29:24:466 IMS/(32458:32458): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:29:24:466 IMS/(32458:32458): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:29:27:327 IMS/(32458:32458): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:29:27:336 IMS/(32458:32460): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:29:27:342 IMS/(32458:32460): LLegó nuevo comando: 761
+[INFO] 00:29:27:343 IMS/(32458:32460): -----------------------------------------------------
+[INFO] 00:29:27:343 IMS/(32458:32460): Llego comando: Mover Tripulante.....
+[INFO] 00:29:27:343 IMS/(32458:32460): ID Tripulante:         1
+[INFO] 00:29:27:351 IMS/(32458:32460): Posicion Vieja en X:   2
+[INFO] 00:29:27:352 IMS/(32458:32460): Posicion Vieja en Y:   8
+[INFO] 00:29:27:352 IMS/(32458:32460): Posicion Nueva en X:   3
+[INFO] 00:29:27:353 IMS/(32458:32460): Posicion Nueva en Y:   5
+[INFO] 00:29:27:355 IMS/(32458:32460): -----------------------------------------------------
+[INFO] 00:29:27:357 IMS/(32458:32460): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:30:00:985 IMS/(32479:32479): Validando Existencia de directorios...
+[INFO] 00:30:03:229 IMS/(32479:32479): Ya existe directorio
+[INFO] 00:30:03:237 IMS/(32479:32479): -----------------------------------------------------
+[INFO] 00:30:03:239 IMS/(32479:32479): Validando existencia de Superbloque.ims....
+[INFO] 00:30:03:240 IMS/(32479:32479): -----------------------------------------------------
+[INFO] 00:30:05:245 IMS/(32479:32479): Se encontró el archivo superBloque.ims
+[INFO] 00:30:05:253 IMS/(32479:32479): -----------------------------------------------------
+[INFO] 00:30:05:255 IMS/(32479:32479): Se muestra los datos del superBloque.
+[INFO] 00:30:05:257 IMS/(32479:32479): Tamaño de bloque: 64
+[INFO] 00:30:05:262 IMS/(32479:32479): Cantidad de bloques: 64
+[INFO] 00:30:05:264 IMS/(32479:32479): -----------------------------------------------------
+[INFO] 00:30:05:266 IMS/(32479:32479): Validando existencia de Blocks.ims....
+[INFO] 00:30:07:271 IMS/(32479:32479): -----------------------------------------------------
+[INFO] 00:30:07:273 IMS/(32479:32479): Existe archivo Blocks.ims.
+[INFO] 00:30:07:275 IMS/(32479:32479): -----------------------------------------------------
+[INFO] 00:30:07:277 IMS/(32479:32479): Generando bitmap...
+[INFO] 00:30:09:298 IMS/(32479:32479): ------------------------------------------------
+[INFO] 00:30:09:304 IMS/(32479:32479): Se crea servidor......
+[INFO] 00:30:10:446 IMS/(32479:32479): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:30:10:453 IMS/(32479:32479): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:30:13:301 IMS/(32479:32479): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:30:13:371 IMS/(32479:32486): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:30:13:383 IMS/(32479:32486): LLegó nuevo comando: 761
+[INFO] 00:30:13:385 IMS/(32479:32486): -----------------------------------------------------
+[INFO] 00:30:13:395 IMS/(32479:32486): Llego comando: Mover Tripulante.....
+[INFO] 00:30:13:397 IMS/(32479:32486): ID Tripulante:         1
+[INFO] 00:30:13:398 IMS/(32479:32486): Posicion Vieja en X:   2
+[INFO] 00:30:13:399 IMS/(32479:32486): Posicion Vieja en Y:   8
+[INFO] 00:30:13:400 IMS/(32479:32486): Posicion Nueva en X:   3
+[INFO] 00:30:13:401 IMS/(32479:32486): Posicion Nueva en Y:   5
+[INFO] 00:30:13:402 IMS/(32479:32486): -----------------------------------------------------
+[INFO] 00:30:13:437 IMS/(32479:32486): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:32:43:130 IMS/(32560:32560): Validando Existencia de directorios...
+[INFO] 00:32:45:134 IMS/(32560:32560): Ya existe directorio
+[INFO] 00:32:45:135 IMS/(32560:32560): -----------------------------------------------------
+[INFO] 00:32:45:135 IMS/(32560:32560): Validando existencia de Superbloque.ims....
+[INFO] 00:32:45:136 IMS/(32560:32560): -----------------------------------------------------
+[INFO] 00:32:47:138 IMS/(32560:32560): Se encontró el archivo superBloque.ims
+[INFO] 00:32:47:139 IMS/(32560:32560): -----------------------------------------------------
+[INFO] 00:32:47:139 IMS/(32560:32560): Se muestra los datos del superBloque.
+[INFO] 00:32:47:140 IMS/(32560:32560): Tamaño de bloque: 64
+[INFO] 00:32:47:140 IMS/(32560:32560): Cantidad de bloques: 64
+[INFO] 00:32:47:140 IMS/(32560:32560): -----------------------------------------------------
+[INFO] 00:32:47:140 IMS/(32560:32560): Validando existencia de Blocks.ims....
+[INFO] 00:32:49:142 IMS/(32560:32560): -----------------------------------------------------
+[INFO] 00:32:49:143 IMS/(32560:32560): Existe archivo Blocks.ims.
+[INFO] 00:32:49:144 IMS/(32560:32560): -----------------------------------------------------
+[INFO] 00:32:49:144 IMS/(32560:32560): Generando bitmap...
+[INFO] 00:32:51:149 IMS/(32560:32560): ------------------------------------------------
+[INFO] 00:32:51:149 IMS/(32560:32560): Se crea servidor......
+[INFO] 00:32:52:152 IMS/(32560:32560): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:32:52:153 IMS/(32560:32560): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:32:57:322 IMS/(32560:32560): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:32:57:323 IMS/(32560:32563): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:32:57:342 IMS/(32560:32563): LLegó nuevo comando: 761
+[INFO] 00:32:57:343 IMS/(32560:32563): -----------------------------------------------------
+[INFO] 00:32:57:343 IMS/(32560:32563): Llego comando: Mover Tripulante.....
+[INFO] 00:32:57:343 IMS/(32560:32563): ID Tripulante:         1
+[INFO] 00:32:57:343 IMS/(32560:32563): Posicion Vieja en X:   2
+[INFO] 00:32:57:344 IMS/(32560:32563): Posicion Vieja en Y:   8
+[INFO] 00:32:57:344 IMS/(32560:32563): Posicion Nueva en X:   3
+[INFO] 00:32:57:344 IMS/(32560:32563): Posicion Nueva en Y:   5
+[INFO] 00:32:57:344 IMS/(32560:32563): -----------------------------------------------------
+[INFO] 00:32:57:346 IMS/(32560:32563): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:33:15:772 IMS/(32560:32560): [Shared Library]: Nueva conexion ID: 7
+[INFO] 00:33:15:773 IMS/(32560:32570): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 00:33:15:787 IMS/(32560:32570): LLegó nuevo comando: 761
+[INFO] 00:33:15:788 IMS/(32560:32570): -----------------------------------------------------
+[INFO] 00:33:15:789 IMS/(32560:32570): Llego comando: Mover Tripulante.....
+[INFO] 00:33:15:791 IMS/(32560:32570): ID Tripulante:         1
+[INFO] 00:33:15:791 IMS/(32560:32570): Posicion Vieja en X:   2
+[INFO] 00:33:15:791 IMS/(32560:32570): Posicion Vieja en Y:   8
+[INFO] 00:33:15:792 IMS/(32560:32570): Posicion Nueva en X:   3
+[INFO] 00:33:15:792 IMS/(32560:32570): Posicion Nueva en Y:   5
+[INFO] 00:33:15:792 IMS/(32560:32570): -----------------------------------------------------
+[INFO] 00:33:15:794 IMS/(32560:32570): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:33:30:726 IMS/(32573:32573): Validando Existencia de directorios...
+[INFO] 00:33:32:858 IMS/(32573:32573): Ya existe directorio
+[INFO] 00:33:32:866 IMS/(32573:32573): -----------------------------------------------------
+[INFO] 00:33:32:867 IMS/(32573:32573): Validando existencia de Superbloque.ims....
+[INFO] 00:33:32:869 IMS/(32573:32573): -----------------------------------------------------
+[INFO] 00:33:34:874 IMS/(32573:32573): Se encontró el archivo superBloque.ims
+[INFO] 00:33:34:882 IMS/(32573:32573): -----------------------------------------------------
+[INFO] 00:33:34:884 IMS/(32573:32573): Se muestra los datos del superBloque.
+[INFO] 00:33:34:889 IMS/(32573:32573): Tamaño de bloque: 64
+[INFO] 00:33:34:891 IMS/(32573:32573): Cantidad de bloques: 64
+[INFO] 00:33:34:893 IMS/(32573:32573): -----------------------------------------------------
+[INFO] 00:33:34:895 IMS/(32573:32573): Validando existencia de Blocks.ims....
+[INFO] 00:33:36:899 IMS/(32573:32573): -----------------------------------------------------
+[INFO] 00:33:36:901 IMS/(32573:32573): Existe archivo Blocks.ims.
+[INFO] 00:33:36:903 IMS/(32573:32573): -----------------------------------------------------
+[INFO] 00:33:36:906 IMS/(32573:32573): Generando bitmap...
+[INFO] 00:33:38:927 IMS/(32573:32573): ------------------------------------------------
+[INFO] 00:33:38:930 IMS/(32573:32573): Se crea servidor......
+[INFO] 00:33:40:068 IMS/(32573:32573): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:33:40:072 IMS/(32573:32573): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:34:18:916 IMS/(32573:32573): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:34:19:004 IMS/(32573:32578): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:34:19:013 IMS/(32573:32578): LLegó nuevo comando: 761
+[INFO] 00:34:19:015 IMS/(32573:32578): -----------------------------------------------------
+[INFO] 00:34:19:017 IMS/(32573:32578): Llego comando: Mover Tripulante.....
+[INFO] 00:34:19:019 IMS/(32573:32578): ID Tripulante:         1
+[INFO] 00:34:19:023 IMS/(32573:32578): Posicion Vieja en X:   2
+[INFO] 00:34:19:025 IMS/(32573:32578): Posicion Vieja en Y:   8
+[INFO] 00:34:19:027 IMS/(32573:32578): Posicion Nueva en X:   3
+[INFO] 00:34:19:029 IMS/(32573:32578): Posicion Nueva en Y:   5
+[INFO] 00:34:19:032 IMS/(32573:32578): -----------------------------------------------------
+[INFO] 00:34:19:068 IMS/(32573:32578): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:35:40:155 IMS/(32600:32600): Validando Existencia de directorios...
+[INFO] 00:35:40:157 IMS/(32600:32600): Ya existe directorio
+[INFO] 00:35:40:158 IMS/(32600:32600): -----------------------------------------------------
+[INFO] 00:35:40:158 IMS/(32600:32600): Validando existencia de Superbloque.ims....
+[INFO] 00:35:40:159 IMS/(32600:32600): -----------------------------------------------------
+[INFO] 00:35:40:160 IMS/(32600:32600): Se encontró el archivo superBloque.ims
+[INFO] 00:35:40:162 IMS/(32600:32600): -----------------------------------------------------
+[INFO] 00:35:40:162 IMS/(32600:32600): Se muestra los datos del superBloque.
+[INFO] 00:35:40:163 IMS/(32600:32600): Tamaño de bloque: 64
+[INFO] 00:35:40:163 IMS/(32600:32600): Cantidad de bloques: 64
+[INFO] 00:35:40:164 IMS/(32600:32600): -----------------------------------------------------
+[INFO] 00:35:40:164 IMS/(32600:32600): Validando existencia de Blocks.ims....
+[INFO] 00:35:40:165 IMS/(32600:32600): -----------------------------------------------------
+[INFO] 00:35:40:166 IMS/(32600:32600): Existe archivo Blocks.ims.
+[INFO] 00:35:40:166 IMS/(32600:32600): -----------------------------------------------------
+[INFO] 00:35:40:167 IMS/(32600:32600): Generando bitmap...
+[INFO] 00:35:40:169 IMS/(32600:32600): ------------------------------------------------
+[INFO] 00:35:40:169 IMS/(32600:32600): Se crea servidor......
+[INFO] 00:35:41:171 IMS/(32600:32600): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:35:41:172 IMS/(32600:32600): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:35:49:990 IMS/(32600:32600): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:35:49:992 IMS/(32600:32603): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:35:50:003 IMS/(32600:32603): LLegó nuevo comando: 761
+[INFO] 00:35:50:007 IMS/(32600:32603): -----------------------------------------------------
+[INFO] 00:35:50:007 IMS/(32600:32603): Llego comando: Mover Tripulante.....
+[INFO] 00:35:50:007 IMS/(32600:32603): ID Tripulante:         1
+[INFO] 00:35:50:008 IMS/(32600:32603): Posicion Vieja en X:   2
+[INFO] 00:35:50:008 IMS/(32600:32603): Posicion Vieja en Y:   8
+[INFO] 00:35:50:008 IMS/(32600:32603): Posicion Nueva en X:   3
+[INFO] 00:35:50:009 IMS/(32600:32603): Posicion Nueva en Y:   5
+[INFO] 00:35:50:011 IMS/(32600:32603): -----------------------------------------------------
+[INFO] 00:35:50:013 IMS/(32600:32603): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:35:50:019 IMS/(32600:32603): [ValidarBitsLibres] Se encontró una posicion libre:  0
+[INFO] 00:35:50:020 IMS/(32600:32603): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:36:40:335 IMS/(32617:32617): Validando Existencia de directorios...
+[INFO] 00:36:40:338 IMS/(32617:32617): Ya existe directorio
+[INFO] 00:36:40:339 IMS/(32617:32617): -----------------------------------------------------
+[INFO] 00:36:40:340 IMS/(32617:32617): Validando existencia de Superbloque.ims....
+[INFO] 00:36:40:340 IMS/(32617:32617): -----------------------------------------------------
+[INFO] 00:36:40:341 IMS/(32617:32617): Se encontró el archivo superBloque.ims
+[INFO] 00:36:40:343 IMS/(32617:32617): -----------------------------------------------------
+[INFO] 00:36:40:344 IMS/(32617:32617): Se muestra los datos del superBloque.
+[INFO] 00:36:40:345 IMS/(32617:32617): Tamaño de bloque: 64
+[INFO] 00:36:40:345 IMS/(32617:32617): Cantidad de bloques: 64
+[INFO] 00:36:40:346 IMS/(32617:32617): -----------------------------------------------------
+[INFO] 00:36:40:346 IMS/(32617:32617): Validando existencia de Blocks.ims....
+[INFO] 00:36:40:347 IMS/(32617:32617): -----------------------------------------------------
+[INFO] 00:36:40:348 IMS/(32617:32617): Existe archivo Blocks.ims.
+[INFO] 00:36:40:348 IMS/(32617:32617): -----------------------------------------------------
+[INFO] 00:36:40:358 IMS/(32617:32617): Generando bitmap...
+[INFO] 00:36:40:360 IMS/(32617:32617): ------------------------------------------------
+[INFO] 00:36:40:361 IMS/(32617:32617): Se crea servidor......
+[INFO] 00:36:41:362 IMS/(32617:32617): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:36:41:362 IMS/(32617:32617): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:36:43:931 IMS/(32617:32617): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:36:43:933 IMS/(32617:32619): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:36:43:944 IMS/(32617:32619): LLegó nuevo comando: 761
+[INFO] 00:36:43:947 IMS/(32617:32619): -----------------------------------------------------
+[INFO] 00:36:43:948 IMS/(32617:32619): Llego comando: Mover Tripulante.....
+[INFO] 00:36:43:948 IMS/(32617:32619): ID Tripulante:         1
+[INFO] 00:36:43:950 IMS/(32617:32619): Posicion Vieja en X:   2
+[INFO] 00:36:43:951 IMS/(32617:32619): Posicion Vieja en Y:   8
+[INFO] 00:36:43:951 IMS/(32617:32619): Posicion Nueva en X:   3
+[INFO] 00:36:43:952 IMS/(32617:32619): Posicion Nueva en Y:   5
+[INFO] 00:36:43:952 IMS/(32617:32619): -----------------------------------------------------
+[INFO] 00:36:43:954 IMS/(32617:32619): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:36:57:379 IMS/(32617:32617): [Shared Library]: Nueva conexion ID: 7
+[INFO] 00:36:57:381 IMS/(32617:32626): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 00:36:57:394 IMS/(32617:32626): LLegó nuevo comando: 761
+[INFO] 00:36:57:398 IMS/(32617:32626): -----------------------------------------------------
+[INFO] 00:36:57:399 IMS/(32617:32626): Llego comando: Mover Tripulante.....
+[INFO] 00:36:57:399 IMS/(32617:32626): ID Tripulante:         1
+[INFO] 00:36:57:400 IMS/(32617:32626): Posicion Vieja en X:   2
+[INFO] 00:36:57:400 IMS/(32617:32626): Posicion Vieja en Y:   8
+[INFO] 00:36:57:400 IMS/(32617:32626): Posicion Nueva en X:   3
+[INFO] 00:36:57:400 IMS/(32617:32626): Posicion Nueva en Y:   5
+[INFO] 00:36:57:401 IMS/(32617:32626): -----------------------------------------------------
+[INFO] 00:36:57:403 IMS/(32617:32626): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:37:18:290 IMS/(32646:32646): Validando Existencia de directorios...
+[INFO] 00:37:18:293 IMS/(32646:32646): Ya existe directorio
+[INFO] 00:37:18:294 IMS/(32646:32646): -----------------------------------------------------
+[INFO] 00:37:18:294 IMS/(32646:32646): Validando existencia de Superbloque.ims....
+[INFO] 00:37:18:295 IMS/(32646:32646): -----------------------------------------------------
+[INFO] 00:37:18:296 IMS/(32646:32646): Se encontró el archivo superBloque.ims
+[INFO] 00:37:18:298 IMS/(32646:32646): -----------------------------------------------------
+[INFO] 00:37:18:298 IMS/(32646:32646): Se muestra los datos del superBloque.
+[INFO] 00:37:18:299 IMS/(32646:32646): Tamaño de bloque: 64
+[INFO] 00:37:18:299 IMS/(32646:32646): Cantidad de bloques: 64
+[INFO] 00:37:18:300 IMS/(32646:32646): -----------------------------------------------------
+[INFO] 00:37:18:301 IMS/(32646:32646): Validando existencia de Blocks.ims....
+[INFO] 00:37:18:302 IMS/(32646:32646): -----------------------------------------------------
+[INFO] 00:37:18:311 IMS/(32646:32646): Existe archivo Blocks.ims.
+[INFO] 00:37:18:312 IMS/(32646:32646): -----------------------------------------------------
+[INFO] 00:37:18:312 IMS/(32646:32646): Generando bitmap...
+[INFO] 00:37:18:314 IMS/(32646:32646): ------------------------------------------------
+[INFO] 00:37:18:315 IMS/(32646:32646): Se crea servidor......
+[INFO] 00:37:19:315 IMS/(32646:32646): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:37:19:316 IMS/(32646:32646): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:37:22:996 IMS/(32646:32646): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:37:22:998 IMS/(32646:32648): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:37:23:011 IMS/(32646:32648): LLegó nuevo comando: 761
+[INFO] 00:37:23:011 IMS/(32646:32648): -----------------------------------------------------
+[INFO] 00:37:23:012 IMS/(32646:32648): Llego comando: Mover Tripulante.....
+[INFO] 00:37:23:012 IMS/(32646:32648): ID Tripulante:         1
+[INFO] 00:37:23:012 IMS/(32646:32648): Posicion Vieja en X:   2
+[INFO] 00:37:23:013 IMS/(32646:32648): Posicion Vieja en Y:   8
+[INFO] 00:37:23:013 IMS/(32646:32648): Posicion Nueva en X:   3
+[INFO] 00:37:23:014 IMS/(32646:32648): Posicion Nueva en Y:   5
+[INFO] 00:37:23:014 IMS/(32646:32648): -----------------------------------------------------
+[INFO] 00:37:23:016 IMS/(32646:32648): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:40:29:730 IMS/(32712:32712): Validando Existencia de directorios...
+[INFO] 00:40:29:731 IMS/(32712:32712): No existe directorio: Filesystem. Se crea.
+[INFO] 00:40:29:738 IMS/(32712:32712): -----------------------------------------------------
+[INFO] 00:40:29:738 IMS/(32712:32712): Validando existencia de Superbloque.ims....
+[INFO] 00:40:29:739 IMS/(32712:32712): -----------------------------------------------------
+[ERROR] 00:40:29:740 IMS/(32712:32712): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 00:40:29:741 IMS/(32712:32712): Ingresar el tamaño de cada bloque
+[INFO] 00:40:31:878 IMS/(32712:32712): Ingresar la cantidad de bloques
+[INFO] 00:40:32:683 IMS/(32712:32712): -----------------------------------------------------
+[INFO] 00:40:32:683 IMS/(32712:32712): Se creó archivo superBloque.ims
+[INFO] 00:40:32:683 IMS/(32712:32712): -----------------------------------------------------
+[INFO] 00:40:32:684 IMS/(32712:32712): Validando existencia de Blocks.ims....
+[ERROR] 00:40:32:685 IMS/(32712:32712): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 00:40:32:690 IMS/(32712:32712): -----------------------------------------------------
+[INFO] 00:40:32:690 IMS/(32712:32712): Se creó archivo Blocks.ims
+[INFO] 00:40:32:690 IMS/(32712:32712): -----------------------------------------------------
+[INFO] 00:40:32:691 IMS/(32712:32712): Generando bitmap...
+[INFO] 00:40:32:693 IMS/(32712:32712): ------------------------------------------------
+[INFO] 00:40:32:694 IMS/(32712:32712): Se crea servidor......
+[INFO] 00:40:33:695 IMS/(32712:32712): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:40:33:696 IMS/(32712:32712): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:40:50:376 IMS/(32712:32712): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:40:50:388 IMS/(32712:32715): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:40:50:394 IMS/(32712:32715): LLegó nuevo comando: 761
+[INFO] 00:40:50:395 IMS/(32712:32715): -----------------------------------------------------
+[INFO] 00:40:50:395 IMS/(32712:32715): Llego comando: Mover Tripulante.....
+[INFO] 00:40:50:396 IMS/(32712:32715): ID Tripulante:         1
+[INFO] 00:40:50:396 IMS/(32712:32715): Posicion Vieja en X:   2
+[INFO] 00:40:50:396 IMS/(32712:32715): Posicion Vieja en Y:   8
+[INFO] 00:40:50:396 IMS/(32712:32715): Posicion Nueva en X:   3
+[INFO] 00:40:50:397 IMS/(32712:32715): Posicion Nueva en Y:   5
+[INFO] 00:40:50:397 IMS/(32712:32715): -----------------------------------------------------
+[INFO] 00:40:50:403 IMS/(32712:32715): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:40:50:416 IMS/(32712:32715): hola
+[INFO] 00:40:50:419 IMS/(32712:32715): hola
+[INFO] 00:40:50:422 IMS/(32712:32715): hola
+[INFO] 00:42:35:576 IMS/(32734:32734): Validando Existencia de directorios...
+[INFO] 00:42:35:579 IMS/(32734:32734): Ya existe directorio
+[INFO] 00:42:35:580 IMS/(32734:32734): -----------------------------------------------------
+[INFO] 00:42:35:580 IMS/(32734:32734): Validando existencia de Superbloque.ims....
+[INFO] 00:42:35:581 IMS/(32734:32734): -----------------------------------------------------
+[INFO] 00:42:35:582 IMS/(32734:32734): Se encontró el archivo superBloque.ims
+[INFO] 00:42:35:586 IMS/(32734:32734): -----------------------------------------------------
+[INFO] 00:42:35:586 IMS/(32734:32734): Se muestra los datos del superBloque.
+[INFO] 00:42:35:587 IMS/(32734:32734): Tamaño de bloque: 64
+[INFO] 00:42:35:587 IMS/(32734:32734): Cantidad de bloques: 64
+[INFO] 00:42:35:588 IMS/(32734:32734): -----------------------------------------------------
+[INFO] 00:42:35:589 IMS/(32734:32734): Validando existencia de Blocks.ims....
+[INFO] 00:42:35:590 IMS/(32734:32734): -----------------------------------------------------
+[INFO] 00:42:35:599 IMS/(32734:32734): Existe archivo Blocks.ims.
+[INFO] 00:42:35:600 IMS/(32734:32734): -----------------------------------------------------
+[INFO] 00:42:35:601 IMS/(32734:32734): Generando bitmap...
+[INFO] 00:42:35:602 IMS/(32734:32734): ------------------------------------------------
+[INFO] 00:42:35:603 IMS/(32734:32734): Se crea servidor......
+[INFO] 00:42:36:604 IMS/(32734:32734): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:42:36:604 IMS/(32734:32734): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:42:38:584 IMS/(32734:32734): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:42:38:586 IMS/(32734:32736): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:42:38:596 IMS/(32734:32736): LLegó nuevo comando: 761
+[INFO] 00:42:38:600 IMS/(32734:32736): -----------------------------------------------------
+[INFO] 00:42:38:600 IMS/(32734:32736): Llego comando: Mover Tripulante.....
+[INFO] 00:42:38:601 IMS/(32734:32736): ID Tripulante:         1
+[INFO] 00:42:38:601 IMS/(32734:32736): Posicion Vieja en X:   2
+[INFO] 00:42:38:601 IMS/(32734:32736): Posicion Vieja en Y:   8
+[INFO] 00:42:38:602 IMS/(32734:32736): Posicion Nueva en X:   3
+[INFO] 00:42:38:611 IMS/(32734:32736): Posicion Nueva en Y:   5
+[INFO] 00:42:38:611 IMS/(32734:32736): -----------------------------------------------------
+[INFO] 00:42:38:618 IMS/(32734:32736): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:42:57:034 IMS/(32734:32734): [Shared Library]: Nueva conexion ID: 7
+[INFO] 00:42:57:035 IMS/(32734:32750): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 00:42:57:037 IMS/(32734:32750): LLegó nuevo comando: 761
+[INFO] 00:42:57:040 IMS/(32734:32750): -----------------------------------------------------
+[INFO] 00:42:57:041 IMS/(32734:32750): Llego comando: Mover Tripulante.....
+[INFO] 00:42:57:041 IMS/(32734:32750): ID Tripulante:         1
+[INFO] 00:42:57:042 IMS/(32734:32750): Posicion Vieja en X:   2
+[INFO] 00:42:57:042 IMS/(32734:32750): Posicion Vieja en Y:   8
+[INFO] 00:42:57:043 IMS/(32734:32750): Posicion Nueva en X:   3
+[INFO] 00:42:57:043 IMS/(32734:32750): Posicion Nueva en Y:   5
+[INFO] 00:42:57:044 IMS/(32734:32750): -----------------------------------------------------
+[INFO] 00:42:57:047 IMS/(32734:32750): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:42:57:056 IMS/(32734:32750): hola
+[INFO] 00:42:57:059 IMS/(32734:32750): hola
+[INFO] 00:42:57:072 IMS/(32734:32750): hola
+[INFO] 00:47:47:079 IMS/(317:317): Validando Existencia de directorios...
+[INFO] 00:47:47:082 IMS/(317:317): Ya existe directorio
+[INFO] 00:47:47:083 IMS/(317:317): -----------------------------------------------------
+[INFO] 00:47:47:084 IMS/(317:317): Validando existencia de Superbloque.ims....
+[INFO] 00:47:47:084 IMS/(317:317): -----------------------------------------------------
+[INFO] 00:47:47:086 IMS/(317:317): Se encontró el archivo superBloque.ims
+[INFO] 00:47:47:088 IMS/(317:317): -----------------------------------------------------
+[INFO] 00:47:47:088 IMS/(317:317): Se muestra los datos del superBloque.
+[INFO] 00:47:47:089 IMS/(317:317): Tamaño de bloque: 64
+[INFO] 00:47:47:090 IMS/(317:317): Cantidad de bloques: 64
+[INFO] 00:47:47:090 IMS/(317:317): -----------------------------------------------------
+[INFO] 00:47:47:090 IMS/(317:317): Validando existencia de Blocks.ims....
+[INFO] 00:47:47:091 IMS/(317:317): -----------------------------------------------------
+[INFO] 00:47:47:092 IMS/(317:317): Existe archivo Blocks.ims.
+[INFO] 00:47:47:096 IMS/(317:317): -----------------------------------------------------
+[INFO] 00:47:47:103 IMS/(317:317): Generando bitmap...
+[INFO] 00:47:47:105 IMS/(317:317): ------------------------------------------------
+[INFO] 00:47:47:105 IMS/(317:317): Se crea servidor......
+[INFO] 00:47:48:106 IMS/(317:317): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:47:48:106 IMS/(317:317): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:47:53:308 IMS/(317:317): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:47:53:320 IMS/(317:320): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:47:53:320 IMS/(317:320): LLegó nuevo comando: 761
+[INFO] 00:47:53:325 IMS/(317:320): -----------------------------------------------------
+[INFO] 00:47:53:325 IMS/(317:320): Llego comando: Mover Tripulante.....
+[INFO] 00:47:53:330 IMS/(317:320): ID Tripulante:         1
+[INFO] 00:47:53:330 IMS/(317:320): Posicion Vieja en X:   2
+[INFO] 00:47:53:331 IMS/(317:320): Posicion Vieja en Y:   8
+[INFO] 00:47:53:332 IMS/(317:320): Posicion Nueva en X:   3
+[INFO] 00:47:53:332 IMS/(317:320): Posicion Nueva en Y:   5
+[INFO] 00:47:53:333 IMS/(317:320): -----------------------------------------------------
+[INFO] 00:47:53:339 IMS/(317:320): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:47:53:356 IMS/(317:320): hola1
+[INFO] 00:48:48:592 IMS/(587:587): Validando Existencia de directorios...
+[INFO] 00:48:48:742 IMS/(587:587): Ya existe directorio
+[INFO] 00:48:48:756 IMS/(587:587): -----------------------------------------------------
+[INFO] 00:48:48:758 IMS/(587:587): Validando existencia de Superbloque.ims....
+[INFO] 00:48:48:763 IMS/(587:587): -----------------------------------------------------
+[INFO] 00:48:48:773 IMS/(587:587): Se encontró el archivo superBloque.ims
+[INFO] 00:48:48:791 IMS/(587:587): -----------------------------------------------------
+[INFO] 00:48:48:792 IMS/(587:587): Se muestra los datos del superBloque.
+[INFO] 00:48:48:794 IMS/(587:587): Tamaño de bloque: 64
+[INFO] 00:48:48:795 IMS/(587:587): Cantidad de bloques: 64
+[INFO] 00:48:48:797 IMS/(587:587): -----------------------------------------------------
+[INFO] 00:48:48:800 IMS/(587:587): Validando existencia de Blocks.ims....
+[INFO] 00:48:48:802 IMS/(587:587): -----------------------------------------------------
+[INFO] 00:48:48:815 IMS/(587:587): Existe archivo Blocks.ims.
+[INFO] 00:48:48:816 IMS/(587:587): -----------------------------------------------------
+[INFO] 00:48:48:818 IMS/(587:587): Generando bitmap...
+[INFO] 00:48:48:876 IMS/(587:587): ------------------------------------------------
+[INFO] 00:48:48:877 IMS/(587:587): Se crea servidor......
+[INFO] 00:48:50:017 IMS/(587:587): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:48:50:020 IMS/(587:587): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:48:58:772 IMS/(600:600): Validando Existencia de directorios...
+[INFO] 00:48:58:861 IMS/(600:600): Ya existe directorio
+[INFO] 00:48:58:883 IMS/(600:600): -----------------------------------------------------
+[INFO] 00:48:58:884 IMS/(600:600): Validando existencia de Superbloque.ims....
+[INFO] 00:48:58:888 IMS/(600:600): -----------------------------------------------------
+[INFO] 00:48:58:894 IMS/(600:600): Se encontró el archivo superBloque.ims
+[INFO] 00:48:58:918 IMS/(600:600): -----------------------------------------------------
+[INFO] 00:48:58:919 IMS/(600:600): Se muestra los datos del superBloque.
+[INFO] 00:48:58:920 IMS/(600:600): Tamaño de bloque: 64
+[INFO] 00:48:58:921 IMS/(600:600): Cantidad de bloques: 64
+[INFO] 00:48:58:936 IMS/(600:600): -----------------------------------------------------
+[INFO] 00:48:58:937 IMS/(600:600): Validando existencia de Blocks.ims....
+[INFO] 00:48:58:939 IMS/(600:600): -----------------------------------------------------
+[INFO] 00:48:58:940 IMS/(600:600): Existe archivo Blocks.ims.
+[INFO] 00:48:58:941 IMS/(600:600): -----------------------------------------------------
+[INFO] 00:48:58:944 IMS/(600:600): Generando bitmap...
+[INFO] 00:48:58:977 IMS/(600:600): ------------------------------------------------
+[INFO] 00:48:58:977 IMS/(600:600): Se crea servidor......
+[INFO] 00:49:00:087 IMS/(600:600): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:49:00:090 IMS/(600:600): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:49:01:368 IMS/(600:600): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:49:01:445 IMS/(600:602): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:49:01:459 IMS/(600:602): LLegó nuevo comando: 761
+[INFO] 00:49:01:461 IMS/(600:602): -----------------------------------------------------
+[INFO] 00:49:01:469 IMS/(600:602): Llego comando: Mover Tripulante.....
+[INFO] 00:49:01:471 IMS/(600:602): ID Tripulante:         1
+[INFO] 00:49:01:473 IMS/(600:602): Posicion Vieja en X:   2
+[INFO] 00:49:01:475 IMS/(600:602): Posicion Vieja en Y:   8
+[INFO] 00:49:01:477 IMS/(600:602): Posicion Nueva en X:   3
+[INFO] 00:49:01:487 IMS/(600:602): Posicion Nueva en Y:   5
+[INFO] 00:49:01:495 IMS/(600:602): -----------------------------------------------------
+[INFO] 00:49:01:515 IMS/(600:602): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:49:01:566 IMS/(600:602): hola1
+[INFO] 00:49:01:567 IMS/(600:602): hola
+[INFO] 00:49:01:574 IMS/(600:602): [ValidarBitsLibres] Se encontró una posicion libre:  0
+[INFO] 00:49:01:580 IMS/(600:602): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:52:46:397 IMS/(653:653): Validando Existencia de directorios...
+[INFO] 00:52:46:560 IMS/(653:653): Ya existe directorio
+[INFO] 00:52:46:563 IMS/(653:653): -----------------------------------------------------
+[INFO] 00:52:46:563 IMS/(653:653): Validando existencia de Superbloque.ims....
+[INFO] 00:52:46:565 IMS/(653:653): -----------------------------------------------------
+[INFO] 00:52:46:572 IMS/(653:653): Se encontró el archivo superBloque.ims
+[INFO] 00:52:46:578 IMS/(653:653): -----------------------------------------------------
+[INFO] 00:52:46:579 IMS/(653:653): Se muestra los datos del superBloque.
+[INFO] 00:52:46:580 IMS/(653:653): Tamaño de bloque: 64
+[INFO] 00:52:46:582 IMS/(653:653): Cantidad de bloques: 64
+[INFO] 00:52:46:592 IMS/(653:653): -----------------------------------------------------
+[INFO] 00:52:46:593 IMS/(653:653): Validando existencia de Blocks.ims....
+[INFO] 00:52:46:602 IMS/(653:653): -----------------------------------------------------
+[INFO] 00:52:46:603 IMS/(653:653): Existe archivo Blocks.ims.
+[INFO] 00:52:46:605 IMS/(653:653): -----------------------------------------------------
+[INFO] 00:52:46:607 IMS/(653:653): Generando bitmap...
+[INFO] 00:52:46:619 IMS/(653:653): ------------------------------------------------
+[INFO] 00:52:46:620 IMS/(653:653): Se crea servidor......
+[INFO] 00:52:47:726 IMS/(653:653): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:52:47:728 IMS/(653:653): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:52:48:557 IMS/(653:653): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:52:48:599 IMS/(653:655): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:52:48:619 IMS/(653:655): LLegó nuevo comando: 761
+[INFO] 00:52:48:628 IMS/(653:655): -----------------------------------------------------
+[INFO] 00:52:48:636 IMS/(653:655): Llego comando: Mover Tripulante.....
+[INFO] 00:52:48:637 IMS/(653:655): ID Tripulante:         1
+[INFO] 00:52:48:638 IMS/(653:655): Posicion Vieja en X:   2
+[INFO] 00:52:48:638 IMS/(653:655): Posicion Vieja en Y:   8
+[INFO] 00:52:48:642 IMS/(653:655): Posicion Nueva en X:   3
+[INFO] 00:52:48:643 IMS/(653:655): Posicion Nueva en Y:   5
+[INFO] 00:52:48:643 IMS/(653:655): -----------------------------------------------------
+[INFO] 00:52:48:662 IMS/(653:655): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:52:48:703 IMS/(653:655): hola1
+[INFO] 00:52:48:723 IMS/(653:655): hola
+[INFO] 00:52:48:732 IMS/(653:655): [ValidarBitsLibres] Se encontró una posicion libre:  0
+[INFO] 00:52:48:736 IMS/(653:655): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:54:51:332 IMS/(675:675): Validando Existencia de directorios...
+[INFO] 00:54:51:470 IMS/(675:675): Ya existe directorio
+[INFO] 00:54:51:473 IMS/(675:675): -----------------------------------------------------
+[INFO] 00:54:51:473 IMS/(675:675): Validando existencia de Superbloque.ims....
+[INFO] 00:54:51:474 IMS/(675:675): -----------------------------------------------------
+[INFO] 00:54:51:477 IMS/(675:675): Se encontró el archivo superBloque.ims
+[INFO] 00:54:51:488 IMS/(675:675): -----------------------------------------------------
+[INFO] 00:54:51:489 IMS/(675:675): Se muestra los datos del superBloque.
+[INFO] 00:54:51:490 IMS/(675:675): Tamaño de bloque: 64
+[INFO] 00:54:51:491 IMS/(675:675): Cantidad de bloques: 64
+[INFO] 00:54:51:493 IMS/(675:675): -----------------------------------------------------
+[INFO] 00:54:51:504 IMS/(675:675): Validando existencia de Blocks.ims....
+[INFO] 00:54:51:512 IMS/(675:675): -----------------------------------------------------
+[INFO] 00:54:51:513 IMS/(675:675): Existe archivo Blocks.ims.
+[INFO] 00:54:51:515 IMS/(675:675): -----------------------------------------------------
+[INFO] 00:54:51:519 IMS/(675:675): Generando bitmap...
+[INFO] 00:54:51:556 IMS/(675:675): ------------------------------------------------
+[INFO] 00:54:51:560 IMS/(675:675): Se crea servidor......
+[INFO] 00:54:52:723 IMS/(675:675): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:54:52:728 IMS/(675:675): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:54:54:242 IMS/(675:675): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:54:54:312 IMS/(675:683): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:54:54:324 IMS/(675:683): LLegó nuevo comando: 761
+[INFO] 00:54:54:327 IMS/(675:683): -----------------------------------------------------
+[INFO] 00:54:54:329 IMS/(675:683): Llego comando: Mover Tripulante.....
+[INFO] 00:54:54:332 IMS/(675:683): ID Tripulante:         1
+[INFO] 00:54:54:344 IMS/(675:683): Posicion Vieja en X:   2
+[INFO] 00:54:54:351 IMS/(675:683): Posicion Vieja en Y:   8
+[INFO] 00:54:54:354 IMS/(675:683): Posicion Nueva en X:   3
+[INFO] 00:54:54:356 IMS/(675:683): Posicion Nueva en Y:   5
+[INFO] 00:54:54:358 IMS/(675:683): -----------------------------------------------------
+[INFO] 00:54:54:414 IMS/(675:683): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:54:54:470 IMS/(675:683): hola1
+[INFO] 00:54:54:487 IMS/(675:683): hola2
+[INFO] 00:54:54:489 IMS/(675:683): hola
+[INFO] 00:54:54:498 IMS/(675:683): [ValidarBitsLibres] Se encontró una posicion libre:  0
+[INFO] 00:54:54:515 IMS/(675:683): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:57:19:804 IMS/(691:691): Validando Existencia de directorios...
+[INFO] 00:57:19:806 IMS/(691:691): Ya existe directorio
+[INFO] 00:57:19:807 IMS/(691:691): -----------------------------------------------------
+[INFO] 00:57:19:808 IMS/(691:691): Validando existencia de Superbloque.ims....
+[INFO] 00:57:19:808 IMS/(691:691): -----------------------------------------------------
+[INFO] 00:57:19:809 IMS/(691:691): Se encontró el archivo superBloque.ims
+[INFO] 00:57:19:812 IMS/(691:691): -----------------------------------------------------
+[INFO] 00:57:19:813 IMS/(691:691): Se muestra los datos del superBloque.
+[INFO] 00:57:19:813 IMS/(691:691): Tamaño de bloque: 64
+[INFO] 00:57:19:814 IMS/(691:691): Cantidad de bloques: 64
+[INFO] 00:57:19:814 IMS/(691:691): -----------------------------------------------------
+[INFO] 00:57:19:815 IMS/(691:691): Validando existencia de Blocks.ims....
+[INFO] 00:57:19:816 IMS/(691:691): -----------------------------------------------------
+[INFO] 00:57:19:817 IMS/(691:691): Existe archivo Blocks.ims.
+[INFO] 00:57:19:817 IMS/(691:691): -----------------------------------------------------
+[INFO] 00:57:19:818 IMS/(691:691): Generando bitmap...
+[INFO] 00:57:19:828 IMS/(691:691): ------------------------------------------------
+[INFO] 00:57:19:831 IMS/(691:691): Se crea servidor......
+[INFO] 00:57:20:833 IMS/(691:691): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 00:57:20:834 IMS/(691:691): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 00:57:25:019 IMS/(691:691): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:57:25:034 IMS/(691:694): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:57:25:043 IMS/(691:694): LLegó nuevo comando: 761
+[INFO] 00:57:25:044 IMS/(691:694): -----------------------------------------------------
+[INFO] 00:57:25:045 IMS/(691:694): Llego comando: Mover Tripulante.....
+[INFO] 00:57:25:045 IMS/(691:694): ID Tripulante:         1
+[INFO] 00:57:25:045 IMS/(691:694): Posicion Vieja en X:   2
+[INFO] 00:57:25:046 IMS/(691:694): Posicion Vieja en Y:   8
+[INFO] 00:57:25:046 IMS/(691:694): Posicion Nueva en X:   3
+[INFO] 00:57:25:046 IMS/(691:694): Posicion Nueva en Y:   5
+[INFO] 00:57:25:046 IMS/(691:694): -----------------------------------------------------
+[INFO] 00:57:25:048 IMS/(691:694): No existe archivo en bitácora..Se crea archivo para este tripulante...
+[INFO] 00:57:25:060 IMS/(691:694): hola1

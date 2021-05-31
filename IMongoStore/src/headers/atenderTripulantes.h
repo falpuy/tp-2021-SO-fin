@@ -10,6 +10,7 @@
     #include <unnamed/socket.h>
     #include <math.h>
     #include <commons/config.h>
+    #include "syncFile.h"
 
     
     enum COMANDOS{
@@ -30,18 +31,12 @@
 
     };
 
-    typedef struct{
-        char* puntoMontaje;
-        char* puerto;
-        int tiempoSincronizacion;
-        uint32_t cantidadBloques;
-        uint32_t tamanioBloque;    
-    }configIMS;
-
-    configIMS* datosConfig;
+    char* str_para_blocks;
     
-    char* path(char* str);
+    char* pathCompleto(const char* str, ...);
     void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
     int cantidad_bloques(char* string);
+    char* funcionStrMover(int posX_v, int posY_v, int posX_n, int posY_n);
+    void crearMetadataBitacora(char* path_tripulante);
 
 #endif

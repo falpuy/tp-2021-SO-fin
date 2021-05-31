@@ -8,18 +8,18 @@
     #include <unistd.h>
     #include <commons/log.h>
     #include <stdint.h>
+    #include <commons/bitarray.h>
+
+    #include "preparacionFS.h"
 
     typedef struct{
         char* puntoMontaje;
         char* puerto;
-        int tiempoSincronizacion;
-        uint32_t cantidadBloques;
-        uint32_t tamanioBloque;    
+        int tiempoSincronizacion;   
     }configIMS;
-
-    uint32_t cantidad;
-    uint32_t tamanio; 
-
+    
+    void* p_bitmap;
+    t_bitarray* bitmap;
 
     int flagEnd;
     configIMS* datosConfig;

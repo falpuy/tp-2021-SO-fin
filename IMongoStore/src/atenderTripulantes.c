@@ -84,6 +84,8 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
                 string_append(&temporal,"'");
                 free(posicion);
 
+                int tamStr = string_length(temporal);
+
                 printf("-------------------------------------------------------");
                 printf("\n El string a pegar es: %s\n", temporal);
                 printf("-------------------------------------------------------");
@@ -97,111 +99,114 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
                 string_append(&path_fileTripulante,posicion);
                 free(posicion);
                 string_append(&path_fileTripulante,".ims");
-               
-                //char* pathAbsoluto = string_from_format("%s/%s",datosConfig->puntoMontaje,path_fileTripulante);
-                
+            
+
                 if(access(pathCompleto(path_fileTripulante),F_OK) < 0){
                     log_info(logger,"No existe archivo en bitácora..Se crea archivo para este tripulante...");
                     printf("\n%s\n", pathCompleto(path_fileTripulante));
-                    //crearMetadataBitacora(pathCompleto(path_fileTripulante));
-                }
+                    crearMetadataBitacora(pathCompleto(path_fileTripulante));
+                
+                    int cantidadBloquesAUsar = cantidad_bloques(str_para_blocks);
+                    int cantidadBloquesUsados = 0;
+                    int contadorChars = 0;
 
-                    // int cantidadBloquesAUsar = cantidad_bloques(str_para_blocks);
-                    // int cantidadBloquesUsados = 0;
+                    err = validarBitsLibre(cantidadBloquesAUsar,);
+                    if(err < 0){
+                        log_error(log, "No existe más espacio para guardar en filesystem");
+                    }
 
-                    // err = validarBitsLibre(cantidadBloquesAUsar,);
-                    // if(err < 0){
-                    //     log_error(log, "No existe más espacio para guardar en filesystem");
-                    // }
-
-                    // for(int i=0; i < bitarray_get_max_bit(bitmap) && cantidadBloquesUsados != cantidadBloquesAUsar; i++){
-                    //     if(bitarray_test_bit(bitmap,i) == 0){
-                    //         if((cantidadBloquesAUsar-cantidadBloquesUsados)==1){ //ultimo bloque a escribir
-                    //             //POSIBLE FRAGMENTACION INTERNA!
-
-
-
-                    //         }else{
-                    //             memcpy(blocks_memory + i*tamanioBloque,str_para_blocks,tamanioBloque);
-                    //             t_config* bitacoraTripulante = config_create(path_tripulante);
+                    for(int i=0; i < bitarray_get_max_bit(bitmap) && cantidadBloquesUsados != cantidadBloquesAUsar; i++){
+                        if(bitarray_test_bit(bitmap,i) == 0){
+                            if((cantidadBloquesAUsar-cantidadBloquesUsados)==1){ //ultimo bloque a escribir
+                                //POSIBLE FRAGMENTACION INTERNA!
                                 
-                    //             int size = atoi(dictionary_get(bitacoraTripulante, "SIZE"));
-                    //             size += tamanioBloque;
-
-                    //             dictionary_remove_and_destroy(bitacoraTripulante,"SIZE",data_destroyer);
-                    //             dictionary_put(bitacoraTripulante->properties, "SIZE", string_itoa(size));
-
-
-                    //             // dictionary_remove_and_destroy(bitacoraTripulante,"BLOCKS",data_destroyer);
-                    //             // dictionary_put(bitacoraTripulante->properties, "BLOCKS", );
-                    //             // dictionary_put(bitacoraTripulante->properties, "BLOCKS", "[]");
-                    //             // dictionary_put(bitacoraTripulante->properties, "MD5_ARCHIVO", "-");
+                                memcpy(blocks_memory + i*tamanioBloque,temporal+contadorChars*tamanioBloque,tamStr-contadorChars*tamanioBloque);
+                                contadorChars ++;
+                                cantidadBloquesUsados ++;
                                 
-                    //             //LO GUARDO EN EL ARCHIVO EN SI Y LO DESTRUYO A LA VARIABLE
-                    //             config_save_in_file(bitacoraTripulante,path_tripulante);
-                    //             config_destroy(bitacoraTripulante);
+                                //Actualizo metadata
+                                t_config* bitacoraTripulante = config_create(pathCompleto(path_fileTripulante));
+                            
+                                int size = atoi(dictionary_get(bitacoraTripulante, "SIZE"));
+                                size += tamanioBloque;
+                                char* c_size = string_new();
+                                strcpy(c_size,string_itoa(size));
+                                dictionary_put(bitacoraTripulante,"SIZE",c_size);
+                                free(c_size);
 
-                    //         }
-                    //     }
-                    //}
+                                config_save_in_file(bitacoraTripulante,pathCompleto(path_fileTripulante));
+                                config_destroy(bitacoraTripulante); 
+                                //falta BLOCKS =[]
 
-                    //Actualizar cantidadBloques --> en config;
+                            }else{
+                            
+                                //Escribo en bloque
+                                memcpy(blocks_memory + i*tamanioBloque,temporal+contadorChars*tamanioBloque,tamanioBloque);
+                                contadorChars ++;
+                                cantidadBloquesUsados ++;
+
+                                //Actualizo metadata
+                                t_config* bitacoraTripulante = config_create(pathCompleto(path_fileTripulante));
+                                int size = atoi(dictionary_get(bitacoraTripulante, "SIZE"));
+                                size += tamanioBloque;
+                                char* c_size = string_new();
+                                strcpy(c_size,string_itoa(size));
+                                dictionary_put(bitacoraTripulante,"SIZE",c_size);
+                                free(c_size);
 
 
+                                //falta BLOCKS =[]
+                                config_save_in_file(bitacoraTripulante,"bitacora.ims");
+                                config_destroy(bitacoraTripulante);
 
-
-                // }else{
-                //     //checkear que bloques estan libres por bitmap
-                //     //ir guardando en cada bloque libre
-                //     //actualizar la bitacora
-                // }
+                            }
+                        }
+                    }
 
                 free(path_fileTripulante);
-                //free(pathAbsoluto);
                 free(temporal);
                 break;
 
-        
+            case COMIENZA_EJECUCION_TAREA:  //
             
-            case COMIENZA_EJECUCION_TAREA:
+            VOID*  15GENERAR_OXIGENO 3 2 3
+            TAREA PARAMETROS;POS X;POS Y;TIEMPO
+                log_info(logger,"-----------------------------------------------------");
                 log_info(logger, "Llego comando: Comienza ejecucion de tarea.....");
 
-            //TAREA PARAMETROS;POS X;POS Y;TIEMPO
-            //GENERAR_OXIGENOS 12; 3,2,7
+                int tamTarea,posX,posY,tiempo;
+                int offset = 0;
+                char* tarea;
 
-            //logeo en bitacora
-            //logeo en files
+                //SEPARO LO QUE ME MANDA
+                memcpy(&tamTarea,payload,sizeof(int));
+                tarea = malloc(sizeof(tamTarea) + 1);
 
-                log_info(logger,"buenas");
-                //Escribir en Bitacora
-                //Escribir en la tarea.ims
-                log_info(logger,"%s",payload);
+                memcpy(tarea,payload + sizeof(int), );
+                memcpy(&posY_v,payload + sizeof(int)*2, sizeof(int));
+                memcpy(&posX_n,payload + sizeof(int)*3, sizeof(int));
+                memcpy(&posY_n,payload + sizeof(int)*4, sizeof(int));
+
                 break;
             
-            case FINALIZA_TAREA: // idTarea
+            case FINALIZA_TAREA: // 
+                log_info(logger,"-----------------------------------------------------");
                 log_info(logger, "Llego comando: Finaliza tarea.....");
 
-                //Escribir en Bitacora
-                //Escribir en la tarea.ims
-                log_info(logger,"%s",payload);
-
                 break;
             
-            case ATENDER_SABOTAJE: //hacer conjunto a sabotaje
+            case ATENDER_SABOTAJE: 
+                log_info(logger,"-----------------------------------------------------");
                 log_info(logger, "Llego comando: Atender Sabotaje.....");
 
-                //Escribir en Bitacora
-                //protocolo fsck?
-                log_info(logger,"%s",payload);
 
                 break;
             
             case RESUELTO_SABOTAJE:
+                log_info(logger,"-----------------------------------------------------");
                 log_info(logger, "Llego comando:Se resolvio Sabotaje.....");
 
-                //escribir en bitacora
-                log_info(logger,"%s",payload);
-
+                
                 break;
     }
    

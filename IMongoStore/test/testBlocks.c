@@ -12,30 +12,30 @@
 #include <commons/string.h>
 #include <unistd.h> 
 
-char* path = "/home/utnso/Escritorio/TP_OPERATIVOS/tp-2021-1c-Unnamed-Group/IMongoStore/test";
+char* path = "~/Escritorio/TP/tp-2021-1c-Unnamed-Group/IMongoStore/test";
 
-char* string_from_format(const char* format, ...) {
-	char* nuevo;
-	va_list arguments;
-	va_start(arguments, format);
-	nuevo = string_from_vformat(format, arguments);
-	va_end(arguments);
-	return nuevo;
-}
+// char* string_from_format(const char* format, ...) {
+// 	char* nuevo;
+// 	va_list arguments;
+// 	va_start(arguments, format);
+// 	nuevo = string_from_vformat(format, arguments);
+// 	va_end(arguments);
+// 	return nuevo;
+// }
 
 
 
-char* pathCompleto(const char* str, ...){
-	char* temporal = string_from_format("%s/%s", path, str);
+// char* pathCompleto(const char* str, ...){
+// 	char* temporal = string_from_format("%s/%s", path, str);
 
-	va_list parametros;
-	va_start(parametros, str);
-	char* pathAbsoluto = string_from_vformat(temporal, parametros);
-	va_end(parametros);
+// 	va_list parametros;
+// 	va_start(parametros, str);
+// 	char* pathAbsoluto = string_from_vformat(temporal, parametros);
+// 	va_end(parametros);
 	
-    free(temporal);
-	return pathAbsoluto;
-}
+//     free(temporal);
+// 	return pathAbsoluto;
+// }
 
 
 // char* pathCompleto(char* string){
@@ -53,7 +53,10 @@ int main(){
     //     printf("%s\n", p_tripulante);
         
     int creaFile = open(p_tripulante, O_CREAT | O_RDWR,0664);
-    close(creaFile);
+    if(creaFile < 0){
+        perror("Error: ");
+    }
+    //close(creaFile);
     // }
 
     //     int cantidadBloques = 64;

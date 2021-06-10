@@ -9,7 +9,10 @@
 #include <commons/string.h>
 #include <commons/error.h>
 #include <commons/memory.h>
+#include <commons/process.h>
 #include<ctype.h>
+#include<pthread.h>
+#include <semaphore.h>
 
 int status = 1;
 int recvCounter = 0;
@@ -561,15 +564,15 @@ char get_char_value(void *buffer, int index) {
 // }
 
 typedef struct {
-    uint32_t pid;
-    frame *frame;
-} page_t;
-
-typedef struct {
     uint32_t start;
     uint32_t end;
     uint8_t status;
 } frame_t;
+
+typedef struct {
+    uint32_t pid;
+    frame_t *frame;
+} page_t;
 
 uint32_t get_next_page(t_queue *page_table, uint32_t index) {
 
@@ -577,39 +580,43 @@ uint32_t get_next_page(t_queue *page_table, uint32_t index) {
 
     return (page -> frame) -> start;
 }
-1     3     2    4    5
-[T1T][sss][2T3][fff][ggg]
-           678
+// 1     3     2    4    5
+// [T1T][sss][2T3][fff][ggg]
+//            678
 
-[4,3,TAREAS,4,5,6,7,8]
+// [4,3,TAREAS,4,5,6,7,8]
 
-[tarea6;8;4|tarea3;8;5, 0, 0]
+// [tarea6;8;4|tarea3;8;5, 0, 0]
 
-[0,1,2,3]
-
-
-
-[123123123, 0, 0, 0, 23424234234, 0, 0, 0]
-
-// copio todos los frames, y cuando voy a copiar el frame donde empiece la tarea, hago la traduccion de la dirreccion original a la direccion del buffer temporal
-
-int task_start_addr = 7
-
-int offset = 0;
-while(frame) {
-    memcpy(temp + offset, memory + frame -> start, frame -> size);
-    if (task_start_addr > frame -> start && task_start_addr < frame -> end) {
-        int off = task_start_addr - frame -> start
-        off += offset; // 4
-    }
-    offset += frame -> size; // 3 bytes
-}
-
-temp -> [T1T2T3sssfffggg]
-             4
+// [0,1,2,3]
 
 
-void *search_task(void *memory, uint32_t start_addr, t_queue* page_table) {
+
+// [123123123, 0, 0, 0, 23424234234, 0, 0, 0]
+
+// // copio todos los frames, y cuando voy a copiar el frame donde empiece la tarea, hago la traduccion de la dirreccion original a la direccion del buffer temporal
+
+// int task_start_addr = 7
+
+// int offset = 0;
+// while(frame) {
+//     memcpy(temp + offset, memory + frame -> start, frame -> size);
+//     if (task_start_addr > frame -> start && task_start_addr < frame -> end) {
+//         int off = task_start_addr - frame -> start
+//         off += offset; // 4
+//     }
+//     offset += frame -> size; // 3 bytes
+// }
+
+// temp -> [T1T2T3sssfffggg]
+//              4
+
+
+void *search_task(void *memory, uint32_t start_addr) {
+    //params?
+    t_queue* page_table;
+    frame_t* frame;
+
     uint32_t counter = start_addr;
     uint32_t start = start_addr;
     void *recv_task;
@@ -675,84 +682,175 @@ void *search_task(void *memory, uint32_t start_addr, t_queue* page_table) {
     // printf("\nLast Index: %d\n", counter);
 }
 
+int s_tcb = 16;
+
+typedef struct {
+    t_log *logger;
+    uint32_t current;
+} t_data;
+
+sem_t s_main;
+sem_t *t_sem;
+
+void _thread_function(t_data *data) {
+    while(1) {
+
+        sem_wait(&t_sem[data -> current]);
+
+        int t_id = process_get_thread_id();
+
+        int p_id = process_getpid();
+
+        log_info(data -> logger, "Process ID: %d - Thread ID: %d", p_id, t_id);
+
+        if (data -> current + 1 >= s_tcb) {
+            sem_post(&s_main);
+        } else {
+            sem_post(&t_sem[data -> current + 1]);
+        }
+    }
+}
+
 int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
 
-    // --------------- TEST PAGINCACION --------------- //
+    // --------------- TEST DATA SPLIT --------------- //
 
-    void *memory = malloc(100);
+    // Test data split in memory
+    void *memory = malloc (100);
+    void *temp = malloc(4);
+    int number = 1455;
+    printf("number: %d\n", number);
+    memcpy(temp, &number, 4);
 
-    int page_size = 10;
-
-    // t_dictionary *table_collection = dictionary_create();
-
-    // t_queue *page_table = queue_create();
-
-    // char *patota = "1";
-
-    int offset = 0;
-
-    tcb *temp = malloc(sizeof(tcb));
-
-    temp -> tid = 1;
-    temp -> pid = 2;
-    temp -> status = 'N';
-    temp -> xpos = 3;
-    temp -> ypos = 4;
-    temp -> next = 5;
-
-    char *tareas = "GENERAR_OXIGENO 12;3;2;5CONSUMIR_OXIGENO 120;2;3;1";
-
-    memcpy(memory + offset, tareas, strlen(tareas));
-    offset += strlen(tareas);
-    memcpy(memory + offset, &temp -> tid, sizeof(uint32_t));
-    offset += sizeof(uint32_t);
-    memcpy(memory + offset, &temp -> pid, sizeof(uint32_t));
-    offset += sizeof(uint32_t);
-    memcpy(memory + offset, &temp -> status, sizeof(char));
-    offset += sizeof(char);
-    memcpy(memory + offset, &temp -> xpos, sizeof(uint32_t));
-    offset += sizeof(uint32_t);
-    memcpy(memory + offset, &temp -> ypos, sizeof(uint32_t));
-    offset += sizeof(uint32_t);
-    memcpy(memory + offset, &temp -> next, sizeof(uint32_t));
-    offset += sizeof(uint32_t);
-
-    // ---------- TEST GET TASK IN PAGINATION
-
-    void *tarea = search_task(memory, 0);
-
-    if (tarea) {
-        printf("Task: %s\n", tarea);
-        free(tarea);
-    } else {
-        printf("No hay mas tareas\n");
-    }
-
-    tarea = search_task(memory, global_index);
-
-    if (tarea) {
-        printf("Task: %s\n", tarea);
-        free(tarea);
-    } else {
-        printf("No hay mas tareas\n");
-    }
-
-    tarea = search_task(memory, global_index);
-
-    if (tarea) {
-        printf("Task: %s\n", tarea);
-        free(tarea);
-    } else {
-        printf("No hay mas tareas\n");
-    }
-    
-    // End test
+    memcpy(memory, temp, 3);
+    memcpy(memory + 40, temp + 1, 1);
 
     free(temp);
 
-    // dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
+    // join data from memory
+
+    void *temp2 = malloc(4);
+    int second;
+
+    memcpy(temp2, memory, 3);
+    memcpy(temp2 + 1, memory + 40, 1);
+
+    memcpy(&second, temp2, 4);
+
+    printf("second: %d\n", second);
+
+    free(temp2);
+    free(memory);
+
+    // --------------- TEST SYNC THREADS --------------- //
+    // sem_destroy(&sem);
+
+    t_sem = malloc(sizeof(sem_t) * s_tcb);
+
+    //Inicializo los semaforos
+    sem_init(&s_main, 0, 1);
+
+    for (int j = 0; j < s_tcb; j++) {
+        sem_init(&t_sem[j], 0, 0);
+    }
+
+    for (int i = 0; i < s_tcb; i++) {
+
+        t_data *data = malloc(sizeof(t_data));
+        data -> logger = logger;
+        data -> current = i;
+
+        pthread_t thread;
+        pthread_create(&thread, NULL, (void *) _thread_function, data);
+        pthread_detach(thread);
+    }
+
+    // Hilo principal
+    while(1) {
+        sem_wait(&s_main);
+
+        log_info(logger, "Dejo correr los threads..");
+        sleep(2);
+
+        sem_post(&t_sem[0]);
+    }
+
+    // --------------- TEST PAGINCACION --------------- //
+
+    // void *memory = malloc(100);
+
+    // int page_size = 10;
+
+    // // t_dictionary *table_collection = dictionary_create();
+
+    // // t_queue *page_table = queue_create();
+
+    // // char *patota = "1";
+
+    // int offset = 0;
+
+    // tcb *temp = malloc(sizeof(tcb));
+
+    // temp -> tid = 1;
+    // temp -> pid = 2;
+    // temp -> status = 'N';
+    // temp -> xpos = 3;
+    // temp -> ypos = 4;
+    // temp -> next = 5;
+
+    // char *tareas = "GENERAR_OXIGENO 12;3;2;5CONSUMIR_OXIGENO 120;2;3;1";
+
+    // memcpy(memory + offset, tareas, strlen(tareas));
+    // offset += strlen(tareas);
+    // memcpy(memory + offset, &temp -> tid, sizeof(uint32_t));
+    // offset += sizeof(uint32_t);
+    // memcpy(memory + offset, &temp -> pid, sizeof(uint32_t));
+    // offset += sizeof(uint32_t);
+    // memcpy(memory + offset, &temp -> status, sizeof(char));
+    // offset += sizeof(char);
+    // memcpy(memory + offset, &temp -> xpos, sizeof(uint32_t));
+    // offset += sizeof(uint32_t);
+    // memcpy(memory + offset, &temp -> ypos, sizeof(uint32_t));
+    // offset += sizeof(uint32_t);
+    // memcpy(memory + offset, &temp -> next, sizeof(uint32_t));
+    // offset += sizeof(uint32_t);
+
+    // // ---------- TEST GET TASK IN PAGINATION
+
+    // void *tarea = search_task(memory, 0);
+
+    // if (tarea) {
+    //     printf("Task: %s\n", tarea);
+    //     free(tarea);
+    // } else {
+    //     printf("No hay mas tareas\n");
+    // }
+
+    // tarea = search_task(memory, global_index);
+
+    // if (tarea) {
+    //     printf("Task: %s\n", tarea);
+    //     free(tarea);
+    // } else {
+    //     printf("No hay mas tareas\n");
+    // }
+
+    // tarea = search_task(memory, global_index);
+
+    // if (tarea) {
+    //     printf("Task: %s\n", tarea);
+    //     free(tarea);
+    // } else {
+    //     printf("No hay mas tareas\n");
+    // }
+    
+    // // End test
+
+    // free(temp);
+
+    // // dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
 
 
     // -------------- TEST SERIALIZACION -------------- //
@@ -804,7 +902,7 @@ int main() {
 
     // -------------------------------------------- //
 
-    free(memory);
+    // free(memory);
 
     log_destroy(logger);
 

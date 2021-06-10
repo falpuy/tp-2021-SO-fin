@@ -26,19 +26,30 @@
     int duracion_sabotaje;
     int ciclo_CPU;
 
-    /*pthread_t hReadyaExec;
-    pthread_t hExecaBloqEmer;
-    pthread_t hExecaBloqIO
+    int validador;
+    int planificacion_pausada;
+
+    pthread_t hNewaReady;
+    pthread_t hReadyaExec;
+    /*pthread_t hExecaBloqEmer;
+    pthread_t hExecaBloqIO;
     pthread_t hBloqEmeraReady;
     pthread_t hBloqIOaReady;
-    pthread_t hExecaExit;
+    pthread_t hExecaExit;*/
+
+    pthread_mutex_t mutexNew;
+    pthread_mutex_t mutexReady;
+    pthread_mutex_t mutexExec;
+    pthread_mutex_t mutexBloqIO;
+    pthread_mutex_t mutexBloqEmer;
+    pthread_mutex_t mutexExit;
 
     int contNew;
     int contReady;
     int contExec;
     int contBloqIO;
     int contBloqEmer;
-    int contExit;*/
+    int contExit;
 
     char** parametros;
 
@@ -68,6 +79,8 @@
 
     t_list* listaPCB;
 
+    void funcionhNewaReady (t_log* logger);
+    void funcionhReadyaExec (t_log* logger);
     void funcionPlanificador(t_log* logger);
     void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger);
     tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea);

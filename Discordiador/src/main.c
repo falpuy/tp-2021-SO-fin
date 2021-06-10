@@ -20,9 +20,34 @@ int main () {
     conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     //conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
 
+    pthread_create(&hNewaReady, NULL, (void *) funcionhNewaReady, logger);
+    pthread_detach(hNewaReady);
 
-    //pthread_create(&hReadyaExec, NULL, funcionhReadyaExec, logger);
-    //pthread_join(&hReadyaExec, NULL);
+    pthread_create(&hReadyaExec, NULL, (void *) funcionhReadyaExec, logger);
+    pthread_detach(hReadyaExec);
+
+    pthread_mutex_init(&mutexNew, NULL);
+    pthread_mutex_init(&mutexReady, NULL);
+    pthread_mutex_init(&mutexExec, NULL);
+    pthread_mutex_init(&mutexBloqIO, NULL);
+    pthread_mutex_init(&mutexBloqEmer, NULL);
+    pthread_mutex_init(&mutexExit, NULL);
+
+    /*
+    pthread_create(&hExecaBloqEmer, NULL, funcionhExecaBloqEmer, logger);
+    pthread_detach(hExecaBloqEmer);
+    
+    pthread_create(&hExecaBloqIO, NULL, funcionhExecaBloqIO, logger);
+    pthread_detach(hExecaBloqIO);
+    
+    pthread_create(&hBloqEmeraReady, NULL, funcionhBloqEmeraReady, logger);
+    pthread_detach(hBloqEmeraReady);
+    
+    pthread_create(&hBloqIOaReady, NULL, funcionhBloqIOaReady, logger);
+    pthread_detach(hBloqIOaReady);
+
+    pthread_create(&hExecaExit, NULL, funcionhExecaExit, logger);
+    pthread_detach(hExecaExit);*/
 
     funcionPlanificador (logger);
     funcionConsola (logger, conexion_RAM, conexion_IMS);

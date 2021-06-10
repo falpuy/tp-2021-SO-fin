@@ -266,3 +266,163 @@
 [INFO] 18:48:15:834 test/(5542:6709): 1 105 0 0 N
 [INFO] 18:48:35:900 test/(5542:6709): me llegó un comando para expulsar un tripulante :(
 [INFO] 21:22:22:729 test/(5542:6709): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 14:52:14:147 test/(3831:3831): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 14:52:14:148 test/(3831:3831): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 15:26:50:336 test/(3831:3831): [Shared Library]: Nueva conexion ID: 5
+[INFO] 15:26:50:347 test/(3831:4833): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 15:28:51:347 test/(3831:4833): me llegó para iniciar_patota :)
+[INFO] 15:28:51:348 test/(3831:4833): 1 101 1 1 N
+[INFO] 15:28:51:358 test/(3831:4833): me llegó para iniciar_patota :)
+[INFO] 15:28:51:359 test/(3831:4833): 1 102 3 4 N
+[INFO] 15:28:51:365 test/(3831:4833): me llegó para iniciar_patota :)
+[INFO] 15:28:51:366 test/(3831:4833): 1 103 6 8 N
+[INFO] 15:28:51:369 test/(3831:4833): me llegó para iniciar_patota :)
+[INFO] 15:28:51:370 test/(3831:4833): 1 104 0 0 N
+[INFO] 15:28:51:384 test/(3831:4833): me llegó para iniciar_patota :)
+[INFO] 15:28:51:393 test/(3831:4833): 1 105 0 0 N
+[INFO] 15:29:12:998 test/(3831:4833): me llegó un comando para expulsar un tripulante :(
+[INFO] 15:30:03:563 test/(3831:4833): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 15:30:13:552 test/(3831:3831): [Shared Library]: Nueva conexion ID: 7
+[INFO] 15:30:13:558 test/(3831:5341): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 15:30:40:372 test/(3831:5341): me llegó para iniciar_patota :)
+[INFO] 15:30:40:373 test/(3831:5341): 1 101 1 1 N
+[INFO] 15:30:40:376 test/(3831:5341): me llegó para iniciar_patota :)
+[INFO] 15:30:40:377 test/(3831:5341): 1 102 3 4 N
+[INFO] 15:30:40:382 test/(3831:5341): me llegó para iniciar_patota :)
+[INFO] 15:30:40:382 test/(3831:5341): 1 103 6 8 N
+[INFO] 15:30:40:392 test/(3831:5341): me llegó para iniciar_patota :)
+[INFO] 15:30:40:398 test/(3831:5341): 1 104 0 0 N
+[INFO] 15:30:40:410 test/(3831:5341): me llegó para iniciar_patota :)
+[INFO] 15:30:40:415 test/(3831:5341): 1 105 0 0 N
+[INFO] 15:30:55:118 test/(3831:5341): me llegó un comando para expulsar un tripulante :(
+[INFO] 15:31:29:877 test/(3831:5341): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 17:28:17:766 test/(3831:3831): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:28:17:770 test/(3831:10468): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:29:31:926 test/(3831:10468): me llegó para iniciar_patota :)
+[INFO] 17:29:31:926 test/(3831:10468): 1 101 1 1 N
+[INFO] 17:29:31:928 test/(3831:10468): me llegó para iniciar_patota :)
+[INFO] 17:29:31:928 test/(3831:10468): 1 102 3 4 N
+[INFO] 17:29:31:930 test/(3831:10468): me llegó para iniciar_patota :)
+[INFO] 17:29:31:930 test/(3831:10468): 1 103 6 7 N
+[INFO] 17:29:31:932 test/(3831:10468): me llegó para iniciar_patota :)
+[INFO] 17:29:31:932 test/(3831:10468): 1 104 0 0 N
+[INFO] 17:29:31:934 test/(3831:10468): me llegó para iniciar_patota :)
+[INFO] 17:29:31:934 test/(3831:10468): 1 105 0 0 N
+[INFO] 17:30:28:928 test/(3831:10468): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:30:37:051 test/(3831:3831): [Shared Library]: Nueva conexion ID: 7
+[INFO] 17:30:37:053 test/(3831:10718): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 17:30:59:938 test/(3831:10718): me llegó para iniciar_patota :)
+[INFO] 17:30:59:938 test/(3831:10718): 1 101 1 1 N
+[INFO] 17:30:59:940 test/(3831:10718): me llegó para iniciar_patota :)
+[INFO] 17:30:59:940 test/(3831:10718): 1 102 3 4 N
+[INFO] 17:30:59:942 test/(3831:10718): me llegó para iniciar_patota :)
+[INFO] 17:30:59:942 test/(3831:10718): 1 103 6 7 N
+[INFO] 17:30:59:944 test/(3831:10718): me llegó para iniciar_patota :)
+[INFO] 17:30:59:944 test/(3831:10718): 1 104 0 0 N
+[INFO] 17:30:59:946 test/(3831:10718): me llegó para iniciar_patota :)
+[INFO] 17:30:59:947 test/(3831:10718): 1 105 0 0 N
+[INFO] 17:31:53:266 test/(3831:10718): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 17:32:02:516 test/(3831:3831): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:32:02:522 test/(3831:10871): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:32:27:383 test/(3831:10871): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:32:43:159 test/(3831:3831): [Shared Library]: Nueva conexion ID: 7
+[INFO] 17:32:43:170 test/(3831:10942): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 17:33:32:769 test/(3831:10942): me llegó para iniciar_patota :)
+[INFO] 17:33:32:770 test/(3831:10942): 1 101 1 1 N
+[INFO] 17:33:32:771 test/(3831:10942): me llegó para iniciar_patota :)
+[INFO] 17:33:32:772 test/(3831:10942): 1 102 3 4 N
+[INFO] 17:33:32:774 test/(3831:10942): me llegó para iniciar_patota :)
+[INFO] 17:33:32:774 test/(3831:10942): 1 103 6 7 N
+[INFO] 17:33:32:776 test/(3831:10942): me llegó para iniciar_patota :)
+[INFO] 17:33:32:776 test/(3831:10942): 1 104 0 0 N
+[INFO] 17:33:32:778 test/(3831:10942): me llegó para iniciar_patota :)
+[INFO] 17:33:32:778 test/(3831:10942): 1 105 0 0 N
+[INFO] 17:37:52:438 test/(3831:10942): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 17:37:58:367 test/(3831:3831): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:37:58:375 test/(3831:11346): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:38:33:545 test/(3831:11346): me llegó para iniciar_patota :)
+[INFO] 17:38:33:545 test/(3831:11346): 1 101 1 1 N
+[INFO] 17:38:33:549 test/(3831:11346): me llegó para iniciar_patota :)
+[INFO] 17:38:33:549 test/(3831:11346): 1 102 3 4 N
+[INFO] 17:38:33:558 test/(3831:11346): me llegó para iniciar_patota :)
+[INFO] 17:38:33:567 test/(3831:11346): 1 103 6 7 N
+[INFO] 17:38:33:573 test/(3831:11346): me llegó para iniciar_patota :)
+[INFO] 17:38:33:574 test/(3831:11346): 1 104 0 0 N
+[INFO] 17:38:33:577 test/(3831:11346): me llegó para iniciar_patota :)
+[INFO] 17:38:33:578 test/(3831:11346): 1 105 0 0 N
+[INFO] 17:39:27:740 test/(3831:11346): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:03:34:492 test/(3831:3831): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:03:34:502 test/(3831:11489): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 18:03:43:799 test/(3831:11489): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 18:05:02:045 test/(3831:3831): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:05:02:047 test/(3831:11610): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:05:10:425 test/(3831:11610): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:05:47:487 test/(3831:3831): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:05:47:494 test/(3831:11682): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 18:08:02:467 test/(3831:11682): me llegó para iniciar_patota :)
+[INFO] 18:08:02:468 test/(3831:11682): 1 101 1 1 N
+[INFO] 18:08:02:516 test/(3831:11682): me llegó para iniciar_patota :)
+[INFO] 18:08:02:517 test/(3831:11682): 1 102 3 2 N
+[INFO] 18:08:02:548 test/(3831:11682): me llegó para iniciar_patota :)
+[INFO] 18:08:02:548 test/(3831:11682): 1 103 6 7 N
+[INFO] 18:08:02:631 test/(3831:11682): me llegó para iniciar_patota :)
+[INFO] 18:08:02:631 test/(3831:11682): 1 104 0 0 N
+[INFO] 18:08:02:682 test/(3831:11682): me llegó para iniciar_patota :)
+[INFO] 18:08:02:683 test/(3831:11682): 1 105 0 0 N
+[INFO] 18:10:48:606 test/(3831:11682): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:10:17:214 test/(3145:3145): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:10:17:215 test/(3145:3145): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:31:09:836 test/(3145:3145): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:31:09:838 test/(3145:3255): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:31:22:068 test/(3145:3255): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:32:51:053 test/(3145:3145): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:32:51:065 test/(3145:3519): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:33:37:783 test/(3145:3519): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:34:17:327 test/(3145:3145): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:34:17:329 test/(3145:3730): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:34:22:696 test/(3145:3730): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:34:32:777 test/(3145:3145): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:34:32:786 test/(3145:3760): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:35:16:715 test/(3145:3760): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:35:28:369 test/(3145:3145): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:35:28:381 test/(3145:3905): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:36:21:472 test/(3145:3905): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:37:03:155 test/(3145:3145): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:37:03:159 test/(3145:4144): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:38:02:775 test/(3145:4144): me llegó para iniciar_patota :)
+[INFO] 19:38:02:776 test/(3145:4144): 1 101 1 1 N
+[INFO] 19:38:03:102 test/(3145:4144): me llegó para iniciar_patota :)
+[INFO] 19:38:03:103 test/(3145:4144): 1 102 3 4 N
+[INFO] 19:38:03:286 test/(3145:4144): me llegó para iniciar_patota :)
+[INFO] 19:38:03:286 test/(3145:4144): 1 103 6 7 N
+[INFO] 19:38:03:448 test/(3145:4144): me llegó para iniciar_patota :)
+[INFO] 19:38:03:449 test/(3145:4144): 1 104 0 0 N
+[INFO] 19:38:03:671 test/(3145:4144): me llegó para iniciar_patota :)
+[INFO] 19:38:03:671 test/(3145:4144): 1 105 0 0 N
+[INFO] 19:39:07:863 test/(3145:4144): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:39:53:266 test/(3145:3145): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:39:53:275 test/(3145:4464): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:41:00:442 test/(3145:4464): me llegó para iniciar_patota :)
+[INFO] 19:41:00:442 test/(3145:4464): 1 101 1 1 N
+[INFO] 19:41:00:444 test/(3145:4464): me llegó para iniciar_patota :)
+[INFO] 19:41:00:444 test/(3145:4464): 1 102 3 4 N
+[INFO] 19:41:00:446 test/(3145:4464): me llegó para iniciar_patota :)
+[INFO] 19:41:00:446 test/(3145:4464): 1 103 6 7 N
+[INFO] 19:41:00:454 test/(3145:4464): me llegó para iniciar_patota :)
+[INFO] 19:41:00:454 test/(3145:4464): 1 104 0 0 N
+[INFO] 19:41:00:459 test/(3145:4464): me llegó para iniciar_patota :)
+[INFO] 19:41:00:459 test/(3145:4464): 1 105 0 0 N
+[INFO] 20:05:08:792 test/(3145:4464): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:07:30:896 test/(3145:3145): [Shared Library]: Nueva conexion ID: 7
+[INFO] 20:07:30:906 test/(3145:5182): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 20:07:58:761 test/(3145:5182): me llegó para iniciar_patota :)
+[INFO] 20:07:58:761 test/(3145:5182): 1 101 1 1 N
+[INFO] 20:07:58:771 test/(3145:5182): me llegó para iniciar_patota :)
+[INFO] 20:07:58:771 test/(3145:5182): 1 102 3 4 N
+[INFO] 20:07:58:779 test/(3145:5182): me llegó para iniciar_patota :)
+[INFO] 20:07:58:780 test/(3145:5182): 1 103 6 7 N
+[INFO] 20:07:58:782 test/(3145:5182): me llegó para iniciar_patota :)
+[INFO] 20:07:58:783 test/(3145:5182): 1 104 0 0 N
+[INFO] 20:07:58:797 test/(3145:5182): me llegó para iniciar_patota :)
+[INFO] 20:07:58:798 test/(3145:5182): 1 105 0 0 N
+[INFO] 20:08:42:581 test/(3145:5182): [Shared Library]: El cliente 7 se desconecto.

@@ -4,21 +4,48 @@
 
 // crear hilo
 
-//pthread_create(pthread_t *th, const pthread_attr_t *attr, void *(* func)(void *), void *arg);
-//pthread_join(pthread_t t, void **res);
-
 //destroy
 
 // hilos que pasan de estado
-/*void funcionhReadyaExec (t_log* logger){
-    
-    while (validador) {
-        while (ready != NULL && contReady != 0 && contExec <= grado_multitarea) // si hay nodos en Ready, los pasa a Exec
+void funcionhNewaReady (t_log* logger) {
+    log_info(logger, "se creó hilo de new a ready");
+    while (validador==1) {
+        while (planificacion_pausada==0) {
+            //hay límite de multiprogramación?
+            while (!queue_is_empty(cola_new)) // si hay nodos en New, los pasa a Ready
+            {
+                log_info(logger, "encontre nodo en new");
+                tcb* aux_TCB = malloc (sizeof(tcb));
+                pthread_mutex_lock(&mutexNew);
+                aux_TCB = queue_peek(cola_new);
+                queue_pop(cola_new);
+                pthread_mutex_unlock(&mutexNew);
+                
+                pthread_mutex_lock(&mutexReady);
+                queue_push(ready, (void*) aux_TCB);
+                pthread_mutex_unlock(&mutexReady);
+                aux_TCB -> status = 'R';
+                free(aux_TCB);
+                contNew--;
+                contReady++;
+            }
+        }
+    }
+}
+
+void funcionhReadyaExec (t_log* logger){
+    while (validador==1 && planificacion_pausada==0) {
+        while (!queue_is_empty(ready) && contExec < grado_multitarea) // si hay nodos en Ready, los pasa a Exec
         {
             tcb* aux_TCB = malloc (sizeof(tcb));
+            pthread_mutex_lock(&mutexReady);
             aux_TCB = queue_peek(ready);
             queue_pop(ready);
+            pthread_mutex_unlock(&mutexReady);
+
+            pthread_mutex_lock(&mutexExec);
             queue_push(exec, (void*) aux_TCB);
+            pthread_mutex_unlock(&mutexExec);
             aux_TCB -> status = 'E';
             free(aux_TCB);
             contReady--;
@@ -27,9 +54,9 @@
     }
 }
 
-void funcionhExecaBloqEmer (t_log* logger){
+/*void funcionhExecaBloqEmer (t_log* logger){
     
-    while (validador) {
+    while (validador && planificacion_pausada == 0) {
         while (exec != NULL && contExec != 0)
         {
             tcb* aux_TCB = malloc (sizeof(tcb));
@@ -46,7 +73,7 @@ void funcionhExecaBloqEmer (t_log* logger){
 
 void funcionhExecaBloqIO (t_log* logger){
     
-    while (validador) {
+    while (validador && planificacion_pausada == 0) {
         while (exec != NULL && contExec != 0)
         {
             tcb* aux_TCB = malloc (sizeof(tcb));
@@ -63,7 +90,7 @@ void funcionhExecaBloqIO (t_log* logger){
 
 void funcionhBloqEmeraReady (t_log* logger){
     
-    while (validador) {
+    while (validador && planificacion_pausada == 0) {
         while (bloq_emer != NULL && contBloqEmer != 0)
         {
             tcb* aux_TCB = malloc (sizeof(tcb));
@@ -80,7 +107,7 @@ void funcionhBloqEmeraReady (t_log* logger){
 
 void funcionhBloqIOaReady (t_log* logger){
     
-    while (validador) {
+    while (validador && planificacion_pausada == 0) {
         while (bloq_io != NULL && contBloqIO != 0)
         {
             tcb* aux_TCB = malloc (sizeof(tcb));
@@ -97,7 +124,7 @@ void funcionhBloqIOaReady (t_log* logger){
 
 void funcionhExecaExit (t_log* logger){
     
-    while (validador) {
+    while (validador && planificacion_pausada == 0) {
         while (exec != NULL && contExec != 0)
         {
             tcb* aux_TCB = malloc (sizeof(tcb));

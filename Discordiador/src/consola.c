@@ -34,22 +34,37 @@ void mostrarListaTripulantes(void* elemento){
 }
 
 bool buscarTripulante (void* elemento){
-    log_info(logger, "hasta aca bien");
     tcb* tripulante = (tcb*) elemento;
-    log_info(logger, "hasta aca bien");
     return tripulante -> tid == atoi(parametros[1]);
+}
+
+void expulsarNodo (t_queue* cola, char* nombre_cola){
+    if (loEncontro==0) {
+        tcb* tripulanteAExpulsar = malloc (sizeof(tcb));
+        tripulanteAExpulsar = list_find (cola->elements, buscarTripulante);
+        if (tripulanteAExpulsar != NULL) {
+            log_info(logger, "se expulsó el tripulante %d de la cola %s", tripulanteAExpulsar -> tid, nombre_cola);
+            //pasarlo a exit
+            loEncontro=1;
+            free(tripulanteAExpulsar);
+        }
+        else{
+            log_info(logger, "No se encontro el tripulante en la cola %s", nombre_cola);
+            free(tripulanteAExpulsar);
+        }
+    }
 }
 
 void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
     contadorPCBs = 0;
-    /*contNew = 0;
+    contNew = 0;
     contReady = 0;
     contExec = 0;
     contBloqIO = 0;
     contBloqEmer = 0;
-    contExit = 0;*/
-    int validador = 1;
-    int planificacion_pausada = 1;
+    contExit = 0;
+    validador = 1;
+    planificacion_pausada = 1;
     char* leido;
     char* vector_mensajes_consola[]= {"INICIAR_PLANIFICACION","PAUSAR_PLANIFICACION","INICIAR_PATOTA","LISTAR_TRIPULANTES","EXPULSAR_TRIPULANTE","OBTENER_BITACORA","SALIR"};
 
@@ -76,24 +91,14 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 case 0: //INICIAR_PLANIFICACION
                     log_info(logger, "ENTRO INICIAR PLANI");
                     planificacion_pausada = 0;
-                    /*while (cola_new != NULL) // si hay nodos en New, los pasa a Ready
-                    {
-                        tcb* aux_TCB = malloc (sizeof(tcb));
-                        aux_TCB = queue_peek(cola_new);
-                        queue_pop(cola_new);
-                        queue_push(ready, aux_TCB);
-                        aux_TCB -> status = 'R';
-                        free(aux_TCB);
-                        //contReady++;
-                        //contNew--;
-                    }*/
+                    log_info(logger, "Planificacion pausada = %d", planificacion_pausada);
                     break;
 
                 case 1: //PAUSAR_PLANIFICACION
                 log_info(logger, "ENTRO PAUSAR");
+                planificacion_pausada = 1;
                 //No se puede cambiar tripulantes de estado, los que están en exec se detienen, sólo se pueden iniciar patotas
                 // y listar tripulantes.
-                // comprobar si ya esta andando o si ya se pauso (o si nunca empezo)
                     /*while (exec != NULL) // si hay nodos en exec, los pasa a ready
                     {
                         TCB* aux_TCB = malloc (sizeof(TCB));
@@ -128,54 +133,27 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 case 4: //EXPULSAR_TRIPULANTE
                     log_info(logger, "ENTRO EXPULSAR");
                     if (!planificacion_pausada) {
+                        loEncontro=0;
                         tamanioBuffer = sizeof(int);
                         buffer = malloc (tamanioBuffer);
                         buffer = _serialize(tamanioBuffer, "%d", parametros[1]);
                         _send_message(conexion_RAM, "DIS", 530, buffer, tamanioBuffer, logger);
                         //mensajeRecibido = _receive_message(conexion_IMS, logger); capaz no es necesario
                         //log_info(logger, "SALIÓ %s", mensajeRecibido -> payload);
-                        //sacar de la lista correspondiente al tripulante y ponerlo en exit
 
-                        //Retorna el primer valor encontrado, el cual haga que condition devuelva != 0
-	                    //void *list_find(t_list *, bool(*closure)(void*));
+                        expulsarNodo(cola_new, "New");
+                        expulsarNodo(ready, "Ready");
+                        expulsarNodo(exec, "Exec");
+                        expulsarNodo(bloq_io, "Bloqueado por IO");
+                        expulsarNodo(bloq_emer, "Bloqueado por emergencia");
+                        if (loEncontro==0)
+                            log_info(logger, "El tripulante que se quiere expulsar ya esta en estado EXIT o el ID ingresado es incorrecto");
 
-                        tcb* tripulanteAExpulsar = malloc (sizeof(tcb));
-                        log_info(logger, "hasta aca bien");
-                        tripulanteAExpulsar = list_find (cola_new->elements, buscarTripulante);
-                        log_info(logger, "se expulsara el tripulante %d", tripulanteAExpulsar -> tid);}
-                        
-                        
-                        /*#define LONGITUD 5
-                        funcion(NEW, );
-                        funcion(READY);
-                        //poner nombres de colas en minúscula
-                        t_queue** vectorDeColas = {NEW, READY, EXEC, BLOQ_IO, BLOQ_EMER};
-                        int k;
-                        TCB* aux_TCB = malloc (sizeof(TCB));
-                        for (k= 0; k<LONGITUD; k++) {
-                            while (vectorDeColas[k]) {
-                                aux_TCB = queue_peek(vectorDeColas[k]);
-                                if (parametros[1] == aux_TCB -> TID) {
-                                    queue_pop(vectorDeColas[k]);
-                                    queue_push(EXIT, aux_TCB);
-                                    aux_TCB -> status = 'X';
-                                    break;
-                                }
-                            free(aux_TCB);
-                            }
-                            if (aux_TCB //lleno)
-                                {break;}
-                        }
-                        if (k==5 && aux_TCB //vacio) {
-                            log_info(logger, "El tripulante que se quiere expulsar ya tiene estado EXIT");
-                        }                
                         free(parametros[0]);
                         free(parametros[1]);
                         free(parametros);
-                        free(aux_TCB);
-                    }*/
+                    }
                     else{log_info(logger, "La planificación está pausada, no se puede expulsar a un tripulante");}
-                         
                     break;
 
                 case 5: // OBTENER_BITACORA

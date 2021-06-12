@@ -27,40 +27,61 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                 t_queue* segmento_patota = dictionary_get(diccionario, idPCB);
                 // Busco la primer tarea de la lista correspondiente al pcb del tripulante
                 segment* tareas = obtener_tareas(segmento_patota);
-                unit32_t proximaTarea = asignar_primer_tarea(tareas);
+                char* proximaTarea = get_next_task(memory, tareas->baseAddr, tareas->limit);
                 // Creo el segmento del tripulante
                 tcb nuevoTripulante = crear_tripulante(idPCB);
                 // asigno la ubicacion de la siguiente tarea al segmento
                 nuevoTripulante->next = proximaTarea;
                 segment* tripulante = crear_segmento(nuevoTripulante);
                 // Busco espacio libre
-
+                int total_size = tripulante->limit - tripulante->baseAddr;
+                int found_segment = memory_seek(memory, m_size, diccionario, total_size);
                 // Si hay espacio
                     // guardo el segmento
                     // Agrego el segmento a la lista
                     // Devuelvo la tarea del tripulante
-
-                    //// Agrego el tcb en el mapa
-                
+                if(found_segment >0) {
+                    printf("Encontre espacio, guardando segmento...");
+                    memcpy(memory + found_segment, tripulante, total_size);
+                     //// Agrego el tcb en el mapa
+                    return proximaTarea;
+                }
                 // Si no hay espacio
                     // Realizo compactacion
                     // Busco espacio libre
-                    
+                else {
+                    printf("No encontre ningun segmento libre.. Iniciando compactacion.\n");
+
+                    memory_compaction(memory, m_size, diccionario);
+
+                    printf("Buscando un segmento de tamanio: %d\n", total_size);
+
+                    found_segment = memory_seek(memory, memory->m_size, diccionario, total_size);
                     // Si hay espacio
                         // guardo el segmento
                         // Agrego el segmento a la lista
                         // Devuelvo la tarea del tripulante
-
-                        //// Agrego el tcb en el mapa
-                    
-                    // No hay espacio
+                    if(found_segment > 0){
+                        printf("Encontre espacio, guardando segmento...");
+                        memcpy(memory + found_segment, tripulante, total_size);
+                         //// Agrego el tcb en el mapa
+                        return proximaTarea;
+                    }
+                     // No hay espacio
                         // Envio mensaje de Error
+                    else {
+                        //COMANDO ERROR POR FALTA DE MEMORIA: 555
+                        _send_message(fd, "RAM", 555, "", 1, logger);
+                    }
+                }
             }
 
             // ------------- Analizar Caso ------------- //
 
             // verifico si existe el segmento del tripulante
+            
                 // Si existe el tripulante
+                //tcb tripulante = find_tcb_segment(idTCB, idPCB, diccionario);
                     // Verifico si tiene la direccion a la proxima tarea a ejecutar
                     // Busco la tarea correspondiente a la direccion (o la primer tarea, si no tiene)
                     // Actualizo el segmento con la proxima tarea
@@ -68,8 +89,8 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 
         break;
 
-        case RECIBIR_TAREAS_PATOTA:
-
+        /*case RECIBIR_TAREAS_PATOTA:
+        
          //pcb *patota = deserialize_pcb(buffer, &tasks_size);
         log_info(logger, "entre en el case");
 
@@ -103,27 +124,52 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
         log_info(logger, "%d %s %s", pcb->idPat, pcb->tripulantes[0], pcb->tripulantes[1]); //log que muestra todo el pcb falso de testeo
 
         break;
-        /*
+        */
         case RECIBIR_TAREAS_PATOTA:
 
             // Recibo ID_PATOTA + LISTA_TAREAS
+
+            char* idPCB = recibir_pbc(buffer);
+            char* tasks = recibir_tasks(buffer);
             
             // creo el segmento e info de las tareas asociado al pcb
+            int total_size = tasks_size;
 
-            // Busco espacio libre para tareas
+            // Busco una direccion en memoria con el tamanio necesario para guardar el buffer
+            addr = get_available_location(memory, total_size);
+            
+            // Creo el segmento asociado
+            segment *task_segment = malloc(sizeof(segment));
+    
+            //new_pcb_segment -> baseAddr = addr;
+            //new_pcb_segment -> limit = addr + total_size;
             
             // si hay espacio
+            if(addr>0){
+
                 // Guardo las tareas en memoria
                 // Actualizo el segmento de tareas con base | limite
+                task_segment -> baseAddr = addr;
+                task_segment -> limit = addr + total_size;
 
-                --------- PCB ---------
+                // Busco el ultimo indice que se agrego en la lista de segmentos y agrego uno mas
+                task_segment -> nroSegmento = get_last_index(segmentTable) + 1;
+                // Agrego el segmento a la lista
+                list_add(segmentTable, task_segment);
+                //--------- PCB ---------
                 // Creo el segmento para el pcb
+                segment *new_pcb_segment = crear_segmento(idPCB, tasks);
+
+                total_size = sizeof(new_pcb_segment);
                 // Asocio la direccion de inicio de las tareas al pcb -> base
                 // Busco espacio para el segmento de pcb
+                addr = get_available_location(memory, total_size);
                 
                 // si hay espacio
-
+                if(addr>0){
                     // Guardo el pcb en memoria
+                    // Guardo la info del pcb
+                    
                     // Agrego el segmento pcb a la lista
                     // Agrego el segmento tareas a la lista
                     // Agregar la lista de segmentos al diccionario
@@ -143,8 +189,8 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                         // Elimino el segmento de tareas guardado en memoria
                         // No guardo los segmentos en la lista de segmentos
                         // Envio mensaje de Error
-
-            
+                }
+            }
             // Si no hay espacio
                 // Realizo compactacion
                 // Busco espacio libre
@@ -152,7 +198,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                 // Si hay
                     // Guardo las tareas en memoria
 
-                    --------- PCB ---------
+                    //--------- PCB ---------
                     // Creo el segmento para el pcb
                     // Asocio la direccion de inicio de las tareas al pcb
                     // Busco espacio para el segmento de pcb
@@ -192,7 +238,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // Creo el segmento asociado
             segment *new_segment = malloc(sizeof(segment));
             new_segment -> baseAddr = addr;
-            new_segment -> limit = total_size;
+            new_segment -> limit = total_size; //addr+total_size?
 
             // Agrego el numero de segmento
             // Busco el ultimo indice que se agrego en la lista de segmentos y agrego uno mas
@@ -223,7 +269,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             // Creo el segmento asociado
             segment *task_segment = malloc(sizeof(segment));
             task_segment -> baseAddr = addr;
-            task_segment -> limit = total_size;
+            task_segment -> limit = total_size; //addr+total_size?
 
             // Agrego el numero de segmento
             // Busco el ultimo indice que se agrego en la lista de segmentos y agrego uno mas
@@ -258,7 +304,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             _send_message(fd, "RAM", INICIAR_TRIPULANTE, task, t_size);
 
         break;
-        */
+        
         case RECIBIR_UBICACION_TRIPULANTE:
             //ID_PATOTA, ID_TCB, POS_X, POS_Y
 

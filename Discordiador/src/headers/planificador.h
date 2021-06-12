@@ -4,6 +4,7 @@
     #include<stdio.h>
     #include<stdlib.h>
     #include<ctype.h>
+    #include<pthread.h>
     #include<commons/log.h>
     #include<commons/string.h>
     #include<commons/config.h>
@@ -44,16 +45,11 @@
     pthread_mutex_t mutexBloqEmer;
     pthread_mutex_t mutexExit;
 
-    int contNew;
-    int contReady;
-    int contExec;
-    int contBloqIO;
-    int contBloqEmer;
-    int contExit;
-
     char** parametros;
 
     int contadorPCBs;
+
+    #define CANTTAREAS 6    
 
     t_queue* cola_new;
     t_queue* ready;
@@ -79,11 +75,12 @@
 
     t_list* listaPCB;
 
+    void funcionTripulante (t_log* logger, tcb* tcbTripulante);
     void funcionhNewaReady (t_log* logger);
     void funcionhReadyaExec (t_log* logger);
     void funcionPlanificador(t_log* logger);
     void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger);
-    tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea);
+    tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea, t_log* logger);
     pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger);
 
 #endif

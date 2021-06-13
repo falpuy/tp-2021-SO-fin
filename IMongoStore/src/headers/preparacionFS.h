@@ -17,7 +17,7 @@
     #include <stdarg.h>
     #include <sys/types.h>
     #include <dirent.h>
-    #include "syncFile.h"
+    #include "atenderTripulantes.h"
 
     int superBloque;
     int blocks;
@@ -31,9 +31,6 @@
 
     int err;
 
-    uint32_t tamanioBloque;
-    uint32_t cantidadBloques;
-
     void inicializacionFS(t_log* log);
     void validarDirectorioFS(t_log* log);
     void generarBitmap(t_log* log);
@@ -41,7 +38,6 @@
     void validarSuperBloque(t_log* log);
     void mapearBlocks(t_log* log);
 
-    char* pathCompleto(char* strConcatenar);
 
 
 #endif

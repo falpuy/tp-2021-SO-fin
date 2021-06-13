@@ -151,19 +151,14 @@ void generarBitmap(t_log* log){
         msync(bitmap->bitarray,cantidadBloques/8 ,0);
     }
 
-    // log_info(log, "Muestro mis valores del bitmap..");
-    // for(int i=0; i<cantidadBloques; i++){
-    //     log_info(log,"%d",bitarray_test_bit(bitmap,i));
-    // }
+    log_info(log, "Muestro mis valores del bitmap..");
+    for(int i=0; i<cantidadBloques; i++){
+        printf("%d",bitarray_test_bit(bitmap,i));
 
+    }
+    
     close(arch_bitmap);
-
-    printf("\n[TEST bitmap] Tamaño bloque: %d",tamanioBloque);
-    printf("\n[TEST bitmap] Cantidad de bloques:%d \n", cantidadBloques);
     log_info(log, "-----------------------------------------------------");
 
 }
 
-char* pathCompleto(char* strConcatenar){
-    return string_from_format("%s/%s",datosConfig->puntoMontaje,strConcatenar);
-}

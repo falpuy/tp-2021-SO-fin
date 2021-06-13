@@ -12,26 +12,38 @@
 #include <commons/string.h>
 #include <unistd.h> 
 
-int cantidadBloquesAUsar = 7;
-int cantidadBloquesUsados = 0;
+//char* listaBloques = "[3,4,5]";
+char* listaBloques = "[]";
+
+char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar,int charAgregar){
+    char* listaNueva = malloc(sizeof(listaVieja)+charAgregar);
+    char caracter;
+    int i = 0;
+    char* bloque = string_itoa(bloqueAgregar);
+    int asciiChar = (int) listaVieja[0];
+
+    while(asciiChar!=93){
+        listaNueva[i] = listaVieja[i];
+        i++;
+        asciiChar = (int)listaVieja[i];
+    
+    }
+    printf("%s",listaNueva);
+    if(charAgregar==2){ //necesita "," + el numero en si
+        string_append(&listaNueva,",");
+    }
+    string_append(&listaNueva,bloque);
+    string_append(&listaNueva,"]");
+    printf("\n[crearListaNueva] La lista nueva a mandar es: %s\n",listaNueva);
+    free(bloque);
+    return listaNueva;
+}
 
 int main(){
-    t_config* bloques = config_create("blocks.config");
-    char* listaBloques=malloc(3);
-    char* numero = "4";
-    char* corchete1 = "[";
-    char* corchete2 = "]";
-    
-    //listaBloques = realloc(listaBloques,3); //guardo 2 para el n° y coma
+    char* bloquesNuevos = crearNuevaListaBloques(listaBloques,3,1);
 
-    memcpy(listaBloques,corchete1,1);
-    memcpy(listaBloques+1,numero,1);
-    memcpy(listaBloques+2,corchete2, 1);
-    printf("%s",listaBloques);
-    config_set_value(bloques,"BLOCKS",listaBloques);
-
-    config_save(bloques);
-    config_destroy(bloques);
+    printf("%s",bloquesNuevos);
+    free(bloquesNuevos);
 
     return 0;
 }

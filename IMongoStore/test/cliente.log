@@ -423,3 +423,261 @@
 [INFO] 23:53:00:564 clienteTest/(8761:8761): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
 [INFO] 23:53:00:568 clienteTest/(8761:8761): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
 [INFO] 23:53:00:576 clienteTest/(8761:8761): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 00:07:10:568 clienteTest/(9329:9329): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 00:07:10:570 clienteTest/(9329:9329): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 00:07:10:574 clienteTest/(9329:9329): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:28:20:919 clienteTest/(13540:13540): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 12:28:20:920 clienteTest/(13540:13540): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 12:28:20:921 clienteTest/(13540:13540): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:28:51:746 clienteTest/(13545:13545): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 12:28:51:748 clienteTest/(13545:13545): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 12:28:51:748 clienteTest/(13545:13545): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 12:28:55:230 clienteTest/(13546:13546): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 12:28:55:232 clienteTest/(13546:13546): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 12:28:55:236 clienteTest/(13546:13546): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:29:20:604 clienteTest/(13551:13551): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 12:29:20:606 clienteTest/(13551:13551): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 12:29:20:616 clienteTest/(13551:13551): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:29:54:229 clienteTest/(13554:13554): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 12:29:54:231 clienteTest/(13554:13554): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 12:29:54:239 clienteTest/(13554:13554): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:825 clienteTest/(14635:14635): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 12:57:48:827 clienteTest/(14635:14635): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 12:57:48:836 clienteTest/(14635:14635): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:01:38:728 clienteTest/(14668:14668): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:01:38:730 clienteTest/(14668:14668): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:01:38:740 clienteTest/(14668:14668): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:02:42:394 clienteTest/(14676:14676): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:02:42:395 clienteTest/(14676:14676): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:02:42:396 clienteTest/(14676:14676): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:05:25:371 clienteTest/(14690:14690): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:05:25:373 clienteTest/(14690:14690): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:05:25:382 clienteTest/(14690:14690): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:08:33:246 clienteTest/(14749:14749): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:08:33:250 clienteTest/(14749:14749): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:08:33:258 clienteTest/(14749:14749): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:09:11:128 clienteTest/(14792:14792): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:09:11:131 clienteTest/(14792:14792): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:09:11:136 clienteTest/(14792:14792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:09:56:968 clienteTest/(14818:14818): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:09:56:971 clienteTest/(14818:14818): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:09:56:982 clienteTest/(14818:14818): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:18:52:245 clienteTest/(14917:14917): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:18:52:248 clienteTest/(14917:14917): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:18:52:255 clienteTest/(14917:14917): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:19:28:896 clienteTest/(14925:14925): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:19:28:899 clienteTest/(14925:14925): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:19:28:906 clienteTest/(14925:14925): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:23:38:929 clienteTest/(14958:14958): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:23:38:931 clienteTest/(14958:14958): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:23:38:932 clienteTest/(14958:14958): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:24:35:388 clienteTest/(14965:14965): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:24:35:391 clienteTest/(14965:14965): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:24:35:401 clienteTest/(14965:14965): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:25:01:174 clienteTest/(14968:14968): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:25:01:177 clienteTest/(14968:14968): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:25:01:186 clienteTest/(14968:14968): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:25:36:536 clienteTest/(14984:14984): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:25:36:547 clienteTest/(14984:14984): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:25:36:548 clienteTest/(14984:14984): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:26:44:356 clienteTest/(15229:15229): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:26:44:360 clienteTest/(15229:15229): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:26:44:369 clienteTest/(15229:15229): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:27:26:704 clienteTest/(15253:15253): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:27:26:705 clienteTest/(15253:15253): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:27:26:706 clienteTest/(15253:15253): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:30:27:728 clienteTest/(15340:15340): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:30:27:729 clienteTest/(15340:15340): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:30:27:730 clienteTest/(15340:15340): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:31:33:810 clienteTest/(15366:15366): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:31:33:811 clienteTest/(15366:15366): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:31:33:812 clienteTest/(15366:15366): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:31:54:095 clienteTest/(15370:15370): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:31:54:099 clienteTest/(15370:15370): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:31:54:122 clienteTest/(15370:15370): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:53:14:917 clienteTest/(15962:15962): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:53:14:920 clienteTest/(15962:15962): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:53:14:925 clienteTest/(15962:15962): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:00:37:392 clienteTest/(16006:16006): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:00:37:396 clienteTest/(16006:16006): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:00:37:401 clienteTest/(16006:16006): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:24:39:177 clienteTest/(16861:16861): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:24:39:178 clienteTest/(16861:16861): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:24:39:183 clienteTest/(16861:16861): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:26:00:288 clienteTest/(16883:16883): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:26:00:289 clienteTest/(16883:16883): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:26:00:290 clienteTest/(16883:16883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:27:57:973 clienteTest/(16927:16927): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:27:57:974 clienteTest/(16927:16927): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:27:57:976 clienteTest/(16927:16927): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:29:01:392 clienteTest/(16936:16936): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:29:01:401 clienteTest/(16936:16936): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:29:01:402 clienteTest/(16936:16936): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:31:12:077 clienteTest/(16965:16965): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:31:12:085 clienteTest/(16965:16965): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:31:12:089 clienteTest/(16965:16965): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:33:19:767 clienteTest/(17003:17003): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:33:19:769 clienteTest/(17003:17003): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:33:19:770 clienteTest/(17003:17003): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:36:41:757 clienteTest/(17035:17035): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:36:41:758 clienteTest/(17035:17035): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:36:41:760 clienteTest/(17035:17035): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:38:55:087 clienteTest/(17061:17061): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:38:55:088 clienteTest/(17061:17061): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:38:55:089 clienteTest/(17061:17061): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 14:59:23:040 clienteTest/(17388:17388): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 14:59:23:042 clienteTest/(17388:17388): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 14:59:23:043 clienteTest/(17388:17388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:03:22:086 clienteTest/(17488:17488): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:03:22:088 clienteTest/(17488:17488): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:03:22:089 clienteTest/(17488:17488): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:05:32:679 clienteTest/(17513:17513): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:05:32:680 clienteTest/(17513:17513): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:05:32:681 clienteTest/(17513:17513): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:05:40:857 clienteTest/(17518:17518): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 15:05:40:858 clienteTest/(17518:17518): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 15:05:40:859 clienteTest/(17518:17518): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 15:05:51:665 clienteTest/(17520:17520): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:05:51:666 clienteTest/(17520:17520): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:05:51:668 clienteTest/(17520:17520): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:07:01:039 clienteTest/(17547:17547): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:07:01:040 clienteTest/(17547:17547): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:07:01:042 clienteTest/(17547:17547): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:08:58:818 clienteTest/(17571:17571): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:08:58:819 clienteTest/(17571:17571): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:08:58:821 clienteTest/(17571:17571): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:15:25:230 clienteTest/(17624:17624): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:15:25:231 clienteTest/(17624:17624): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:15:25:232 clienteTest/(17624:17624): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:34:37:719 clienteTest/(17829:17829): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:34:37:720 clienteTest/(17829:17829): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:34:37:720 clienteTest/(17829:17829): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:42:28:030 clienteTest/(18183:18183): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:42:28:031 clienteTest/(18183:18183): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:42:28:031 clienteTest/(18183:18183): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:42:39:336 clienteTest/(18201:18201): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:42:39:337 clienteTest/(18201:18201): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:42:39:337 clienteTest/(18201:18201): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:18:23:817 clienteTest/(19931:19931): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:18:23:818 clienteTest/(19931:19931): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:18:23:819 clienteTest/(19931:19931): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:08:205 clienteTest/(19944:19944): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:08:206 clienteTest/(19944:19944): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:08:206 clienteTest/(19944:19944): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:36:454 clienteTest/(19953:19953): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:36:455 clienteTest/(19953:19953): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:47:077 clienteTest/(19956:19956): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:47:077 clienteTest/(19956:19956): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:49:442 clienteTest/(19959:19959): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:49:442 clienteTest/(19959:19959): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:51:212 clienteTest/(19962:19962): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:51:212 clienteTest/(19962:19962): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:52:075 clienteTest/(19965:19965): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:52:075 clienteTest/(19965:19965): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:52:784 clienteTest/(19968:19968): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:52:785 clienteTest/(19968:19968): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:53:602 clienteTest/(19971:19971): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:53:603 clienteTest/(19971:19971): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:54:168 clienteTest/(19974:19974): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:54:169 clienteTest/(19974:19974): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:20:23:904 clienteTest/(19985:19985): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:20:23:905 clienteTest/(19985:19985): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:20:23:906 clienteTest/(19985:19985): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:20:54:478 clienteTest/(20002:20002): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:20:54:478 clienteTest/(20002:20002): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:20:54:479 clienteTest/(20002:20002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:21:03:507 clienteTest/(20014:20014): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:21:03:508 clienteTest/(20014:20014): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:21:03:508 clienteTest/(20014:20014): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:22:16:512 clienteTest/(20282:20282): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:22:16:512 clienteTest/(20282:20282): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:22:16:513 clienteTest/(20282:20282): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:23:20:222 clienteTest/(20314:20314): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:23:20:223 clienteTest/(20314:20314): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:24:54:866 clienteTest/(20324:20324): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:24:54:867 clienteTest/(20324:20324): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:25:13:595 clienteTest/(20350:20350): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:25:13:596 clienteTest/(20350:20350): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:25:38:527 clienteTest/(20354:20354): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:25:38:590 clienteTest/(20354:20354): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:25:38:610 clienteTest/(20354:20354): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:25:55:358 clienteTest/(20356:20356): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:25:55:429 clienteTest/(20356:20356): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:25:55:455 clienteTest/(20356:20356): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:27:48:001 clienteTest/(20368:20368): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:27:48:077 clienteTest/(20368:20368): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:27:48:108 clienteTest/(20368:20368): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:27:58:472 clienteTest/(20375:20375): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:27:58:544 clienteTest/(20375:20375): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:27:58:562 clienteTest/(20375:20375): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:28:50:739 clienteTest/(20379:20379): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:28:50:740 clienteTest/(20379:20379): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:40:50:290 clienteTest/(20954:20954): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:40:50:291 clienteTest/(20954:20954): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:06:12:157 clienteTest/(21353:21353): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:06:12:158 clienteTest/(21353:21353): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:06:21:139 clienteTest/(21356:21356): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:06:21:140 clienteTest/(21356:21356): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:08:18:369 clienteTest/(21390:21390): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:08:18:370 clienteTest/(21390:21390): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:11:22:276 clienteTest/(21432:21432): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:11:22:276 clienteTest/(21432:21432): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:16:50:792 clienteTest/(21462:21462): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:16:50:792 clienteTest/(21462:21462): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 18:16:50:793 clienteTest/(21462:21462): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 18:17:04:532 clienteTest/(21494:21494): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:17:04:533 clienteTest/(21494:21494): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:17:04:533 clienteTest/(21494:21494): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:17:43:212 clienteTest/(21544:21544): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:17:43:213 clienteTest/(21544:21544): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:17:43:214 clienteTest/(21544:21544): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:20:14:451 clienteTest/(21819:21819): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:20:14:452 clienteTest/(21819:21819): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:20:14:452 clienteTest/(21819:21819): ID Tripulante:	101
+[INFO] 18:20:14:453 clienteTest/(21819:21819): Tam tarea:	24
+[INFO] 18:20:14:453 clienteTest/(21819:21819): Tarea:	
+[INFO] 18:20:14:453 clienteTest/(21819:21819): Parametros tarea:	339821906
+[INFO] 18:20:14:453 clienteTest/(21819:21819): Posicion en X:%	d
+[INFO] 18:20:14:453 clienteTest/(21819:21819): Posicion en Y:	251658240
+[INFO] 18:20:14:454 clienteTest/(21819:21819): Tiempo:	167772160
+[INFO] 18:20:14:454 clienteTest/(21819:21819): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:23:32:908 clienteTest/(21842:21842): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:23:32:909 clienteTest/(21842:21842): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:23:32:909 clienteTest/(21842:21842): ID Tripulante:	101
+[INFO] 18:23:32:910 clienteTest/(21842:21842): Tam tarea:	28
+[INFO] 18:23:32:910 clienteTest/(21842:21842): Tarea:	
+[INFO] 18:23:32:910 clienteTest/(21842:21842): Parametros tarea:	50331648
+[INFO] 18:23:32:910 clienteTest/(21842:21842): Posicion en X:%	d
+[INFO] 18:23:32:911 clienteTest/(21842:21842): Posicion en Y:	167772160
+[INFO] 18:23:32:911 clienteTest/(21842:21842): Tiempo:	285212672
+[INFO] 18:23:32:911 clienteTest/(21842:21842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:26:39:156 clienteTest/(21858:21858): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:26:39:157 clienteTest/(21858:21858): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:26:39:157 clienteTest/(21858:21858): ID Tripulante:	101
+[INFO] 18:26:39:158 clienteTest/(21858:21858): Tam tarea:	28
+[INFO] 18:26:39:158 clienteTest/(21858:21858): Tarea:	
+[INFO] 18:26:39:158 clienteTest/(21858:21858): Parametros tarea:	50331648
+[INFO] 18:26:39:158 clienteTest/(21858:21858): Posicion en X:%	d
+[INFO] 18:26:39:159 clienteTest/(21858:21858): Posicion en Y:	167772160
+[INFO] 18:26:39:159 clienteTest/(21858:21858): Tiempo:	285212672
+[INFO] 18:26:39:159 clienteTest/(21858:21858): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:27:03:619 clienteTest/(21860:21860): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:27:03:620 clienteTest/(21860:21860): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:27:03:621 clienteTest/(21860:21860): ID Tripulante:	101
+[INFO] 18:27:03:622 clienteTest/(21860:21860): Tam tarea:	28
+[INFO] 18:27:03:622 clienteTest/(21860:21860): Tarea:	
+[INFO] 18:27:03:623 clienteTest/(21860:21860): Parametros tarea:	50331648
+[INFO] 18:27:03:623 clienteTest/(21860:21860): Posicion en X:%	d
+[INFO] 18:27:03:623 clienteTest/(21860:21860): Posicion en Y:	167772160
+[INFO] 18:27:03:623 clienteTest/(21860:21860): Tiempo:	285212672
+[INFO] 18:27:03:624 clienteTest/(21860:21860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:27:06:383 clienteTest/(21867:21867): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:27:06:384 clienteTest/(21867:21867): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:27:06:384 clienteTest/(21867:21867): ID Tripulante:	101
+[INFO] 18:27:06:385 clienteTest/(21867:21867): Tam tarea:	28
+[INFO] 18:27:06:385 clienteTest/(21867:21867): Tarea:	
+[INFO] 18:27:06:385 clienteTest/(21867:21867): Parametros tarea:	50331648
+[INFO] 18:27:06:385 clienteTest/(21867:21867): Posicion en X:%	d
+[INFO] 18:27:06:386 clienteTest/(21867:21867): Posicion en Y:	167772160
+[INFO] 18:27:06:386 clienteTest/(21867:21867): Tiempo:	285212672
+[INFO] 18:27:06:386 clienteTest/(21867:21867): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.

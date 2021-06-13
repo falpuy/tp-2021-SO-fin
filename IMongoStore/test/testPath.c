@@ -12,19 +12,21 @@
 #include <commons/string.h>
 #include <unistd.h> 
 
-char* str = "Se mueve de 8|9 a 10|1";
+char* puntoMontaje = "/home/utnso/Escritorio/TP/tp-2021-1c-Unnamed-Group/IMongoStore/test";
+
+char* pathCompleto(char* strConcatenar){
+    return string_from_format("%s/%s",puntoMontaje,strConcatenar);
+}
+
 
 int main(){
     mkdir("Bitacoras", 0766);
-    char* p_tripulante = string_from_format("%s/%s", path, "Bitacoras/Tripulante.ims");
-
-    printf("\n%s\n", p_tripulante);
-
-    if(access(p_tripulante,F_OK)<0){
+    char* pathNow = pathCompleto("Bitacoras/Tripulante2.ims");
+    
+    if(access(pathNow, F_OK)<0){
         printf("No existe archivo\n");
-        printf("%s\n", p_tripulante);
         printf("Creando file...");
-        int creaFile = open(p_tripulante,O_RDWR,0664);
+        int creaFile = open(pathNow,O_CREAT | O_RDWR,0664);
         if(creaFile < 0){
             perror("Error: No se pudo crear el archivo");
         }else{
@@ -35,6 +37,8 @@ int main(){
     else{
         printf("Existe archivo");
     }
+
+    free(pathNow);
     
 
     return 0;

@@ -137,7 +137,7 @@ void validarBlocks(t_log* log){
 
 
 void generarBitmap(t_log* log){
-
+    log_info(log, "-----------------------------------------------------");
     log_info(log, "Generando bitmap...");
     
 
@@ -160,6 +160,10 @@ void generarBitmap(t_log* log){
 
     printf("\n[TEST bitmap] Tamaño bloque: %d",tamanioBloque);
     printf("\n[TEST bitmap] Cantidad de bloques:%d \n", cantidadBloques);
+    log_info(log, "-----------------------------------------------------");
 
 }
 
+char* pathCompleto(char* strConcatenar){
+    return string_from_format("%s/%s",datosConfig->puntoMontaje,strConcatenar);
+}

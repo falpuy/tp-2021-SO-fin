@@ -34,11 +34,15 @@
 
     char* str_para_blocks;
     
-    char* pathCompleto(const char* str, ...);
     void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
     int cantidad_bloques(char* string, t_log* logger);
-    char* funcionStrMover(int posX_v, int posY_v, int posX_n, int posY_n);
     void crearMetadataBitacora(char* path_tripulante, t_log* logger);
     int validarBitsLibre(int cantidadBloquesAUsar, t_log* log);
+    char* crearStrTripulante(int idTripulante);
+    char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int posY_n);
+    void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,t_log* logger);
+    void eliminarLista (char** listaBloques,int cantidadBloques);
+    char* crearNuevaListaBloques(char** listaBloques,int cantidadBloques);
+
 
 #endif

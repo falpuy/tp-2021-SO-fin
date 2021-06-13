@@ -41,7 +41,7 @@
     void validarSuperBloque(t_log* log);
     void mapearBlocks(t_log* log);
 
-    char* path(char* str);
+    char* pathCompleto(char* strConcatenar);
 
 
 #endif

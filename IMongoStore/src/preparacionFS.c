@@ -122,7 +122,7 @@ void validarBlocks(t_log* log){
         if (err == -1){
             log_error(log, "[Blocks] Error de sincronizar a disco tamañoBloque y cantidadBloques");
         }
-        
+            
         log_info(log, "-----------------------------------------------------");
         log_info(log, "Se creó archivo Blocks.ims");
         log_info(log, "-----------------------------------------------------");

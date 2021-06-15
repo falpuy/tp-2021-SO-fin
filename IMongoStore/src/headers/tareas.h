@@ -37,9 +37,16 @@
     char* mapArchivo;
 
     int comandoTarea(char* tarea);
-    void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro);
-    void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro);
+    void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro,t_log* log);
+    void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro,t_log* log);
+    void consumirOxigeno(t_log* log, int parametroTarea);
+    void consumirComida(t_log* log, int parametroTarea);
+    void descartarBasura(t_log* log, int parametroTarea);
+    void generarOxigeno(t_log* log, int parametroTarea);
+    void generarComida(t_log* log, int parametroTarea);
+    void generarBasura(t_log* log, int parametroTarea);
     void crearMetadataBitacora(char* path_tripulante, t_log* logger);
+    void crearMetadataFiles(char* path,char* charLlenado, t_log* logger);
     char* pathCompleto(char* strConcatenar);
     int cantidad_bloques(char* string, t_log* logger);
     int validarBitsLibre(int cantidadBloquesAUsar, t_log* log);

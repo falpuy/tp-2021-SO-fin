@@ -1,0 +1,423 @@
+[INFO] 00:01:05:727 TEST/(7108:7108): Validando Existencia de directorios...
+[INFO] 00:01:05:729 TEST/(7108:7108): Ya existe directorio
+[INFO] 00:01:05:730 TEST/(7108:7108): -----------------------------------------------------
+[INFO] 00:01:05:730 TEST/(7108:7108): Validando existencia de Superbloque.ims....
+[INFO] 00:01:05:731 TEST/(7108:7108): -----------------------------------------------------
+[INFO] 00:01:05:732 TEST/(7108:7108): Se encontró el archivo superBloque.ims
+[INFO] 00:01:05:733 TEST/(7108:7108): Muestro mis valores del bitmap..
+[INFO] 00:01:05:734 TEST/(7108:7108): -----------------------------------------------------
+[INFO] 00:01:05:800 TEST/(7108:7108): Se muestra los datos del superBloque.
+[INFO] 00:01:05:801 TEST/(7108:7108): Tamaño de bloque: 3
+[INFO] 00:01:05:801 TEST/(7108:7108): Cantidad de bloques: 64
+[INFO] 00:01:05:801 TEST/(7108:7108): -----------------------------------------------------
+[INFO] 00:01:05:802 TEST/(7108:7108): Validando existencia de Blocks.ims....
+[INFO] 00:01:05:803 TEST/(7108:7108): -----------------------------------------------------
+[INFO] 00:01:05:803 TEST/(7108:7108): Existe archivo Blocks.ims.
+[INFO] 00:01:05:805 TEST/(7108:7108): -----------------------------------------------------
+[INFO] 00:04:35:479 TEST/(7129:7129): Validando Existencia de directorios...
+[INFO] 00:04:35:480 TEST/(7129:7129): No existe directorio: Filesystem. Se crea.
+[INFO] 00:04:35:485 TEST/(7129:7129): -----------------------------------------------------
+[INFO] 00:04:35:486 TEST/(7129:7129): Validando existencia de Superbloque.ims....
+[INFO] 00:04:35:486 TEST/(7129:7129): -----------------------------------------------------
+[ERROR] 00:04:35:487 TEST/(7129:7129): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 00:04:35:487 TEST/(7129:7129): Ingresar el tamaño de cada bloque
+[INFO] 00:04:39:104 TEST/(7129:7129): Ingresar la cantidad de bloques
+[INFO] 00:04:40:726 TEST/(7129:7129): Muestro mis valores del bitmap..
+[INFO] 00:04:40:728 TEST/(7129:7129): -----------------------------------------------------
+[INFO] 00:04:40:728 TEST/(7129:7129): Se creó archivo superBloque.ims
+[INFO] 00:04:40:728 TEST/(7129:7129): -----------------------------------------------------
+[INFO] 00:04:40:729 TEST/(7129:7129): Validando existencia de Blocks.ims....
+[ERROR] 00:04:40:729 TEST/(7129:7129): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 00:04:40:797 TEST/(7129:7129): -----------------------------------------------------
+[INFO] 00:04:40:797 TEST/(7129:7129): Se creó archivo Blocks.ims
+[INFO] 00:04:40:797 TEST/(7129:7129): -----------------------------------------------------
+[INFO] 00:05:18:355 TEST/(7144:7144): Validando Existencia de directorios...
+[INFO] 00:05:18:357 TEST/(7144:7144): Ya existe directorio
+[INFO] 00:05:18:357 TEST/(7144:7144): -----------------------------------------------------
+[INFO] 00:05:18:358 TEST/(7144:7144): Validando existencia de Superbloque.ims....
+[INFO] 00:05:18:358 TEST/(7144:7144): -----------------------------------------------------
+[INFO] 00:05:18:359 TEST/(7144:7144): Se encontró el archivo superBloque.ims
+[INFO] 00:05:18:360 TEST/(7144:7144): Muestro mis valores del bitmap..
+[INFO] 00:05:18:361 TEST/(7144:7144): -----------------------------------------------------
+[INFO] 00:05:18:363 TEST/(7144:7144): Se muestra los datos del superBloque.
+[INFO] 00:05:18:364 TEST/(7144:7144): Tamaño de bloque: 3
+[INFO] 00:05:18:364 TEST/(7144:7144): Cantidad de bloques: 64
+[INFO] 00:05:18:364 TEST/(7144:7144): -----------------------------------------------------
+[INFO] 00:05:18:365 TEST/(7144:7144): Validando existencia de Blocks.ims....
+[INFO] 00:05:18:365 TEST/(7144:7144): -----------------------------------------------------
+[INFO] 00:05:18:366 TEST/(7144:7144): Existe archivo Blocks.ims.
+[INFO] 00:05:18:368 TEST/(7144:7144): -----------------------------------------------------
+[INFO] 00:45:31:005 TEST/(8082:8082): Validando Existencia de directorios...
+[INFO] 00:45:31:006 TEST/(8082:8082): Ya existe directorio
+[INFO] 00:45:31:007 TEST/(8082:8082): -----------------------------------------------------
+[INFO] 00:45:31:008 TEST/(8082:8082): Validando existencia de Superbloque.ims....
+[INFO] 00:45:31:008 TEST/(8082:8082): -----------------------------------------------------
+[INFO] 00:45:31:009 TEST/(8082:8082): Se encontró el archivo superBloque.ims
+[INFO] 00:45:31:010 TEST/(8082:8082): Muestro mis valores del bitmap..
+[INFO] 00:45:31:011 TEST/(8082:8082): -----------------------------------------------------
+[INFO] 00:45:31:011 TEST/(8082:8082): Se muestra los datos del superBloque.
+[INFO] 00:45:31:012 TEST/(8082:8082): Tamaño de bloque: 3
+[INFO] 00:45:31:012 TEST/(8082:8082): Cantidad de bloques: 64
+[INFO] 00:45:31:012 TEST/(8082:8082): -----------------------------------------------------
+[INFO] 00:45:31:013 TEST/(8082:8082): Validando existencia de Blocks.ims....
+[INFO] 00:45:31:013 TEST/(8082:8082): -----------------------------------------------------
+[INFO] 00:45:31:014 TEST/(8082:8082): Existe archivo Blocks.ims.
+[INFO] 00:45:31:015 TEST/(8082:8082): -----------------------------------------------------
+[INFO] 00:45:43:331 TEST/(8105:8105): Validando Existencia de directorios...
+[INFO] 00:45:43:332 TEST/(8105:8105): Ya existe directorio
+[INFO] 00:45:43:333 TEST/(8105:8105): -----------------------------------------------------
+[INFO] 00:45:43:333 TEST/(8105:8105): Validando existencia de Superbloque.ims....
+[INFO] 00:45:43:334 TEST/(8105:8105): -----------------------------------------------------
+[INFO] 00:45:43:334 TEST/(8105:8105): Se encontró el archivo superBloque.ims
+[INFO] 00:45:43:335 TEST/(8105:8105): Muestro mis valores del bitmap..
+[INFO] 00:45:43:336 TEST/(8105:8105): -----------------------------------------------------
+[INFO] 00:45:43:336 TEST/(8105:8105): Se muestra los datos del superBloque.
+[INFO] 00:45:43:336 TEST/(8105:8105): Tamaño de bloque: 3
+[INFO] 00:45:43:337 TEST/(8105:8105): Cantidad de bloques: 64
+[INFO] 00:45:43:337 TEST/(8105:8105): -----------------------------------------------------
+[INFO] 00:45:43:337 TEST/(8105:8105): Validando existencia de Blocks.ims....
+[INFO] 00:45:43:338 TEST/(8105:8105): -----------------------------------------------------
+[INFO] 00:45:43:338 TEST/(8105:8105): Existe archivo Blocks.ims.
+[INFO] 00:45:43:339 TEST/(8105:8105): -----------------------------------------------------
+[INFO] 00:48:30:058 TEST/(8127:8127): Validando Existencia de directorios...
+[INFO] 00:48:30:059 TEST/(8127:8127): No existe directorio: Filesystem. Se crea.
+[INFO] 00:48:30:067 TEST/(8127:8127): -----------------------------------------------------
+[INFO] 00:48:30:068 TEST/(8127:8127): Validando existencia de Superbloque.ims....
+[INFO] 00:48:30:068 TEST/(8127:8127): -----------------------------------------------------
+[ERROR] 00:48:30:069 TEST/(8127:8127): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 00:48:30:070 TEST/(8127:8127): Ingresar el tamaño de cada bloque
+[INFO] 00:48:31:462 TEST/(8127:8127): Ingresar la cantidad de bloques
+[INFO] 00:48:33:032 TEST/(8127:8127): Muestro mis valores del bitmap..
+[INFO] 00:48:33:033 TEST/(8127:8127): -----------------------------------------------------
+[INFO] 00:48:33:034 TEST/(8127:8127): Se creó archivo superBloque.ims
+[INFO] 00:48:33:034 TEST/(8127:8127): -----------------------------------------------------
+[INFO] 00:48:33:034 TEST/(8127:8127): Validando existencia de Blocks.ims....
+[ERROR] 00:48:33:035 TEST/(8127:8127): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 00:48:33:039 TEST/(8127:8127): -----------------------------------------------------
+[INFO] 00:48:33:040 TEST/(8127:8127): Se creó archivo Blocks.ims
+[INFO] 00:48:33:040 TEST/(8127:8127): -----------------------------------------------------
+[INFO] 00:49:18:651 TEST/(8139:8139): Validando Existencia de directorios...
+[INFO] 00:49:18:653 TEST/(8139:8139): No existe directorio: Filesystem. Se crea.
+[INFO] 00:49:18:661 TEST/(8139:8139): -----------------------------------------------------
+[INFO] 00:49:18:661 TEST/(8139:8139): Validando existencia de Superbloque.ims....
+[INFO] 00:49:18:662 TEST/(8139:8139): -----------------------------------------------------
+[ERROR] 00:49:18:663 TEST/(8139:8139): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 00:49:18:663 TEST/(8139:8139): Ingresar el tamaño de cada bloque
+[INFO] 00:49:19:908 TEST/(8139:8139): Ingresar la cantidad de bloques
+[INFO] 00:49:20:566 TEST/(8139:8139): Muestro mis valores del bitmap..
+[INFO] 00:49:20:567 TEST/(8139:8139): -----------------------------------------------------
+[INFO] 00:49:20:568 TEST/(8139:8139): Se creó archivo superBloque.ims
+[INFO] 00:49:20:568 TEST/(8139:8139): -----------------------------------------------------
+[INFO] 00:49:20:568 TEST/(8139:8139): Validando existencia de Blocks.ims....
+[ERROR] 00:49:20:569 TEST/(8139:8139): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 00:49:20:640 TEST/(8139:8139): -----------------------------------------------------
+[INFO] 00:49:20:640 TEST/(8139:8139): Se creó archivo Blocks.ims
+[INFO] 00:49:20:641 TEST/(8139:8139): -----------------------------------------------------
+[INFO] 00:49:30:677 TEST/(8142:8142): Validando Existencia de directorios...
+[INFO] 00:49:30:679 TEST/(8142:8142): Ya existe directorio
+[INFO] 00:49:30:680 TEST/(8142:8142): -----------------------------------------------------
+[INFO] 00:49:30:681 TEST/(8142:8142): Validando existencia de Superbloque.ims....
+[INFO] 00:49:30:682 TEST/(8142:8142): -----------------------------------------------------
+[INFO] 00:49:30:683 TEST/(8142:8142): Se encontró el archivo superBloque.ims
+[INFO] 00:49:30:685 TEST/(8142:8142): Muestro mis valores del bitmap..
+[INFO] 00:49:30:686 TEST/(8142:8142): -----------------------------------------------------
+[INFO] 00:49:30:687 TEST/(8142:8142): Se muestra los datos del superBloque.
+[INFO] 00:49:30:687 TEST/(8142:8142): Tamaño de bloque: 3
+[INFO] 00:49:30:688 TEST/(8142:8142): Cantidad de bloques: 64
+[INFO] 00:49:30:688 TEST/(8142:8142): -----------------------------------------------------
+[INFO] 00:49:30:689 TEST/(8142:8142): Validando existencia de Blocks.ims....
+[INFO] 00:49:30:690 TEST/(8142:8142): -----------------------------------------------------
+[INFO] 00:49:30:691 TEST/(8142:8142): Existe archivo Blocks.ims.
+[INFO] 00:49:30:693 TEST/(8142:8142): -----------------------------------------------------
+[INFO] 00:49:35:694 TEST/(8142:8143): Comienza actualización de Blocks.ims...
+[INFO] 00:49:35:697 TEST/(8142:8143): Se actualizo Blocks.ims
+[INFO] 00:49:40:698 TEST/(8142:8143): Comienza actualización de Blocks.ims...
+[INFO] 01:04:54:545 TEST/(8748:8748): Validando Existencia de directorios...
+[INFO] 01:04:54:547 TEST/(8748:8748): No existe directorio: Filesystem. Se crea.
+[INFO] 01:04:54:555 TEST/(8748:8748): -----------------------------------------------------
+[INFO] 01:04:54:556 TEST/(8748:8748): Validando existencia de Superbloque.ims....
+[INFO] 01:04:54:556 TEST/(8748:8748): -----------------------------------------------------
+[ERROR] 01:04:54:558 TEST/(8748:8748): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 01:04:54:558 TEST/(8748:8748): Ingresar el tamaño de cada bloque
+[INFO] 01:04:56:261 TEST/(8748:8748): Ingresar la cantidad de bloques
+[INFO] 01:04:56:954 TEST/(8748:8748): Muestro mis valores del bitmap..
+[INFO] 01:04:56:956 TEST/(8748:8748): -----------------------------------------------------
+[INFO] 01:04:56:956 TEST/(8748:8748): Se creó archivo superBloque.ims
+[INFO] 01:04:56:956 TEST/(8748:8748): -----------------------------------------------------
+[INFO] 01:04:56:956 TEST/(8748:8748): Validando existencia de Blocks.ims....
+[ERROR] 01:04:56:957 TEST/(8748:8748): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 01:04:57:027 TEST/(8748:8748): -----------------------------------------------------
+[INFO] 01:04:57:028 TEST/(8748:8748): Se creó archivo Blocks.ims
+[INFO] 01:04:57:028 TEST/(8748:8748): -----------------------------------------------------
+[INFO] 01:05:02:029 TEST/(8748:8750): Comienza actualización de Blocks.ims...
+[INFO] 01:05:02:032 TEST/(8748:8750): Se actualizo Blocks.ims
+[INFO] 01:05:02:035 TEST/(8748:8750): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:05:05:173 TEST/(8752:8752): Validando Existencia de directorios...
+[INFO] 01:05:05:176 TEST/(8752:8752): Ya existe directorio
+[INFO] 01:05:05:176 TEST/(8752:8752): -----------------------------------------------------
+[INFO] 01:05:05:177 TEST/(8752:8752): Validando existencia de Superbloque.ims....
+[INFO] 01:05:05:178 TEST/(8752:8752): -----------------------------------------------------
+[INFO] 01:05:05:183 TEST/(8752:8752): Se encontró el archivo superBloque.ims
+[INFO] 01:05:05:185 TEST/(8752:8752): Muestro mis valores del bitmap..
+[INFO] 01:05:05:186 TEST/(8752:8752): -----------------------------------------------------
+[INFO] 01:05:05:187 TEST/(8752:8752): Se muestra los datos del superBloque.
+[INFO] 01:05:05:187 TEST/(8752:8752): Tamaño de bloque: 3
+[INFO] 01:05:05:188 TEST/(8752:8752): Cantidad de bloques: 64
+[INFO] 01:05:05:188 TEST/(8752:8752): -----------------------------------------------------
+[INFO] 01:05:05:189 TEST/(8752:8752): Validando existencia de Blocks.ims....
+[INFO] 01:05:05:190 TEST/(8752:8752): -----------------------------------------------------
+[INFO] 01:05:05:191 TEST/(8752:8752): Existe archivo Blocks.ims.
+[INFO] 01:05:05:193 TEST/(8752:8752): -----------------------------------------------------
+[INFO] 01:06:37:855 TEST/(8759:8759): Validando Existencia de directorios...
+[INFO] 01:06:37:973 TEST/(8759:8759): Ya existe directorio
+[INFO] 01:06:37:984 TEST/(8759:8759): -----------------------------------------------------
+[INFO] 01:06:37:985 TEST/(8759:8759): Validando existencia de Superbloque.ims....
+[INFO] 01:06:37:987 TEST/(8759:8759): -----------------------------------------------------
+[INFO] 01:06:37:989 TEST/(8759:8759): Se encontró el archivo superBloque.ims
+[INFO] 01:06:38:016 TEST/(8759:8759): Muestro mis valores del bitmap..
+[INFO] 01:06:38:028 TEST/(8759:8759): -----------------------------------------------------
+[INFO] 01:06:38:029 TEST/(8759:8759): Se muestra los datos del superBloque.
+[INFO] 01:06:38:031 TEST/(8759:8759): Tamaño de bloque: 3
+[INFO] 01:06:38:033 TEST/(8759:8759): Cantidad de bloques: 64
+[INFO] 01:06:38:035 TEST/(8759:8759): -----------------------------------------------------
+[INFO] 01:06:38:036 TEST/(8759:8759): Validando existencia de Blocks.ims....
+[INFO] 01:06:38:039 TEST/(8759:8759): -----------------------------------------------------
+[INFO] 01:06:38:040 TEST/(8759:8759): Existe archivo Blocks.ims.
+[INFO] 01:06:38:059 TEST/(8759:8759): -----------------------------------------------------
+[INFO] 01:14:01:822 TEST/(8811:8811): Validando Existencia de directorios...
+[INFO] 01:14:01:971 TEST/(8811:8811): No existe directorio: Filesystem. Se crea.
+[INFO] 01:14:01:987 TEST/(8811:8811): -----------------------------------------------------
+[INFO] 01:14:01:989 TEST/(8811:8811): Validando existencia de Superbloque.ims....
+[INFO] 01:14:01:998 TEST/(8811:8811): -----------------------------------------------------
+[ERROR] 01:14:02:006 TEST/(8811:8811): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 01:14:02:009 TEST/(8811:8811): Ingresar el tamaño de cada bloque
+[INFO] 01:14:50:462 TEST/(8828:8828): Validando Existencia de directorios...
+[INFO] 01:14:50:464 TEST/(8828:8828): No existe directorio: Filesystem. Se crea.
+[INFO] 01:14:50:471 TEST/(8828:8828): -----------------------------------------------------
+[INFO] 01:14:50:472 TEST/(8828:8828): Validando existencia de Superbloque.ims....
+[INFO] 01:14:50:473 TEST/(8828:8828): -----------------------------------------------------
+[ERROR] 01:14:50:474 TEST/(8828:8828): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 01:14:50:474 TEST/(8828:8828): Ingresar el tamaño de cada bloque
+[INFO] 01:14:52:024 TEST/(8828:8828): Ingresar la cantidad de bloques
+[INFO] 01:14:53:914 TEST/(8828:8828): Muestro mis valores del bitmap..
+[INFO] 01:14:53:916 TEST/(8828:8828): -----------------------------------------------------
+[INFO] 01:14:53:916 TEST/(8828:8828): Se creó archivo superBloque.ims
+[INFO] 01:14:53:917 TEST/(8828:8828): -----------------------------------------------------
+[INFO] 01:14:53:917 TEST/(8828:8828): Validando existencia de Blocks.ims....
+[ERROR] 01:14:53:918 TEST/(8828:8828): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 01:14:53:987 TEST/(8828:8828): -----------------------------------------------------
+[INFO] 01:14:53:987 TEST/(8828:8828): Se creó archivo Blocks.ims
+[INFO] 01:14:53:988 TEST/(8828:8828): -----------------------------------------------------
+[INFO] 01:15:14:295 TEST/(8836:8836): Validando Existencia de directorios...
+[INFO] 01:15:14:297 TEST/(8836:8836): Ya existe directorio
+[INFO] 01:15:14:298 TEST/(8836:8836): -----------------------------------------------------
+[INFO] 01:15:14:303 TEST/(8836:8836): Validando existencia de Superbloque.ims....
+[INFO] 01:15:14:304 TEST/(8836:8836): -----------------------------------------------------
+[INFO] 01:15:14:305 TEST/(8836:8836): Se encontró el archivo superBloque.ims
+[INFO] 01:15:14:307 TEST/(8836:8836): Muestro mis valores del bitmap..
+[INFO] 01:15:14:308 TEST/(8836:8836): -----------------------------------------------------
+[INFO] 01:15:14:309 TEST/(8836:8836): Se muestra los datos del superBloque.
+[INFO] 01:15:14:309 TEST/(8836:8836): Tamaño de bloque: 3
+[INFO] 01:15:14:310 TEST/(8836:8836): Cantidad de bloques: 64
+[INFO] 01:15:14:310 TEST/(8836:8836): -----------------------------------------------------
+[INFO] 01:15:14:311 TEST/(8836:8836): Validando existencia de Blocks.ims....
+[INFO] 01:15:14:312 TEST/(8836:8836): -----------------------------------------------------
+[INFO] 01:15:14:312 TEST/(8836:8836): Existe archivo Blocks.ims.
+[INFO] 01:15:14:317 TEST/(8836:8836): -----------------------------------------------------
+[INFO] 01:15:19:326 TEST/(8836:8837): Comienza actualización de Blocks.ims...
+[INFO] 01:15:19:330 TEST/(8836:8837): Se actualizo Blocks.ims
+[INFO] 01:15:19:332 TEST/(8836:8837): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:15:24:336 TEST/(8836:8837): Comienza actualización de Blocks.ims...
+[INFO] 01:15:24:340 TEST/(8836:8837): Se actualizo Blocks.ims
+[INFO] 01:15:24:342 TEST/(8836:8837): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:15:41:251 TEST/(8838:8838): Validando Existencia de directorios...
+[INFO] 01:15:41:253 TEST/(8838:8838): Ya existe directorio
+[INFO] 01:15:41:254 TEST/(8838:8838): -----------------------------------------------------
+[INFO] 01:15:41:259 TEST/(8838:8838): Validando existencia de Superbloque.ims....
+[INFO] 01:15:41:260 TEST/(8838:8838): -----------------------------------------------------
+[INFO] 01:15:41:261 TEST/(8838:8838): Se encontró el archivo superBloque.ims
+[INFO] 01:15:41:262 TEST/(8838:8838): Muestro mis valores del bitmap..
+[INFO] 01:15:41:263 TEST/(8838:8838): -----------------------------------------------------
+[INFO] 01:15:41:264 TEST/(8838:8838): Se muestra los datos del superBloque.
+[INFO] 01:15:41:265 TEST/(8838:8838): Tamaño de bloque: 3
+[INFO] 01:15:41:265 TEST/(8838:8838): Cantidad de bloques: 64
+[INFO] 01:15:41:266 TEST/(8838:8838): -----------------------------------------------------
+[INFO] 01:15:41:266 TEST/(8838:8838): Validando existencia de Blocks.ims....
+[INFO] 01:15:41:267 TEST/(8838:8838): -----------------------------------------------------
+[INFO] 01:15:41:268 TEST/(8838:8838): Existe archivo Blocks.ims.
+[INFO] 01:15:41:280 TEST/(8838:8838): -----------------------------------------------------
+[INFO] 01:15:46:291 TEST/(8838:8839): Comienza actualización de Blocks.ims...
+[INFO] 01:15:46:293 TEST/(8838:8839): Se actualizo Blocks.ims
+[INFO] 01:15:46:295 TEST/(8838:8839): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:17:43:796 TEST/(8855:8855): Validando Existencia de directorios...
+[INFO] 01:17:43:798 TEST/(8855:8855): No existe directorio: Filesystem. Se crea.
+[INFO] 01:17:43:806 TEST/(8855:8855): -----------------------------------------------------
+[INFO] 01:17:43:806 TEST/(8855:8855): Validando existencia de Superbloque.ims....
+[INFO] 01:17:43:807 TEST/(8855:8855): -----------------------------------------------------
+[ERROR] 01:17:43:808 TEST/(8855:8855): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 01:17:43:809 TEST/(8855:8855): Ingresar el tamaño de cada bloque
+[INFO] 01:17:48:651 TEST/(8855:8855): Ingresar la cantidad de bloques
+[ERROR] 01:17:52:719 TEST/(8855:8855): La cantidad de bloques debe ser divisible por 8
+[INFO] 01:17:52:720 TEST/(8855:8855): Ingresar cantidad de bloques
+[INFO] 01:17:57:297 TEST/(8855:8855): Muestro mis valores del bitmap..
+[INFO] 01:17:57:299 TEST/(8855:8855): -----------------------------------------------------
+[INFO] 01:17:57:299 TEST/(8855:8855): Se creó archivo superBloque.ims
+[INFO] 01:17:57:299 TEST/(8855:8855): -----------------------------------------------------
+[INFO] 01:17:57:300 TEST/(8855:8855): Validando existencia de Blocks.ims....
+[ERROR] 01:17:57:300 TEST/(8855:8855): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 01:17:57:370 TEST/(8855:8855): -----------------------------------------------------
+[INFO] 01:17:57:371 TEST/(8855:8855): Se creó archivo Blocks.ims
+[INFO] 01:17:57:371 TEST/(8855:8855): -----------------------------------------------------
+[INFO] 01:17:57:371 TEST/(8855:8855): Muestro mis valores del bitmap ANTES DE COPIAR..
+[INFO] 01:17:57:371 TEST/(8855:8855): Muestro mis valores del bitmap DESPUES DE COPIAR..
+[INFO] 01:18:02:372 TEST/(8855:8858): Comienza actualización de Blocks.ims...
+[INFO] 01:18:02:373 TEST/(8855:8858): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:18:02:377 TEST/(8855:8858): Se actualizo Blocks.ims
+[INFO] 01:18:02:379 TEST/(8855:8858): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:18:02:381 TEST/(8855:8858): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:18:07:383 TEST/(8855:8858): Comienza actualización de Blocks.ims...
+[INFO] 01:18:07:383 TEST/(8855:8858): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:18:07:385 TEST/(8855:8858): Se actualizo Blocks.ims
+[INFO] 01:18:07:387 TEST/(8855:8858): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:18:07:390 TEST/(8855:8858): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:19:11:659 TEST/(8862:8862): Validando Existencia de directorios...
+[INFO] 01:19:11:661 TEST/(8862:8862): Ya existe directorio
+[INFO] 01:19:11:662 TEST/(8862:8862): -----------------------------------------------------
+[INFO] 01:19:11:663 TEST/(8862:8862): Validando existencia de Superbloque.ims....
+[INFO] 01:19:11:667 TEST/(8862:8862): -----------------------------------------------------
+[INFO] 01:19:11:668 TEST/(8862:8862): Se encontró el archivo superBloque.ims
+[INFO] 01:19:11:670 TEST/(8862:8862): Muestro mis valores del bitmap..
+[INFO] 01:19:11:670 TEST/(8862:8862): -----------------------------------------------------
+[INFO] 01:19:11:671 TEST/(8862:8862): Se muestra los datos del superBloque.
+[INFO] 01:19:11:671 TEST/(8862:8862): Tamaño de bloque: 3
+[INFO] 01:19:11:672 TEST/(8862:8862): Cantidad de bloques: 8
+[INFO] 01:19:11:673 TEST/(8862:8862): -----------------------------------------------------
+[INFO] 01:19:11:673 TEST/(8862:8862): Validando existencia de Blocks.ims....
+[INFO] 01:19:11:674 TEST/(8862:8862): -----------------------------------------------------
+[INFO] 01:19:11:675 TEST/(8862:8862): Existe archivo Blocks.ims.
+[INFO] 01:19:11:678 TEST/(8862:8862): -----------------------------------------------------
+[INFO] 01:19:11:681 TEST/(8862:8862): Muestro mis valores del bitmap ANTES DE COPIAR..
+[INFO] 01:19:11:689 TEST/(8862:8862): Muestro mis valores del bitmap DESPUES DE COPIAR..
+[INFO] 01:20:40:530 TEST/(8890:8890): Validando Existencia de directorios...
+[INFO] 01:20:40:532 TEST/(8890:8890): No existe directorio: Filesystem. Se crea.
+[INFO] 01:20:40:539 TEST/(8890:8890): -----------------------------------------------------
+[INFO] 01:20:40:539 TEST/(8890:8890): Validando existencia de Superbloque.ims....
+[INFO] 01:20:40:540 TEST/(8890:8890): -----------------------------------------------------
+[ERROR] 01:20:40:541 TEST/(8890:8890): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 01:20:40:542 TEST/(8890:8890): Ingresar el tamaño de cada bloque
+[INFO] 01:20:41:802 TEST/(8890:8890): Ingresar la cantidad de bloques
+[INFO] 01:20:43:093 TEST/(8890:8890): Muestro mis valores del bitmap..
+[INFO] 01:20:43:095 TEST/(8890:8890): -----------------------------------------------------
+[INFO] 01:20:43:095 TEST/(8890:8890): Se creó archivo superBloque.ims
+[INFO] 01:20:43:096 TEST/(8890:8890): -----------------------------------------------------
+[INFO] 01:20:43:096 TEST/(8890:8890): Validando existencia de Blocks.ims....
+[ERROR] 01:20:43:097 TEST/(8890:8890): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 01:20:43:102 TEST/(8890:8890): -----------------------------------------------------
+[INFO] 01:20:43:102 TEST/(8890:8890): Se creó archivo Blocks.ims
+[INFO] 01:20:43:103 TEST/(8890:8890): -----------------------------------------------------
+[INFO] 01:20:43:103 TEST/(8890:8890): Muestro mis valores del bitmap ANTES DE COPIAR..
+[INFO] 01:20:43:103 TEST/(8890:8890): Muestro mis valores del bitmap DESPUES DE COPIAR..
+[INFO] 01:20:48:104 TEST/(8890:8896): Comienza actualización de Blocks.ims...
+[INFO] 01:20:48:104 TEST/(8890:8896): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:20:48:107 TEST/(8890:8896): Se actualizo Blocks.ims
+[INFO] 01:20:48:110 TEST/(8890:8896): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:20:48:112 TEST/(8890:8896): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:20:53:114 TEST/(8890:8896): Comienza actualización de Blocks.ims...
+[INFO] 01:20:53:115 TEST/(8890:8896): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:20:53:118 TEST/(8890:8896): Se actualizo Blocks.ims
+[INFO] 01:20:53:120 TEST/(8890:8896): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:20:53:123 TEST/(8890:8896): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:20:58:934 TEST/(8909:8909): Validando Existencia de directorios...
+[INFO] 01:20:58:936 TEST/(8909:8909): Ya existe directorio
+[INFO] 01:20:58:936 TEST/(8909:8909): -----------------------------------------------------
+[INFO] 01:20:58:937 TEST/(8909:8909): Validando existencia de Superbloque.ims....
+[INFO] 01:20:58:937 TEST/(8909:8909): -----------------------------------------------------
+[INFO] 01:20:58:943 TEST/(8909:8909): Se encontró el archivo superBloque.ims
+[INFO] 01:20:58:945 TEST/(8909:8909): Muestro mis valores del bitmap..
+[INFO] 01:20:58:946 TEST/(8909:8909): -----------------------------------------------------
+[INFO] 01:20:58:947 TEST/(8909:8909): Se muestra los datos del superBloque.
+[INFO] 01:20:58:948 TEST/(8909:8909): Tamaño de bloque: 3
+[INFO] 01:20:58:948 TEST/(8909:8909): Cantidad de bloques: 8
+[INFO] 01:20:58:949 TEST/(8909:8909): -----------------------------------------------------
+[INFO] 01:20:58:949 TEST/(8909:8909): Validando existencia de Blocks.ims....
+[INFO] 01:20:58:951 TEST/(8909:8909): -----------------------------------------------------
+[INFO] 01:20:58:951 TEST/(8909:8909): Existe archivo Blocks.ims.
+[INFO] 01:20:58:953 TEST/(8909:8909): -----------------------------------------------------
+[INFO] 01:20:58:961 TEST/(8909:8909): Muestro mis valores del bitmap ANTES DE COPIAR..
+[INFO] 01:20:58:962 TEST/(8909:8909): Muestro mis valores del bitmap DESPUES DE COPIAR..
+[INFO] 01:21:03:964 TEST/(8909:8910): Comienza actualización de Blocks.ims...
+[INFO] 01:21:03:965 TEST/(8909:8910): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:21:03:971 TEST/(8909:8910): Se actualizo Blocks.ims
+[INFO] 01:21:03:973 TEST/(8909:8910): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:21:03:975 TEST/(8909:8910): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:21:35:520 TEST/(8937:8937): Validando Existencia de directorios...
+[INFO] 01:21:35:521 TEST/(8937:8937): No existe directorio: Filesystem. Se crea.
+[INFO] 01:21:35:531 TEST/(8937:8937): -----------------------------------------------------
+[INFO] 01:21:35:532 TEST/(8937:8937): Validando existencia de Superbloque.ims....
+[INFO] 01:21:35:532 TEST/(8937:8937): -----------------------------------------------------
+[ERROR] 01:21:35:534 TEST/(8937:8937): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 01:21:35:534 TEST/(8937:8937): Ingresar el tamaño de cada bloque
+[INFO] 01:21:36:983 TEST/(8937:8937): Ingresar la cantidad de bloques
+[INFO] 01:21:37:841 TEST/(8937:8937): Muestro mis valores del bitmap..
+[INFO] 01:21:37:842 TEST/(8937:8937): -----------------------------------------------------
+[INFO] 01:21:37:843 TEST/(8937:8937): Se creó archivo superBloque.ims
+[INFO] 01:21:37:843 TEST/(8937:8937): -----------------------------------------------------
+[INFO] 01:21:37:843 TEST/(8937:8937): Validando existencia de Blocks.ims....
+[ERROR] 01:21:37:844 TEST/(8937:8937): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 01:21:37:913 TEST/(8937:8937): -----------------------------------------------------
+[INFO] 01:21:37:913 TEST/(8937:8937): Se creó archivo Blocks.ims
+[INFO] 01:21:37:914 TEST/(8937:8937): -----------------------------------------------------
+[INFO] 01:21:37:914 TEST/(8937:8937): Muestro mis valores del bitmap ANTES DE COPIAR..
+[INFO] 01:21:37:914 TEST/(8937:8937): Muestro mis valores del bitmap DESPUES DE COPIAR..
+[INFO] 01:21:42:915 TEST/(8937:8944): Comienza actualización de Blocks.ims...
+[INFO] 01:21:42:915 TEST/(8937:8944): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:21:42:919 TEST/(8937:8944): Se actualizo Blocks.ims
+[INFO] 01:21:42:921 TEST/(8937:8944): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:21:42:924 TEST/(8937:8944): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:25:14:787 TEST/(8979:8979): Validando Existencia de directorios...
+[INFO] 01:25:14:790 TEST/(8979:8979): Ya existe directorio
+[INFO] 01:25:14:791 TEST/(8979:8979): -----------------------------------------------------
+[INFO] 01:25:14:792 TEST/(8979:8979): Validando existencia de Superbloque.ims....
+[INFO] 01:25:14:793 TEST/(8979:8979): -----------------------------------------------------
+[ERROR] 01:25:14:793 TEST/(8979:8979): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 01:25:14:794 TEST/(8979:8979): Ingresar el tamaño de cada bloque
+[INFO] 01:25:17:367 TEST/(8979:8979): Ingresar la cantidad de bloques
+[INFO] 01:25:18:614 TEST/(8979:8979): Muestro mis valores del bitmap..
+[INFO] 01:25:18:615 TEST/(8979:8979): -----------------------------------------------------
+[INFO] 01:25:18:616 TEST/(8979:8979): Se creó archivo superBloque.ims
+[INFO] 01:25:18:616 TEST/(8979:8979): -----------------------------------------------------
+[INFO] 01:25:18:616 TEST/(8979:8979): Validando existencia de Blocks.ims....
+[ERROR] 01:25:18:617 TEST/(8979:8979): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 01:25:18:621 TEST/(8979:8979): -----------------------------------------------------
+[INFO] 01:25:18:621 TEST/(8979:8979): Se creó archivo Blocks.ims
+[INFO] 01:25:18:622 TEST/(8979:8979): -----------------------------------------------------
+[INFO] 01:25:18:622 TEST/(8979:8979): Muestro mis valores del bitmap ANTES DE COPIAR..
+[INFO] 01:25:18:622 TEST/(8979:8979): Muestro mis valores del bitmap DESPUES DE COPIAR..
+[INFO] 01:25:23:624 TEST/(8979:8980): Comienza actualización de Blocks.ims...
+[INFO] 01:25:23:625 TEST/(8979:8980): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:25:23:627 TEST/(8979:8980): Se actualizo Blocks.ims
+[INFO] 01:25:23:630 TEST/(8979:8980): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:25:23:632 TEST/(8979:8980): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:26:03:244 TEST/(8983:8983): Validando Existencia de directorios...
+[INFO] 01:26:03:247 TEST/(8983:8983): Ya existe directorio
+[INFO] 01:26:03:247 TEST/(8983:8983): -----------------------------------------------------
+[INFO] 01:26:03:248 TEST/(8983:8983): Validando existencia de Superbloque.ims....
+[INFO] 01:26:03:252 TEST/(8983:8983): -----------------------------------------------------
+[INFO] 01:26:03:254 TEST/(8983:8983): Se encontró el archivo superBloque.ims
+[INFO] 01:26:03:256 TEST/(8983:8983): Muestro mis valores del bitmap..
+[INFO] 01:26:03:257 TEST/(8983:8983): -----------------------------------------------------
+[INFO] 01:26:03:258 TEST/(8983:8983): Se muestra los datos del superBloque.
+[INFO] 01:26:03:258 TEST/(8983:8983): Tamaño de bloque: 3
+[INFO] 01:26:03:259 TEST/(8983:8983): Cantidad de bloques: 8
+[INFO] 01:26:03:260 TEST/(8983:8983): -----------------------------------------------------
+[INFO] 01:26:03:261 TEST/(8983:8983): Validando existencia de Blocks.ims....
+[INFO] 01:26:03:262 TEST/(8983:8983): -----------------------------------------------------
+[INFO] 01:26:03:263 TEST/(8983:8983): Existe archivo Blocks.ims.
+[INFO] 01:26:03:275 TEST/(8983:8983): -----------------------------------------------------
+[INFO] 01:26:03:275 TEST/(8983:8983): Muestro mis valores del bitmap ANTES DE COPIAR..
+[INFO] 01:26:03:276 TEST/(8983:8983): Muestro mis valores del bitmap DESPUES DE COPIAR..
+[INFO] 01:26:08:278 TEST/(8983:8984): Comienza actualización de Blocks.ims...
+[INFO] 01:26:08:278 TEST/(8983:8984): Muestro mis valores del bitmap ANTES DE sincronizar..
+[INFO] 01:26:08:281 TEST/(8983:8984): Se actualizo Blocks.ims
+[INFO] 01:26:08:283 TEST/(8983:8984): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 01:26:08:286 TEST/(8983:8984): Muestro mis valores del bitmap ANTES DE sincronizar..

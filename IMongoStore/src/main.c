@@ -8,13 +8,9 @@ int main() {
     inicializacionFS(logIMS);
     signal(SIGINT,finalizarProceso);
 
-    
-
-    //pthread_create(&sync_blocks,NULL,(void *) actualizarArchivo,logIMS);
-    //pthread_join(sync_blocks,NULL);
 
     log_info(logIMS, "------------------------------------------------");
-    log_info(logIMS, "Se crea servidor......");
+    log_info(logIMS, "Creando servidor......");
     sleep(1);
     _start_server(datosConfig->puerto,handler, logIMS);
     finalizarProceso();
@@ -32,8 +28,10 @@ void setearConfiguraciones(){
     datosConfig->puerto = config_get_string_value(arch_config,"PUERTO");
     datosConfig->tiempoSincronizacion = config_get_int_value(arch_config,"TIEMPO_SINCRONIZACION");
 
-    pthread_mutex_init(&mutexBlocks, NULL); 
-    pthread_mutex_init(&mutexSuperBloque, NULL); 
+    pthread_mutex_init(&m_blocks, NULL); 
+    pthread_mutex_init(&m_superBloque, NULL); 
+    pthread_mutex_init(&m_bitmap, NULL);
+    pthread_mutex_init(&m_metadata, NULL); 
 
 }
 
@@ -49,8 +47,9 @@ void finalizarProceso(){
     config_destroy(arch_config);
     free(datosConfig);
 
-    pthread_mutex_destroy(&mutexBlocks); 
-    pthread_mutex_destroy(&mutexSuperBloque); 
-
+    pthread_mutex_destroy(&m_blocks); 
+    pthread_mutex_destroy(&m_superBloque); 
+    pthread_mutex_destroy(&m_bitmap); 
+    pthread_mutex_destroy(&m_metadata);
     exit(EXIT_SUCCESS);
 }

@@ -13,7 +13,7 @@ char* pathCompleto(char* strConcatenar){
     return string_from_format("%s/%s",datosConfig->puntoMontaje,strConcatenar);
 }
 
-void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro,int posX,int posY,int tiempo){
+void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro,t_log* log){
     
     int comando = comandoTarea(tarea);
     switch(comando){
@@ -82,7 +82,7 @@ void consumirOxigeno(t_log* log, int parametroTarea){
     }
 
     char*strABorrar = string_repeat('O',parametroTarea);
-    borrarEnBlocks(strABorrar,path_oxigeno,1,log);
+    //borrarEnBlocks(strABorrar,path_oxigeno,1,log);
     free(strABorrar);
     free(path_oxigeno);
 }
@@ -90,16 +90,16 @@ void consumirOxigeno(t_log* log, int parametroTarea){
 void consumirComida(t_log* log, int parametroTarea){
     char* path_comida = pathCompleto("Tareas/Comida.ims");
     
-    if(access(path_oxigeno,F_OK)<0){
+    if(access(path_comida,F_OK)<0){
         log_error(log, "No existe Comida.ims");
         log_error(log, "Finalizando Tarea..");
         //TODO: FINALIZAR TAREA?
     }
 
     char*strABorrar = string_repeat('C',parametroTarea);
-    borrarEnBlocks(strABorrar,path_oxigeno,1,log);
+    //borrarEnBlocks(strABorrar,path_oxigeno,1,log);
     free(strABorrar);
-    free(path_oxigeno);
+    free(path_comida);
 }
 
 void descartarBasura(t_log* log, int parametroTarea){
@@ -123,7 +123,11 @@ void generarOxigeno(t_log* log, int parametroTarea){
     }
 
     char* strGuardar = string_repeat('O',parametroTarea);
+    
+    pthread_mutex_lock(&m_blocks);
     guardarEnBlocks(strGuardar,path_oxigeno,1,log);
+    pthread_mutex_unlock(&m_blocks);
+
 
     free(strGuardar);
     free(path_oxigeno);
@@ -138,7 +142,10 @@ void generarComida(t_log* log, int parametroTarea){
     }
 
     char* strGuardar = string_repeat('C',parametroTarea);
+    
+    pthread_mutex_lock(&m_blocks);
     guardarEnBlocks(strGuardar,path_comida,1,log);
+    pthread_mutex_unlock(&m_blocks);
 
     free(strGuardar);
     free(path_comida);
@@ -153,7 +160,10 @@ void generarBasura(t_log* log, int parametroTarea){
     }
 
     char* strGuardar = string_repeat('B',parametroTarea);
+    
+    pthread_mutex_lock(&m_blocks);
     guardarEnBlocks(strGuardar,path_basura,1,log);
+    pthread_mutex_unlock(&m_blocks);
 
     free(strGuardar);
     free(path_basura);
@@ -240,4 +250,18 @@ char* crearStrTripulante(int idTripulante){
     free(posicion);
     string_append(&tripulante,".ims");
     return tripulante;
+}
+
+int validarBitsLibre(int cantidadBloquesAUsar, t_log* log){
+    int contador = 0;
+
+    for(int i=0; i < bitarray_get_max_bit(bitmap); i++){
+        if(bitarray_test_bit(bitmap,i) == 0){
+            contador++;
+            if(contador == cantidadBloquesAUsar){
+                return 1;
+            }
+        }
+    }
+    return -1;
 }

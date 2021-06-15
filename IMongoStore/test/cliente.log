@@ -681,3 +681,70 @@
 [INFO] 18:27:06:386 clienteTest/(21867:21867): Posicion en Y:	167772160
 [INFO] 18:27:06:386 clienteTest/(21867:21867): Tiempo:	285212672
 [INFO] 18:27:06:386 clienteTest/(21867:21867): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:00:44:192 clienteTest/(25862:25862): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:00:44:192 clienteTest/(25862:25862): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:00:44:193 clienteTest/(25862:25862): ID Tripulante:	101
+[INFO] 23:00:44:193 clienteTest/(25862:25862): Tam tarea:	28
+[INFO] 23:00:44:193 clienteTest/(25862:25862): Tarea:	
+[INFO] 23:00:44:194 clienteTest/(25862:25862): Parametros tarea:	50331648
+[INFO] 23:00:44:194 clienteTest/(25862:25862): Posicion en X:%	d
+[INFO] 23:00:44:194 clienteTest/(25862:25862): Posicion en Y:	167772160
+[INFO] 23:00:44:194 clienteTest/(25862:25862): Tiempo:	285212672
+[INFO] 23:00:44:195 clienteTest/(25862:25862): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:10:17:970 clienteTest/(25904:25904): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:10:17:971 clienteTest/(25904:25904): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:10:17:972 clienteTest/(25904:25904): ID Tripulante:	101
+[INFO] 23:10:17:972 clienteTest/(25904:25904): Tam tarea:	24
+[INFO] 23:10:17:972 clienteTest/(25904:25904): Tarea:	
+[INFO] 23:10:17:972 clienteTest/(25904:25904): Parametros tarea:	339821906
+[INFO] 23:10:17:973 clienteTest/(25904:25904): Posicion en X:%	d
+[INFO] 23:10:17:973 clienteTest/(25904:25904): Posicion en Y:	251658240
+[INFO] 23:10:17:973 clienteTest/(25904:25904): Tiempo:	167772160
+[INFO] 23:10:17:973 clienteTest/(25904:25904): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:17:18:092 clienteTest/(26217:26217): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:17:18:093 clienteTest/(26217:26217): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:17:50:642 clienteTest/(26223:26223): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:17:50:730 clienteTest/(26223:26223): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:17:50:746 clienteTest/(26223:26223): ID Tripulante:	101
+[INFO] 23:17:50:747 clienteTest/(26223:26223): Tam tarea:	24
+[INFO] 23:17:50:747 clienteTest/(26223:26223): Tarea:	
+[INFO] 23:17:50:748 clienteTest/(26223:26223): Parametros tarea:	1095062081
+[INFO] 23:17:50:762 clienteTest/(26223:26223): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:25:30:938 clienteTest/(26260:26260): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:25:30:938 clienteTest/(26260:26260): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:25:40:423 clienteTest/(26270:26270): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:25:40:505 clienteTest/(26270:26270): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:25:40:522 clienteTest/(26270:26270): ID Tripulante:	101
+[INFO] 23:25:40:523 clienteTest/(26270:26270): Tam tarea:	24
+[INFO] 23:25:40:523 clienteTest/(26270:26270): Tarea:	
+[INFO] 23:25:40:524 clienteTest/(26270:26270): Parametros tarea:	1095062081
+[INFO] 23:25:40:528 clienteTest/(26270:26270): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:36:57:265 clienteTest/(26352:26352): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:36:57:350 clienteTest/(26352:26352): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:36:57:374 clienteTest/(26352:26352): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:40:34:119 clienteTest/(26376:26376): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:40:34:119 clienteTest/(26376:26376): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:42:07:439 clienteTest/(26391:26391): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:42:07:439 clienteTest/(26391:26391): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:42:28:026 clienteTest/(26399:26399): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:42:28:027 clienteTest/(26399:26399): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:44:10:904 clienteTest/(26417:26417): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:44:10:905 clienteTest/(26417:26417): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:45:30:805 clienteTest/(26432:26432): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:45:30:805 clienteTest/(26432:26432): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:47:58:942 clienteTest/(26452:26452): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:47:58:943 clienteTest/(26452:26452): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 00:42:17:019 clienteTest/(27900:27900): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 00:42:17:020 clienteTest/(27900:27900): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 00:43:04:636 clienteTest/(27917:27917): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 00:43:04:638 clienteTest/(27917:27917): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 00:43:04:639 clienteTest/(27917:27917): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 00:47:09:494 clienteTest/(28084:28084): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 00:47:09:495 clienteTest/(28084:28084): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 00:47:09:497 clienteTest/(28084:28084): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:12:02:551 clienteTest/(2379:2379): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:12:02:620 clienteTest/(2379:2379): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 20:12:02:620 clienteTest/(2379:2379): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:13:53:274 clienteTest/(2615:2615): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:13:53:275 clienteTest/(2615:2615): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 20:13:53:276 clienteTest/(2615:2615): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.

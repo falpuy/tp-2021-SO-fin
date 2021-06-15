@@ -13,10 +13,6 @@
     #include "preparacionFS.h"
 
 
-    
-    pthread_mutex_t mutexBlocks;
-    pthread_mutex_t mutexSuperBloque;
-
     void actualizarArchivo(t_log* log);
 
 #endif

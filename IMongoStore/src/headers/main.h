@@ -7,27 +7,21 @@
     #include <unnamed/server.h>
     #include <signal.h>
     #include <pthread.h>
-    #include "syncFile.h"
     #include <signal.h>
     #include <sys/mman.h>
-
-    #include "preparacionFS.h"
-    
     #include <commons/log.h>
     #include <commons/config.h>
     #include <commons/bitarray.h>
+    #include <pthread.h>
+
+    #include "preparacionFS.h"
+    
 
     #define CONFIG_PATH "../configuraciones/configuracion.config"
-    #define LOG_PATH "../logs/logIMS.log"
+    #define LOG_PATH "../logs/logIMongoStore.log"
     #define PROGRAM "IMS"
-
-    t_log* logIMS;
-    t_config* arch_config;
-    pthread_t threadSelect;
 
     void setearConfiguraciones();
     void finalizarProceso();
-    char* path(char* str);
-
 
 #endif

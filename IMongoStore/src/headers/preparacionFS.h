@@ -19,25 +19,9 @@
     #include <dirent.h>
     #include "atenderTripulantes.h"
 
-    int superBloque;
-    int blocks;
-    int arch_bitmap;
-
-    void* sb_memoria;
-    void* blocks_memory;
-    void* bitmap_memory;
-
-    t_bitarray* bitmap;
-
-    int err;
-
-    void inicializacionFS(t_log* log);
-    void validarDirectorioFS(t_log* log);
-    void generarBitmap(t_log* log);
-    void validarBlocks(t_log* log);
-    void validarSuperBloque(t_log* log);
-    void mapearBlocks(t_log* log);
-
-
+    void inicializacionFS();
+    void validarDirectorioFS();
+    void validarBlocks();
+    void validarSuperBloque();
 
 #endif

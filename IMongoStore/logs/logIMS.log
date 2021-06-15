@@ -1,0 +1,165 @@
+[INFO] 15:52:53:967 IMS/(14689:14689): Validando Existencia de directorios...
+[INFO] 15:52:53:967 IMS/(14689:14689): No existe directorio: Filesystem. Se crea.
+[INFO] 15:52:53:971 IMS/(14689:14689): -----------------------------------------------------
+[INFO] 15:52:53:971 IMS/(14689:14689): Validando existencia de Superbloque.ims....
+[INFO] 15:52:53:972 IMS/(14689:14689): -----------------------------------------------------
+[ERROR] 15:52:53:972 IMS/(14689:14689): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 15:52:53:973 IMS/(14689:14689): Ingresar el tamaño de cada bloque
+[INFO] 15:52:56:041 IMS/(14689:14689): Ingresar la cantidad de bloques
+[ERROR] 15:52:57:406 IMS/(14689:14689): Error al abrir/crear Superbloque
+[INFO] 15:52:57:407 IMS/(14689:14689): Muestro mis valores del bitmap..
+[INFO] 15:53:11:426 IMS/(14691:14691): Validando Existencia de directorios...
+[INFO] 15:53:11:484 IMS/(14691:14691): Ya existe directorio
+[INFO] 15:53:11:487 IMS/(14691:14691): -----------------------------------------------------
+[INFO] 15:53:11:487 IMS/(14691:14691): Validando existencia de Superbloque.ims....
+[INFO] 15:53:11:488 IMS/(14691:14691): -----------------------------------------------------
+[ERROR] 15:53:11:489 IMS/(14691:14691): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 15:53:11:490 IMS/(14691:14691): Ingresar el tamaño de cada bloque
+[INFO] 15:53:14:294 IMS/(14691:14691): Ingresar la cantidad de bloques
+[ERROR] 15:53:15:178 IMS/(14691:14691): Error al abrir/crear Superbloque
+[INFO] 15:53:15:182 IMS/(14691:14691): Muestro mis valores del bitmap..
+[INFO] 15:54:22:881 IMS/(14700:14700): Validando Existencia de directorios...
+[INFO] 15:54:22:882 IMS/(14700:14700): Ya existe directorio
+[INFO] 15:54:22:882 IMS/(14700:14700): -----------------------------------------------------
+[INFO] 15:54:22:882 IMS/(14700:14700): Validando existencia de Superbloque.ims....
+[INFO] 15:54:22:882 IMS/(14700:14700): -----------------------------------------------------
+[ERROR] 15:54:22:883 IMS/(14700:14700): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 15:54:22:883 IMS/(14700:14700): Ingresar el tamaño de cada bloque
+[INFO] 15:54:24:462 IMS/(14700:14700): Ingresar la cantidad de bloques
+[INFO] 15:54:33:866 IMS/(14703:14703): Validando Existencia de directorios...
+[INFO] 15:54:33:867 IMS/(14703:14703): No existe directorio: Filesystem. Se crea.
+[INFO] 15:54:33:870 IMS/(14703:14703): -----------------------------------------------------
+[INFO] 15:54:33:871 IMS/(14703:14703): Validando existencia de Superbloque.ims....
+[INFO] 15:54:33:871 IMS/(14703:14703): -----------------------------------------------------
+[ERROR] 15:54:33:871 IMS/(14703:14703): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 15:54:33:872 IMS/(14703:14703): Ingresar el tamaño de cada bloque
+[INFO] 15:54:35:028 IMS/(14703:14703): Ingresar la cantidad de bloques
+[ERROR] 15:54:36:111 IMS/(14703:14703): Error al abrir/crear Superbloque
+[INFO] 15:54:36:112 IMS/(14703:14703): Muestro mis valores del bitmap..
+[INFO] 15:54:47:881 IMS/(14726:14726): Validando Existencia de directorios...
+[INFO] 15:54:47:882 IMS/(14726:14726): No existe directorio: Filesystem. Se crea.
+[INFO] 15:54:47:885 IMS/(14726:14726): -----------------------------------------------------
+[INFO] 15:54:47:885 IMS/(14726:14726): Validando existencia de Superbloque.ims....
+[INFO] 15:54:47:885 IMS/(14726:14726): -----------------------------------------------------
+[ERROR] 15:54:47:886 IMS/(14726:14726): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 15:54:47:886 IMS/(14726:14726): Ingresar el tamaño de cada bloque
+[INFO] 15:54:48:873 IMS/(14726:14726): Ingresar la cantidad de bloques
+[INFO] 15:54:49:768 IMS/(14726:14726): Muestro mis valores del bitmap..
+[INFO] 15:54:49:769 IMS/(14726:14726): -----------------------------------------------------
+[INFO] 15:54:49:769 IMS/(14726:14726): Se creó archivo superBloque.ims
+[INFO] 15:54:49:769 IMS/(14726:14726): -----------------------------------------------------
+[INFO] 15:54:49:769 IMS/(14726:14726): Validando existencia de Blocks.ims....
+[ERROR] 15:54:49:770 IMS/(14726:14726): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 15:54:49:771 IMS/(14726:14726): -----------------------------------------------------
+[INFO] 15:54:49:772 IMS/(14726:14726): Se creó archivo Blocks.ims
+[INFO] 15:54:49:772 IMS/(14726:14726): -----------------------------------------------------
+[INFO] 15:54:49:772 IMS/(14726:14726): ------------------------------------------------
+[INFO] 15:54:49:772 IMS/(14726:14726): Creando servidor......
+[INFO] 15:54:49:772 IMS/(14726:14726): ------------------------------------------------
+[INFO] 15:54:50:773 IMS/(14726:14726): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 15:54:50:773 IMS/(14726:14726): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 15:55:07:769 IMS/(14735:14735): Validando Existencia de directorios...
+[INFO] 15:55:07:770 IMS/(14735:14735): Ya existe directorio
+[INFO] 15:55:07:771 IMS/(14735:14735): -----------------------------------------------------
+[INFO] 15:55:07:771 IMS/(14735:14735): Validando existencia de Superbloque.ims....
+[INFO] 15:55:07:771 IMS/(14735:14735): -----------------------------------------------------
+[INFO] 15:55:07:771 IMS/(14735:14735): Se encontró el archivo superBloque.ims
+[INFO] 15:55:07:772 IMS/(14735:14735): Muestro mis valores del bitmap..
+[INFO] 15:55:07:772 IMS/(14735:14735): -----------------------------------------------------
+[INFO] 15:55:07:773 IMS/(14735:14735): Se muestra los datos del superBloque.
+[INFO] 15:55:07:773 IMS/(14735:14735): Tamaño de bloque: 3
+[INFO] 15:55:07:773 IMS/(14735:14735): Cantidad de bloques: 64
+[INFO] 15:55:07:773 IMS/(14735:14735): -----------------------------------------------------
+[INFO] 15:55:07:773 IMS/(14735:14735): Validando existencia de Blocks.ims....
+[INFO] 15:55:07:774 IMS/(14735:14735): -----------------------------------------------------
+[INFO] 15:55:07:774 IMS/(14735:14735): Existe archivo Blocks.ims.
+[INFO] 15:55:07:775 IMS/(14735:14735): -----------------------------------------------------
+[INFO] 15:55:07:777 IMS/(14735:14735): ------------------------------------------------
+[INFO] 15:55:07:777 IMS/(14735:14735): Creando servidor......
+[INFO] 15:55:07:777 IMS/(14735:14735): ------------------------------------------------
+[INFO] 15:55:08:778 IMS/(14735:14735): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 15:55:08:778 IMS/(14735:14735): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 15:55:25:059 IMS/(14738:14738): Validando Existencia de directorios...
+[INFO] 15:55:25:060 IMS/(14738:14738): Ya existe directorio
+[INFO] 15:55:25:061 IMS/(14738:14738): -----------------------------------------------------
+[INFO] 15:55:25:061 IMS/(14738:14738): Validando existencia de Superbloque.ims....
+[INFO] 15:55:25:061 IMS/(14738:14738): -----------------------------------------------------
+[INFO] 15:55:25:062 IMS/(14738:14738): Se encontró el archivo superBloque.ims
+[INFO] 15:55:25:062 IMS/(14738:14738): Muestro mis valores del bitmap..
+[INFO] 15:55:25:063 IMS/(14738:14738): -----------------------------------------------------
+[INFO] 15:55:25:063 IMS/(14738:14738): Se muestra los datos del superBloque.
+[INFO] 15:55:25:063 IMS/(14738:14738): Tamaño de bloque: 3
+[INFO] 15:55:25:064 IMS/(14738:14738): Cantidad de bloques: 64
+[INFO] 15:55:25:064 IMS/(14738:14738): -----------------------------------------------------
+[INFO] 15:55:25:066 IMS/(14738:14738): Validando existencia de Blocks.ims....
+[INFO] 15:55:25:067 IMS/(14738:14738): -----------------------------------------------------
+[INFO] 15:55:25:067 IMS/(14738:14738): Existe archivo Blocks.ims.
+[INFO] 15:55:25:068 IMS/(14738:14738): -----------------------------------------------------
+[INFO] 15:55:25:068 IMS/(14738:14738): ------------------------------------------------
+[INFO] 15:55:25:068 IMS/(14738:14738): Creando servidor......
+[INFO] 15:55:25:068 IMS/(14738:14738): ------------------------------------------------
+[INFO] 15:55:26:070 IMS/(14738:14738): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 15:55:26:070 IMS/(14738:14738): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 15:55:31:528 IMS/(14740:14740): Validando Existencia de directorios...
+[INFO] 15:55:31:594 IMS/(14740:14740): Ya existe directorio
+[INFO] 15:55:31:596 IMS/(14740:14740): -----------------------------------------------------
+[INFO] 15:55:31:597 IMS/(14740:14740): Validando existencia de Superbloque.ims....
+[INFO] 15:55:31:598 IMS/(14740:14740): -----------------------------------------------------
+[INFO] 15:55:31:599 IMS/(14740:14740): Se encontró el archivo superBloque.ims
+[INFO] 15:55:31:604 IMS/(14740:14740): Muestro mis valores del bitmap..
+[INFO] 15:55:31:608 IMS/(14740:14740): -----------------------------------------------------
+[INFO] 15:55:31:608 IMS/(14740:14740): Se muestra los datos del superBloque.
+[INFO] 15:55:31:609 IMS/(14740:14740): Tamaño de bloque: 3
+[INFO] 15:55:31:609 IMS/(14740:14740): Cantidad de bloques: 64
+[INFO] 15:55:31:610 IMS/(14740:14740): -----------------------------------------------------
+[INFO] 15:55:31:610 IMS/(14740:14740): Validando existencia de Blocks.ims....
+[INFO] 15:55:31:611 IMS/(14740:14740): -----------------------------------------------------
+[INFO] 15:55:31:612 IMS/(14740:14740): Existe archivo Blocks.ims.
+[INFO] 15:55:31:614 IMS/(14740:14740): -----------------------------------------------------
+[INFO] 15:55:31:617 IMS/(14740:14740): ------------------------------------------------
+[INFO] 15:55:31:623 IMS/(14740:14740): Creando servidor......
+[INFO] 15:55:31:625 IMS/(14740:14740): ------------------------------------------------
+[INFO] 15:55:32:673 IMS/(14740:14740): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 15:55:32:676 IMS/(14740:14740): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 15:57:07:447 IMS/(14747:14747): Validando Existencia de directorios...
+[INFO] 15:57:07:509 IMS/(14747:14747): Ya existe directorio
+[INFO] 15:57:07:511 IMS/(14747:14747): -----------------------------------------------------
+[INFO] 15:57:07:512 IMS/(14747:14747): Validando existencia de Superbloque.ims....
+[INFO] 15:57:07:512 IMS/(14747:14747): -----------------------------------------------------
+[INFO] 15:57:07:513 IMS/(14747:14747): Se encontró el archivo superBloque.ims
+[INFO] 15:57:07:519 IMS/(14747:14747): Muestro mis valores del bitmap..
+[INFO] 15:57:07:522 IMS/(14747:14747): -----------------------------------------------------
+[INFO] 15:57:07:523 IMS/(14747:14747): Se muestra los datos del superBloque.
+[INFO] 15:57:07:523 IMS/(14747:14747): Tamaño de bloque: 3
+[INFO] 15:57:07:524 IMS/(14747:14747): Cantidad de bloques: 64
+[INFO] 15:57:07:524 IMS/(14747:14747): -----------------------------------------------------
+[INFO] 15:57:07:525 IMS/(14747:14747): Validando existencia de Blocks.ims....
+[INFO] 15:57:07:526 IMS/(14747:14747): -----------------------------------------------------
+[INFO] 15:57:07:526 IMS/(14747:14747): Existe archivo Blocks.ims.
+[INFO] 15:57:07:528 IMS/(14747:14747): -----------------------------------------------------
+[INFO] 15:57:07:531 IMS/(14747:14747): ------------------------------------------------
+[INFO] 15:57:07:537 IMS/(14747:14747): Creando servidor......
+[INFO] 15:57:07:539 IMS/(14747:14747): ------------------------------------------------
+[INFO] 15:57:08:587 IMS/(14747:14747): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 15:57:08:594 IMS/(14747:14747): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 15:57:13:373 IMS/(14766:14766): Validando Existencia de directorios...
+[INFO] 15:57:13:444 IMS/(14766:14766): Ya existe directorio
+[INFO] 15:57:13:448 IMS/(14766:14766): -----------------------------------------------------
+[INFO] 15:57:13:451 IMS/(14766:14766): Validando existencia de Superbloque.ims....
+[INFO] 15:57:13:452 IMS/(14766:14766): -----------------------------------------------------
+[INFO] 15:57:13:454 IMS/(14766:14766): Se encontró el archivo superBloque.ims
+[INFO] 15:57:13:463 IMS/(14766:14766): Muestro mis valores del bitmap..
+[INFO] 15:57:13:475 IMS/(14766:14766): -----------------------------------------------------
+[INFO] 15:57:13:476 IMS/(14766:14766): Se muestra los datos del superBloque.
+[INFO] 15:57:13:477 IMS/(14766:14766): Tamaño de bloque: 3
+[INFO] 15:57:13:478 IMS/(14766:14766): Cantidad de bloques: 64
+[INFO] 15:57:13:478 IMS/(14766:14766): -----------------------------------------------------
+[INFO] 15:57:13:479 IMS/(14766:14766): Validando existencia de Blocks.ims....
+[INFO] 15:57:13:480 IMS/(14766:14766): -----------------------------------------------------
+[INFO] 15:57:13:481 IMS/(14766:14766): Existe archivo Blocks.ims.
+[INFO] 15:57:13:483 IMS/(14766:14766): -----------------------------------------------------
+[INFO] 15:57:13:486 IMS/(14766:14766): ------------------------------------------------
+[INFO] 15:57:13:487 IMS/(14766:14766): Creando servidor......
+[INFO] 15:57:13:487 IMS/(14766:14766): ------------------------------------------------
+[INFO] 15:57:14:535 IMS/(14766:14766): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 15:57:14:537 IMS/(14766:14766): [Shared Library]: Esperando conexiones en puerto: 5001

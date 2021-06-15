@@ -287,13 +287,14 @@ void validarBlocks(t_log* log){
         log_error(log, "No se encontró archivo Blocks.ims. Se crea archivo");
         
         blocks = open("Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
+        
         int tamanioAGuardar = (tamanioBloque * cantidadBloques);
         copiaBlocks = malloc(tamanioBloque* cantidadBloques);
         memset(copiaBlocks,' ',tamanioBloque* cantidadBloques);
         
         posix_fallocate(blocks, 0, tamanioAGuardar);        
         close(blocks);
-            
+
         log_info(log, "-----------------------------------------------------");
         log_info(log, "Se creó archivo Blocks.ims");
         log_info(log, "-----------------------------------------------------");

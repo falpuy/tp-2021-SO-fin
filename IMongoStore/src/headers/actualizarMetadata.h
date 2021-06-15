@@ -11,14 +11,22 @@
     #include <math.h>
     #include <commons/config.h>
     #include <commons/log.h>
+    #include "syncFile.h"
 
-    uint32_t tamanioBloque;
-    uint32_t cantidadBloques;
+    #include <commons/bitarray.h>
 
     char* crearNuevaListaBloques(char* listaBloques, int bloqueAgregar);
-    void actualizarBlocks(t_config* metadataBitacora,int bloque,t_log*log);
-    void actualizarBlockCount(t_config* metadataBitacora,t_log*log);
-    void actualizarSize(t_config* metadataBitacora,t_log*log);
-    int setearMD5(char* pathMetadata, t_log* log);
+    void actualizarBlocks(t_config* metadataBitacora,int bloque);
+    int setearMD5(char* pathMetadata);
+    void actualizarBlockCount(t_config* metadataBitacora);
+    void actualizarSize(t_config* metadataBitacora);
+    void crearMetadataBitacora(char* path_tripulante);
+    void crearMetadataFiles(char* path,char* charLlenado);
+    
+    int cantidad_bloques(char* string);
+    char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int posY_n);
+    char* crearStrTripulante(int idTripulante);
+    int validarBitsLibre(int cantidadBloquesAUsar);
+    char* pathCompleto(char* strConcatenar);
     
 #endif

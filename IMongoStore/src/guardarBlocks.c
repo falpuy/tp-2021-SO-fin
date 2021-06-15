@@ -1,20 +1,20 @@
 #include "./headers/guardarBlocks.h"
 
 
-void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag,t_log* logger){ 
+void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag){ 
     //agregar checkeo de si en el ultimo bloque anterior hay fragmentacion interna debo rellenarla
 
     int tamStr = string_length(stringGuardar);
-    int cantidadBloquesAUsar = cantidad_bloques(stringGuardar,logger);
+    int cantidadBloquesAUsar = cantidad_bloques(stringGuardar);
     int cantidadBloquesUsados = 0;
     int posEnString = 0;
     int blockCount = 0;
     char* posicionLista;
                     
-    err = validarBitsLibre(cantidadBloquesAUsar,logger);
+    int err = validarBitsLibre(cantidadBloquesAUsar);
     if(err < 0){
-        log_error(logger, "No existe más espacio para guardar en filesystem");
-        log_error(logger,"Finalizando programa...");
+        log_error(log, "No existe más espacio para guardar en filesystem");
+        log_error(log,"Finalizando programa...");
         exit(-1);
     }
     
@@ -31,7 +31,7 @@ void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag,t_lo
                 
                 //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego lo que me queda del string--> tamañoTotalStr - posicionAntEnStr*tamanioBloque
                 pthread_mutex_lock(&m_blocks);
-                memcpy(blocks_memory + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamStr-posEnString*tamanioBloque);
+                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamStr-posEnString*tamanioBloque);
                 pthread_mutex_unlock(&m_blocks);
                 
                 posEnString ++;                
@@ -40,11 +40,11 @@ void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag,t_lo
                 pthread_mutex_lock(&m_metadata);
                 t_config* metadata = config_create(path_fileTripulante);
 
-                actualizarSize(metadata,logger);
-                actualizarBlocks(metadata,i,logger);
+                actualizarSize(metadata,log);
+                actualizarBlocks(metadata,i,log);
                 if(flag){
-                    actualizarBlockCount(metadata,logger);
-                    //setearMD5(path_fileTripulante,logger);
+                    actualizarBlockCount(metadata,log);
+                    //setearMD5(path_fileTripulante,log);
                 }
                 config_destroy(metadata);
                 pthread_mutex_unlock(&m_metadata);
@@ -56,7 +56,7 @@ void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag,t_lo
                 //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego todo el tamaño del bloque
                 
                 pthread_mutex_lock(&m_blocks);
-                memcpy(blocks_memory + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioBloque);
+                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioBloque);
                 pthread_mutex_unlock(&m_blocks);
                 
                 posEnString ++;
@@ -65,12 +65,12 @@ void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag,t_lo
                 pthread_mutex_lock(&m_metadata);
                 t_config* metadata = config_create(path_fileTripulante);
 
-                actualizarSize(metadata,logger);
-                actualizarBlocks(metadata,i,logger);
+                actualizarSize(metadata,log);
+                actualizarBlocks(metadata,i,log);
                 
                 if(flag){
-                    actualizarBlockCount(metadata,logger);
-                    //setearMD5(path_fileTripulante,logger);
+                    actualizarBlockCount(metadata,log);
+                    //setearMD5(path_fileTripulante,log);
                 }
 
                 config_destroy(metadata); 
@@ -116,12 +116,12 @@ void borrarEnBlocks(char* strABorrar,char* path,int flag,t_log* log){
                 pthread_mutex_lock(&m_metadata);
                 t_config* metadata = config_create(path_fileTripulante);
 
-                actualizarSize(metadata,logger);
-                actualizarBlocks(metadata,i,logger);
+                actualizarSize(metadata,log);
+                actualizarBlocks(metadata,i,log);
                 
                 if(flag){
-                    actualizarBlockCount(metadata,logger);
-                    //setearMD5(path_fileTripulante,logger);
+                    actualizarBlockCount(metadata,log);
+                    //setearMD5(path_fileTripulante,log);
                 }
 
                 config_destroy(metadata); 

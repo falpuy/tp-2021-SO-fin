@@ -12,6 +12,7 @@
     #include <commons/config.h>
     #include <commons/log.h>
     #include "tareas.h"
+
     
     enum COMANDOS{
         OBTENER_BITACORA = 760 ,
@@ -22,9 +23,7 @@
         RESUELTO_SABOTAJE
     };
     
-    char* str_para_blocks;
-    
-    void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
+    void handler(int client, char* identificador, int comando, void* payload,t_log* log);
     
 
 #endif

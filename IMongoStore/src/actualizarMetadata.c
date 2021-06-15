@@ -21,7 +21,7 @@ char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar){
     return listaNueva;
 }
 
-void actualizarBlocks(t_config* metadataBitacora,int bloque,t_log*log){
+void actualizarBlocks(t_config* metadataBitacora,int bloque){
     char* lista = config_get_string_value(metadataBitacora,"BLOCKS"); 
 
     log_info(log,"[ActualizarBlocks] Muestro lista levantada vieja de metadata:%s\t",lista);
@@ -34,14 +34,14 @@ void actualizarBlocks(t_config* metadataBitacora,int bloque,t_log*log){
     free(bloquesNuevos);
 }
 
-int setearMD5(char* pathMetadata, t_log* log){
+int setearMD5(char* pathMetadata){
     char *comando = string_new();
     string_append(&comando, "md5sum ");
     string_append(&comando, pathMetadata);
     return system(comando);
 }
 
-void actualizarBlockCount(t_config* metadataBitacora,t_log*log){
+void actualizarBlockCount(t_config* metadataBitacora){
     int blockCount = config_get_int_value(metadataBitacora,"BLOCK_COUNT");
     blockCount += 1;
 
@@ -55,7 +55,7 @@ void actualizarBlockCount(t_config* metadataBitacora,t_log*log){
     config_save(metadataBitacora);
 }
 
-void actualizarSize(t_config* metadataBitacora,t_log*log){
+void actualizarSize(t_config* metadataBitacora){
     int size = config_get_int_value(metadataBitacora,"SIZE");
     size += tamanioBloque;
 
@@ -68,4 +68,103 @@ void actualizarSize(t_config* metadataBitacora,t_log*log){
     free(str_size);
     config_save(metadataBitacora);
 
+}
+
+
+void crearMetadataFiles(char* path,char* charLlenado){
+    int fd = creat(path,0666);
+    if(fd < 0){
+        perror("Error:");
+    }else{
+        close(fd);
+        t_config* file = config_create(path);
+        
+        config_set_value(file, "SIZE", "0");
+        config_set_value(file, "BLOCK_COUNT", "0");
+        config_set_value(file, "BLOCKS", "[]");
+        config_set_value(file, "CARACTER_LLENADO", charLlenado);
+        config_set_value(file, "MD5", "0");
+
+        config_save_in_file(file,path);
+        config_destroy(file);
+
+    }
+}
+
+void crearMetadataBitacora(char* path_tripulante){
+    int fd = creat(path_tripulante,0666);
+    if(fd < 0){
+        perror("Error:");
+    }else{
+        close(fd);
+        t_config* bitacoraTripulante = config_create(path_tripulante);
+        
+        config_set_value(bitacoraTripulante, "SIZE", "0");
+        config_set_value(bitacoraTripulante, "BLOCKS", "[]");
+
+        config_save_in_file(bitacoraTripulante,path_tripulante);
+        config_destroy(bitacoraTripulante);
+
+    }
+}
+
+
+int cantidad_bloques(char* string){
+    double cantidad;
+    double tamanioString = string_length(string);
+    cantidad = tamanioString / tamanioBloque;
+    int valorFinal = (int) ceil(cantidad);
+
+    return valorFinal; //round up
+}
+
+
+
+char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int posY_n){
+    char* temporal = string_new();
+    char* posicion  = string_itoa(posX_v);
+    string_append(&temporal,"Se mueve de ");
+    string_append(&temporal,posicion);
+    free(posicion);
+    string_append(&temporal,"|");
+    posicion  = string_itoa(posY_v);
+    string_append(&temporal,posicion);
+    free(posicion);
+    string_append(&temporal," a ");
+    posicion  = string_itoa(posX_n);
+    string_append(&temporal,posicion);
+    free(posicion);
+    string_append(&temporal,"|");
+    posicion = string_itoa(posY_n);
+    string_append(&temporal,posicion);
+    free(posicion);
+    return temporal;
+}
+
+char* crearStrTripulante(int idTripulante){
+    char* posicion = string_itoa(idTripulante);
+    char* tripulante = string_new();
+    string_append(&tripulante,"Tripulante");
+    string_append(&tripulante,posicion);
+    free(posicion);
+    string_append(&tripulante,".ims");
+    return tripulante;
+}
+
+int validarBitsLibre(int cantidadBloquesAUsar){
+    int contador = 0;
+
+    for(int i=0; i < bitarray_get_max_bit(bitmap); i++){
+        if(bitarray_test_bit(bitmap,i) == 0){
+            contador++;
+            if(contador == cantidadBloquesAUsar){
+                return 1;
+            }
+        }
+    }
+    return -1;
+}
+
+char* pathCompleto(char* strConcatenar){
+    return string_from_format("%s/%s",datosConfig->puntoMontaje,strConcatenar);
 }

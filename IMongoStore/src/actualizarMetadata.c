@@ -24,9 +24,9 @@ char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar){
 void actualizarBlocks(t_config* metadataBitacora,int bloque){
     char* lista = config_get_string_value(metadataBitacora,"BLOCKS"); 
 
-    log_info(log,"[ActualizarBlocks] Muestro lista levantada vieja de metadata:%s\t",lista);
+    log_info(logger,"[ActualizarBlocks] Muestro lista levantada vieja de metadata:%s\t",lista);
     char* bloquesNuevos = crearNuevaListaBloques(lista,bloque);
-    log_info(log,"\n[ActualizarBlocks] Lista de bloques nuevos: %s\n",bloquesNuevos);
+    log_info(logger,"\n[ActualizarBlocks] Lista de bloques nuevos: %s\n",bloquesNuevos);
 
     config_set_value(metadataBitacora,"BLOCKS",bloquesNuevos);
     config_save(metadataBitacora);

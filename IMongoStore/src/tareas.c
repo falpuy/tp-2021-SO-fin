@@ -25,7 +25,7 @@ void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro){
         case DESCARTAR_BASURA:
         break;
         default:
-            log_error(log,"[ComienzaEjecutarTarea] No existe comando");
+            log_error(logger,"[ComienzaEjecutarTarea] No existe comando");
         break;   
     }
 }
@@ -36,33 +36,33 @@ void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro){
     int comando = comandoTarea(tarea);
     switch(comando){
         case GENERAR_OXIGENO:
-            log_info(log,"Generando oxigeno...");
+            log_info(logger,"Generando oxigeno...");
             generarOxigeno(parametro);
         break;
         case CONSUMIR_OXIGENO:
-            log_info(log,"Consumiendo oxigeno...");
+            log_info(logger,"Consumiendo oxigeno...");
             consumirOxigeno(parametro);
         break;
         case GENERAR_COMIDA:
-            log_info(log,"Generando comida...");
+            log_info(logger,"Generando comida...");
             generarComida(parametro);
         break;
         case CONSUMIR_COMIDA:
-            log_info(log,"Consumiendo comida...");
+            log_info(logger,"Consumiendo comida...");
             consumirComida(parametro);
         break;
         case GENERAR_BASURA:
-            log_info(log,"Generando basura...");
+            log_info(logger,"Generando basura...");
             generarBasura(parametro);
 
         break;
         case DESCARTAR_BASURA:
-            log_info(log,"Descartando basura...");
+            log_info(logger,"Descartando basura...");
             descartarBasura(parametro);
 
         break;
         default:
-            log_error(log,"[ComienzaEjecutarTarea] No existe comando");
+            log_error(logger,"[ComienzaEjecutarTarea] No existe comando");
         break;   
     }
 }
@@ -73,8 +73,8 @@ void consumirOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Tareas/Oxigeno.ims");
     
     if(access(path_oxigeno,F_OK)<0){
-        log_error(log, "No existe Oxigeno.ims");
-        log_error(log, "Finalizando Tarea..");
+        log_error(logger, "No existe Oxigeno.ims");
+        log_error(logger, "Finalizando Tarea..");
         //TODO: FINALIZAR TAREA?
     }
 
@@ -88,8 +88,8 @@ void consumirComida(int parametroTarea){
     char* path_comida = pathCompleto("Tareas/Comida.ims");
     
     if(access(path_comida,F_OK)<0){
-        log_error(log, "No existe Comida.ims");
-        log_error(log, "Finalizando Tarea..");
+        log_error(logger, "No existe Comida.ims");
+        log_error(logger, "Finalizando Tarea..");
         //TODO: FINALIZAR TAREA?
     }
 
@@ -103,7 +103,7 @@ void descartarBasura(int parametroTarea){
     char* path_basura = pathCompleto("Tareas/Basura.ims");
     
     if(access(path_basura,F_OK)<0){
-        log_error(log, "No existe Basura.ims");
+        log_error(logger, "No existe Basura.ims");
     }else{
         remove(path_basura);
     }
@@ -115,15 +115,15 @@ void generarOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Tareas/Oxigeno.ims");
     
     if(access(path_oxigeno,F_OK)<0){
-        log_info(log, "No existe Oxigeno.ims...Se crea archivo");
+        log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
         crearMetadataFiles(path_oxigeno,"O");
     }
 
     char* strGuardar = string_repeat('O',parametroTarea);
     
-    pthread_mutex_lock(&m_blocks);
+    // pthread_mutex_lock(&m_blocks);
     guardarEnBlocks(strGuardar,path_oxigeno,1);
-    pthread_mutex_unlock(&m_blocks);
+    // pthread_mutex_unlock(&m_blocks);
 
 
     free(strGuardar);
@@ -134,15 +134,15 @@ void generarComida(int parametroTarea){
     char* path_comida = pathCompleto("Tareas/Basura.ims");
     
     if(access(path_comida,F_OK)<0){
-        log_info(log, "No existe Oxigeno.ims...Se crea archivo");
+        log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
         crearMetadataFiles(path_comida,"C");
     }
 
     char* strGuardar = string_repeat('C',parametroTarea);
     
-    pthread_mutex_lock(&m_blocks);
+    // pthread_mutex_lock(&m_blocks);
     guardarEnBlocks(strGuardar,path_comida,1);
-    pthread_mutex_unlock(&m_blocks);
+    // pthread_mutex_unlock(&m_blocks);
 
     free(strGuardar);
     free(path_comida);
@@ -152,15 +152,15 @@ void generarBasura(int parametroTarea){
     char* path_basura = pathCompleto("Tareas/Basura.ims");
     
     if(access(path_basura,F_OK)<0){
-        log_info(log, "No existe Oxigeno.ims...Se crea archivo");
+        log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
         crearMetadataFiles(path_basura,"B");
     }
 
     char* strGuardar = string_repeat('B',parametroTarea);
     
-    pthread_mutex_lock(&m_blocks);
+    // pthread_mutex_lock(&m_blocks);
     guardarEnBlocks(strGuardar,path_basura,1);
-    pthread_mutex_unlock(&m_blocks);
+    // pthread_mutex_unlock(&m_blocks);
 
     free(strGuardar);
     free(path_basura);

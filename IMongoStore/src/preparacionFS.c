@@ -8,45 +8,45 @@ void inicializacionFS(){
 }
 
 void validarDirectorioFS(){
-    log_info(log, "Validando Existencia de directorios...");
+    log_info(logger, "Validando Existencia de directorios...");
     DIR* dir = opendir("../Filesystem");
     if(ENOENT == errno){
-        log_info(log, "No existe directorio: Filesystem. Se crea.");
+        log_info(logger, "No existe directorio: Filesystem. Se crea.");
         mkdir("../Filesystem", 0777);
         mkdir("../Filesystem/Bitacoras",0777);
         mkdir("../Filesystem/Files",0777);
         closedir(dir);
     }
     else{
-        log_info(log, "Ya existe directorio");
+        log_info(logger, "Ya existe directorio");
         closedir(dir);
     }
 }
 
 void validarSuperBloque(){
-    log_info(log, "-----------------------------------------------------");
-    log_info(log, "Validando existencia de Superbloque.ims....");
-    log_info(log, "-----------------------------------------------------");
+    log_info(logger, "-----------------------------------------------------");
+    log_info(logger, "Validando existencia de Superbloque.ims....");
+    log_info(logger, "-----------------------------------------------------");
 
 
     if(access("../Filesystem/SuperBloque.ims",F_OK) < 0){
-        log_error(log, "No se encontró archivo SuperBloque.ims. Se crea archivo");
+        log_error(logger, "No se encontró archivo SuperBloque.ims. Se crea archivo");
            
-        log_info(log, "Ingresar el tamaño de cada bloque");
+        log_info(logger, "Ingresar el tamaño de cada bloque");
         scanf("%d", &tamanioBloque);
-        log_info(log, "Ingresar la cantidad de bloques");
+        log_info(logger, "Ingresar la cantidad de bloques");
         scanf("%d", &cantidadBloques);
 
         while (cantidadBloques % 8 != 0) {
-            log_error(log, "La cantidad de bloques debe ser divisible por 8");
-            log_info(log, "Ingresar cantidad de bloques");
+            log_error(logger, "La cantidad de bloques debe ser divisible por 8");
+            log_info(logger, "Ingresar cantidad de bloques");
             scanf("%d", &cantidadBloques);
         }
 
         int superBloque = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR,0664);
         
         if(superBloque<0){
-            log_error(log, "Error al abrir/crear Superbloque");
+            log_error(logger, "Error al abrir/crear Superbloque");
         }
         
         posix_fallocate(superBloque, 0, sizeof(uint32_t) * 2 + cantidadBloques / 8);
@@ -61,7 +61,7 @@ void validarSuperBloque(){
             bitarray_clean_bit(bitmap,i);    
         }
         
-        log_info(log, "Muestro mis valores del bitmap..");
+        log_info(logger, "Muestro mis valores del bitmap..");
         for(int i=0; i<cantidadBloques; i++){
             printf("%d",bitarray_test_bit(bitmap,i));
 
@@ -75,24 +75,24 @@ void validarSuperBloque(){
         
         int err = msync(sb_memoria, 2*sizeof(uint32_t) + cantidadBloques/8, MS_SYNC);
         if(err == -1){
-            log_error(log, "[SuperBloque] Error de sincronizar a disco SuperBloque");
+            log_error(logger, "[SuperBloque] Error de sincronizar a disco SuperBloque");
         }
 
         close(superBloque);
         err = munmap(sb_memoria, sizeof(uint32_t)*2);
         if (err == -1){
-            log_error(log, "[SuperBloque] Error al liberal la memoria mapeada de tamañoBloque y cantidadBloque");
+            log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada de tamañoBloque y cantidadBloque");
         }
 
         close(superBloque);
 
-        log_info(log, "-----------------------------------------------------");
-        log_info(log, "Se creó archivo superBloque.ims");
-        log_info(log, "-----------------------------------------------------");
+        log_info(logger, "-----------------------------------------------------");
+        log_info(logger, "Se creó archivo superBloque.ims");
+        log_info(logger, "-----------------------------------------------------");
 
     }else{
 
-        log_info(log, "Se encontró el archivo superBloque.ims");
+        log_info(logger, "Se encontró el archivo superBloque.ims");
 
         int superBloque = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
         
@@ -108,7 +108,7 @@ void validarSuperBloque(){
         memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
         bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
         
-        log_info(log, "Muestro mis valores del bitmap..");
+        log_info(logger, "Muestro mis valores del bitmap..");
         for(int i=0; i<cantidadBloques; i++){
             printf("%d",bitarray_test_bit(bitmap,i));
 
@@ -119,26 +119,26 @@ void validarSuperBloque(){
         err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
         
         if (err == -1){
-            log_error(log, "[SuperBloque] Error al liberal la memoria mapeada de tamañoBloque y cantidadBloque");
+            log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada de tamañoBloque y cantidadBloque");
         }
 
         close(superBloque);
 
-        log_info(log, "-----------------------------------------------------");
-        log_info(log, "Se muestra los datos del superBloque.");
-        log_info(log, "Tamaño de bloque: %d", tamanioBloque);
-        log_info(log, "Cantidad de bloques: %d", cantidadBloques);
-        log_info(log, "-----------------------------------------------------");
+        log_info(logger, "-----------------------------------------------------");
+        log_info(logger, "Se muestra los datos del superBloque.");
+        log_info(logger, "Tamaño de bloque: %d", tamanioBloque);
+        log_info(logger, "Cantidad de bloques: %d", cantidadBloques);
+        log_info(logger, "-----------------------------------------------------");
     }
 }
 
 
 void validarBlocks(){
-    log_info(log, "Validando existencia de Blocks.ims....");
+    log_info(logger, "Validando existencia de Blocks.ims....");
     
 
     if(access("../Filesystem/Blocks.ims",F_OK) < 0){
-        log_error(log, "No se encontró archivo Blocks.ims. Se crea archivo");
+        log_error(logger, "No se encontró archivo Blocks.ims. Se crea archivo");
         
         int blocks = open("../Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
         
@@ -150,13 +150,13 @@ void validarBlocks(){
         close(blocks);
     
 
-        log_info(log, "-----------------------------------------------------");
-        log_info(log, "Se creó archivo Blocks.ims");
-        log_info(log, "-----------------------------------------------------");
+        log_info(logger, "-----------------------------------------------------");
+        log_info(logger, "Se creó archivo Blocks.ims");
+        log_info(logger, "-----------------------------------------------------");
 
     }else{
-        log_info(log, "-----------------------------------------------------");
-        log_info(log,"Existe archivo Blocks.ims.");
+        log_info(logger, "-----------------------------------------------------");
+        log_info(logger,"Existe archivo Blocks.ims.");
         
         int blocks = open("../Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
         copiaBlocks = malloc(tamanioBloque*cantidadBloques);
@@ -166,7 +166,7 @@ void validarBlocks(){
         munmap(blocks_memory,tamanioBloque*cantidadBloques);
         close(blocks);
 
-        log_info(log, "-----------------------------------------------------");
+        log_info(logger, "-----------------------------------------------------");
 
     }
 }

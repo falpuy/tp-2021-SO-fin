@@ -33,10 +33,10 @@
     
     t_bitarray* bitmap;
     t_config* config;
-    t_log* log;
+    t_log* logger;
 
-    pthread_mutex_t m_blocks;
-    pthread_mutex_t m_bitmap;
+    pthread_mutex_t blocks_bitmap;
+    pthread_mutex_t logMutex;
     pthread_mutex_t m_superBloque;
     pthread_mutex_t m_metadata;
     

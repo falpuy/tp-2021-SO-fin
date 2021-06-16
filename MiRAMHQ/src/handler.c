@@ -4,289 +4,342 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 
     switch (opcode){
-        case INICIAR_TRIPULANTE:
-            // Será el encargado de crear la o las estructuras administrativas necesarias para que un tripulante pueda ejecutar.
-            // En caso de que no se encuentre creada la patota a la que pertenece, deberá solicitar el listado de tareas.
+        case INICIAR_PATOTA: // idPCB - tareas - cantTCB - IDTCB.... (N id)
+        
+      			//---------------------Deserializar -------------------------------
+        		char* idPCB, tareas;
+        		int cantTripulantes, tamStrPCB, tamStrTareas;
+        		int tcbs[cantidadTripulantes];
+        		int offset = 0;
+        
+        		memcpy(&tamStrPCB,payload,sizeof(int));
+            offset += sizeof(int);
+            idPCB = malloc(tamStrPCB + 1);
+        
+        		memcpy(idPCB, payload + offset ,tamStrPCB);
+            offset += tamStrPCB;
+        
+        		memcpy(&tamStrTareas,payload,sizeof(int));
+            offset += sizeof(int);
+            tareas = malloc(tamStrTareas + 1);
+        
+        		memcpy(tareas, payload + offset, tamStrTareas);
+        		offset += tamSrtTareas;
+        
+        
+        		//-----------------------------------------------------------------
 
-            // Recibo el id de la patota correspondiente al tripulante
+            // Recibe el idPCB para iniciar la patota y los idTCB de los tripulantes que pertenecen a la misma para crearlos tambien.
+
+            // Primero chequeo por errores, asi no queda el pcb guardado en memoria faltandole cosas
+
+            // Error por si se ingresa una cantidad menor o igual a cero de tripulantes
+
+            if(cantTripulantes <= 0){
+
+                //COMANDO ERROR, INGRESO UN NUMERO INCORRECTO DE TRIPULANTES: 560
+
+                _send_message(fd, "RAM", 560, "", 1, logger);
+
+                break;
+
+            }
+
+
+
+            // IMPORTANTE::: primero que nada hay que ver si nos va a alcanzar la memoria para guardar todo, porque sino habria que revertirlo y seria un quilombo. Chequear si hay espacio para el segmento del PCB, el de las tareas, y para los de todos los TCB... falta hacerlo
+
+            
+
+            // Recibo el id de la patota correspondiente
+
+
 
             // Busco la tabla de segmentos en el diccionario -> dictionary_has_key()
 
+
+
             // Si no existe la patota
+
                 // pido las tareas de la patota X
 
-            // Si existe la patota
+            if (dictionary_has_key(diccionario, idPCB)){
 
-                // Me traigo ese segmento de patota para usar la direccion de las tareas
-                // Busco la primer tarea de la lista correspondiente al pcb del tripulante
-                // Creo el segmento del tripulante
-                // asigno la ubicacion de la siguiente tarea al segmento
+                //COMANDO ERROR: YA EXISTE LA PATOTA, ERROR --> 550
+
+                _send_message(fd, "RAM", 550 , "", 1 ,logger);
+
+                break;
+
+            }
+
+
+
+            // Si no existe la patota
+
+            else {
+
+
+
+                // Creo el segmento de la patota, para ello necesito idPCB y las tasks(, numero de segmento que tomara y su base y limite?)
+
+                pcb nuevoPCB = pcb_create(idPCB, tasks);
+
+                segment* patota = crear_segmento(nuevoPCB);
+
                 // Busco espacio libre
 
-                // Si hay espacio
-                    // guardo el segmento
-                    // Agrego el segmento a la lista
-                    // Devuelvo la tarea del tripulante
+                int resultadoMemoria = operacion_de_memoria(&memory, &m_size, &diccionario, patota);
 
-                    //// Agrego el tcb en el mapa
-                
-                // Si no hay espacio
-                    // Realizo compactacion
-                    // Busco espacio libre
-                    
-                    // Si hay espacio
-                        // guardo el segmento
-                        // Agrego el segmento a la lista
-                        // Devuelvo la tarea del tripulante
+                if(resultadoMemoria == 0){
 
-                        //// Agrego el tcb en el mapa
-                    
-                    // No hay espacio
-                        // Envio mensaje de Error
+                    //COMANDO ERROR POR FALTA DE MEMORIA: 555
 
-            // ------------- Analizar Caso ------------- //
+                    _send_message(fd, "RAM", 555, "", 1, logger);
 
-            // verifico si existe el segmento del tripulante
-                // Si existe el tripulante
-                    // Verifico si tiene la direccion a la proxima tarea a ejecutar
-                    // Busco la tarea correspondiente a la direccion (o la primer tarea, si no tiene)
-                    // Actualizo el segmento con la proxima tarea
-                    // Devuelvo la tarea del tripulante
+                    break;
 
-        break;
+                }
 
-        case RECIBIR_TAREAS_PATOTA:
+                /*int operacion_de_memoria(void* memory, void* m_size, void* diccionario, void* elemento_a_operar) // Preguntarle tipos a agus{
 
-         //pcb *patota = deserialize_pcb(buffer, &tasks_size);
-        log_info(logger, "entre en el case");
+                    int total_size = elemento_a_operar->limit - elemento_a_operar->baseAddr;
 
-        //ejemplo falsoPCB, tiene un int y un vector de char* que tiene dos char*
-        //
-        //variables
-        int offset = 0;
-        falsoPCB* pcb = malloc(sizeof(falsoPCB));
-        int temp = 0;
-        //sacamos el int
-        memcpy(&offset, buffer, sizeof(int));
-        pcb->idPat = offset;
-        log_info(logger, "%d", pcb->idPat); //log para testear que salga bien
-        //sacamos el primer string
-        offset=sizeof(int)*2;
-        memcpy(&temp, buffer + sizeof(int), sizeof(int));
-        pcb->tripulantes[0] = malloc(temp + 1);
-        memcpy(pcb->tripulantes[0], buffer + offset, temp);
-        pcb->tripulantes[0][temp+1] = '\0';
-        offset+=temp;
-        offset+=1;
-        log_info(logger, "%s", pcb->tripulantes[0]); //log para testear que salga bien
-        //sacamos el segundo string (aca hay algo que no funca btw)
-        memcpy(&temp, buffer + offset, sizeof(int));
-        offset+=sizeof(int);
-        pcb->tripulantes[1] = malloc(temp + 1);
-        memcpy(pcb->tripulantes[1], buffer + offset, temp);
-        pcb->tripulantes[1][temp] = '\0';
-        log_info(logger, "%s", pcb->tripulantes[1]); //log para testear que salga bien
+                    int found_segment = memory_seek(memory, m_size, diccionario, total_size);
 
-        log_info(logger, "%d %s %s", pcb->idPat, pcb->tripulantes[0], pcb->tripulantes[1]); //log que muestra todo el pcb falso de testeo
+                    if(found_segment >0) {
 
-        break;
-        /*
-        case RECIBIR_TAREAS_PATOTA:
+                        printf("Encontre espacio, guardando segmento...");
 
-            // Recibo ID_PATOTA + LISTA_TAREAS
-            
-            // creo el segmento e info de las tareas asociado al pcb
+                        memcpy(memory + found_segment, elemento_a_operar, total_size);
 
-            // Busco espacio libre para tareas
-            
-            // si hay espacio
-                // Guardo las tareas en memoria
-                // Actualizo el segmento de tareas con base | limite
+                        return 1;
 
-                --------- PCB ---------
-                // Creo el segmento para el pcb
-                // Asocio la direccion de inicio de las tareas al pcb -> base
-                // Busco espacio para el segmento de pcb
-                
-                // si hay espacio
+                    }
 
-                    // Guardo el pcb en memoria
-                    // Agrego el segmento pcb a la lista
-                    // Agrego el segmento tareas a la lista
-                    // Agregar la lista de segmentos al diccionario
-                    // Envio mensaje de OK
-                
-                // Si no hay espacio
-                    // Realizo compactacion
-                    // Busco espacio libre
-                    
-                    // Si hay
-                        // Guardo el pcb en memoria
-                        // Agrego el segmento pcb a la lista
-                        // Agrego el segmento tareas a la lista
-                        // Envio mensaje de OK
-                    
-                    // si no hay
-                        // Elimino el segmento de tareas guardado en memoria
-                        // No guardo los segmentos en la lista de segmentos
-                        // Envio mensaje de Error
-
-            
-            // Si no hay espacio
-                // Realizo compactacion
-                // Busco espacio libre
-                
-                // Si hay
-                    // Guardo las tareas en memoria
-
-                    --------- PCB ---------
-                    // Creo el segmento para el pcb
-                    // Asocio la direccion de inicio de las tareas al pcb
-                    // Busco espacio para el segmento de pcb
-                    
-                    // si hay espacio
-                        // Guardo el pcb en memoria
-                        // Agrego el segmento pcb a la lista
-                        // Agrego el segmento tareas a la lista
-                        // Envio mensaje de OK
-                    
                     // Si no hay espacio
-                        // Elimino el segmento de tareas guardado en memoria
-                        // No guardo los segmentos en la lista de segmentos
-                        // Envio mensaje de Error
+
+                        // Realizo compactacion
+
+                        // Busco espacio libre
+
+                    else {
+
+                        printf("No encontre ningun segmento libre.. Iniciando compactacion.\n");
+
+
+
+                        memory_compaction(memory, m_size, diccionario);
+
+
+
+                        printf("Buscando un segmento de tamanio: %d\n", total_size);
+
+
+
+                        found_segment = memory_seek(memory, m_size, diccionario, total_size);
+
+                        // Si hay espacio
+
+                            // guardo el segmento
+
+                            // Agrego el segmento a la lista
+
+                            // Devuelvo la tarea del tripulante
+
+                        if(found_segment > 0){
+
+                            printf("Encontre espacio, guardando segmento...");
+
+                            memcpy(memory + found_segment, elemento_a_operar, total_size);
+
+                            return 1;
+
+                        }
+
+                        // No hay espacio
+
+                            // Envio mensaje de Error
+
+                        else {
+
+                            return 0;
+
+                        }
+
+                    }
+
+                }*/
 
                 
-                // si no hay
-                    // Elimino el segmento de tareas guardado en memoria
-                    // No guardo los segmentos en la lista de segmentos
-                    // Envio mensaje de Error
 
+                //Creo el segmento de tareas y lo guardo en memoria
 
-            // ------------------------------------ IGNORE -------------------------------------//
+                segment* tareas = crear_segmento(tasks);
 
-            // recibirá el listado de tareas de la patota y los almacenará en la memoria.
+                // Busco espacio libre
 
-            // deserializo el payload
-            pcb *patota = deserialize_pcb(buffer);
-            
-            // ------------ PCB ID ------------ //
+                resultadoMemoria = operacion_de_memoria(&memory, &m_size, &diccionario, patota);
 
-            int total_size = sizeof(uint32_t);
+                if(resultadoMemoria == 0){
 
-            // Busco una direccion en memoria con el tamanio necesario para guardar el buffer
-            int addr = get_available_location(memory, total_size);
-            
-            // Creo el segmento asociado
-            segment *new_segment = malloc(sizeof(segment));
-            new_segment -> baseAddr = addr;
-            new_segment -> limit = total_size;
+                    //COMANDO ERROR_POR_FALTA_DE_MEMORIA: 555
 
-            // Agrego el numero de segmento
-            // Busco el ultimo indice que se agrego en la lista de segmentos y agrego uno mas
-            new_segment -> nroSegmento = get_last_index(segmentTable) + 1;
+                    _send_message(fd, "RAM", 555, "", 1, logger);
 
-            // Agrego el segmento a la lista
-            list_add(segmentTable, new_segment);
-            
-            // Asocio el segmento al pcb
-            p_info *info = malloc(sizeof(p_info));
-            info -> id = patota -> pid;
-            info -> isTask = 0; // false
-            info -> nroSegmento = new_segment -> nroSegmento;
+                    break;
 
-            // Guardo la info del pcb
-            list_add(infoTable, info);
-            
-            // Agrego los datos a la memoria
-            save_data(memory, new_segment, pcb -> id, total_size);
+                }
 
-            // ------------ PCB TASKS ------------ //
+                
 
-            total_size = tasks_size;
+                // Empiezo a crear los TCB
 
-            // Busco una direccion en memoria con el tamanio necesario para guardar el buffer
-            addr = get_available_location(memory, total_size);
-            
-            // Creo el segmento asociado
-            segment *task_segment = malloc(sizeof(segment));
-            task_segment -> baseAddr = addr;
-            task_segment -> limit = total_size;
+                for(int i=1, i<=cantTripulantes, i++){
 
-            // Agrego el numero de segmento
-            // Busco el ultimo indice que se agrego en la lista de segmentos y agrego uno mas
-            task_segment -> nroSegmento = get_last_index(segmentTable) + 1;
-            
-            // Asocio el segmento al pcb
-            p_info *info = malloc(sizeof(p_info));
-            info -> id = patota -> pid;
-            info -> isTask = 1; // true
-            info -> nroSegmento = task_segment -> nroSegmento;
+                    // Creo el segmento del tripulante
 
-            // Guardo la info del pcb
-            list_add(infoTable, info);
-            
-            // Agrego los datos a la memoria
-            save_data(memory, task_segment, pcb -> tasks, total_size);
+                    tcb nuevoTripulante = crear_tripulante(idPCB, i, buffer); // Nota: adentro va a buscar la proxima tarea y asignarla
 
-            // Devolver primer tarea
-            int t_size;
-            memcpy(&t_size, patota -> tasks, sizeof(int));
-            char *task = malloc(t_size);
-            memcpy(task, patota -> tasks + sizeof(int), t_size);
+                    /*// Me traigo ese segmento de patota para usar la direccion de las tareas
 
-            // Limpiar la memoria de la primer task ?????
-            // Actualizar el address del segmento ????
+                        t_queue* segmento_patota = dictionary_get(diccionario, idPCB);
 
-            // Actualizo el puntero qe devuelve las tareas.
+                        // Busco la primer tarea de la lista correspondiente al pcb del tripulante
 
-            // Agrego el segmento a la lista
-            list_add(segmentTable, task_segment);
+                        segment* tareas = obtener_tareas(segmento_patota);
 
-            _send_message(fd, "RAM", INICIAR_TRIPULANTE, task, t_size);
+                        char* proximaTarea = get_next_task(memory, tareas->baseAddr, tareas->limit);
+
+                        nuevoTripulante->next = proximaTarea;*/
+
+                    segment* tripulante = crear_segmento(nuevoTripulante);
+
+                    // Busco espacio libre
+
+                    int resultadoMemoria = operacion_de_memoria(&memory, &m_size, &diccionario, patota);
+
+                    if(resultadoMemoria == 0){
+
+                        //COMANDO ERROR_POR_FALTA_DE_MEMORIA: 555
+
+                        _send_message(fd, "RAM", 555, "", 1, logger);
+
+                        break;
+
+                    }
+
+                }
 
         break;
-        */
-        case RECIBIR_UBICACION_TRIPULANTE:
-            //ID_PATOTA, ID_TCB, POS_X, POS_Y
+        
+        case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y
 
-            // Recibo id tcb
-            // Recibo id patota
-            // Buscar la tabla de segmentos correspondiente al id de patota
+            char* idPCB;
+            int tamStrPCB,idTCB,posX,posY;
+            int offset = 0;
+						
             
-            // t_queue *tabla_temp = get_tabla_pcb(id_pcb)
-
-            // Busco la info del tcb por id, y busco el segmento con el nroSegmento
-            // Me traigo la info de memoria en un struct tcb
-            // actualizo los datos del struct
-            // Reemplazo los datos del tcb en la misma posicion de memoria
+        //------------Deserializo parámetros-------------------
+            memcpy(&tamStrPCB,payload,sizeof(int));
+            offset += sizeof(int);
+            idPCB = malloc(tamStrPCB + 1);
             
-            //// Actualizo el tcb en el mapa
+            memcpy(idPCB, payload + offset ,tamStrPCB);
+            offset += tamStrPCB;
+            
+            memcpy(&idTCB, payload + offset, sizeof(int));
+            offset += sizeof(int);
+            
+						memcpy(&posX, payload + offset, sizeof(int));
+            offset += sizeof(int);
+              
+						memcpy(&posY, payload + offset, sizeof(int));
+        //----------------------------------------------------
+              
+              {idPCB: valor}
+            --> t_queue* segmento_pcb = dictionary_get(diccionario, idPCB);
 
-            // Envio mensaje de OK
+            segment* segmento_tcb = get_tcb_by_id(segmento_pcb, idTCB);
+
+            tcb* nuestroTCB = get_tcb_from_memory(memory, m_size, segmento_tcb);
+
+            int error = save_tcb_in_memory(&memory, m_size, segmento_tcb, nuestroTCB);
+					
+            char* respuesta = string_new();
+            
+            if(error == -1){
+              	log_error(logger, "No se pudo guardar el TCB: %d", idTCB);
+                _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta, string_length(respuesta) , logger);
+            }
+            else{
+              	string_append(&respuesta, "OK");
+                _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
+            }
+						
+            
+			//TO DO: actualizar_mapa(nuestroTCB);
+            
+            free(respuesta);					
+            free(nuestroTCB);
+            free(segmento_tcb);
+            
 
             break;
         case ENVIAR_PROXIMA_TAREA:
+            //idpcb, idtcb
+            char* idPCB = recibir_pbc(buffer);
 
-            // Buscar segmento de tcb
+            t_queue* segmentos = dictionary_get(diccionario, idPCB);
+
+            // Busco la info del tcb por id, y busco el segmento con el nroSegmento
+            int idTCB = recibir_tcb(buffer);
+            segment* segmento_tcb = get_tcb_by_id(segmentos, idTCB);
+             // Me traigo la info de memoria en un struct tcb
+            tcb* nuestroTCB = get_tcb_from_memory(segmento_tcb);
             // Buscar segmento de tareas
+            segment* segmento_tareas = get_tareas_by_idPCB(segmentos, idPCB);
             // Validar si la direccion de la proxima tarea en el tcb es menor al limite del segmento de tareas (si hay mas tareas para hacer)
+            int limite = confirmar_limite_tarea(segmento_tarea, nuestroTCB->next);
             // Si no hay mas tareas
                 // Envio mensaje de error
+            if(limite < 0){
+                _send_message(fd, "RAM", 999, "Error, no hay mas tareas", tam_ese_string, logger);
+            }
             // Si hay tareas
+            else{
                 // Leo una tarea con el segmento del tcb
+                char* tarea = get_tarea_from_segmento_tareas(segmento_tareas);
+                nuestroTCB->next = tarea;
                 // Actualizo el tcb en memoria
+                guardar_tcb_memory(segmento, nuestroTCB, memory, memory_size);
                 // Envio proxima tarea
+                char* buffer_a_enviar = serialize(tarea);
+                _send_message(fd, "RAM", 520, buffer_a_enviar, sizeof(buffer_a_enviar), logger);
+            }
 
             break;
         case EXPULSAR_TRIPULANTE:
-
+            //idpcb, idtcb
             // Busco el segmento del tcb
+            log_info(logger, "entre al case rut"); 
+            // Recibo id tcb
+            char* idPCB = recibir_pbc(buffer);
+            // Buscar la tabla de segmentos correspondiente al id de patota
+            t_queue* segmentos = dictionary_get(diccionario, idPCB);
+
+            // Busco la info del tcb por id, y busco el segmento con el nroSegmento
+            int idTCB = recibir_tcb(buffer);
+            segment* segmento_tcb = get_tcb_by_id(segmentos, idTCB);
+            tcb* nuestroTCB = get_tcb_from_memory(segmento_tcb);
             // Elimino el segmento de memoria
+            borrar_tcb_memory(segmento_tcb, nuestroTCB, memory, memory_size);
             // Elimino el segmento de la lista de segmentos y de info
-
+            eliminar_segmento(segmentos, segmento_tcb);
             //// Elimino el tcb del mapa
-
+            eliminar_tripulante_mapa();
             // Envio mensaje de OK
+            _send_message(fd, "RAM", 999, "Tripulante expulsado con exito", sizeof("Tripulante expulsado con exito"), logger);
 
             break;
         case MENSAJE:

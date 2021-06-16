@@ -9,18 +9,14 @@
 
 enum comandos {
     INICIAR_TRIPULANTE = 500,
-    RECIBIR_TAREAS_PATOTA = 510,
     RECIBIR_UBICACION_TRIPULANTE,
     ENVIAR_PROXIMA_TAREA = 520,
     EXPULSAR_TRIPULANTE = 530,
+    SUCCESS = 200
+    ERROR_GUARDAR_TCB = 556
+    ERROR_POR_FALTA_DE_MEMORIA = 555
     MENSAJE = 999
 };
-
-//pcb para testear porque no se que es void* tasks
-typedef struct {
-    int idPat;
-    char* tripulantes[];
-}falsoPCB;
 
 void handler (int fd, char *id, int opcode, void *buffer, t_log *logger);
 

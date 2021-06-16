@@ -182,7 +182,6 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             
             if(error == -1){
               	log_error(logger, "No se pudo guardar el TCB: %d", idTCB);
-                _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta, string_length(respuesta) , logger);
             }
             else{
               	string_append(&respuesta, "OK");
@@ -258,7 +257,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             int error =  remove_segment_from_memory (memory, memory_size, segmento_tcb);
 						
           	if(error < 0){
-              log_error(logger, "Error al eliminar el segmento asociado")
+              log_error(logger, "Error al eliminar el segmento asociado");
 						else{
             //// Elimino el tcb del mapa
 

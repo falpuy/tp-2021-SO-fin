@@ -6,25 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <commons/collections/list.h>
-
-enum tipo_segmento {
-    PCB,
-    TCB,
-    TASK
-};
-
-// type -> tcb | pcb | task
-typedef struct {
-    uint32_t id;
-    uint32_t type;
-    uint32_t nroSegmento;
-} p_info;
-
-typedef struct {
-    uint32_t nroSegmento;
-    uint32_t baseAddr;
-    uint32_t limit;
-} segment;
+#include "segmentation.h"
 
 typedef struct {
     uint32_t pid;

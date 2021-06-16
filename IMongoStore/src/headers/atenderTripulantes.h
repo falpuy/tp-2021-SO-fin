@@ -20,7 +20,8 @@
         COMIENZA_EJECUCION_TAREA,
         FINALIZA_TAREA,
         ATENDER_SABOTAJE,
-        RESUELTO_SABOTAJE
+        RESUELTO_SABOTAJE,
+        RESPUESTA_OBTENER_BITACORA
     };
     
     void handler(int client, char* identificador, int comando, void* payload,t_log* log);

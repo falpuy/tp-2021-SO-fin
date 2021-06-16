@@ -168,3 +168,71 @@ int validarBitsLibre(int cantidadBloquesAUsar){
 char* pathCompleto(char* strConcatenar){
     return string_from_format("%s/%s",datosConfig->puntoMontaje,strConcatenar);
 }
+
+
+char* obtenerBitacora(int tripulante){
+    char* buffer = string_new();
+    char* strPath = string_new();
+    string_append(&strPath, "Bitacoras/");
+    char* strTripulante = crearStrTripulante(tripulante);
+    string_append(&strPath,strTripulante);
+
+    char* path = pathCompleto(strPath);
+    if(access(path,F_OK)){
+        t_config* metadata = config_create(path);
+        char* lista = config_get_string_value(metadata);
+        int tamanioTotal = config_get_int_value(metadata);
+
+        char** listaBloques = string_get_string_as_array(lista); //["2","3","9"]
+        int cantidadBloquesTotal = cantidadBloquesUsados(listaBloques);
+        int contadorBloques = 0;
+
+        for(int i = 0; i < cantidadBloquesTotal; i++){
+            int bloque = atoi(listaBloques[i]);
+
+            if((contadorBloquesTotal - contadorBloques) !=1){//no es ultimo bloque
+                char* temporal = malloc(tamanioBloque);
+                memcpy(temporal,copiaBlocks+bloque*tamanioBloque,tamanio);
+                string_append(&buffer,temporal);
+                free(temporal);
+            }else{
+                int sizeStr = string_length(buffer); //Size hasta ahora
+                int faltaCopiar = tamanioTotal - sizeStr; 
+                char* temporal = malloc(faltaCopiar);
+                memcpy(temporal,copiaBlocks+bloque*tamanioBloque,faltaCopiar);
+                string_append(&buffer,temporal);
+                free(temporal);
+            }
+        }
+        config_destroy(metadata);
+        free(lista);
+        liberarArray(listaBloques,cantidadBloquesUsados);
+
+    }else{
+        log_error(logger, "No existe bitácora para ese tripulante.");
+        return buffer; //size 0
+    }
+
+    free(strTripulante);
+    free(strPath);
+    return buffer;
+}
+
+
+int cantidadBloquesUsados(char** listaBloques){
+    int contador = 0;
+
+    for(int i=0; listaBloques[i] != NULL; i++){
+        contador++;
+    }
+
+    return contador;
+}
+
+void liberarArray (char** array, int posiciones){
+    for(int i=0; i < posiciones; i++){
+        free(array[i]);
+    }
+
+    free(array);
+}

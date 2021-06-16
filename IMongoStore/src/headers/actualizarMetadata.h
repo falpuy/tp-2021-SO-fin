@@ -28,5 +28,12 @@
     char* crearStrTripulante(int idTripulante);
     int validarBitsLibre(int cantidadBloquesAUsar);
     char* pathCompleto(char* strConcatenar);
+    char* obtenerBitacora(int tripulante);
+    int cantidadBloquesUsados(char** listaBloques);
+    void liberarArray (char** array, int posiciones);
+
+
+}
+
     
 #endif

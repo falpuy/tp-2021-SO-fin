@@ -15,7 +15,12 @@ void handler(int client, char* identificador, int comando, void* payload,t_log* 
                 memcpy(&idTripulante,payload,sizeof(int));
                 log_info(logger, "ID Tripulante:%d", idTripulante);
                 log_info(logger,"-----------------------------------------------------");
-                //obtenerBitacora(idTripulante);
+                pthread_mutex_lock(&blocks_bitmap);
+                char* bitacora = obtenerBitacora(idTripulante);
+                pthread_mutex_lock(&blocks_bitmap);
+
+                _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, bitacora,string_length(bitacora), logger);
+
                 break;  
 
             case MOVER_TRIPULANTE:
@@ -46,14 +51,11 @@ void handler(int client, char* identificador, int comando, void* payload,t_log* 
                 char* path_fileTripulante = pathCompleto(bitacora);
                 free(bitacora);
                 
-                pthread_mutex_lock(&m_metadata);
+                pthread_mutex_lock(&blocks_bitmap);
                 if(access(path_fileTripulante,F_OK) < 0){
                     log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
                     crearMetadataBitacora(path_fileTripulante);
                 }
-                pthread_mutex_unlock(&m_metadata);
-
-                pthread_mutex_lock(&blocks_bitmap);
                 guardarEnBlocks(stringGuardar,path_fileTripulante,0);
                 pthread_mutex_unlock(&blocks_bitmap);
                 

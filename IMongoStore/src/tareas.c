@@ -165,3 +165,4 @@ void generarBasura(int parametroTarea){
     free(strGuardar);
     free(path_basura);
 }
+

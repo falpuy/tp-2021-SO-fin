@@ -33,18 +33,15 @@ void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag){
                 posEnString ++;                
                 
                 //--------------------------ACTUALIZO METADATA---------------------------
-                // pthread_mutex_lock(&m_metadata);
-                // t_config* metadata = config_create(path_fileTripulante);
+                t_config* metadata = config_create(path_fileTripulante);
 
-                // actualizarSize(metadata);
-                // actualizarBlocks(metadata,i);
-                // if(flag){
-                //     actualizarBlockCount(metadata);
-                //     //setearMD5(path_fileTripulante);
-                // }
-                // config_destroy(metadata);
-                // pthread_mutex_unlock(&m_metadata);
-                
+                actualizarSize(metadata);
+                actualizarBlocks(metadata,i);
+                if(flag){
+                    actualizarBlockCount(metadata);
+                    //setearMD5(path_fileTripulante);
+                }
+                config_destroy(metadata);                
                 cantidadBloquesUsados ++;
 
                 
@@ -56,19 +53,17 @@ void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag){
                 posEnString ++;
 
                 //--------------------------Actualizo metadata---------------------------
-                // pthread_mutex_lock(&m_metadata);
-                // t_config* metadata = config_create(path_fileTripulante);
+                t_config* metadata = config_create(path_fileTripulante);
 
-                // actualizarSize(metadata);
-                // actualizarBlocks(metadata,i);
+                actualizarSize(metadata);
+                actualizarBlocks(metadata,i);
                 
-                // if(flag){
-                //     actualizarBlockCount(metadata);
-                //     //setearMD5(path_fileTripulante);
-                // }
+                if(flag){
+                    actualizarBlockCount(metadata);
+                    //setearMD5(path_fileTripulante);
+                }
 
-                // config_destroy(metadata); 
-                // pthread_mutex_unlock(&m_metadata);
+                config_destroy(metadata); 
 
                 cantidadBloquesUsados ++;
             }

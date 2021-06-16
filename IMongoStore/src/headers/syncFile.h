@@ -12,7 +12,8 @@
     #include <sys/stat.h>
     #include <fcntl.h>
     #include <string.h>
-    #include <commons/config.h>
+    #include <commons/config.h> 
+    #include <signal.h>
 
     
     typedef struct{
@@ -21,6 +22,8 @@
         int tiempoSincronizacion;   
     }configIMS;
     configIMS* datosConfig;
+
+    pthread_t sync_blocks;
 
     uint32_t tamanioBloque;
     uint32_t cantidadBloques;
@@ -40,7 +43,6 @@
     pthread_mutex_t m_superBloque;
     pthread_mutex_t m_metadata;
     
-
     void actualizarArchivoBlocks();
 
 #endif

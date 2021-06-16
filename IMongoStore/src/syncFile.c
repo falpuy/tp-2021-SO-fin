@@ -1,8 +1,7 @@
 #include "headers/syncFile.h"
 
 void actualizarArchivoBlocks(){
-     
-     while(flagEnd){
+    while(flagEnd){
         sleep(datosConfig->tiempoSincronizacion);
         log_info(logger, "Comienza actualización de Blocks.ims...");
         
@@ -36,5 +35,6 @@ void actualizarArchivoBlocks(){
             printf("%d",bitarray_test_bit(bitmap,i));
         }  
         pthread_mutex_unlock(&blocks_bitmap);
-    }
+   }
 }
+

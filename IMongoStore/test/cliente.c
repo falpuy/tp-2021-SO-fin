@@ -24,8 +24,8 @@ int main(){
 
     int tamTarea,parametro, offset = 0;
     char* tarea2;
-    void* buffer = _serialize(sizeof(int)*3 + string_length(tarea),"%d%s%d",101,tarea,20);
+    void* buffer = _serialize(sizeof(int)*5 ,"%d%d%d%d%d",101,5,20,8,15);
     
-    _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer,sizeof(int)*3 + string_length(tarea), log);
+    _send_message(socket, "DIS",MOVER_TRIPULANTE, buffer,sizeof(int)*5, log);
     return 0;
 }

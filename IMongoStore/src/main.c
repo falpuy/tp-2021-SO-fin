@@ -1,7 +1,6 @@
 #include "headers/main.h"
 
 int main() {
-    pthread_t sync_blocks;
     //t_log* log;
 
     setearConfiguraciones();
@@ -15,7 +14,7 @@ int main() {
     sleep(1);
     
     pthread_create(&sync_blocks,NULL,(void*) actualizarArchivoBlocks, logger);
-    pthread_detach(sync_blocks);
+    //pthread_detach(sync_blocks);
 
     _start_server(datosConfig->puerto,handler,logger);
     finalizarProceso(log);
@@ -35,29 +34,29 @@ void setearConfiguraciones(){
 
     pthread_mutex_init(&blocks_bitmap, NULL); 
     pthread_mutex_init(&m_superBloque, NULL); 
-    //pthread_mutex_init(&, NULL);
     pthread_mutex_init(&m_metadata, NULL); 
 }
 
 void finalizarProceso(){
+    flagEnd = 0;
+    pthread_join(sync_blocks,NULL);
+    
+    config_destroy(config);
+    log_destroy(logger);
 
+    // free(datosConfig->puntoMontaje);
     free(copiaBlocks);
     free(copiaSB);
     bitarray_destroy(bitmap);
     free(memBitmap);
-    config_destroy(config);
-    log_destroy(logger);
-    flagEnd = 0;
-
-    // free(datosConfig->puntoMontaje);
     // free(datosConfig->puerto);
     free(datosConfig);
 
 
     pthread_mutex_destroy(&blocks_bitmap); 
     pthread_mutex_destroy(&m_superBloque); 
-    //pthread_mutex_destroy(&m_bitmap); 
     pthread_mutex_destroy(&m_metadata);
+
     exit(EXIT_SUCCESS);
 }
 

@@ -6688,3 +6688,322 @@
 [INFO] 20:08:08:242 consola/(5181:5181): Patota: 1851878517	
 [INFO] 20:08:08:243 consola/(5181:5181): --------------------------------------------------------------------
 [INFO] 20:08:42:579 consola/(5181:5181): Salimos de la consola
+[INFO] 15:46:47:349 consola/(4574:4574): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[ERROR] 15:46:47:352 consola/(4574:4574): [Shared Library]: Error al crear socket de servidor. /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:47:47:921 consola/(4705:4705): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[ERROR] 15:47:47:924 consola/(4705:4705): [Shared Library]: Error al crear socket de servidor. /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:48:28:192 consola/(4791:4791): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[ERROR] 15:48:28:199 consola/(4791:4791): [Shared Library]: Error al crear socket de servidor. /n (╯°□°）╯︵ ┻━┻
+[INFO] 15:52:08:697 consola/(5289:5289): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:52:08:698 consola/(5289:5289): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:52:08:700 consola/(5289:5289): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:52:08:712 consola/(5289:5291): se creó hilo de new a ready
+[INFO] 15:52:27:661 consola/(5289:5289): ENTRO INICIAR PLANI
+[INFO] 15:52:27:662 consola/(5289:5289): Planificacion pausada = 0
+[INFO] 15:52:53:304 consola/(5289:5289): ENTRO INICIAR PATO
+[INFO] 15:52:53:305 consola/(5289:5289): 101
+[INFO] 15:52:53:305 consola/(5289:5289): 1
+[INFO] 15:52:53:306 consola/(5289:5289): 1
+[INFO] 15:52:53:306 consola/(5289:5289): 1
+[INFO] 15:52:53:306 consola/(5289:5289): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:52:53:307 consola/(5289:5289): 102
+[INFO] 15:52:53:308 consola/(5289:5289): 1
+[INFO] 15:52:53:308 consola/(5289:5289): 3
+[INFO] 15:52:53:308 consola/(5289:5289): 4
+[INFO] 15:52:53:309 consola/(5289:5289): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:52:53:309 consola/(5289:5289): 103
+[INFO] 15:52:53:310 consola/(5289:5289): 1
+[INFO] 15:52:53:310 consola/(5289:5289): 6
+[INFO] 15:52:53:310 consola/(5289:5289): 7
+[INFO] 15:52:53:311 consola/(5289:5289): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:52:53:312 consola/(5289:5289): 104
+[INFO] 15:52:53:312 consola/(5289:5291): encontre nodo en new
+[INFO] 15:52:53:312 consola/(5289:5289): 1
+[INFO] 15:52:53:313 consola/(5289:5291): encontre nodo en new
+[INFO] 15:52:53:313 consola/(5289:5289): 0
+[INFO] 15:52:53:313 consola/(5289:5289): 0
+[INFO] 15:52:53:313 consola/(5289:5291): encontre nodo en new
+[INFO] 15:52:53:314 consola/(5289:5289): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:52:53:321 consola/(5289:5289): 105
+[INFO] 15:52:53:324 consola/(5289:5289): 1
+[INFO] 15:52:53:324 consola/(5289:5289): 0
+[INFO] 15:52:53:324 consola/(5289:5289): 0
+[INFO] 15:52:53:325 consola/(5289:5289): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:52:53:330 consola/(5289:5291): encontre nodo en new
+[INFO] 15:52:53:330 consola/(5289:5291): encontre nodo en new
+[INFO] 15:53:08:945 consola/(5289:5289): ENTRO LISTAR
+[INFO] 15:53:08:946 consola/(5289:5289): --------------------------------------------------------------------
+[INFO] 15:53:08:946 consola/(5289:5289): Estado de la Nave: 12/06/21 15:53:08
+[INFO] 15:53:08:948 consola/(5289:5289): Tripulante: 0	
+[INFO] 15:53:08:949 consola/(5289:5289): Patota: 1	
+[INFO] 15:53:08:949 consola/(5289:5289): Status: READY
+
+[INFO] 15:53:08:950 consola/(5289:5289): Tripulante: 151843872	
+[INFO] 15:53:08:950 consola/(5289:5289): Patota: 1	
+[INFO] 15:53:08:951 consola/(5289:5289): Status: READY
+
+[INFO] 15:53:08:951 consola/(5289:5289): Tripulante: 151866768	
+[INFO] 15:53:08:952 consola/(5289:5289): Patota: 1851878517	
+[INFO] 15:53:08:954 consola/(5289:5289): Tripulante: 151866592	
+[INFO] 15:53:08:955 consola/(5289:5289): Patota: 1851878517	
+[INFO] 15:53:08:956 consola/(5289:5289): Tripulante: 151866592	
+[INFO] 15:53:08:957 consola/(5289:5289): Patota: 1851878517	
+[INFO] 15:53:08:958 consola/(5289:5289): --------------------------------------------------------------------
+[INFO] 15:53:25:435 consola/(5289:5289): Salimos de la consola
+[INFO] 15:54:05:304 consola/(5546:5546): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:54:05:305 consola/(5546:5546): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:54:05:305 consola/(5546:5546): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:54:12:706 consola/(5546:5546): ENTRO INICIAR PLANI
+[INFO] 15:54:12:707 consola/(5546:5546): Planificacion pausada = 0
+[INFO] 15:54:29:672 consola/(5546:5546): ENTRO INICIAR PATO
+[INFO] 15:54:29:673 consola/(5546:5546): 101
+[INFO] 15:54:29:673 consola/(5546:5546): 1
+[INFO] 15:54:29:674 consola/(5546:5546): 1
+[INFO] 15:54:29:674 consola/(5546:5546): 1
+[INFO] 15:54:29:674 consola/(5546:5546): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:54:29:675 consola/(5546:5546): 102
+[INFO] 15:54:29:675 consola/(5546:5546): 1
+[INFO] 15:54:29:676 consola/(5546:5546): 3
+[INFO] 15:54:29:676 consola/(5546:5546): 4
+[INFO] 15:54:29:676 consola/(5546:5546): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:54:29:677 consola/(5546:5546): 103
+[INFO] 15:54:29:677 consola/(5546:5546): 1
+[INFO] 15:54:29:678 consola/(5546:5546): 6
+[INFO] 15:54:29:678 consola/(5546:5546): 7
+[INFO] 15:54:29:678 consola/(5546:5546): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:54:29:679 consola/(5546:5546): 104
+[INFO] 15:54:29:679 consola/(5546:5546): 1
+[INFO] 15:54:29:680 consola/(5546:5546): 0
+[INFO] 15:54:29:690 consola/(5546:5546): 0
+[INFO] 15:54:29:691 consola/(5546:5546): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:54:29:691 consola/(5546:5546): 105
+[INFO] 15:54:29:691 consola/(5546:5546): 1
+[INFO] 15:54:29:691 consola/(5546:5546): 0
+[INFO] 15:54:29:692 consola/(5546:5546): 0
+[INFO] 15:54:29:692 consola/(5546:5546): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:54:38:697 consola/(5546:5546): ENTRO LISTAR
+[INFO] 15:54:38:698 consola/(5546:5546): --------------------------------------------------------------------
+[INFO] 15:54:38:698 consola/(5546:5546): Estado de la Nave: 12/06/21 15:54:38
+[INFO] 15:54:38:698 consola/(5546:5546): Tripulante: 0	
+[INFO] 15:54:38:699 consola/(5546:5546): Patota: 1	
+[INFO] 15:54:38:699 consola/(5546:5546): Status: READY
+
+[INFO] 15:54:38:699 consola/(5546:5546): Tripulante: 136862944	
+[INFO] 15:54:38:700 consola/(5546:5546): Patota: 1851878517	
+[INFO] 15:54:38:700 consola/(5546:5546): Tripulante: 136862816	
+[INFO] 15:54:38:700 consola/(5546:5546): Patota: 1851878517	
+[INFO] 15:54:38:701 consola/(5546:5546): Tripulante: 136840080	
+[INFO] 15:54:38:701 consola/(5546:5546): Patota: 1851878517	
+[INFO] 15:54:38:701 consola/(5546:5546): Tripulante: 136840080	
+[INFO] 15:54:38:702 consola/(5546:5546): Patota: 1851878517	
+[INFO] 15:54:38:702 consola/(5546:5546): --------------------------------------------------------------------
+[INFO] 15:54:53:720 consola/(5546:5546): Salimos de la consola
+[INFO] 15:54:58:715 consola/(5663:5663): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:54:58:717 consola/(5663:5663): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:54:58:718 consola/(5663:5663): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:55:05:374 consola/(5663:5663): ENTRO INICIAR PLANI
+[INFO] 15:55:05:376 consola/(5663:5663): Planificacion pausada = 0
+[INFO] 15:55:17:968 consola/(5663:5663): ENTRO INICIAR PATO
+[INFO] 15:55:17:977 consola/(5663:5663): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:55:17:981 consola/(5663:5663): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:55:17:983 consola/(5663:5663): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:55:17:986 consola/(5663:5663): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:55:17:993 consola/(5663:5663): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:55:31:380 consola/(5663:5663): ENTRO LISTAR
+[INFO] 15:55:31:381 consola/(5663:5663): --------------------------------------------------------------------
+[INFO] 15:55:31:382 consola/(5663:5663): Estado de la Nave: 12/06/21 15:55:31
+[INFO] 15:55:31:383 consola/(5663:5663): Tripulante: 146312280	
+[INFO] 15:55:31:383 consola/(5663:5663): Patota: 1	
+[INFO] 15:55:31:385 consola/(5663:5663): Status: READY
+
+[INFO] 15:55:31:386 consola/(5663:5663): Tripulante: 146289552	
+[INFO] 15:55:31:387 consola/(5663:5663): Patota: 1	
+[INFO] 15:55:31:394 consola/(5663:5663): Status: READY
+
+[INFO] 15:55:31:396 consola/(5663:5663): Tripulante: 146312072	
+[INFO] 15:55:31:404 consola/(5663:5663): Patota: 1851878517	
+[INFO] 15:55:31:405 consola/(5663:5663): Tripulante: 146312312	
+[INFO] 15:55:31:406 consola/(5663:5663): Patota: 1851878517	
+[INFO] 15:55:31:408 consola/(5663:5663): Tripulante: 825438769	
+[INFO] 15:55:31:416 consola/(5663:5663): Patota: 1845496121	
+[INFO] 15:55:31:423 consola/(5663:5663): --------------------------------------------------------------------
+[INFO] 15:56:04:260 consola/(5663:5663): ENTRO LISTAR
+[INFO] 15:56:04:261 consola/(5663:5663): --------------------------------------------------------------------
+[INFO] 15:56:04:261 consola/(5663:5663): Estado de la Nave: 12/06/21 15:56:04
+[INFO] 15:56:04:262 consola/(5663:5663): Tripulante: 146312280	
+[INFO] 15:56:04:262 consola/(5663:5663): Patota: 1	
+[INFO] 15:56:04:262 consola/(5663:5663): Status: READY
+
+[INFO] 15:56:04:263 consola/(5663:5663): Tripulante: 146289552	
+[INFO] 15:56:04:263 consola/(5663:5663): Patota: 1	
+[INFO] 15:56:04:263 consola/(5663:5663): Status: READY
+
+[INFO] 15:56:04:263 consola/(5663:5663): Tripulante: 146312312	
+[INFO] 15:56:04:264 consola/(5663:5663): Patota: 1851878517	
+[INFO] 15:56:04:264 consola/(5663:5663): Tripulante: 146312072	
+[INFO] 15:56:04:264 consola/(5663:5663): Patota: 1851878517	
+[INFO] 15:56:04:265 consola/(5663:5663): Tripulante: 925905457	
+[INFO] 15:56:04:265 consola/(5663:5663): Patota: 1845496119	
+[INFO] 15:56:04:265 consola/(5663:5663): --------------------------------------------------------------------
+[INFO] 15:56:17:362 consola/(5663:5663): Salimos de la consola
+[INFO] 15:56:24:501 consola/(5842:5842): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:56:24:503 consola/(5842:5842): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:56:24:508 consola/(5842:5842): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:56:33:046 consola/(5842:5842): ENTRO INICIAR PLANI
+[INFO] 15:56:33:047 consola/(5842:5842): Planificacion pausada = 0
+[INFO] 15:56:50:140 consola/(5842:5842): ENTRO INICIAR PATO
+[INFO] 15:56:50:142 consola/(5842:5842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:56:50:147 consola/(5842:5842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:56:50:151 consola/(5842:5842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:56:50:255 consola/(5842:5843): empiezo a pasar a ready
+[INFO] 15:56:50:279 consola/(5842:5843): saque de new
+[INFO] 15:56:50:280 consola/(5842:5843): cambie la letra a R
+[INFO] 15:56:50:282 consola/(5842:5843): puse en ready
+[INFO] 15:56:50:283 consola/(5842:5843): empiezo a pasar a ready
+[INFO] 15:56:50:283 consola/(5842:5843): saque de new
+[INFO] 15:56:50:285 consola/(5842:5843): cambie la letra a R
+[INFO] 15:56:50:285 consola/(5842:5843): puse en ready
+[INFO] 15:56:50:313 consola/(5842:5842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:56:50:323 consola/(5842:5842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:56:50:323 consola/(5842:5843): empiezo a pasar a ready
+[INFO] 15:56:50:324 consola/(5842:5843): saque de new
+[INFO] 15:56:50:325 consola/(5842:5843): cambie la letra a R
+[INFO] 15:56:50:325 consola/(5842:5843): puse en ready
+[INFO] 15:56:50:326 consola/(5842:5843): empiezo a pasar a ready
+[INFO] 15:56:50:363 consola/(5842:5843): saque de new
+[INFO] 15:56:50:365 consola/(5842:5843): cambie la letra a R
+[INFO] 15:56:50:367 consola/(5842:5843): puse en ready
+[INFO] 15:56:50:378 consola/(5842:5843): empiezo a pasar a ready
+[INFO] 15:56:50:379 consola/(5842:5843): saque de new
+[INFO] 15:56:50:380 consola/(5842:5843): cambie la letra a R
+[INFO] 15:56:50:380 consola/(5842:5843): puse en ready
+[INFO] 15:57:15:529 consola/(5842:5842): ENTRO LISTAR
+[INFO] 15:57:15:532 consola/(5842:5842): --------------------------------------------------------------------
+[INFO] 15:57:15:533 consola/(5842:5842): Estado de la Nave: 12/06/21 15:57:15
+[INFO] 15:57:15:533 consola/(5842:5842): Tripulante: 0	
+[INFO] 15:57:15:533 consola/(5842:5842): Patota: 151477104	
+[INFO] 15:57:15:534 consola/(5842:5842): Tripulante: 151477320	
+[INFO] 15:57:15:534 consola/(5842:5842): Patota: 1851878517	
+[INFO] 15:57:15:534 consola/(5842:5842): Tripulante: 151454608	
+[INFO] 15:57:15:535 consola/(5842:5842): Patota: 1	
+[INFO] 15:57:15:535 consola/(5842:5842): Status: READY
+
+[INFO] 15:57:15:535 consola/(5842:5842): Tripulante: 151477256	
+[INFO] 15:57:15:535 consola/(5842:5842): Patota: 1851878517	
+[INFO] 15:57:15:545 consola/(5842:5842): Tripulante: 151477256	
+[INFO] 15:57:15:546 consola/(5842:5842): Patota: 1851878517	
+[INFO] 15:57:15:546 consola/(5842:5842): --------------------------------------------------------------------
+[INFO] 15:58:08:611 consola/(5842:5842): ENTRO INICIAR PATO
+[INFO] 15:58:08:613 consola/(5842:5842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:58:08:616 consola/(5842:5843): empiezo a pasar a ready
+[INFO] 15:58:08:617 consola/(5842:5843): saque de new
+[INFO] 15:58:08:624 consola/(5842:5843): cambie la letra a R
+[INFO] 15:58:08:625 consola/(5842:5843): puse en ready
+[INFO] 15:58:26:324 consola/(5842:5842): ENTRO LISTAR
+[INFO] 15:58:26:340 consola/(5842:5842): --------------------------------------------------------------------
+[INFO] 15:58:26:341 consola/(5842:5842): Estado de la Nave: 12/06/21 15:58:26
+[INFO] 15:58:26:353 consola/(5842:5842): Tripulante: 0	
+[INFO] 15:58:26:353 consola/(5842:5842): Patota: 151477104	
+[INFO] 15:58:26:354 consola/(5842:5842): Tripulante: 151477320	
+[INFO] 15:58:26:354 consola/(5842:5842): Patota: 1851878517	
+[INFO] 15:58:26:355 consola/(5842:5842): Tripulante: 151454608	
+[INFO] 15:58:26:355 consola/(5842:5842): Patota: 1	
+[INFO] 15:58:26:358 consola/(5842:5842): Status: READY
+
+[INFO] 15:58:26:369 consola/(5842:5842): Tripulante: 151477256	
+[INFO] 15:58:26:372 consola/(5842:5842): Patota: 1851878517	
+[INFO] 15:58:26:373 consola/(5842:5842): Tripulante: 151405600	
+[INFO] 15:58:26:376 consola/(5842:5842): Patota: 1851878517	
+[INFO] 15:58:26:378 consola/(5842:5842): Tripulante: 151477128	
+[INFO] 15:58:26:387 consola/(5842:5842): Patota: 1851878517	
+[INFO] 15:58:26:389 consola/(5842:5842): --------------------------------------------------------------------
+[INFO] 15:58:50:283 consola/(5842:5842): Salimos de la consola
+[INFO] 16:28:02:375 consola/(6198:6198): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:28:02:377 consola/(6198:6198): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:28:02:379 consola/(6198:6198): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:28:09:001 consola/(6198:6198): ENTRO INICIAR PLANI
+[INFO] 16:28:09:002 consola/(6198:6198): Planificacion pausada = 0
+[INFO] 16:28:49:047 consola/(6198:6198): ENTRO INICIAR PATO
+[INFO] 16:28:49:047 consola/(6198:6198): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:28:49:048 consola/(6198:6200): empiezo a pasar a ready
+[INFO] 16:28:49:049 consola/(6198:6200): saque de new
+[INFO] 16:28:49:049 consola/(6198:6200): cambie la letra a R
+[INFO] 16:28:49:049 consola/(6198:6200): puse en ready
+[INFO] 16:29:01:668 consola/(6198:6198): ENTRO LISTAR
+[INFO] 16:29:01:670 consola/(6198:6198): --------------------------------------------------------------------
+[INFO] 16:29:01:671 consola/(6198:6198): Estado de la Nave: 12/06/21 16:29:01
+[INFO] 16:29:01:672 consola/(6198:6198): Tripulante: 135504816	
+[INFO] 16:29:01:673 consola/(6198:6198): Patota: 1851878517	
+[INFO] 16:29:01:682 consola/(6198:6198): --------------------------------------------------------------------
+[INFO] 16:38:40:270 consola/(6198:6198): Salimos de la consola
+[INFO] 16:59:51:981 consola/(7339:7339): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:59:51:986 consola/(7339:7339): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:59:51:988 consola/(7339:7339): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:59:58:629 consola/(7339:7339): ENTRO INICIAR PLANI
+[INFO] 16:59:58:632 consola/(7339:7339): Planificacion pausada = 0
+[INFO] 17:00:16:188 consola/(7339:7339): ENTRO INICIAR PATO
+[INFO] 17:00:16:203 consola/(7339:7339): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:00:16:205 consola/(7339:7341): empiezo a pasar a ready
+[INFO] 17:00:16:207 consola/(7339:7341): saque de new
+[INFO] 17:00:16:215 consola/(7339:7341): cambie la letra a R
+[INFO] 17:00:16:216 consola/(7339:7341): puse en ready
+[INFO] 17:00:27:406 consola/(7339:7339): ENTRO LISTAR
+[INFO] 17:00:27:407 consola/(7339:7339): --------------------------------------------------------------------
+[INFO] 17:00:27:407 consola/(7339:7339): Estado de la Nave: 12/06/21 17:00:27
+[INFO] 17:00:27:409 consola/(7339:7339): Tripulante: 163783712	
+[INFO] 17:00:27:410 consola/(7339:7339): Patota: 1851878517	
+[INFO] 17:00:27:411 consola/(7339:7339): --------------------------------------------------------------------
+[INFO] 17:04:41:853 consola/(7339:7339): Salimos de la consola
+[INFO] 17:05:04:851 consola/(7848:7848): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:05:04:856 consola/(7848:7848): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:05:04:857 consola/(7848:7848): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:05:11:267 consola/(7848:7848): ENTRO INICIAR PLANI
+[INFO] 17:05:11:268 consola/(7848:7848): Planificacion pausada = 0
+[INFO] 17:05:34:237 consola/(7848:7848): ENTRO INICIAR PATO
+[INFO] 17:05:34:238 consola/(7848:7848): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:05:34:238 consola/(7848:7850): empiezo a pasar a ready
+[INFO] 17:05:34:239 consola/(7848:7850): despues del pop
+[INFO] 17:05:34:240 consola/(7848:7850): id 101
+[INFO] 17:05:34:240 consola/(7848:7850): patota 1
+[INFO] 17:05:34:240 consola/(7848:7850): status N
+[INFO] 17:05:34:241 consola/(7848:7850): cambie la letra a R
+[INFO] 17:05:34:241 consola/(7848:7850): despues del push
+[INFO] 17:05:34:241 consola/(7848:7850): id 101
+[INFO] 17:05:34:242 consola/(7848:7850): patota 1
+[INFO] 17:05:34:242 consola/(7848:7850): status R
+[INFO] 17:06:54:768 consola/(7848:7848): ENTRO LISTAR
+[INFO] 17:06:54:770 consola/(7848:7848): --------------------------------------------------------------------
+[INFO] 17:06:54:773 consola/(7848:7848): Estado de la Nave: 12/06/21 17:06:54
+[INFO] 17:06:54:785 consola/(7848:7848): Tripulante: 154797088	
+[INFO] 17:06:54:789 consola/(7848:7848): Patota: 1851878517	
+[INFO] 17:06:54:790 consola/(7848:7848): --------------------------------------------------------------------
+[INFO] 17:07:53:798 consola/(7848:7848): Salimos de la consola
+[INFO] 17:08:24:704 consola/(8265:8265): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:08:24:706 consola/(8265:8265): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:08:24:707 consola/(8265:8265): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:08:30:989 consola/(8265:8265): ENTRO INICIAR PLANI
+[INFO] 17:08:30:990 consola/(8265:8265): Planificacion pausada = 0
+[INFO] 17:08:53:706 consola/(8265:8265): ENTRO INICIAR PATO
+[INFO] 17:08:53:707 consola/(8265:8265): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:08:53:711 consola/(8265:8267): empiezo a pasar a ready
+[INFO] 17:08:53:712 consola/(8265:8267): despues del pop
+[INFO] 17:08:53:713 consola/(8265:8267): id 101
+[INFO] 17:08:53:713 consola/(8265:8267): patota 1
+[INFO] 17:08:53:714 consola/(8265:8267): status N
+[INFO] 17:08:53:715 consola/(8265:8267): cambie la letra a R
+[INFO] 17:08:53:716 consola/(8265:8267): despues del push a ready
+[INFO] 17:08:53:717 consola/(8265:8268): despues del push a exec
+[INFO] 17:08:53:718 consola/(8265:8267): id 101
+[INFO] 17:08:53:719 consola/(8265:8268): id 101
+[INFO] 17:08:53:722 consola/(8265:8267): patota 1
+[INFO] 17:08:53:734 consola/(8265:8267): status E
+[INFO] 17:08:53:734 consola/(8265:8268): patota 1
+[INFO] 17:08:53:753 consola/(8265:8268): status E
+[INFO] 17:09:18:288 consola/(8265:8265): ENTRO LISTAR
+[INFO] 17:09:18:290 consola/(8265:8265): --------------------------------------------------------------------
+[INFO] 17:09:18:291 consola/(8265:8265): Estado de la Nave: 12/06/21 17:09:18
+[INFO] 17:09:18:291 consola/(8265:8265): Tripulante: 101	
+[INFO] 17:09:18:292 consola/(8265:8265): Patota: 1	
+[INFO] 17:09:18:293 consola/(8265:8265): Status: EXEC
+
+[INFO] 17:09:18:293 consola/(8265:8265): --------------------------------------------------------------------

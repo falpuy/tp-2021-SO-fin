@@ -2,54 +2,127 @@
 
 // algoritmos (FIFO y RR)
 
-// crear hilo
+/*
+funcionTCB{
+    while(estoyVivo){
+        while(estado == E){
 
-//destroy
+            switch que tarea soy?
 
-// hilos que pasan de estado
+                dentro de cada tarea-->
+                moverse a X 
+                si esta en x
+                    moverse a Y
+                        si esta en Y -->Llego a ubicacion
+
+                Si I/O 
+                    - mande msg IMS
+                    - estado = B
+                    - contadorExec == tiempoTarea?
+                    
+                Si no es IO--> aumentar contadorExec en 1
+                    - si contadorExec == tiempoTarea     
+
+                si termine tarea{
+                    pido tarea nueva a memoria
+                        si no hay mas tareas
+                            estado = X
+            }
+        }
+    }   
+
+}
+*/
+
+
+char** listaTareas[CANTTAREAS] = {"GENERAR_OXIGENO", "CONSUMIR_OXIGENO", "GENERAR_COMIDA", "CONSUMIR_COMIDA", "GENERAR_BASURA", "DESCARTAR_BASURA"};
+
+void funcionTripulante (t_log* logger, tcb* tcbTripulante){
+    while(tcbTripulante->status != 'X'){
+        while(tcbTripulante->status == 'E'){
+            int tarea = 6;
+            int i;
+            //TAREA PARAMETROS;POS X;POS Y;TIEMPO
+            for(i=0; i<CANTTAREAS; i++) {
+                if (!strcmp(tcbTripulante->instruccion_actual, listaTareas[i])) {
+                    tarea = i;
+                    break;
+                }
+            }
+
+            switch(tarea) {
+                case 0://GENERAR_OXIGENO
+                    log_info(logger, "ENTRO GENERAR OXIGENO");
+                    break;
+
+                case 1: //CONSUMIR_OXIGENO
+                    log_info(logger, "ENTRO CONSUMIR OXIGENO");
+                    break;
+
+                case 2://GENERAR_COMIDA
+                    log_info(logger, "ENTRO GENERAR COMIDA");
+                    break;
+
+                case 3: //CONSUMIR_COMIDA
+                    log_info(logger, "ENTRO CONSUMIR COMIDA");
+                    break;
+
+                case 4://GENERAR_BASURA
+                    log_info(logger, "ENTRO GENERAR BASURA");
+                    break;
+
+                case 5: //DESCARTAR_BASURA
+                    log_info(logger, "ENTRO DESCARTAR BASURA");
+                    break;
+                
+                case 6: //OTROS
+                    log_info(logger, "ENTRO OTROS");
+                    break;
+
+                default: //CUALQUIER VERDURA
+                    log_info(logger, "La tarea ingresada no posee un formato de tarea correcto");
+                    break;
+
+            }
+
+
+
+        }
+    }
+}
+
 void funcionhNewaReady (t_log* logger) {
-    log_info(logger, "se creó hilo de new a ready");
     while (validador==1) {
         while (planificacion_pausada==0) {
-            //hay límite de multiprogramación?
             while (!queue_is_empty(cola_new)) // si hay nodos en New, los pasa a Ready
-            {
-                log_info(logger, "encontre nodo en new");
+            {   
                 tcb* aux_TCB = malloc (sizeof(tcb));
                 pthread_mutex_lock(&mutexNew);
-                aux_TCB = queue_peek(cola_new);
-                queue_pop(cola_new);
+                aux_TCB = queue_pop(cola_new);
                 pthread_mutex_unlock(&mutexNew);
-                
+                aux_TCB -> status = 'R';
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready, (void*) aux_TCB);
                 pthread_mutex_unlock(&mutexReady);
-                aux_TCB -> status = 'R';
-                free(aux_TCB);
-                contNew--;
-                contReady++;
             }
         }
     }
 }
 
 void funcionhReadyaExec (t_log* logger){
-    while (validador==1 && planificacion_pausada==0) {
-        while (!queue_is_empty(ready) && contExec < grado_multitarea) // si hay nodos en Ready, los pasa a Exec
-        {
-            tcb* aux_TCB = malloc (sizeof(tcb));
-            pthread_mutex_lock(&mutexReady);
-            aux_TCB = queue_peek(ready);
-            queue_pop(ready);
-            pthread_mutex_unlock(&mutexReady);
-
-            pthread_mutex_lock(&mutexExec);
-            queue_push(exec, (void*) aux_TCB);
-            pthread_mutex_unlock(&mutexExec);
-            aux_TCB -> status = 'E';
-            free(aux_TCB);
-            contReady--;
-            contExec++;
+     while (validador==1) {
+        while (planificacion_pausada==0) {
+            while (!queue_is_empty(ready) && queue_size(exec) < grado_multitarea) // si hay nodos en Ready, los pasa a Exec
+            {
+                tcb* aux_TCB = malloc (sizeof(tcb));
+                pthread_mutex_lock(&mutexReady);
+                aux_TCB = queue_pop(ready);
+                pthread_mutex_unlock(&mutexReady);
+                aux_TCB -> status = 'E';
+                pthread_mutex_lock(&mutexExec);
+                queue_push(exec, (void*) aux_TCB);
+                pthread_mutex_unlock(&mutexExec);
+            }
         }
     }
 }
@@ -65,8 +138,6 @@ void funcionhReadyaExec (t_log* logger){
             queue_push(bloq_emer, (void*) aux_TCB);
             aux_TCB -> status = 'M';
             free(aux_TCB);
-            contExec--;
-            contBloqEmer++;
         }
     }
 }
@@ -82,8 +153,6 @@ void funcionhExecaBloqIO (t_log* logger){
             queue_push(bloq_io, (void*) aux_TCB);
             aux_TCB -> status = 'I';
             free(aux_TCB);
-            contExec--;
-            contBloqIO++;
         }
     }
 }
@@ -99,8 +168,6 @@ void funcionhBloqEmeraReady (t_log* logger){
             queue_push(ready, (void*) aux_TCB);
             aux_TCB -> status = 'R';
             free(aux_TCB);
-            contBloqEmer--;
-            contReady++;
         }
     }
 }
@@ -116,8 +183,6 @@ void funcionhBloqIOaReady (t_log* logger){
             queue_push(ready, (void*) aux_TCB);
             aux_TCB -> status = 'R';
             free(aux_TCB);
-            contBloqIO--;
-            contReady++;
         }
     }
 }
@@ -133,8 +198,6 @@ void funcionhExecaExit (t_log* logger){
             queue_push(cola_exit, (void*) aux_TCB);
             aux_TCB -> status = 'X';
             free(aux_TCB);
-            contExec--;
-            contExit++;
         }
     }
 }
@@ -204,7 +267,7 @@ void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger
     free(buffer);
 }
 
-tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea)
+tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea, t_log* logger)
 {
     tcb* nuevoTCB = malloc (sizeof(tcb));
 	nuevoTCB -> tid = idT;
@@ -215,7 +278,9 @@ tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea)
     nuevoTCB -> instruccion_actual = malloc (strlen(tarea) + 1);
     strcpy(nuevoTCB -> instruccion_actual, tarea);
     nuevoTCB -> instruccion_actual[strlen(tarea)]='\0';
-    //crear hilo de tripulante
+    pthread_t hiloTripulante;
+    pthread_create(&hiloTripulante, NULL, (void *) funcionTripulante, logger, nuevoTCB);
+    pthread_detach(hiloTripulante);
     return nuevoTCB;
 }
 
@@ -247,10 +312,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
             }
         }
         int tid = (nuevoPCB -> pid) * 100 + i;
-        log_info(logger, "%d", tid);
-        log_info(logger, "%d", contadorPCBs);
-        log_info(logger, "%d", posX);
-        log_info(logger, "%d", posY);
         int tamanioBuffer;
         void* buffer;
         t_mensaje *mensajeRecibido = malloc (sizeof(t_mensaje));
@@ -276,7 +337,7 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
         else if (comando == 402) {
             log_info(logger, "No hay suficiente memoria para iniciar otro tripulante");
             break;}*/
-        tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, temp_tarea);
+        tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, temp_tarea, logger);
         list_add (nuevoPCB -> listaTCB, (void*) nuevoTCB);
         queue_push (cola_new, (void*) nuevoTCB);
         free(buffer);
@@ -287,19 +348,14 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
 
 /*void funcionEliminarListaPatotas(void* nodoPatota) {
 
-    free (np1 -> PID);
-    //free (np1 -> cantTrip); este no porque es int???
-    free (np1 -> bufferIDTrip);
+    free (np1 -> rutaTareas);
+    list_destroy(listaTCB);
     free (np1);
 }
 
 void funcionEliminarListaTripulantes(void* nodoTripulante) {
 
-    free (nt1 -> TID);
-    free (nt1 -> PID);
-    free (nt1 -> status);
-    //free (nt1 -> posicionX; estos no porque son int???
-    //free (nt1 -> posicionY);
+    free(instruccion_actual);
     free (nt1);
 }
 

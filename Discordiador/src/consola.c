@@ -57,12 +57,6 @@ void expulsarNodo (t_queue* cola, char* nombre_cola){
 
 void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
     contadorPCBs = 0;
-    contNew = 0;
-    contReady = 0;
-    contExec = 0;
-    contBloqIO = 0;
-    contBloqEmer = 0;
-    contExit = 0;
     validador = 1;
     planificacion_pausada = 1;
     char* leido;
@@ -117,7 +111,6 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                     list_add (listaPCB, (void*) nuevoPCB);
                     
                 //avisarle/mandarle PCB a Mi-RAM HQ
-                // crear hilos
                     break;
 
                 case 3: //LISTAR_TRIPULANTES

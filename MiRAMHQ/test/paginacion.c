@@ -24,23 +24,6 @@
 #include <sys/types.h>
 #include <dirent.h>
 
-int status = 1;
-int recvCounter = 0;
-
-// void *handler(int socket) {
-//   char *proceso;
-
-//   log_info(logger, "Esperando mensajes..");
-//   while(status) {
-//     while (recvCounter--) {
-//         proceso = malloc(3);
-//         if (recv(socket, proceso, 3, 0) > 0) {
-//             proceso[3] = '\0';
-//         }
-//     }
-//   }
-// }
-
 t_dictionary *global_tables;
 
 enum tipo_segmento {
@@ -784,7 +767,6 @@ void save_data_in_memory(void *buffer) {
 
     void *temp;
     pcb *p_aux = malloc(sizeof(pcb));
-    tcb *t_aux = malloc(sizeof(tcb));
     int task_size;
     int tcb_count;
     int offset = 0;
@@ -869,14 +851,14 @@ void save_data_in_memory(void *buffer) {
             bitarray_set_bit(bitmap, n_frame);
             
             // Creo frame
-            frame_t *frame = malloc(frame_t);
+            frame_t *frame = malloc(sizeof(frame_t));
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
             frame -> presence = 1;
 
             // Creo pagina
-            page_t *page = malloc(page_t);
+            page_t *page = malloc(sizeof(page_t));
             page -> frame = frame;
 
             if (bytes_left < page_size) {
@@ -956,6 +938,7 @@ int main() {
         memcpy(test, virtual_memory + (2 * page_size), page_size);
         test[page_size] = '\0';
         log_info(logger, "TEST: %s", test);
+        free(test);
 
         log_info(logger, "5 frames libres?: %d", check_free_frames(5));
         log_info(logger, "23 frames libres?: %d", check_free_frames(23));
@@ -1002,6 +985,14 @@ int main() {
     }
 
     close(arch_bitmap);
+
+    free(memory);
+
+    munmap(virtual_memory, virtual_size);
+
+    bitarray_destroy(bitmap);
+
+    bitarray_destroy(virtual_bitmap);
 
     // //////////////////////////// GONZA //////////////////////////////////// //
 

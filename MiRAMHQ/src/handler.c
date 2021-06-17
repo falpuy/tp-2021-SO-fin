@@ -4,7 +4,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 		
   	char* data_tareas;
-    int cantTripulantes, tamStrTareas,idTCB,posX,posY,idPCB;
+    int cantTripulantes, tamStrTareas, idTCB, posX, posY, idPCB;
   
   	int segment_size;
   	int found_segment;
@@ -19,7 +19,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             log_info(logger,"Llegó la operación: INICIAR_PATOTA ");
       			
         	//--------------------------Deserializar -------------------------------              
-        		memcpy(&idPCB, buffer, sizeof(int);
+        		memcpy(&idPCB, buffer, sizeof(int));
             offset += sizeof(int);
         
         		memcpy(&tamStrTareas,buffer,sizeof(int));
@@ -53,14 +53,14 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                   	t_queue *segmentTable = queue_create();
 										// crear segmento para tareas
                   	segment_size = tamStrTareas;
-                    found_segment = memory_seek(memory, m_size, table_collection, segment_size);
+                    found_segment = memory_seek(memory, memory_size, table_collection, segment_size);
                   	
                   		if(found_segment < 0) {
-                          memory_compaction(memory, m_size, table_collection);
-                          found_segment = memory_seek(memory, m_size, table_collection, segment_size);
+                          memory_compaction(memory, memory_size, table_collection);
+                          found_segment = memory_seek(memory, memory_size, table_collection, segment_size);
                       }
                   
-                  		pcb temp = malloc(sizeof(pcb));
+                  		pcb *temp = malloc(sizeof(pcb));
                     	temp -> pid = idPCB;
                       temp -> tasks = found_segment;
                     	
@@ -73,17 +73,17 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                       tareas -> id = idPCB;
                       tareas -> type = TASK;
                     	
-                    	save_task_in_memory(memory, mem_size, tareas, data_tareas);
+                    	save_task_in_memory(memory, memory_size, tareas, data_tareas);
 
                     	// creo segmento pcb
                     	segment *segmento_pcb = malloc(sizeof(segment));
                     
                       segment_size = sizeof(pcb);
-                      found_segment = memory_seek(memory, m_size, table_collection, segment_size);
+                      found_segment = memory_seek(memory, memory_size, table_collection, segment_size);
                   
                   		if(found_segment < 0) {
-                          memory_compaction(memory, m_size, table_collection);
-                          found_segment = memory_seek(memory, m_size, table_collection, segment_size);
+                          memory_compaction(memory, memory_size, table_collection);
+                          found_segment = memory_seek(memory, memory_size, table_collection, segment_size);
                       }
                     
                     	segmento_pcb -> nroSegmento = get_last_index (segmentTable) + 1;
@@ -92,7 +92,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                       segmento_pcb -> id = idPCB;
                       segmento_pcb -> type = PCB;
                     	
-                    	save_task_in_memory(memory, mem_size, tareas, data_tareas);
+                    	save_task_in_memory(memory, memory_size, tareas, data_tareas);
                     
                     	// guardo los segmentos
                     	queue_push(segmentTable, segmento_pcb);
@@ -105,25 +105,25 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
                         
                         memcpy(&aux -> tid, buffer + offset, sizeof(int));
                         memcpy(&aux -> pid, buffer + offset, sizeof(int));
-                        memcpy(&aux -> status, buffer + offset, sizeof(c));
-                        memcpy(&aux -> xPos, buffer + offset, sizeof(int));
-                        memcpy(&aux -> yPos, buffer + offset, sizeof(int));
+                        memcpy(&aux -> status, buffer + offset, sizeof(char));
+                        memcpy(&aux -> xpos, buffer + offset, sizeof(int));
+                        memcpy(&aux -> ypos, buffer + offset, sizeof(int));
                         
                         aux -> next = temp -> tasks;
                         
                         segment_size = sizeof(tcb);
-                        found_segment = memory_seek(memory, m_size, table_collection, segment_size);
+                        found_segment = memory_seek(memory, memory_size, table_collection, segment_size);
                         
                         if(found_segment < 0) {
-                            memory_compaction(memory, m_size, table_collection);
-                            found_segment = memory_seek(memory, m_size, table_collection, segment_size);
+                            memory_compaction(memory, memory_size, table_collection);
+                            found_segment = memory_seek(memory, memory_size, table_collection, segment_size);
                         }
                         
                         segment *segmento_tcb = malloc(sizeof(segment));
                         segmento_tcb -> id = aux -> tid;
                         segmento_tcb -> type = TCB;
                         segmento_tcb -> nroSegmento = get_last_index (segmentTable) + 1;
-                        segmento_tcb -> baseAddr = found_segment
+                        segmento_tcb -> baseAddr = found_segment;
                         segmento_tcb -> limit = found_segment + sizeof(tcb);
                         
                         queue_push(segmentTable, segmento_tcb);
@@ -154,16 +154,16 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
           	log_info(logger,"-----------------------------------------------------");
             log_info(logger,"Llegó la operación: RECIBIR_UBICACION_TRIPULANTE");
         //------------Deserializo parámetros-------------------
-            memcpy(&idPCB, payload,sizeof(int));
+            memcpy(&idPCB, buffer,sizeof(int));
             offset += sizeof(int);
             
-            memcpy(&idTCB, payload + offset, sizeof(int));
+            memcpy(&idTCB, buffer + offset, sizeof(int));
             offset += sizeof(int);
             
-						memcpy(&posX, payload + offset, sizeof(int));
+						memcpy(&posX, buffer + offset, sizeof(int));
             offset += sizeof(int);
               
-						memcpy(&posY, payload + offset, sizeof(int));
+						memcpy(&posY, buffer + offset, sizeof(int));
               
             log_info(logger,"ID PCB: %d", idPCB);
 						log_info(logger,"ID TCB: %d", idTCB);
@@ -173,9 +173,9 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 						t_queue* segmento_pcb = dictionary_get(diccionario, idPCB); 
             segment* segmento_tcb = get_tcb_by_id(segmento_pcb, idTCB);
 
-            tcb* nuestroTCB = get_tcb_from_memory(memory, m_size, segmento_tcb);
+            tcb* nuestroTCB = get_tcb_from_memory(memory, memory_size, segmento_tcb);
 
-            int error = save_tcb_in_memory(&memory, m_size, segmento_tcb, nuestroTCB);
+            int error = save_tcb_in_memory(&memory, memory_size, segmento_tcb, nuestroTCB);
 					
             char* respuesta = string_new();
             string_append(&respuesta, "Respuesta");
@@ -214,7 +214,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
             
             segment* segmento_tareas = get_tareas_by_idPCB(segmentos, idPCB);
 
-            int limite = confirmar_limite_tarea(segmento_tarea, nuestroTCB->next);
+            int limite = confirmar_limite_tarea(segmento_tareas, nuestroTCB->next);
 
 						char* respuesta = string_new();
             string_append(&respuesta, "Respuesta");
@@ -258,6 +258,7 @@ void handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 						
           	if(error < 0){
               log_error(logger, "Error al eliminar el segmento asociado");
+            }
 						else{
             //// Elimino el tcb del mapa
 

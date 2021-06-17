@@ -1,0 +1,1194 @@
+[INFO] 22:00:41:963 IMS/(21751:21751): Validando Existencia de directorios...
+[INFO] 22:00:41:963 IMS/(21751:21751): No existe directorio: Filesystem. Se crea.
+[INFO] 22:00:41:966 IMS/(21751:21751): -----------------------------------------------------
+[INFO] 22:00:41:966 IMS/(21751:21751): Validando existencia de Superbloque.ims....
+[INFO] 22:00:41:966 IMS/(21751:21751): -----------------------------------------------------
+[ERROR] 22:00:41:967 IMS/(21751:21751): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 22:00:41:967 IMS/(21751:21751): Ingresar el tamaño de cada bloque
+[INFO] 22:00:48:500 IMS/(21751:21751): Ingresar la cantidad de bloques
+[INFO] 22:00:50:032 IMS/(21751:21751): Muestro mis valores del bitmap..
+[INFO] 22:00:50:032 IMS/(21751:21751): -----------------------------------------------------
+[INFO] 22:00:50:032 IMS/(21751:21751): Se creó archivo superBloque.ims
+[INFO] 22:00:50:033 IMS/(21751:21751): -----------------------------------------------------
+[INFO] 22:00:50:033 IMS/(21751:21751): Validando existencia de Blocks.ims....
+[ERROR] 22:00:50:033 IMS/(21751:21751): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 22:00:50:035 IMS/(21751:21751): -----------------------------------------------------
+[INFO] 22:00:50:035 IMS/(21751:21751): Se creó archivo Blocks.ims
+[INFO] 22:00:50:035 IMS/(21751:21751): -----------------------------------------------------
+[INFO] 22:00:50:035 IMS/(21751:21751): ------------------------------------------------
+[INFO] 22:00:50:035 IMS/(21751:21751): Creando servidor......
+[INFO] 22:00:50:036 IMS/(21751:21751): ------------------------------------------------
+[INFO] 22:00:51:036 IMS/(21751:21751): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:00:51:036 IMS/(21751:21751): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:00:55:875 IMS/(21751:21751): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:00:55:876 IMS/(21751:21756): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:00:55:878 IMS/(21751:21756): LLegó nuevo comando:761
+[INFO] 22:00:55:878 IMS/(21751:21756): -----------------------------------------------------
+[INFO] 22:00:55:878 IMS/(21751:21756): Llego comando: Mover Tripulante.....
+[INFO] 22:00:55:879 IMS/(21751:21756): ID Tripulante:101
+[INFO] 22:00:55:879 IMS/(21751:21756): Posicion Vieja en X:5
+[INFO] 22:00:55:879 IMS/(21751:21756): Posicion Vieja en Y:20
+[INFO] 22:00:55:879 IMS/(21751:21756): Posicion Nueva en X:8
+[INFO] 22:00:55:879 IMS/(21751:21756): Posicion Nueva en Y:15
+[INFO] 22:00:55:879 IMS/(21751:21756): -----------------------------------------------------
+[INFO] 22:00:55:880 IMS/(21751:21756): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 22:00:55:895 IMS/(21751:21756): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[]	
+[INFO] 22:00:55:895 IMS/(21751:21756): 
+[ActualizarBlocks] Lista de bloques nuevos: [0]
+
+[INFO] 22:00:55:902 IMS/(21751:21756): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0]	
+[INFO] 22:00:55:910 IMS/(21751:21756): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1]
+
+[INFO] 22:00:55:915 IMS/(21751:21756): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1]	
+[INFO] 22:00:55:915 IMS/(21751:21756): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2]
+
+[INFO] 22:00:55:917 IMS/(21751:21756): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:00:56:037 IMS/(21751:21752): Comienza actualización de Blocks.ims...
+[INFO] 22:00:56:037 IMS/(21751:21752): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 22:00:56:038 IMS/(21751:21752): Se actualizo Blocks.ims
+[INFO] 22:00:56:039 IMS/(21751:21752): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 22:00:56:040 IMS/(21751:21752): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 22:01:01:040 IMS/(21751:21752): Comienza actualización de Blocks.ims...
+[INFO] 22:01:01:041 IMS/(21751:21752): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 22:01:01:042 IMS/(21751:21752): Se actualizo Blocks.ims
+[INFO] 22:01:01:043 IMS/(21751:21752): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 22:01:01:044 IMS/(21751:21752): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 22:01:06:044 IMS/(21751:21752): Comienza actualización de Blocks.ims...
+[INFO] 22:01:06:044 IMS/(21751:21752): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 22:01:06:045 IMS/(21751:21752): Se actualizo Blocks.ims
+[INFO] 22:01:06:046 IMS/(21751:21752): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 22:01:06:047 IMS/(21751:21752): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 22:04:12:437 IMS/(21772:21772): Validando Existencia de directorios...
+[INFO] 22:04:12:538 IMS/(21772:21772): Ya existe directorio
+[INFO] 22:04:12:541 IMS/(21772:21772): -----------------------------------------------------
+[INFO] 22:04:12:542 IMS/(21772:21772): Validando existencia de Superbloque.ims....
+[INFO] 22:04:12:543 IMS/(21772:21772): -----------------------------------------------------
+[INFO] 22:04:12:545 IMS/(21772:21772): Se encontró el archivo superBloque.ims
+[INFO] 22:04:12:553 IMS/(21772:21772): Muestro mis valores del bitmap..
+[INFO] 22:04:12:558 IMS/(21772:21772): -----------------------------------------------------
+[INFO] 22:04:12:559 IMS/(21772:21772): Se muestra los datos del superBloque.
+[INFO] 22:04:12:559 IMS/(21772:21772): Tamaño de bloque: 10
+[INFO] 22:04:12:560 IMS/(21772:21772): Cantidad de bloques: 64
+[INFO] 22:04:12:567 IMS/(21772:21772): -----------------------------------------------------
+[INFO] 22:04:12:571 IMS/(21772:21772): Validando existencia de Blocks.ims....
+[INFO] 22:04:12:572 IMS/(21772:21772): -----------------------------------------------------
+[INFO] 22:04:12:572 IMS/(21772:21772): Existe archivo Blocks.ims.
+[INFO] 22:04:12:575 IMS/(21772:21772): -----------------------------------------------------
+[INFO] 22:04:12:579 IMS/(21772:21772): ------------------------------------------------
+[INFO] 22:04:12:581 IMS/(21772:21772): Creando servidor......
+[INFO] 22:04:12:581 IMS/(21772:21772): ------------------------------------------------
+[INFO] 22:04:13:642 IMS/(21772:21772): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:04:13:645 IMS/(21772:21772): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:04:14:718 IMS/(21772:21772): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:04:14:723 IMS/(21772:21775): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:04:14:725 IMS/(21772:21775): LLegó nuevo comando:761
+[INFO] 22:04:14:732 IMS/(21772:21775): -----------------------------------------------------
+[INFO] 22:04:14:733 IMS/(21772:21775): Llego comando: Mover Tripulante.....
+[INFO] 22:04:14:734 IMS/(21772:21775): ID Tripulante:101
+[INFO] 22:04:14:734 IMS/(21772:21775): Posicion Vieja en X:5
+[INFO] 22:04:14:734 IMS/(21772:21775): Posicion Vieja en Y:20
+[INFO] 22:04:14:735 IMS/(21772:21775): Posicion Nueva en X:8
+[INFO] 22:04:14:735 IMS/(21772:21775): Posicion Nueva en Y:15
+[INFO] 22:04:14:736 IMS/(21772:21775): -----------------------------------------------------
+[INFO] 22:04:14:771 IMS/(21772:21775): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2]	
+[INFO] 22:04:14:774 IMS/(21772:21775): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0]
+
+[INFO] 22:04:14:797 IMS/(21772:21775): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2,0]	
+[INFO] 22:04:14:798 IMS/(21772:21775): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0,1]
+
+[INFO] 22:04:14:807 IMS/(21772:21775): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2,0,1]	
+[INFO] 22:04:14:808 IMS/(21772:21775): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0,1,2]
+
+[INFO] 22:04:14:815 IMS/(21772:21775): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:04:18:604 IMS/(21772:21773): Comienza actualización de Blocks.ims...
+[INFO] 22:04:18:605 IMS/(21772:21773): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 22:04:18:609 IMS/(21772:21773): Se actualizo Blocks.ims
+[INFO] 22:04:18:611 IMS/(21772:21773): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 22:04:18:613 IMS/(21772:21773): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 22:04:23:616 IMS/(21772:21773): Comienza actualización de Blocks.ims...
+[INFO] 22:04:23:616 IMS/(21772:21773): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 22:04:23:618 IMS/(21772:21773): Se actualizo Blocks.ims
+[INFO] 22:04:23:619 IMS/(21772:21773): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 22:04:23:620 IMS/(21772:21773): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 22:04:28:622 IMS/(21772:21773): Comienza actualización de Blocks.ims...
+[INFO] 22:04:28:622 IMS/(21772:21773): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 22:04:28:624 IMS/(21772:21773): Se actualizo Blocks.ims
+[INFO] 22:04:28:626 IMS/(21772:21773): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 22:04:28:627 IMS/(21772:21773): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 22:04:33:628 IMS/(21772:21773): Comienza actualización de Blocks.ims...
+[INFO] 22:04:33:629 IMS/(21772:21773): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 22:04:33:630 IMS/(21772:21773): Se actualizo Blocks.ims
+[INFO] 22:04:33:631 IMS/(21772:21773): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 22:04:33:633 IMS/(21772:21773): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 22:04:38:634 IMS/(21772:21773): Comienza actualización de Blocks.ims...
+[INFO] 22:04:38:634 IMS/(21772:21773): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 22:04:38:636 IMS/(21772:21773): Se actualizo Blocks.ims
+[INFO] 22:04:38:637 IMS/(21772:21773): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 22:04:38:639 IMS/(21772:21773): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:01:41:221 IMS/(23190:23190): Validando Existencia de directorios...
+[INFO] 23:01:41:222 IMS/(23190:23190): Ya existe directorio
+[INFO] 23:01:41:222 IMS/(23190:23190): -----------------------------------------------------
+[INFO] 23:01:41:222 IMS/(23190:23190): Validando existencia de Superbloque.ims....
+[INFO] 23:01:41:222 IMS/(23190:23190): -----------------------------------------------------
+[INFO] 23:01:41:223 IMS/(23190:23190): Se encontró el archivo superBloque.ims
+[INFO] 23:01:41:224 IMS/(23190:23190): Muestro mis valores del bitmap..
+[INFO] 23:01:41:224 IMS/(23190:23190): -----------------------------------------------------
+[INFO] 23:01:41:224 IMS/(23190:23190): Se muestra los datos del superBloque.
+[INFO] 23:01:41:224 IMS/(23190:23190): Tamaño de bloque: 10
+[INFO] 23:01:41:224 IMS/(23190:23190): Cantidad de bloques: 64
+[INFO] 23:01:41:225 IMS/(23190:23190): -----------------------------------------------------
+[INFO] 23:01:41:225 IMS/(23190:23190): Validando existencia de Blocks.ims....
+[INFO] 23:01:41:225 IMS/(23190:23190): -----------------------------------------------------
+[INFO] 23:01:41:227 IMS/(23190:23190): Existe archivo Blocks.ims.
+[INFO] 23:01:41:228 IMS/(23190:23190): -----------------------------------------------------
+[INFO] 23:01:41:228 IMS/(23190:23190): ------------------------------------------------
+[INFO] 23:01:41:228 IMS/(23190:23190): Creando servidor......
+[INFO] 23:01:41:228 IMS/(23190:23190): ------------------------------------------------
+[INFO] 23:01:42:229 IMS/(23190:23190): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:01:42:229 IMS/(23190:23190): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:01:47:230 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:01:47:230 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:01:47:231 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:01:47:232 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:01:47:233 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:01:52:234 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:01:52:234 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:01:52:235 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:01:52:236 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:01:52:237 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:01:57:237 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:01:57:238 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:01:57:239 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:01:57:240 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:01:57:241 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:02:242 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:02:242 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:02:244 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:02:245 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:02:247 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:07:247 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:07:248 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:07:250 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:07:251 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:07:253 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:12:254 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:12:254 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:12:255 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:12:256 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:12:257 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:17:257 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:17:258 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:17:259 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:17:260 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:17:261 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:22:261 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:22:262 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:22:263 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:22:264 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:22:265 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:27:266 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:27:266 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:27:267 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:27:269 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:27:271 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:32:272 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:32:273 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:32:274 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:32:275 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:32:276 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:37:277 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:37:277 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:37:278 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:37:279 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:37:280 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:42:281 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:42:282 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:42:283 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:42:284 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:42:285 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:47:285 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:47:286 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:47:287 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:47:287 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:47:288 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:52:290 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:52:290 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:52:291 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:52:292 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:52:293 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:02:57:293 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:02:57:294 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:02:57:295 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:02:57:296 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:02:57:297 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:03:02:298 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:03:02:299 IMS/(23190:23191): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:03:02:300 IMS/(23190:23191): Se actualizo Blocks.ims
+[INFO] 23:03:02:301 IMS/(23190:23191): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:03:02:301 IMS/(23190:23191): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:03:04:651 IMS/(23190:23190): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:03:04:652 IMS/(23190:23208): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:03:04:653 IMS/(23190:23208): LLegó nuevo comando:760
+[INFO] 23:03:04:653 IMS/(23190:23208): -----------------------------------------------------
+[INFO] 23:03:04:653 IMS/(23190:23208): Llego comando: Obtener bitácora de.....
+[INFO] 23:03:04:654 IMS/(23190:23208): ID Tripulante:101
+[INFO] 23:03:04:654 IMS/(23190:23208): -----------------------------------------------------
+[ERROR] 23:03:04:654 IMS/(23190:23208): No existe bitácora para ese tripulante.
+[INFO] 23:03:07:302 IMS/(23190:23191): Comienza actualización de Blocks.ims...
+[INFO] 23:05:35:000 IMS/(23190:23190): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:05:35:001 IMS/(23190:23221): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:05:35:003 IMS/(23190:23221): LLegó nuevo comando:761
+[INFO] 23:05:35:003 IMS/(23190:23221): -----------------------------------------------------
+[INFO] 23:05:35:003 IMS/(23190:23221): Llego comando: Mover Tripulante.....
+[INFO] 23:05:35:003 IMS/(23190:23221): ID Tripulante:101
+[INFO] 23:05:35:003 IMS/(23190:23221): Posicion Vieja en X:5
+[INFO] 23:05:35:003 IMS/(23190:23221): Posicion Vieja en Y:20
+[INFO] 23:05:35:004 IMS/(23190:23221): Posicion Nueva en X:8
+[INFO] 23:05:35:004 IMS/(23190:23221): Posicion Nueva en Y:15
+[INFO] 23:05:35:004 IMS/(23190:23221): -----------------------------------------------------
+[INFO] 23:06:46:207 IMS/(23353:23353): Validando Existencia de directorios...
+[INFO] 23:06:46:207 IMS/(23353:23353): Ya existe directorio
+[INFO] 23:06:46:208 IMS/(23353:23353): -----------------------------------------------------
+[INFO] 23:06:46:208 IMS/(23353:23353): Validando existencia de Superbloque.ims....
+[INFO] 23:06:46:208 IMS/(23353:23353): -----------------------------------------------------
+[INFO] 23:06:46:208 IMS/(23353:23353): Se encontró el archivo superBloque.ims
+[INFO] 23:06:46:209 IMS/(23353:23353): Muestro mis valores del bitmap..
+[INFO] 23:06:46:209 IMS/(23353:23353): -----------------------------------------------------
+[INFO] 23:06:46:209 IMS/(23353:23353): Se muestra los datos del superBloque.
+[INFO] 23:06:46:210 IMS/(23353:23353): Tamaño de bloque: 10
+[INFO] 23:06:46:210 IMS/(23353:23353): Cantidad de bloques: 64
+[INFO] 23:06:46:210 IMS/(23353:23353): -----------------------------------------------------
+[INFO] 23:06:46:210 IMS/(23353:23353): Validando existencia de Blocks.ims....
+[INFO] 23:06:46:211 IMS/(23353:23353): -----------------------------------------------------
+[INFO] 23:06:46:211 IMS/(23353:23353): Existe archivo Blocks.ims.
+[INFO] 23:06:46:212 IMS/(23353:23353): -----------------------------------------------------
+[INFO] 23:06:46:212 IMS/(23353:23353): ------------------------------------------------
+[INFO] 23:06:46:212 IMS/(23353:23353): Creando servidor......
+[INFO] 23:06:46:212 IMS/(23353:23353): ------------------------------------------------
+[INFO] 23:06:47:214 IMS/(23353:23353): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:06:47:214 IMS/(23353:23353): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:06:51:439 IMS/(23353:23353): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:06:51:440 IMS/(23353:23361): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:06:51:441 IMS/(23353:23361): LLegó nuevo comando:761
+[INFO] 23:06:51:442 IMS/(23353:23361): -----------------------------------------------------
+[INFO] 23:06:51:442 IMS/(23353:23361): Llego comando: Mover Tripulante.....
+[INFO] 23:06:51:442 IMS/(23353:23361): ID Tripulante:101
+[INFO] 23:06:51:442 IMS/(23353:23361): Posicion Vieja en X:5
+[INFO] 23:06:51:442 IMS/(23353:23361): Posicion Vieja en Y:20
+[INFO] 23:06:51:442 IMS/(23353:23361): Posicion Nueva en X:8
+[INFO] 23:06:51:443 IMS/(23353:23361): Posicion Nueva en Y:15
+[INFO] 23:06:51:443 IMS/(23353:23361): -----------------------------------------------------
+[INFO] 23:06:51:446 IMS/(23353:23361): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2,0,1,2]	
+[INFO] 23:06:51:446 IMS/(23353:23361): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0,1,2,0]
+
+[INFO] 23:06:51:462 IMS/(23353:23361): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2,0,1,2,0]	
+[INFO] 23:06:51:462 IMS/(23353:23361): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0,1,2,0,1]
+
+[INFO] 23:06:51:476 IMS/(23353:23361): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2,0,1,2,0,1]	
+[INFO] 23:06:51:476 IMS/(23353:23361): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0,1,2,0,1,2]
+
+[INFO] 23:06:51:478 IMS/(23353:23361): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:06:52:214 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:06:52:214 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:06:52:215 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:06:52:216 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:06:52:217 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:06:57:217 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:06:57:217 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:06:57:219 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:06:57:220 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:06:57:221 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:02:222 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:02:222 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:02:225 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:02:227 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:02:228 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:07:229 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:07:230 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:07:231 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:07:231 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:07:232 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:12:233 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:12:234 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:12:235 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:12:236 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:12:237 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:17:237 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:17:237 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:17:238 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:17:239 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:17:240 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:22:241 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:22:242 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:22:243 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:22:244 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:22:246 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:27:246 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:27:246 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:27:248 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:27:248 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:27:249 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:32:251 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:32:252 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:32:253 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:32:254 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:32:255 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:37:257 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:37:257 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:37:258 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:37:259 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:37:260 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:42:260 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:42:261 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:42:262 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:42:262 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:42:263 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:47:264 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:47:264 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:47:266 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:47:267 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:47:268 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:52:269 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:52:269 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:52:270 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:52:271 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:52:272 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:07:57:272 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:07:57:273 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:07:57:274 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:07:57:275 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:07:57:276 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:02:277 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:02:277 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:02:279 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:02:280 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:02:282 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:07:283 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:07:283 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:07:284 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:07:285 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:07:286 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:12:287 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:12:287 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:12:288 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:12:289 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:12:290 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:18:045 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:18:046 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:18:048 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:18:049 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:18:051 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:23:052 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:23:053 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:23:054 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:23:055 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:23:056 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:28:056 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:28:056 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:28:058 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:28:059 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:28:061 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:33:061 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:33:062 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:33:063 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:33:064 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:33:065 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:38:066 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:38:066 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:38:067 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:38:069 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:38:070 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:43:071 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:43:071 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:43:073 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:43:073 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:43:074 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:48:075 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:48:075 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:48:076 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:48:077 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:48:078 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:53:079 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:53:080 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:53:082 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:53:084 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:53:086 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:08:58:087 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:08:58:088 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:08:58:089 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:08:58:089 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:08:58:090 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:03:092 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:03:092 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:03:093 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:03:095 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:03:096 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:08:096 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:08:096 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:08:098 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:08:099 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:08:100 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:13:102 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:13:102 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:13:104 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:13:105 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:13:107 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:18:108 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:18:109 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:18:110 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:18:111 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:18:112 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:23:113 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:23:113 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:23:114 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:23:115 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:23:117 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:28:118 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:28:118 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:28:119 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:28:120 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:28:121 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:33:122 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:33:123 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:33:124 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:33:124 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:33:125 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:38:127 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:38:127 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:38:129 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:38:131 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:38:132 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:43:133 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:43:133 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:43:135 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:43:135 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:43:136 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:48:137 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:48:137 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:48:138 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:48:139 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:48:140 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:53:141 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:53:141 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:53:142 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:53:143 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:53:144 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:09:58:144 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:09:58:145 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:09:58:146 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:09:58:147 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:09:58:148 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:03:150 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:03:150 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:03:151 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:03:152 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:03:153 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:08:155 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:08:155 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:08:157 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:08:159 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:08:160 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:13:161 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:13:161 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:13:162 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:13:163 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:13:164 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:18:165 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:18:165 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:18:166 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:18:167 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:18:169 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:23:169 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:23:169 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:23:171 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:23:172 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:23:173 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:28:174 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:28:174 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:28:176 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:28:178 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:28:180 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:33:181 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:33:181 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:33:182 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:33:183 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:33:184 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:38:185 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:38:185 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:38:187 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:38:188 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:38:190 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:43:191 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:43:192 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:43:193 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:43:194 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:43:196 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:48:197 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:48:197 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:48:199 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:48:200 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:48:201 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:53:203 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:53:203 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:53:205 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:53:206 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:53:207 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:10:58:208 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:10:58:208 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:10:58:209 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:10:58:211 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:10:58:212 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:03:213 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:03:213 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:03:214 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:03:221 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:03:223 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:08:226 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:08:226 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:08:227 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:08:228 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:08:229 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:13:230 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:13:230 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:13:231 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:13:232 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:13:233 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:18:233 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:18:234 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:18:235 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:18:236 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:18:237 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:23:239 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:23:239 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:23:240 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:23:242 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:23:244 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:28:245 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:28:246 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:28:248 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:28:249 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:28:250 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:33:251 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:33:251 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:33:253 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:33:254 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:33:255 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:38:256 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:38:257 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:38:258 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:38:259 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:38:260 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:43:261 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:43:261 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:43:262 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:43:263 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:43:264 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:48:265 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:48:266 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:48:267 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:48:268 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:48:269 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:53:270 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:53:270 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:53:271 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:53:272 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:53:273 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:11:58:275 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:11:58:275 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:11:58:276 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:11:58:278 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:11:58:279 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:03:280 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:03:281 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:03:282 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:03:282 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:03:283 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:08:284 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:08:284 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:08:285 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:08:287 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:08:288 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:13:289 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:13:289 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:13:291 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:13:291 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:13:292 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:18:293 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:18:294 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:18:295 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:18:296 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:18:297 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:23:298 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:23:299 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:23:300 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:23:301 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:23:302 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:28:303 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:28:303 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:28:305 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:28:305 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:28:306 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:33:308 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:33:308 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:33:310 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:33:311 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:33:312 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:38:313 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:38:314 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:38:316 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:38:317 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:38:318 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:43:318 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:43:318 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:43:319 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:43:320 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:43:321 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:48:322 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:48:322 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:48:323 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:48:324 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:48:325 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:53:326 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:53:326 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:53:327 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:53:328 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:53:329 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:12:58:330 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:12:58:331 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:12:58:332 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:12:58:332 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:12:58:333 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:03:334 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:03:334 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:03:336 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:03:338 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:03:339 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:08:341 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:08:341 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:08:342 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:08:343 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:08:344 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:13:345 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:13:345 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:13:346 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:13:347 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:13:348 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:18:350 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:18:350 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:18:351 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:18:352 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:18:353 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:23:354 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:23:355 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:23:356 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:23:358 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:23:360 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:28:360 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:28:360 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:28:361 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:28:363 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:28:364 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:33:364 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:33:365 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:33:366 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:33:367 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:33:368 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:38:370 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:38:370 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:38:372 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:38:374 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:38:375 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:43:376 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:43:376 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:43:377 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:43:378 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:43:379 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:48:380 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:48:380 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:48:381 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:48:383 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:48:384 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:53:385 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:53:385 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:53:387 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:53:388 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:53:389 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:13:58:390 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:13:58:390 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:13:58:392 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:13:58:393 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:13:58:395 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:14:03:396 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:14:03:396 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:14:03:398 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:14:03:398 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:14:03:399 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:14:08:401 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:14:08:401 IMS/(23353:23354): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:14:08:402 IMS/(23353:23354): Se actualizo Blocks.ims
+[INFO] 23:14:08:403 IMS/(23353:23354): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:14:08:404 IMS/(23353:23354): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:14:09:084 IMS/(23353:23353): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:14:09:084 IMS/(23353:23663): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:14:09:084 IMS/(23353:23663): LLegó nuevo comando:760
+[INFO] 23:14:09:085 IMS/(23353:23663): -----------------------------------------------------
+[INFO] 23:14:09:085 IMS/(23353:23663): Llego comando: Obtener bitácora de.....
+[INFO] 23:14:09:085 IMS/(23353:23663): ID Tripulante:101
+[INFO] 23:14:09:085 IMS/(23353:23663): -----------------------------------------------------
+[ERROR] 23:14:09:086 IMS/(23353:23663): No existe bitácora para ese tripulante.
+[INFO] 23:14:13:405 IMS/(23353:23354): Comienza actualización de Blocks.ims...
+[INFO] 23:17:51:725 IMS/(23808:23808): Validando Existencia de directorios...
+[INFO] 23:17:51:726 IMS/(23808:23808): Ya existe directorio
+[INFO] 23:17:51:726 IMS/(23808:23808): -----------------------------------------------------
+[INFO] 23:17:51:726 IMS/(23808:23808): Validando existencia de Superbloque.ims....
+[INFO] 23:17:51:726 IMS/(23808:23808): -----------------------------------------------------
+[INFO] 23:17:51:727 IMS/(23808:23808): Se encontró el archivo superBloque.ims
+[INFO] 23:17:51:727 IMS/(23808:23808): Muestro mis valores del bitmap..
+[INFO] 23:17:51:727 IMS/(23808:23808): -----------------------------------------------------
+[INFO] 23:17:51:728 IMS/(23808:23808): Se muestra los datos del superBloque.
+[INFO] 23:17:51:728 IMS/(23808:23808): Tamaño de bloque: 10
+[INFO] 23:17:51:728 IMS/(23808:23808): Cantidad de bloques: 64
+[INFO] 23:17:51:728 IMS/(23808:23808): -----------------------------------------------------
+[INFO] 23:17:51:728 IMS/(23808:23808): Validando existencia de Blocks.ims....
+[INFO] 23:17:51:729 IMS/(23808:23808): -----------------------------------------------------
+[INFO] 23:17:51:729 IMS/(23808:23808): Existe archivo Blocks.ims.
+[INFO] 23:17:51:730 IMS/(23808:23808): -----------------------------------------------------
+[INFO] 23:17:51:730 IMS/(23808:23808): ------------------------------------------------
+[INFO] 23:17:51:730 IMS/(23808:23808): Creando servidor......
+[INFO] 23:17:51:731 IMS/(23808:23808): ------------------------------------------------
+[INFO] 23:17:52:732 IMS/(23808:23808): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:17:52:732 IMS/(23808:23808): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:17:57:732 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:17:57:733 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:17:57:734 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:17:57:734 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:17:57:735 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:02:737 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:02:737 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:02:739 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:02:740 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:02:742 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:07:743 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:07:743 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:07:744 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:07:745 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:07:746 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:12:747 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:12:747 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:12:749 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:12:750 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:12:751 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:17:076 IMS/(23808:23808): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:18:17:077 IMS/(23808:23820): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:18:17:079 IMS/(23808:23820): LLegó nuevo comando:761
+[INFO] 23:18:17:079 IMS/(23808:23820): -----------------------------------------------------
+[INFO] 23:18:17:079 IMS/(23808:23820): Llego comando: Mover Tripulante.....
+[INFO] 23:18:17:079 IMS/(23808:23820): ID Tripulante:101
+[INFO] 23:18:17:080 IMS/(23808:23820): Posicion Vieja en X:9
+[INFO] 23:18:17:080 IMS/(23808:23820): Posicion Vieja en Y:8
+[INFO] 23:18:17:080 IMS/(23808:23820): Posicion Nueva en X:1
+[INFO] 23:18:17:080 IMS/(23808:23820): Posicion Nueva en Y:4
+[INFO] 23:18:17:080 IMS/(23808:23820): -----------------------------------------------------
+[INFO] 23:18:17:097 IMS/(23808:23820): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2,0,1,2,0,1,2]	
+[INFO] 23:18:17:099 IMS/(23808:23820): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0,1,2,0,1,2,0]
+
+[INFO] 23:18:17:127 IMS/(23808:23820): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2,0,1,2,0,1,2,0]	
+[INFO] 23:18:17:127 IMS/(23808:23820): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0,1,2,0,1,2,0,1]
+
+[INFO] 23:18:17:136 IMS/(23808:23820): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1,2,0,1,2,0,1,2,0,1]	
+[INFO] 23:18:17:136 IMS/(23808:23820): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2,0,1,2,0,1,2,0,1,2]
+
+[INFO] 23:18:17:138 IMS/(23808:23820): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:18:17:752 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:17:752 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:17:753 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:17:754 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:17:756 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:22:757 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:22:757 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:22:758 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:22:759 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:22:760 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:27:761 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:27:761 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:27:762 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:27:763 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:27:764 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:32:764 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:32:764 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:32:765 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:32:766 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:32:767 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:37:768 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:37:768 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:37:771 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:37:773 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:37:776 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:42:777 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:42:778 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:42:780 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:42:781 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:42:783 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:47:784 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:47:786 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:47:789 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:47:794 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:47:804 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:52:806 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:52:806 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:52:808 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:52:808 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:52:809 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:18:57:810 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:18:57:811 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:18:57:812 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:18:57:812 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:18:57:813 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:19:02:814 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:19:02:814 IMS/(23808:23809): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:19:02:816 IMS/(23808:23809): Se actualizo Blocks.ims
+[INFO] 23:19:02:817 IMS/(23808:23809): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:19:02:818 IMS/(23808:23809): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:19:06:859 IMS/(23808:23808): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:19:06:860 IMS/(23808:23830): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:19:06:860 IMS/(23808:23830): LLegó nuevo comando:760
+[INFO] 23:19:06:862 IMS/(23808:23830): -----------------------------------------------------
+[INFO] 23:19:06:863 IMS/(23808:23830): Llego comando: Obtener bitácora de.....
+[INFO] 23:19:06:863 IMS/(23808:23830): ID Tripulante:101
+[INFO] 23:19:06:863 IMS/(23808:23830): -----------------------------------------------------
+[ERROR] 23:19:06:864 IMS/(23808:23830): No existe bitácora para ese tripulante.
+[INFO] 23:19:07:819 IMS/(23808:23809): Comienza actualización de Blocks.ims...
+[INFO] 23:20:09:696 IMS/(23975:23975): Validando Existencia de directorios...
+[INFO] 23:20:09:696 IMS/(23975:23975): No existe directorio: Filesystem. Se crea.
+[INFO] 23:20:09:699 IMS/(23975:23975): -----------------------------------------------------
+[INFO] 23:20:09:699 IMS/(23975:23975): Validando existencia de Superbloque.ims....
+[INFO] 23:20:09:699 IMS/(23975:23975): -----------------------------------------------------
+[ERROR] 23:20:09:700 IMS/(23975:23975): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 23:20:09:700 IMS/(23975:23975): Ingresar el tamaño de cada bloque
+[INFO] 23:20:12:287 IMS/(23975:23975): Ingresar la cantidad de bloques
+[INFO] 23:20:13:297 IMS/(23975:23975): Muestro mis valores del bitmap..
+[INFO] 23:20:13:298 IMS/(23975:23975): -----------------------------------------------------
+[INFO] 23:20:13:298 IMS/(23975:23975): Se creó archivo superBloque.ims
+[INFO] 23:20:13:298 IMS/(23975:23975): -----------------------------------------------------
+[INFO] 23:20:13:298 IMS/(23975:23975): Validando existencia de Blocks.ims....
+[ERROR] 23:20:13:299 IMS/(23975:23975): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 23:20:13:300 IMS/(23975:23975): -----------------------------------------------------
+[INFO] 23:20:13:301 IMS/(23975:23975): Se creó archivo Blocks.ims
+[INFO] 23:20:13:301 IMS/(23975:23975): -----------------------------------------------------
+[INFO] 23:20:13:301 IMS/(23975:23975): ------------------------------------------------
+[INFO] 23:20:13:301 IMS/(23975:23975): Creando servidor......
+[INFO] 23:20:13:301 IMS/(23975:23975): ------------------------------------------------
+[INFO] 23:20:14:302 IMS/(23975:23975): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:20:14:302 IMS/(23975:23975): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:20:17:630 IMS/(23975:23975): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:20:17:631 IMS/(23975:23983): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:20:17:631 IMS/(23975:23983): LLegó nuevo comando:761
+[INFO] 23:20:17:632 IMS/(23975:23983): -----------------------------------------------------
+[INFO] 23:20:17:632 IMS/(23975:23983): Llego comando: Mover Tripulante.....
+[INFO] 23:20:17:633 IMS/(23975:23983): ID Tripulante:101
+[INFO] 23:20:17:633 IMS/(23975:23983): Posicion Vieja en X:9
+[INFO] 23:20:17:633 IMS/(23975:23983): Posicion Vieja en Y:8
+[INFO] 23:20:17:633 IMS/(23975:23983): Posicion Nueva en X:1
+[INFO] 23:20:17:633 IMS/(23975:23983): Posicion Nueva en Y:4
+[INFO] 23:20:17:633 IMS/(23975:23983): -----------------------------------------------------
+[INFO] 23:20:17:635 IMS/(23975:23983): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 23:20:17:652 IMS/(23975:23983): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[]	
+[INFO] 23:20:17:653 IMS/(23975:23983): 
+[ActualizarBlocks] Lista de bloques nuevos: [0]
+
+[INFO] 23:20:17:675 IMS/(23975:23983): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0]	
+[INFO] 23:20:17:676 IMS/(23975:23983): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1]
+
+[INFO] 23:20:17:680 IMS/(23975:23983): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1]	
+[INFO] 23:20:17:681 IMS/(23975:23983): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2]
+
+[INFO] 23:20:17:683 IMS/(23975:23983): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:20:19:302 IMS/(23975:23976): Comienza actualización de Blocks.ims...
+[INFO] 23:20:19:302 IMS/(23975:23976): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:20:19:304 IMS/(23975:23976): Se actualizo Blocks.ims
+[INFO] 23:20:19:304 IMS/(23975:23976): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:20:19:305 IMS/(23975:23976): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:20:24:305 IMS/(23975:23976): Comienza actualización de Blocks.ims...
+[INFO] 23:20:24:306 IMS/(23975:23976): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:20:24:307 IMS/(23975:23976): Se actualizo Blocks.ims
+[INFO] 23:20:24:307 IMS/(23975:23976): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:20:24:308 IMS/(23975:23976): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:20:30:918 IMS/(23984:23984): Validando Existencia de directorios...
+[INFO] 23:20:30:918 IMS/(23984:23984): Ya existe directorio
+[INFO] 23:20:30:919 IMS/(23984:23984): -----------------------------------------------------
+[INFO] 23:20:30:919 IMS/(23984:23984): Validando existencia de Superbloque.ims....
+[INFO] 23:20:30:919 IMS/(23984:23984): -----------------------------------------------------
+[INFO] 23:20:30:920 IMS/(23984:23984): Se encontró el archivo superBloque.ims
+[INFO] 23:20:30:921 IMS/(23984:23984): Muestro mis valores del bitmap..
+[INFO] 23:20:30:921 IMS/(23984:23984): -----------------------------------------------------
+[INFO] 23:20:30:921 IMS/(23984:23984): Se muestra los datos del superBloque.
+[INFO] 23:20:30:921 IMS/(23984:23984): Tamaño de bloque: 10
+[INFO] 23:20:30:922 IMS/(23984:23984): Cantidad de bloques: 64
+[INFO] 23:20:30:922 IMS/(23984:23984): -----------------------------------------------------
+[INFO] 23:20:30:922 IMS/(23984:23984): Validando existencia de Blocks.ims....
+[INFO] 23:20:30:922 IMS/(23984:23984): -----------------------------------------------------
+[INFO] 23:20:30:923 IMS/(23984:23984): Existe archivo Blocks.ims.
+[INFO] 23:20:30:923 IMS/(23984:23984): -----------------------------------------------------
+[INFO] 23:20:30:926 IMS/(23984:23984): ------------------------------------------------
+[INFO] 23:20:30:926 IMS/(23984:23984): Creando servidor......
+[INFO] 23:20:30:926 IMS/(23984:23984): ------------------------------------------------
+[INFO] 23:20:31:927 IMS/(23984:23984): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:20:31:927 IMS/(23984:23984): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:20:36:927 IMS/(23984:23985): Comienza actualización de Blocks.ims...
+[INFO] 23:20:36:927 IMS/(23984:23985): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:20:36:928 IMS/(23984:23985): Se actualizo Blocks.ims
+[INFO] 23:20:36:929 IMS/(23984:23985): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:20:36:930 IMS/(23984:23985): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:22:36:467 IMS/(24210:24210): Validando Existencia de directorios...
+[INFO] 23:22:36:468 IMS/(24210:24210): No existe directorio: Filesystem. Se crea.
+[INFO] 23:22:36:471 IMS/(24210:24210): -----------------------------------------------------
+[INFO] 23:22:36:471 IMS/(24210:24210): Validando existencia de Superbloque.ims....
+[INFO] 23:22:36:471 IMS/(24210:24210): -----------------------------------------------------
+[ERROR] 23:22:36:471 IMS/(24210:24210): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 23:22:36:472 IMS/(24210:24210): Ingresar el tamaño de cada bloque
+[INFO] 23:22:38:136 IMS/(24210:24210): Ingresar la cantidad de bloques
+[INFO] 23:22:38:725 IMS/(24210:24210): Muestro mis valores del bitmap..
+[INFO] 23:22:38:725 IMS/(24210:24210): -----------------------------------------------------
+[INFO] 23:22:38:726 IMS/(24210:24210): Se creó archivo superBloque.ims
+[INFO] 23:22:38:726 IMS/(24210:24210): -----------------------------------------------------
+[INFO] 23:22:38:726 IMS/(24210:24210): Validando existencia de Blocks.ims....
+[ERROR] 23:22:38:726 IMS/(24210:24210): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 23:22:38:728 IMS/(24210:24210): -----------------------------------------------------
+[INFO] 23:22:38:728 IMS/(24210:24210): Se creó archivo Blocks.ims
+[INFO] 23:22:38:728 IMS/(24210:24210): -----------------------------------------------------
+[INFO] 23:22:38:728 IMS/(24210:24210): ------------------------------------------------
+[INFO] 23:22:38:728 IMS/(24210:24210): Creando servidor......
+[INFO] 23:22:38:728 IMS/(24210:24210): ------------------------------------------------
+[INFO] 23:22:39:730 IMS/(24210:24210): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:22:39:730 IMS/(24210:24210): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:22:42:595 IMS/(24210:24210): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:22:42:596 IMS/(24210:24218): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:22:42:596 IMS/(24210:24218): LLegó nuevo comando:761
+[INFO] 23:22:42:598 IMS/(24210:24218): -----------------------------------------------------
+[INFO] 23:22:42:598 IMS/(24210:24218): Llego comando: Mover Tripulante.....
+[INFO] 23:22:42:598 IMS/(24210:24218): ID Tripulante:101
+[INFO] 23:22:42:599 IMS/(24210:24218): Posicion Vieja en X:9
+[INFO] 23:22:42:599 IMS/(24210:24218): Posicion Vieja en Y:8
+[INFO] 23:22:42:599 IMS/(24210:24218): Posicion Nueva en X:1
+[INFO] 23:22:42:599 IMS/(24210:24218): Posicion Nueva en Y:4
+[INFO] 23:22:42:599 IMS/(24210:24218): -----------------------------------------------------
+[INFO] 23:22:42:600 IMS/(24210:24218): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 23:22:42:617 IMS/(24210:24218): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[]	
+[INFO] 23:22:42:618 IMS/(24210:24218): 
+[ActualizarBlocks] Lista de bloques nuevos: [0]
+
+[INFO] 23:22:42:634 IMS/(24210:24218): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0]	
+[INFO] 23:22:42:635 IMS/(24210:24218): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1]
+
+[INFO] 23:22:42:640 IMS/(24210:24218): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1]	
+[INFO] 23:22:42:640 IMS/(24210:24218): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2]
+
+[INFO] 23:22:42:642 IMS/(24210:24218): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:22:44:731 IMS/(24210:24211): Comienza actualización de Blocks.ims...
+[INFO] 23:22:44:731 IMS/(24210:24211): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:22:44:732 IMS/(24210:24211): Se actualizo Blocks.ims
+[INFO] 23:22:44:733 IMS/(24210:24211): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:22:44:734 IMS/(24210:24211): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:22:49:734 IMS/(24210:24211): Comienza actualización de Blocks.ims...
+[INFO] 23:22:49:735 IMS/(24210:24211): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:22:49:736 IMS/(24210:24211): Se actualizo Blocks.ims
+[INFO] 23:22:49:737 IMS/(24210:24211): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:22:49:738 IMS/(24210:24211): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:22:54:740 IMS/(24210:24211): Comienza actualización de Blocks.ims...
+[INFO] 23:22:54:740 IMS/(24210:24211): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:22:54:742 IMS/(24210:24211): Se actualizo Blocks.ims
+[INFO] 23:22:54:743 IMS/(24210:24211): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:22:54:744 IMS/(24210:24211): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:22:59:745 IMS/(24210:24211): Comienza actualización de Blocks.ims...
+[INFO] 23:22:59:745 IMS/(24210:24211): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:22:59:746 IMS/(24210:24211): Se actualizo Blocks.ims
+[INFO] 23:22:59:747 IMS/(24210:24211): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:22:59:748 IMS/(24210:24211): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:23:04:749 IMS/(24210:24211): Comienza actualización de Blocks.ims...
+[INFO] 23:23:04:750 IMS/(24210:24211): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:23:04:751 IMS/(24210:24211): Se actualizo Blocks.ims
+[INFO] 23:23:04:751 IMS/(24210:24211): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:23:04:752 IMS/(24210:24211): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:23:07:939 IMS/(24222:24222): Validando Existencia de directorios...
+[INFO] 23:23:07:940 IMS/(24222:24222): Ya existe directorio
+[INFO] 23:23:07:940 IMS/(24222:24222): -----------------------------------------------------
+[INFO] 23:23:07:941 IMS/(24222:24222): Validando existencia de Superbloque.ims....
+[INFO] 23:23:07:941 IMS/(24222:24222): -----------------------------------------------------
+[INFO] 23:23:07:941 IMS/(24222:24222): Se encontró el archivo superBloque.ims
+[INFO] 23:23:07:942 IMS/(24222:24222): Muestro mis valores del bitmap..
+[INFO] 23:23:07:942 IMS/(24222:24222): -----------------------------------------------------
+[INFO] 23:23:07:943 IMS/(24222:24222): Se muestra los datos del superBloque.
+[INFO] 23:23:07:943 IMS/(24222:24222): Tamaño de bloque: 10
+[INFO] 23:23:07:943 IMS/(24222:24222): Cantidad de bloques: 64
+[INFO] 23:23:07:944 IMS/(24222:24222): -----------------------------------------------------
+[INFO] 23:23:07:944 IMS/(24222:24222): Validando existencia de Blocks.ims....
+[INFO] 23:23:07:944 IMS/(24222:24222): -----------------------------------------------------
+[INFO] 23:23:07:947 IMS/(24222:24222): Existe archivo Blocks.ims.
+[INFO] 23:23:07:948 IMS/(24222:24222): -----------------------------------------------------
+[INFO] 23:23:07:948 IMS/(24222:24222): ------------------------------------------------
+[INFO] 23:23:07:948 IMS/(24222:24222): Creando servidor......
+[INFO] 23:23:07:948 IMS/(24222:24222): ------------------------------------------------
+[INFO] 23:23:08:949 IMS/(24222:24222): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:23:08:949 IMS/(24222:24222): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:23:13:949 IMS/(24222:24223): Comienza actualización de Blocks.ims...
+[INFO] 23:23:13:949 IMS/(24222:24223): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:23:13:950 IMS/(24222:24223): Se actualizo Blocks.ims
+[INFO] 23:23:13:951 IMS/(24222:24223): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:23:13:952 IMS/(24222:24223): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:23:18:954 IMS/(24222:24223): Comienza actualización de Blocks.ims...
+[INFO] 23:23:18:954 IMS/(24222:24223): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:23:18:955 IMS/(24222:24223): Se actualizo Blocks.ims
+[INFO] 23:23:18:956 IMS/(24222:24223): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:23:18:957 IMS/(24222:24223): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:26:14:802 IMS/(24380:24380): Validando Existencia de directorios...
+[INFO] 23:26:14:802 IMS/(24380:24380): No existe directorio: Filesystem. Se crea.
+[INFO] 23:26:14:806 IMS/(24380:24380): -----------------------------------------------------
+[INFO] 23:26:14:806 IMS/(24380:24380): Validando existencia de Superbloque.ims....
+[INFO] 23:26:14:806 IMS/(24380:24380): -----------------------------------------------------
+[ERROR] 23:26:14:807 IMS/(24380:24380): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 23:26:14:807 IMS/(24380:24380): Ingresar el tamaño de cada bloque
+[INFO] 23:26:16:609 IMS/(24380:24380): Ingresar la cantidad de bloques
+[INFO] 23:26:17:378 IMS/(24380:24380): Muestro mis valores del bitmap..
+[INFO] 23:26:17:379 IMS/(24380:24380): -----------------------------------------------------
+[INFO] 23:26:17:379 IMS/(24380:24380): Se creó archivo superBloque.ims
+[INFO] 23:26:17:379 IMS/(24380:24380): -----------------------------------------------------
+[INFO] 23:26:17:379 IMS/(24380:24380): Validando existencia de Blocks.ims....
+[ERROR] 23:26:17:379 IMS/(24380:24380): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 23:26:17:381 IMS/(24380:24380): -----------------------------------------------------
+[INFO] 23:26:17:381 IMS/(24380:24380): Se creó archivo Blocks.ims
+[INFO] 23:26:17:381 IMS/(24380:24380): -----------------------------------------------------
+[INFO] 23:26:17:381 IMS/(24380:24380): ------------------------------------------------
+[INFO] 23:26:17:382 IMS/(24380:24380): Creando servidor......
+[INFO] 23:26:17:382 IMS/(24380:24380): ------------------------------------------------
+[INFO] 23:26:18:383 IMS/(24380:24380): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:26:18:383 IMS/(24380:24380): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:26:21:471 IMS/(24380:24380): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:26:21:472 IMS/(24380:24383): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:26:21:474 IMS/(24380:24383): LLegó nuevo comando:761
+[INFO] 23:26:21:474 IMS/(24380:24383): -----------------------------------------------------
+[INFO] 23:26:21:474 IMS/(24380:24383): Llego comando: Mover Tripulante.....
+[INFO] 23:26:21:474 IMS/(24380:24383): ID Tripulante:101
+[INFO] 23:26:21:475 IMS/(24380:24383): Posicion Vieja en X:9
+[INFO] 23:26:21:475 IMS/(24380:24383): Posicion Vieja en Y:8
+[INFO] 23:26:21:475 IMS/(24380:24383): Posicion Nueva en X:1
+[INFO] 23:26:21:475 IMS/(24380:24383): Posicion Nueva en Y:4
+[INFO] 23:26:21:475 IMS/(24380:24383): -----------------------------------------------------
+[INFO] 23:26:21:476 IMS/(24380:24383): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 23:26:21:494 IMS/(24380:24383): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[]	
+[INFO] 23:26:21:494 IMS/(24380:24383): 
+[ActualizarBlocks] Lista de bloques nuevos: [0]
+
+[INFO] 23:26:21:515 IMS/(24380:24383): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0]	
+[INFO] 23:26:21:515 IMS/(24380:24383): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1]
+
+[INFO] 23:26:21:518 IMS/(24380:24383): [ActualizarBlocks] Muestro lista levantada vieja de metadata:[0,1]	
+[INFO] 23:26:21:519 IMS/(24380:24383): 
+[ActualizarBlocks] Lista de bloques nuevos: [0,1,2]
+
+[INFO] 23:26:21:520 IMS/(24380:24383): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:26:23:384 IMS/(24380:24381): Comienza actualización de Blocks.ims...
+[INFO] 23:26:23:385 IMS/(24380:24381): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:26:23:386 IMS/(24380:24381): Se actualizo Blocks.ims
+[INFO] 23:26:23:386 IMS/(24380:24381): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:26:23:387 IMS/(24380:24381): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:26:28:388 IMS/(24380:24381): Comienza actualización de Blocks.ims...
+[INFO] 23:26:28:389 IMS/(24380:24381): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:26:28:390 IMS/(24380:24381): Se actualizo Blocks.ims
+[INFO] 23:26:28:391 IMS/(24380:24381): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:26:28:392 IMS/(24380:24381): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:26:33:393 IMS/(24380:24381): Comienza actualización de Blocks.ims...
+[INFO] 23:26:33:393 IMS/(24380:24381): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:26:33:394 IMS/(24380:24381): Se actualizo Blocks.ims
+[INFO] 23:26:33:395 IMS/(24380:24381): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:26:33:396 IMS/(24380:24381): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:26:38:398 IMS/(24380:24381): Comienza actualización de Blocks.ims...
+[INFO] 23:26:38:398 IMS/(24380:24381): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:26:38:399 IMS/(24380:24381): Se actualizo Blocks.ims
+[INFO] 23:26:38:400 IMS/(24380:24381): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:26:38:401 IMS/(24380:24381): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:27:44:817 IMS/(24412:24412): Validando Existencia de directorios...
+[INFO] 23:27:44:818 IMS/(24412:24412): Ya existe directorio
+[INFO] 23:27:44:819 IMS/(24412:24412): -----------------------------------------------------
+[INFO] 23:27:44:819 IMS/(24412:24412): Validando existencia de Superbloque.ims....
+[INFO] 23:27:44:819 IMS/(24412:24412): -----------------------------------------------------
+[INFO] 23:27:44:820 IMS/(24412:24412): Se encontró el archivo superBloque.ims
+[INFO] 23:27:44:825 IMS/(24412:24412): Muestro mis valores del bitmap..
+[INFO] 23:27:44:828 IMS/(24412:24412): -----------------------------------------------------
+[INFO] 23:27:44:828 IMS/(24412:24412): Se muestra los datos del superBloque.
+[INFO] 23:27:44:828 IMS/(24412:24412): Tamaño de bloque: 10
+[INFO] 23:27:44:828 IMS/(24412:24412): Cantidad de bloques: 64
+[INFO] 23:27:44:829 IMS/(24412:24412): -----------------------------------------------------
+[INFO] 23:27:44:829 IMS/(24412:24412): Validando existencia de Blocks.ims....
+[INFO] 23:27:44:829 IMS/(24412:24412): -----------------------------------------------------
+[INFO] 23:27:44:829 IMS/(24412:24412): Existe archivo Blocks.ims.
+[INFO] 23:27:44:830 IMS/(24412:24412): -----------------------------------------------------
+[INFO] 23:27:44:831 IMS/(24412:24412): ------------------------------------------------
+[INFO] 23:27:44:831 IMS/(24412:24412): Creando servidor......
+[INFO] 23:27:44:832 IMS/(24412:24412): ------------------------------------------------
+[INFO] 23:27:45:833 IMS/(24412:24412): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 23:27:45:833 IMS/(24412:24412): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 23:27:50:833 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 23:27:50:833 IMS/(24412:24413): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:27:50:834 IMS/(24412:24413): Se actualizo Blocks.ims
+[INFO] 23:27:50:835 IMS/(24412:24413): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:27:50:836 IMS/(24412:24413): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:27:55:836 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 23:27:55:836 IMS/(24412:24413): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:27:55:837 IMS/(24412:24413): Se actualizo Blocks.ims
+[INFO] 23:27:55:838 IMS/(24412:24413): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:27:55:839 IMS/(24412:24413): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:28:00:840 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 23:28:00:840 IMS/(24412:24413): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:28:00:841 IMS/(24412:24413): Se actualizo Blocks.ims
+[INFO] 23:28:00:842 IMS/(24412:24413): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:28:00:843 IMS/(24412:24413): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:28:05:843 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 23:28:05:843 IMS/(24412:24413): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:28:05:845 IMS/(24412:24413): Se actualizo Blocks.ims
+[INFO] 23:28:05:845 IMS/(24412:24413): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:28:05:847 IMS/(24412:24413): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:28:10:848 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 23:28:10:848 IMS/(24412:24413): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:28:10:850 IMS/(24412:24413): Se actualizo Blocks.ims
+[INFO] 23:28:10:851 IMS/(24412:24413): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:28:10:852 IMS/(24412:24413): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:28:15:853 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 23:28:15:853 IMS/(24412:24413): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:28:15:855 IMS/(24412:24413): Se actualizo Blocks.ims
+[INFO] 23:28:15:856 IMS/(24412:24413): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:28:15:857 IMS/(24412:24413): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:28:20:859 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 23:28:20:859 IMS/(24412:24413): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:28:20:860 IMS/(24412:24413): Se actualizo Blocks.ims
+[INFO] 23:28:20:861 IMS/(24412:24413): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:28:20:862 IMS/(24412:24413): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:28:25:864 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 23:28:25:864 IMS/(24412:24413): Muestro mis valores del bitmap antes de sincronizar..
+[INFO] 23:28:25:866 IMS/(24412:24413): Se actualizo Blocks.ims
+[INFO] 23:28:25:868 IMS/(24412:24413): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 23:28:25:869 IMS/(24412:24413): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 23:28:27:508 IMS/(24412:24412): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:28:27:509 IMS/(24412:24462): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:28:27:511 IMS/(24412:24462): LLegó nuevo comando:760
+[INFO] 23:28:27:511 IMS/(24412:24462): -----------------------------------------------------
+[INFO] 23:28:27:511 IMS/(24412:24462): Llego comando: Obtener bitácora de.....
+[INFO] 23:28:27:511 IMS/(24412:24462): ID Tripulante:101
+[INFO] 23:28:27:511 IMS/(24412:24462): -----------------------------------------------------
+[ERROR] 23:28:27:512 IMS/(24412:24462): No existe bitácora para ese tripulante.
+[INFO] 23:28:30:870 IMS/(24412:24413): Comienza actualización de Blocks.ims...

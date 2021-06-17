@@ -32,8 +32,5 @@
     int cantidadBloquesUsados(char** listaBloques);
     void liberarArray (char** array, int posiciones);
 
-
-}
-
     
 #endif

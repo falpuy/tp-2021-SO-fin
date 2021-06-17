@@ -1,7 +1,7 @@
 #include "./headers/guardarBlocks.h"
 
 
-void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag){ 
+void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){ 
     //agregar checkeo de si en el ultimo bloque anterior hay fragmentacion interna debo rellenarla
 
     int tamStr = string_length(stringGuardar);
@@ -17,13 +17,60 @@ void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag){
         log_error(logger,"Finalizando programa...");
         exit(-1);
     }
+
+    if(esRecurso){ //recurso
+        if(metadata esta vacia){
+            //hago lo de antes
+
+        }else{ //metadata tiene algo
+            t_config* metadata = config_create(path);
+            char** listaBloque = config_get_array_value(metadata,"BLOCKS");
+            agarro lista de bloques 
+            los tranformo en array 
+
+
+        }
+
+    }else{//file
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     for(int i=0; i < bitarray_get_max_bit(bitmap) && cantidadBloquesUsados != cantidadBloquesAUsar; i++){
         if(bitarray_test_bit(bitmap,i) == 0){
             
             bitarray_set_bit(bitmap,i);
-
-
+            memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+        
             if((cantidadBloquesAUsar-cantidadBloquesUsados)==1){//ultimo bloque a escribir - posible fragmentación interna
                 //Ejemplo-->"ME ||MUE||VO ||DE ||3|5|| a ||3|4||" --> bloques de 3 bytes
                 

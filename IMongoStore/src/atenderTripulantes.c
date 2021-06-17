@@ -6,6 +6,8 @@ void handler(int client, char* identificador, int comando, void* payload,t_log* 
     int idTripulante, posXv, posYv, posXn, posYn,tamTarea,parametro;
     int offset = 0;
     char* tarea;
+    char* bitacora;
+    char* strAGuardar;
         
         switch(comando){
             case OBTENER_BITACORA:    
@@ -16,11 +18,11 @@ void handler(int client, char* identificador, int comando, void* payload,t_log* 
                 log_info(logger, "ID Tripulante:%d", idTripulante);
                 log_info(logger,"-----------------------------------------------------");
                 pthread_mutex_lock(&blocks_bitmap);
-                char* bitacora = obtenerBitacora(idTripulante);
+                bitacora = obtenerBitacora(idTripulante);
                 pthread_mutex_lock(&blocks_bitmap);
 
-                _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, bitacora,string_length(bitacora), logger);
-
+                printf("\n%s",bitacora);
+                //_send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, bitacora,string_length(bitacora), logger);
                 break;  
 
             case MOVER_TRIPULANTE:
@@ -41,15 +43,16 @@ void handler(int client, char* identificador, int comando, void* payload,t_log* 
                 log_info(logger,"-----------------------------------------------------");
 
 
-                char* stringGuardar = strMoverTripultante(idTripulante,posXv,posYv,posXn,posYn);
+                stringGuardar = strMoverTripultante(idTripulante,posXv,posYv,posXn,posYn);
                 char* tripulante = crearStrTripulante(idTripulante);//Creo el path de tripulanteN.ims
                 
-                char* bitacora = string_new();
+                bitacora = string_new();
                 string_append(&bitacora, "Bitacoras/");
                 string_append(&bitacora,tripulante);
 
                 char* path_fileTripulante = pathCompleto(bitacora);
                 free(bitacora);
+    
                 
                 pthread_mutex_lock(&blocks_bitmap);
                 if(access(path_fileTripulante,F_OK) < 0){
@@ -82,12 +85,15 @@ void handler(int client, char* identificador, int comando, void* payload,t_log* 
                 log_info(logger, "Parametro de tarea:%d", parametro);
                 log_info(logger,"-----------------------------------------------------");
                 
+                pthread_mutex_lock(&blocks_bitmap);
                 //ejecutarTarea(tamTarea,tarea,parametro,log);
+                pthread_mutex_unlock(&blocks_bitmap);
+
                 break;
             
             case FINALIZA_TAREA: 
                 log_info(logger,"-----------------------------------------------------");
-                log_info(logger, "Llego comando: Finaliza tarea.....");
+                log_info(logger, "Llego comando: Finaliza tarea....."); 
 
                 memcpy(&idTripulante,payload,sizeof(int)); 
                 memcpy(&tamTarea,payload+sizeof(int),sizeof(int)); 
@@ -97,18 +103,26 @@ void handler(int client, char* identificador, int comando, void* payload,t_log* 
                 memcpy(&parametro,payload + sizeof(int)*2+ tamTarea,sizeof(int));
 
                 log_info(logger, "Tarea:%s", tarea);
+                
+                pthread_mutex_lock(&blocks_bitmap);
+                //  finalizaTarea(tamTarea,tarea,parametro,log);
+                pthread_mutex_unlock(&blocks_bitmap);
                 log_info(logger,"-----------------------------------------------------");
-                //finalizaTarea(tamTarea,tarea,parametro,log);
+
                 break;
             
-            case ATENDER_SABOTAJE: 
+            case ATENDER_SABOTAJE:  
                 log_info(logger,"-----------------------------------------------------");
                 log_info(logger, "Llego comando: Atender Sabotaje.....");
 
                 memcpy(&idTripulante,payload,sizeof(int));
                 log_info(logger, "ID Tripulante:%d", idTripulante);
                 log_info(logger,"-----------------------------------------------------");
-                //TO DO: funcionalidad
+                
+                pthread_mutex_lock(&blocks_bitmap);
+                // atenderSabotaje(idTripulante);
+                pthread_mutex_unlock(&blocks_bitmap);
+
 
                 break;
             
@@ -119,7 +133,11 @@ void handler(int client, char* identificador, int comando, void* payload,t_log* 
                 memcpy(&idTripulante,payload,sizeof(int));
                 log_info(logger, "ID Tripulante:%d", idTripulante);
                 log_info(logger,"-----------------------------------------------------");
-                //TO DO: funcionalidad
+                
+                pthread_mutex_lock(&blocks_bitmap);
+                // sabotajeResuelto(idTripulante);
+                pthread_mutex_unlock(&blocks_bitmap);
+
 
                 break;
             default:

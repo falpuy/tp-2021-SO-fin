@@ -180,8 +180,8 @@ char* obtenerBitacora(int tripulante){
     char* path = pathCompleto(strPath);
     if(access(path,F_OK)){
         t_config* metadata = config_create(path);
-        char* lista = config_get_string_value(metadata);
-        int tamanioTotal = config_get_int_value(metadata);
+        char* lista = config_get_string_value(metadata,"BLOCKS");
+        int tamanioTotal = config_get_int_value(metadata,"SIZE");
 
         char** listaBloques = string_get_string_as_array(lista); //["2","3","9"]
         int cantidadBloquesTotal = cantidadBloquesUsados(listaBloques);
@@ -190,9 +190,9 @@ char* obtenerBitacora(int tripulante){
         for(int i = 0; i < cantidadBloquesTotal; i++){
             int bloque = atoi(listaBloques[i]);
 
-            if((contadorBloquesTotal - contadorBloques) !=1){//no es ultimo bloque
+            if((cantidadBloquesTotal - contadorBloques) !=1){//no es ultimo bloque
                 char* temporal = malloc(tamanioBloque);
-                memcpy(temporal,copiaBlocks+bloque*tamanioBloque,tamanio);
+                memcpy(temporal,copiaBlocks+bloque*tamanioBloque,tamanioBloque);
                 string_append(&buffer,temporal);
                 free(temporal);
             }else{
@@ -206,7 +206,7 @@ char* obtenerBitacora(int tripulante){
         }
         config_destroy(metadata);
         free(lista);
-        liberarArray(listaBloques,cantidadBloquesUsados);
+        liberarArray(listaBloques,cantidadBloquesTotal);
 
     }else{
         log_error(logger, "No existe bitácora para ese tripulante.");

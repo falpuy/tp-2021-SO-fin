@@ -8,7 +8,9 @@ void actualizarArchivoBlocks(){
         pthread_mutex_lock(&blocks_bitmap);
         log_info(logger, "Muestro mis valores del bitmap antes de sincronizar..");
         for(int i=0; i<cantidadBloques; i++){
+            printf("\n");
             printf("%d",bitarray_test_bit(bitmap,i));
+            printf("\n");
         }  
 
         int archBloques = open("../Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
@@ -32,7 +34,10 @@ void actualizarArchivoBlocks(){
         
         log_info(logger, "Muestro mis valores del bitmap despues sincronizar..");
         for(int i=0; i<cantidadBloques; i++){
+            printf("\n");
             printf("%d",bitarray_test_bit(bitmap,i));
+            printf("\n");
+
         }  
         pthread_mutex_unlock(&blocks_bitmap);
    }

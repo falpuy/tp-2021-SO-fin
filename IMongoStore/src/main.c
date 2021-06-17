@@ -14,8 +14,6 @@ int main() {
     sleep(1);
     
     pthread_create(&sync_blocks,NULL,(void*) actualizarArchivoBlocks, logger);
-    //pthread_detach(sync_blocks);
-
     _start_server(datosConfig->puerto,handler,logger);
     finalizarProceso(log);
     return 0;

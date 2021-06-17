@@ -68,6 +68,18 @@ void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro){
 }
 
 
+// void atenderSabotaje(int idTripulante){
+
+// }
+
+// void sabotajeResuelto(int idTripulante){
+
+// }
+
+
+
+
+
 /*------------------------------------FUNCIONES DE LAS TAREAS------------------------------------------------*/
 void consumirOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Tareas/Oxigeno.ims");

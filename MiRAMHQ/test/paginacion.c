@@ -18,13 +18,15 @@
 #include <unistd.h>
 #include <stdint.h>
 #include <commons/bitarray.h>
+#include <commons/temporal.h>
+#include <commons/txt.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdarg.h>
 #include <sys/types.h>
 #include <dirent.h>
 
-t_dictionary *global_tables;
+t_dictionary *table_collection;
 
 enum tipo_segmento {
     PCB,
@@ -83,7 +85,7 @@ int page_size;
 void *memory;
 void *virtual_memory;
 
-t_bitarray *bitmap;
+uint8_t *bitmap;
 t_bitarray *virtual_bitmap;
 
 int err;
@@ -693,34 +695,6 @@ void *search_task(void *memory, uint32_t start_addr) {
     // printf("\nLast Index: %d\n", counter);
 }
 
-int s_tcb = 16;
-
-typedef struct {
-    t_log *logger;
-    uint32_t current;
-} t_data;
-
-sem_t s_main;
-sem_t *t_sem;
-
-void _thread_function(t_data *data) {
-    while(1) {
-
-        sem_wait(&t_sem[data -> current]);
-
-        int t_id = process_get_thread_id();
-
-        int p_id = process_getpid();
-
-        log_info(data -> logger, "Process ID: %d - Thread ID: %d", p_id, t_id);
-
-        if (data -> current + 1 >= s_tcb) {
-            sem_post(&s_main);
-        } else {
-            sem_post(&t_sem[data -> current + 1]);
-        }
-    }
-}
 
 // pagi
 
@@ -729,7 +703,7 @@ int check_free_frames(int frames_count) {
 
     // Busco frames libres en el bitmap y agrego a un counter
     for (int i = 0; i < frames_memory; i++) {
-        if (!bitarray_test_bit(bitmap, i)) {
+        if (!bitmap[i]) {
             counter++;
         }
         if(counter >= frames_count) {
@@ -753,7 +727,8 @@ int check_free_frames(int frames_count) {
 
 uint32_t get_frame() {
     for (int i = 0; i < frames_memory; i++) {
-        if (!bitarray_test_bit(bitmap, i)) {
+        // printf("GET FRAME Bit %d: %d\n", i, bitarray_test_bit(bitmap, i));
+        if (!bitmap[i]) {
             return i;
         }
     }
@@ -763,13 +738,21 @@ uint32_t get_frame() {
     // devuelvo la posicion de ese bit en memoria real
 }
 
+void set_bitmap(uint8_t *bitmap, int position) {
+    bitmap[position] = 1;
+}
+
 void save_data_in_memory(void *buffer) {
+
+    double val;
 
     void *temp;
     pcb *p_aux = malloc(sizeof(pcb));
     int task_size;
     int tcb_count;
     int offset = 0;
+
+    int task_start = 8;
 
     p_aux -> tasks = 8; // Al leer un frame, las tareas siempre comienzan en la posicion 8 del frame leido (paginacion)
     memcpy(&p_aux -> pid, buffer + offset, sizeof(uint32_t));
@@ -787,7 +770,8 @@ void save_data_in_memory(void *buffer) {
 
     int memory_size = sizeof(pcb) + task_size + tcb_count * sizeof(tcb);
 
-    int frames_count = ceil(memory_size / page_size);
+    val = (double) memory_size / page_size;
+    int frames_count = ceil(val);
 
     temp = malloc(memory_size);
     int temp_off = 0;
@@ -829,16 +813,16 @@ void save_data_in_memory(void *buffer) {
         temp_off += sizeof(uint32_t);
         offset += sizeof(uint32_t);
         
-        memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
-        temp_off += sizeof(uint32_t);
-        offset += sizeof(uint32_t);
+        // Compio inicio de tareas en temp buffer
+        memcpy(temp + temp_off, &task_start, sizeof(uint32_t));
+        // temp_off += sizeof(uint32_t);
+        // offset += sizeof(uint32_t);
     }
 
     // ---------------- GUARDO FRAMES ---------------- //
 
     // Busco si hay frames libres en memoria/disco
     if (check_free_frames(frames_count)) {
-
         // Creo tabla de paginas
         t_queue *tabla = queue_create();
 
@@ -846,9 +830,9 @@ void save_data_in_memory(void *buffer) {
         int bytes_left = memory_size;
 
         for (int j = 0; j < frames_count; j++) {
+            uint32_t n_frame = get_frame();
 
-            uint32_t n_frame = get_frame(); // actualiza el bit en el bitmap y devuelve el indice
-            bitarray_set_bit(bitmap, n_frame);
+            set_bitmap(bitmap, n_frame);
             
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
@@ -872,9 +856,8 @@ void save_data_in_memory(void *buffer) {
 
             queue_push(tabla, page);
         }
-
         // Agrego tabla al diccionario
-        dictionary_put(global_tables, pid, tabla);
+        dictionary_put(table_collection, pid, tabla);
 
     } else {
         printf("No hay espacio disponible en memoria\n");
@@ -885,6 +868,159 @@ void save_data_in_memory(void *buffer) {
 
 }
 
+// int s_tcb = 16;
+
+// typedef struct {
+//     t_log *logger;
+//     uint32_t current;
+// } t_data;
+
+// sem_t s_main;
+// sem_t *t_sem;
+
+// void _thread_function(t_data *data) {
+//     while(1) {
+
+//         sem_wait(&t_sem[data -> current]);
+
+//         int t_id = process_get_thread_id();
+
+//         int p_id = process_getpid();
+
+//         log_info(data -> logger, "Process ID: %d - Thread ID: %d", p_id, t_id);
+
+//         if (data -> current + 1 >= s_tcb) {
+//             sem_post(&s_main);
+//         } else {
+//             sem_post(&t_sem[data -> current + 1]);
+//         }
+//     }
+// }
+
+void destroyer(void *item) {
+    // if segmentacion
+    // free(item);
+    // else
+    page_t * aux = (page_t *) item;
+    free(aux -> frame);
+    free(aux);
+}
+
+void table_destroyer(void *item) {
+
+    queue_destroy_and_destroy_elements(item, destroyer);
+
+}
+
+// ------------------
+
+int global_page;
+char* global_process;
+
+
+int get_page_number(t_dictionary *self, uint32_t frame) {
+
+    t_queue *aux;
+
+    // Recorro el diccionario
+    int table_index;
+
+    int index;
+
+
+	for (table_index = 0; table_index < self->table_max_size; table_index++) {
+		t_hash_element *element = self->elements[table_index];
+		t_hash_element *next_element = NULL;
+
+		while (element != NULL) {
+
+			next_element = element->next;
+
+            aux = element -> data;
+
+            // page_iterate(aux -> elements, save_in_file, memory, file, index, element -> key);
+            // ITERACION DE LISTA
+
+            t_link_element *elementl = (aux -> elements)->head;
+            t_link_element *aux2 = NULL;
+
+            index = 0;
+
+            while (elementl != NULL) {
+                aux2 = elementl->next;
+                page_t *page = elementl -> data;
+                if((page -> frame) -> number == frame) {
+                    global_process = string_new();
+                    string_append(&global_process, element -> key);
+                    global_page = index;
+                    return 1;
+                }
+                elementl = aux2;
+                index++;
+            }
+
+            // END INTERATION
+
+			element = next_element;
+		}
+	}
+
+    return  -1;
+
+}
+
+void page_dump(t_dictionary *table) {
+
+    //  Dump_<Timestamp>.dmp
+    char *timestamp = temporal_get_string_time("%d-%m-%y");
+    char *file_name = string_new();
+    string_append(&file_name, "./Dump_");
+    string_append(&file_name, timestamp);
+    string_append(&file_name, ".dmp");
+
+    FILE* file = fopen(file_name, "w");
+
+    if(file == NULL)
+    {
+        perror("Error al abrir archivo Dump");
+    }
+
+    free(timestamp);
+    free(file_name);
+
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+    char *title = string_new();
+    char *date = temporal_get_string_time("%d/%m/%y %H:%M:%S");
+    string_append_with_format(&title, "Dump: %s\n", date);
+    txt_write_in_file(file, title);
+    free(date);
+    free(title);
+    
+    for (int i = 0; i < frames_memory; i++) {
+        char *line = string_new(); 
+        
+        if (bitmap[i]) {
+            if(get_page_number(table, i)) {
+                string_append_with_format(&line, "Marco: %d\t\tEstado: %s\t\tProceso: %s\t\tPagina: %d\n", i, "Ocupado", global_process, global_page);
+                free(global_process); 
+            }
+        } else {
+            string_append_with_format(&line, "Marco: %d\t\tEstado: %s\t\tProceso: %s\t\tPagina: %s\n", i, "Libre", "-", "-");
+        }
+        
+        txt_write_in_file(file, line);
+
+        free(line);
+    }
+
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+
+    txt_close_file(file);
+}
+
+
+// ------------
+
 int main() {
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
@@ -892,107 +1028,111 @@ int main() {
     // --------------- CREATE BITMAPS ---------------- //
 
     // ---------- REAL MEMORY SETUP ---------- //
+
+    table_collection = dictionary_create();
     
-    int real_size = 80;
+    int real_size = 160;
     memory = malloc(real_size);
     page_size = 10;
 
     frames_memory = real_size / page_size;
 
-    bitmap = bitarray_create_with_mode((char *) memory, frames_memory / 8, MSB_FIRST);
+    printf("Cant: %d", frames_memory);
 
-    for(int i = 0; i < frames_memory; i++){
-        bitarray_clean_bit(bitmap, i);
+    bitmap = malloc(frames_memory * sizeof(uint8_t));
+
+    for(int i = 0; i < frames_memory; i++) {
+        bitmap[i] = 0;
     }
 
     log_info(logger, "Muestro valores del bitmap para REAL..");
     for(int i = 0; i < frames_memory; i++){
-        log_info(logger, "Bit %d: %d", i, bitarray_test_bit(bitmap, i));
+        log_info(logger, "Bit %d: %d", i, bitmap[i]);
     }
 
     // ---------- VIRTUAL MEMORY SETUP ---------- //
 
-    int virtual_size = 160;
+    // int virtual_size = 160;
 
-    char *path = "./virtual.mem";
+    // char *path = "./virtual.mem";
 
-    frames_virtual = virtual_size / page_size;
+    // frames_virtual = virtual_size / page_size;
 
-    int arch_bitmap;
+    // int arch_bitmap;
 
-    if( access( path, F_OK ) == 0 ) {
+    // if( access( path, F_OK ) == 0 ) {
         
-        arch_bitmap = open(path, O_CREAT | O_RDWR, 0664);
+    //     arch_bitmap = open(path, O_CREAT | O_RDWR, 0664);
 
-        virtual_memory = mmap(NULL, virtual_size, PROT_READ | PROT_WRITE, MAP_SHARED, arch_bitmap, 0);
+    //     virtual_memory = mmap(NULL, virtual_size, PROT_READ | PROT_WRITE, MAP_SHARED, arch_bitmap, 0);
 
-        // Creo el bitmap seguido del espacio de memoria para disco
-        virtual_bitmap = bitarray_create_with_mode((char *) virtual_memory + virtual_size, frames_virtual / 8, MSB_FIRST);
+    //     // Creo el bitmap seguido del espacio de memoria para disco
+    //     virtual_bitmap = bitarray_create_with_mode((char *) virtual_memory + virtual_size, frames_virtual / 8, MSB_FIRST);
 
-        log_info(logger, "Muestro valores del bitmap para VIRTUAL..");
-        for(int i = 0; i < frames_virtual; i++){
-            log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
-        }
+    //     log_info(logger, "Muestro valores del bitmap para VIRTUAL..");
+    //     for(int i = 0; i < frames_virtual; i++){
+    //         log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
+    //     }
 
-        char *test = malloc(page_size + 1);
-        memcpy(test, virtual_memory + (2 * page_size), page_size);
-        test[page_size] = '\0';
-        log_info(logger, "TEST: %s", test);
-        free(test);
+    //     char *test = malloc(page_size + 1);
+    //     memcpy(test, virtual_memory + (2 * page_size), page_size);
+    //     test[page_size] = '\0';
+    //     log_info(logger, "TEST: %s", test);
+    //     free(test);
 
-        log_info(logger, "5 frames libres?: %d", check_free_frames(5));
-        log_info(logger, "23 frames libres?: %d", check_free_frames(23));
-        log_info(logger, "24 frames libres?: %d", check_free_frames(24));
+    //     log_info(logger, "5 frames libres?: %d", check_free_frames(5));
+    //     log_info(logger, "23 frames libres?: %d", check_free_frames(23));
+    //     log_info(logger, "24 frames libres?: %d", check_free_frames(24));
 
-    } else {
+    // } else {
 
-        arch_bitmap = open(path, O_CREAT | O_RDWR, 0664);
-        posix_fallocate(arch_bitmap, 0, virtual_size + frames_virtual / 8);
+    //     arch_bitmap = open(path, O_CREAT | O_RDWR, 0664);
+    //     posix_fallocate(arch_bitmap, 0, virtual_size + frames_virtual / 8);
 
-        virtual_memory = mmap(NULL, virtual_size + frames_virtual / 8, PROT_READ | PROT_WRITE, MAP_SHARED, arch_bitmap, 0);
+    //     virtual_memory = mmap(NULL, virtual_size + frames_virtual / 8, PROT_READ | PROT_WRITE, MAP_SHARED, arch_bitmap, 0);
 
-        // Creo el bitmap seguido del espacio de memoria para disco
-        virtual_bitmap = bitarray_create_with_mode((char *) virtual_memory + virtual_size, frames_virtual / 8, MSB_FIRST);
+    //     // Creo el bitmap seguido del espacio de memoria para disco
+    //     virtual_bitmap = bitarray_create_with_mode((char *) virtual_memory + virtual_size, frames_virtual / 8, MSB_FIRST);
 
-        for(int i = 0; i < frames_virtual; i++){
-            bitarray_clean_bit(virtual_bitmap, i);
-            // err = msync(virtual_bitmap -> bitarray, frames_virtual / 8, MS_ASYNC);
-            // if (err == -1){
-            //     log_error(logger, "Error de sincronizar a disco clean bitmap");
-            // }
-        }
+    //     for(int i = 0; i < frames_virtual; i++){
+    //         bitarray_clean_bit(virtual_bitmap, i);
+    //         // err = msync(virtual_bitmap -> bitarray, frames_virtual / 8, MS_ASYNC);
+    //         // if (err == -1){
+    //         //     log_error(logger, "Error de sincronizar a disco clean bitmap");
+    //         // }
+    //     }
 
-        log_info(logger, "Muestro valores INICIALES del bitmap para VIRTUAL..");
-        for(int i = 0; i < frames_virtual; i++){
-            log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
-        }
+    //     log_info(logger, "Muestro valores INICIALES del bitmap para VIRTUAL..");
+    //     for(int i = 0; i < frames_virtual; i++){
+    //         log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
+    //     }
 
-        bitarray_set_bit(virtual_bitmap, 2);
-        // err = msync(virtual_bitmap -> bitarray, frames_virtual / 8, MS_ASYNC);
-        // if (err == -1){
-        //     log_error(logger, "Error de sincronizar a disco bitmap");
-        // }
-        memcpy(virtual_memory + (2 * page_size), "0123456789", page_size);
-        err = msync(virtual_memory, virtual_size + frames_virtual / 8, MS_ASYNC);
-        if (err == -1){
-            log_error(logger, "Error de sincronizar a disco memoria");
-        }
+    //     bitarray_set_bit(virtual_bitmap, 2);
+    //     // err = msync(virtual_bitmap -> bitarray, frames_virtual / 8, MS_ASYNC);
+    //     // if (err == -1){
+    //     //     log_error(logger, "Error de sincronizar a disco bitmap");
+    //     // }
+    //     memcpy(virtual_memory + (2 * page_size), "0123456789", page_size);
+    //     err = msync(virtual_memory, virtual_size + frames_virtual / 8, MS_ASYNC);
+    //     if (err == -1){
+    //         log_error(logger, "Error de sincronizar a disco memoria");
+    //     }
 
-        log_info(logger, "Muestro valores del bitmap para VIRTUAL..");
-        for(int i = 0; i < frames_virtual; i++){
-            log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
-        }
-    }
+    //     log_info(logger, "Muestro valores del bitmap para VIRTUAL..");
+    //     for(int i = 0; i < frames_virtual; i++){
+    //         log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
+    //     }
+    // }
 
-    close(arch_bitmap);
+    // close(arch_bitmap);
 
-    free(memory);
+    // free(memory);
 
-    munmap(virtual_memory, virtual_size);
+    // munmap(virtual_memory, virtual_size);
 
-    bitarray_destroy(bitmap);
+    // bitarray_destroy(bitmap);
 
-    bitarray_destroy(virtual_bitmap);
+    // bitarray_destroy(virtual_bitmap);
 
     // //////////////////////////// GONZA //////////////////////////////////// //
 
@@ -1092,6 +1232,7 @@ int main() {
     // free(temp2);
     // free(memory);
 
+
     // --------------- TEST SYNC THREADS --------------- //
     // // sem_destroy(&sem);
 
@@ -1127,58 +1268,53 @@ int main() {
 
     // --------------- TEST PAGINCACION --------------- //
 
-    // int offset = 0;
+    int offset = 0;
 
-    // tcb *temp = malloc(sizeof(tcb));
+    tcb *temp = malloc(sizeof(tcb));
 
-    // temp -> tid = 1;
-    // temp -> pid = 2;
-    // temp -> status = 'N';
-    // temp -> xpos = 3;
-    // temp -> ypos = 4;
-    // temp -> next = 5;
+    temp -> tid = 1;
+    temp -> pid = 2;
+    temp -> status = 'N';
+    temp -> xpos = 3;
+    temp -> ypos = 4;
+    temp -> next = 5;
 
-    // pcb *patota = malloc(sizeof(pcb));
+    pcb *patota = malloc(sizeof(pcb));
 
-    // patota -> pid = 1;
+    patota -> pid = 1;
 
-    // char *tareas = "GENERAR_OXIGENO 12;3;2;5CONSUMIR_OXIGENO 120;2;3;1";
+    char *tareas = "GENERAR_OXIGENO 12;3;2;5CONSUMIR_OXIGENO 120;2;3;1";
 
-    // int size = sizeof(tcb) + sizeof(int) * 3 + strlen(tareas);
+    int size = sizeof(tcb) - sizeof(int) + sizeof(int) * 3 + strlen(tareas);
 
-    // void *buffer = _serialize(
-    //     size,
-    //     "%d%s%s%d%d%c%d%d%d",
-    //     patota -> pid,
-    //     tareas,
-    //     1, // Cantidad tcbs
-    //     temp -> tid,
-    //     temp -> pid,
-    //     temp -> status,
-    //     temp -> xpos,
-    //     temp -> ypos,
-    //     temp -> next
-    // );
+    void *buffer = _serialize(
+        size,
+        "%d%s%d%d%d%c%d%d",
+        patota -> pid,
+        tareas,
+        1, // Cantidad tcbs
+        temp -> tid,
+        temp -> pid,
+        temp -> status,
+        temp -> xpos,
+        temp -> ypos
+    );
 
-    // // paso el buffer que llega desde cliente
-    // save_data_in_memory(buffer);
+    // paso el buffer que llega desde cliente
+    save_data_in_memory(buffer);
 
-    // -------------
+    page_dump(table_collection);
 
-    // memcpy(memory + offset, tareas, strlen(tareas));
-    // offset += strlen(tareas);
-    // memcpy(memory + offset, &temp -> tid, sizeof(uint32_t));
-    // offset += sizeof(uint32_t);
-    // memcpy(memory + offset, &temp -> pid, sizeof(uint32_t));
-    // offset += sizeof(uint32_t);
-    // memcpy(memory + offset, &temp -> status, sizeof(char));
-    // offset += sizeof(char);
-    // memcpy(memory + offset, &temp -> xpos, sizeof(uint32_t));
-    // offset += sizeof(uint32_t);
-    // memcpy(memory + offset, &temp -> ypos, sizeof(uint32_t));
-    // offset += sizeof(uint32_t);
-    // memcpy(memory + offset, &temp -> next, sizeof(uint32_t));
-    // offset += sizeof(uint32_t);
+    free(patota);
+    free(temp);
+
+    free(buffer);
+
+    free(bitmap);
+
+    free(memory);
+
+    dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
 
     // // ---------- TEST GET TASK IN PAGINATION
 

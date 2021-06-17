@@ -10,6 +10,8 @@
     #include <commons/error.h>
     #include <commons/memory.h>
     #include <commons/process.h>
+    #include <commons/txt.h>
+    #include <commons/temporal.h>
     #include <ctype.h>
     #include <pthread.h>
     #include <semaphore.h>
@@ -108,6 +110,8 @@
 
     int check_space_memory(void *memory, int mem_size, int total_size, t_dictionary *table_collection);
 
+    int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int total_size);
+
     int memory_seek(void *memory, int mem_size, int total_size, t_dictionary *table_collection);
 
     int get_last_index (t_queue *segmentTable);
@@ -136,5 +140,9 @@
     int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *data);
 
     // --------------------- END SEGMENTATION ----------------------- //
+
+    // ------------------------- DUMP ------------------------------- //
+    
+    void memory_dump(t_dictionary *self, void *memory);
 
 #endif

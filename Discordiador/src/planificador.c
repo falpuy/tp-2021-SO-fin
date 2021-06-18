@@ -1,11 +1,25 @@
 #include"headers/planificador.h"
 
-// algoritmos (FIFO y RR)
-
+char** listaTareas[CANTTAREAS] = {"GENERAR_OXIGENO", "CONSUMIR_OXIGENO", "GENERAR_COMIDA", "CONSUMIR_COMIDA", "GENERAR_BASURA", "DESCARTAR_BASURA"};
 /*
+
+void bloqueado (void* nodo){
+		tcb* tcb = (tcb) nodo;
+    queue_push(cola_io, tcb);
+}
+
+funcion execBlocked{
+	while(estoyVivo){
+			wait(ultimoTripulante)
+    		
+      signal(bloqueado)
+    }
+
+}
 funcionTCB{
     while(estoyVivo){
-        while(estado == E){
+    	
+        if(estado == E){
 
             switch que tarea soy?
 
@@ -34,59 +48,118 @@ funcionTCB{
 }
 */
 
+int obtener_tipo_tarea(char *tarea) {
+  if(!strcmp(tarea, "GENERAR_OXIGENO")) {
+    	return GENERAR_OXIGENO;
+  };
+  if(!strcmp(tarea, "CONSUMIR_OXIGENO")) {
+    	return CONSUMIR_OXIGENO;
+  };
+  if(!strcmp(tarea, "GENERAR_COMIDA")) {
+    	return GENERAR_COMIDA;
+  };
+  if(!strcmp(tarea, "CONSUMIR_COMIDA")) {
+    	return CONSUMIR_COMIDA;
+  };
+  if(!strcmp(tarea, "GENERAR_BASURA")) {
+    	return GENERAR_BASURA;
+  };
+  if(!strcmp(tarea, "DESCARTAR_BASURA")) {
+    	return DESCARTAR_BASURA;
+  };
+  
+  //DESCARGAR_ITINERARIO;1;1;1
+  for(int i = 0; i < strlen(tarea); i++) {
+    	if (tarea[i] == ';') {
+      	return OTRA;
+      }
+  };
+  
+  return -1;
+  
+}
 
-char** listaTareas[CANTTAREAS] = {"GENERAR_OXIGENO", "CONSUMIR_OXIGENO", "GENERAR_COMIDA", "CONSUMIR_COMIDA", "GENERAR_BASURA", "DESCARTAR_BASURA"};
+enum tipo_tarea {
+  GENERAR_OXIGENO,
+  CONSUMIR_OXIGENO,
+  GENERAR_COMIDA,
+  CONSUMIR_COMIDA,
+  GENERAR_BASURA,
+  DESCARTAR_BASURA,
+  OTRA
+};
 
-void funcionTripulante (t_log* logger, tcb* tcbTripulante){
-    while(tcbTripulante->status != 'X'){
+void funcionTripulante (tcb* tcbTripulante){
+    while(estoyVivo && tcbTripulante->status != 'X'){
         while(tcbTripulante->status == 'E'){
-            int tarea = 6;
+            int numeroTarea = 6;
             int i;
-            //TAREA PARAMETROS;POS X;POS Y;TIEMPO
-            for(i=0; i<CANTTAREAS; i++) {
-                if (!strcmp(tcbTripulante->instruccion_actual, listaTareas[i])) {
-                    tarea = i;
-                    break;
-                }
-            }
+            //E/S: TAREA PARAMETROS;POS X;POS Y;TIEMPO
+          	//Otra: TAREA;POS X;POS Y;TIEMPO
+          	char** tarea = string_n_split(tcbTripulante->instruccion_actual, 1, " ");
 
-            switch(tarea) {
-                case 0://GENERAR_OXIGENO
+            switch(obtener_tipo_tarea(tarea[0])) {
+              case GENERAR_OXIGENO:
                     log_info(logger, "ENTRO GENERAR OXIGENO");
                     break;
 
-                case 1: //CONSUMIR_OXIGENO
+              case CONSUMIR_OXIGENO:
                     log_info(logger, "ENTRO CONSUMIR OXIGENO");
                     break;
 
-                case 2://GENERAR_COMIDA
+              case GENERAR_COMIDA:
                     log_info(logger, "ENTRO GENERAR COMIDA");
                     break;
 
-                case 3: //CONSUMIR_COMIDA
+              case CONSUMIR_COMIDA:
                     log_info(logger, "ENTRO CONSUMIR COMIDA");
                     break;
 
-                case 4://GENERAR_BASURA
+              case GENERAR_BASURA:
                     log_info(logger, "ENTRO GENERAR BASURA");
                     break;
 
-                case 5: //DESCARTAR_BASURA
+              case DESCARTAR_BASURA:
                     log_info(logger, "ENTRO DESCARTAR BASURA");
                     break;
                 
-                case 6: //OTROS
+              case OTRA:
                     log_info(logger, "ENTRO OTROS");
                     break;
 
-                default: //CUALQUIER VERDURA
+                default:
                     log_info(logger, "La tarea ingresada no posee un formato de tarea correcto");
                     break;
 
             }
 
+			//pedir proxima tarea
+          	int tamanioBuffer = sizeof(int) * 2;
+            void *buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante -> pid, tcbTripulante -> tid);
+            _send_message(conexion_RAM, "DIS", 520, buffer, tamanioBuffer, logger);
+						
+            t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+            log_info(logger, "Recibi mensaje de RAM: %s - %d",
+              mensaje -> identifier,
+              mensaje -> command
+            );
 
+            if (mensaje -> command == 200) {
+              //si memoria me manda la proxima tarea vuelvo a entrar al while
+              // Recibi la siguiente tarea
+              int tamanioTarea;
+              memcpy(&tamanioTarea, mensaje -> payload, sizeof(int));
 
+              tcbTripulante -> instruccion_actual = malloc(tamanioTarea + 1);
+              memcpy(tcbTripulante -> instruccion_actual, mensaje -> payload + sizeof(int), tamanioTarea);
+              tcbTripulante -> instruccion_actual[tamanioTarea] = '\0';
+            
+            else if (mensaje -> command == 560) {
+                //si no hay mas tareas, lo rompo (al while)
+                log_info(logger, "El tripulante ya realizó todas las tareas");
+                //pasarlo a exit
+                break;
+            }
         }
     }
 }
@@ -126,34 +199,64 @@ void funcionhReadyaExec (t_log* logger){
         }
     }
 }
-
-/*void funcionhExecaBloqEmer (t_log* logger){
+/*
+void funcionhExecaBloqEmer (t_log* logger){
     
-    while (validador && planificacion_pausada == 0) {
-        while (exec != NULL && contExec != 0)
-        {
-            tcb* aux_TCB = malloc (sizeof(tcb));
-            aux_TCB = queue_peek(exec);
-            queue_pop(exec);
-            queue_push(bloq_emer, (void*) aux_TCB);
-            aux_TCB -> status = 'M';
-            free(aux_TCB);
-        }
+  	while(validador == 1){
+      while (planificacion_pausada == 0) {
+          while (!queue_is_empty(exec) )
+          {
+              tcb* aux_TCB = malloc (sizeof(tcb));
+              aux_TCB = queue_peek(exec);
+              queue_pop(exec);
+              queue_push(bloq_emer, (void*) aux_TCB);
+              aux_TCB -> status = 'M';
+              free(aux_TCB);
+          }
+      }
     }
-}
+}*/
 
+void funcionCambioExecIO(void* nodo, int posicion){
+  tcb* aux = (tcb *) nodo;
+  
+  if(aux->status == 'I'){
+  		tcb *tcbAMover = list_get(exec -> elements, posicion);
+    	queue_push(cola_io,(void*)tcbAMover);
+      list_remove(exec->elements, posicion);
+  }
+}
+     
+  
+  
+void list_iterate_position(t_list *self, void(*closure)()) {
+  int i = 0;
+	t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+		closure(element->data, i);
+		element = aux;
+        i++;
+	}
+}
+  
+ 
 void funcionhExecaBloqIO (t_log* logger){
-    
-    while (validador && planificacion_pausada == 0) {
-        while (exec != NULL && contExec != 0)
-        {
-            tcb* aux_TCB = malloc (sizeof(tcb));
-            aux_TCB = queue_peek(exec);
-            queue_pop(exec);
-            queue_push(bloq_io, (void*) aux_TCB);
-            aux_TCB -> status = 'I';
-            free(aux_TCB);
-        }
+    while (validador==1) {
+      while (planificacion_pausada==0) {
+       
+          tcb* tripulante = malloc(sizeof(tcb));
+        	tripulante = list_find(exec, encontroIO);
+        while (!queue_is_empty(exec) && tripulante != NULL){  
+              pthread_mutex_lock(&mutexExec);
+			  list_iterate(exec, funcionCambioExecIO); 
+              pthread_mutex_unlock(&mutexExec);
+              pthread_mutex_lock(&mutexBloqIO);
+              queue_push(bloq_io, (void*) tripulante);
+              pthread_mutex_unlock(&mutexBloqIO);
+          }
+      }
     }
 }
 
@@ -215,7 +318,7 @@ void funcionPlanificador(t_log* logger) {
     listaPCB = list_create();
 }
 
-void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger) {
+char *get_tareas(char *ruta_archivo, t_log* logger) {
     FILE * fp;
     char * line = NULL;
     size_t len = 0;
@@ -223,14 +326,8 @@ void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger
 
     int b_size = 0;
     int offset = 0;
-    int new_size;
-    void *temp;
 
-    void *buffer = malloc(sizeof(int));
-
-    memcpy(buffer + offset, &id_pcb, sizeof(int));
-    offset += sizeof(int);
-    b_size += sizeof(int);
+    char *temp_string = string_new();
 
     fp = fopen(ruta_archivo, "r");
     if (fp == NULL)
@@ -245,56 +342,70 @@ void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger
             memset(line + read, 0, 1);
         }
 
-        new_size = sizeof(int) + read;
-        
-        temp = _serialize(new_size, "%s", line);
+        string_append(&temp_string, line);
 
-        b_size += new_size;
-        buffer = realloc(buffer, b_size);
-        
-        memcpy(buffer + offset, temp, new_size);
-        offset += new_size;
-
-        free(temp);
     }
 
     fclose(fp);
     if (line)
         free(line);
 
-    _send_message(conexion_RAM, "DIS", 510, buffer, offset, logger);
-
-    free(buffer);
+    return temp_string;
 }
 
-tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea, t_log* logger)
+tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger)
 {
     tcb* nuevoTCB = malloc (sizeof(tcb));
-	nuevoTCB -> tid = idT;
+		nuevoTCB -> tid = idT;
     nuevoTCB -> pid = idP;
     nuevoTCB -> status = 'N';
     nuevoTCB -> posicionX = posX;
     nuevoTCB -> posicionY = posY;
-    nuevoTCB -> instruccion_actual = malloc (strlen(tarea) + 1);
-    strcpy(nuevoTCB -> instruccion_actual, tarea);
-    nuevoTCB -> instruccion_actual[strlen(tarea)]='\0';
-    pthread_t hiloTripulante;
-    pthread_create(&hiloTripulante, NULL, (void *) funcionTripulante, logger, nuevoTCB);
-    pthread_detach(hiloTripulante);
+    nuevoTCB -> instruccion_actual = NULL;
+
     return nuevoTCB;
 }
 
 pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
 {                        
+  	
+  	int offset = 0;
     int cant_tripulantes = atoi(parametros[1]);
     contadorPCBs++;
+  
     pcb* nuevoPCB = malloc(sizeof(pcb));
     nuevoPCB -> pid = contadorPCBs;
     nuevoPCB -> listaTCB = list_create();
-    nuevoPCB -> rutaTareas = malloc (strlen(parametros[2]) + 1);
+    
+  	nuevoPCB -> rutaTareas = malloc (strlen(parametros[2]) + 1);
     strcpy(nuevoPCB -> rutaTareas, parametros[2]);
     nuevoPCB -> rutaTareas[strlen(parametros[2])]='\0';
-    int posX;
+  
+  	// cargo lista de tareas
+  	char *tareas = get_tareas(nuevoPCB -> rutaTareas, logger);
+		
+  	// buffer -> [idpcb, largo_tareas, lista_tareas, cant_tripulantes, n_tcbs....]
+  
+  	int tamanioBuffer = sizeof(int) * 3 + strlen(tareas) + cant_tripulantes * sizeof(tcb);
+  	void *buffer_a_enviar = malloc(tamanioBuffer);
+  
+  	// copio id pcb
+  	memcpy(buffer_a_enviar, &nuevoPCB -> pid, sizeof(int));
+  	offset += sizeof(int);
+  
+  	// copio la lista de tareas serializadas
+  	void *temp = _serialize(sizeof(int) + strlen(tareas), "%s", tareas);
+  
+  	memcpy(buffer_a_enviar + offset, temp, sizeof(int) + strlen(tareas));
+  	offset += sizeof(int) + strlen(tareas);
+  	
+  	free(temp);
+  
+  	// Copio la cantidad de tcbs
+  	memcpy(buffer_a_enviar + offset, &cant_tripulantes, sizeof(int));
+  	offset += sizeof(int);
+    
+  	int posX;
     int posY;
     bool hayParametros = true;
     for(int i = 1; i<=cant_tripulantes; i++)
@@ -312,54 +423,38 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
             }
         }
         int tid = (nuevoPCB -> pid) * 100 + i;
-        int tamanioBuffer;
-        void* buffer;
-        t_mensaje *mensajeRecibido = malloc (sizeof(t_mensaje));
-        tamanioBuffer = sizeof(int)*4 + sizeof(char);
-        buffer = _serialize(tamanioBuffer, "%d%d%d%d%c", contadorPCBs, tid, posX, posY,'N');
-        _send_message(conexion_RAM, "DIS", 500, buffer, tamanioBuffer, logger);
-        char* temp_tarea= malloc (strlen("aburrirse")+1);
-        strcpy(temp_tarea, "aburrirse");
-        /*mensajeRecibido = _receive_message(conexion_RAM, logger);
-        int comando = mensajeRecibido -> command;
-        char* temp_tarea;
-
-        if (comando == 100) {
-            temp_tarea = malloc (strlen(mensajeRecibido -> payload) + 1);
-            strcpy(temp_tarea, mensajeRecibido -> payload);}
-        else if (comando == 401) {
-            send_tareas(contadorPCBs, parametros[2], conexion_RAM, logger);
-            //recv!
-            _send_message(conexion_RAM, "DIS", 500, buffer, tamanioBuffer, logger);
-            mensajeRecibido = _receive_message(conexion_RAM, logger);
-            temp_tarea = malloc (strlen(mensajeRecibido -> payload) + 1);
-            strcpy(temp_tarea, mensajeRecibido -> payload);}
-        else if (comando == 402) {
-            log_info(logger, "No hay suficiente memoria para iniciar otro tripulante");
-            break;}*/
-        tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, temp_tarea, logger);
+      
+        tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, logger);
         list_add (nuevoPCB -> listaTCB, (void*) nuevoTCB);
-        queue_push (cola_new, (void*) nuevoTCB);
-        free(buffer);
-        free(temp_tarea);
+
+        // Copiar cada TCB al buffer
+      
+      	memcpy(&nuevoTCB -> tid, buffer_a_enviar + offset, sizeof(int));
+        offset += sizeof(int);
+        memcpy(&nuevoTCB -> pid, buffer_a_enviar + offset, sizeof(int));
+        offset += sizeof(int);
+        memcpy(&nuevoTCB -> status, buffer_a_enviar + offset, sizeof(char));
+        offset += sizeof(char);
+        memcpy(&nuevoTCB -> posicionX, buffer_a_enviar + offset, sizeof(int));
+        offset += sizeof(int);
+        memcpy(&nuevoTCB -> posicionY, buffer_a_enviar + offset, sizeof(int));
+        offset += sizeof(int);
+      
     }
-    return nuevoPCB;
+  
+  	// Envio todo el buffer a memoria
+    _send_message(conexion_RAM, "DIS", 610, buffer_a_enviar, tamanioBuffer, logger);
+  
+  	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+
+    log_info(logger, "Recibi mensaje de RAM: %s - %d",
+      mensaje -> identifier,
+      mensaje -> command,
+    );
+  
+  	if (mensaje -> command == 200) {
+      return nuevoPCB;
+    }
+  
+  	return NULL;
 }
-
-/*void funcionEliminarListaPatotas(void* nodoPatota) {
-
-    free (np1 -> rutaTareas);
-    list_destroy(listaTCB);
-    free (np1);
-}
-
-void funcionEliminarListaTripulantes(void* nodoTripulante) {
-
-    free(instruccion_actual);
-    free (nt1);
-}
-
-void funcionTerminarPlanificacion() {
-    list_destroy_and_destroy_elements (listaPCB, funcionEliminarListaPatotas);
-    list_destroy_and_destroy_elements (listaTCB, funcionEliminarListaTripulantes);
-}*/

@@ -30,6 +30,8 @@ int main() {
     memory = memory_init(mem_size);
     table_collection = dictionary_create();
 
+    isBestFit = !strcmp(config_get_string_value(config, "CRITERIO_SELECCION"), "BF");
+
     if (!strcmp(esquema, "PAGINACION")) {
 
       setup_pagination(
@@ -168,11 +170,11 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   t_queue *segmentTable = queue_create();
                   // crear segmento para tareas
                   segment_size = tamStrTareas;
-                  found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                  found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                   
                   if(found_segment < 0) {
                       memory_compaction(memory, mem_size, table_collection);
-                      found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                      found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                   }
               
                   pcb_t *temp = malloc(sizeof(pcb_t));
@@ -194,11 +196,11 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   segment *segmento_pcb = malloc(sizeof(segment));
                 
                   segment_size = sizeof(pcb_t);
-                  found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                  found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
               
                   if(found_segment < 0) {
                       memory_compaction(memory, mem_size, table_collection);
-                      found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                      found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                   }
                 
                   segmento_pcb -> nroSegmento = get_last_index (segmentTable) + 1;
@@ -232,11 +234,11 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     aux -> next = temp -> tasks;
                     
                     segment_size = sizeof(tcb_t);
-                    found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                    found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                     
                     if(found_segment < 0) {
                         memory_compaction(memory, mem_size, table_collection);
-                        found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                        found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                     }
                     
                     segment *segmento_aux = malloc(sizeof(segment));
@@ -521,11 +523,11 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
                   t_queue *segmentTable = queue_create();
                   // crear segmento para tareas
                   segment_size = tamStrTareas;
-                  found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                  found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                   
                   if(found_segment < 0) {
                       memory_compaction(memory, mem_size, table_collection);
-                      found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                      found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                   }
               
                   pcb_t *temp = malloc(sizeof(pcb_t));
@@ -547,11 +549,11 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
                   segment *segmento_pcb = malloc(sizeof(segment));
                 
                   segment_size = sizeof(pcb_t);
-                  found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                  found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
               
                   if(found_segment < 0) {
                       memory_compaction(memory, mem_size, table_collection);
-                      found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                      found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                   }
                 
                   segmento_pcb -> nroSegmento = get_last_index (segmentTable) + 1;
@@ -585,11 +587,11 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
                     aux -> next = temp -> tasks;
                     
                     segment_size = sizeof(tcb_t);
-                    found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                    found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                     
                     if(found_segment < 0) {
                         memory_compaction(memory, mem_size, table_collection);
-                        found_segment = memory_seek(memory, mem_size, segment_size, table_collection);
+                        found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
                     }
                     
                     segment *segmento_tcb = malloc(sizeof(segment));

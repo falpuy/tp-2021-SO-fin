@@ -108,6 +108,8 @@
 
     int check_space_memory(void *memory, int mem_size, int total_size, t_dictionary *table_collection);
 
+    int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int total_size);
+
     int memory_seek(void *memory, int mem_size, int total_size, t_dictionary *table_collection);
 
     int get_last_index (t_queue *segmentTable);

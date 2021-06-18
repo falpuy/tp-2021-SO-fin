@@ -10,6 +10,7 @@
 #include <commons/error.h>
 #include <commons/memory.h>
 #include<ctype.h>
+#include<string.h>
 
 int status = 1;
 int recvCounter = 0;
@@ -286,6 +287,83 @@ void memory_compaction(void *memory, int mem_size, t_dictionary* self) {
     free(aux_memory);
 }
 
+
+typedef struct {
+    int addr;
+    int counter;
+
+} best_fit_data;
+
+bool segment_cmp(void *first, void *second) {
+    best_fit_data *f = (best_fit_data *) first;
+    best_fit_data *s = (best_fit_data *) second;
+
+    printf("Comparando: %d - %d\n", f -> counter, s -> counter);
+
+    return f -> counter < s -> counter;
+}
+
+void best_fit_destroyer(void *data) {
+    best_fit_data *temp = (best_fit_data *) data;
+    
+    free(temp);
+}
+
+int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int total_size) {
+    // Auxiliar para guardar el limite de cada segmento ocupado
+    int limit;
+
+    t_list *temp = list_create();
+
+    int result;
+
+    int start = 0;
+
+    // Contador de bytes libres en la memoria
+    int segment_counter = 0;
+
+    // Busco espacio libre en la memoria
+    for(int i = 0; i < mem_size; i ++) {
+        if (memcmp(memory + i, "\0", 1)) {
+            printf("Direccion ocupada: %d\n", i);
+            if (segment_counter >= total_size) {
+                printf("Encontre un segmento: %d - %d\n", start, segment_counter);
+                best_fit_data *data = malloc(sizeof(best_fit_data));
+                data -> addr = start;
+                data -> counter = segment_counter;
+                list_add_sorted(temp, data, segment_cmp);
+            }
+            segment_counter = 0;
+            limit = get_segment_limit(collection, i);
+            if (limit < 0) return -1;
+            printf("Final de segmento: %d\n", limit);
+            i = limit - 1;
+            start = limit;
+        } else {
+            printf("Direccion vacia: %d\n", i);
+            segment_counter ++;
+        }
+    }
+
+    if (segment_counter >= total_size) {
+        printf("Encontre un segmento: %d\n", start);
+        best_fit_data *data = malloc(sizeof(best_fit_data));
+        data -> addr = start;
+        data -> counter = segment_counter;
+        list_add_sorted(temp, data, segment_cmp);
+    }
+
+    if (list_size(temp) > 0) {
+        best_fit_data *aux = list_get(temp, 0);
+        result = aux -> addr;
+        list_destroy_and_destroy_elements(temp, best_fit_destroyer);
+        printf("Direccion a devolver: %d\n", result);
+        return result;
+    }
+
+    return -1;
+}
+
 int memory_seek(void *memory, int mem_size, t_dictionary *collection, int total_size) {
     // Auxiliar para guardar el limite de cada segmento ocupado
     int limit;
@@ -560,57 +638,57 @@ int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *dat
     return -1;
 }
 
-void send_tareas(int id_pcb, char *ruta_archivo) {
-    FILE * fp;
-    char * line = NULL;
-    size_t len = 0;
-    ssize_t read;
+// void send_tareas(int id_pcb, char *ruta_archivo) {
+//     FILE * fp;
+//     char * line = NULL;
+//     size_t len = 0;
+//     ssize_t read;
 
-    int b_size = 0;
-    int offset = 0;
-    int new_size;
-    void *temp;
+//     int b_size = 0;
+//     int offset = 0;
+//     int new_size;
+//     void *temp;
 
-    void *buffer = malloc(sizeof(int));
+//     void *buffer = malloc(sizeof(int));
 
-    memcpy(buffer + offset, &id_pcb, sizeof(int));
-    offset += sizeof(int);
-    b_size += sizeof(int);
+//     memcpy(buffer + offset, &id_pcb, sizeof(int));
+//     offset += sizeof(int);
+//     b_size += sizeof(int);
 
-    fp = fopen(ruta_archivo, "r");
-    if (fp == NULL)
-        exit(EXIT_FAILURE);
+//     fp = fopen(ruta_archivo, "r");
+//     if (fp == NULL)
+//         exit(EXIT_FAILURE);
 
-    while ((read = getline(&line, &len, fp)) != -1) {
+//     while ((read = getline(&line, &len, fp)) != -1) {
 
-        // printf("Length: %d - String: %s", read, line);
+//         // printf("Length: %d - String: %s", read, line);
 
-        if (line[ read - 1 ] == '\n') {
-            read--;
-            memset(line + read, 0, 1);
-        }
+//         if (line[ read - 1 ] == '\n') {
+//             read--;
+//             memset(line + read, 0, 1);
+//         }
 
-        new_size = sizeof(int) + read;
+//         new_size = sizeof(int) + read;
         
-        temp = _serialize(new_size, "%s", line);
+//         temp = _serialize(new_size, "%s", line);
 
-        b_size += new_size;
-        buffer = realloc(buffer, b_size);
+//         b_size += new_size;
+//         buffer = realloc(buffer, b_size);
         
-        memcpy(buffer + offset, temp, new_size);
-        offset += new_size;
+//         memcpy(buffer + offset, temp, new_size);
+//         offset += new_size;
 
-        free(temp);
-    }
+//         free(temp);
+//     }
 
-    fclose(fp);
-    if (line)
-        free(line);
+//     fclose(fp);
+//     if (line)
+//         free(line);
 
-    _send_message(socket_memoria, "DIS", 510, buffer, offset);
+//     _send_message(socket_memoria, "DIS", 510, buffer, offset);
 
-    free(buffer);
-}
+//     free(buffer);
+// }
 
 int main() {
 
@@ -648,7 +726,7 @@ int main() {
 
     // ---------------- TEST MEMORY SEEK & MEMORY COMPACTION WITH DICTIONARY ----------------- //
 
-    /*
+    
 
     int m_size = 30;
     void *memory = malloc(m_size);
@@ -718,12 +796,12 @@ int main() {
     printf("\n------- ------------------- -------\n");
 
     // Tamanio del segmento que quiero guardar
-    int total_size = 6;
+    int total_size = 3;
 
     printf("Buscando un segmento de tamanio: %d\n", total_size);
     
     // Valida si encontre un segmento libre o no
-    int found_segment = memory_seek(memory, m_size, table_collection, total_size);
+    int found_segment = memory_best_fit(memory, m_size, table_collection, total_size);
 
     if(found_segment < 0) {
         printf("No encontre ningun segmento libre.. Iniciando compactacion.\n");
@@ -754,7 +832,7 @@ int main() {
 
     free(memory);
 
-    */
+    
 
     // ---------------- TEST QUEUES ----------------- //
 
@@ -841,7 +919,7 @@ int main() {
 
     // ---------------- TEST ARCHIVOS ----------------- //
 
-    send_tareas(41, "./tareas.txt");
+    // send_tareas(41, "./tareas.txt");
 /*
 
     FILE * fp;

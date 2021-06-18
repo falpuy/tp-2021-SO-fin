@@ -29,6 +29,7 @@ char *KEYS[] = {
 t_dictionary *table_collection;
 
 char *esquema;
+int isBestFit = 0;
 
 t_log *logger;
 t_config * config;

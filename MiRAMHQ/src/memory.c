@@ -261,6 +261,82 @@ int check_space_memory(void *memory, int mem_size, int total_size, t_dictionary 
     return -1;
 }
 
+typedef struct {
+    int addr;
+    int counter;
+
+} best_fit_data;
+
+bool segment_cmp(void *first, void *second) {
+    best_fit_data *f = (best_fit_data *) first;
+    best_fit_data *s = (best_fit_data *) second;
+
+    printf("Comparando: %d - %d\n", f -> counter, s -> counter);
+
+    return f -> counter < s -> counter;
+}
+
+void best_fit_destroyer(void *data) {
+    best_fit_data *temp = (best_fit_data *) data;
+    
+    free(temp);
+}
+
+int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int total_size) {
+    // Auxiliar para guardar el limite de cada segmento ocupado
+    int limit;
+
+    t_list *temp = list_create();
+
+    int result;
+
+    int start = 0;
+
+    // Contador de bytes libres en la memoria
+    int segment_counter = 0;
+
+    // Busco espacio libre en la memoria
+    for(int i = 0; i < mem_size; i ++) {
+        if (memcmp(memory + i, "\0", 1)) {
+            printf("Direccion ocupada: %d\n", i);
+            if (segment_counter >= total_size) {
+                printf("Encontre un segmento: %d - %d\n", start, segment_counter);
+                best_fit_data *data = malloc(sizeof(best_fit_data));
+                data -> addr = start;
+                data -> counter = segment_counter;
+                list_add_sorted(temp, data, segment_cmp);
+            }
+            segment_counter = 0;
+            limit = get_segment_limit(collection, i);
+            if (limit < 0) return -1;
+            printf("Final de segmento: %d\n", limit);
+            i = limit - 1;
+            start = limit;
+        } else {
+            printf("Direccion vacia: %d\n", i);
+            segment_counter ++;
+        }
+    }
+
+    if (segment_counter >= total_size) {
+        printf("Encontre un segmento: %d\n", start);
+        best_fit_data *data = malloc(sizeof(best_fit_data));
+        data -> addr = start;
+        data -> counter = segment_counter;
+        list_add_sorted(temp, data, segment_cmp);
+    }
+
+    if (list_size(temp) > 0) {
+        best_fit_data *aux = list_get(temp, 0);
+        result = aux -> addr;
+        list_destroy_and_destroy_elements(temp, best_fit_destroyer);
+        printf("Direccion a devolver: %d\n", result);
+        return result;
+    }
+
+    return -1;
+}
+
 int memory_seek(void *memory, int mem_size, int total_size, t_dictionary *table_collection) {
     // Auxiliar para guardar el limite de cada segmento ocupado
     int limit;

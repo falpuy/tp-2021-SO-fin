@@ -18,7 +18,7 @@ int main() {
         signal_handler(SIGINT);
     }
 
-    log_info(logger, "Mi RAM HQ ejecutando correctamente..");
+    log_info(logger, "Mi RAM HQ ejecutando correctamente.. PID: %d", process_getpid());
 
     // Creo el mapa
     // create_map(logger);
@@ -88,8 +88,7 @@ void signal_handler(int sig_number) {
 
     case SIGUSR2:
 
-      printf("DUMP\n");
-      // memory_dump(memory, m_size, table_collection);
+      memory_dump(table_collection, memory);
 
     break;
   }

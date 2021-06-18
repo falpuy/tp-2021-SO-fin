@@ -10,6 +10,8 @@
     #include <commons/error.h>
     #include <commons/memory.h>
     #include <commons/process.h>
+    #include <commons/txt.h>
+    #include <commons/temporal.h>
     #include <ctype.h>
     #include <pthread.h>
     #include <semaphore.h>
@@ -138,5 +140,9 @@
     int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *data);
 
     // --------------------- END SEGMENTATION ----------------------- //
+
+    // ------------------------- DUMP ------------------------------- //
+    
+    void memory_dump(t_dictionary *self, void *memory);
 
 #endif

@@ -6,6 +6,7 @@
 #include <signal.h>
 #include <commons/config.h>
 #include <commons/log.h>
+#include <commons/process.h>
 #include <unnamed/server.h>
 #include <unnamed/validation.h>
 #include "memory.h"

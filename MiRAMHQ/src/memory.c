@@ -667,3 +667,84 @@ int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *dat
 // }
 
 // --------------------- END SEGMENTATION ----------------------- //
+
+
+// --------------------- DUMP ----------------------- //
+
+void save_in_file (void *element, void *memory, FILE *file) {
+    segment *segmento = element;
+
+    char *line = string_new();
+    string_append_with_format(&line, "Proceso: %d\tSegmento: %d\tInicio: %p\tTam: %db\n", segmento -> id, segmento -> nroSegmento, (memory + segmento -> baseAddr), segmento -> limit - segmento -> baseAddr);
+    
+    txt_write_in_file(file, line);
+
+    free(line);
+
+}
+
+void process_iterate(t_list *self, void(*closure)(), void *memory, FILE *file) {
+    t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+		closure(element->data, memory, file);
+		element = aux;
+	}
+}
+
+void memory_dump(t_dictionary *self, void *memory) {
+
+    //  Dump_<Timestamp>.dmp
+    char *timestamp = temporal_get_string_time("%d-%m-%y");
+    char *file_name = string_new();
+    string_append(&file_name, "./Dump_");
+    string_append(&file_name, timestamp);
+    string_append(&file_name, ".dmp");
+
+    FILE* file = fopen(file_name, "w");
+
+    if(file == NULL)
+    {
+        perror("Error al abrir archivo Dump");
+    }
+
+    free(timestamp);
+    free(file_name);
+
+    t_queue *aux;
+
+    // Recorro el diccionario
+    int table_index;
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+    char *title = string_new();
+    char *date = temporal_get_string_time("%d/%m/%y %H:%M:%S");
+    string_append_with_format(&title, "Dump: %s\n", date);
+    txt_write_in_file(file, title);
+    free(date);
+    free(title);
+
+
+	for (table_index = 0; table_index < self->table_max_size; table_index++) {
+		t_hash_element *element = self->elements[table_index];
+		t_hash_element *next_element = NULL;
+
+		while (element != NULL) {
+
+			next_element = element->next;
+
+            aux = element -> data;
+
+            process_iterate(aux -> elements, save_in_file, memory, file);
+
+			element = next_element;
+		}
+	}
+
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+
+    txt_close_file(file);
+}
+
+
+// --------------------- END DUMP ----------------------- //

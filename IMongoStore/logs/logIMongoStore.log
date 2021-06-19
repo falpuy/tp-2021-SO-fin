@@ -1192,3 +1192,426 @@
 [INFO] 23:28:27:511 IMS/(24412:24462): -----------------------------------------------------
 [ERROR] 23:28:27:512 IMS/(24412:24462): No existe bitácora para ese tripulante.
 [INFO] 23:28:30:870 IMS/(24412:24413): Comienza actualización de Blocks.ims...
+[INFO] 21:11:02:000 IMS/(21816:21816): Validando Existencia de directorios...
+[INFO] 21:11:02:093 IMS/(21816:21816): Ya existe directorio
+[INFO] 21:11:02:096 IMS/(21816:21816): -----------------------------------------------------
+[INFO] 21:11:02:097 IMS/(21816:21816): Validando existencia de Superbloque.ims....
+[INFO] 21:11:02:098 IMS/(21816:21816): -----------------------------------------------------
+[INFO] 21:11:02:100 IMS/(21816:21816): Se encontró el archivo superBloque.ims
+[INFO] 21:11:02:107 IMS/(21816:21816): Muestro mis valores del bitmap..
+[INFO] 21:11:02:112 IMS/(21816:21816): -----------------------------------------------------
+[INFO] 21:11:02:114 IMS/(21816:21816): Se muestra los datos del superBloque.
+[INFO] 21:11:02:120 IMS/(21816:21816): Tamaño de bloque: 10
+[INFO] 21:11:02:121 IMS/(21816:21816): Cantidad de bloques: 64
+[INFO] 21:11:02:122 IMS/(21816:21816): -----------------------------------------------------
+[INFO] 21:11:02:123 IMS/(21816:21816): Validando existencia de Blocks.ims....
+[INFO] 21:11:02:125 IMS/(21816:21816): -----------------------------------------------------
+[INFO] 21:11:02:127 IMS/(21816:21816): Existe archivo Blocks.ims.
+[INFO] 21:11:02:131 IMS/(21816:21816): -----------------------------------------------------
+[INFO] 21:11:02:136 IMS/(21816:21816): ------------------------------------------------
+[INFO] 21:11:02:137 IMS/(21816:21816): Creando servidor......
+[INFO] 21:11:02:138 IMS/(21816:21816): ------------------------------------------------
+[ERROR] 21:11:03:338 IMS/(21816:21816): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:15:31:881 IMS/(23105:23105): Validando Existencia de directorios...
+[INFO] 22:15:31:936 IMS/(23105:23105): Ya existe directorio
+[INFO] 22:15:31:937 IMS/(23105:23105): -----------------------------------------------------
+[INFO] 22:15:31:938 IMS/(23105:23105): Validando existencia de Superbloque.ims....
+[INFO] 22:15:31:939 IMS/(23105:23105): -----------------------------------------------------
+[INFO] 22:15:31:941 IMS/(23105:23105): Se encontró el archivo superBloque.ims
+[INFO] 22:15:31:949 IMS/(23105:23105): Muestro mis valores del bitmap..
+[INFO] 22:15:31:952 IMS/(23105:23105): -----------------------------------------------------
+[INFO] 22:15:31:952 IMS/(23105:23105): Se muestra los datos del superBloque.
+[INFO] 22:15:31:953 IMS/(23105:23105): Tamaño de bloque: 10
+[INFO] 22:15:31:954 IMS/(23105:23105): Cantidad de bloques: 64
+[INFO] 22:15:31:954 IMS/(23105:23105): -----------------------------------------------------
+[INFO] 22:15:31:955 IMS/(23105:23105): Validando existencia de Blocks.ims....
+[INFO] 22:15:31:955 IMS/(23105:23105): -----------------------------------------------------
+[INFO] 22:15:31:956 IMS/(23105:23105): Existe archivo Blocks.ims.
+[INFO] 22:15:31:958 IMS/(23105:23105): -----------------------------------------------------
+[INFO] 22:15:31:967 IMS/(23105:23105): ------------------------------------------------
+[INFO] 22:15:31:972 IMS/(23105:23105): Creando servidor......
+[INFO] 22:15:31:973 IMS/(23105:23105): ------------------------------------------------
+[ERROR] 22:15:33:047 IMS/(23105:23105): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:16:32:350 IMS/(23128:23128): Validando Existencia de directorios...
+[INFO] 22:16:32:448 IMS/(23128:23128): Ya existe directorio
+[INFO] 22:16:32:462 IMS/(23128:23128): -----------------------------------------------------
+[INFO] 22:16:32:462 IMS/(23128:23128): Validando existencia de Superbloque.ims....
+[INFO] 22:16:32:463 IMS/(23128:23128): -----------------------------------------------------
+[INFO] 22:16:32:464 IMS/(23128:23128): Se encontró el archivo superBloque.ims
+[INFO] 22:16:32:468 IMS/(23128:23128): Muestro mis valores del bitmap..
+[INFO] 22:16:32:472 IMS/(23128:23128): -----------------------------------------------------
+[INFO] 22:16:32:472 IMS/(23128:23128): Se muestra los datos del superBloque.
+[INFO] 22:16:32:473 IMS/(23128:23128): Tamaño de bloque: 10
+[INFO] 22:16:32:474 IMS/(23128:23128): Cantidad de bloques: 64
+[INFO] 22:16:32:474 IMS/(23128:23128): -----------------------------------------------------
+[INFO] 22:16:32:475 IMS/(23128:23128): Validando existencia de Blocks.ims....
+[INFO] 22:16:32:476 IMS/(23128:23128): -----------------------------------------------------
+[INFO] 22:16:32:476 IMS/(23128:23128): Existe archivo Blocks.ims.
+[INFO] 22:16:32:488 IMS/(23128:23128): -----------------------------------------------------
+[INFO] 22:16:32:494 IMS/(23128:23128): ------------------------------------------------
+[INFO] 22:16:32:495 IMS/(23128:23128): Creando servidor......
+[INFO] 22:16:32:496 IMS/(23128:23128): ------------------------------------------------
+[ERROR] 22:16:33:601 IMS/(23128:23128): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:17:25:112 IMS/(23136:23136): Validando Existencia de directorios...
+[INFO] 22:17:25:210 IMS/(23136:23136): Ya existe directorio
+[INFO] 22:17:25:211 IMS/(23136:23136): -----------------------------------------------------
+[INFO] 22:17:25:212 IMS/(23136:23136): Validando existencia de Superbloque.ims....
+[INFO] 22:17:25:212 IMS/(23136:23136): -----------------------------------------------------
+[INFO] 22:17:25:213 IMS/(23136:23136): Se encontró el archivo superBloque.ims
+[INFO] 22:17:25:218 IMS/(23136:23136): Muestro mis valores del bitmap..
+[INFO] 22:17:25:221 IMS/(23136:23136): -----------------------------------------------------
+[INFO] 22:17:25:222 IMS/(23136:23136): Se muestra los datos del superBloque.
+[INFO] 22:17:25:222 IMS/(23136:23136): Tamaño de bloque: 10
+[INFO] 22:17:25:223 IMS/(23136:23136): Cantidad de bloques: 64
+[INFO] 22:17:25:223 IMS/(23136:23136): -----------------------------------------------------
+[INFO] 22:17:25:224 IMS/(23136:23136): Validando existencia de Blocks.ims....
+[INFO] 22:17:25:224 IMS/(23136:23136): -----------------------------------------------------
+[INFO] 22:17:25:225 IMS/(23136:23136): Existe archivo Blocks.ims.
+[INFO] 22:17:25:227 IMS/(23136:23136): -----------------------------------------------------
+[INFO] 22:17:25:230 IMS/(23136:23136): ------------------------------------------------
+[INFO] 22:17:25:230 IMS/(23136:23136): Creando servidor......
+[INFO] 22:17:25:231 IMS/(23136:23136): ------------------------------------------------
+[INFO] 22:17:30:405 IMS/(23154:23154): Validando Existencia de directorios...
+[INFO] 22:17:30:498 IMS/(23154:23154): Ya existe directorio
+[INFO] 22:17:30:509 IMS/(23154:23154): -----------------------------------------------------
+[INFO] 22:17:30:509 IMS/(23154:23154): Validando existencia de Superbloque.ims....
+[INFO] 22:17:30:510 IMS/(23154:23154): -----------------------------------------------------
+[INFO] 22:17:30:511 IMS/(23154:23154): Se encontró el archivo superBloque.ims
+[INFO] 22:17:30:516 IMS/(23154:23154): Muestro mis valores del bitmap..
+[INFO] 22:17:30:520 IMS/(23154:23154): -----------------------------------------------------
+[INFO] 22:17:30:521 IMS/(23154:23154): Se muestra los datos del superBloque.
+[INFO] 22:17:30:521 IMS/(23154:23154): Tamaño de bloque: 10
+[INFO] 22:17:30:522 IMS/(23154:23154): Cantidad de bloques: 64
+[INFO] 22:17:30:522 IMS/(23154:23154): -----------------------------------------------------
+[INFO] 22:17:30:523 IMS/(23154:23154): Validando existencia de Blocks.ims....
+[INFO] 22:17:30:524 IMS/(23154:23154): -----------------------------------------------------
+[INFO] 22:17:30:524 IMS/(23154:23154): Existe archivo Blocks.ims.
+[INFO] 22:17:30:526 IMS/(23154:23154): -----------------------------------------------------
+[INFO] 22:17:30:529 IMS/(23154:23154): ------------------------------------------------
+[INFO] 22:17:30:537 IMS/(23154:23154): Creando servidor......
+[INFO] 22:17:30:540 IMS/(23154:23154): ------------------------------------------------
+[INFO] 22:18:41:437 IMS/(23160:23160): Validando Existencia de directorios...
+[INFO] 22:18:41:524 IMS/(23160:23160): Ya existe directorio
+[INFO] 22:18:41:526 IMS/(23160:23160): -----------------------------------------------------
+[INFO] 22:18:41:526 IMS/(23160:23160): Validando existencia de Superbloque.ims....
+[INFO] 22:18:41:527 IMS/(23160:23160): -----------------------------------------------------
+[INFO] 22:18:41:528 IMS/(23160:23160): Se encontró el archivo superBloque.ims
+[INFO] 22:18:41:535 IMS/(23160:23160): Muestro mis valores del bitmap..
+[INFO] 22:18:41:539 IMS/(23160:23160): -----------------------------------------------------
+[INFO] 22:18:41:540 IMS/(23160:23160): Se muestra los datos del superBloque.
+[INFO] 22:18:41:541 IMS/(23160:23160): Tamaño de bloque: 10
+[INFO] 22:18:41:541 IMS/(23160:23160): Cantidad de bloques: 64
+[INFO] 22:18:41:542 IMS/(23160:23160): -----------------------------------------------------
+[INFO] 22:18:41:543 IMS/(23160:23160): Validando existencia de Blocks.ims....
+[INFO] 22:18:41:544 IMS/(23160:23160): -----------------------------------------------------
+[INFO] 22:18:41:545 IMS/(23160:23160): Existe archivo Blocks.ims.
+[INFO] 22:18:41:548 IMS/(23160:23160): -----------------------------------------------------
+[INFO] 22:18:41:561 IMS/(23160:23160): ------------------------------------------------
+[INFO] 22:18:41:562 IMS/(23160:23160): Creando servidor......
+[INFO] 22:18:41:566 IMS/(23160:23160): ------------------------------------------------
+[INFO] 22:18:49:713 IMS/(23179:23179): Validando Existencia de directorios...
+[INFO] 22:18:49:804 IMS/(23179:23179): Ya existe directorio
+[INFO] 22:18:49:807 IMS/(23179:23179): -----------------------------------------------------
+[INFO] 22:18:49:808 IMS/(23179:23179): Validando existencia de Superbloque.ims....
+[INFO] 22:18:49:808 IMS/(23179:23179): -----------------------------------------------------
+[INFO] 22:18:49:810 IMS/(23179:23179): Se encontró el archivo superBloque.ims
+[INFO] 22:18:49:815 IMS/(23179:23179): Muestro mis valores del bitmap..
+[INFO] 22:18:49:825 IMS/(23179:23179): -----------------------------------------------------
+[INFO] 22:18:49:826 IMS/(23179:23179): Se muestra los datos del superBloque.
+[INFO] 22:18:49:828 IMS/(23179:23179): Tamaño de bloque: 10
+[INFO] 22:18:49:829 IMS/(23179:23179): Cantidad de bloques: 64
+[INFO] 22:18:49:829 IMS/(23179:23179): -----------------------------------------------------
+[INFO] 22:18:49:830 IMS/(23179:23179): Validando existencia de Blocks.ims....
+[INFO] 22:18:49:831 IMS/(23179:23179): -----------------------------------------------------
+[INFO] 22:18:49:831 IMS/(23179:23179): Existe archivo Blocks.ims.
+[INFO] 22:18:49:833 IMS/(23179:23179): -----------------------------------------------------
+[INFO] 22:18:49:836 IMS/(23179:23179): ------------------------------------------------
+[INFO] 22:18:49:837 IMS/(23179:23179): Creando servidor......
+[INFO] 22:18:49:838 IMS/(23179:23179): ------------------------------------------------
+[ERROR] 22:18:50:938 IMS/(23179:23179): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:20:00:954 IMS/(23322:23322): Validando Existencia de directorios...
+[INFO] 22:20:00:955 IMS/(23322:23322): Ya existe directorio
+[INFO] 22:20:00:956 IMS/(23322:23322): -----------------------------------------------------
+[INFO] 22:20:00:956 IMS/(23322:23322): Validando existencia de Superbloque.ims....
+[INFO] 22:20:00:956 IMS/(23322:23322): -----------------------------------------------------
+[INFO] 22:20:00:956 IMS/(23322:23322): Se encontró el archivo superBloque.ims
+[INFO] 22:20:00:957 IMS/(23322:23322): Muestro mis valores del bitmap..
+[INFO] 22:20:00:957 IMS/(23322:23322): -----------------------------------------------------
+[INFO] 22:20:00:958 IMS/(23322:23322): Se muestra los datos del superBloque.
+[INFO] 22:20:00:958 IMS/(23322:23322): Tamaño de bloque: 10
+[INFO] 22:20:00:958 IMS/(23322:23322): Cantidad de bloques: 64
+[INFO] 22:20:00:958 IMS/(23322:23322): -----------------------------------------------------
+[INFO] 22:20:00:958 IMS/(23322:23322): Validando existencia de Blocks.ims....
+[INFO] 22:20:00:959 IMS/(23322:23322): -----------------------------------------------------
+[INFO] 22:20:00:961 IMS/(23322:23322): Existe archivo Blocks.ims.
+[INFO] 22:20:00:962 IMS/(23322:23322): -----------------------------------------------------
+[INFO] 22:20:00:962 IMS/(23322:23322): ------------------------------------------------
+[INFO] 22:20:00:963 IMS/(23322:23322): Creando servidor......
+[INFO] 22:20:00:963 IMS/(23322:23322): ------------------------------------------------
+[ERROR] 22:20:01:964 IMS/(23322:23322): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:21:21:115 IMS/(23352:23352): Validando Existencia de directorios...
+[INFO] 22:21:21:116 IMS/(23352:23352): Ya existe directorio
+[INFO] 22:21:21:116 IMS/(23352:23352): -----------------------------------------------------
+[INFO] 22:21:21:117 IMS/(23352:23352): Validando existencia de Superbloque.ims....
+[INFO] 22:21:21:117 IMS/(23352:23352): -----------------------------------------------------
+[INFO] 22:21:21:117 IMS/(23352:23352): Se encontró el archivo superBloque.ims
+[INFO] 22:21:21:118 IMS/(23352:23352): Muestro mis valores del bitmap..
+[INFO] 22:21:21:118 IMS/(23352:23352): -----------------------------------------------------
+[INFO] 22:21:21:119 IMS/(23352:23352): Se muestra los datos del superBloque.
+[INFO] 22:21:21:121 IMS/(23352:23352): Tamaño de bloque: 10
+[INFO] 22:21:21:121 IMS/(23352:23352): Cantidad de bloques: 64
+[INFO] 22:21:21:121 IMS/(23352:23352): -----------------------------------------------------
+[INFO] 22:21:21:122 IMS/(23352:23352): Validando existencia de Blocks.ims....
+[INFO] 22:21:21:122 IMS/(23352:23352): -----------------------------------------------------
+[INFO] 22:21:21:122 IMS/(23352:23352): Existe archivo Blocks.ims.
+[INFO] 22:21:21:123 IMS/(23352:23352): -----------------------------------------------------
+[INFO] 22:21:21:124 IMS/(23352:23352): ------------------------------------------------
+[INFO] 22:21:21:124 IMS/(23352:23352): Creando servidor......
+[INFO] 22:21:21:124 IMS/(23352:23352): ------------------------------------------------
+[ERROR] 22:21:22:125 IMS/(23352:23352): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:21:43:375 IMS/(23461:23461): Validando Existencia de directorios...
+[INFO] 22:21:43:375 IMS/(23461:23461): No existe directorio: Filesystem. Se crea.
+[INFO] 22:21:43:378 IMS/(23461:23461): -----------------------------------------------------
+[INFO] 22:21:43:378 IMS/(23461:23461): Validando existencia de Superbloque.ims....
+[INFO] 22:21:43:378 IMS/(23461:23461): -----------------------------------------------------
+[ERROR] 22:21:43:379 IMS/(23461:23461): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 22:21:43:379 IMS/(23461:23461): Ingresar el tamaño de cada bloque
+[INFO] 22:21:46:309 IMS/(23461:23461): Ingresar la cantidad de bloques
+[INFO] 22:21:47:555 IMS/(23461:23461): Muestro mis valores del bitmap..
+[INFO] 22:21:47:556 IMS/(23461:23461): -----------------------------------------------------
+[INFO] 22:21:47:556 IMS/(23461:23461): Se creó archivo superBloque.ims
+[INFO] 22:21:47:556 IMS/(23461:23461): -----------------------------------------------------
+[INFO] 22:21:47:556 IMS/(23461:23461): Validando existencia de Blocks.ims....
+[ERROR] 22:21:47:557 IMS/(23461:23461): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 22:21:47:559 IMS/(23461:23461): -----------------------------------------------------
+[INFO] 22:21:47:559 IMS/(23461:23461): Se creó archivo Blocks.ims
+[INFO] 22:21:47:559 IMS/(23461:23461): -----------------------------------------------------
+[INFO] 22:21:47:559 IMS/(23461:23461): ------------------------------------------------
+[INFO] 22:21:47:559 IMS/(23461:23461): Creando servidor......
+[INFO] 22:21:47:559 IMS/(23461:23461): ------------------------------------------------
+[ERROR] 22:21:48:561 IMS/(23461:23461): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:21:58:748 IMS/(23464:23464): Validando Existencia de directorios...
+[INFO] 22:21:58:833 IMS/(23464:23464): Ya existe directorio
+[INFO] 22:21:58:835 IMS/(23464:23464): -----------------------------------------------------
+[INFO] 22:21:58:837 IMS/(23464:23464): Validando existencia de Superbloque.ims....
+[INFO] 22:21:58:837 IMS/(23464:23464): -----------------------------------------------------
+[INFO] 22:21:58:839 IMS/(23464:23464): Se encontró el archivo superBloque.ims
+[INFO] 22:21:58:850 IMS/(23464:23464): Muestro mis valores del bitmap..
+[INFO] 22:21:58:854 IMS/(23464:23464): -----------------------------------------------------
+[INFO] 22:21:58:854 IMS/(23464:23464): Se muestra los datos del superBloque.
+[INFO] 22:21:58:855 IMS/(23464:23464): Tamaño de bloque: 100
+[INFO] 22:21:58:855 IMS/(23464:23464): Cantidad de bloques: 64
+[INFO] 22:21:58:856 IMS/(23464:23464): -----------------------------------------------------
+[INFO] 22:21:58:857 IMS/(23464:23464): Validando existencia de Blocks.ims....
+[INFO] 22:21:58:858 IMS/(23464:23464): -----------------------------------------------------
+[INFO] 22:21:58:858 IMS/(23464:23464): Existe archivo Blocks.ims.
+[INFO] 22:21:58:860 IMS/(23464:23464): -----------------------------------------------------
+[INFO] 22:21:58:864 IMS/(23464:23464): ------------------------------------------------
+[INFO] 22:21:58:865 IMS/(23464:23464): Creando servidor......
+[INFO] 22:21:58:865 IMS/(23464:23464): ------------------------------------------------
+[ERROR] 22:21:59:960 IMS/(23464:23464): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:25:30:682 IMS/(23523:23523): Validando Existencia de directorios...
+[INFO] 22:25:30:683 IMS/(23523:23523): Ya existe directorio
+[INFO] 22:25:30:683 IMS/(23523:23523): -----------------------------------------------------
+[INFO] 22:25:30:683 IMS/(23523:23523): Validando existencia de Superbloque.ims....
+[INFO] 22:25:30:684 IMS/(23523:23523): -----------------------------------------------------
+[INFO] 22:25:30:684 IMS/(23523:23523): Se encontró el archivo superBloque.ims
+[INFO] 22:25:30:685 IMS/(23523:23523): Muestro mis valores del bitmap..
+[INFO] 22:25:30:685 IMS/(23523:23523): -----------------------------------------------------
+[INFO] 22:25:30:685 IMS/(23523:23523): Se muestra los datos del superBloque.
+[INFO] 22:25:30:685 IMS/(23523:23523): Tamaño de bloque: 100
+[INFO] 22:25:30:686 IMS/(23523:23523): Cantidad de bloques: 64
+[INFO] 22:25:30:686 IMS/(23523:23523): -----------------------------------------------------
+[INFO] 22:25:30:686 IMS/(23523:23523): Validando existencia de Blocks.ims....
+[INFO] 22:25:30:686 IMS/(23523:23523): -----------------------------------------------------
+[INFO] 22:25:30:687 IMS/(23523:23523): Existe archivo Blocks.ims.
+[INFO] 22:25:30:687 IMS/(23523:23523): -----------------------------------------------------
+[INFO] 22:25:30:689 IMS/(23523:23523): ------------------------------------------------
+[INFO] 22:25:30:690 IMS/(23523:23523): Creando servidor......
+[INFO] 22:25:30:690 IMS/(23523:23523): ------------------------------------------------
+[ERROR] 22:25:31:691 IMS/(23523:23523): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:25:42:085 IMS/(23530:23530): Validando Existencia de directorios...
+[INFO] 22:25:42:165 IMS/(23530:23530): Ya existe directorio
+[INFO] 22:25:42:166 IMS/(23530:23530): -----------------------------------------------------
+[INFO] 22:25:42:167 IMS/(23530:23530): Validando existencia de Superbloque.ims....
+[INFO] 22:25:42:168 IMS/(23530:23530): -----------------------------------------------------
+[INFO] 22:25:42:170 IMS/(23530:23530): Se encontró el archivo superBloque.ims
+[INFO] 22:25:42:176 IMS/(23530:23530): Muestro mis valores del bitmap..
+[INFO] 22:25:42:187 IMS/(23530:23530): -----------------------------------------------------
+[INFO] 22:25:42:188 IMS/(23530:23530): Se muestra los datos del superBloque.
+[INFO] 22:25:42:188 IMS/(23530:23530): Tamaño de bloque: 100
+[INFO] 22:25:42:189 IMS/(23530:23530): Cantidad de bloques: 64
+[INFO] 22:25:42:189 IMS/(23530:23530): -----------------------------------------------------
+[INFO] 22:25:42:190 IMS/(23530:23530): Validando existencia de Blocks.ims....
+[INFO] 22:25:42:191 IMS/(23530:23530): -----------------------------------------------------
+[INFO] 22:25:42:191 IMS/(23530:23530): Existe archivo Blocks.ims.
+[INFO] 22:25:42:193 IMS/(23530:23530): -----------------------------------------------------
+[INFO] 22:25:42:196 IMS/(23530:23530): ------------------------------------------------
+[INFO] 22:25:42:196 IMS/(23530:23530): Creando servidor......
+[INFO] 22:25:42:197 IMS/(23530:23530): ------------------------------------------------
+[ERROR] 22:25:43:281 IMS/(23530:23530): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:27:19:070 IMS/(24094:24094): Validando Existencia de directorios...
+[INFO] 22:27:19:151 IMS/(24094:24094): Ya existe directorio
+[INFO] 22:27:19:153 IMS/(24094:24094): -----------------------------------------------------
+[INFO] 22:27:19:154 IMS/(24094:24094): Validando existencia de Superbloque.ims....
+[INFO] 22:27:19:154 IMS/(24094:24094): -----------------------------------------------------
+[INFO] 22:27:19:156 IMS/(24094:24094): Se encontró el archivo superBloque.ims
+[INFO] 22:27:19:160 IMS/(24094:24094): Muestro mis valores del bitmap..
+[INFO] 22:27:19:174 IMS/(24094:24094): -----------------------------------------------------
+[INFO] 22:27:19:175 IMS/(24094:24094): Se muestra los datos del superBloque.
+[INFO] 22:27:19:175 IMS/(24094:24094): Tamaño de bloque: 100
+[INFO] 22:27:19:176 IMS/(24094:24094): Cantidad de bloques: 64
+[INFO] 22:27:19:177 IMS/(24094:24094): -----------------------------------------------------
+[INFO] 22:27:19:179 IMS/(24094:24094): Validando existencia de Blocks.ims....
+[INFO] 22:27:19:181 IMS/(24094:24094): -----------------------------------------------------
+[INFO] 22:27:19:182 IMS/(24094:24094): Existe archivo Blocks.ims.
+[INFO] 22:27:19:184 IMS/(24094:24094): -----------------------------------------------------
+[INFO] 22:27:19:187 IMS/(24094:24094): ------------------------------------------------
+[INFO] 22:27:19:188 IMS/(24094:24094): Creando servidor......
+[INFO] 22:27:19:189 IMS/(24094:24094): ------------------------------------------------
+[ERROR] 22:27:20:294 IMS/(24094:24094): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:28:03:695 IMS/(24110:24110): Validando Existencia de directorios...
+[INFO] 22:28:03:783 IMS/(24110:24110): Ya existe directorio
+[INFO] 22:28:03:786 IMS/(24110:24110): -----------------------------------------------------
+[INFO] 22:28:03:787 IMS/(24110:24110): Validando existencia de Superbloque.ims....
+[INFO] 22:28:03:788 IMS/(24110:24110): -----------------------------------------------------
+[INFO] 22:28:03:790 IMS/(24110:24110): Se encontró el archivo superBloque.ims
+[INFO] 22:28:03:796 IMS/(24110:24110): Muestro mis valores del bitmap..
+[INFO] 22:28:03:799 IMS/(24110:24110): -----------------------------------------------------
+[INFO] 22:28:03:800 IMS/(24110:24110): Se muestra los datos del superBloque.
+[INFO] 22:28:03:800 IMS/(24110:24110): Tamaño de bloque: 100
+[INFO] 22:28:03:801 IMS/(24110:24110): Cantidad de bloques: 64
+[INFO] 22:28:03:809 IMS/(24110:24110): -----------------------------------------------------
+[INFO] 22:28:03:814 IMS/(24110:24110): Validando existencia de Blocks.ims....
+[INFO] 22:28:03:815 IMS/(24110:24110): -----------------------------------------------------
+[INFO] 22:28:03:816 IMS/(24110:24110): Existe archivo Blocks.ims.
+[INFO] 22:28:03:818 IMS/(24110:24110): -----------------------------------------------------
+[INFO] 22:28:03:821 IMS/(24110:24110): ------------------------------------------------
+[INFO] 22:28:03:822 IMS/(24110:24110): Creando servidor......
+[INFO] 22:28:03:823 IMS/(24110:24110): ------------------------------------------------
+[ERROR] 22:28:04:915 IMS/(24110:24110): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:30:40:472 IMS/(24174:24174): Validando Existencia de directorios...
+[INFO] 22:30:40:554 IMS/(24174:24174): Ya existe directorio
+[INFO] 22:30:40:556 IMS/(24174:24174): -----------------------------------------------------
+[INFO] 22:30:40:557 IMS/(24174:24174): Validando existencia de Superbloque.ims....
+[INFO] 22:30:40:558 IMS/(24174:24174): -----------------------------------------------------
+[INFO] 22:30:40:560 IMS/(24174:24174): Se encontró el archivo superBloque.ims
+[INFO] 22:30:40:564 IMS/(24174:24174): Muestro mis valores del bitmap..
+[INFO] 22:30:40:576 IMS/(24174:24174): -----------------------------------------------------
+[INFO] 22:30:40:578 IMS/(24174:24174): Se muestra los datos del superBloque.
+[INFO] 22:30:40:579 IMS/(24174:24174): Tamaño de bloque: 100
+[INFO] 22:30:40:580 IMS/(24174:24174): Cantidad de bloques: 64
+[INFO] 22:30:40:580 IMS/(24174:24174): -----------------------------------------------------
+[INFO] 22:30:40:581 IMS/(24174:24174): Validando existencia de Blocks.ims....
+[INFO] 22:30:40:582 IMS/(24174:24174): -----------------------------------------------------
+[INFO] 22:30:40:582 IMS/(24174:24174): Existe archivo Blocks.ims.
+[INFO] 22:30:40:584 IMS/(24174:24174): -----------------------------------------------------
+[INFO] 22:30:40:587 IMS/(24174:24174): ------------------------------------------------
+[INFO] 22:30:40:587 IMS/(24174:24174): Creando servidor......
+[INFO] 22:30:40:588 IMS/(24174:24174): ------------------------------------------------
+[ERROR] 22:30:41:683 IMS/(24174:24174): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:34:08:526 IMS/(24201:24201): Validando Existencia de directorios...
+[INFO] 22:34:08:626 IMS/(24201:24201): Ya existe directorio
+[INFO] 22:34:08:629 IMS/(24201:24201): -----------------------------------------------------
+[INFO] 22:34:08:636 IMS/(24201:24201): Validando existencia de Superbloque.ims....
+[INFO] 22:34:08:637 IMS/(24201:24201): -----------------------------------------------------
+[INFO] 22:34:08:641 IMS/(24201:24201): Se encontró el archivo superBloque.ims
+[INFO] 22:34:08:645 IMS/(24201:24201): Muestro mis valores del bitmap..
+[INFO] 22:34:08:649 IMS/(24201:24201): -----------------------------------------------------
+[INFO] 22:34:08:650 IMS/(24201:24201): Se muestra los datos del superBloque.
+[INFO] 22:34:08:651 IMS/(24201:24201): Tamaño de bloque: 100
+[INFO] 22:34:08:651 IMS/(24201:24201): Cantidad de bloques: 64
+[INFO] 22:34:08:652 IMS/(24201:24201): -----------------------------------------------------
+[INFO] 22:34:08:652 IMS/(24201:24201): Validando existencia de Blocks.ims....
+[INFO] 22:34:08:653 IMS/(24201:24201): -----------------------------------------------------
+[INFO] 22:34:08:653 IMS/(24201:24201): Existe archivo Blocks.ims.
+[INFO] 22:34:08:655 IMS/(24201:24201): -----------------------------------------------------
+[INFO] 22:34:08:658 IMS/(24201:24201): ------------------------------------------------
+[INFO] 22:34:08:659 IMS/(24201:24201): Creando servidor......
+[INFO] 22:34:08:667 IMS/(24201:24201): ------------------------------------------------
+[ERROR] 22:34:09:760 IMS/(24201:24201): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:34:33:664 IMS/(24218:24218): Validando Existencia de directorios...
+[INFO] 22:34:33:753 IMS/(24218:24218): Ya existe directorio
+[INFO] 22:34:33:754 IMS/(24218:24218): -----------------------------------------------------
+[INFO] 22:34:33:755 IMS/(24218:24218): Validando existencia de Superbloque.ims....
+[INFO] 22:34:33:756 IMS/(24218:24218): -----------------------------------------------------
+[INFO] 22:34:33:757 IMS/(24218:24218): Se encontró el archivo superBloque.ims
+[INFO] 22:34:33:770 IMS/(24218:24218): Muestro mis valores del bitmap..
+[INFO] 22:34:33:776 IMS/(24218:24218): -----------------------------------------------------
+[INFO] 22:34:33:776 IMS/(24218:24218): Se muestra los datos del superBloque.
+[INFO] 22:34:33:777 IMS/(24218:24218): Tamaño de bloque: 100
+[INFO] 22:34:33:777 IMS/(24218:24218): Cantidad de bloques: 64
+[INFO] 22:34:33:778 IMS/(24218:24218): -----------------------------------------------------
+[INFO] 22:34:33:778 IMS/(24218:24218): Validando existencia de Blocks.ims....
+[INFO] 22:34:33:779 IMS/(24218:24218): -----------------------------------------------------
+[INFO] 22:34:33:780 IMS/(24218:24218): Existe archivo Blocks.ims.
+[INFO] 22:34:33:783 IMS/(24218:24218): -----------------------------------------------------
+[INFO] 22:34:33:786 IMS/(24218:24218): ------------------------------------------------
+[INFO] 22:34:33:787 IMS/(24218:24218): Creando servidor......
+[INFO] 22:34:33:787 IMS/(24218:24218): ------------------------------------------------
+[ERROR] 22:34:34:880 IMS/(24218:24218): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:35:31:757 IMS/(24239:24239): Validando Existencia de directorios...
+[INFO] 22:35:31:849 IMS/(24239:24239): Ya existe directorio
+[INFO] 22:35:31:851 IMS/(24239:24239): -----------------------------------------------------
+[INFO] 22:35:31:851 IMS/(24239:24239): Validando existencia de Superbloque.ims....
+[INFO] 22:35:31:852 IMS/(24239:24239): -----------------------------------------------------
+[INFO] 22:35:31:853 IMS/(24239:24239): Se encontró el archivo superBloque.ims
+[INFO] 22:35:31:863 IMS/(24239:24239): Muestro mis valores del bitmap..
+[INFO] 22:35:31:871 IMS/(24239:24239): -----------------------------------------------------
+[INFO] 22:35:31:871 IMS/(24239:24239): Se muestra los datos del superBloque.
+[INFO] 22:35:31:872 IMS/(24239:24239): Tamaño de bloque: 100
+[INFO] 22:35:31:872 IMS/(24239:24239): Cantidad de bloques: 64
+[INFO] 22:35:31:873 IMS/(24239:24239): -----------------------------------------------------
+[INFO] 22:35:31:873 IMS/(24239:24239): Validando existencia de Blocks.ims....
+[INFO] 22:35:31:875 IMS/(24239:24239): -----------------------------------------------------
+[INFO] 22:35:31:876 IMS/(24239:24239): Existe archivo Blocks.ims.
+[INFO] 22:35:31:878 IMS/(24239:24239): -----------------------------------------------------
+[INFO] 22:35:31:882 IMS/(24239:24239): ------------------------------------------------
+[INFO] 22:35:31:883 IMS/(24239:24239): Creando servidor......
+[INFO] 22:35:31:884 IMS/(24239:24239): ------------------------------------------------
+[INFO] 22:35:32:894 IMS/(24239:24239): 
+
+5001
+[ERROR] 22:35:32:985 IMS/(24239:24239): [Shared Library]: Error al obtener info de la conexion
+[INFO] 22:38:29:075 IMS/(24303:24303): Validando Existencia de directorios...
+[INFO] 22:38:29:154 IMS/(24303:24303): Ya existe directorio
+[INFO] 22:38:29:155 IMS/(24303:24303): -----------------------------------------------------
+[INFO] 22:38:29:156 IMS/(24303:24303): Validando existencia de Superbloque.ims....
+[INFO] 22:38:29:156 IMS/(24303:24303): -----------------------------------------------------
+[INFO] 22:38:29:157 IMS/(24303:24303): Se encontró el archivo superBloque.ims
+[INFO] 22:38:29:164 IMS/(24303:24303): Muestro mis valores del bitmap..
+[INFO] 22:38:29:167 IMS/(24303:24303): -----------------------------------------------------
+[INFO] 22:38:29:167 IMS/(24303:24303): Se muestra los datos del superBloque.
+[INFO] 22:38:29:168 IMS/(24303:24303): Tamaño de bloque: 100
+[INFO] 22:38:29:169 IMS/(24303:24303): Cantidad de bloques: 64
+[INFO] 22:38:29:169 IMS/(24303:24303): -----------------------------------------------------
+[INFO] 22:38:29:170 IMS/(24303:24303): Validando existencia de Blocks.ims....
+[INFO] 22:38:29:171 IMS/(24303:24303): -----------------------------------------------------
+[INFO] 22:38:29:171 IMS/(24303:24303): Existe archivo Blocks.ims.
+[INFO] 22:38:29:173 IMS/(24303:24303): -----------------------------------------------------
+[INFO] 22:38:29:176 IMS/(24303:24303): ------------------------------------------------
+[INFO] 22:38:29:177 IMS/(24303:24303): Creando servidor......
+[INFO] 22:38:29:184 IMS/(24303:24303): ------------------------------------------------
+[INFO] 22:38:30:189 IMS/(24303:24303): 
+
+5001
+[INFO] 22:40:57:200 IMS/(24334:24334): Validando Existencia de directorios...
+[INFO] 22:40:57:290 IMS/(24334:24334): Ya existe directorio
+[INFO] 22:40:57:292 IMS/(24334:24334): -----------------------------------------------------
+[INFO] 22:40:57:293 IMS/(24334:24334): Validando existencia de Superbloque.ims....
+[INFO] 22:40:57:294 IMS/(24334:24334): -----------------------------------------------------
+[INFO] 22:40:57:296 IMS/(24334:24334): Se encontró el archivo superBloque.ims
+[INFO] 22:40:57:308 IMS/(24334:24334): Muestro mis valores del bitmap..
+[INFO] 22:40:57:315 IMS/(24334:24334): -----------------------------------------------------
+[INFO] 22:40:57:316 IMS/(24334:24334): Se muestra los datos del superBloque.
+[INFO] 22:40:57:316 IMS/(24334:24334): Tamaño de bloque: 100
+[INFO] 22:40:57:316 IMS/(24334:24334): Cantidad de bloques: 64
+[INFO] 22:40:57:317 IMS/(24334:24334): -----------------------------------------------------
+[INFO] 22:40:57:318 IMS/(24334:24334): Validando existencia de Blocks.ims....
+[INFO] 22:40:57:318 IMS/(24334:24334): -----------------------------------------------------
+[INFO] 22:40:57:319 IMS/(24334:24334): Existe archivo Blocks.ims.
+[INFO] 22:40:57:321 IMS/(24334:24334): -----------------------------------------------------
+[INFO] 22:40:57:324 IMS/(24334:24334): ------------------------------------------------
+[INFO] 22:40:57:324 IMS/(24334:24334): Creando servidor......
+[INFO] 22:40:57:325 IMS/(24334:24334): ------------------------------------------------
+[ERROR] 22:40:58:418 IMS/(24334:24334): [Shared Library]: Error al obtener info de la conexion

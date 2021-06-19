@@ -12,8 +12,11 @@
     #include <commons/config.h>
     #include <commons/log.h>
     #include <commons/collections/list.h>
-    #include "actualizarMetadata.h"
+   // #include "actualizarMetadata.h"
 
-    void guardarEnBlocks(char* stringGuardar,char* path_fileTripulante,int flag);
+    void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso);
+    void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso);
+    void borrarPorBloque(char* stringBorrar,int posEnString, int tamStr, int cantidadBloquesABorrar,char* path,int esRecurso);
+    void guardarPorBloque(char* stringGuardar,int posEnString, int tamStr, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar);
     
 #endif

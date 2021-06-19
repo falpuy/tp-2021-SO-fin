@@ -1,35 +1,34 @@
 #include "./headers/actualizarMetadata.h"
 
 
-char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar, int flagEsGuardar){
-    int tamListaVieja = strlen(listaVieja);
-    char *bloque = string_itoa(bloqueAgregar);
-    char* listaNueva;
-
-    listaNueva = malloc(tamListaVieja);
+char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGuardar){
+    int tamListaVieja = string_length(listaVieja);
+    char *bloque = string_itoa(bloqueAModificar);
+    
+    char* listaNueva  = malloc(tamListaVieja);
     memcpy(listaNueva, listaVieja, tamListaVieja - 1); //copio hasta ']'
     listaNueva[tamListaVieja - 1] = '\0';
 
     if(flagEsGuardar){
-        //Es para guardar
-        if (tamListaVieja > 2) { // < [X]
+        if (tamListaVieja > 2) { // [2,3,5
             string_append_with_format(&listaNueva, ",%s]", bloque);
         } 
         else{
             string_append_with_format(&listaNueva, "%s]", bloque);
         }
-    }else{
-        //Es para borrar
-        if (tamListaVieja > 2) { // < [X]   [2,4
-            char* listaTemporal = malloc(strlen(listaNueva));
-            int tamListaNueva = strlen(listaNueva);
+    }else{ //Es para borrar
+        if (tamListaVieja > 2) { //[2,4
+
+            int tamListaNueva = string_length(listaNueva);
+            char* listaTemporal = malloc(tamListaNueva);
+            
             memcpy(listaTemporal, listaNueva,tamListaNueva  - 2);//copio hasta antes del numero y su coma
             listaTemporal[tamListaNueva- 2] = '\0';
-            string_append(&listaTemporal, "]");
+            string_append(&listaTemporal, "]"); //dudoso!
             free(listaNueva);
 
             //vuelvo a crear la listaNueva para poder retornarla
-            listaNueva = malloc(string_length(listaTemporal)+1);
+            listaNueva = malloc(tamListaNueva);
             memcpy(listaNueva, listaTemporal,string_length(listaTemporal));
             listaNueva[string_length(listaTemporal)] = '\0';
             free(listaTemporal);

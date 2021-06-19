@@ -527,7 +527,7 @@ void *get_next_task(void *memory, int start_address, int limit_address) {
     return recv_task;
 }
 
-int remove_segment_from_memory(void *memory, int mem_size, segment *segmento) {
+int remove_segment_from_memory(void *memory, int mem_size, segment *segmento ,t_dictionary * table_collection, int id_pcb) {
     if (segmento -> limit < mem_size) {
         memset(memory + segmento -> baseAddr, 0 , segmento -> limit - segmento -> baseAddr);
         return 1;

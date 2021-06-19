@@ -236,6 +236,11 @@ void memory_compaction(void *memory, int mem_size, t_dictionary* self) {
 }
 
 int check_space_memory(void *memory, int mem_size, int total_size, t_dictionary *table_collection) {
+
+    if (total_size > mem_size) {
+        return 0;
+    }
+
     // Auxiliar para guardar el limite de cada segmento ocupado
     int limit;
 
@@ -244,21 +249,21 @@ int check_space_memory(void *memory, int mem_size, int total_size, t_dictionary 
 
     for(int i = 0; i < mem_size; i ++) {
         if (memcmp(memory + i, "\0", 1)) {
-            printf("Direccion ocupada: %d\n", i);
+            // printf("Direccion ocupada: %d\n", i);
             limit = get_segment_limit(table_collection, i);
             if (limit < 0) return -1;
-            printf("Final de segmento: %d\n", limit);
+            // printf("Final de segmento: %d\n", limit);
             i = limit - 1;
         } else {
-            printf("Direccion vacia: %d\n", i);
+            // printf("Direccion vacia: %d\n", i);
             segment_counter ++;
             if (segment_counter == total_size) {
-                printf("Encontre un segmento disponible: %d\n", i - (total_size - 1));
+                // printf("Hay espacio disponible en memoria..\n");
                 return 1;
             }
         }
     }
-    return -1;
+    return 0;
 }
 
 typedef struct {
@@ -298,9 +303,9 @@ int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int to
     // Busco espacio libre en la memoria
     for(int i = 0; i < mem_size; i ++) {
         if (memcmp(memory + i, "\0", 1)) {
-            printf("Direccion ocupada: %d\n", i);
+            // printf("Direccion ocupada: %d\n", i);
             if (segment_counter >= total_size) {
-                printf("Encontre un segmento: %d - %d\n", start, segment_counter);
+                // printf("Encontre un segmento: %d - %d\n", start, segment_counter);
                 best_fit_data *data = malloc(sizeof(best_fit_data));
                 data -> addr = start;
                 data -> counter = segment_counter;
@@ -309,17 +314,17 @@ int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int to
             segment_counter = 0;
             limit = get_segment_limit(collection, i);
             if (limit < 0) return -1;
-            printf("Final de segmento: %d\n", limit);
+            // printf("Final de segmento: %d\n", limit);
             i = limit - 1;
             start = limit;
         } else {
-            printf("Direccion vacia: %d\n", i);
+            // printf("Direccion vacia: %d\n", i);
             segment_counter ++;
         }
     }
 
     if (segment_counter >= total_size) {
-        printf("Encontre un segmento: %d\n", start);
+        // printf("Encontre un segmento: %d\n", start);
         best_fit_data *data = malloc(sizeof(best_fit_data));
         data -> addr = start;
         data -> counter = segment_counter;
@@ -330,7 +335,7 @@ int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int to
         best_fit_data *aux = list_get(temp, 0);
         result = aux -> addr;
         list_destroy_and_destroy_elements(temp, best_fit_destroyer);
-        printf("Direccion a devolver: %d\n", result);
+        // printf("Direccion a devolver: %d\n", result);
         return result;
     }
 
@@ -347,17 +352,17 @@ int memory_seek(void *memory, int mem_size, int total_size, t_dictionary *table_
     // Busco espacio libre en la memoria
     for(int i = 0; i < mem_size; i ++) {
         if (memcmp(memory + i, "\0", 1)) {
-            printf("Direccion ocupada: %d\n", i);
+            // printf("Direccion ocupada: %d\n", i);
             limit = get_segment_limit(table_collection, i);
             if (limit < 0) return -1;
-            printf("Final de segmento: %d\n", limit);
+            // printf("Final de segmento: %d\n", limit);
             i = limit - 1;
             segment_counter = 0;
         } else {
-            printf("Direccion vacia: %d\n", i);
+            // printf("Direccion vacia: %d\n", i);
             segment_counter ++;
             if (segment_counter == total_size) {
-                printf("Encontre un segmento disponible: %d\n", i - (total_size - 1));
+                // printf("Encontre un segmento disponible: %d\n", i - (total_size - 1));
                 return i - (total_size - 1);
             }
         }
@@ -665,6 +670,87 @@ int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *dat
 
 //     free(buffer);
 // }
+
+void remove_segment_from_table(t_dictionary* table_collection, char *key, segment *segmento) {
+    segment *temp;
+
+    int index = 0;
+
+    t_queue *self = dictionary_get(table_collection, key);
+
+	if (self -> elements -> elements_count > 0) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        while (element != NULL) {
+
+            if (temp -> nroSegmento == segmento -> nroSegmento) {
+                // return element -> data;
+                break;
+            }
+
+			element = element->next;
+
+            if (element != NULL){
+                index ++;
+                temp = element -> data;
+            }
+		}
+
+        list_remove_and_destroy_element(self -> elements, index, destroyer);
+	}
+
+}
+
+segment *get_next_segment(t_dictionary *table_collection, char* key) {
+    segment *temp;
+
+    t_queue *self = dictionary_get(table_collection, key);
+
+	if (self -> elements -> elements_count > 0) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        if (element != NULL) {
+            return temp;
+        }
+	}
+
+    return NULL;
+}
+
+void remove_pcb_from_memory(void *memory, int mem_size, t_dictionary *table_collection, char* key) {
+    printf("Key: %s\n", key);
+    segment *temp;
+
+    int index = 0;
+
+    t_queue *self = dictionary_get(table_collection, key);
+
+    printf("CANTIDAD ELEMENTOS: %d\n", self -> elements -> elements_count);
+
+	if (self -> elements -> elements_count > 0) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        while (element != NULL) {
+
+            // Segment
+            // element -> data;
+            printf("Data: %d", temp -> type);
+
+			element = element->next;
+
+            if (element != NULL){
+                index ++;
+                temp = element -> data;
+            }
+		}
+	}
+}
 
 // --------------------- END SEGMENTATION ----------------------- //
 

@@ -128,6 +128,10 @@
 
     int remove_segment_from_memory(void *memory, int mem_size, segment *segmento);
 
+    void remove_segment_from_table(t_dictionary* table_collection, char *key, segment *segmento);
+
+    void remove_pcb_from_memory(void *memory, int mem_size, t_dictionary *table_collection, char* key);
+
     int save_tcb_in_memory(void *memory, int mem_size, segment *segmento, tcb_t *data);
 
     tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento);
@@ -138,6 +142,8 @@
 
     // Hay que pasarle la lista completa de tareas, tal cual se guarda en memoria
     int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *data);
+
+    segment *get_next_segment(t_dictionary *table_collection, char* key);
 
     // --------------------- END SEGMENTATION ----------------------- //
 

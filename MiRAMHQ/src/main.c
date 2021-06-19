@@ -25,9 +25,12 @@ int main() {
     
     // Valido esquema de memoria
     esquema = config_get_string_value(config, "ESQUEMA_MEMORIA");
+    log_info(logger, "Esquema utilizado: %s", esquema);
 
     mem_size = config_get_int_value(config, "TAMANIO_MEMORIA");
-    memory = memory_init(mem_size);
+    log_info(logger, "Tamanio de la memoria: %d", mem_size);
+    memory = malloc(mem_size);
+    memset(memory, 0, mem_size);
     table_collection = dictionary_create();
 
     isBestFit = !strcmp(config_get_string_value(config, "CRITERIO_SELECCION"), "BF");
@@ -124,6 +127,8 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
     tcb_t *nuestroTCB;
     segment *segmento_tcb;
 
+    segment *segmento_aux;
+
     int size_a_guardar;
 
     // TODO: COMANDO UPDATE STATUS
@@ -153,16 +158,15 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             log_info(logger,"ID PCB: %d", idPCB);
 						log_info(logger,"Tareas de la patota: %s", data_tareas);
           	log_info(logger,"Cantidad de tripulantes: %d", cantTripulantes);
-						//--------------------------------------------------------------------        
-        		
-          	respuesta = string_new();
-   					string_append(&respuesta, "Respuesta");
+						//--------------------------------------------------------------------
 						
             if(cantTripulantes <= 0){
               	log_error(logger, "Error: La cantidad de tripulantes es nula o no existente");
                 _send_message(fd, "RAM", ERROR_CANTIDAD_TRIPULANTES , respuesta, string_length(respuesta), logger);
             } else {
+
              		size_a_guardar = sizeof(pcb_t) + tamStrTareas + cantTripulantes * sizeof(tcb_t);
+                log_info(logger,"Size total a guardar en memoria: %d", size_a_guardar);
             
                 if (check_space_memory(memory, mem_size, size_a_guardar, table_collection)) {
                   // creo tabla de segmentos
@@ -190,6 +194,9 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   tareas -> type = TASK;
                   
                   save_task_in_memory(memory, mem_size, tareas, data_tareas);
+                  queue_push(segmentTable, tareas);
+                  temp_id = string_itoa(idPCB);
+                  dictionary_put(table_collection, temp_id, segmentTable);
 
                   // creo segmento pcb
                   segment *segmento_pcb = malloc(sizeof(segment));
@@ -208,12 +215,11 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   segmento_pcb -> id = idPCB;
                   segmento_pcb -> type = PCB;
                   
-                  save_task_in_memory(memory, mem_size, tareas, data_tareas);
-                
-                  // guardo los segmentos
+                  // save_task_in_memory(memory, mem_size, tareas, data_tareas);
+                  save_pcb_in_memory(memory, mem_size, segmento_pcb, temp);
                   queue_push(segmentTable, segmento_pcb);
-                  queue_push(segmentTable, tareas);
-                
+                  dictionary_put(table_collection, temp_id, segmentTable);
+
                   // guardo los tcbs
                   for(int i = 0; i < cantTripulantes; i++) {
                   
@@ -247,26 +253,35 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     segmento_aux -> baseAddr = found_segment;
                     segmento_aux -> limit = found_segment + sizeof(tcb_t);
                     
+                    save_tcb_in_memory(memory, mem_size, segmento_aux, aux);
+                    free(aux);
                     queue_push(segmentTable, segmento_aux);
+                    dictionary_put(table_collection, temp_id, segmentTable);
                   }
 
-                  free(temp); 
+                  free(temp);
+                  free(temp_id);
                 
                   // guardo la tabla en el diccionario
-                  dictionary_put(table_collection, string_itoa(temp -> pid), segmentTable);
+                  // dictionary_put(table_collection, string_itoa(temp -> pid), segmentTable);
                 
-                  log_info(logger, "Se guardaron exitosamente los datos de la patota"); 
+                  log_info(logger, "Se guardaron exitosamente los datos de la patota");
+                  respuesta = string_new();
+   					      string_append(&respuesta, "Respuesta");
                   _send_message(fd, "RAM", SUCCESS ,respuesta, string_length(respuesta), logger);
+                  free(respuesta); 
                 
               } else {
                   log_error(logger, "No hay mas espacio en memoria");
+                  respuesta = string_new();
+   					      string_append(&respuesta, "Respuesta");
                   _send_message(fd, "RAM", ERROR_POR_FALTA_DE_MEMORIA ,respuesta, string_length(respuesta), logger);
+                  free(respuesta); 
               }
       
             }
             log_info(logger,"-----------------------------------------------------");
-            free(data_tareas);     
-            free(respuesta); 
+            free(data_tareas);
               
         break;
 
@@ -285,8 +300,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
               
             log_info(logger,"ID PCB: %d", idPCB);
 						log_info(logger,"ID TCB: %d", idTCB);
-          	log_info(logger,"Posicion en X: %d", posX);
-            log_info(logger,"Posicion en Y: %d", posY);
+          	log_info(logger,"Estado: %c", status);
             //----------------------------------------------------
             temp_id = string_itoa(idPCB);
             segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
@@ -413,6 +427,42 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 						log_info(logger,"-----------------------------------------------------");
         break;
 
+        case ELIMINAR_PATOTA:
+
+            log_info(logger,"-----------------------------------------------------");
+            log_info(logger,"Llegó la operación: ELIMINAR_PATOTA");         
+
+            //------------Deserializo parámetros-------------------
+            memcpy(&idPCB, buffer,sizeof(int));
+            offset += sizeof(int);
+
+            temp_id = string_itoa(idPCB);
+            log_info(logger,"ID PCB: %s", temp_id);
+
+            // remove_pcb_from_memory(memory, mem_size, table_collection, temp_id);
+            segmento_aux = get_next_segment(table_collection, temp_id);
+
+            while (segmento_aux != NULL) {
+              if(remove_segment_from_memory(memory, mem_size, segmento_aux)) {
+                  remove_segment_from_table(table_collection, temp_id, segmento_aux);
+              }
+
+              segmento_aux = get_next_segment(table_collection, temp_id);
+            }
+
+            free(temp_id); 
+              
+            //----------------------------------------------------
+
+            respuesta = string_new();
+            string_append(&respuesta, "Respuesta");
+            _send_message(fd, "RAM", SUCCESS,respuesta,string_length(respuesta),logger);
+            free(respuesta);
+
+            log_info(logger,"-----------------------------------------------------");
+
+        break;
+
         case EXPULSAR_TRIPULANTE:	
                    
 						log_info(logger,"-----------------------------------------------------");
@@ -427,13 +477,20 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             //---------------------------------------------------
             temp_id = string_itoa(idPCB);
             segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
-            free(temp_id); 
+
+            error =  remove_segment_from_memory (memory, mem_size, segmento_tcb);
 
             // TODO: BORRAR SEGMENTO DE LA TABLA DE SEGMENTOS
-            error =  remove_segment_from_memory (memory, mem_size, segmento_tcb);
+            remove_segment_from_table(table_collection, temp_id, segmento_tcb);
+
+            free(temp_id); 
 						
           	if(error < 0){
               log_error(logger, "Error al eliminar el segmento asociado");
+              respuesta = string_new();
+              string_append(&respuesta, "Respuesta");
+              _send_message(fd, "RAM", ERROR_GUARDAR_TCB,respuesta,string_length(respuesta),logger);
+              free(respuesta);
 						} else {
             //// Elimino el tcb del mapa
 

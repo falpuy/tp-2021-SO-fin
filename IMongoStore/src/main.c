@@ -13,7 +13,7 @@ int main() {
     log_info(logger, "------------------------------------------------");
     sleep(1);
     
-    // pthread_create(&sync_blocks,NULL,(void*) actualizarArchivoBlocks, logger);
+    pthread_create(&sync_blocks,NULL,(void*) actualizarArchivoBlocks, logger);
     _start_server(datosConfig->puerto,handler,logger);
     finalizarProceso(log);
     return 0;

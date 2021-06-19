@@ -11,7 +11,7 @@
     #include <math.h>
     #include <commons/config.h>
     #include <commons/log.h>
-    //#include "guardarBlocks.h"
+    #include "guardarBlocks.h"
 
     enum TAREAS_TRIPULANTE{
         GENERAR_OXIGENO = 1,

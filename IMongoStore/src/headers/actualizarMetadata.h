@@ -11,7 +11,7 @@
     #include <math.h>
     #include <commons/config.h>
     #include <commons/log.h>
-    //#include "syncFile.h"
+    #include "syncFile.h"
 
     #include <commons/bitarray.h>
 

@@ -12,7 +12,7 @@
     #include <commons/config.h>
     #include <commons/log.h>
     #include <commons/bitarray.h>
-    //#include "tareas.h"
+    #include "tareas.h"
 
     
     enum COMANDOS{
@@ -24,34 +24,8 @@
         RESUELTO_SABOTAJE,
         RESPUESTA_OBTENER_BITACORA
     };
-    typedef struct{
-        char* puntoMontaje;
-        char* puerto;
-        int tiempoSincronizacion;   
-    }configIMS;
-    configIMS* datosConfig;
 
-    pthread_t sync_blocks;
-
-    uint32_t tamanioBloque;
-    uint32_t cantidadBloques;
-
-    int flagEnd;
-
-    void* copiaBlocks;
-    void* copiaSB;
-    void* memBitmap;
-    
-    t_bitarray* bitmap;
-    t_config* config;
-    t_log* logger;
-
-    pthread_mutex_t blocks_bitmap;
-    pthread_mutex_t logMutex;
-    pthread_mutex_t m_superBloque;
-    pthread_mutex_t m_metadata;
-    
-    void handler(int client, char* identificador, int comando, void* payload,t_log* log);
+    void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
     
 
 #endif

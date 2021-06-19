@@ -196,7 +196,7 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
 
 //         t_config* metadata = config_create(path);
 //         char** bloques = config_get_array_value(metadata,"BLOCKS");
-//         int sizeBlock = config_get_int_value(metadata, "SIZE");
+//         int sizeBlock = config_ge|t_int_value(metadata, "SIZE");
 //         int block_count = config_get_int_value(metadata, "BLOCK_COUNT");
 //         int contador = 0;
         

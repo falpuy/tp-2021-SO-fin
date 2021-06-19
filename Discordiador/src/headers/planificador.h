@@ -15,6 +15,9 @@
     #include<unnamed/socket.h>
     #include<unnamed/serialization.h>
 
+    t_log* logger;
+    t_config* config;
+
     int conexion_RAM;
     int conexion_IMS;
     char* ip_RAM;
@@ -47,9 +50,7 @@
 
     char** parametros;
 
-    int contadorPCBs;
-
-    #define CANTTAREAS 6    
+    int contadorPCBs;  
 
     t_queue* cola_new;
     t_queue* ready;
@@ -65,6 +66,7 @@
         int posicionX; // Posición del tripulante en el Eje X
         int posicionY; // Posición del tripulante en el Eje Y
         char* instruccion_actual; // Nombre de la tarea que estamos ejecutando
+        int estaVivoElHilo; // 1= está vivo, 0= está muerto
     }tcb;
     typedef struct
     {
@@ -75,12 +77,18 @@
 
     t_list* listaPCB;
 
-    void funcionTripulante (t_log* logger, tcb* tcbTripulante);
+    void funcionTripulante (tcb* tcbTripulante);
     void funcionhNewaReady (t_log* logger);
     void funcionhReadyaExec (t_log* logger);
+    void funcionCambioExecIO(void* nodo, int posicion);
+    void list_iterate_position(t_list *self, void(*closure)());
+    void funcionhExecaBloqIO (t_log* logger);
+    void funcionhBloqEmeraReady (t_log* logger);
+    void funcionhBloqIOaReady (t_log* logger);
+    void funcionhExecaExit (t_log* logger);
     void funcionPlanificador(t_log* logger);
     void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger);
-    tcb* crear_TCB(int idP, int posX, int posY, int idT, char* tarea, t_log* logger);
+    tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger);
     pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger);
 
 #endif

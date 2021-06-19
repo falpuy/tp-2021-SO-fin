@@ -15,8 +15,6 @@
     #include"planificador.h"
 
     int loEncontro;
-    #define LARGO 7 //es lo mismo que const int largo = 7
-    t_log* logger;
     bool buscarTripulante (void* elemento);
     void expulsarNodo (t_queue* cola, char* nombre_cola);
     void mostrarTripulante(void* elemento);

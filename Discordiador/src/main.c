@@ -2,8 +2,6 @@
 
 int main () {
     logger = log_create("consola.log", "consola", 1, LOG_LEVEL_INFO);
-
-    t_config* config;
     config = config_create("archivo.config"); //Hay que ver cómo se llama el archivo.config cuando nos lo den
     ip_RAM = config_get_string_value(config, "IP_MI_RAM_HQ");
     puerto_RAM = config_get_string_value(config, "PUERTO_MI_RAM_HQ");

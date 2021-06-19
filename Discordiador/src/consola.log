@@ -7007,3 +7007,1288 @@
 [INFO] 17:09:18:293 consola/(8265:8265): Status: EXEC
 
 [INFO] 17:09:18:293 consola/(8265:8265): --------------------------------------------------------------------
+[INFO] 21:10:07:241 consola/(5708:5708): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 21:10:07:245 consola/(5708:5708): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 21:10:07:246 consola/(5708:5708): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 21:10:14:208 consola/(5708:5708): Entró comando: INICIAR_PLANIFICACION
+[INFO] 21:10:14:208 consola/(5708:5708): Se inició la planificación. Estado de la flag: 0
+[INFO] 21:11:11:479 consola/(5708:5708): Entró comando: INICIAR_PATOTA
+[INFO] 21:11:11:496 consola/(5708:5708): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:11:11:502 consola/(5708:5708): Recibi el siguiente mensaje..
+[INFO] 21:16:03:795 consola/(6397:6397): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 21:16:04:255 consola/(6397:6397): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 21:16:04:291 consola/(6397:6397): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 21:16:18:543 consola/(6397:6397): Salimos de la consola
+[INFO] 21:32:09:891 consola/(6818:6818): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 21:32:11:776 consola/(6818:6818): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 21:32:11:863 consola/(6818:6818): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 21:32:32:803 consola/(6818:6818): Salimos de la consola
+[INFO] 21:36:57:594 consola/(7420:7420): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 21:36:57:947 consola/(7420:7420): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 21:36:57:974 consola/(7420:7420): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 21:37:01:820 consola/(7420:7420): Salimos de la consola
+[INFO] 15:47:42:199 consola/(3769:3769): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:47:42:201 consola/(3769:3769): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:47:42:203 consola/(3769:3769): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:47:49:358 consola/(3769:3769): Entró comando: INICIAR_PLANIFICACION
+[INFO] 15:47:49:359 consola/(3769:3769): Se inició la planificación. Estado de la flag: 0
+[INFO] 15:48:12:984 consola/(3769:3769): Entró comando: INICIAR_PATOTA
+[INFO] 15:48:12:989 consola/(3769:3769): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:48:12:989 consola/(3769:3769): Recibi el siguiente mensaje..
+[INFO] 15:49:37:102 consola/(4303:4303): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:49:37:110 consola/(4303:4303): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:49:37:110 consola/(4303:4303): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:49:42:759 consola/(4303:4303): Entró comando: INICIAR_PLANIFICACION
+[INFO] 15:49:42:760 consola/(4303:4303): Se inició la planificación. Estado de la flag: 0
+[INFO] 15:49:54:631 consola/(4303:4303): Entró comando: INICIAR_PATOTA
+[INFO] 15:49:54:633 consola/(4303:4303): Creando PCB....
+[INFO] 15:49:54:633 consola/(4303:4303): Cantidad Tripualantes:5
+[INFO] 15:49:54:634 consola/(4303:4303): Contador PCB:1
+[INFO] 15:49:54:634 consola/(4303:4303): ruta tareas: /home/utnso/shared/tp-2021-1c-Unnamed-Group/Discordiador/Rutaarchivoprueba/tareasprueba.txt
+[INFO] 15:49:54:639 consola/(4303:4303): Tareas:
+[INFO] 15:49:54:640 consola/(4303:4303): Tam buffer:152
+[INFO] 15:49:54:641 consola/(4303:4303): Empieza a crear el tcb..
+[INFO] 15:49:54:641 consola/(4303:4303): Empieza a crear el tcb..
+[INFO] 15:49:54:642 consola/(4303:4303): Empieza a crear el tcb..
+[INFO] 15:49:54:642 consola/(4303:4303): Empieza a crear el tcb..
+[INFO] 15:49:54:642 consola/(4303:4303): Empieza a crear el tcb..
+[INFO] 15:49:54:643 consola/(4303:4303): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:49:54:649 consola/(4303:4303): Recibi el siguiente mensaje..
+[INFO] 15:54:09:945 consola/(4728:4728): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:54:09:946 consola/(4728:4728): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:54:09:947 consola/(4728:4728): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:54:16:650 consola/(4728:4728): Entró comando: INICIAR_PLANIFICACION
+[INFO] 15:54:16:651 consola/(4728:4728): Se inició la planificación. Estado de la flag: 0
+[INFO] 15:54:32:278 consola/(4728:4728): Entró comando: INICIAR_PATOTA
+[INFO] 15:54:32:280 consola/(4728:4728): Creando PCB....
+[INFO] 15:54:32:281 consola/(4728:4728): Cantidad Tripualantes:5
+[INFO] 15:54:32:281 consola/(4728:4728): Contador PCB:1
+[INFO] 15:54:32:282 consola/(4728:4728): ruta tareas: /home/utnso/shared/tp-2021-1c-Unnamed-Group/Discordiador/Rutaarchivoprueba/tareasprueba.txt
+[INFO] 15:54:32:315 consola/(4728:4728): Tareas:GENERAR_OXIGENO 12;2;3;5GENERAR_COMIDA 4;2;3;1
+[INFO] 15:54:32:320 consola/(4728:4728): Tam buffer:199
+[INFO] 15:54:32:321 consola/(4728:4728): Empieza a crear el tcb..
+[INFO] 15:54:32:322 consola/(4728:4728): Empieza a crear el tcb..
+[INFO] 15:54:32:322 consola/(4728:4728): Empieza a crear el tcb..
+[INFO] 15:54:32:327 consola/(4728:4728): Empieza a crear el tcb..
+[INFO] 15:54:32:327 consola/(4728:4728): Empieza a crear el tcb..
+[INFO] 15:54:32:329 consola/(4728:4728): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:54:32:336 consola/(4728:4728): Recibi el siguiente mensaje..
+[INFO] 15:56:26:753 consola/(4990:4990): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:56:26:755 consola/(4990:4990): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 15:56:26:757 consola/(4990:4990): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 15:56:33:193 consola/(4990:4990): Entró comando: INICIAR_PLANIFICACION
+[INFO] 15:56:33:202 consola/(4990:4990): Se inició la planificación. Estado de la flag: 0
+[INFO] 15:56:43:100 consola/(4990:4990): Entró comando: INICIAR_PATOTA
+[INFO] 15:56:43:101 consola/(4990:4990): Creando PCB....
+[INFO] 15:56:43:102 consola/(4990:4990): Cantidad Tripualantes:5
+[INFO] 15:56:43:103 consola/(4990:4990): Contador PCB:1
+[INFO] 15:56:43:104 consola/(4990:4990): ruta tareas: /home/utnso/shared/tp-2021-1c-Unnamed-Group/Discordiador/Rutaarchivoprueba/tareasprueba.txt
+[INFO] 15:56:43:108 consola/(4990:4990): Tareas:GENERAR_OXIGENO 12;2;3;5GENERAR_COMIDA 4;2;3;1
+[INFO] 15:56:43:109 consola/(4990:4990): Tam buffer:199
+[INFO] 15:56:43:109 consola/(4990:4990): Empieza a crear el tcb..
+[INFO] 15:56:43:111 consola/(4990:4990): Empieza a crear el tcb..
+[INFO] 15:56:43:112 consola/(4990:4990): Empieza a crear el tcb..
+[INFO] 15:56:43:112 consola/(4990:4990): Empieza a crear el tcb..
+[INFO] 15:56:43:114 consola/(4990:4990): Empieza a crear el tcb..
+[INFO] 15:56:43:118 consola/(4990:4990): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:56:43:119 consola/(4990:4990): Recibi el siguiente mensaje..
+[INFO] 16:00:58:098 consola/(5373:5373): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:00:58:098 consola/(5373:5373): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:00:58:099 consola/(5373:5373): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:01:04:093 consola/(5373:5373): Entró comando: INICIAR_PLANIFICACION
+[INFO] 16:01:04:093 consola/(5373:5373): Se inició la planificación. Estado de la flag: 0
+[INFO] 16:01:17:530 consola/(5373:5373): Entró comando: INICIAR_PATOTA
+[INFO] 16:01:17:530 consola/(5373:5373): Creando PCB....
+[INFO] 16:01:17:531 consola/(5373:5373): Cantidad Tripualantes:5
+[INFO] 16:01:17:531 consola/(5373:5373): Contador PCB:1
+[INFO] 16:01:17:531 consola/(5373:5373): ruta tareas: /home/utnso/shared/tp-2021-1c-Unnamed-Group/Discordiador/Rutaarchivoprueba/tareasprueba.txt
+[INFO] 16:01:17:535 consola/(5373:5373): Tareas:GENERAR_OXIGENO 12;2;3;5\nGENERAR_COMIDA 4;2;3;1
+[INFO] 16:01:17:535 consola/(5373:5373): Tam buffer:202
+[INFO] 16:01:17:536 consola/(5373:5373): Empieza a crear el tcb..
+[INFO] 16:01:17:536 consola/(5373:5373): Empieza a crear el tcb..
+[INFO] 16:01:17:537 consola/(5373:5373): Empieza a crear el tcb..
+[INFO] 16:01:17:538 consola/(5373:5373): Empieza a crear el tcb..
+[INFO] 16:01:17:549 consola/(5373:5373): Empieza a crear el tcb..
+[INFO] 16:01:17:552 consola/(5373:5373): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:01:17:553 consola/(5373:5373): Recibi el siguiente mensaje..
+[INFO] 16:02:39:960 consola/(5517:5517): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:02:39:961 consola/(5517:5517): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:02:39:962 consola/(5517:5517): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:02:46:183 consola/(5517:5517): Entró comando: INICIAR_PLANIFICACION
+[INFO] 16:02:46:184 consola/(5517:5517): Se inició la planificación. Estado de la flag: 0
+[INFO] 16:02:51:199 consola/(5517:5517): Entró comando: INICIAR_PATOTA
+[INFO] 16:02:51:200 consola/(5517:5517): Creando PCB....
+[INFO] 16:02:51:200 consola/(5517:5517): Cantidad Tripualantes:5
+[INFO] 16:02:51:201 consola/(5517:5517): Contador PCB:1
+[INFO] 16:02:51:201 consola/(5517:5517): ruta tareas: /home/utnso/shared/tp-2021-1c-Unnamed-Group/Discordiador/Rutaarchivoprueba/tareasprueba.txt
+[INFO] 16:02:51:204 consola/(5517:5517): Tareas:GENERAR_OXIGENO 12;2;3;5
+[INFO] 16:02:51:205 consola/(5517:5517): Tam buffer:176
+[INFO] 16:02:51:205 consola/(5517:5517): Empieza a crear el tcb..
+[INFO] 16:02:51:205 consola/(5517:5517): Empieza a crear el tcb..
+[INFO] 16:02:51:206 consola/(5517:5517): Empieza a crear el tcb..
+[INFO] 16:02:51:206 consola/(5517:5517): Empieza a crear el tcb..
+[INFO] 16:02:51:207 consola/(5517:5517): Empieza a crear el tcb..
+[INFO] 16:02:51:207 consola/(5517:5517): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:02:51:208 consola/(5517:5517): Recibi el siguiente mensaje..
+[INFO] 16:27:54:880 consola/(5619:5619): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:27:54:881 consola/(5619:5619): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:27:54:882 consola/(5619:5619): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:28:05:653 consola/(5619:5619): Entró comando: INICIAR_PLANIFICACION
+[INFO] 16:28:05:654 consola/(5619:5619): Se inició la planificación. Estado de la flag: 0
+[INFO] 16:28:18:183 consola/(5619:5619): Entró comando: INICIAR_PATOTA
+[INFO] 16:28:18:184 consola/(5619:5619): Creando PCB....
+[INFO] 16:28:18:188 consola/(5619:5619): Tareas:GENERAR_OXIGENO 12;2;3;5
+[INFO] 16:28:18:188 consola/(5619:5619): Tam buffer:121
+[INFO] 16:28:18:189 consola/(5619:5619): Empieza a crear el tcb..
+[INFO] 16:28:18:189 consola/(5619:5619): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:28:18:189 consola/(5619:5619): Empieza a crear el tcb..
+[INFO] 16:28:18:190 consola/(5619:5619): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:28:18:190 consola/(5619:5619): Empieza a crear el tcb..
+[INFO] 16:28:18:190 consola/(5619:5619): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:28:18:191 consola/(5619:5619): Empieza a crear el tcb..
+[INFO] 16:28:18:191 consola/(5619:5619): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:28:18:192 consola/(5619:5619): Empieza a crear el tcb..
+[INFO] 16:28:18:192 consola/(5619:5619): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:28:18:193 consola/(5619:5619): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:28:18:199 consola/(5619:5619): Recibi el siguiente mensaje..
+[INFO] 16:29:46:077 consola/(5769:5769): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:29:46:077 consola/(5769:5769): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:29:46:078 consola/(5769:5769): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:30:07:721 consola/(5813:5813): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:30:07:723 consola/(5813:5813): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 16:30:07:724 consola/(5813:5813): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:30:48:701 consola/(5884:5884): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:30:48:702 consola/(5884:5884): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 16:30:48:702 consola/(5884:5884): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:32:29:841 consola/(6253:6253): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:32:29:842 consola/(6253:6253): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:32:29:843 consola/(6253:6253): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:32:37:650 consola/(6253:6253): Entró comando: INICIAR_PLANIFICACION
+[INFO] 16:32:37:651 consola/(6253:6253): Se inició la planificación. Estado de la flag: 0
+[INFO] 16:33:04:930 consola/(6253:6253): Entró comando: INICIAR_PATOTA
+[INFO] 16:33:04:931 consola/(6253:6253): Creando PCB....
+[INFO] 16:33:04:952 consola/(6253:6253): Tareas:GENERAR_OXIGENO 12;2;3;5
+[INFO] 16:33:04:968 consola/(6253:6253): Tam buffer:121
+[INFO] 16:33:04:972 consola/(6253:6253): Empieza a crear el tcb..
+[INFO] 16:33:04:973 consola/(6253:6253): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:04:976 consola/(6253:6253): Empieza a crear el tcb..
+[INFO] 16:33:04:976 consola/(6253:6253): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:04:977 consola/(6253:6253): Empieza a crear el tcb..
+[INFO] 16:33:04:978 consola/(6253:6253): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:04:979 consola/(6253:6253): Empieza a crear el tcb..
+[INFO] 16:33:04:990 consola/(6253:6253): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:04:991 consola/(6253:6253): Empieza a crear el tcb..
+[INFO] 16:33:04:992 consola/(6253:6253): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:04:994 consola/(6253:6253): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:33:04:995 consola/(6253:6253): Recibi el siguiente mensaje..
+[INFO] 16:33:29:241 consola/(6341:6341): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:33:29:242 consola/(6341:6341): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:33:29:242 consola/(6341:6341): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:33:37:291 consola/(6341:6341): Entró comando: INICIAR_PLANIFICACION
+[INFO] 16:33:37:292 consola/(6341:6341): Se inició la planificación. Estado de la flag: 0
+[INFO] 16:33:54:362 consola/(6341:6341): Entró comando: INICIAR_PATOTA
+[INFO] 16:33:54:364 consola/(6341:6341): Creando PCB....
+[INFO] 16:33:54:383 consola/(6341:6341): Tareas:GENERAR_OXIGENO 12;2;3;5
+[INFO] 16:33:54:386 consola/(6341:6341): Tam buffer:121
+[INFO] 16:33:54:386 consola/(6341:6341): Empieza a crear el tcb..
+[INFO] 16:33:54:387 consola/(6341:6341): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:54:388 consola/(6341:6341): Empieza a crear el tcb..
+[INFO] 16:33:54:391 consola/(6341:6341): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:54:395 consola/(6341:6341): Empieza a crear el tcb..
+[INFO] 16:33:54:403 consola/(6341:6341): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:54:410 consola/(6341:6341): Empieza a crear el tcb..
+[INFO] 16:33:54:412 consola/(6341:6341): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:54:412 consola/(6341:6341): Empieza a crear el tcb..
+[INFO] 16:33:54:447 consola/(6341:6341): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:33:54:456 consola/(6341:6341): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:33:54:465 consola/(6341:6341): Recibi el siguiente mensaje..
+[INFO] 16:34:18:499 consola/(6341:6341): Proceso: ��d
+[INFO] 16:34:18:504 consola/(6341:6341): Comando: 875903539
+[INFO] 16:34:18:508 consola/(6341:6341): Tamanio: 973091072
+[INFO] 16:34:18:509 consola/(6341:6341): Recibi mensaje de RAM: ��d - 875903539
+[ERROR] 16:34:18:509 consola/(6341:6341): No se pudo crear el PCB por falta de memoria
+[INFO] 16:34:34:364 consola/(6438:6438): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:34:34:365 consola/(6438:6438): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 16:34:34:365 consola/(6438:6438): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 16:36:23:433 consola/(6820:6820): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:36:23:433 consola/(6820:6820): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 16:36:23:434 consola/(6820:6820): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 16:36:31:258 consola/(6820:6820): Entró comando: INICIAR_PLANIFICACION
+[INFO] 16:36:31:259 consola/(6820:6820): Se inició la planificación. Estado de la flag: 0
+[INFO] 16:36:55:550 consola/(6820:6820): Entró comando: INICIAR_PATOTA
+[INFO] 16:36:55:551 consola/(6820:6820): Creando PCB....
+[INFO] 16:36:55:564 consola/(6820:6820): Tareas:GENERAR_OXIGENO 12;2;3;5
+[INFO] 16:36:55:570 consola/(6820:6820): Tam buffer:121
+[INFO] 16:36:55:576 consola/(6820:6820): Empieza a crear el tcb..
+[INFO] 16:36:55:584 consola/(6820:6820): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:36:55:585 consola/(6820:6820): Empieza a crear el tcb..
+[INFO] 16:36:55:585 consola/(6820:6820): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:36:55:586 consola/(6820:6820): Empieza a crear el tcb..
+[INFO] 16:36:55:587 consola/(6820:6820): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:36:55:587 consola/(6820:6820): Empieza a crear el tcb..
+[INFO] 16:36:55:588 consola/(6820:6820): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:36:55:588 consola/(6820:6820): Empieza a crear el tcb..
+[INFO] 16:36:55:591 consola/(6820:6820): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 16:36:55:592 consola/(6820:6820): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:36:55:598 consola/(6820:6820): Recibi el siguiente mensaje..
+[INFO] 16:36:55:604 consola/(6820:6820): Proceso: RAM
+[INFO] 16:36:55:606 consola/(6820:6820): Comando: 200
+[INFO] 16:36:55:607 consola/(6820:6820): Tamanio: 4
+[INFO] 16:36:55:619 consola/(6820:6820): Recibi mensaje de RAM: RAM - 200
+[INFO] 16:36:55:620 consola/(6820:6820): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:36:55:620 consola/(6820:6820): Recibi el siguiente mensaje..
+[INFO] 17:07:22:992 consola/(7190:7190): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:07:22:993 consola/(7190:7190): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:07:22:994 consola/(7190:7190): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:07:36:022 consola/(7190:7190): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:07:36:022 consola/(7190:7190): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:07:47:238 consola/(7190:7190): Entró comando: INICIAR_PATOTA
+[INFO] 17:07:47:239 consola/(7190:7190): Creando PCB....
+[INFO] 17:07:47:242 consola/(7190:7190): Tareas:GENERAR_OXIGENO 12;2;3;5
+[INFO] 17:07:47:243 consola/(7190:7190): Tam buffer:121
+[INFO] 17:07:47:243 consola/(7190:7190): Empieza a crear el tcb..
+[INFO] 17:07:47:244 consola/(7190:7190): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:07:47:244 consola/(7190:7190): Empieza a crear el tcb..
+[INFO] 17:07:47:244 consola/(7190:7190): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:07:47:245 consola/(7190:7190): Empieza a crear el tcb..
+[INFO] 17:07:47:245 consola/(7190:7190): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:07:47:245 consola/(7190:7190): Empieza a crear el tcb..
+[INFO] 17:07:47:246 consola/(7190:7190): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:07:47:246 consola/(7190:7190): Empieza a crear el tcb..
+[INFO] 17:07:47:246 consola/(7190:7190): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:07:47:247 consola/(7190:7190): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:07:47:248 consola/(7190:7190): Recibi el siguiente mensaje..
+[INFO] 17:07:47:248 consola/(7190:7190): Proceso: RAM
+[INFO] 17:07:47:249 consola/(7190:7190): Comando: 200
+[INFO] 17:07:47:249 consola/(7190:7190): Tamanio: 4
+[INFO] 17:07:47:250 consola/(7190:7190): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:07:47:257 consola/(7190:7190): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:07:47:258 consola/(7190:7190): Recibi el siguiente mensaje..
+[INFO] 17:07:47:298 consola/(7190:7190): Proceso: RAM
+[INFO] 17:07:47:337 consola/(7190:7190): Comando: 200
+[INFO] 17:07:47:338 consola/(7190:7190): Tamanio: 9
+[INFO] 17:07:47:338 consola/(7190:7190): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:12:31:664 consola/(7622:7622): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:12:31:667 consola/(7622:7622): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:12:31:669 consola/(7622:7622): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:12:38:212 consola/(7622:7622): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:12:38:217 consola/(7622:7622): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:13:02:916 consola/(7622:7622): Entró comando: INICIAR_PATOTA
+[INFO] 17:13:02:918 consola/(7622:7622): Creando PCB....
+[INFO] 17:13:02:956 consola/(7622:7622): Tareas:GENERAR_OXIGENO 12;2;3;5
+[INFO] 17:13:02:957 consola/(7622:7622): Tam buffer:121
+[INFO] 17:13:02:962 consola/(7622:7622): Empieza a crear el tcb..
+[INFO] 17:13:02:963 consola/(7622:7622): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:13:02:965 consola/(7622:7622): Empieza a crear el tcb..
+[INFO] 17:13:02:966 consola/(7622:7622): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:13:02:967 consola/(7622:7622): Empieza a crear el tcb..
+[INFO] 17:13:02:967 consola/(7622:7622): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:13:02:972 consola/(7622:7622): Empieza a crear el tcb..
+[INFO] 17:13:02:974 consola/(7622:7622): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:13:02:998 consola/(7622:7622): Empieza a crear el tcb..
+[INFO] 17:13:03:000 consola/(7622:7622): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:13:03:001 consola/(7622:7622): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:13:03:002 consola/(7622:7622): Recibi el siguiente mensaje..
+[INFO] 17:13:03:011 consola/(7622:7622): Proceso: RAM
+[INFO] 17:13:03:012 consola/(7622:7622): Comando: 200
+[INFO] 17:13:03:014 consola/(7622:7622): Tamanio: 4
+[INFO] 17:13:03:015 consola/(7622:7622): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:13:03:022 consola/(7622:7622): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:13:03:034 consola/(7622:7622): Recibi el siguiente mensaje..
+[INFO] 17:13:03:062 consola/(7622:7622): Proceso: RAM
+[INFO] 17:13:03:102 consola/(7622:7622): Comando: 200
+[INFO] 17:13:03:102 consola/(7622:7622): Tamanio: 9
+[INFO] 17:13:03:108 consola/(7622:7622): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:13:03:109 consola/(7622:7622): Entra al if
+[INFO] 17:13:47:962 consola/(7732:7732): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:13:47:963 consola/(7732:7732): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:13:47:963 consola/(7732:7732): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:13:54:010 consola/(7732:7732): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:13:54:011 consola/(7732:7732): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:14:10:601 consola/(7732:7732): Entró comando: INICIAR_PATOTA
+[INFO] 17:14:10:603 consola/(7732:7732): Creando PCB....
+[INFO] 17:14:10:626 consola/(7732:7732): Tareas:GENERAR_OXIGENO 12;2;3;5
+[INFO] 17:14:10:644 consola/(7732:7732): Tam buffer:121
+[INFO] 17:14:10:646 consola/(7732:7732): Empieza a crear el tcb..
+[INFO] 17:14:10:647 consola/(7732:7732): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:14:10:648 consola/(7732:7732): Empieza a crear el tcb..
+[INFO] 17:14:10:649 consola/(7732:7732): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:14:10:654 consola/(7732:7732): Empieza a crear el tcb..
+[INFO] 17:14:10:657 consola/(7732:7732): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:14:10:669 consola/(7732:7732): Empieza a crear el tcb..
+[INFO] 17:14:10:669 consola/(7732:7732): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:14:10:670 consola/(7732:7732): Empieza a crear el tcb..
+[INFO] 17:14:10:673 consola/(7732:7732): Se agregó a la lista de TCB un nuevo tripulante
+[INFO] 17:14:10:690 consola/(7732:7732): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:14:10:694 consola/(7732:7732): Recibi el siguiente mensaje..
+[INFO] 17:14:10:695 consola/(7732:7732): Proceso: RAM
+[INFO] 17:14:10:734 consola/(7732:7732): Comando: 200
+[INFO] 17:14:10:738 consola/(7732:7732): Tamanio: 4
+[INFO] 17:14:10:738 consola/(7732:7732): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:14:10:739 consola/(7732:7732): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:14:10:742 consola/(7732:7732): Recibi el siguiente mensaje..
+[INFO] 17:14:10:782 consola/(7732:7732): Proceso: RAM
+[INFO] 17:14:10:789 consola/(7732:7732): Comando: 200
+[INFO] 17:14:10:790 consola/(7732:7732): Tamanio: 9
+[INFO] 17:14:10:790 consola/(7732:7732): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:14:10:791 consola/(7732:7732): Entra al if
+[INFO] 17:14:23:220 consola/(7791:7791): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:23:220 consola/(7791:7791): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:14:23:221 consola/(7791:7791): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:14:29:218 consola/(7791:7791): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:14:29:218 consola/(7791:7791): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:14:47:666 consola/(7791:7791): Entró comando: INICIAR_PATOTA
+[INFO] 17:14:47:816 consola/(7791:7791): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:14:47:824 consola/(7791:7791): Recibi el siguiente mensaje..
+[INFO] 17:14:47:825 consola/(7791:7791): Proceso: RAM
+[INFO] 17:14:47:860 consola/(7791:7791): Comando: 200
+[INFO] 17:14:47:875 consola/(7791:7791): Tamanio: 4
+[INFO] 17:14:47:875 consola/(7791:7791): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:14:47:876 consola/(7791:7791): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:14:47:905 consola/(7791:7791): Recibi el siguiente mensaje..
+[INFO] 17:14:47:935 consola/(7791:7791): Proceso: RAM
+[INFO] 17:14:47:935 consola/(7791:7791): Comando: 200
+[INFO] 17:14:47:936 consola/(7791:7791): Tamanio: 9
+[INFO] 17:14:47:936 consola/(7791:7791): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:14:47:937 consola/(7791:7791): Entra al if
+[INFO] 17:15:25:645 consola/(7882:7882): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:15:25:647 consola/(7882:7882): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:15:25:649 consola/(7882:7882): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:15:31:344 consola/(7882:7882): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:15:31:347 consola/(7882:7882): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:15:50:312 consola/(7882:7882): Entró comando: INICIAR_PATOTA
+[INFO] 17:15:50:354 consola/(7882:7882): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:356 consola/(7882:7882): Recibi el siguiente mensaje..
+[INFO] 17:15:50:356 consola/(7882:7882): Proceso: RAM
+[INFO] 17:15:50:357 consola/(7882:7882): Comando: 200
+[INFO] 17:15:50:357 consola/(7882:7882): Tamanio: 4
+[INFO] 17:15:50:357 consola/(7882:7882): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:358 consola/(7882:7882): Recibi el siguiente mensaje..
+[INFO] 17:15:50:399 consola/(7882:7882): Proceso: RAM
+[INFO] 17:15:50:438 consola/(7882:7882): Comando: 200
+[INFO] 17:15:50:439 consola/(7882:7882): Tamanio: 9
+[INFO] 17:15:50:439 consola/(7882:7882): Entra al if
+[INFO] 17:15:50:440 consola/(7882:7882): int tamanioTarea
+[INFO] 17:15:50:441 consola/(7882:7882): TamanioTarea: 9
+[INFO] 17:15:50:453 consola/(7882:7882): Tarea actual: aburrirse
+[INFO] 17:15:50:465 consola/(7882:7882): lo mete en la cola de new
+[INFO] 17:15:50:466 consola/(7882:7882): crea el hilo
+[INFO] 17:15:50:498 consola/(7882:7882): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:499 consola/(7882:7882): Recibi el siguiente mensaje..
+[INFO] 17:15:50:506 consola/(7882:7913): La tarea ingresada no posee un formato de tarea correcto
+[INFO] 17:15:50:510 consola/(7882:7913): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:514 consola/(7882:7913): Recibi el siguiente mensaje..
+[INFO] 17:15:50:539 consola/(7882:7882): Proceso: RAM
+[INFO] 17:15:50:539 consola/(7882:7913): Proceso: �
+[INFO] 17:15:50:540 consola/(7882:7913): Comando: 1969381632
+[INFO] 17:15:50:540 consola/(7882:7913): Tamanio: 1919513202
+[INFO] 17:15:50:540 consola/(7882:7882): Comando: 2304
+[INFO] 17:15:50:544 consola/(7882:7913): Recibi mensaje de RAM: � - 1969381632
+[INFO] 17:15:50:545 consola/(7882:7882): Tamanio: -934461102
+[ERROR] 17:15:50:547 consola/(7882:7882): No hay tareas disponibles
+[INFO] 17:15:50:547 consola/(7882:7882): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:548 consola/(7882:7882): Recibi el siguiente mensaje..
+[INFO] 17:15:50:546 consola/(7882:7913): La tarea ingresada no posee un formato de tarea correcto
+[INFO] 17:15:50:554 consola/(7882:7913): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:553 consola/(7882:7882): Proceso: 
+[INFO] 17:15:50:555 consola/(7882:7913): Recibi el siguiente mensaje..
+[INFO] 17:15:50:561 consola/(7882:7913): Proceso: abu
+[INFO] 17:15:50:555 consola/(7882:7882): Comando: 9
+[INFO] 17:15:50:562 consola/(7882:7913): Comando: 1919513202
+[INFO] 17:15:50:563 consola/(7882:7882): Tamanio: 25971
+[INFO] 17:15:50:586 consola/(7882:7913): Tamanio: 5062994
+[ERROR] 17:15:50:630 consola/(7882:7882): No hay tareas disponibles
+[INFO] 17:15:50:631 consola/(7882:7882): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:631 consola/(7882:7882): Recibi el siguiente mensaje..
+[INFO] 17:15:50:670 consola/(7882:7913): Recibi mensaje de RAM: abu - 1919513202
+[INFO] 17:15:50:670 consola/(7882:7913): La tarea ingresada no posee un formato de tarea correcto
+[INFO] 17:15:50:671 consola/(7882:7913): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:672 consola/(7882:7882): Proceso: �
+[INFO] 17:15:50:673 consola/(7882:7913): Recibi el siguiente mensaje..
+[INFO] 17:15:50:673 consola/(7882:7882): Comando: 2304
+[INFO] 17:15:50:673 consola/(7882:7913): Proceso: 
+[INFO] 17:15:50:674 consola/(7882:7913): Comando: 1382380402
+[INFO] 17:15:50:673 consola/(7882:7882): Tamanio: 1769108085
+[INFO] 17:15:50:674 consola/(7882:7913): Tamanio: 19777
+[ERROR] 17:15:50:709 consola/(7882:7882): No hay tareas disponibles
+[INFO] 17:15:50:710 consola/(7882:7882): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:711 consola/(7882:7882): Recibi el siguiente mensaje..
+[INFO] 17:15:50:750 consola/(7882:7913): Recibi mensaje de RAM:  - 1382380402
+[INFO] 17:15:50:750 consola/(7882:7913): La tarea ingresada no posee un formato de tarea correcto
+[INFO] 17:15:50:751 consola/(7882:7913): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:751 consola/(7882:7882): Proceso: �
+[INFO] 17:15:50:753 consola/(7882:7882): Comando: 2304
+[INFO] 17:15:50:753 consola/(7882:7882): Tamanio: 1969381632
+[INFO] 17:15:50:752 consola/(7882:7913): Recibi el siguiente mensaje..
+[INFO] 17:15:50:757 consola/(7882:7913): Proceso: rri
+[ERROR] 17:15:50:757 consola/(7882:7882): No hay tareas disponibles
+[INFO] 17:15:50:759 consola/(7882:7913): Comando: 1382380402
+[INFO] 17:15:50:766 consola/(7882:7913): Tamanio: 19777
+[INFO] 17:15:50:790 consola/(7882:7913): Recibi mensaje de RAM: rri - 1382380402
+[INFO] 17:15:50:790 consola/(7882:7913): La tarea ingresada no posee un formato de tarea correcto
+[INFO] 17:15:50:791 consola/(7882:7913): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:792 consola/(7882:7913): Recibi el siguiente mensaje..
+[INFO] 17:15:50:830 consola/(7882:7913): Proceso: RAM
+[INFO] 17:15:50:871 consola/(7882:7913): Comando: 200
+[INFO] 17:15:50:872 consola/(7882:7913): Tamanio: 9
+[INFO] 17:15:50:872 consola/(7882:7913): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:19:03:470 consola/(8173:8173): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:19:03:471 consola/(8173:8173): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:19:03:472 consola/(8173:8173): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:19:11:995 consola/(8173:8173): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:19:11:995 consola/(8173:8173): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:19:28:941 consola/(8173:8173): Entró comando: INICIAR_PATOTA
+[INFO] 17:19:28:983 consola/(8173:8173): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:28:984 consola/(8173:8173): Recibi el siguiente mensaje..
+[INFO] 17:19:28:985 consola/(8173:8173): Proceso: RAM
+[INFO] 17:19:28:993 consola/(8173:8173): Comando: 200
+[INFO] 17:19:29:002 consola/(8173:8173): Tamanio: 4
+[INFO] 17:19:29:006 consola/(8173:8173): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:007 consola/(8173:8173): Recibi el siguiente mensaje..
+[INFO] 17:19:29:046 consola/(8173:8173): Proceso: RAM
+[INFO] 17:19:29:093 consola/(8173:8173): Comando: 200
+[INFO] 17:19:29:094 consola/(8173:8173): Tamanio: 12
+[INFO] 17:19:29:095 consola/(8173:8173): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:095 consola/(8173:8173): Recibi el siguiente mensaje..
+[INFO] 17:19:29:139 consola/(8173:8173): Proceso: RAM
+[INFO] 17:19:29:155 consola/(8173:8209): ENTRO OTRA
+[INFO] 17:19:29:166 consola/(8173:8173): Comando: 200
+[INFO] 17:19:29:167 consola/(8173:8173): Tamanio: 12
+[INFO] 17:19:29:174 consola/(8173:8173): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:174 consola/(8173:8173): Recibi el siguiente mensaje..
+[INFO] 17:19:29:167 consola/(8173:8209): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:176 consola/(8173:8209): Recibi el siguiente mensaje..
+[INFO] 17:19:29:197 consola/(8173:8210): ENTRO OTRA
+[INFO] 17:19:29:198 consola/(8173:8210): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:199 consola/(8173:8210): Recibi el siguiente mensaje..
+[INFO] 17:19:29:206 consola/(8173:8173): Proceso: RAM
+[INFO] 17:19:29:245 consola/(8173:8209): Proceso: �
+[INFO] 17:19:29:246 consola/(8173:8173): Comando: 3072
+[INFO] 17:19:29:246 consola/(8173:8210): Proceso: 
+[INFO] 17:19:29:247 consola/(8173:8209): Comando: 1380013134
+[INFO] 17:19:29:247 consola/(8173:8210): Comando: 825962811
+[INFO] 17:19:29:248 consola/(8173:8173): Tamanio: 1095906619
+[INFO] 17:19:29:249 consola/(8173:8210): Tamanio: 3072
+[INFO] 17:19:29:250 consola/(8173:8210): Recibi mensaje de RAM:  - 825962811
+[INFO] 17:19:29:250 consola/(8173:8210): ENTRO OTRA
+[INFO] 17:19:29:248 consola/(8173:8209): Tamanio: 51277
+[INFO] 17:19:29:251 consola/(8173:8210): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:251 consola/(8173:8210): Recibi el siguiente mensaje..
+[ERROR] 17:19:29:292 consola/(8173:8173): No hay tareas disponibles
+[INFO] 17:19:29:293 consola/(8173:8173): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:294 consola/(8173:8173): Recibi el siguiente mensaje..
+[INFO] 17:19:29:294 consola/(8173:8209): Recibi mensaje de RAM: � - 1380013134
+[INFO] 17:19:29:295 consola/(8173:8210): Proceso: RAM
+[INFO] 17:19:29:295 consola/(8173:8209): ENTRO OTRA
+[INFO] 17:19:29:296 consola/(8173:8209): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:300 consola/(8173:8210): Comando: 200
+[INFO] 17:19:29:301 consola/(8173:8173): Proceso: 
+[INFO] 17:19:29:301 consola/(8173:8209): Recibi el siguiente mensaje..
+[INFO] 17:19:29:302 consola/(8173:8210): Tamanio: 1312899840
+[INFO] 17:19:29:303 consola/(8173:8210): Recibi mensaje de RAM: RAM - 200
+[INFO] 17:33:13:650 consola/(9314:9314): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:13:653 consola/(9314:9314): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:33:13:656 consola/(9314:9314): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:33:26:521 consola/(9314:9314): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:33:26:523 consola/(9314:9314): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:33:45:835 consola/(9314:9314): Entró comando: INICIAR_PATOTA
+[INFO] 17:33:45:868 consola/(9314:9314): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:45:869 consola/(9314:9314): Recibi el siguiente mensaje..
+[INFO] 17:33:45:870 consola/(9314:9314): Proceso: RAM
+[INFO] 17:33:45:871 consola/(9314:9314): Comando: 200
+[INFO] 17:33:45:875 consola/(9314:9314): Tamanio: 4
+[INFO] 17:33:45:876 consola/(9314:9314): PID: 1
+[INFO] 17:33:45:877 consola/(9314:9314): ruta tareas: /home/utnso/shared/tp-2021-1c-Unnamed-Group/Discordiador/Rutaarchivoprueba/tareasprueba.txt
+[INFO] 17:33:45:877 consola/(9314:9314): Tripulante: 101	
+[INFO] 17:33:45:884 consola/(9314:9314): Patota: 1	
+[INFO] 17:33:45:890 consola/(9314:9314): Status: NEW
+
+[INFO] 17:33:45:898 consola/(9314:9314): Tripulante: 102	
+[INFO] 17:33:45:902 consola/(9314:9314): Patota: 1	
+[INFO] 17:33:45:903 consola/(9314:9314): Status: NEW
+
+[INFO] 17:33:45:903 consola/(9314:9314): Tripulante: 103	
+[INFO] 17:33:45:904 consola/(9314:9314): Patota: 1	
+[INFO] 17:33:45:904 consola/(9314:9314): Status: NEW
+
+[INFO] 17:33:45:905 consola/(9314:9314): Tripulante: 104	
+[INFO] 17:33:45:906 consola/(9314:9314): Patota: 1	
+[INFO] 17:33:45:906 consola/(9314:9314): Status: NEW
+
+[INFO] 17:33:45:907 consola/(9314:9314): Tripulante: 105	
+[INFO] 17:33:45:908 consola/(9314:9314): Patota: 1	
+[INFO] 17:33:45:908 consola/(9314:9314): Status: NEW
+
+[INFO] 17:33:45:910 consola/(9314:9314): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:45:911 consola/(9314:9314): Recibi el siguiente mensaje..
+[INFO] 17:33:45:956 consola/(9314:9314): Proceso: RAM
+[INFO] 17:33:45:959 consola/(9314:9314): Comando: 200
+[INFO] 17:33:45:960 consola/(9314:9314): Tamanio: 12
+[INFO] 17:33:45:974 consola/(9314:9314): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:45:978 consola/(9314:9314): Recibi el siguiente mensaje..
+[INFO] 17:33:46:015 consola/(9314:9314): Proceso: RAM
+[INFO] 17:33:46:018 consola/(9314:9341): ENTRO OTRA
+[INFO] 17:33:46:026 consola/(9314:9314): Comando: 200
+[INFO] 17:33:46:026 consola/(9314:9314): Tamanio: 12
+[INFO] 17:33:46:026 consola/(9314:9341): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:035 consola/(9314:9314): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:059 consola/(9314:9314): Recibi el siguiente mensaje..
+[INFO] 17:33:46:059 consola/(9314:9341): Recibi el siguiente mensaje..
+[INFO] 17:33:46:074 consola/(9314:9314): Proceso: RAM
+[INFO] 17:33:46:077 consola/(9314:9342): ENTRO OTRA
+[INFO] 17:33:46:083 consola/(9314:9314): Comando: 3072
+[INFO] 17:33:46:090 consola/(9314:9341): Proceso: �
+[INFO] 17:33:46:090 consola/(9314:9341): Comando: 995246420
+[INFO] 17:33:46:091 consola/(9314:9341): Tamanio: 993082161
+[INFO] 17:33:46:092 consola/(9314:9341): Recibi mensaje de RAM: � - 995246420
+[INFO] 17:33:46:090 consola/(9314:9314): Tamanio: 1312899840
+[INFO] 17:33:46:092 consola/(9314:9341): ENTRO OTRA
+[INFO] 17:33:46:098 consola/(9314:9341): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:091 consola/(9314:9342): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:100 consola/(9314:9341): Recibi el siguiente mensaje..
+[INFO] 17:33:46:101 consola/(9314:9342): Recibi el siguiente mensaje..
+[ERROR] 17:33:46:131 consola/(9314:9314): No hay tareas disponibles
+[INFO] 17:33:46:133 consola/(9314:9314): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:134 consola/(9314:9341): Proceso: �
+[INFO] 17:33:46:134 consola/(9314:9342): Proceso: 
+[INFO] 17:33:46:135 consola/(9314:9342): Comando: 1380013134
+[INFO] 17:33:46:135 consola/(9314:9342): Tamanio: 825962811
+[INFO] 17:33:46:135 consola/(9314:9341): Comando: 1094909952
+[INFO] 17:33:46:136 consola/(9314:9342): Recibi mensaje de RAM:  - 1380013134
+[INFO] 17:33:46:137 consola/(9314:9342): ENTRO OTRA
+[INFO] 17:33:46:137 consola/(9314:9342): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:138 consola/(9314:9341): Tamanio: 200
+[INFO] 17:33:46:139 consola/(9314:9341): Recibi mensaje de RAM: � - 1094909952
+[INFO] 17:33:46:140 consola/(9314:9341): ENTRO OTRA
+[INFO] 17:33:46:141 consola/(9314:9341): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:136 consola/(9314:9314): Recibi el siguiente mensaje..
+[INFO] 17:33:46:139 consola/(9314:9342): Recibi el siguiente mensaje..
+[INFO] 17:33:46:146 consola/(9314:9342): Proceso: �
+[INFO] 17:33:46:147 consola/(9314:9342): Comando: 3072
+[INFO] 17:33:46:142 consola/(9314:9341): Recibi el siguiente mensaje..
+[INFO] 17:33:46:146 consola/(9314:9314): Proceso: RAM
+[INFO] 17:33:46:153 consola/(9314:9341): Proceso: 
+[INFO] 17:33:46:154 consola/(9314:9314): Comando: 1380013134
+[INFO] 17:33:46:154 consola/(9314:9341): Comando: 825962811
+[INFO] 17:33:46:155 consola/(9314:9314): Tamanio: 13627
+[INFO] 17:33:46:183 consola/(9314:9341): Tamanio: 5062994
+[INFO] 17:33:46:224 consola/(9314:9342): Tamanio: 200
+[ERROR] 17:33:46:225 consola/(9314:9314): No hay tareas disponibles
+[INFO] 17:33:46:227 consola/(9314:9314): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:268 consola/(9314:9341): Recibi mensaje de RAM:  - 825962811
+[INFO] 17:33:46:275 consola/(9314:9341): ENTRO OTRA
+[INFO] 17:33:46:278 consola/(9314:9342): Recibi mensaje de RAM: � - 3072
+[INFO] 17:33:46:279 consola/(9314:9342): ENTRO OTRA
+[INFO] 17:33:46:281 consola/(9314:9341): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:287 consola/(9314:9342): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:287 consola/(9314:9314): Recibi el siguiente mensaje..
+[INFO] 17:33:46:307 consola/(9314:9342): Recibi el siguiente mensaje..
+[INFO] 17:33:46:309 consola/(9314:9341): Recibi el siguiente mensaje..
+[INFO] 17:33:46:323 consola/(9314:9314): Proceso: RAM
+[INFO] 17:33:46:366 consola/(9314:9342): Proceso: �
+[INFO] 17:33:46:366 consola/(9314:9341): Proceso: 
+[INFO] 17:33:46:366 consola/(9314:9314): Comando: 1094909952
+[INFO] 17:33:46:375 consola/(9314:9314): Tamanio: 1095906619
+[ERROR] 17:33:46:375 consola/(9314:9314): No hay tareas disponibles
+[INFO] 17:33:46:374 consola/(9314:9342): Comando: 1380013134
+[INFO] 17:33:46:374 consola/(9314:9341): Comando: 825962811
+[INFO] 17:58:04:874 consola/(9387:9387): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:58:04:878 consola/(9387:9387): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 17:58:04:880 consola/(9387:9387): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:58:17:342 consola/(9387:9387): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:58:17:344 consola/(9387:9387): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:58:48:682 consola/(9387:9387): Entró comando: INICIAR_PATOTA
+[INFO] 17:58:48:736 consola/(9387:9387): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:742 consola/(9387:9387): Recibi el siguiente mensaje..
+[INFO] 17:58:48:743 consola/(9387:9387): Proceso: RAM
+[INFO] 17:58:48:744 consola/(9387:9387): Comando: 200
+[INFO] 17:58:48:746 consola/(9387:9387): Tamanio: 4
+[INFO] 17:58:48:747 consola/(9387:9387): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:748 consola/(9387:9387): Recibi el siguiente mensaje..
+[INFO] 17:58:48:791 consola/(9387:9387): Proceso: RAM
+[INFO] 17:58:48:830 consola/(9387:9387): Comando: 200
+[INFO] 17:58:48:830 consola/(9387:9387): Tamanio: 12
+[INFO] 17:58:48:831 consola/(9387:9387): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:832 consola/(9387:9387): Recibi el siguiente mensaje..
+[INFO] 17:58:48:866 consola/(9387:9415): ENTRO OTRA
+[INFO] 17:58:48:875 consola/(9387:9387): Proceso: RAM
+[INFO] 17:58:48:876 consola/(9387:9387): Comando: 200
+[INFO] 17:58:48:876 consola/(9387:9387): Tamanio: 12
+[INFO] 17:58:48:886 consola/(9387:9387): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:877 consola/(9387:9415): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:889 consola/(9387:9415): Recibi el siguiente mensaje..
+[INFO] 17:58:48:889 consola/(9387:9387): Recibi el siguiente mensaje..
+[INFO] 17:58:48:915 consola/(9387:9415): Proceso: RAM
+[INFO] 17:58:48:916 consola/(9387:9416): ENTRO OTRA
+[INFO] 17:58:48:930 consola/(9387:9387): Proceso: �
+[INFO] 17:58:48:930 consola/(9387:9415): Comando: 3072
+[INFO] 17:58:48:931 consola/(9387:9415): Tamanio: 995246420
+[INFO] 17:58:48:931 consola/(9387:9387): Comando: 1312899840
+[INFO] 17:58:48:934 consola/(9387:9415): Recibi mensaje de RAM: RAM - 3072
+[INFO] 17:58:48:936 consola/(9387:9416): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:937 consola/(9387:9416): Recibi el siguiente mensaje..
+[INFO] 17:58:48:937 consola/(9387:9415): ENTRO OTRA
+[INFO] 17:58:48:943 consola/(9387:9415): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:944 consola/(9387:9415): Recibi el siguiente mensaje..
+[INFO] 17:58:48:977 consola/(9387:9387): Tamanio: 5062994
+[INFO] 17:58:49:018 consola/(9387:9416): Proceso: �
+[INFO] 17:58:49:020 consola/(9387:9415): Proceso: 
+[ERROR] 17:58:49:021 consola/(9387:9387): No hay tareas disponibles
+[INFO] 17:58:49:071 consola/(9387:9387): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:49:072 consola/(9387:9387): Recibi el siguiente mensaje..
+[INFO] 17:58:49:111 consola/(9387:9416): Comando: -1253228206
+[INFO] 17:58:49:111 consola/(9387:9415): Comando: 200
+[INFO] 17:58:49:113 consola/(9387:9415): Tamanio: 995246420
+[INFO] 17:58:49:114 consola/(9387:9415): Recibi mensaje de RAM:  - 200
+[INFO] 17:58:49:113 consola/(9387:9416): Tamanio: 1312899840
+[INFO] 17:58:49:112 consola/(9387:9387): Proceso: 
+[INFO] 18:00:05:662 consola/(9387:9415): La tarea ingresada no posee un formato de tarea correcto
+[INFO] 18:00:05:664 consola/(9387:9415): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:667 consola/(9387:9415): Recibi el siguiente mensaje..
+[INFO] 18:00:05:731 consola/(9387:9387): Comando: -934461102
+[INFO] 18:00:05:734 consola/(9387:9416): Recibi mensaje de RAM: � - -1253228206
+[INFO] 18:00:05:731 consola/(9387:9415): Proceso: 
+[INFO] 18:00:05:741 consola/(9387:9415): Comando: 1414414659
+[INFO] 18:00:05:735 consola/(9387:9387): Tamanio: 12
+[INFO] 18:00:05:740 consola/(9387:9416): ENTRO OTRA
+[INFO] 18:00:05:744 consola/(9387:9416): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[ERROR] 18:00:05:744 consola/(9387:9387): No hay tareas disponibles
+[INFO] 18:00:05:746 consola/(9387:9387): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:744 consola/(9387:9415): Tamanio: 825971265
+[INFO] 18:00:05:745 consola/(9387:9416): Recibi el siguiente mensaje..
+[INFO] 18:00:05:747 consola/(9387:9387): Recibi el siguiente mensaje..
+[INFO] 18:00:05:782 consola/(9387:9415): Recibi mensaje de RAM:  - 1414414659
+[INFO] 18:00:05:785 consola/(9387:9415): La tarea ingresada no posee un formato de tarea correcto
+[INFO] 18:00:05:792 consola/(9387:9387): Proceso: �
+[INFO] 18:00:05:792 consola/(9387:9416): Proceso: 
+[INFO] 18:00:05:793 consola/(9387:9416): Comando: 1380013134
+[INFO] 18:00:05:794 consola/(9387:9416): Tamanio: 825962811
+[INFO] 18:00:05:794 consola/(9387:9416): Recibi mensaje de RAM:  - 1380013134
+[INFO] 18:00:05:793 consola/(9387:9415): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:793 consola/(9387:9387): Comando: 1094909952
+[INFO] 18:00:05:796 consola/(9387:9415): Recibi el siguiente mensaje..
+[INFO] 18:00:05:795 consola/(9387:9416): ENTRO OTRA
+[INFO] 18:00:05:801 consola/(9387:9416): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:802 consola/(9387:9416): Recibi el siguiente mensaje..
+[INFO] 18:00:05:832 consola/(9387:9387): Tamanio: 5062994
+[INFO] 18:00:05:870 consola/(9387:9415): Proceso: �
+[INFO] 18:00:05:870 consola/(9387:9416): Proceso: 
+[ERROR] 18:00:05:870 consola/(9387:9387): No hay tareas disponibles
+[INFO] 18:02:10:411 consola/(9555:9555): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:02:10:415 consola/(9555:9555): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:02:10:422 consola/(9555:9555): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:02:17:160 consola/(9555:9555): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:02:17:161 consola/(9555:9555): Se inició la planificación. Estado de la flag: 0
+[INFO] 18:02:41:199 consola/(9555:9555): Entró comando: INICIAR_PATOTA
+[INFO] 18:02:41:316 consola/(9555:9555): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:41:324 consola/(9555:9555): Recibi el siguiente mensaje..
+[INFO] 18:02:41:326 consola/(9555:9555): Proceso: RAM
+[INFO] 18:02:41:327 consola/(9555:9555): Comando: 200
+[INFO] 18:02:41:328 consola/(9555:9555): Tamanio: 4
+[INFO] 18:02:41:343 consola/(9555:9555): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:41:344 consola/(9555:9555): Recibi el siguiente mensaje..
+[INFO] 18:02:41:383 consola/(9555:9555): Proceso: RAM
+[INFO] 18:02:41:422 consola/(9555:9555): Comando: 200
+[INFO] 18:02:41:424 consola/(9555:9555): Tamanio: 12
+[INFO] 18:02:41:425 consola/(9555:9555): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:41:426 consola/(9555:9555): Recibi el siguiente mensaje..
+[INFO] 18:02:41:452 consola/(9555:9577): ENTRO OTRA
+[INFO] 18:02:41:458 consola/(9555:9577): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:41:458 consola/(9555:9577): Recibi el siguiente mensaje..
+[INFO] 18:02:41:464 consola/(9555:9555): Proceso: RAM
+[INFO] 18:02:41:512 consola/(9555:9555): Comando: 200
+[INFO] 18:02:41:513 consola/(9555:9577): Proceso: 
+[INFO] 18:02:41:513 consola/(9555:9555): Tamanio: 1312899840
+[INFO] 18:02:41:514 consola/(9555:9577): Comando: 995246420
+[INFO] 18:02:41:515 consola/(9555:9577): Tamanio: 993082161
+[INFO] 18:02:56:167 consola/(9596:9596): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:02:56:168 consola/(9596:9596): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:02:56:170 consola/(9596:9596): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:03:03:192 consola/(9596:9596): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:03:03:194 consola/(9596:9596): Se inició la planificación. Estado de la flag: 0
+[INFO] 18:03:29:139 consola/(9596:9596): Entró comando: INICIAR_PATOTA
+[INFO] 18:03:29:220 consola/(9596:9596): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:03:29:249 consola/(9596:9596): Recibi el siguiente mensaje..
+[INFO] 18:03:29:256 consola/(9596:9596): Proceso: RAM
+[INFO] 18:03:29:258 consola/(9596:9596): Comando: 200
+[INFO] 18:03:29:259 consola/(9596:9596): Tamanio: 4
+[INFO] 18:03:29:260 consola/(9596:9596): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:03:29:261 consola/(9596:9596): Recibi el siguiente mensaje..
+[INFO] 18:03:29:341 consola/(9596:9596): Proceso: RAM
+[INFO] 18:03:29:342 consola/(9596:9596): Comando: 200
+[INFO] 18:03:29:343 consola/(9596:9596): Tamanio: 12
+[INFO] 18:03:29:530 consola/(9596:9619): ENTRO OTRA
+[INFO] 18:03:29:531 consola/(9596:9619): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:03:29:531 consola/(9596:9619): Recibi el siguiente mensaje..
+[INFO] 18:03:29:582 consola/(9596:9619): Proceso: RAM
+[INFO] 18:03:29:584 consola/(9596:9619): Comando: 200
+[INFO] 18:03:29:586 consola/(9596:9619): Tamanio: 12
+[INFO] 18:03:29:587 consola/(9596:9619): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:04:13:593 consola/(9657:9657): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:04:13:600 consola/(9657:9657): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:04:13:602 consola/(9657:9657): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:04:20:479 consola/(9657:9657): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:04:20:480 consola/(9657:9657): Se inició la planificación. Estado de la flag: 0
+[INFO] 18:04:47:489 consola/(9657:9657): Entró comando: INICIAR_PATOTA
+[INFO] 18:04:47:532 consola/(9657:9657): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:04:47:534 consola/(9657:9657): Recibi el siguiente mensaje..
+[INFO] 18:04:47:535 consola/(9657:9657): Proceso: RAM
+[INFO] 18:04:47:543 consola/(9657:9657): Comando: 200
+[INFO] 18:04:47:543 consola/(9657:9657): Tamanio: 4
+[INFO] 18:04:47:546 consola/(9657:9657): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:04:47:553 consola/(9657:9657): Recibi el siguiente mensaje..
+[INFO] 18:04:47:623 consola/(9657:9657): Proceso: RAM
+[INFO] 18:04:47:662 consola/(9657:9657): Comando: 200
+[INFO] 18:04:47:669 consola/(9657:9657): Tamanio: 12
+[INFO] 18:05:10:412 consola/(9706:9706): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:05:10:417 consola/(9706:9706): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:05:10:423 consola/(9706:9706): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:05:17:425 consola/(9706:9706): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:05:17:427 consola/(9706:9706): Se inició la planificación. Estado de la flag: 0
+[INFO] 18:05:30:679 consola/(9706:9706): Entró comando: INICIAR_PATOTA
+[INFO] 18:05:30:767 consola/(9706:9706): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:05:30:768 consola/(9706:9706): Recibi el siguiente mensaje..
+[INFO] 18:05:30:768 consola/(9706:9706): Proceso: RAM
+[INFO] 18:05:30:769 consola/(9706:9706): Comando: 200
+[INFO] 18:05:30:769 consola/(9706:9706): Tamanio: 4
+[INFO] 18:05:30:770 consola/(9706:9706): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:05:30:771 consola/(9706:9706): Recibi el siguiente mensaje..
+[INFO] 18:05:30:814 consola/(9706:9706): Proceso: RAM
+[INFO] 18:05:30:858 consola/(9706:9706): Comando: 200
+[INFO] 18:05:30:859 consola/(9706:9706): Tamanio: 12
+[INFO] 18:05:30:860 consola/(9706:9706): entra al if
+[INFO] 18:05:30:860 consola/(9706:9706): tamanio tarea: 1414414659
+[INFO] 18:08:01:599 consola/(9838:9838): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:08:01:605 consola/(9838:9838): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:08:01:608 consola/(9838:9838): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:08:08:332 consola/(9838:9838): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:08:08:332 consola/(9838:9838): Se inició la planificación. Estado de la flag: 0
+[INFO] 18:08:33:291 consola/(9838:9838): Entró comando: INICIAR_PATOTA
+[INFO] 18:08:33:334 consola/(9838:9838): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:335 consola/(9838:9838): Recibi el siguiente mensaje..
+[INFO] 18:08:33:336 consola/(9838:9838): Proceso: RAM
+[INFO] 18:08:33:337 consola/(9838:9838): Comando: 200
+[INFO] 18:08:33:337 consola/(9838:9838): Tamanio: 4
+[INFO] 18:08:33:339 consola/(9838:9838): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:342 consola/(9838:9838): Recibi el siguiente mensaje..
+[INFO] 18:08:33:392 consola/(9838:9838): Proceso: RAM
+[INFO] 18:08:33:430 consola/(9838:9838): Comando: 200
+[INFO] 18:08:33:435 consola/(9838:9838): Tamanio: 16
+[INFO] 18:08:33:436 consola/(9838:9838): entra al if
+[INFO] 18:08:33:438 consola/(9838:9838): tamanio tarea: 12
+[INFO] 18:08:33:439 consola/(9838:9838): tarea actual: CANTAR;1;2;3
+[INFO] 18:08:33:470 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:33:473 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:478 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:33:515 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:33:516 consola/(9838:9860): Comando: 200
+[INFO] 18:08:33:516 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:33:517 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:33:517 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:33:518 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:518 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:33:559 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:33:598 consola/(9838:9860): Comando: 200
+[INFO] 18:08:33:599 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:33:599 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:33:600 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:33:600 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:601 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:33:639 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:33:682 consola/(9838:9860): Comando: 200
+[INFO] 18:08:33:683 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:33:685 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:33:690 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:33:699 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:700 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:33:749 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:33:789 consola/(9838:9860): Comando: 200
+[INFO] 18:08:33:795 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:33:818 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:33:822 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:33:830 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:842 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:33:870 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:33:871 consola/(9838:9860): Comando: 200
+[INFO] 18:08:33:872 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:33:872 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:33:873 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:33:873 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:874 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:33:914 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:33:954 consola/(9838:9860): Comando: 200
+[INFO] 18:08:33:955 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:33:955 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:33:956 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:33:957 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:957 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:33:995 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:034 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:034 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:035 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:035 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:036 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:037 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:079 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:121 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:122 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:122 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:126 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:127 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:127 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:168 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:211 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:212 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:213 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:217 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:226 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:226 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:281 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:318 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:319 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:319 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:320 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:321 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:321 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:367 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:410 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:411 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:412 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:418 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:438 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:442 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:462 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:502 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:503 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:503 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:503 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:504 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:504 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:547 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:591 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:596 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:596 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:597 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:597 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:602 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:634 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:674 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:677 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:681 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:687 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:688 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:688 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:726 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:766 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:766 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:767 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:770 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:771 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:771 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:813 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:850 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:851 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:851 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:852 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:852 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:852 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:890 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:34:930 consola/(9838:9860): Comando: 200
+[INFO] 18:08:34:930 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:34:930 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:34:931 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:34:931 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:931 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:34:974 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:014 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:014 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:015 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:015 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:016 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:016 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:054 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:098 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:098 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:098 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:098 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:099 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:099 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:142 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:183 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:183 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:183 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:184 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:184 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:184 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:222 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:267 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:267 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:268 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:268 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:268 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:268 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:306 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:350 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:350 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:350 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:350 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:351 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:351 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:390 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:430 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:431 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:432 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:432 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:432 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:433 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:470 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:510 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:510 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:511 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:511 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:512 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:512 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:553 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:590 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:590 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:590 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:590 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:591 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:591 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:631 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:670 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:671 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:672 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:672 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:673 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:673 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:713 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:754 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:756 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:756 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:757 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:757 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:758 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:802 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:843 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:843 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:843 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:843 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:844 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:844 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:882 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:35:923 consola/(9838:9860): Comando: 200
+[INFO] 18:08:35:924 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:35:924 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:35:924 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:35:925 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:925 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:35:962 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:002 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:003 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:003 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:007 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:007 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:008 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:050 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:094 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:094 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:094 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:094 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:095 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:095 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:137 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:174 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:175 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:175 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:175 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:176 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:176 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:214 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:254 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:257 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:258 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:258 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:258 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:259 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:298 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:338 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:338 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:338 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:338 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:339 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:339 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:378 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:418 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:418 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:419 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:420 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:422 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:423 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:462 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:502 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:502 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:502 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:503 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:503 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:503 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:551 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:590 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:590 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:590 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:590 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:591 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:591 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:630 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:674 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:674 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:675 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:675 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:675 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:676 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:716 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:754 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:754 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:754 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:758 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:758 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:758 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:811 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:850 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:850 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:850 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:851 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:851 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:851 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:894 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:36:941 consola/(9838:9860): Comando: 200
+[INFO] 18:08:36:942 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:36:942 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:36:943 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:36:944 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:944 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:36:983 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:025 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:026 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:026 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:026 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:027 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:027 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:066 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:110 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:111 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:116 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:122 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:123 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:124 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:166 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:206 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:207 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:207 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:207 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:208 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:208 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:246 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:287 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:287 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:287 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:288 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:288 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:288 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:330 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:375 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:375 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:375 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:376 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:376 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:377 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:415 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:454 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:455 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:456 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:456 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:456 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:456 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:495 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:534 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:538 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:538 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:538 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:539 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:539 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:581 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:618 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:622 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:622 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:622 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:623 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:623 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:663 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:702 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:702 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:703 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:703 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:704 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:704 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:742 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:782 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:782 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:782 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:783 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:784 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:784 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:822 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:862 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:862 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:862 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:863 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:863 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:863 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:903 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:37:942 consola/(9838:9860): Comando: 200
+[INFO] 18:08:37:942 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:37:943 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:37:943 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:37:943 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:944 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:37:987 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:028 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:028 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:028 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:028 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:029 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:029 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:066 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:106 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:107 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:108 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:109 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:110 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:111 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:154 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:194 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:194 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:197 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:197 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:198 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:198 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:242 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:282 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:282 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:282 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:282 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:283 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:283 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:322 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:363 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:363 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:363 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:364 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:364 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:364 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:402 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:446 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:447 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:447 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:447 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:448 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:448 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:488 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:526 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:526 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:530 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:530 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:530 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:530 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:576 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:614 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:615 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:615 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:615 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:615 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:616 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:654 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:694 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:695 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:695 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:695 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:696 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:696 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:736 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:774 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:774 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:775 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:775 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:775 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:775 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:821 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:858 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:860 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:861 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:861 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:862 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:862 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:903 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:38:942 consola/(9838:9860): Comando: 200
+[INFO] 18:08:38:942 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:38:942 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:38:942 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:38:943 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:943 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:38:987 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:39:026 consola/(9838:9860): Comando: 200
+[INFO] 18:08:39:026 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:39:026 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:39:026 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:39:027 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:027 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:39:066 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:39:110 consola/(9838:9860): Comando: 200
+[INFO] 18:08:39:111 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:39:114 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:39:114 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:39:114 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:115 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:39:156 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:39:194 consola/(9838:9860): Comando: 200
+[INFO] 18:08:39:194 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:39:195 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:39:195 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:39:195 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:195 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:39:239 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:39:281 consola/(9838:9860): Comando: 200
+[INFO] 18:08:39:281 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:39:281 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:39:282 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:39:282 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:282 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:39:322 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:39:366 consola/(9838:9860): Comando: 200
+[INFO] 18:08:39:366 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:39:367 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:39:367 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:39:367 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:368 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:39:408 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:39:446 consola/(9838:9860): Comando: 200
+[INFO] 18:08:39:446 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:39:446 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:39:446 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:39:447 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:447 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:39:487 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:39:527 consola/(9838:9860): Comando: 200
+[INFO] 18:08:39:527 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:39:528 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:39:528 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:39:528 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:528 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:39:566 consola/(9838:9860): Proceso: RAM
+[INFO] 18:08:39:606 consola/(9838:9860): Comando: 200
+[INFO] 18:08:39:622 consola/(9838:9860): Tamanio: 16
+[INFO] 18:08:39:630 consola/(9838:9860): Recibi mensaje de RAM: RAM - 200
+[INFO] 18:08:39:631 consola/(9838:9860): ENTRO OTRA
+[INFO] 18:08:39:631 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:631 consola/(9838:9860): Recibi el siguiente mensaje..
+[INFO] 18:08:39:670 consola/(9838:9860): Proceso: RAM

@@ -502,3 +502,261 @@
 [INFO] 17:08:53:707 test/(3913:8266): me llegó para iniciar_patota :)
 [INFO] 17:08:53:708 test/(3913:8266): 1 101 9 9 N
 [INFO] 17:10:21:182 test/(3913:8266): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:42:23:935 test/(3758:3758): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:42:23:936 test/(3758:3758): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:10:07:246 test/(3758:3758): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:10:07:257 test/(3758:5709): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:11:32:655 test/(3758:5709): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:16:04:277 test/(3758:3758): [Shared Library]: Nueva conexion ID: 7
+[INFO] 21:16:04:286 test/(3758:6424): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 21:16:19:840 test/(3758:6424): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 21:32:11:845 test/(3758:3758): [Shared Library]: Nueva conexion ID: 5
+[INFO] 21:32:11:855 test/(3758:6864): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 21:32:33:972 test/(3758:6864): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 21:36:57:962 test/(3758:3758): [Shared Library]: Nueva conexion ID: 7
+[INFO] 21:36:57:972 test/(3758:7441): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 21:37:09:800 test/(3758:7441): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 15:17:57:813 test/(3674:3674): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 15:17:58:724 test/(3674:3674): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 15:47:42:203 test/(3674:3674): [Shared Library]: Nueva conexion ID: 5
+[INFO] 15:47:42:207 test/(3674:3770): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 15:48:58:879 test/(3674:3770): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 15:49:37:110 test/(3674:3674): [Shared Library]: Nueva conexion ID: 7
+[INFO] 15:49:37:111 test/(3674:4304): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 15:53:58:863 test/(3674:4304): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 15:54:09:947 test/(3674:3674): [Shared Library]: Nueva conexion ID: 5
+[INFO] 15:54:09:953 test/(3674:4729): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 15:56:20:784 test/(3674:4729): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 15:56:26:757 test/(3674:3674): [Shared Library]: Nueva conexion ID: 7
+[INFO] 15:56:26:760 test/(3674:4991): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 15:59:52:261 test/(3674:4991): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 16:00:58:099 test/(3674:3674): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:00:58:100 test/(3674:5374): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:01:28:116 test/(3674:5374): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:02:39:962 test/(3674:3674): [Shared Library]: Nueva conexion ID: 7
+[INFO] 16:02:39:971 test/(3674:5518): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 16:03:40:258 test/(3674:5518): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 16:27:54:882 test/(3674:3674): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:27:54:888 test/(3674:5620): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:29:41:507 test/(3674:5620): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:29:46:078 test/(3674:3674): [Shared Library]: Nueva conexion ID: 7
+[INFO] 16:29:46:079 test/(3674:5770): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 16:29:56:963 test/(5790:5790): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:29:56:965 test/(5790:5790): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:30:43:404 test/(5863:5863): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:30:43:405 test/(5863:5863): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:31:58:181 test/(6193:6193): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:31:58:182 test/(6193:6193): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:32:29:843 test/(6193:6193): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:32:29:844 test/(6193:6254): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:33:25:036 test/(6193:6254): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:33:29:242 test/(6193:6193): [Shared Library]: Nueva conexion ID: 7
+[INFO] 16:33:29:243 test/(6193:6342): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 16:34:27:146 test/(6419:6419): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:34:27:147 test/(6419:6419): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:35:48:566 test/(6749:6749): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:35:48:567 test/(6749:6749): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:36:23:434 test/(6749:6749): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:36:23:437 test/(6749:6821): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:36:55:592 test/(6749:6821): me llegó para iniciar_patota :)
+[INFO] 16:36:55:592 test/(6749:6821): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:06:22:572 test/(6749:6821): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:07:14:188 test/(7170:7170): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:07:14:189 test/(7170:7170): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:07:22:994 test/(7170:7170): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:07:22:996 test/(7170:7193): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:07:47:247 test/(7170:7193): me llegó para iniciar_patota :)
+[INFO] 17:07:47:247 test/(7170:7193): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:07:47:298 test/(7170:7193): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:07:47:848 test/(7170:7193): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:12:31:668 test/(7170:7170): [Shared Library]: Nueva conexion ID: 7
+[INFO] 17:12:31:677 test/(7170:7623): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 17:13:03:001 test/(7170:7623): me llegó para iniciar_patota :)
+[INFO] 17:13:03:002 test/(7170:7623): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:13:03:062 test/(7170:7623): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:13:04:685 test/(7170:7623): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 17:13:47:963 test/(7170:7170): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:13:47:964 test/(7170:7733): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:14:10:690 test/(7170:7733): me llegó para iniciar_patota :)
+[INFO] 17:14:10:691 test/(7170:7733): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:14:10:781 test/(7170:7733): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:14:12:506 test/(7170:7733): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:14:23:221 test/(7170:7170): [Shared Library]: Nueva conexion ID: 7
+[INFO] 17:14:23:222 test/(7170:7792): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 17:14:47:727 test/(7170:7792): me llegó para iniciar_patota :)
+[INFO] 17:14:47:728 test/(7170:7792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:14:47:929 test/(7170:7792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:14:50:595 test/(7170:7792): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 17:15:25:648 test/(7170:7170): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:15:25:651 test/(7170:7883): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:15:50:354 test/(7170:7883): me llegó para iniciar_patota :)
+[INFO] 17:15:50:355 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:398 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:538 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:545 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:586 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:587 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:669 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:672 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:749 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:751 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:50:830 test/(7170:7883): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:15:52:552 test/(7170:7883): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:18:58:040 test/(8157:8157): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:18:58:041 test/(8157:8157): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:19:03:472 test/(8157:8157): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:19:03:472 test/(8157:8174): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:19:28:982 test/(8157:8174): me llegó para iniciar_patota :)
+[INFO] 17:19:28:983 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:046 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:138 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:206 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:207 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:214 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:291 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:295 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:29:338 test/(8157:8174): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:19:31:155 test/(8157:8174): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:33:13:655 test/(8157:8157): [Shared Library]: Nueva conexion ID: 7
+[INFO] 17:33:13:666 test/(8157:9315): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 17:33:45:867 test/(8157:9315): me llegó para iniciar_patota :)
+[INFO] 17:33:45:868 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:45:951 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:014 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:072 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:074 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:130 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:132 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:134 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:139 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:182 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:266 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:325 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:33:46:326 test/(8157:9315): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:57:58:203 test/(8157:9315): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 17:58:04:880 test/(8157:8157): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:58:04:891 test/(8157:9388): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:58:48:736 test/(8157:9388): me llegó para iniciar_patota :)
+[INFO] 17:58:48:737 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:790 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:874 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:914 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:915 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:976 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:48:977 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:58:49:110 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:735 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:782 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:786 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:831 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:00:05:832 test/(8157:9388): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:04:416 test/(8157:9388): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:02:10:423 test/(8157:8157): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:02:10:430 test/(8157:9558): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 18:02:41:315 test/(8157:9558): me llegó para iniciar_patota :)
+[INFO] 18:02:41:316 test/(8157:9558): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:41:382 test/(8157:9558): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:41:463 test/(8157:9558): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:41:464 test/(8157:9558): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:02:50:315 test/(8157:9558): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 18:02:56:170 test/(8157:8157): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:02:56:172 test/(8157:9597): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:03:29:214 test/(8157:9597): me llegó para iniciar_patota :)
+[INFO] 18:03:29:216 test/(8157:9597): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:03:29:302 test/(8157:9597): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:03:29:591 test/(8157:9597): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:03:34:489 test/(8157:9597): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:04:13:601 test/(8157:8157): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:04:13:616 test/(8157:9658): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 18:04:47:528 test/(8157:9658): me llegó para iniciar_patota :)
+[INFO] 18:04:47:530 test/(8157:9658): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:04:47:622 test/(8157:9658): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:04:51:838 test/(8157:9658): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 18:05:10:422 test/(8157:8157): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:05:10:434 test/(8157:9707): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:05:30:766 test/(8157:9707): me llegó para iniciar_patota :)
+[INFO] 18:05:30:766 test/(8157:9707): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:05:30:814 test/(8157:9707): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:05:32:989 test/(8157:9707): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:07:58:016 test/(9832:9832): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:07:58:018 test/(9832:9832): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:08:01:607 test/(9832:9832): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:08:01:614 test/(9832:9839): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:08:33:334 test/(9832:9839): me llegó para iniciar_patota :)
+[INFO] 18:08:33:335 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:386 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:515 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:558 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:639 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:749 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:870 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:914 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:33:994 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:078 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:168 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:281 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:367 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:462 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:546 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:634 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:726 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:813 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:890 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:34:974 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:054 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:142 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:222 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:306 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:390 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:470 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:551 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:631 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:713 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:802 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:882 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:35:962 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:050 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:137 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:214 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:298 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:378 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:462 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:551 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:630 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:716 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:808 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:894 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:36:982 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:066 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:166 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:246 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:330 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:415 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:494 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:581 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:662 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:742 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:822 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:902 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:37:986 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:066 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:154 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:242 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:322 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:402 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:487 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:575 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:654 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:735 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:821 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:903 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:38:986 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:066 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:156 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:235 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:322 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:408 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:487 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:566 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:670 test/(9832:9839): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:08:39:706 test/(9832:9839): [Shared Library]: El cliente 5 se desconecto.

@@ -30,7 +30,8 @@ int main() {
     mem_size = config_get_int_value(config, "TAMANIO_MEMORIA");
     log_info(logger, "Tamanio de la memoria: %d", mem_size);
     memory = malloc(mem_size);
-    memset(memory, 0, mem_size);
+    admin = malloc(mem_size);
+    memset(admin, 0, mem_size);
     table_collection = dictionary_create();
 
     isBestFit = !strcmp(config_get_string_value(config, "CRITERIO_SELECCION"), "BF");
@@ -74,6 +75,7 @@ void signal_handler(int sig_number) {
       }
 
       free(memory);
+      free(admin);
       dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
 
       // Eliminar Archivo Swap????
@@ -86,7 +88,7 @@ void signal_handler(int sig_number) {
     break;
 
     case SIGUSR1:
-      memory_compaction(memory, mem_size, table_collection);
+      memory_compaction(admin, memory, mem_size, table_collection);
     break;
 
     case SIGUSR2:
@@ -168,16 +170,16 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
              		size_a_guardar = sizeof(pcb_t) + tamStrTareas + cantTripulantes * sizeof(tcb_t);
                 log_info(logger,"Size total a guardar en memoria: %d", size_a_guardar);
             
-                if (check_space_memory(memory, mem_size, size_a_guardar, table_collection)) {
+                if (check_space_memory(admin, mem_size, size_a_guardar, table_collection)) {
                   // creo tabla de segmentos
                   t_queue *segmentTable = queue_create();
                   // crear segmento para tareas
                   segment_size = tamStrTareas;
-                  found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
+                  found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
                   
                   if(found_segment < 0) {
-                      memory_compaction(memory, mem_size, table_collection);
-                      found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
+                      memory_compaction(admin, memory, mem_size, table_collection);
+                      found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
                   }
               
                   pcb_t *temp = malloc(sizeof(pcb_t));
@@ -193,7 +195,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   tareas -> id = idPCB;
                   tareas -> type = TASK;
                   
-                  save_task_in_memory(memory, mem_size, tareas, data_tareas);
+                  save_task_in_memory(admin, memory, mem_size, tareas, data_tareas);
                   queue_push(segmentTable, tareas);
                   temp_id = string_itoa(idPCB);
                   dictionary_put(table_collection, temp_id, segmentTable);
@@ -202,11 +204,11 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   segment *segmento_pcb = malloc(sizeof(segment));
                 
                   segment_size = sizeof(pcb_t);
-                  found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
+                  found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
               
                   if(found_segment < 0) {
-                      memory_compaction(memory, mem_size, table_collection);
-                      found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
+                      memory_compaction(admin, memory, mem_size, table_collection);
+                      found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
                   }
                 
                   segmento_pcb -> nroSegmento = get_last_index (segmentTable) + 1;
@@ -216,7 +218,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   segmento_pcb -> type = PCB;
                   
                   // save_task_in_memory(memory, mem_size, tareas, data_tareas);
-                  save_pcb_in_memory(memory, mem_size, segmento_pcb, temp);
+                  save_pcb_in_memory(admin, memory, mem_size, segmento_pcb, temp);
                   queue_push(segmentTable, segmento_pcb);
                   dictionary_put(table_collection, temp_id, segmentTable);
 
@@ -239,11 +241,11 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     aux -> next = temp -> tasks;
                     
                     segment_size = sizeof(tcb_t);
-                    found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
+                    found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
                     
                     if(found_segment < 0) {
-                        memory_compaction(memory, mem_size, table_collection);
-                        found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
+                        memory_compaction(admin, memory, mem_size, table_collection);
+                        found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
                     }
                     
                     segment *segmento_aux = malloc(sizeof(segment));
@@ -253,7 +255,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     segmento_aux -> baseAddr = found_segment;
                     segmento_aux -> limit = found_segment + sizeof(tcb_t);
                     
-                    save_tcb_in_memory(memory, mem_size, segmento_aux, aux);
+                    save_tcb_in_memory(admin, memory, mem_size, segmento_aux, aux);
                     free(aux);
                     queue_push(segmentTable, segmento_aux);
                     dictionary_put(table_collection, temp_id, segmentTable);
@@ -310,7 +312,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
             nuestroTCB -> status = status;
 
-            error = save_tcb_in_memory(memory, mem_size, segmento_tcb, nuestroTCB);
+            error = save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
 					
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
@@ -360,7 +362,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             nuestroTCB -> xpos = posX;
             nuestroTCB -> ypos = posY;
 
-            error = save_tcb_in_memory(memory, mem_size, segmento_tcb, nuestroTCB);
+            error = save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
 					
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
@@ -414,7 +416,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 								
               	nuestroTCB->next += string_length(tarea);
 
-                save_tcb_in_memory(memory, mem_size, segmento_tcb, nuestroTCB);
+                save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
               
                 char* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea), "%s",tarea);
 
@@ -443,7 +445,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             segmento_aux = get_next_segment(table_collection, temp_id);
 
             while (segmento_aux != NULL) {
-              if(remove_segment_from_memory(memory, mem_size, segmento_aux)) {
+              if(remove_segment_from_memory(admin, mem_size, segmento_aux)) {
                   remove_segment_from_table(table_collection, temp_id, segmento_aux);
               }
 
@@ -478,7 +480,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             temp_id = string_itoa(idPCB);
             segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
 
-            error =  remove_segment_from_memory (memory, mem_size, segmento_tcb);
+            error =  remove_segment_from_memory (admin, mem_size, segmento_tcb);
 
             // TODO: BORRAR SEGMENTO DE LA TABLA DE SEGMENTOS
             remove_segment_from_table(table_collection, temp_id, segmento_tcb);
@@ -518,6 +520,9 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
 
 void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
+
+    /*
+
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 
     char* data_tareas;
@@ -680,7 +685,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
               
         break;
                 
-        /*
+        
 
         case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y
           	log_info(logger,"-----------------------------------------------------");
@@ -805,7 +810,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             }
 
         break;
-*/
+
         default:
           log_info(logger,"-----------------------------------------------------");
           log_info(logger, "No existe la operación:%d", opcode);
@@ -813,6 +818,8 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
         break;
 
     }
+
+    */
 
 }
 

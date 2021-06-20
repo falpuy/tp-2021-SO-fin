@@ -35,6 +35,8 @@ int isBestFit = 0;
 t_log *logger;
 t_config * config;
 
+void *admin;
+
 void *memory;
 int mem_size;
 int page_size;

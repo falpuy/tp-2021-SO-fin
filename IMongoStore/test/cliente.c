@@ -23,9 +23,10 @@ int main(){
    
     t_log* log = log_create("cliente.log","clienteTest", 1,  LOG_LEVEL_INFO);
     int socket = _connect("127.0.0.1", "5001", log);
-    void* buffer = _serialize(sizeof(int) ,"%d",101);
 
-    _send_message(socket, "DIS",OBTENER_BITACORA, buffer,sizeof(int) , log);  
+    void* buffer = _serialize(sizeof(int)*5 ,"%d%d%d%d%d",101,3,5,6,4);
+
+    _send_message(socket, "DIS",MOVER_TRIPULANTE, buffer,sizeof(int)*5 , log);  
 
     return 0;
 }

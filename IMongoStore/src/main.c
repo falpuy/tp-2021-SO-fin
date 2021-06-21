@@ -6,11 +6,7 @@ int main() {
     setearConfiguraciones();
     inicializacionFS(logger);
     signal(SIGINT,finalizarProceso);
-
-
-    log_info(logger, "------------------------------------------------");
     log_info(logger, "Creando servidor......");
-    log_info(logger, "------------------------------------------------");
     sleep(1);
     
     pthread_create(&sync_blocks,NULL,(void*) actualizarArchivoBlocks, logger);
@@ -28,7 +24,6 @@ void setearConfiguraciones(){
     datosConfig = malloc(sizeof(configIMS));
     datosConfig->puntoMontaje = config_get_string_value(config,"PUNTO_MONTAJE");
     datosConfig->puerto = config_get_string_value(config,"PUERTO");
-    printf("\n\n%s\n", datosConfig->puerto);
     datosConfig->tiempoSincronizacion = config_get_int_value(config,"TIEMPO_SINCRONIZACION");
 
     pthread_mutex_init(&blocks_bitmap, NULL); 

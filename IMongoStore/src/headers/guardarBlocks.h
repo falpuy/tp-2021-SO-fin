@@ -17,6 +17,6 @@
     void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso);
     void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso);
     void borrarPorBloque(char* stringBorrar,int posEnString, int tamStr, int cantidadBloquesABorrar,char* path,int esRecurso);
-    void guardarPorBloque(char* stringGuardar,int posEnString, int tamStr, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar);
+    void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar);
     
 #endif

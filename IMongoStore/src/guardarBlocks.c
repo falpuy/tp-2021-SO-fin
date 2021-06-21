@@ -1,9 +1,10 @@
 #include "./headers/guardarBlocks.h"
 
 
-void guardarPorBloque(char* stringGuardar,int posEnString, int tamStr, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar){
+void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar){
     
     int cantidadBloquesUsados = 0;
+    int tamanioString = string_length(stringGuardar);
 
     for(int i=0; i < bitarray_get_max_bit(bitmap) && cantidadBloquesUsados != cantidadBloquesAUsar; i++){
         if(bitarray_test_bit(bitmap,i) == 0){
@@ -12,14 +13,15 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int tamStr, int canti
             memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
                 
             if((cantidadBloquesAUsar-cantidadBloquesUsados)==1){//ultimo bloque a escribir - posible fragmentación interna 
-                        
+                
                 //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego lo que me queda del string--> tamañoTotalStr - posicionAntEnStr*tamanioBloque
-                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamStr-posEnString*tamanioBloque);                
-                posEnString ++;                
+                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioString-posEnString*tamanioBloque);                
+                posEnString ++;    
+
                 //--------------------------ACTUALIZO METADATA---------------------------
                 t_config* metadata = config_create(path);
                 
-                actualizarSize(metadata,tamStr-posEnString*tamanioBloque,flagEsGuardar);
+                actualizarSize(metadata,tamanioString-(posEnString-1)*tamanioBloque,flagEsGuardar);
                 actualizarBlocks(metadata,i,flagEsGuardar);
                 if(esRecurso){
                     actualizarBlockCount(metadata,flagEsGuardar);
@@ -50,10 +52,9 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int tamStr, int canti
 
 void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){ 
     int tamStr = string_length(stringGuardar);
-    int cantidadBloquesUsados = 0;
-    int posEnString = 0;
     int blockCount = 0;
     int flagEsGuardar = 1;
+    int posEnString = 0;
                     
     if(esRecurso){
         t_config* metadata = config_create(path);
@@ -69,9 +70,10 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 log_error(logger,"Finalizando programa...");
                 exit(-1);
             }
-            guardarPorBloque(stringGuardar,posEnString, tamStr,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);
+            guardarPorBloque(stringGuardar,posEnString,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);
         }
         else{ //HAY ALGO EN METADATA
+
             char** listaBloques = config_get_array_value(metadata,"BLOCKS");
             int contador = 0;
 
@@ -79,7 +81,6 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
               contador++;
             }
 
-          	config_destroy(metadata);
           	int ultimoBloque = atoi(listaBloques[contador]);
           	int sizeTotal = (contador+1) * tamanioBloque; //+1 porque empieza de 0
           	int faltante = sizeTotal - sizeGuardado;
@@ -108,7 +109,7 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 posEnString += faltante;
                 sizeGuardado += faltante;
                 actualizarSize(metadata,sizeGuardado,flagEsGuardar);
-                guardarPorBloque(sobranteString,posEnString,tamanioSobranteStr,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);         
+                guardarPorBloque(sobranteString,posEnString,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);         
 
                 free(sobranteString);
                 for(int i = 0; i < contador; i++){
@@ -121,7 +122,6 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
     else{   //FILE
         t_config* metadata = config_create(path);
         int sizeGuardado = config_get_int_value(metadata, "SIZE"); 
-        
         if(sizeGuardado == 0){//METADATA VACIA
             config_destroy(metadata); 
             int cantidadBloquesAUsar = cantidad_bloques(stringGuardar);
@@ -131,53 +131,50 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 log_error(logger,"Finalizando programa...");
                 exit(-1);
             }
-            guardarPorBloque(stringGuardar,posEnString,tamStr,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);
+            guardarPorBloque(stringGuardar,posEnString,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);
         }
         else{ //HAY ALGO EN METADATA
+            log_info(logger, "Guardandose en blocks con metadata existente..");
             char** listaBloques = config_get_array_value(metadata,"BLOCKS");
             int contador = 0;
 
-            while(listaBloques[contador] != NULL){ //-->testear 
+            while(listaBloques[contador]){  //cuenta 1 de más
               contador++;
             }
-          	config_destroy(metadata);
-          	int ultimoBloque = atoi(listaBloques[contador]);
-          	int sizeTotal = (contador+1) * tamanioBloque; //+1 porque empieza de 0
-          	int faltante = sizeTotal - sizeGuardado;
+            
+          	int ultimoBloque = atoi(listaBloques[contador-1]);
+          	int sizeTotal = contador * tamanioBloque; 
+            int faltante = sizeTotal - sizeGuardado;
           	int posicion = tamanioBloque - faltante;
 
-
-            //validar si hay lugar para pegar todo el string
             char* sobranteString = malloc((tamStr - faltante) + 1);
             memcpy(sobranteString,stringGuardar + faltante,tamStr - faltante);
             sobranteString[tamStr - faltante] = '\0';
-            int tamSobranteStr = string_length(sobranteString);
+            int tamSobranteStr = string_length(sobranteString);            
             int cantidadBloquesAUsar = cantidad_bloques(sobranteString);
 
-            if(cantidadBloquesAUsar == 0){
-                log_info(logger,"[Reemplazando fragmentacion interna] No hay mas bloques que usar");
-            }else{
-                int err = validarBitsLibre(cantidadBloquesAUsar);
+            int err = validarBitsLibre(cantidadBloquesAUsar);
+            if(err < 0){
+                log_error(logger, "No existe más espacio para guardar en filesystem");
+                log_error(logger,"Finalizando programa...");
+                exit(-1);
+            }
             
-                if(err < 0){
-                    log_error(logger, "No existe más espacio para guardar en filesystem");
-                    log_error(logger,"Finalizando programa...");
-                    exit(-1);
-                }
-
+            if(cantidadBloquesAUsar == 0){
+                log_info(logger,"[Reemplazando fragmentacion interna] No se necesitan mas bloques para pegar el string sobrante");
+            }else{
                 memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, faltante);
-                posEnString += faltante;
-                sizeGuardado += faltante;
-                actualizarSize(metadata,sizeGuardado,flagEsGuardar);
-                guardarPorBloque(sobranteString,posEnString,tamSobranteStr,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);         
-
+                actualizarSize(metadata,faltante,flagEsGuardar);
+                config_destroy(metadata);
+                
+                guardarPorBloque(sobranteString,0,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);  
                 free(sobranteString);
                 for(int i = 0; i < contador; i++){
                     free(listaBloques[i]);
                 }
                 free(listaBloques);
+                
             }
-            free(listaBloques);
         }           
     }
 }

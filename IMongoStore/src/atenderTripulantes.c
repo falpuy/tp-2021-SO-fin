@@ -20,7 +20,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             pthread_mutex_lock(&blocks_bitmap);
             bitacora = obtenerBitacora(idTripulante);
             pthread_mutex_lock(&blocks_bitmap);
-            
+
             _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, bitacora,string_length(bitacora), logger);
             break;  
 
@@ -89,6 +89,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             pthread_mutex_unlock(&blocks_bitmap);
 
             break;
+
         
         case FINALIZA_TAREA: 
             log_info(logger,"-----------------------------------------------------");

@@ -8292,3 +8292,1204 @@
 [INFO] 18:08:39:631 consola/(9838:9860): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 18:08:39:631 consola/(9838:9860): Recibi el siguiente mensaje..
 [INFO] 18:08:39:670 consola/(9838:9860): Proceso: RAM
+[INFO] 12:52:20:861 consola/(3678:3678): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 12:52:20:863 consola/(3678:3678): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 12:52:20:864 consola/(3678:3678): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 12:52:27:560 consola/(3678:3678): Entró comando: INICIAR_PLANIFICACION
+[INFO] 12:52:27:561 consola/(3678:3678): Se inició la planificación. Estado de la flag: 0
+[INFO] 12:53:42:728 consola/(3678:3678): Entró comando: INICIAR_PATOTA
+[INFO] 12:53:42:734 consola/(3678:3678): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:53:42:735 consola/(3678:3678): Recibi el siguiente mensaje..
+[INFO] 12:53:42:735 consola/(3678:3678): Proceso: RAM
+[INFO] 12:53:42:736 consola/(3678:3678): Comando: 200
+[INFO] 12:53:42:736 consola/(3678:3678): Tamanio: 4
+[INFO] 12:53:42:737 consola/(3678:3678): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:53:42:740 consola/(3678:3678): Recibi el siguiente mensaje..
+[INFO] 12:53:42:776 consola/(3678:3678): Proceso: RAM
+[INFO] 12:53:42:816 consola/(3678:3678): Comando: 200
+[INFO] 12:53:42:817 consola/(3678:3678): Tamanio: 16
+[INFO] 12:53:42:817 consola/(3678:3678): entra al if
+[INFO] 12:53:42:817 consola/(3678:3678): tamanio tarea: 12
+[INFO] 12:53:42:818 consola/(3678:3678): tarea actual: CANTAR;1;2;3
+[INFO] 12:53:42:823 consola/(3678:3927): ENTRO OTRA
+[INFO] 12:53:42:824 consola/(3678:3927): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:53:42:825 consola/(3678:3927): Recibi el siguiente mensaje..
+[INFO] 12:55:00:776 consola/(4328:4328): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 12:55:00:777 consola/(4328:4328): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 12:55:00:778 consola/(4328:4328): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 12:55:11:816 consola/(4328:4328): Entró comando: INICIAR_PLANIFICACION
+[INFO] 12:55:11:816 consola/(4328:4328): Se inició la planificación. Estado de la flag: 0
+[INFO] 12:55:24:439 consola/(4328:4328): Entró comando: INICIAR_PATOTA
+[INFO] 12:55:24:449 consola/(4328:4328): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:24:456 consola/(4328:4328): Recibi el siguiente mensaje..
+[INFO] 12:55:24:456 consola/(4328:4328): Proceso: RAM
+[INFO] 12:55:24:458 consola/(4328:4328): Comando: 200
+[INFO] 12:55:24:459 consola/(4328:4328): Tamanio: 4
+[INFO] 12:55:24:459 consola/(4328:4328): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:24:459 consola/(4328:4328): Recibi el siguiente mensaje..
+[INFO] 12:55:24:499 consola/(4328:4328): Proceso: RAM
+[INFO] 12:55:24:540 consola/(4328:4328): Comando: 200
+[INFO] 12:55:24:550 consola/(4328:4328): Tamanio: 16
+[INFO] 12:55:24:550 consola/(4328:4328): entra al if
+[INFO] 12:55:24:550 consola/(4328:4328): tamanio tarea: 12
+[INFO] 12:55:24:551 consola/(4328:4328): tarea actual: CANTAR;1;2;3
+[INFO] 12:55:24:586 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:24:592 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:24:593 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:24:636 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:24:636 consola/(4328:4433): Comando: 560
+[INFO] 12:55:24:637 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:24:637 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:24:637 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:24:637 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:24:638 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:24:638 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:24:679 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:24:720 consola/(4328:4433): Comando: 560
+[INFO] 12:55:24:730 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:24:730 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:24:730 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:24:731 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:24:731 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:24:731 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:24:772 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:24:812 consola/(4328:4433): Comando: 560
+[INFO] 12:55:24:812 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:24:812 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:24:813 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:24:814 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:24:814 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:24:815 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:24:853 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:24:892 consola/(4328:4433): Comando: 560
+[INFO] 12:55:24:892 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:24:893 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:24:893 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:24:894 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:24:895 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:24:895 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:24:937 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:24:980 consola/(4328:4433): Comando: 560
+[INFO] 12:55:24:980 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:24:980 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:24:981 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:24:982 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:24:982 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:24:983 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:022 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:063 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:063 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:064 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:064 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:068 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:068 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:068 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:108 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:148 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:148 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:149 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:149 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:149 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:149 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:150 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:188 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:229 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:229 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:230 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:230 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:232 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:232 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:232 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:273 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:316 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:316 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:320 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:320 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:321 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:321 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:321 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:360 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:400 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:401 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:401 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:404 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:404 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:405 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:405 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:445 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:488 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:488 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:488 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:488 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:489 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:489 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:489 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:528 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:568 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:569 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:570 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:570 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:570 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:572 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:572 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:616 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:656 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:656 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:656 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:656 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:657 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:657 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:658 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:696 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:736 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:736 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:737 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:737 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:738 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:739 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:739 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:781 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:824 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:824 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:824 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:824 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:825 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:825 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:825 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:866 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:904 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:904 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:905 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:905 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:905 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:906 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:906 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:25:944 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:25:986 consola/(4328:4433): Comando: 560
+[INFO] 12:55:25:986 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:25:987 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:25:987 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:25:988 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:25:992 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:25:993 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:037 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:077 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:077 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:077 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:077 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:077 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:078 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:078 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:116 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:156 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:165 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:165 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:166 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:166 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:166 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:168 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:209 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:248 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:248 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:248 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:249 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:249 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:249 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:249 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:288 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:330 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:330 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:331 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:331 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:331 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:332 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:332 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:373 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:412 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:416 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:416 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:416 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:417 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:417 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:417 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:459 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:498 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:499 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:499 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:499 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:499 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:500 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:500 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:541 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:581 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:581 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:581 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:581 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:582 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:582 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:582 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:624 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:666 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:666 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:666 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:667 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:667 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:668 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:668 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:710 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:751 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:751 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:751 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:751 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:751 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:752 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:754 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:792 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:832 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:832 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:833 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:833 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:834 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:835 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:835 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:872 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:26:913 consola/(4328:4433): Comando: 560
+[INFO] 12:55:26:914 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:26:914 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:26:914 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:26:916 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:26:916 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:26:916 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:26:960 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:008 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:008 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:008 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:009 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:009 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:009 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:010 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:048 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:088 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:088 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:090 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:090 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:090 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:091 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:092 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:128 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:168 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:168 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:168 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:169 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:169 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:169 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:169 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:208 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:252 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:253 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:253 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:253 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:253 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:254 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:254 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:296 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:340 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:340 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:340 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:340 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:341 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:341 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:341 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:382 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:420 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:420 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:420 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:424 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:426 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:427 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:427 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:464 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:504 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:505 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:505 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:505 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:506 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:506 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:508 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:548 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:588 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:588 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:589 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:589 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:589 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:589 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:590 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:633 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:676 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:676 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:677 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:677 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:677 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:678 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:680 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:718 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:756 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:756 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:756 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:757 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:757 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:757 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:757 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:800 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:840 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:840 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:844 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:844 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:844 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:845 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:845 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:884 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:27:928 consola/(4328:4433): Comando: 560
+[INFO] 12:55:27:928 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:27:932 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:27:932 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:27:932 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:27:933 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:27:933 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:27:972 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:012 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:012 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:016 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:016 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:016 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:017 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:017 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:056 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:096 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:096 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:096 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:097 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:097 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:097 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:097 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:136 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:180 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:180 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:181 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:181 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:181 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:181 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:182 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:224 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:265 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:265 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:266 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:266 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:267 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:267 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:272 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:312 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:352 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:352 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:352 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:353 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:353 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:353 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:355 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:396 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:436 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:436 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:436 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:437 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:437 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:437 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:439 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:476 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:516 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:516 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:517 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:517 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:517 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:517 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:518 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:556 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:596 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:596 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:596 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:597 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:597 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:597 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:597 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:640 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:680 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:680 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:680 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:681 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:681 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:681 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:682 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:723 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:760 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:766 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:766 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:766 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:766 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:767 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:767 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:805 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:848 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:848 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:848 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:849 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:852 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:853 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:853 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:892 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:28:932 consola/(4328:4433): Comando: 560
+[INFO] 12:55:28:933 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:28:933 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:28:933 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:28:933 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:28:934 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:28:934 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:28:976 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:012 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:013 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:013 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:013 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:013 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:014 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:014 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:052 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:092 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:092 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:093 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:094 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:095 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:095 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:095 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:133 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:172 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:172 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:173 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:173 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:173 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:173 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:174 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:212 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:252 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:252 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:253 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:253 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:253 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:253 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:254 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:292 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:336 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:336 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:336 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:337 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:337 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:337 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:337 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:380 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:420 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:420 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:420 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:421 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:421 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:421 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:421 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:464 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:504 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:504 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:505 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:505 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:505 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:505 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:506 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:544 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:584 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:584 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:584 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:585 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:585 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:585 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:585 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:624 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:668 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:669 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:669 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:669 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:669 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:670 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:670 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:709 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:748 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:748 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:749 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:750 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:750 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:750 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:750 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:789 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:832 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:832 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:833 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:833 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:833 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:833 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:834 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:872 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:29:916 consola/(4328:4433): Comando: 560
+[INFO] 12:55:29:916 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:29:916 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:29:917 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:29:917 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:29:918 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:29:918 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:29:960 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:30:000 consola/(4328:4433): Comando: 560
+[INFO] 12:55:30:000 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:30:001 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:30:001 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:30:002 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:30:002 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:30:005 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:30:045 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:30:084 consola/(4328:4433): Comando: 560
+[INFO] 12:55:30:084 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:30:085 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:30:085 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:30:085 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:30:085 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:30:086 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:30:124 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:30:164 consola/(4328:4433): Comando: 560
+[INFO] 12:55:30:164 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:30:168 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:30:169 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:30:169 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:30:169 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:30:169 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:30:209 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:30:250 consola/(4328:4433): Comando: 560
+[INFO] 12:55:30:250 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:30:251 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:30:251 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:30:251 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:30:251 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:30:252 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:30:289 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:30:328 consola/(4328:4433): Comando: 560
+[INFO] 12:55:30:329 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:30:329 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:30:330 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:30:333 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:30:333 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:30:334 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:30:376 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:30:416 consola/(4328:4433): Comando: 560
+[INFO] 12:55:30:416 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:30:417 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:30:417 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:30:417 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:30:417 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:30:418 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:55:30:457 consola/(4328:4433): Proceso: RAM
+[INFO] 12:55:30:496 consola/(4328:4433): Comando: 560
+[INFO] 12:55:30:496 consola/(4328:4433): Tamanio: 16
+[INFO] 12:55:30:496 consola/(4328:4433): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:55:30:496 consola/(4328:4433): El tripulante ya realizó todas las tareas
+[INFO] 12:55:30:497 consola/(4328:4433): ENTRO OTRA
+[INFO] 12:55:30:497 consola/(4328:4433): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:55:30:497 consola/(4328:4433): Recibi el siguiente mensaje..
+[INFO] 12:56:52:829 consola/(4734:4734): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 12:56:52:830 consola/(4734:4734): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 12:56:52:830 consola/(4734:4734): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 12:57:18:178 consola/(4823:4823): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 12:57:18:178 consola/(4823:4823): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 12:57:18:179 consola/(4823:4823): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 12:57:25:274 consola/(4823:4823): Entró comando: INICIAR_PLANIFICACION
+[INFO] 12:57:25:275 consola/(4823:4823): Se inició la planificación. Estado de la flag: 0
+[INFO] 12:57:46:314 consola/(4823:4823): Entró comando: INICIAR_PATOTA
+[INFO] 12:57:46:319 consola/(4823:4823): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:320 consola/(4823:4823): Recibi el siguiente mensaje..
+[INFO] 12:57:46:321 consola/(4823:4823): Proceso: RAM
+[INFO] 12:57:46:321 consola/(4823:4823): Comando: 200
+[INFO] 12:57:46:321 consola/(4823:4823): Tamanio: 4
+[INFO] 12:57:46:323 consola/(4823:4823): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:324 consola/(4823:4823): Recibi el siguiente mensaje..
+[INFO] 12:57:46:360 consola/(4823:4823): Proceso: RAM
+[INFO] 12:57:46:400 consola/(4823:4823): Comando: 200
+[INFO] 12:57:46:400 consola/(4823:4823): Tamanio: 16
+[INFO] 12:57:46:400 consola/(4823:4823): entra al if
+[INFO] 12:57:46:401 consola/(4823:4823): tamanio tarea: 12
+[INFO] 12:57:46:401 consola/(4823:4823): tarea actual: CANTAR;1;2;3
+[INFO] 12:57:46:436 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:46:444 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:444 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:46:485 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:46:485 consola/(4823:4898): Comando: 560
+[INFO] 12:57:46:486 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:46:486 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:46:486 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:46:486 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:46:487 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:487 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:46:524 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:46:564 consola/(4823:4898): Comando: 560
+[INFO] 12:57:46:564 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:46:564 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:46:565 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:46:565 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:46:565 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:566 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:46:605 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:46:644 consola/(4823:4898): Comando: 560
+[INFO] 12:57:46:644 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:46:647 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:46:647 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:46:648 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:46:648 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:648 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:46:688 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:46:728 consola/(4823:4898): Comando: 560
+[INFO] 12:57:46:728 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:46:728 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:46:729 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:46:729 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:46:729 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:736 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:46:768 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:46:808 consola/(4823:4898): Comando: 560
+[INFO] 12:57:46:809 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:46:809 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:46:809 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:46:809 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:46:810 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:810 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:46:848 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:46:888 consola/(4823:4898): Comando: 560
+[INFO] 12:57:46:888 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:46:888 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:46:892 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:46:893 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:46:893 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:893 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:46:935 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:46:972 consola/(4823:4898): Comando: 560
+[INFO] 12:57:46:972 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:46:972 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:46:972 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:46:978 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:46:978 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:46:978 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:017 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:058 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:059 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:059 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:059 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:060 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:060 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:060 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:100 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:140 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:140 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:141 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:141 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:141 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:141 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:142 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:182 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:224 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:224 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:225 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:225 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:225 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:225 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:226 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:268 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:308 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:308 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:309 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:309 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:309 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:316 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:316 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:356 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:396 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:396 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:397 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:397 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:397 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:397 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:398 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:437 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:476 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:476 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:476 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:477 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:477 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:477 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:477 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:516 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:556 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:556 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:556 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:557 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:557 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:557 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:557 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:596 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:636 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:636 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:637 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:637 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:637 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:637 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:638 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:680 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:720 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:721 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:721 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:721 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:722 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:722 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:722 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:760 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:800 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:800 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:800 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:800 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:801 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:801 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:801 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:843 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:882 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:882 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:883 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:883 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:883 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:883 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:884 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:47:921 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:47:964 consola/(4823:4898): Comando: 560
+[INFO] 12:57:47:965 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:47:965 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:47:965 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:47:965 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:47:969 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:47:970 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:008 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:048 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:048 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:049 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:049 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:049 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:049 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:050 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:088 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:132 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:132 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:132 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:132 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:133 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:133 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:133 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:172 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:212 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:212 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:213 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:213 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:213 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:213 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:214 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:252 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:292 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:292 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:296 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:296 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:297 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:297 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:297 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:340 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:380 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:380 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:380 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:381 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:381 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:388 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:388 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:428 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:472 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:472 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:472 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:473 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:478 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:478 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:478 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:516 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:560 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:560 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:560 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:563 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:563 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:563 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:564 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:604 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:644 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:644 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:644 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:645 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:645 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:645 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:645 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:684 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:730 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:730 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:730 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:731 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:731 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:731 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:731 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:769 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:809 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:810 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:810 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:810 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:810 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:811 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:811 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:848 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:892 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:892 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:892 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:892 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:893 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:893 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:893 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:48:934 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:48:972 consola/(4823:4898): Comando: 560
+[INFO] 12:57:48:972 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:48:976 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:48:976 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:48:976 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:48:977 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:48:977 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:017 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:060 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:060 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:061 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:061 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:061 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:065 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:066 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:105 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:145 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:145 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:145 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:146 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:146 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:146 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:146 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:184 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:224 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:225 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:225 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:225 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:225 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:226 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:226 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:264 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:304 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:304 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:306 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:306 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:306 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:307 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:307 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:345 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:384 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:385 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:385 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:385 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:385 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:386 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:386 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:424 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:464 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:464 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:464 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:465 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:465 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:465 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:465 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:508 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:548 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:552 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:552 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:552 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:553 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:553 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:553 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:596 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:636 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:636 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:636 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:637 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:637 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:637 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:637 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:677 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:716 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:716 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:716 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:716 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:716 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:717 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:717 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:756 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:796 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:796 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:797 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:797 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:797 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:797 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:798 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:837 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:880 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:880 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:882 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:882 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:882 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:883 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:883 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:49:920 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:49:960 consola/(4823:4898): Comando: 560
+[INFO] 12:57:49:960 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:49:960 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:49:961 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:49:961 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:49:961 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:49:961 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:000 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:040 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:040 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:041 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:041 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:041 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:042 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:042 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:080 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:124 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:124 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:125 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:125 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:125 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:126 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:126 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:164 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:204 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:204 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:205 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:209 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:209 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:210 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:210 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:248 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:288 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:288 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:289 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:289 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:289 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:289 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:290 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:328 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:368 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:368 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:369 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:369 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:369 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:370 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:370 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:408 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:452 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:452 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:452 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:453 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:453 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:453 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:453 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:493 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:536 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:537 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:537 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:538 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:538 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:538 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:538 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:576 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:616 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:616 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:620 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:620 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:620 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:621 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:621 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:660 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:700 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:700 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:700 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:701 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:701 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:701 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:701 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:744 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:788 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:788 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:788 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:788 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:788 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:789 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:789 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:828 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:872 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:872 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:872 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:873 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:873 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:873 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:873 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:913 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:50:952 consola/(4823:4898): Comando: 560
+[INFO] 12:57:50:953 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:50:953 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:50:953 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:50:953 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:50:954 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:50:954 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:50:992 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:037 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:037 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:037 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:037 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:038 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:038 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:038 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:076 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:116 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:116 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:116 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:117 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:117 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:117 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:119 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:160 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:201 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:201 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:201 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:202 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:202 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:202 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:202 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:240 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:284 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:284 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:285 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:285 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:286 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:286 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:286 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:324 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:364 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:365 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:365 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:365 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:366 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:366 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:366 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:404 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:444 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:444 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:445 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:445 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:445 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:446 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:446 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:486 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:528 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:529 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:529 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:529 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:529 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:530 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:530 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:568 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:608 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:608 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:608 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:609 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:609 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:609 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:609 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:648 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:688 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:688 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:688 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:689 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:689 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:689 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:690 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:728 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:768 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:768 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:769 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:769 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:769 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:769 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:770 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:808 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:851 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:851 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:851 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:852 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:852 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:856 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:857 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:899 consola/(4823:4898): Proceso: RAM
+[INFO] 12:57:51:936 consola/(4823:4898): Comando: 560
+[INFO] 12:57:51:936 consola/(4823:4898): Tamanio: 16
+[INFO] 12:57:51:937 consola/(4823:4898): Recibi mensaje de RAM: RAM - 560
+[INFO] 12:57:51:937 consola/(4823:4898): El tripulante ya realizó todas las tareas
+[INFO] 12:57:51:937 consola/(4823:4898): ENTRO OTRA
+[INFO] 12:57:51:937 consola/(4823:4898): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 12:57:51:938 consola/(4823:4898): Recibi el siguiente mensaje..
+[INFO] 12:57:51:977 consola/(4823:4898): Proceso: RAM
+[INFO] 13:00:56:897 consola/(5142:5142): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 13:00:56:898 consola/(5142:5142): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 13:00:56:899 consola/(5142:5142): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 13:01:03:364 consola/(5142:5142): Entró comando: INICIAR_PLANIFICACION
+[INFO] 13:01:03:365 consola/(5142:5142): Se inició la planificación. Estado de la flag: 0
+[INFO] 13:01:20:522 consola/(5142:5142): Entró comando: INICIAR_PATOTA
+[INFO] 13:01:20:527 consola/(5142:5142): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:01:20:528 consola/(5142:5142): Recibi el siguiente mensaje..
+[INFO] 13:01:20:528 consola/(5142:5142): Proceso: RAM
+[INFO] 13:01:20:529 consola/(5142:5142): Comando: 200
+[INFO] 13:01:20:529 consola/(5142:5142): Tamanio: 4
+[INFO] 13:01:20:530 consola/(5142:5142): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:01:20:530 consola/(5142:5142): Recibi el siguiente mensaje..
+[INFO] 13:01:20:567 consola/(5142:5142): Proceso: RAM
+[INFO] 13:01:20:611 consola/(5142:5142): Comando: 200
+[INFO] 13:01:20:612 consola/(5142:5142): Tamanio: 16
+[INFO] 13:01:20:612 consola/(5142:5142): entra al if
+[INFO] 13:01:20:613 consola/(5142:5142): tamanio tarea: 12
+[INFO] 13:01:20:613 consola/(5142:5142): tarea actual: CANTAR;1;2;3
+[INFO] 13:01:20:627 consola/(5142:5219): ENTRO OTRA
+[INFO] 13:01:20:628 consola/(5142:5219): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 13:01:20:631 consola/(5142:5219): Recibi el siguiente mensaje..
+[INFO] 13:01:20:667 consola/(5142:5219): Proceso: RAM
+[INFO] 13:01:20:707 consola/(5142:5219): Comando: 560
+[INFO] 13:01:20:708 consola/(5142:5219): Tamanio: 16
+[INFO] 13:01:20:708 consola/(5142:5219): Recibi mensaje de RAM: RAM - 560
+[INFO] 13:01:20:709 consola/(5142:5219): El tripulante ya realizó todas las tareas

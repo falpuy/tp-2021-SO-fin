@@ -36,6 +36,14 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             free(buffercito);
             free(str);
             break;
+        case 521:
+            str = string_new();
+            string_append(&str, "CANTAR;1;2;3");
+            buffercito = _serialize(sizeof(int)+string_length(str), "%s", str);
+            _send_message(client, "RAM", 560, buffercito, string_length(str)+sizeof(int), logger);
+            free(buffercito);
+            free(str);
+            break;
         case 530:
             log_info(logger, "me llegó un comando para expulsar un tripulante :(");
             break;

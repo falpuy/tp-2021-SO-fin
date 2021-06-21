@@ -129,14 +129,11 @@ void iniciar_tcb(void *elemento, int conexion_RAM, t_log *logger) {
     free(buffer);
   	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
   	if (mensaje->command == 200) { // Recibi la primer tarea
-        log_info(logger, "entra al if");
         int tamanioTarea;
         memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
-        log_info(logger, "tamanio tarea: %d", tamanioTarea);
         aux->instruccion_actual = malloc(tamanioTarea + 1);
         memcpy(aux->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
         aux->instruccion_actual[tamanioTarea] = '\0';
-        log_info(logger, "tarea actual: %s", aux->instruccion_actual);
         aux->estaVivoElHilo = 1;
         queue_push (cola_new, (void*) aux);
         pthread_t hiloTripulante;

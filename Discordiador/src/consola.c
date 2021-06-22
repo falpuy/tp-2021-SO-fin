@@ -125,10 +125,10 @@ void iniciar_tcb(void *elemento, int conexion_RAM, t_log *logger) {
 	tcb *aux = (tcb *) elemento;
   	int tamanioBuffer = sizeof(int) * 2;
   	void *buffer = _serialize(tamanioBuffer, "%d%d", aux->pid, aux->tid);
-  	_send_message(conexion_RAM, "DIS", 520, buffer, tamanioBuffer, logger);
+  	_send_message(conexion_RAM, "DIS", ENVIAR_TAREA, buffer, tamanioBuffer, logger);
     free(buffer);
   	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-  	if (mensaje->command == 200) { // Recibi la primer tarea
+  	if (mensaje->command == SUCCESS) { // Recibi la primer tarea
         int tamanioTarea;
         memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
         aux->instruccion_actual = malloc(tamanioTarea + 1);
@@ -296,11 +296,11 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                         buffer = malloc(tamanioBuffer);
 						int idTripulante = atoi(parametros[1]);
                         buffer = _serialize(tamanioBuffer, "%d", idTripulante);
-                        _send_message(conexion_RAM, "DIS", 530, buffer, tamanioBuffer, logger); // EXPULSAR_TRIPULANTE= 530 
+                        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger); // EXPULSAR_TRIPULANTE= 530 
                         free(buffer);
                       	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
                         
-                      	if(mensajeRecibido->command == 200) { // SUCCESS= 200
+                      	if(mensajeRecibido->command == SUCCESS) { // SUCCESS= 200
                         		log_info(logger, "Se expulsó correctamente el tripulante en memoria");
                         }
                         else {
@@ -334,10 +334,10 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                     tamanioBuffer = sizeof(int);
                 	int idTripulante = atoi(parametros[1]);
                     buffer = _serialize(tamanioBuffer, "%d", idTripulante);
-                    _send_message(conexion_RAM, "DIS", 560, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 560
+                    _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
                     free(buffer);
                     t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
-                	if(mensajeRecibido->command == 766){ //RESPUESTA_OBTENER_BITACORA: 766
+                	if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
     					log_info(logger,"La bitacora del tripulante es: %s", mensajeRecibido->payload);
                       	//Esperar a delfi para ver como hace el string.
                     }else{

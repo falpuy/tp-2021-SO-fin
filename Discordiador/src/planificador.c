@@ -1,19 +1,6 @@
 #include"headers/planificador.h"
 
-enum comandos {
-  SUCCESS=200,
-  RECIBIR_UBICACION_TRIPULANTE=510,
-  ENVIAR_TAREA=520,
-  EXPULSAR_TRIPULANTE=530,
-  ERROR_CANTIDAD_TRIPULANTES=554,
-  ERROR_POR_FALTA_DE_MEMORIA=555,
-  ERROR_NO_HAY_TAREAS=560,
-  ENVIAR_OBTENER_BITACORA=560,
-  MOVER_TRIPULANTE=761,
-  COMENZAR_EJECUCION_TAREA=762,
-  FINALIZAR_EJECUCION_TAREA=763,
-  RESPUESTA_OBTENER_BITACORA=766
-};
+
 
 int esTareaIO(char *tarea) {
     if(!strcmp(tarea, "GENERAR_OXIGENO")) {
@@ -56,13 +43,13 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
-        _send_message(conexion_RAM, "RAM", 510, bufferARAM, tamanioBufferARAM);
+        _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM);
         free(bufferARAM);
         //Notificar desplazamiento a IMS
         posXVieja = tcbTrip->posicionX - 1;
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
-        _send_message(conexion_IMS, "IMS", 761, bufferAIMS, tamanioBufferAIMS);
+        _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS);
         free(bufferAIMS);
     }
     else if (tcbTrip->posicionY != posYfinal){
@@ -70,13 +57,13 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
-        _send_message(conexion_RAM, "RAM", 510, bufferARAM, tamanioBufferARAM);
+        _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM);
         free(bufferARAM);
         //Notificar desplazamiento a IMS
         posYVieja = tcbTrip->posicionY - 1;
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
-        _send_message(conexion_IMS, "IMS", 761, bufferAIMS, tamanioBufferAIMS);
+        _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS);
         free(bufferAIMS);
     }
     else{
@@ -94,13 +81,13 @@ void pedirProximaTarea(tcb* tcbTripulante){
     free(buffer);
     t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
 
-    if (mensaje->command == 200) {
+    if (mensaje->command == SUCCESS) {
         memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
         tcbTripulante->instruccion_actual = malloc(tamanioTarea + 1);
         memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
         tcbTripulante->instruccion_actual[tamanioTarea] = '\0';
     }
-    else if (mensaje->command == 560) {
+    else if (mensaje->command == ERROR_NO_HAY_TAREAS) {
         log_info(logger, "El tripulante ya realizó todas las tareas");
         tcbTripulante->status = 'X';
         break;
@@ -170,14 +157,14 @@ void funcionTripulante (void* item){
                     tamanioTarea = strlen(tarea[0]);
                     tamanioBuffer = sizeof(int)*5 + tamanioTarea + strlen(parametros[0]);
                     buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tcbTripulante->tid, tarea[0], atoi(parametrosTarea[0]), atoi(parametrosTarea[1]), atoi(parametrosTarea[2]), atoi(parametrosTarea[3]));
-                    _send_message(conexion_IMS, "IMS", 762, buffer, tamanioBuffer, logger);
+                    _send_message(conexion_IMS, "IMS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
                     free(buffer);
                     mensajeMandado=1;}
                     
                     if(tarea[1]==NULL && tiempoEnExec == parametrosTarea[3]){
                         tamanioBuffer = sizeof(int)*2 + tamanioTarea;
                         buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tarea[0]);
-                        _send_message(conexion_IMS, "IMS", 763, buffer, tamanioBuffer, logger);
+                        _send_message(conexion_IMS, "IMS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
                         free(buffer);
                         pedirProximaTarea(tcbTripulante);
                     }
@@ -321,7 +308,7 @@ void funcionhBloqIO (t_log* logger){
                 tamanioTarea = strlen(tarea[0]);
                 tamanioBuffer = sizeof(int)*2 + tamanioTarea;
                 buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tarea[0]);
-                _send_message(conexion_IMS, "IMS", 763, buffer, tamanioBuffer, logger);
+                _send_message(conexion_IMS, "IMS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
                 free(buffer);
                 pedirProximaTarea(tcbTripulante);
                 
@@ -533,10 +520,10 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
         offset += sizeof(int);
 
     }
-    _send_message(conexion_RAM, "DIS", 610, buffer_a_enviar, tamanioBuffer, logger);
+    _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
   	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
 
-  	if (mensaje->command == 200) {
+  	if (mensaje->command == SUCCESS) {
       return nuevoPCB;
     }
   

@@ -15,6 +15,22 @@
     #include<unnamed/socket.h>
     #include<unnamed/serialization.h>
 
+    enum comandos {
+        SUCCESS=200,
+        RECIBIR_UBICACION_TRIPULANTE=510,
+        ENVIAR_TAREA=520,
+        EXPULSAR_TRIPULANTE=530,
+        ERROR_CANTIDAD_TRIPULANTES=554,
+        ERROR_POR_FALTA_DE_MEMORIA=555,
+        ERROR_NO_HAY_TAREAS=560,
+        INICIAR_PATOTA=610,
+        ENVIAR_OBTENER_BITACORA=760,
+        MOVER_TRIPULANTE=761,
+        COMENZAR_EJECUCION_TAREA=762,
+        FINALIZAR_EJECUCION_TAREA=763,
+        RESPUESTA_OBTENER_BITACORA=766
+    };
+
     t_log* logger;
     t_config* config;
 

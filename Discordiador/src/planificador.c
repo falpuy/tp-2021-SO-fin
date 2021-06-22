@@ -1,28 +1,18 @@
 #include"headers/planificador.h"
 
-/*
-void bloqueado (void* nodo){
-		tcb* tcb = (tcb) nodo;
-    queue_push(cola_io, tcb);
-}
-
-funcion execBlocked{
-	while(estoyVivo){
-			wait(ultimoTripulante)
-    		
-      signal(bloqueado)
-    }
-
-}*/
-
-enum tipo_tarea {
-  GENERAR_OXIGENO,
-  CONSUMIR_OXIGENO,
-  GENERAR_COMIDA,
-  CONSUMIR_COMIDA,
-  GENERAR_BASURA,
-  DESCARTAR_BASURA,
-  OTRA
+enum comandos {
+  SUCCESS=200,
+  RECIBIR_UBICACION_TRIPULANTE=510,
+  ENVIAR_TAREA=520,
+  EXPULSAR_TRIPULANTE=530,
+  ERROR_CANTIDAD_TRIPULANTES=554,
+  ERROR_POR_FALTA_DE_MEMORIA=555,
+  ERROR_NO_HAY_TAREAS=560,
+  ENVIAR_OBTENER_BITACORA=560,
+  MOVER_TRIPULANTE=761,
+  COMENZAR_EJECUCION_TAREA=762,
+  FINALIZAR_EJECUCION_TAREA=763,
+  RESPUESTA_OBTENER_BITACORA=766
 };
 
 int esTareaIO(char *tarea) {
@@ -54,32 +44,18 @@ int esTareaIO(char *tarea) {
     return -1;//si el formato de la tarea es incorrecto
 }
 
-void moverTripulanteA(tcb* tcbTrip, int posXfinal, int posYfinal){
+void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
     int tamanioBufferARAM;
     int tamanioBufferAIMS;
     void* bufferARAM;
     void* bufferAIMS;
     int posXVieja;
     int posYVieja;
-    while (tcbTrip->posicionX != posXfinal){
-        while(tcbTrip->posicionY != posYfinal){
-            tcbTrip->posicionY += 1;
-            //Notificar desplazamiento a RAM
-            tamanioBufferARAM = sizeof(int)*4;
-            bufferARAM = _serialize(tamanioBufferARAM, "%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
-            _send_message(conexion_RAM, "RAM", 510, bufferARAM, tamanioBufferARAM);
-            free(bufferARAM);
-            //Notificar desplazamiento a IMS
-            posYVieja = tcbTrip->posicionY - 1;
-            tamanioBufferAIMS = sizeof(int)*5;
-            bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
-            _send_message(conexion_IMS, "IMS", 761, bufferAIMS, tamanioBufferAIMS);
-            free(bufferAIMS);
-        }
-        tcbTrip->posicionX += 1;
+    if (tcbTrip->posicionX != posXfinal){
+        tcbTrip->posicionX++;
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
-        bufferARAM = _serialize(tamanioBufferARAM, "%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
+        bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_RAM, "RAM", 510, bufferARAM, tamanioBufferARAM);
         free(bufferARAM);
         //Notificar desplazamiento a IMS
@@ -88,6 +64,23 @@ void moverTripulanteA(tcb* tcbTrip, int posXfinal, int posYfinal){
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_IMS, "IMS", 761, bufferAIMS, tamanioBufferAIMS);
         free(bufferAIMS);
+    }
+    else if (tcbTrip->posicionY != posYfinal){
+        tcbTrip->posicionY++;
+        //Notificar desplazamiento a RAM
+        tamanioBufferARAM = sizeof(int)*4;
+        bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
+        _send_message(conexion_RAM, "RAM", 510, bufferARAM, tamanioBufferARAM);
+        free(bufferARAM);
+        //Notificar desplazamiento a IMS
+        posYVieja = tcbTrip->posicionY - 1;
+        tamanioBufferAIMS = sizeof(int)*5;
+        bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
+        _send_message(conexion_IMS, "IMS", 761, bufferAIMS, tamanioBufferAIMS);
+        free(bufferAIMS);
+    }
+    else{
+        log_info(logger, "El tripulante ya llegó a la posición de la tarea");
     }
 }
 
@@ -101,7 +94,7 @@ void pedirProximaTarea(tcb* tcbTripulante){
     free(buffer);
     t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
 
-    if (mensaje->command == 200) {// Recibí la siguiente tarea
+    if (mensaje->command == 200) {
         memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
         tcbTripulante->instruccion_actual = malloc(tamanioTarea + 1);
         memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
@@ -109,10 +102,10 @@ void pedirProximaTarea(tcb* tcbTripulante){
     }
     else if (mensaje->command == 560) {
         log_info(logger, "El tripulante ya realizó todas las tareas");
-        tcbTripulante->estaVivoElHilo = 0;
         tcbTripulante->status = 'X';
         break;
     }
+
     free(mensaje->payload);
     free(mensaje->identifier);
     free(mensaje);
@@ -120,68 +113,106 @@ void pedirProximaTarea(tcb* tcbTripulante){
 
 /*ACLARACIONES DE TAREAS:
 E/S: TAREA PARAMETROS;POS X;POS Y;TIEMPO
+tarea[0]=TAREA
+tarea[1]=PARAMETROS;POS X;POS Y;TIEMPO
 parametros[0] = PARAMETROS
 parametros[1] = POSX
 parametros[2] = POSY
 parametros[3] = TIEMPO
 Normal: TAREA;POS X;POS Y;TIEMPO
+tarea[0]=TAREA;POS X;POS Y;TIEMPO
 parametros[0] = TAREA
 parametros[1] = POSX
 parametros[2] = POSY
 parametros[3] = TIEMPO*/
 
-void funcionTripulante (tcb* tcbTripulante){
-    while(tcbTripulante->estaVivoElHilo == 1){//Así dijo el ayudante??
-        if(tcbTripulante->status == 'E'){
-            int tiempoEnExec; 
-            int tamanioBuffer;
-            int tamanioTarea;
-            void* buffer;
-            char** parametros;
-            char** tarea = string_n_split(tcbTripulante->instruccion_actual, 1, " ");
-            if(esTareaIO(tarea[0])){
-                log_info(logger, "Se debe realizar una tarea de I/O");
-                parametros = string_split(tarea[1], ";");
-                moverTripulanteA(tcbTripulante, parametros[1], parametros[2]);
-                //empiezo la tarea:
-                tamanioTarea = strlen(tarea[0]);
-                tamanioBuffer = sizeof(int)*5 + tamanioTarea + strlen(parametros[0]);
-                buffer = _serialize(tamanioBuffer, "%d%s%s%d%d%d", tcbTripulante->tid, tarea[0], parametros[0], parametros[1], parametros[2], parametros[3]);
-                _send_message(conexion_IMS, "IMS", 762, buffer, tamanioBuffer, logger);
-                free(buffer);
-                sleep(1); //simular petición a IMS
-                //enviar a bloqueado durante parametrosIO[3]
-                //wait();
-                //termino la tarea:
-                tamanioBuffer = sizeof(int)*2 + tamanioTarea;
-                buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tarea[0]);
-                _send_message(conexion_IMS, "IMS", 763, buffer, tamanioBuffer, logger);
-                free(buffer);
-                free(parametros[0]);
-                free(parametros[1]);
-                free(parametros[2]);
-                free(parametros[3]);
-                free(parametros);
-                }
-            else if (esTareaIO(tarea[0])==0) {//Es una tarea normal
-                log_info(logger, "Se debe realizar una tarea normal (no de I/O)");
-                parametros = string_split(tarea[0], ";");
-                tiempoEnExec = 0;
-                while(tiempoEnExec != parametros[3]){
-                    tiempoEnExec +=1;
-                }
-                free(parametros[0]);
-                free(parametros[1]);
-                free(parametros[2]);
-                free(parametros[3]);
-                free(parametros);
-            }
-            else{//Es una tarea con formato inválido
-                log_info(logger, "La tarea ingresada no posee un formato de tarea correcto");
-            }
+void _signal(int incremento, int valorMax, sem_t semaforo) {
+    contadorSemGlobal += incremento;
+    if (contadorSemGlobal == valorMax) {
+        sem_post(&semaforo);
+        contadorSemGlobal = 0;
+    }
+}
 
-            pedirProximaTarea(tcbTripulante);
+void funcionTripulante (void* item){
+    parametrosThread* aux = (parametrosThread*) item;
+    int tamanioBuffer;
+    int tamanioTarea;
+    void* buffer;
+    char** parametrosTarea;
+    char** tarea;
+    int tiempoEnExec=0;
+    int mensajeMandado=0;
+    while(validador==1){
+        sem_wait(semTripulantes[aux->idSemaforo]);
 
+        pthread_mutex_lock(&mutexExec);
+        tcb *tcbTripulante = get_by_id(exec->elements, aux->idSemaforo);
+        pthread_mutex_unlock(&mutexExec);
+
+        log_info(aux->logger, "Se ejecuta hilo tripulante: %d", tcbTripulante -> tid);
+        
+        while(tcbTripulante->estaVivoElHilo == 1){
+            if(tcbTripulante->status == 'E'){
+                tarea = string_n_split(tcbTripulante->instruccion_actual, 1, " ");
+
+                if (tarea[1]!=NULL){
+                    parametrosTarea = string_split(tarea[1], ";");
+                }
+                else{
+                    parametrosTarea = string_split(tarea[0], ";");
+                    strcpy(parametrosTarea[0],itoa(-1)); //Tarea Normal
+                }
+                
+                if(tcbTripulante->posicionX == parametrosTarea[1] && tcbTripulante->posicionY == parametrosTarea[2]){//llegó
+
+                    if(mensajeMandado==0){
+                    tamanioTarea = strlen(tarea[0]);
+                    tamanioBuffer = sizeof(int)*5 + tamanioTarea + strlen(parametros[0]);
+                    buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tcbTripulante->tid, tarea[0], atoi(parametrosTarea[0]), atoi(parametrosTarea[1]), atoi(parametrosTarea[2]), atoi(parametrosTarea[3]));
+                    _send_message(conexion_IMS, "IMS", 762, buffer, tamanioBuffer, logger);
+                    free(buffer);
+                    mensajeMandado=1;}
+                    
+                    if(tarea[1]==NULL && tiempoEnExec == parametrosTarea[3]){
+                        tamanioBuffer = sizeof(int)*2 + tamanioTarea;
+                        buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tarea[0]);
+                        _send_message(conexion_IMS, "IMS", 763, buffer, tamanioBuffer, logger);
+                        free(buffer);
+                        pedirProximaTarea(tcbTripulante);
+                    }
+                    
+                    else if(esTareaIO(tarea[0])){
+                        log_info(logger, "Se debe realizar una tarea de I/O");
+                        sleep(1);
+                        tcbTripulante->status = 'I';
+                    }
+
+                    else if (esTareaIO(tarea[0])==0) {
+                        log_info(logger, "Se debe realizar una tarea normal (no de I/O)");
+                        tiempoEnExec++;
+                    }
+
+                    else{
+                        log_error(logger, "La tarea ingresada no posee un formato de tarea correcto");
+                    }
+
+                }
+                else{
+                    moverTripulanteUno(tcbTripulante, parametros[1], parametros[2]);
+                }
+
+                free(parametrosTarea[0]);
+                free(parametrosTarea[1]);
+                free(parametrosTarea[2]);
+                free(parametrosTarea[3]);
+                free(parametrosTarea);
+                free(tarea[0]);
+                free(tarea[1]);
+                free(tarea);
+
+                _signal(1, queue_size(exec), semBLOCKIO);
+            }
         }
     }
 }
@@ -189,8 +220,10 @@ void funcionTripulante (tcb* tcbTripulante){
 void funcionhNewaReady (t_log* logger) {
     while (validador==1) {
         while (planificacion_pausada==0) {
-            while (!queue_is_empty(cola_new)) // si hay nodos en New, los pasa a Ready
+            while (!queue_is_empty(cola_new))
             {   
+                sem_wait(&semNR);
+                log_info(logger, "Se ejecuta el hilo de New a Ready");
                 tcb* aux_TCB = malloc (sizeof(tcb));
                 pthread_mutex_lock(&mutexNew);
                 aux_TCB = queue_pop(cola_new);
@@ -198,18 +231,25 @@ void funcionhNewaReady (t_log* logger) {
                 aux_TCB->status = 'R';
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready, (void*) aux_TCB);
-                pthread_mutex_unlock(&mutexReady);
+                pthread_mutex_unlock(&mutexReady)
+                sem_post(&semRE);
             }
         }
     }
 }
 
+void signalHilosTripulantes(void *nodo) {
+    tcb *tcbTripulante = (tcb *) nodo;
+    sem_post(semTripulantes[tcbTripulante->tid]);
+}
+
 void funcionhReadyaExec (t_log* logger){
      while (validador==1) {
         while (planificacion_pausada==0) {
-            while (!queue_is_empty(ready) && queue_size(exec) < grado_multitarea) // si hay nodos en Ready, los pasa a Exec
+            while (!queue_is_empty(ready) && queue_size(exec) < grado_multitarea)
             {
-                //wait(); -> ya se hizo el ciclo de cpu en bloqueado
+                sem_wait(&semRE);
+                log_info(logger, "Se ejecuta el hilo de Ready a Exec");
                 tcb* aux_TCB = malloc (sizeof(tcb));
                 pthread_mutex_lock(&mutexReady);
                 aux_TCB = queue_pop(ready);
@@ -218,29 +258,11 @@ void funcionhReadyaExec (t_log* logger){
                 pthread_mutex_lock(&mutexExec);
                 queue_push(exec, (void*) aux_TCB);
                 pthread_mutex_unlock(&mutexExec);
-                //signal(); -> es el turno de ejecutar de execIO o execExit
+                list_iterate(exec->elements, signalHilosTripulantes);
             }
         }
     }
 }
-
-/* @NAME: list_remove
-	* @DESC: Remueve un elemento de la lista de
-	* una determinada posicion y lo retorna.
-void funcionCambioExecIO(void* nodo, int posicion){
-    tcb* aux = (tcb *) nodo;
-    if(aux->status == 'I'){
-        pthread_mutex_lock(&mutexExec);
-  		tcb *tcbAMover = list_get(exec->elements, posicion);
-        pthread_mutex_unlock(&mutexExec);
-        pthread_mutex_lock(&mutexBloqIO);
-        queue_push(bloq_io, (void*)tcbAMover);
-        pthread_mutex_unlock(&mutexBloqIO);
-        pthread_mutex_lock(&mutexExec);
-        list_remove(exec->elements, posicion);
-        pthread_mutex_unlock(&mutexExec);
-    }
-}*/
 
 void list_iterate_position(t_list *self, void(*closure)()) {
     int i = 0;
@@ -270,12 +292,55 @@ void funcionhExecaBloqIO (t_log* logger){
     while (validador==1) {
         while (planificacion_pausada==0) {
             while (!queue_is_empty(exec)){  
-                //wait(); -> ya se hizo el ciclo de cpu en execExit
-                //wait(); -> es el turno de execIO
+                sem_wait(&semBLOCKIO);
                 list_iterate_position(exec->elements, funcionCambioExecIO);
-                //signal(); -> ya se puede hacer el ciclo de cpu en bloq
-                //signal(); -> es el turno de execExit
+                sem_post(&semEXIT);
             }
+        }
+    }
+}
+
+void funcionhBloqIO (t_log* logger){
+    int tamanioTarea;
+    int tamanioBuffer;
+    void* buffer;
+    char** tareaIO;
+    char** parametrosTareaIO;
+    while (validador){
+        while(planificacion_pausada == 0) {
+            sem_wait(&semBLOCKIO);
+            tcb* tcbTripulante = malloc(sizeof(tcb));
+            tareaIO = string_n_split(tcbTripulante->instruccion_actual, 1, " ");
+            parametrosTareaIO = string_split(tareaIO[1], ";");
+            tcbTripulante = queue_peek(bloq_io);
+            if(tcb->tiempoEnBloqIO == parametrosTareaIO[3])
+            {
+                pthread_mutex_lock(&mutexBloqIO);
+                tcbTripulante = queue_pop(bloq_io);
+                pthread_mutex_unlock(&mutexBloqIO);
+                tamanioTarea = strlen(tarea[0]);
+                tamanioBuffer = sizeof(int)*2 + tamanioTarea;
+                buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tarea[0]);
+                _send_message(conexion_IMS, "IMS", 763, buffer, tamanioBuffer, logger);
+                free(buffer);
+                pedirProximaTarea(tcbTripulante);
+                
+                if(aux_TCB->status != 'X'){
+                    aux_TCB->status = 'R';
+                    pthread_mutex_lock(&mutexReady);
+                    queue_push(ready, (void*) tcbTripulante);
+                    pthread_mutex_unlock(&mutexReady);
+                }
+                else{
+                    pthread_mutex_lock(&mutexExit);
+                    queue_push(cola_exit, (void*) tcbTripulante);
+                    pthread_mutex_unlock(&mutexExit);
+                }
+            }
+            else{
+                tcb->tiempoEnBloqIO++;
+            }
+            sem_post(&semEXIT);
         }
     }
 }
@@ -292,35 +357,13 @@ void funcionCambioExecExit(void* nodo, int posicion){
     }
 }
 
-void funcionhExecaExit (t_log* logger){
+void funcionhExit (t_log* logger){
     while (validador==1) {
         while (planificacion_pausada==0) {
             while (!queue_is_empty(exec)){  
-                //wait(); -> ya se hizo el ciclo de cpu en execIO
-                //wait(); -> es el turno de execExit
+                sem_wait(&semEXIT);
                 list_iterate_position(exec->elements, funcionCambioExecExit);
-                //signal(); -> ya se puede hacer el ciclo de cpu en bloq
-                //signal(); -> es el turno de execIO
-            }
-        }
-    }
-}
-
-void funcionhBloqIOaReady (t_log* logger){
-    while (validador){
-        while(planificacion_pausada == 0) {
-            while (!queue_is_empty(bloq_io))
-            {
-                //wait(); -> ya se hizo el ciclo de cpu en exitIO o exitExec
-                tcb* aux_TCB = malloc (sizeof(tcb));
-                pthread_mutex_lock(&mutexBloqIO);
-                aux_TCB = queue_pop(bloq_io);
-                pthread_mutex_unlock(&mutexBloqIO);
-                aux_TCB->status = 'R';
-                pthread_mutex_lock(&mutexReady);
-                queue_push(ready, (void*) aux_TCB);
-                pthread_mutex_unlock(&mutexReady);
-                //signal(); -> ya se puede hacer el ciclo de cpu en Ready
+                sem_post(&semNR);
             }
         }
     }
@@ -389,7 +432,6 @@ char *get_tareas(char *ruta_archivo, t_log* logger) {
         exit(EXIT_FAILURE);
 
     while ((read = getline(&line, &len, fp)) != -1) {
-        // printf("Length: %d - String: %s", read, line);
 
         if (line[ read - 1 ] == '\n') {
             read--;
@@ -413,6 +455,8 @@ tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger)
     nuevoTCB->posicionX = posX;
     nuevoTCB->posicionY = posY;
     nuevoTCB->instruccion_actual = NULL;
+    nuevoTCB->tiempoEnExec = 0;
+    nuevoTCB->tiempoEnBloqIO = 0;
 
     return nuevoTCB;
 }
@@ -460,7 +504,7 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
     bool hayParametros = true;
     for(int i = 1; i<=cant_tripulantes; i++){
         if (hayParametros) {
-            if (parametros[2+i] == NULL) {//Si no exite ese elemento/índice del vector, las posiciones son 0|0
+            if (parametros[2+i] == NULL) {
                 hayParametros = false;
                 posX = 0;
                 posY = 0;
@@ -471,12 +515,12 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
             }
         }
       
-        int tid = (nuevoPCB->pid) * 100 + i;
+        int tid = cantidadTCBTotales;
+        cantidadTCBTotales++;
       	
         tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, logger);
         list_add (nuevoPCB->listaTCB, (void*) nuevoTCB);
         
-      	// Copiar cada TCB al buffer
       	memcpy(buffer_a_enviar + offset, &nuevoTCB->tid, sizeof(int));
         offset += sizeof(int);
         memcpy(buffer_a_enviar + offset, &nuevoTCB->pid, sizeof(int));
@@ -489,7 +533,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger)
         offset += sizeof(int);
 
     }
-  	// Envio todo el buffer a memoria
     _send_message(conexion_RAM, "DIS", 610, buffer_a_enviar, tamanioBuffer, logger);
   	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
 

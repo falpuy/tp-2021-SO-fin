@@ -136,9 +136,6 @@ void iniciar_tcb(void *elemento, int conexion_RAM, t_log *logger) {
         aux->instruccion_actual[tamanioTarea] = '\0';
         aux->estaVivoElHilo = 1;
         queue_push (cola_new, (void*) aux);
-        pthread_t hiloTripulante;
-        pthread_create(&hiloTripulante, NULL, (void *) funcionTripulante, aux);
-        pthread_detach(hiloTripulante);
     } else {
     	log_error(logger, "No hay tareas disponibles");
     }
@@ -219,6 +216,7 @@ void liberarMemoria(){
 
 void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
     contadorPCBs = 0;
+    cantidadTCBTotales = 0;
     validador = 1;
     planificacion_pausada = 1;
     char* leido;

@@ -16,7 +16,7 @@ int main () {
     puerto_IMS, grado_multitarea, algoritmo, quantum_RR, duracion_sabotaje, ciclo_CPU);
 
     conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-    //conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
+    conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
 
     pthread_create(&hNewaReady, NULL, (void *) funcionhNewaReady, logger);
     pthread_detach(hNewaReady);
@@ -30,6 +30,29 @@ int main () {
     pthread_mutex_init(&mutexBloqIO, NULL);
     pthread_mutex_init(&mutexBloqEmer, NULL);
     pthread_mutex_init(&mutexExit, NULL);
+
+    cantidadVieja = 0;
+    cantidadActual = grado_multitarea;
+
+    sem_init(&semNR, 0, 1);
+    sem_init(&semRE, 0, 0);
+    sem_init(&semBLOCKIO, 0, 0);
+    sem_init(&semEXIT, 0, 0);
+    
+    semTripulantes = malloc(sizeof(sem_t)*cantidadActual);
+    for(int i=cantidadVieja; i<cantidadActual; i++){
+        sem_init(semTripulantes[i],0,0);
+    }
+
+    for(int i=cantidadVieja; i<cantidadActual; i++){
+        parametrosThread *parametros = malloc(sizeof(parametrosThread));
+        parametros->logger=logger;
+        parametros->idSemaforo=i;
+
+        pthread_t hiloTripulante;
+        pthread_create(&hiloTripulante, NULL, (void *) funcionTripulante, parametros);
+        pthread_detach(hiloTripulante);
+    }
 
     /*
     pthread_create(&hExecaBloqEmer, NULL, funcionhExecaBloqEmer, logger);

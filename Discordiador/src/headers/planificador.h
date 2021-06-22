@@ -48,9 +48,25 @@
     pthread_mutex_t mutexBloqEmer;
     pthread_mutex_t mutexExit;
 
+    sem_t semNR;
+    sem_t semRE;
+    sem_t semBLOCKIO;
+    sem_t semEXIT;
+    sem_t* semTripulantes;
+
+    int cantidadActual;
+    int cantidadVieja;
+    int contadorSemGlobal;
+    
+    typedef struct{
+        t_log* logger;
+        int idSemaforo;
+    }parametrosThread;
+
     char** parametros;
 
-    int contadorPCBs;  
+    int contadorPCBs;
+    int cantidadTCBTotales;
 
     t_queue* cola_new;
     t_queue* ready;
@@ -67,6 +83,8 @@
         int posicionY; // Posición del tripulante en el Eje Y
         char* instruccion_actual; // Nombre de la tarea que estamos ejecutando
         int estaVivoElHilo; // 1= está vivo, 0= está muerto
+        int tiempoEnExec;
+        int tiempoEnBloqIO;
     }tcb;
     typedef struct
     {

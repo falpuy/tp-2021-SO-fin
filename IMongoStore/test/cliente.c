@@ -20,7 +20,7 @@ enum COMANDOS{
 
 int main(){
 
-   
+   IdTripulante TamTarea Tarea ParametrosTarea X Y T
     t_log* log = log_create("cliente.log","clienteTest", 1,  LOG_LEVEL_INFO);
     int socket = _connect("127.0.0.1", "5001", log);
 

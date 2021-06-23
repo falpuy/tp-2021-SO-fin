@@ -16,16 +16,20 @@
     enum TAREAS_TRIPULANTE{
         GENERAR_OXIGENO = 1,
         CONSUMIR_OXIGENO,
+        GENERAR_BASURA,
+        DESCARTAR_BASURA,
         GENERAR_COMIDA,
         CONSUMIR_COMIDA,
-        GENERAR_BASURA,
-        DESCARTAR_BASURA   
+        TAREA_NO_IO,
+        ERROR_NO_EXISTE_TAREA = -1
     };
 
     int comandoTarea(char* tarea);
-    void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro);
-    void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro);
+    void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulante);
+    void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulante);
     
+    void escribirEnBitacoraFinalizaTarea(char* tarea, int idTripulante);
+    void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante);
     void consumirOxigeno( int parametroTarea);
     void consumirComida( int parametroTarea);
     void descartarBasura(int parametroTarea);

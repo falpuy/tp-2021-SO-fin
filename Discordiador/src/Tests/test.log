@@ -927,3 +927,9 @@
 [INFO] 13:01:20:567 test/(4804:5143): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 13:01:20:667 test/(4804:5143): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 13:01:41:307 test/(4804:5143): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 20:46:36:426 test/(18340:18340): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:46:36:427 test/(18340:18340): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:59:06:476 test/(18862:18862): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:59:06:477 test/(18862:18862): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 21:55:46:176 test/(22230:22230): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 21:55:46:177 test/(22230:22230): [Shared Library]: Esperando conexiones en puerto: 5001

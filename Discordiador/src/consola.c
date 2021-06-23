@@ -142,35 +142,35 @@ void iniciar_tcb(void *elemento, int conexion_RAM, t_log *logger) {
 }
 
 enum tipo_mensaje_consola {
-INICIAR_PLANIFICACION,
-PAUSAR_PLANIFICACION,
-INICIAR_PATOTA,
-LISTAR_TRIPULANTES,
-EXPULSAR_TRIPULANTE,
-OBTENER_BITACORA,
-SALIR};
+C_INICIAR_PLANIFICACION,
+C_PAUSAR_PLANIFICACION,
+C_INICIAR_PATOTA,
+C_LISTAR_TRIPULANTES,
+C_EXPULSAR_TRIPULANTE,
+C_OBTENER_BITACORA,
+C_SALIR};
 
 int obtener_tipo_mensaje_consola(char *mensaje) {
     if(!strcmp(mensaje, "INICIAR_PLANIFICACION")) {
-            return INICIAR_PLANIFICACION;
+            return C_INICIAR_PLANIFICACION;
     };
     if(!strcmp(mensaje, "PAUSAR_PLANIFICACION")) {
-            return PAUSAR_PLANIFICACION;
+            return C_PAUSAR_PLANIFICACION;
     };
     if(!strcmp(mensaje, "INICIAR_PATOTA")) {
-            return INICIAR_PATOTA;
+            return C_INICIAR_PATOTA;
     };
     if(!strcmp(mensaje, "LISTAR_TRIPULANTES")) {
-            return LISTAR_TRIPULANTES;
+            return C_LISTAR_TRIPULANTES;
     };
     if(!strcmp(mensaje, "EXPULSAR_TRIPULANTE")) {
-            return EXPULSAR_TRIPULANTE;
+            return C_EXPULSAR_TRIPULANTE;
     };
     if(!strcmp(mensaje, "OBTENER_BITACORA")) {
-            return OBTENER_BITACORA;
+            return C_OBTENER_BITACORA;
     };
     if(!strcmp(mensaje, "SALIR")) {
-            return SALIR;
+            return C_SALIR;
     };
     return -1;
 }
@@ -231,7 +231,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
             void* buffer;
           
             switch (obtener_tipo_mensaje_consola(parametros[0])) {
-                case INICIAR_PLANIFICACION: 
+                case C_INICIAR_PLANIFICACION: 
                     log_info(logger, "Entró comando: INICIAR_PLANIFICACION");
                     planificacion_pausada = 0;  //activa flag para que se ejecuten los hilos
                     log_info(logger, "Se inició la planificación. Estado de la flag: %d", planificacion_pausada);
@@ -241,7 +241,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 	free(parametros);
                     break;
 
-                case PAUSAR_PLANIFICACION: 
+                case C_PAUSAR_PLANIFICACION: 
                 	log_info(logger, "Entró comando: PAUSAR_PLANIFICACION");
                 	planificacion_pausada = 1;
                 	log_info(logger, "Se pausó la planificación.");
@@ -251,7 +251,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 	free(parametros);
                     break;
 
-                case INICIAR_PATOTA: 
+                case C_INICIAR_PATOTA: 
                     log_info(logger, "Entró comando: INICIAR_PATOTA");
                     pcb* nuevoPCB = crear_PCB (parametros, conexion_RAM, logger);
                 		
@@ -274,7 +274,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 	free(mensajeRecibido);
                     break;
 
-                case LISTAR_TRIPULANTES:
+                case C_LISTAR_TRIPULANTES:
                     log_info(logger, "--------------------------------------------------------------------");
                     log_info(logger, "Entró comando: LISTAR_TRIPULANTES");
                     char* hora_y_fecha_actual;
@@ -288,7 +288,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 	free(parametros);
                     break;
 
-                case EXPULSAR_TRIPULANTE:
+                case C_EXPULSAR_TRIPULANTE:
                     log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");
                     if (planificacion_pausada == 0) {
                         loEncontro = 0;
@@ -329,7 +329,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                     
                     break;
 
-                case OBTENER_BITACORA: 
+                case C_OBTENER_BITACORA: 
                     log_info(logger, "Entró comando: OBTENER_BITACORA");
                     tamanioBuffer = sizeof(int);
                 	int idTripulante = atoi(parametros[1]);
@@ -352,7 +352,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 	free(parametros);
                     break;
                 
-                case SALIR: 
+                case C_SALIR: 
                     log_info(logger, "Salimos de la consola");
                     validador = 0;
                 	free(mensajeRecibido);

@@ -43,13 +43,13 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
-        _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM);
+        _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
         free(bufferARAM);
         //Notificar desplazamiento a IMS
         posXVieja = tcbTrip->posicionX - 1;
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
-        _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS);
+        _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
         free(bufferAIMS);
     }
     else if (tcbTrip->posicionY != posYfinal){
@@ -57,13 +57,13 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
-        _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM);
+        _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
         free(bufferARAM);
         //Notificar desplazamiento a IMS
         posYVieja = tcbTrip->posicionY - 1;
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
-        _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS);
+        _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
         free(bufferAIMS);
     }
     else{
@@ -90,7 +90,6 @@ void pedirProximaTarea(tcb* tcbTripulante){
     else if (mensaje->command == ERROR_NO_HAY_TAREAS) {
         log_info(logger, "El tripulante ya realizó todas las tareas");
         tcbTripulante->status = 'X';
-        break;
     }
 
     free(mensaje->payload);
@@ -218,7 +217,7 @@ void funcionhNewaReady (t_log* logger) {
                 aux_TCB->status = 'R';
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready, (void*) aux_TCB);
-                pthread_mutex_unlock(&mutexReady)
+                pthread_mutex_unlock(&mutexReady);
                 sem_post(&semRE);
             }
         }

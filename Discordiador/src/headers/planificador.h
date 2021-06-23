@@ -5,6 +5,7 @@
     #include<stdlib.h>
     #include<ctype.h>
     #include<pthread.h>
+    #include<semaphore.h>
     #include<commons/log.h>
     #include<commons/string.h>
     #include<commons/config.h>
@@ -111,7 +112,7 @@
 
     t_list* listaPCB;
 
-    void funcionTripulante (tcb* tcbTripulante);
+    void funcionTripulante (void* item);
     void funcionhNewaReady (t_log* logger);
     void funcionhReadyaExec (t_log* logger);
     void funcionCambioExecIO(void* nodo, int posicion);

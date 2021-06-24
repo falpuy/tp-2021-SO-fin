@@ -31,27 +31,15 @@ int main () {
     pthread_mutex_init(&mutexBloqEmer, NULL);
     pthread_mutex_init(&mutexExit, NULL);
 
-    cantidadVieja = 0;
-    cantidadActual = grado_multitarea;
-
     sem_init(&semNR, 0, 1);
     sem_init(&semRE, 0, 0);
     sem_init(&semBLOCKIO, 0, 0);
     sem_init(&semEXIT, 0, 0);
+    sem_init(&semEBIO, 0, 0);
     
     semTripulantes = malloc(sizeof(sem_t)*cantidadActual);
     for(int i=cantidadVieja; i<cantidadActual; i++){
-        sem_init(semTripulantes[i],0,0);
-    }
-
-    for(int i=cantidadVieja; i<cantidadActual; i++){
-        parametrosThread *parametros = malloc(sizeof(parametrosThread));
-        parametros->logger=logger;
-        parametros->idSemaforo=i;
-
-        pthread_t hiloTripulante;
-        pthread_create(&hiloTripulante, NULL, (void *) funcionTripulante, parametros);
-        pthread_detach(hiloTripulante);
+        sem_init(&semTripulantes[i], 0, 0);
     }
 
     /*

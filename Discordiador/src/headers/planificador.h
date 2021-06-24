@@ -69,6 +69,7 @@
     sem_t semRE;
     sem_t semBLOCKIO;
     sem_t semEXIT;
+    sem_t semEBIO;
     sem_t* semTripulantes;
 
     int cantidadActual;

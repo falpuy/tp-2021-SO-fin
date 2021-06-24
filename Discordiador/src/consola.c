@@ -1,7 +1,5 @@
 #include "headers/consola.h"
 
-// crear hilo
-
 void mostrarTripulante(void* elemento){
     tcb* tripulante = (tcb*) elemento;
     log_info(logger, "Tripulante: %d\t", tripulante->tid);
@@ -38,74 +36,44 @@ bool buscarTripulante (void* elemento){
     return tripulante->tid == atoi(parametros[1]);
 }
 
-void expulsarNodo (t_queue* cola, char* nombre_cola){
-    if (loEncontro==0) {
+void iterar_en_lista(t_list* self, void(*closure)(void*, t_list*, pthread_mutex_t, int), pthread_mutex_t mutexCola) {
+    int posicion = 0;
+	t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+		closure(element->data, self, mutexCola, posicion);
+		element = aux;
+        posicion++;
+	}
+}
+
+void extraerTripulante (void* nodo, t_list* cola, pthread_mutex_t mutexCola, int posicion){
+    tcb* tripulanteAExpulsar = (tcb*) nodo;
+    if (tripulanteAExpulsar->status=='X'){
+        tcb* aux_TCB = malloc (sizeof(tcb));
+        pthread_mutex_lock(&mutexCola);
+        aux_TCB = list_remove(cola, posicion);
+        pthread_mutex_unlock(&mutexCola);
+        pthread_mutex_lock(&mutexExit);
+        queue_push(cola_exit, (void*) aux_TCB);
+        pthread_mutex_unlock(&mutexExit);
+    }
+}
+
+void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola){
+    if (loEncontro==0){
         tcb* tripulanteAExpulsar = malloc(sizeof(tcb));
         tripulanteAExpulsar = list_find (cola->elements, buscarTripulante);
-    	tcb* aux_TCB = malloc (sizeof(tcb));	
       	if (tripulanteAExpulsar != NULL) {
             log_info(logger, "Se encontró tripulante: %d a expulsar en la cola: %s", tripulanteAExpulsar->tid, nombre_cola);
+          	tripulanteAExpulsar->status = 'X';
+            iterar_en_lista(cola->elements, extraerTripulante, mutexCola);
+			log_info(logger, "Se movió tripulante: %d de la cola: %s a la cola: EXIT", tripulanteAExpulsar->tid, nombre_cola);
             loEncontro=1;
-          	switch(tripulanteAExpulsar->status){
-                case 'N':
-                    pthread_mutex_lock(&mutexNew);
-                    aux_TCB = queue_pop(cola_new);
-                    pthread_mutex_unlock(&mutexNew);
-                    aux_TCB->status = 'X';
-                    pthread_mutex_lock(&mutexExit);
-                    queue_push(cola_exit, (void*) aux_TCB);
-                    pthread_mutex_unlock(&mutexExit);
-                    break;
-
-                case 'R':
-					pthread_mutex_lock(&mutexReady);
-                    aux_TCB = queue_pop(ready);
-                    pthread_mutex_unlock(&mutexReady);
-                    aux_TCB->status = 'X';
-                    pthread_mutex_lock(&mutexExit);
-                    queue_push(cola_exit, (void*) aux_TCB);
-                    pthread_mutex_unlock(&mutexExit);
-                    break;
-
-                case 'E':
-					pthread_mutex_lock(&mutexExec);
-                    aux_TCB = queue_pop(exec);
-                    pthread_mutex_unlock(&mutexExec);
-                    aux_TCB->status = 'X';
-                    pthread_mutex_lock(&mutexExit);
-                    queue_push(cola_exit, (void*) aux_TCB);
-                    pthread_mutex_unlock(&mutexExit);
-                    break;
-
-                case 'I':
-					pthread_mutex_lock(&mutexBloqIO);
-                    aux_TCB = queue_pop(bloq_io);
-                    pthread_mutex_unlock(&mutexBloqIO);
-                    aux_TCB->status = 'X';
-                    pthread_mutex_lock(&mutexExit);
-                    queue_push(cola_exit, (void*) aux_TCB);
-                    pthread_mutex_unlock(&mutexExit);
-                    break;
-
-                case 'M':
-                    pthread_mutex_lock(&mutexBloqEmer);
-                    aux_TCB = queue_pop(bloq_emer);
-                    pthread_mutex_unlock(&mutexBloqEmer);
-                    aux_TCB->status = 'X';
-                    pthread_mutex_lock(&mutexExit);
-                    queue_push(cola_exit, (void*) aux_TCB);
-                    pthread_mutex_unlock(&mutexExit);
-                    break;
-
-                case 'X':
-                    log_info(logger,"Ya fue expulsado el tripulante");
-                    break;
-            }
-				log_info(logger, "Se movió tripulante:%d de la cola:%s a la cola: EXIT", tripulanteAExpulsar->tid, nombre_cola);	         
         }
         else{
             log_info(logger, "No se encontro el tripulante en la cola %s", nombre_cola);
-            free(aux_TCB);
           	free(tripulanteAExpulsar);
         }
     }
@@ -136,19 +104,30 @@ void iniciar_tcb(void *elemento, int conexion_RAM, t_log *logger) {
         aux->instruccion_actual[tamanioTarea] = '\0';
         aux->estaVivoElHilo = 1;
         queue_push (cola_new, (void*) aux);
+
+        for(int i=cantidadVieja; i<cantidadActual; i++){
+            parametrosThread *parametros = malloc(sizeof(parametrosThread));
+            parametros->logger=logger;
+            parametros->idSemaforo=i;
+
+            pthread_t hiloTripulante;
+            pthread_create(&hiloTripulante, NULL, (void *) funcionTripulante, parametros);
+            pthread_detach(hiloTripulante);
+        }
     } else {
     	log_error(logger, "No hay tareas disponibles");
     }
 }
 
 enum tipo_mensaje_consola {
-C_INICIAR_PLANIFICACION,
-C_PAUSAR_PLANIFICACION,
-C_INICIAR_PATOTA,
-C_LISTAR_TRIPULANTES,
-C_EXPULSAR_TRIPULANTE,
-C_OBTENER_BITACORA,
-C_SALIR};
+    C_INICIAR_PLANIFICACION,
+    C_PAUSAR_PLANIFICACION,
+    C_INICIAR_PATOTA,
+    C_LISTAR_TRIPULANTES,
+    C_EXPULSAR_TRIPULANTE,
+    C_OBTENER_BITACORA,
+    C_SALIR
+};
 
 int obtener_tipo_mensaje_consola(char *mensaje) {
     if(!strcmp(mensaje, "INICIAR_PLANIFICACION")) {
@@ -215,6 +194,7 @@ void liberarMemoria(){
 }
 
 void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
+    cantidadVieja = 0;
     contadorPCBs = 0;
     cantidadTCBTotales = 0;
     validador = 1;
@@ -258,8 +238,10 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                 	if (nuevoPCB) {
                     	list_add (listaPCB, (void*) nuevoPCB);
                         create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
+                        cantidadVieja+=cantidadActual;
                     } else {
                     	log_error(logger, "No se pudo crear el PCB por falta de memoria");
+                        cantidadActual-=atoi(parametros[1]);
                     }
                 		
                 	free(parametros[0]); //iniciarPatota
@@ -296,28 +278,25 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                         buffer = malloc(tamanioBuffer);
 						int idTripulante = atoi(parametros[1]);
                         buffer = _serialize(tamanioBuffer, "%d", idTripulante);
-                        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger); // EXPULSAR_TRIPULANTE= 530 
+                        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
                         free(buffer);
                       	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
                         
-                      	if(mensajeRecibido->command == SUCCESS) { // SUCCESS= 200
-                        		log_info(logger, "Se expulsó correctamente el tripulante en memoria");
+                      	if(mensajeRecibido->command == SUCCESS) {
+                        	log_info(logger, "Se expulsó correctamente el tripulante en memoria");
+                            expulsarNodo(cola_new, "New", mutexNew);
+                            expulsarNodo(ready, "Ready", mutexReady);
+                            expulsarNodo(ready, "Exec", mutexExec);
+                            expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
+                            expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
                         }
                         else {
                           	log_info(logger, "No se pudo expulsar el tripulante en memoria");
                         }
-
-                        expulsarNodo(cola_new, "New");
-                        expulsarNodo(ready, "Ready");
-                        expulsarNodo(exec, "Exec");
-                        expulsarNodo(bloq_io, "Bloqueado por IO");
-                        expulsarNodo(bloq_emer, "Bloqueado por emergencia");
-                      
-                        if (loEncontro==0){
-                            log_info(logger, "El tripulante que se quiere expulsar ya esta en estado EXIT o el ID ingresado es incorrecto");
-                        }
                     }
-                    else{log_info(logger, "La planificación está pausada, no se puede expulsar a un tripulante");}
+                    else{
+                        log_info(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
+                    }
 
                     free(mensajeRecibido->payload);
                 	free(mensajeRecibido->identifier);
@@ -326,7 +305,6 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
                     free(parametros[0]);
                 	free(parametros[1]);
                 	free(parametros);
-                    
                     break;
 
                 case C_OBTENER_BITACORA: 

@@ -15,8 +15,6 @@
     #include"planificador.h"
 
     int loEncontro;
-    bool buscarTripulante (void* elemento);
-    void expulsarNodo (t_queue* cola, char* nombre_cola);
     void mostrarTripulante(void* elemento);
     void mostrarListaTripulantes(void* elemento);
     void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS);

@@ -933,3 +933,5 @@
 [INFO] 20:59:06:477 test/(18862:18862): [Shared Library]: Esperando conexiones en puerto: 5001
 [INFO] 21:55:46:176 test/(22230:22230): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
 [INFO] 21:55:46:177 test/(22230:22230): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:24:08:589 test/(3722:3722): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:24:08:590 test/(3722:3722): [Shared Library]: Esperando conexiones en puerto: 5001

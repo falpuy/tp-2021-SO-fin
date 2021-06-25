@@ -1,17 +1,18 @@
 #include "headers/main.h"
 
 int main() {
-    //t_log* log;
-
     setearConfiguraciones();
     inicializacionFS(logger);
-    signal(SIGINT,finalizarProceso);
+
+    signal(SIGINT, signal_handler);
+    signal(SIGUSR1, signal_handler);
+
     log_info(logger, "Creando servidor......");
     sleep(1);
     
     pthread_create(&sync_blocks,NULL,(void*) actualizarArchivoBlocks, logger);
     _start_server(datosConfig->puerto,handler,logger);
-    finalizarProceso(log);
+
     return 0;
 }
 
@@ -31,25 +32,35 @@ void setearConfiguraciones(){
     pthread_mutex_init(&m_metadata, NULL); 
 }
 
-void finalizarProceso(){
-    flagEnd = 0;
-    pthread_join(sync_blocks,NULL);
-    
-    config_destroy(config);
-    log_destroy(logger);
 
-    // free(datosConfig->puntoMontaje);
-    free(copiaBlocks);
-    free(copiaSB);
-    bitarray_destroy(bitmap);
-    free(memBitmap);
-    // free(datosConfig->puerto);
-    free(datosConfig);
+void signal_handler(int sig_number) {
+
+  switch(sig_number) {
+    case SIGINT:
+        flagEnd = 0;
+        pthread_join(sync_blocks,NULL);
+        
+        config_destroy(config);
+        log_destroy(logger);
+
+        // free(datosConfig->puntoMontaje);
+        free(copiaBlocks);
+        free(copiaSB);
+        bitarray_destroy(bitmap);
+        free(memBitmap);
+        // free(datosConfig->puerto);
+        free(datosConfig);
 
 
-    pthread_mutex_destroy(&blocks_bitmap); 
-    pthread_mutex_destroy(&m_superBloque); 
-    pthread_mutex_destroy(&m_metadata);
+        pthread_mutex_destroy(&blocks_bitmap); 
+        pthread_mutex_destroy(&m_superBloque); 
+        pthread_mutex_destroy(&m_metadata);
 
-    exit(EXIT_SUCCESS);
+        exit(EXIT_SUCCESS);
+        break;
+    case SIGUSR1:
+        sabotaje();
+        break;
+    }
+
 }

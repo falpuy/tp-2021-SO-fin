@@ -57,7 +57,10 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
     int posEnString = 0;
                     
     if(esRecurso){
+        log_info(logger, "Soy recurso. String a guardar:%s", stringGuardar);
         t_config* metadata = config_create(path);
+        log_info(logger,"%s", stringGuardar);
+
         int sizeGuardado = config_get_int_value(metadata, "SIZE"); 
         
         if(sizeGuardado == 0){//METADATA VACIA --> No hay nada guardado
@@ -74,6 +77,9 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
         }
         else{ //HAY ALGO EN METADATA
             log_info(logger, "Guardandose en blocks con metadata existente..");
+            
+            log_info(logger,"%s", stringGuardar);
+
             char** listaBloques = config_get_array_value(metadata,"BLOCKS");
             int contador = 0;
 
@@ -102,6 +108,7 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 log_info(logger,"[Reemplazando fragmentacion interna] No hay mas bloques que usar");
             }else{
                 memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, faltante);
+                log_info(logger, "%s", stringGuardar);
                 actualizarSize(metadata,faltante,flagEsGuardar);
                 config_destroy(metadata);
 
@@ -114,9 +121,10 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
             }
         }  
     }
-    else{   //FILE
+    else{   //BITACORA
         t_config* metadata = config_create(path);
         int sizeGuardado = config_get_int_value(metadata, "SIZE"); 
+        log_info(logger,"%s", stringGuardar);
         if(sizeGuardado == 0){//METADATA VACIA
             config_destroy(metadata); 
             int cantidadBloquesAUsar = cantidad_bloques(stringGuardar);
@@ -130,6 +138,8 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
         }
         else{ //HAY ALGO EN METADATA
             log_info(logger, "Guardandose en blocks con metadata existente..");
+            log_info(logger,"%s", stringGuardar);
+
             char** listaBloques = config_get_array_value(metadata,"BLOCKS");
             int contador = 0;
 
@@ -191,7 +201,7 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
 	int charUltimoBloque;
   
     while(tamStrBorrar) {
-        bloqueABorrar = atoi(listaBloques[contador]);
+        bloqueABorrar = atoi(listaBloques[contador-1]);
         fragmentacion = contador*tamanioBloque - sizeAnterior;
   		charUltimoBloque = tamanioBloque - fragmentacion;
       
@@ -216,10 +226,14 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
       }
     } 
     
-    for(int i = 0; i < contador; i++){
+    for(int i = 0; i <= contador; i++){
         free(listaBloques[i]);
     }
     free(listaBloques);
+
+    config_destroy(metadata);
+
+    
 }
 
 

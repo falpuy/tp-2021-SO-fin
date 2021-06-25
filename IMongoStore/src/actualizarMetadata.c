@@ -17,21 +17,29 @@ char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGu
             string_append_with_format(&listaNueva, "%s]", bloque);
         }
     }else{ //Es para borrar
-        if (tamListaVieja > 2) { //[2,4
+        if (tamListaVieja > 2) { //[2,44
 
             int tamListaNueva = string_length(listaNueva);
-            char* listaTemporal = malloc(tamListaNueva);
+            int aux = tamListaNueva;
             
-            memcpy(listaTemporal, listaNueva,tamListaNueva  - 2);//copio hasta antes del numero y su coma
-            listaTemporal[tamListaNueva- 2] = '\0';
-            string_append(&listaTemporal, "]"); //dudoso!
+            while(aux != 0 && memcmp(listaNueva + aux, ",", 1)) { 
+                aux--; 
+            }
+
+            char* listaTemporal = malloc(aux+2);
+            memcpy(listaTemporal, listaNueva,aux);//copio hasta antes del numero y su coma
+            listaTemporal[aux] = ']';
+            listaTemporal[aux+1] = '\0';
+            //string_append(&listaTemporal, "]"); 
             free(listaNueva);
 
             //vuelvo a crear la listaNueva para poder retornarla
-            listaNueva = malloc(tamListaNueva);
-            memcpy(listaNueva, listaTemporal,string_length(listaTemporal));
-            listaNueva[string_length(listaTemporal)] = '\0';
+            listaNueva = malloc(aux+2);
+            memcpy(listaNueva, listaTemporal,aux+1);
+            listaNueva[aux+1] = '\0';
             free(listaTemporal);
+
+
         } else {//[X
             char* listaTemporal = malloc(strlen(listaNueva));
             int tamListaNueva = strlen(listaNueva);
@@ -269,3 +277,5 @@ void liberarArray (char** array, int posiciones){
 
     free(array);
 }
+
+

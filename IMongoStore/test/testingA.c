@@ -31,13 +31,9 @@ int main(){
     int cantidadBloquesUsados = 0;
     char* string_temp = string_new();
 
-    while(listaBloques[contador]){ 
-        contador++;
-    }
 
-    int bloquesHastaAhora = 0;
-    for(int i = 0; i < contador; i++){
-        if((contador - bloquesHastaAhora) != 1){
+   
+        
             //bloque = atoi(listaBloques[contador]);
             printf("El proximo existe y ahora soy:%s\n",listaBloques[bloquesHastaAhora]);
             // char* temporalBloque = malloc(tamanioBloque+1);
@@ -45,7 +41,7 @@ int main(){
             // temporalBloque[tamanioBloque] = '\0';
             
             // string_append(&string_temp,temporalBloque);
-            bloquesHastaAhora++;
+            
         }else{
             // bloque = atoi(listaBloques[contador]);
             printf("El proximo NO existe y ahora soy:%s\n",listaBloques[bloquesHastaAhora]);

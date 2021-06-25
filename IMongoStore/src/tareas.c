@@ -140,9 +140,11 @@ void escribirEnBitacoraFinalizaTarea(char* tarea, int idTripulante){
 
     char* tripulante = crearStrTripulante(idTripulante);//Creo el path de tripulanteN.ims
             
-    bitacora = string_new();
+    char* bitacora = string_new();
     string_append(&bitacora, "Bitacoras/");
     string_append(&bitacora,tripulante);
+    string_append(&stringTemporal,"|");
+
 
     char* path_fileTripulante = pathCompleto(bitacora);
     free(bitacora);
@@ -155,16 +157,18 @@ void escribirEnBitacoraFinalizaTarea(char* tarea, int idTripulante){
 
     guardarEnBlocks(stringTemporal,path_fileTripulante,1);
     free(stringTemporal);
+    free(path_fileTripulante);
 }
 
 void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante){
     char* stringTemporal = string_new();
     string_append(&stringTemporal, "COMIENZA_EJECUCION_TAREA ");
     string_append(&stringTemporal,tarea);
+    string_append(&stringTemporal,"|");
 
-    char* tripulante = crearStrTripulante(idTripulante);//Creo el path de tripulanteN.ims
-            
-    bitacora = string_new();
+    char* tripulante = crearStrTripulante(idTripulante); //Creo el path de tripulanteN.ims
+
+    char* bitacora = string_new();
     string_append(&bitacora, "Bitacoras/");
     string_append(&bitacora,tripulante);
 
@@ -176,13 +180,13 @@ void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante){
         log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
         crearMetadataBitacora(path_fileTripulante);
     }
-
-    guardarEnBlocks(stringTemporal,path_fileTripulante,1);
+    guardarEnBlocks(stringTemporal,path_fileTripulante,0);
     free(stringTemporal);
+    free(path_fileTripulante);
 }
 
 void consumirOxigeno(int parametroTarea){
-    char* path_oxigeno = pathCompleto("Tareas/Oxigeno.ims");
+    char* path_oxigeno = pathCompleto("Files/Oxigeno.ims");
     
     if(access(path_oxigeno,F_OK)<0){
         log_error(logger, "No existe Oxigeno.ims");
@@ -192,13 +196,12 @@ void consumirOxigeno(int parametroTarea){
     
     borrarEnBlocks(strABorrar,path_oxigeno,1);
 
-    
     free(strABorrar);
     free(path_oxigeno);
 }
 
 void consumirComida(int parametroTarea){
-    char* path_comida = pathCompleto("Tareas/Comida.ims");
+    char* path_comida = pathCompleto("Files/Comida.ims");
     
     if(access(path_comida,F_OK)<0){
         log_error(logger, "No existe Comida.ims");
@@ -214,7 +217,7 @@ void consumirComida(int parametroTarea){
 }
 
 void descartarBasura(int parametroTarea){
-    char* path_basura = pathCompleto("Tareas/Basura.ims");
+    char* path_basura = pathCompleto("Files/Basura.ims");
     
     if(access(path_basura,F_OK)<0){
         log_error(logger, "No existe Basura.ims");
@@ -224,7 +227,6 @@ void descartarBasura(int parametroTarea){
         char** listaBloques = config_get_array_value(metadata,"BLOCKS");
         int contador = 0;
         int bloque;
-        int cantidadBloquesUsados = 0;
         char* string_temp = string_new();
 
         
@@ -277,8 +279,8 @@ void descartarBasura(int parametroTarea){
 
 
 void generarOxigeno(int parametroTarea){
-    char* path_oxigeno = pathCompleto("Tareas/Oxigeno.ims");
-    
+    char* path_oxigeno = pathCompleto("Files/Oxigeno.ims");
+
     if(access(path_oxigeno,F_OK)<0){
         log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
         crearMetadataFiles(path_oxigeno,"O");
@@ -293,7 +295,7 @@ void generarOxigeno(int parametroTarea){
 }
 
 void generarComida(int parametroTarea){
-    char* path_comida = pathCompleto("Tareas/Basura.ims");
+    char* path_comida = pathCompleto("Files/Basura.ims");
     
     if(access(path_comida,F_OK)<0){
         log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
@@ -309,7 +311,7 @@ void generarComida(int parametroTarea){
 }
 
 void generarBasura(int parametroTarea){
-    char* path_basura = pathCompleto("Tareas/Basura.ims");
+    char* path_basura = pathCompleto("Files/Basura.ims");
     
     if(access(path_basura,F_OK)<0){
         log_info(logger, "No existe Oxigeno.ims...Se crea archivo");

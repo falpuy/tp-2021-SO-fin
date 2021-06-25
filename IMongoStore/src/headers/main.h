@@ -22,5 +22,5 @@
     #define PROGRAM "IMS"
 
     void setearConfiguraciones();
-    void finalizarProceso();
+    void signal_handler(int sig_number);
 #endif

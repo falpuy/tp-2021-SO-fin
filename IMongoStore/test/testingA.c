@@ -21,69 +21,35 @@
 #include <commons/collections/queue.h>
 #include <commons/config.h>
 
+typedef struct{
+    char* nombre;
+    int edad;
+    t_log* logger;
+}pibe;
+
+void funcionMostrarAlgo(pibe* human){
+    while(1){
+        log_info(human->logger,"\nNombre:%s, Edad:%d\n",human->nombre,human->edad);
+
+    }
+}
+
 
 int main(){
-    t_config* metadata = config_create("./c.config");
-    char** listaBloques = config_get_array_value(metadata,"BLOCKS");
+    
+    t_log* logger2 = log_create("a","a",1,LOG_LEVEL_INFO);
+    pthread_t testHilo;
+    pibe* human = malloc(sizeof(pibe));
+    human->nombre = string_new();
+    string_append(&human->nombre,"Guille");
+    human->edad=23;
+    human->logger = logger2;
+    pthread_create(&testHilo,NULL,(void*) funcionMostrarAlgo,human);
 
     int contador = 0;
-    int bloque;
-    int cantidadBloquesUsados = 0;
-    char* string_temp = string_new();
-
-int setearMD5(char* pathMetadata){
-    char *comando = string_new();
-
-    t_config* metadata = config_create(pathMetadata);
-    char** listaBloques = config_get_array_value(metadata,"BLOCKS");
-    int contador = 0;
-    char* strTemporal = string_new();
-
-
-    while(listaBloques[contador]){ 
+    while(1){
         contador++;
     }
-
-    int bloquesHastaAhora = 0;
-    for(int i = 0; i <= contador; i++){
-            
-        if((contador - bloquesHastaAhora) != 1){
-            bloque = atoi(listaBloques[bloquesHastaAhora]);
-
-            char* temporalBloque = malloc(tamanioBloque+1);
-            memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, tamanioBloque);
-            temporalBloque[tamanioBloque] = '\0';
-                
-            string_append(&string_temp,temporalBloque);
-            bloquesHastaAhora++;
-            free(temporalBloque);
-        }else{
-            bloque = atoi(listaBloques[bloquesHastaAhora]);
-
-            int sizeVieja = config_get_int_value(metadata, "SIZE");
-            int fragmentacion = contador*tamanioBloque - sizeVieja;
-
-            char* temporalBloque = malloc(fragmentacion+1);
-            memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, fragmentacion);
-            temporalBloque[fragmentacion] = '\0';
-                
-            string_append(&string_temp,temporalBloque);
-            free(temporalBloque);
-        }
-            
-    }
-
-
-    FILE* archivo = fopen("temporal.txt","w");
-    fprintf(fptr,"%d",num);
-
-
-    string_append(&comando, "md5sum temporal.txt > resultado.txt");
-    system(comando);
-
-
-
-}
 
     return 0;
 }

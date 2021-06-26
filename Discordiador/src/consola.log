@@ -9493,3 +9493,24 @@
 [INFO] 13:01:20:708 consola/(5142:5219): Tamanio: 16
 [INFO] 13:01:20:708 consola/(5142:5219): Recibi mensaje de RAM: RAM - 560
 [INFO] 13:01:20:709 consola/(5142:5219): El tripulante ya realizó todas las tareas
+[INFO] 20:27:31:367 consola/(5001:5001): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:27:31:370 consola/(5001:5001): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:27:31:375 consola/(5001:5001): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 20:27:31:380 consola/(5001:5001): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 20:27:31:382 consola/(5001:5001): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 20:27:51:068 consola/(5001:5001): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:27:51:069 consola/(5001:5001): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:28:42:779 consola/(5001:5001): Entró comando: INICIAR_PATOTA
+[INFO] 20:28:42:830 consola/(5001:5001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:28:42:833 consola/(5001:5001): Recibi el siguiente mensaje..
+[INFO] 20:28:42:836 consola/(5001:5001): Proceso: RAM
+[INFO] 20:28:42:837 consola/(5001:5001): Comando: 200
+[INFO] 20:28:42:842 consola/(5001:5001): Tamanio: 4
+[INFO] 20:28:42:849 consola/(5001:5001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:28:42:853 consola/(5001:5001): Recibi el siguiente mensaje..
+[INFO] 20:28:42:889 consola/(5001:5001): Proceso: RAM
+[INFO] 20:28:42:930 consola/(5001:5001): Comando: 200
+[INFO] 20:28:42:930 consola/(5001:5001): Tamanio: 16
+[INFO] 20:28:42:931 consola/(5001:5001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:28:42:933 consola/(5001:5001): Recibi el siguiente mensaje..
+[INFO] 20:28:42:933 consola/(5001:5003): Se ejecuta el hilo de New a Ready

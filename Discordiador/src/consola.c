@@ -199,6 +199,7 @@ void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS) {
     cantidadTCBTotales = 0;
     validador = 1;
     planificacion_pausada = 1;
+    sabotaje_activado = 0;
     char* leido;
 
     while(validador) {

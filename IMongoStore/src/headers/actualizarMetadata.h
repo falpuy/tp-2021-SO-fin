@@ -17,7 +17,7 @@
 
     char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar, int flagEsGuardar);
     void actualizarBlocks(t_config* metadataBitacora,int bloque,int flagEsGuardar);
-    int setearMD5(char* pathMetadata);
+    void setearMD5(char* pathMetadata);
     void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar);
     void actualizarSize(t_config* metadataBitacora,int tamanio, int flagEsGuardar);
     void crearMetadataBitacora(char* path_tripulante);

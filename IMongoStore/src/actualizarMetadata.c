@@ -69,11 +69,66 @@ void actualizarBlocks(t_config* metadataBitacora,int bloque,int flagEsGuardar){
     free(bloquesNuevos);
 }
 
-int setearMD5(char* pathMetadata){
+void setearMD5(char* pathMetadata){
     char *comando = string_new();
-    string_append(&comando, "md5sum ");
-    string_append(&comando, pathMetadata);
-    return system(comando);
+
+    t_config* metadata = config_create(pathMetadata);
+    char** listaBloques = config_get_array_value(metadata,"BLOCKS");
+    int contador = 0;
+    char* string_temp = string_new();
+
+
+    while(listaBloques[contador]){ 
+        contador++;
+    }
+
+    int bloquesHastaAhora = 0;
+    int bloque;
+    for(int i = 0; i <= contador; i++){
+            
+        if((contador - bloquesHastaAhora) != 1){
+            bloque = atoi(listaBloques[bloquesHastaAhora]);
+
+            char* temporalBloque = malloc(tamanioBloque+1);
+            memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, tamanioBloque);
+            temporalBloque[tamanioBloque] = '\0';
+                
+            string_append(&string_temp,temporalBloque);
+            bloquesHastaAhora++;
+            free(temporalBloque);
+        }else{
+            bloque = atoi(listaBloques[bloquesHastaAhora]);
+
+            int sizeVieja = config_get_int_value(metadata, "SIZE");
+            int fragmentacion = contador*tamanioBloque - sizeVieja;
+
+            char* temporalBloque = malloc(fragmentacion+1);
+            memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, fragmentacion);
+            temporalBloque[fragmentacion] = '\0';
+                
+            string_append(&string_temp,temporalBloque);
+            free(temporalBloque);
+        }
+            
+    }
+
+    log_info("MD5: string levantado :%s", string_temp);
+    // FILE* archivo = fopen("temporal.txt","w");
+    // fprintf(archivo,"%s",string_temp);
+    // fclose(archivo);
+
+    // string_append(&comando, "md5sum temporal.txt > resultado.txt");
+    // system(comando);
+
+
+    // char* md5 = malloc(17);
+    // FILE* archivo2 = fopen("resultado.txt","r");
+    // fscanf(archivo2,"%s",md5);
+    // md5[16] = '\0';
+    // fclose(archivo2);
+
+    // config_set_value(metadata,"MD5",md5);
+    // config_save(metadata);
 }
 
 void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar){

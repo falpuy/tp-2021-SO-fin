@@ -74,7 +74,7 @@ void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulan
         case GENERAR_OXIGENO:
             log_info(logger,"Generando oxigeno...");
             pthread_mutex_lock(&blocks_bitmap);
-            escribirEnBitacoraComienzaTarea(tarea,idTripulante);
+            // escribirEnBitacoraComienzaTarea(tarea,idTripulante);
             generarOxigeno(parametro);
             pthread_mutex_unlock(&blocks_bitmap);
         break;
@@ -235,7 +235,7 @@ void descartarBasura(int parametroTarea){
         }
 
         int bloquesHastaAhora = 0;
-        for(int i = 0; i < contador; i++){
+        for(int i = 0; i <= contador; i++){
             
             if((contador - bloquesHastaAhora) != 1){
                 bloque = atoi(listaBloques[bloquesHastaAhora]);

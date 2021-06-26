@@ -31,31 +31,59 @@ int main(){
     int cantidadBloquesUsados = 0;
     char* string_temp = string_new();
 
+int setearMD5(char* pathMetadata){
+    char *comando = string_new();
 
-   
-        
-            //bloque = atoi(listaBloques[contador]);
-            printf("El proximo existe y ahora soy:%s\n",listaBloques[bloquesHastaAhora]);
-            // char* temporalBloque = malloc(tamanioBloque+1);
-            // memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, tamanioBloque);
-            // temporalBloque[tamanioBloque] = '\0';
+    t_config* metadata = config_create(pathMetadata);
+    char** listaBloques = config_get_array_value(metadata,"BLOCKS");
+    int contador = 0;
+    char* strTemporal = string_new();
+
+
+    while(listaBloques[contador]){ 
+        contador++;
+    }
+
+    int bloquesHastaAhora = 0;
+    for(int i = 0; i <= contador; i++){
             
-            // string_append(&string_temp,temporalBloque);
-            
+        if((contador - bloquesHastaAhora) != 1){
+            bloque = atoi(listaBloques[bloquesHastaAhora]);
+
+            char* temporalBloque = malloc(tamanioBloque+1);
+            memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, tamanioBloque);
+            temporalBloque[tamanioBloque] = '\0';
+                
+            string_append(&string_temp,temporalBloque);
+            bloquesHastaAhora++;
+            free(temporalBloque);
         }else{
-            // bloque = atoi(listaBloques[contador]);
-            printf("El proximo NO existe y ahora soy:%s\n",listaBloques[bloquesHastaAhora]);
-            // int sizeVieja = config_get_int_value(metadata, "SIZE");
-            // int fragmentacion = contador*tamanioBloque - sizeVieja;
+            bloque = atoi(listaBloques[bloquesHastaAhora]);
 
-            // char* temporalBloque = malloc(fragmentacion+1);
-            // memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, fragmentacion);
-            // temporalBloque[fragmentacion] = '\0';
-            
-            // string_append(&string_temp,temporalBloque);
+            int sizeVieja = config_get_int_value(metadata, "SIZE");
+            int fragmentacion = contador*tamanioBloque - sizeVieja;
+
+            char* temporalBloque = malloc(fragmentacion+1);
+            memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, fragmentacion);
+            temporalBloque[fragmentacion] = '\0';
+                
+            string_append(&string_temp,temporalBloque);
+            free(temporalBloque);
         }
             
     }
+
+
+    FILE* archivo = fopen("temporal.txt","w");
+    fprintf(fptr,"%d",num);
+
+
+    string_append(&comando, "md5sum temporal.txt > resultado.txt");
+    system(comando);
+
+
+
+}
 
     return 0;
 }

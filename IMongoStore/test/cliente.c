@@ -25,11 +25,11 @@ int main(){
     int socket = _connect("127.0.0.1", "5001", log);
 
     char* tarea = string_new();
-    // string_append(&tarea, "GENERAR_OXIGENO");
-    // void* buffer = _serialize(sizeof(int)*3 + string_length(tarea) ,"%d%s%d",101,tarea,10);
+    string_append(&tarea, "GENERAR_OXIGENO");
+    void* buffer = _serialize(sizeof(int)*3 + string_length(tarea) ,"%d%s%d",101,tarea,10);
 
-    string_append(&tarea, "CONSUMIR_OXIGENO");
-    void* buffer = _serialize(sizeof(int)*3 + string_length(tarea) ,"%d%s%d",101,tarea,4);
+    // string_append(&tarea, "CONSUMIR_OXIGENO");
+    // void* buffer = _serialize(sizeof(int)*3 + string_length(tarea) ,"%d%s%d",101,tarea,4);
 
 
     _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer,sizeof(int)*3 + string_length(tarea) , log);  

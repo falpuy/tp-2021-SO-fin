@@ -26,9 +26,10 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
                 actualizarBlocks(metadata,i,flagEsGuardar);
                 if(esRecurso){
                     actualizarBlockCount(metadata,flagEsGuardar);
-                    //setearMD5(path);
+                    config_destroy(metadata);
+                    log_info(logger,"HOLAAAAAAAAAAAAAAAAAAAAAAAA");                
+                    setearMD5(path);
                 }
-                config_destroy(metadata);                
                 cantidadBloquesUsados ++;
             }else{
                 //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego todo el tamaño del bloque
@@ -41,9 +42,12 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
                 actualizarBlocks(metadata,i,flagEsGuardar);
                 if(esRecurso){
                     actualizarBlockCount(metadata,flagEsGuardar);
-                    //setearMD5(path);
+                    config_destroy(metadata); 
+
+                    log_info(logger, "HOLAAAAAAAAAAAAAAAAAAAAAAAA");                
+
+                    setearMD5(path);
                 }
-                config_destroy(metadata); 
 
                 cantidadBloquesUsados ++;
             }
@@ -62,9 +66,9 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
         log_info(logger,"%s", stringGuardar);
 
         int sizeGuardado = config_get_int_value(metadata, "SIZE"); 
+        config_destroy(metadata); 
         
         if(sizeGuardado == 0){//METADATA VACIA --> No hay nada guardado
-            config_destroy(metadata); 
             
             int cantidadBloquesAUsar = cantidad_bloques(stringGuardar);
             int err = validarBitsLibre(cantidadBloquesAUsar);
@@ -77,10 +81,9 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
         }
         else{ //HAY ALGO EN METADATA
             log_info(logger, "Guardandose en blocks con metadata existente..");
-            
-            log_info(logger,"%s", stringGuardar);
-
+            metadata = config_create(path);
             char** listaBloques = config_get_array_value(metadata,"BLOCKS");
+            config_destroy(metadata);
             int contador = 0;
 
             while(listaBloques[contador]){  //cuenta 1 de más
@@ -109,8 +112,10 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
             }else{
                 memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, faltante);
                 log_info(logger, "%s", stringGuardar);
+                metadata = config_create(path);
                 actualizarSize(metadata,faltante,flagEsGuardar);
                 config_destroy(metadata);
+                setearMD5(path);
 
                 guardarPorBloque(sobranteString,0,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);  
                 free(sobranteString);
@@ -124,9 +129,9 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
     else{   //BITACORA
         t_config* metadata = config_create(path);
         int sizeGuardado = config_get_int_value(metadata, "SIZE"); 
-        log_info(logger,"%s", stringGuardar);
+        config_destroy(metadata); 
+
         if(sizeGuardado == 0){//METADATA VACIA
-            config_destroy(metadata); 
             int cantidadBloquesAUsar = cantidad_bloques(stringGuardar);
             int err = validarBitsLibre(cantidadBloquesAUsar);
             if(err < 0){
@@ -138,9 +143,11 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
         }
         else{ //HAY ALGO EN METADATA
             log_info(logger, "Guardandose en blocks con metadata existente..");
-            log_info(logger,"%s", stringGuardar);
-
+            
+            metadata = config_create(path);
             char** listaBloques = config_get_array_value(metadata,"BLOCKS");
+            config_destroy(metadata);
+
             int contador = 0;
 
             while(listaBloques[contador]){  //cuenta 1 de más
@@ -168,8 +175,10 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 log_info(logger,"[Reemplazando fragmentacion interna] No se necesitan mas bloques para pegar el string sobrante");
             }else{
                 memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, faltante);
+                metadata = config_create(path);
                 actualizarSize(metadata,faltante,flagEsGuardar);
                 config_destroy(metadata);
+                setearMD5(path);
                 
                 guardarPorBloque(sobranteString,0,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);  
                 free(sobranteString);
@@ -189,6 +198,7 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
   	t_config* metadata = config_create(path);
   	int sizeAnterior = config_get_int_value(metadata, "SIZE");
   	char** listaBloques = config_get_array_value(metadata,"BLOCKS");
+    config_destroy(metadata);
   	int contador = 0;
   	int tamStrBorrar = string_length(stringABorrar);
   
@@ -212,16 +222,22 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
 
             bitarray_clean_bit(bitmap,bloqueABorrar);
             memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+            metadata = config_create(path);
             actualizarSize(metadata, charUltimoBloque, 0);
             actualizarBlockCount(metadata,0);
             actualizarBlocks(metadata, bloqueABorrar, 0);
+            config_destroy(metadata);
             contador--;
     }else{
             //Borrar "OO"
             //|OOOO| 
             //me posiciono en el bloque correspondiente y me muevo los chars de ese bloque - los que me faltan asi los borro desde ese principio
             memset(copiaBlocks + (bloqueABorrar*tamanioBloque) + charUltimoBloque - tamStrBorrar,' ', tamStrBorrar);
-            actualizarSize(metadata, tamStrBorrar, 0);
+            metadata = config_create(path);
+            actualizarSize(metadata, tamStrBorrar, 0);     
+            config_destroy(metadata);
+            setearMD5(path);
+
             tamStrBorrar = 0;
       }
     } 

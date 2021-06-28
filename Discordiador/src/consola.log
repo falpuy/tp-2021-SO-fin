@@ -11845,3 +11845,1080 @@ O] 20:21:51:415 consola/(4920:4920): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆�
 [ERROR] 19:54:50:313 consola/(19132:19132): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
 [INFO] 19:54:50:315 consola/(19132:19134): HOLAAA
 [INFO] 19:55:10:965 consola/(19132:19132): Entró comando: INICIAR_PATOTA
+[INFO] 19:18:06:052 consola/(21290:21290): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:18:06:053 consola/(21290:21290): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:18:06:054 consola/(21290:21290): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:18:06:054 consola/(21290:21290): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:18:06:058 consola/(21290:21290): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:18:06:060 consola/(21290:21292): HOLAAA
+[INFO] 19:20:20:872 consola/(21290:21290): Entró comando: INICIAR_PATOTA
+[INFO] 19:20:55:339 consola/(21312:21312): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:20:55:340 consola/(21312:21312): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:20:55:341 consola/(21312:21312): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:20:55:342 consola/(21312:21312): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:20:55:342 consola/(21312:21312): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:20:55:344 consola/(21312:21314): HOLAAA
+[INFO] 19:21:05:963 consola/(21312:21312): Entró comando: INICIAR_PATOTA
+[INFO] 19:24:24:838 consola/(21345:21345): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:24:24:839 consola/(21345:21345): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:24:24:840 consola/(21345:21345): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:24:24:841 consola/(21345:21345): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:24:24:841 consola/(21345:21345): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:24:24:843 consola/(21345:21347): HOLAAA
+[INFO] 19:27:58:998 consola/(21614:21614): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:27:58:999 consola/(21614:21614): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:27:59:000 consola/(21614:21614): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:27:59:000 consola/(21614:21614): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:27:59:004 consola/(21614:21614): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:27:59:013 consola/(21614:21616): HOLAAA
+[INFO] 19:28:16:773 consola/(21614:21614): Entró comando: INICIAR_PATOTA
+[INFO] 19:28:16:773 consola/(21614:21614): Holi
+[INFO] 19:28:16:775 consola/(21614:21614): Holi
+[INFO] 19:28:16:775 consola/(21614:21614): murio
+[INFO] 19:29:26:259 consola/(21708:21708): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:29:26:260 consola/(21708:21708): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:29:26:261 consola/(21708:21708): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:29:26:272 consola/(21708:21708): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:29:26:272 consola/(21708:21708): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:29:26:274 consola/(21708:21710): HOLAAA
+[INFO] 19:29:39:169 consola/(21708:21708): Entró comando: INICIAR_PATOTA
+[INFO] 19:29:39:170 consola/(21708:21708): Holi
+[INFO] 19:29:39:172 consola/(21708:21708): Holi
+[INFO] 19:29:39:172 consola/(21708:21708): murio
+[INFO] 19:29:59:770 consola/(21727:21727): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:29:59:774 consola/(21727:21727): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:29:59:775 consola/(21727:21727): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:29:59:775 consola/(21727:21727): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:29:59:776 consola/(21727:21727): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:29:59:778 consola/(21727:21729): HOLAAA
+[INFO] 19:30:21:860 consola/(21727:21727): Entró comando: INICIAR_PATOTA
+[INFO] 19:30:21:861 consola/(21727:21727): Holi
+[INFO] 19:30:21:863 consola/(21727:21727): 0
+[INFO] 19:30:21:863 consola/(21727:21727): murio
+[INFO] 19:33:58:015 consola/(21779:21779): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:33:58:019 consola/(21779:21779): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:33:58:020 consola/(21779:21779): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:33:58:021 consola/(21779:21779): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:33:58:021 consola/(21779:21779): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:33:58:023 consola/(21779:21781): HOLAAA
+[INFO] 19:34:19:771 consola/(21779:21779): Entró comando: INICIAR_PATOTA
+[INFO] 19:34:19:777 consola/(21779:21779): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:34:19:777 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:778 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:778 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:779 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:779 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:779 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:780 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:780 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:780 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:781 consola/(21779:21779): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:34:19:782 consola/(21779:21779): HOLIS
+[INFO] 19:34:19:787 consola/(21779:21779): Recibi el siguiente mensaje..
+[INFO] 19:34:19:788 consola/(21779:21779): Proceso: RAM
+[INFO] 19:34:19:788 consola/(21779:21779): Comando: 200
+[INFO] 19:34:19:788 consola/(21779:21779): Tamanio: 9
+[INFO] 19:34:19:788 consola/(21779:21779): Memoria OK
+[INFO] 19:34:19:789 consola/(21779:21779): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:34:19:789 consola/(21779:21779): Recibi el siguiente mensaje..
+[INFO] 19:34:19:830 consola/(21779:21779): Proceso: RAM
+[INFO] 19:34:19:869 consola/(21779:21779): Comando: 200
+[INFO] 19:34:19:870 consola/(21779:21779): Tamanio: 30
+[INFO] 19:34:19:870 consola/(21779:21779): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:34:19:871 consola/(21779:21779): Recibi el siguiente mensaje..
+[INFO] 19:34:19:873 consola/(21779:21785): ----------------------------------
+[INFO] 19:34:19:874 consola/(21779:21784): ----------------------------------
+[INFO] 19:34:19:874 consola/(21779:21783): ----------------------------------
+[INFO] 19:34:19:874 consola/(21779:21782): ----------------------------------
+[INFO] 19:34:19:910 consola/(21779:21779): Proceso: RAM
+[INFO] 19:34:19:949 consola/(21779:21779): Comando: 200
+[INFO] 19:34:19:949 consola/(21779:21779): Tamanio: 30
+[INFO] 19:34:19:949 consola/(21779:21779): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:34:19:950 consola/(21779:21779): Recibi el siguiente mensaje..
+[INFO] 19:34:19:950 consola/(21779:21789): ----------------------------------
+[INFO] 19:34:19:950 consola/(21779:21788): ----------------------------------
+[INFO] 19:34:19:950 consola/(21779:21787): ----------------------------------
+[INFO] 19:34:19:950 consola/(21779:21786): ----------------------------------
+[INFO] 19:34:19:990 consola/(21779:21779): Proceso: RAM
+[INFO] 19:34:20:030 consola/(21779:21779): Comando: 200
+[INFO] 19:34:20:030 consola/(21779:21779): Tamanio: 30
+[INFO] 19:34:20:031 consola/(21779:21779): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:34:20:031 consola/(21779:21779): Recibi el siguiente mensaje..
+[INFO] 19:34:20:031 consola/(21779:21793): ----------------------------------
+[INFO] 19:34:20:031 consola/(21779:21792): ----------------------------------
+[INFO] 19:34:20:032 consola/(21779:21791): ----------------------------------
+[INFO] 19:34:20:032 consola/(21779:21790): ----------------------------------
+[INFO] 19:34:20:071 consola/(21779:21779): Proceso: RAM
+[INFO] 19:34:20:109 consola/(21779:21779): Comando: 200
+[INFO] 19:34:20:110 consola/(21779:21779): Tamanio: 30
+[INFO] 19:34:20:112 consola/(21779:21797): ----------------------------------
+[INFO] 19:34:20:122 consola/(21779:21796): ----------------------------------
+[INFO] 19:34:20:122 consola/(21779:21795): ----------------------------------
+[INFO] 19:34:20:122 consola/(21779:21794): ----------------------------------
+[INFO] 19:34:42:752 consola/(21779:21779): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:34:42:753 consola/(21779:21779): Se inició la planificación. Estado de la flag: 1
+[INFO] 19:34:42:754 consola/(21779:21781): ----------------------------------
+[INFO] 19:34:42:754 consola/(21779:21781): Se ejecuta el hilo de New a Ready
+[INFO] 19:34:42:755 consola/(21779:21781): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:34:42:755 consola/(21779:21781): TID:0
+[INFO] 19:34:42:755 consola/(21779:21781): Status:N
+[INFO] 19:34:42:755 consola/(21779:21781): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:34:42:756 consola/(21779:21781): Se paso nodo a Ready
+[INFO] 19:34:42:756 consola/(21779:21781): ----------------------------------
+[INFO] 19:34:42:756 consola/(21779:21781): Se ejecuta el hilo de New a Ready
+[INFO] 19:34:42:756 consola/(21779:21781): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:34:42:757 consola/(21779:21781): TID:1
+[INFO] 19:34:42:757 consola/(21779:21781): Status:N
+[INFO] 19:34:42:757 consola/(21779:21781): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:34:42:757 consola/(21779:21781): Se paso nodo a Ready
+[INFO] 19:34:42:758 consola/(21779:21781): ----------------------------------
+[INFO] 19:34:42:758 consola/(21779:21781): Se ejecuta el hilo de New a Ready
+[INFO] 19:34:42:758 consola/(21779:21781): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:34:42:758 consola/(21779:21781): TID:2
+[INFO] 19:34:42:758 consola/(21779:21781): Status:N
+[INFO] 19:34:42:759 consola/(21779:21781): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:34:42:759 consola/(21779:21781): Se paso nodo a Ready
+[INFO] 19:34:42:759 consola/(21779:21781): ----------------------------------
+[INFO] 19:34:42:759 consola/(21779:21781): Se ejecuta el hilo de New a Ready
+[INFO] 19:34:42:759 consola/(21779:21781): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:34:42:760 consola/(21779:21781): TID:3
+[INFO] 19:34:42:760 consola/(21779:21781): Status:N
+[INFO] 19:34:42:760 consola/(21779:21781): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:34:42:761 consola/(21779:21781): Se paso nodo a Ready
+[INFO] 19:34:42:761 consola/(21779:21781): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 19:34:42:761 consola/(21779:21781): ----------------------------------
+[INFO] 19:35:52:488 consola/(21779:21779): --------------------------------------------------------------------
+[INFO] 19:35:52:489 consola/(21779:21779): Entró comando: LISTAR_TRIPULANTES
+[INFO] 19:35:52:490 consola/(21779:21779): Estado de la Nave: 28/06/21 19:35:52
+[INFO] 19:35:52:490 consola/(21779:21779): Tripulante: 0	
+[INFO] 19:35:52:490 consola/(21779:21779): Patota: 1	
+[INFO] 19:35:52:490 consola/(21779:21779): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:35:52:490 consola/(21779:21779): Posicion X e Y: 1 - 1
+
+[INFO] 19:35:52:491 consola/(21779:21779): Status: READY
+
+[INFO] 19:35:52:491 consola/(21779:21779): Tripulante: 1	
+[INFO] 19:35:52:491 consola/(21779:21779): Patota: 1	
+[INFO] 19:35:52:491 consola/(21779:21779): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:35:52:492 consola/(21779:21779): Posicion X e Y: 1 - 1
+
+[INFO] 19:35:52:492 consola/(21779:21779): Status: READY
+
+[INFO] 19:35:52:492 consola/(21779:21779): Tripulante: 2	
+[INFO] 19:35:52:492 consola/(21779:21779): Patota: 1	
+[INFO] 19:35:52:492 consola/(21779:21779): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:35:52:493 consola/(21779:21779): Posicion X e Y: 0 - 0
+
+[INFO] 19:35:52:493 consola/(21779:21779): Status: READY
+
+[INFO] 19:35:52:493 consola/(21779:21779): Tripulante: 3	
+[INFO] 19:35:52:493 consola/(21779:21779): Patota: 1	
+[INFO] 19:35:52:493 consola/(21779:21779): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:35:52:494 consola/(21779:21779): Posicion X e Y: 0 - 0
+
+[INFO] 19:35:52:494 consola/(21779:21779): Status: READY
+
+[INFO] 19:35:52:494 consola/(21779:21779): --------------------------------------------------------------------
+[INFO] 19:39:17:571 consola/(21779:21779): Salimos de la consola
+[INFO] 19:40:20:998 consola/(21828:21828): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:40:20:999 consola/(21828:21828): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:40:21:000 consola/(21828:21828): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:40:21:000 consola/(21828:21828): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:40:21:001 consola/(21828:21828): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:40:21:004 consola/(21828:21830): HOLAAA
+[INFO] 19:40:22:731 consola/(21828:21828): Salimos de la consola
+[INFO] 19:40:28:365 consola/(21850:21850): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:40:28:366 consola/(21850:21850): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:40:28:366 consola/(21850:21850): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:40:28:373 consola/(21850:21850): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:40:28:373 consola/(21850:21850): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:40:28:375 consola/(21850:21852): HOLAAA
+[INFO] 19:40:31:804 consola/(21850:21850): Salimos de la consola
+[INFO] 19:41:14:272 consola/(21874:21874): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:41:14:273 consola/(21874:21874): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:41:14:274 consola/(21874:21874): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:41:14:275 consola/(21874:21874): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:41:14:275 consola/(21874:21874): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:41:14:277 consola/(21874:21876): HOLAAA
+[INFO] 19:41:23:408 consola/(21874:21874): Entró comando: INICIAR_PATOTA
+[INFO] 19:41:23:412 consola/(21874:21874): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:41:23:413 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:413 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:413 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:413 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:414 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:414 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:414 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:414 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:414 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:415 consola/(21874:21874): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:41:23:415 consola/(21874:21874): HOLIS
+[INFO] 19:41:23:416 consola/(21874:21874): Recibi el siguiente mensaje..
+[INFO] 19:41:23:417 consola/(21874:21874): Proceso: RAM
+[INFO] 19:41:23:418 consola/(21874:21874): Comando: 200
+[INFO] 19:41:23:418 consola/(21874:21874): Tamanio: 9
+[INFO] 19:41:23:418 consola/(21874:21874): Memoria OK
+[INFO] 19:41:23:419 consola/(21874:21874): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:41:23:419 consola/(21874:21874): Recibi el siguiente mensaje..
+[INFO] 19:41:23:460 consola/(21874:21874): Proceso: RAM
+[INFO] 19:41:23:497 consola/(21874:21874): Comando: 200
+[INFO] 19:41:23:498 consola/(21874:21874): Tamanio: 30
+[INFO] 19:41:23:499 consola/(21874:21874): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:41:23:500 consola/(21874:21874): Recibi el siguiente mensaje..
+[INFO] 19:41:23:500 consola/(21874:21886): ----------------------------------
+[INFO] 19:41:23:501 consola/(21874:21883): ----------------------------------
+[INFO] 19:41:23:501 consola/(21874:21884): ----------------------------------
+[INFO] 19:41:23:500 consola/(21874:21885): ----------------------------------
+[INFO] 19:41:23:538 consola/(21874:21874): Proceso: RAM
+[INFO] 19:41:23:578 consola/(21874:21874): Comando: 200
+[INFO] 19:41:23:578 consola/(21874:21874): Tamanio: 30
+[INFO] 19:41:23:579 consola/(21874:21874): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:41:23:580 consola/(21874:21874): Recibi el siguiente mensaje..
+[INFO] 19:41:23:580 consola/(21874:21890): ----------------------------------
+[INFO] 19:41:23:580 consola/(21874:21888): ----------------------------------
+[INFO] 19:41:23:580 consola/(21874:21889): ----------------------------------
+[INFO] 19:41:23:581 consola/(21874:21887): ----------------------------------
+[INFO] 19:41:23:618 consola/(21874:21874): Proceso: RAM
+[INFO] 19:41:23:657 consola/(21874:21874): Comando: 200
+[INFO] 19:41:23:657 consola/(21874:21874): Tamanio: 30
+[INFO] 19:41:23:658 consola/(21874:21874): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:41:23:658 consola/(21874:21874): Recibi el siguiente mensaje..
+[INFO] 19:41:23:658 consola/(21874:21894): ----------------------------------
+[INFO] 19:41:23:658 consola/(21874:21893): ----------------------------------
+[INFO] 19:41:23:658 consola/(21874:21892): ----------------------------------
+[INFO] 19:41:23:659 consola/(21874:21891): ----------------------------------
+[INFO] 19:41:23:698 consola/(21874:21874): Proceso: RAM
+[INFO] 19:41:23:737 consola/(21874:21874): Comando: 200
+[INFO] 19:41:23:737 consola/(21874:21874): Tamanio: 30
+[INFO] 19:41:23:738 consola/(21874:21898): ----------------------------------
+[INFO] 19:41:23:739 consola/(21874:21897): ----------------------------------
+[INFO] 19:41:23:739 consola/(21874:21896): ----------------------------------
+[INFO] 19:41:23:739 consola/(21874:21895): ----------------------------------
+[INFO] 19:41:26:978 consola/(21874:21874): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:41:26:979 consola/(21874:21874): Se inició la planificación. Estado de la flag: 1
+[INFO] 19:41:26:979 consola/(21874:21876): ----------------------------------
+[INFO] 19:41:26:980 consola/(21874:21876): Se ejecuta el hilo de New a Ready
+[INFO] 19:41:26:980 consola/(21874:21876): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:41:26:980 consola/(21874:21876): TID:0
+[INFO] 19:41:26:980 consola/(21874:21876): Status:N
+[INFO] 19:41:26:981 consola/(21874:21876): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:41:26:981 consola/(21874:21876): Se paso nodo a Ready
+[INFO] 19:41:26:981 consola/(21874:21876): ----------------------------------
+[INFO] 19:41:26:981 consola/(21874:21876): Se ejecuta el hilo de New a Ready
+[INFO] 19:41:26:982 consola/(21874:21876): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:41:26:982 consola/(21874:21876): TID:1
+[INFO] 19:41:26:982 consola/(21874:21876): Status:N
+[INFO] 19:41:26:982 consola/(21874:21876): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:41:26:982 consola/(21874:21876): Se paso nodo a Ready
+[INFO] 19:41:26:983 consola/(21874:21876): ----------------------------------
+[INFO] 19:41:26:983 consola/(21874:21876): Se ejecuta el hilo de New a Ready
+[INFO] 19:41:26:983 consola/(21874:21876): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:41:26:983 consola/(21874:21876): TID:2
+[INFO] 19:41:26:983 consola/(21874:21876): Status:N
+[INFO] 19:41:26:984 consola/(21874:21876): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:41:26:984 consola/(21874:21876): Se paso nodo a Ready
+[INFO] 19:41:26:984 consola/(21874:21876): ----------------------------------
+[INFO] 19:41:26:984 consola/(21874:21876): Se ejecuta el hilo de New a Ready
+[INFO] 19:41:26:984 consola/(21874:21876): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:41:26:985 consola/(21874:21876): TID:3
+[INFO] 19:41:26:985 consola/(21874:21876): Status:N
+[INFO] 19:41:26:985 consola/(21874:21876): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:41:26:985 consola/(21874:21876): Se paso nodo a Ready
+[INFO] 19:41:26:985 consola/(21874:21876): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 19:41:26:986 consola/(21874:21876): ----------------------------------
+[INFO] 19:42:24:292 consola/(21874:21874): Salimos de la consola
+[INFO] 19:43:00:427 consola/(21917:21917): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:43:00:428 consola/(21917:21917): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:43:00:429 consola/(21917:21917): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:43:00:431 consola/(21917:21917): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:43:00:432 consola/(21917:21917): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:43:00:435 consola/(21917:21919): HOLAAA
+[INFO] 19:43:36:625 consola/(21917:21917): Entró comando: INICIAR_PATOTA
+[INFO] 19:43:36:632 consola/(21917:21917): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:43:36:633 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:633 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:634 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:634 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:635 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:635 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:636 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:637 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:640 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:640 consola/(21917:21917): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:43:36:641 consola/(21917:21917): HOLIS
+[INFO] 19:43:36:641 consola/(21917:21917): Recibi el siguiente mensaje..
+[INFO] 19:43:36:642 consola/(21917:21917): Proceso: RAM
+[INFO] 19:43:36:642 consola/(21917:21917): Comando: 555
+[INFO] 19:43:36:643 consola/(21917:21917): Tamanio: 9
+[ERROR] 19:43:36:643 consola/(21917:21917): No se pudo crear el PCB por falta de memoria
+[INFO] 19:43:44:009 consola/(21929:21929): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:43:44:010 consola/(21929:21929): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:43:44:014 consola/(21929:21929): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:43:44:014 consola/(21929:21929): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:43:44:015 consola/(21929:21929): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:43:44:017 consola/(21929:21931): HOLAAA
+[INFO] 19:44:20:466 consola/(21929:21929): Entró comando: INICIAR_PATOTA
+[INFO] 19:44:20:472 consola/(21929:21929): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:44:20:473 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:473 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:473 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:474 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:474 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:474 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:475 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:475 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:475 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:476 consola/(21929:21929): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:44:20:476 consola/(21929:21929): HOLIS
+[INFO] 19:44:20:477 consola/(21929:21929): Recibi el siguiente mensaje..
+[INFO] 19:44:20:478 consola/(21929:21929): Proceso: RAM
+[INFO] 19:44:20:481 consola/(21929:21929): Comando: 200
+[INFO] 19:44:20:481 consola/(21929:21929): Tamanio: 9
+[INFO] 19:44:20:482 consola/(21929:21929): Memoria OK
+[INFO] 19:44:20:482 consola/(21929:21929): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:44:20:482 consola/(21929:21929): Recibi el siguiente mensaje..
+[INFO] 19:44:20:525 consola/(21929:21929): Proceso: RAM
+[INFO] 19:44:20:561 consola/(21929:21929): Comando: 200
+[INFO] 19:44:20:562 consola/(21929:21929): Tamanio: 30
+[INFO] 19:44:20:563 consola/(21929:21929): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:44:20:563 consola/(21929:21929): Recibi el siguiente mensaje..
+[INFO] 19:44:20:564 consola/(21929:21943): ----------------------------------
+[INFO] 19:44:20:569 consola/(21929:21941): ----------------------------------
+[INFO] 19:44:20:564 consola/(21929:21942): ----------------------------------
+[INFO] 19:44:20:569 consola/(21929:21940): ----------------------------------
+[INFO] 19:44:20:607 consola/(21929:21929): Proceso: RAM
+[INFO] 19:44:20:646 consola/(21929:21929): Comando: 200
+[INFO] 19:44:20:646 consola/(21929:21929): Tamanio: 30
+[INFO] 19:44:20:647 consola/(21929:21929): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:44:20:647 consola/(21929:21929): Recibi el siguiente mensaje..
+[INFO] 19:44:20:647 consola/(21929:21946): ----------------------------------
+[INFO] 19:44:20:647 consola/(21929:21947): ----------------------------------
+[INFO] 19:44:20:648 consola/(21929:21945): ----------------------------------
+[INFO] 19:44:20:648 consola/(21929:21944): ----------------------------------
+[INFO] 19:44:20:688 consola/(21929:21929): Proceso: RAM
+[INFO] 19:44:20:725 consola/(21929:21929): Comando: 200
+[INFO] 19:44:20:725 consola/(21929:21929): Tamanio: 30
+[INFO] 19:44:20:726 consola/(21929:21929): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:44:20:727 consola/(21929:21929): Recibi el siguiente mensaje..
+[INFO] 19:44:20:727 consola/(21929:21951): ----------------------------------
+[INFO] 19:44:20:727 consola/(21929:21950): ----------------------------------
+[INFO] 19:44:20:727 consola/(21929:21949): ----------------------------------
+[INFO] 19:44:20:727 consola/(21929:21948): ----------------------------------
+[INFO] 19:44:20:767 consola/(21929:21929): Proceso: RAM
+[INFO] 19:44:20:805 consola/(21929:21929): Comando: 200
+[INFO] 19:44:20:806 consola/(21929:21929): Tamanio: 30
+[INFO] 19:44:20:806 consola/(21929:21955): ----------------------------------
+[INFO] 19:44:20:806 consola/(21929:21954): ----------------------------------
+[INFO] 19:44:20:806 consola/(21929:21952): ----------------------------------
+[INFO] 19:44:20:806 consola/(21929:21953): ----------------------------------
+[INFO] 19:44:25:129 consola/(21929:21929): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:44:25:130 consola/(21929:21929): Se inició la planificación. Estado de la flag: 1
+[INFO] 19:44:25:131 consola/(21929:21931): ----------------------------------
+[INFO] 19:44:25:131 consola/(21929:21931): Se ejecuta el hilo de New a Ready
+[INFO] 19:44:25:131 consola/(21929:21931): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:44:25:132 consola/(21929:21931): TID:0
+[INFO] 19:44:25:132 consola/(21929:21931): Status:N
+[INFO] 19:44:25:132 consola/(21929:21931): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:44:25:132 consola/(21929:21931): Se paso nodo a Ready
+[INFO] 19:44:25:132 consola/(21929:21931): ----------------------------------
+[INFO] 19:44:25:133 consola/(21929:21931): Se ejecuta el hilo de New a Ready
+[INFO] 19:44:25:133 consola/(21929:21931): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:44:25:133 consola/(21929:21931): TID:1
+[INFO] 19:44:25:133 consola/(21929:21931): Status:N
+[INFO] 19:44:25:133 consola/(21929:21931): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:44:25:134 consola/(21929:21931): Se paso nodo a Ready
+[INFO] 19:44:25:134 consola/(21929:21931): ----------------------------------
+[INFO] 19:44:25:134 consola/(21929:21931): Se ejecuta el hilo de New a Ready
+[INFO] 19:44:25:135 consola/(21929:21931): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:44:25:135 consola/(21929:21931): TID:2
+[INFO] 19:44:25:135 consola/(21929:21931): Status:N
+[INFO] 19:44:25:136 consola/(21929:21931): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:44:25:136 consola/(21929:21931): Se paso nodo a Ready
+[INFO] 19:44:25:136 consola/(21929:21931): ----------------------------------
+[INFO] 19:44:25:136 consola/(21929:21931): Se ejecuta el hilo de New a Ready
+[INFO] 19:44:25:136 consola/(21929:21931): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:44:25:137 consola/(21929:21931): TID:3
+[INFO] 19:44:25:137 consola/(21929:21931): Status:N
+[INFO] 19:44:25:137 consola/(21929:21931): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:44:25:137 consola/(21929:21931): Se paso nodo a Ready
+[INFO] 19:44:25:138 consola/(21929:21931): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 19:44:25:138 consola/(21929:21931): ----------------------------------
+[INFO] 19:44:25:138 consola/(21929:21932): ----------------------------------
+[INFO] 19:44:25:138 consola/(21929:21932): Se ejecuta el hilo de Ready a Exec
+[INFO] 19:44:25:138 consola/(21929:21932): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 19:44:25:139 consola/(21929:21932): TID:0
+[INFO] 19:44:25:139 consola/(21929:21932): Status:R
+[INFO] 19:44:25:139 consola/(21929:21932): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:44:25:139 consola/(21929:21932): Se paso Tripulante a Exec
+[INFO] 19:44:25:139 consola/(21929:21932): Hay 1 nodos en Exec
+[INFO] 19:44:25:140 consola/(21929:21932): ----------------------------------
+[INFO] 19:44:25:140 consola/(21929:21932): Se ejecuta el hilo de Ready a Exec
+[INFO] 19:44:25:140 consola/(21929:21932): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 19:44:25:140 consola/(21929:21932): TID:1
+[INFO] 19:44:25:140 consola/(21929:21932): Status:R
+[INFO] 19:44:25:141 consola/(21929:21932): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:44:25:141 consola/(21929:21932): Se paso Tripulante a Exec
+[INFO] 19:44:25:141 consola/(21929:21932): Hay 2 nodos en Exec
+[INFO] 19:44:25:141 consola/(21929:21932): Se comienza a iterar signals...
+[INFO] 19:44:25:142 consola/(21929:21932): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 19:44:25:142 consola/(21929:21940): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:0 
+[INFO] 19:44:25:142 consola/(21929:21941): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:1 
+[INFO] 19:44:25:142 consola/(21929:21941): Tripulante:1 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 19:44:25:143 consola/(21929:21941): Se ejecuta la tarea del tripulante
+[INFO] 19:44:25:142 consola/(21929:21940): Tripulante:0 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 19:44:25:143 consola/(21929:21940): Se ejecuta la tarea del tripulante
+[INFO] 19:44:25:143 consola/(21929:21940): El tripulante llegó a la posición
+[INFO] 19:44:25:143 consola/(21929:21940): Se procede a enviar los mensajes a los otros procesos..
+[INFO] 19:44:25:143 consola/(21929:21941): El tripulante llegó a la posición
+[INFO] 19:44:25:142 consola/(21929:21932): ----------------------------------
+[ERROR] 19:44:25:144 consola/(21929:21940): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:44:25:144 consola/(21929:21941): Se procede a enviar los mensajes a los otros procesos..
+[ERROR] 19:44:25:145 consola/(21929:21941): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:44:25:145 consola/(21929:21941): Se debe realizar una tarea normal (no de I/O)
+[INFO] 19:44:25:144 consola/(21929:21940): Se debe realizar una tarea normal (no de I/O)
+[INFO] 19:53:25:822 consola/(21986:21986): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:53:25:823 consola/(21986:21986): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:53:25:824 consola/(21986:21986): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:53:25:841 consola/(21986:21986): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:53:25:852 consola/(21986:21986): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:53:25:854 consola/(21986:21988): HOLAAA
+[INFO] 19:53:42:932 consola/(21986:21986): Entró comando: INICIAR_PATOTA
+[INFO] 19:53:42:938 consola/(21986:21986): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:53:42:939 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:939 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:940 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:940 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:940 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:940 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:941 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:941 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:941 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:942 consola/(21986:21986): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:53:42:942 consola/(21986:21986): HOLIS
+[INFO] 19:53:42:944 consola/(21986:21986): Recibi el siguiente mensaje..
+[INFO] 19:53:42:945 consola/(21986:21986): Proceso: RAM
+[INFO] 19:53:42:945 consola/(21986:21986): Comando: 200
+[INFO] 19:53:42:946 consola/(21986:21986): Tamanio: 9
+[INFO] 19:53:42:946 consola/(21986:21986): Memoria OK
+[INFO] 19:53:42:946 consola/(21986:21986): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:53:42:946 consola/(21986:21986): Recibi el siguiente mensaje..
+[INFO] 19:53:42:986 consola/(21986:21986): Proceso: RAM
+[INFO] 19:53:43:025 consola/(21986:21986): Comando: 200
+[INFO] 19:53:43:026 consola/(21986:21986): Tamanio: 30
+[INFO] 19:53:43:026 consola/(21986:21986): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:53:43:026 consola/(21986:21986): Recibi el siguiente mensaje..
+[INFO] 19:53:43:027 consola/(21986:21997): ----------------------------------
+[INFO] 19:53:43:027 consola/(21986:21998): ----------------------------------
+[INFO] 19:53:43:027 consola/(21986:21996): ----------------------------------
+[INFO] 19:53:43:028 consola/(21986:21995): ----------------------------------
+[INFO] 19:53:43:067 consola/(21986:21986): Proceso: RAM
+[INFO] 19:53:43:106 consola/(21986:21986): Comando: 200
+[INFO] 19:53:43:106 consola/(21986:21986): Tamanio: 30
+[INFO] 19:53:43:106 consola/(21986:21986): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:53:43:107 consola/(21986:21986): Recibi el siguiente mensaje..
+[INFO] 19:53:43:107 consola/(21986:22002): ----------------------------------
+[INFO] 19:53:43:107 consola/(21986:22001): ----------------------------------
+[INFO] 19:53:43:107 consola/(21986:22000): ----------------------------------
+[INFO] 19:53:43:107 consola/(21986:21999): ----------------------------------
+[INFO] 19:53:43:147 consola/(21986:21986): Proceso: RAM
+[INFO] 19:53:43:185 consola/(21986:21986): Comando: 200
+[INFO] 19:53:43:185 consola/(21986:21986): Tamanio: 30
+[INFO] 19:53:43:186 consola/(21986:21986): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:53:43:186 consola/(21986:21986): Recibi el siguiente mensaje..
+[INFO] 19:53:43:186 consola/(21986:22006): ----------------------------------
+[INFO] 19:53:43:186 consola/(21986:22005): ----------------------------------
+[INFO] 19:53:43:186 consola/(21986:22004): ----------------------------------
+[INFO] 19:53:43:187 consola/(21986:22003): ----------------------------------
+[INFO] 19:53:43:235 consola/(21986:21986): Proceso: RAM
+[INFO] 19:53:43:273 consola/(21986:21986): Comando: 200
+[INFO] 19:53:43:273 consola/(21986:21986): Tamanio: 30
+[INFO] 19:53:43:274 consola/(21986:22010): ----------------------------------
+[INFO] 19:53:43:274 consola/(21986:22009): ----------------------------------
+[INFO] 19:53:43:274 consola/(21986:22007): ----------------------------------
+[INFO] 19:53:43:274 consola/(21986:22008): ----------------------------------
+[INFO] 19:53:51:869 consola/(21986:21986): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:53:51:869 consola/(21986:21986): Se inició la planificación. Estado de la flag: 1
+[INFO] 19:53:51:870 consola/(21986:21988): ----------------------------------
+[INFO] 19:53:51:870 consola/(21986:21988): Se ejecuta el hilo de New a Ready
+[INFO] 19:53:51:871 consola/(21986:21988): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:53:51:871 consola/(21986:21988): TID:0
+[INFO] 19:53:51:871 consola/(21986:21988): Status:N
+[INFO] 19:53:51:871 consola/(21986:21988): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:53:51:871 consola/(21986:21988): Se paso nodo a Ready
+[INFO] 19:53:51:871 consola/(21986:21988): ----------------------------------
+[INFO] 19:53:51:872 consola/(21986:21988): Se ejecuta el hilo de New a Ready
+[INFO] 19:53:51:872 consola/(21986:21988): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:53:51:872 consola/(21986:21988): TID:1
+[INFO] 19:53:51:872 consola/(21986:21988): Status:N
+[INFO] 19:53:51:872 consola/(21986:21988): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:53:51:873 consola/(21986:21988): Se paso nodo a Ready
+[INFO] 19:53:51:873 consola/(21986:21988): ----------------------------------
+[INFO] 19:53:51:873 consola/(21986:21988): Se ejecuta el hilo de New a Ready
+[INFO] 19:53:51:873 consola/(21986:21988): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:53:51:874 consola/(21986:21988): TID:2
+[INFO] 19:53:51:874 consola/(21986:21988): Status:N
+[INFO] 19:53:51:874 consola/(21986:21988): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:53:51:874 consola/(21986:21988): Se paso nodo a Ready
+[INFO] 19:53:51:874 consola/(21986:21988): ----------------------------------
+[INFO] 19:53:51:875 consola/(21986:21988): Se ejecuta el hilo de New a Ready
+[INFO] 19:53:51:875 consola/(21986:21988): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:53:51:875 consola/(21986:21988): TID:3
+[INFO] 19:53:51:875 consola/(21986:21988): Status:N
+[INFO] 19:53:51:876 consola/(21986:21988): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:53:51:876 consola/(21986:21988): Se paso nodo a Ready
+[INFO] 19:53:51:876 consola/(21986:21988): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 19:53:51:876 consola/(21986:21988): ----------------------------------
+[INFO] 19:53:51:876 consola/(21986:21989): ----------------------------------
+[INFO] 19:53:51:877 consola/(21986:21989): Se ejecuta el hilo de Ready a Exec
+[INFO] 19:53:51:877 consola/(21986:21989): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 19:53:51:877 consola/(21986:21989): TID:0
+[INFO] 19:53:51:877 consola/(21986:21989): Status:R
+[INFO] 19:53:51:877 consola/(21986:21989): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:53:51:878 consola/(21986:21989): Se paso Tripulante a Exec
+[INFO] 19:53:51:878 consola/(21986:21989): Hay 1 nodos en Exec
+[INFO] 19:53:51:878 consola/(21986:21989): ----------------------------------
+[INFO] 19:53:51:878 consola/(21986:21989): Se ejecuta el hilo de Ready a Exec
+[INFO] 19:53:51:879 consola/(21986:21989): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 19:53:51:879 consola/(21986:21989): TID:1
+[INFO] 19:53:51:879 consola/(21986:21989): Status:R
+[INFO] 19:53:51:879 consola/(21986:21989): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:53:51:879 consola/(21986:21989): Se paso Tripulante a Exec
+[INFO] 19:53:51:880 consola/(21986:21989): Hay 2 nodos en Exec
+[INFO] 19:53:51:880 consola/(21986:21989): Se comienza a iterar signals...
+[INFO] 19:53:51:880 consola/(21986:21989): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 19:53:51:880 consola/(21986:21995): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:0 
+[INFO] 19:53:51:880 consola/(21986:21996): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:1 
+[INFO] 19:53:51:881 consola/(21986:21996): Tripulante:1 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 19:53:51:881 consola/(21986:21996): Se ejecuta la tarea del tripulante
+[INFO] 19:53:51:880 consola/(21986:21995): Tripulante:0 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 19:53:51:881 consola/(21986:21995): Se ejecuta la tarea del tripulante
+[INFO] 19:53:51:881 consola/(21986:21995): El tripulante llegó a la posición
+[INFO] 19:53:51:882 consola/(21986:21995): Se procede a enviar los mensajes a los otros procesos..
+[INFO] 19:53:51:881 consola/(21986:21996): Se comienza a mover el tripulante una posicion..
+[INFO] 19:53:51:880 consola/(21986:21989): ----------------------------------
+[ERROR] 19:53:51:882 consola/(21986:21995): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:53:51:882 consola/(21986:21996): El tripulante ya llegó a la posición de la tarea
+[INFO] 19:53:51:883 consola/(21986:21995): Se debe realizar una tarea normal (no de I/O)
+[INFO] 19:54:44:313 consola/(21986:21986): --------------------------------------------------------------------
+[INFO] 19:54:44:315 consola/(21986:21986): Entró comando: LISTAR_TRIPULANTES
+[INFO] 19:54:44:315 consola/(21986:21986): Estado de la Nave: 28/06/21 19:54:44
+[INFO] 19:54:44:315 consola/(21986:21986): Tripulante: 0	
+[INFO] 19:54:44:316 consola/(21986:21986): Patota: 1	
+[INFO] 19:54:44:316 consola/(21986:21986): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:54:44:316 consola/(21986:21986): Posicion X e Y: 1 - 1
+
+[INFO] 19:54:44:316 consola/(21986:21986): Status: EXEC
+
+[INFO] 19:54:44:317 consola/(21986:21986): Tripulante: 1	
+[INFO] 19:54:44:317 consola/(21986:21986): Patota: 1	
+[INFO] 19:54:44:317 consola/(21986:21986): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:54:44:317 consola/(21986:21986): Posicion X e Y: 0 - 0
+
+[INFO] 19:54:44:318 consola/(21986:21986): Status: EXEC
+
+[INFO] 19:54:44:318 consola/(21986:21986): Tripulante: 2	
+[INFO] 19:54:44:318 consola/(21986:21986): Patota: 1	
+[INFO] 19:54:44:319 consola/(21986:21986): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:54:44:319 consola/(21986:21986): Posicion X e Y: 0 - 0
+
+[INFO] 19:54:44:319 consola/(21986:21986): Status: READY
+
+[INFO] 19:54:44:319 consola/(21986:21986): Tripulante: 3	
+[INFO] 19:54:44:319 consola/(21986:21986): Patota: 1	
+[INFO] 19:54:44:320 consola/(21986:21986): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:54:44:320 consola/(21986:21986): Posicion X e Y: 0 - 0
+
+[INFO] 19:54:44:320 consola/(21986:21986): Status: READY
+
+[INFO] 19:54:44:320 consola/(21986:21986): --------------------------------------------------------------------
+[INFO] 20:00:25:797 consola/(22044:22044): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:00:25:798 consola/(22044:22044): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:00:25:798 consola/(22044:22044): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 20:00:25:799 consola/(22044:22044): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 20:00:25:800 consola/(22044:22044): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 20:00:25:802 consola/(22044:22046): HOLAAA
+[INFO] 20:00:34:614 consola/(22044:22044): Entró comando: INICIAR_PATOTA
+[INFO] 20:00:34:620 consola/(22044:22044): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:00:34:621 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:622 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:622 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:622 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:623 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:623 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:624 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:624 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:624 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:625 consola/(22044:22044): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:00:34:625 consola/(22044:22044): HOLIS
+[INFO] 20:00:34:626 consola/(22044:22044): Recibi el siguiente mensaje..
+[INFO] 20:00:34:628 consola/(22044:22044): Proceso: RAM
+[INFO] 20:00:34:628 consola/(22044:22044): Comando: 200
+[INFO] 20:00:34:628 consola/(22044:22044): Tamanio: 9
+[INFO] 20:00:34:629 consola/(22044:22044): Memoria OK
+[INFO] 20:00:34:629 consola/(22044:22044): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:00:34:629 consola/(22044:22044): Recibi el siguiente mensaje..
+[INFO] 20:00:34:670 consola/(22044:22044): Proceso: RAM
+[INFO] 20:00:34:709 consola/(22044:22044): Comando: 200
+[INFO] 20:00:34:710 consola/(22044:22044): Tamanio: 30
+[INFO] 20:00:34:710 consola/(22044:22044): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:00:34:710 consola/(22044:22044): Recibi el siguiente mensaje..
+[INFO] 20:00:34:711 consola/(22044:22056): ----------------------------------
+[INFO] 20:00:34:713 consola/(22044:22054): ----------------------------------
+[INFO] 20:00:34:711 consola/(22044:22055): ----------------------------------
+[INFO] 20:00:34:713 consola/(22044:22053): ----------------------------------
+[INFO] 20:00:34:751 consola/(22044:22044): Proceso: RAM
+[INFO] 20:00:34:790 consola/(22044:22044): Comando: 200
+[INFO] 20:00:34:791 consola/(22044:22044): Tamanio: 30
+[INFO] 20:00:34:791 consola/(22044:22044): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:00:34:792 consola/(22044:22044): Recibi el siguiente mensaje..
+[INFO] 20:00:34:792 consola/(22044:22060): ----------------------------------
+[INFO] 20:00:34:792 consola/(22044:22059): ----------------------------------
+[INFO] 20:00:34:793 consola/(22044:22058): ----------------------------------
+[INFO] 20:00:34:793 consola/(22044:22057): ----------------------------------
+[INFO] 20:00:34:831 consola/(22044:22044): Proceso: RAM
+[INFO] 20:00:34:869 consola/(22044:22044): Comando: 200
+[INFO] 20:00:34:870 consola/(22044:22044): Tamanio: 30
+[INFO] 20:00:34:870 consola/(22044:22044): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:00:34:870 consola/(22044:22044): Recibi el siguiente mensaje..
+[INFO] 20:00:34:871 consola/(22044:22064): ----------------------------------
+[INFO] 20:00:34:871 consola/(22044:22063): ----------------------------------
+[INFO] 20:00:34:871 consola/(22044:22062): ----------------------------------
+[INFO] 20:00:34:871 consola/(22044:22061): ----------------------------------
+[INFO] 20:00:34:911 consola/(22044:22044): Proceso: RAM
+[INFO] 20:00:34:949 consola/(22044:22044): Comando: 200
+[INFO] 20:00:34:950 consola/(22044:22044): Tamanio: 30
+[INFO] 20:00:34:950 consola/(22044:22068): ----------------------------------
+[INFO] 20:00:34:951 consola/(22044:22066): ----------------------------------
+[INFO] 20:00:34:951 consola/(22044:22067): ----------------------------------
+[INFO] 20:00:34:951 consola/(22044:22065): ----------------------------------
+[INFO] 20:00:41:114 consola/(22044:22044): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:00:41:115 consola/(22044:22044): Se inició la planificación. Estado de la flag: 1
+[INFO] 20:00:41:115 consola/(22044:22046): ----------------------------------
+[INFO] 20:00:41:116 consola/(22044:22046): Se ejecuta el hilo de New a Ready
+[INFO] 20:00:41:116 consola/(22044:22046): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:00:41:116 consola/(22044:22046): TID:0
+[INFO] 20:00:41:116 consola/(22044:22046): Status:N
+[INFO] 20:00:41:117 consola/(22044:22046): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:00:41:117 consola/(22044:22046): Se paso nodo a Ready
+[INFO] 20:00:41:117 consola/(22044:22046): ----------------------------------
+[INFO] 20:00:41:117 consola/(22044:22046): Se ejecuta el hilo de New a Ready
+[INFO] 20:00:41:117 consola/(22044:22046): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:00:41:118 consola/(22044:22046): TID:1
+[INFO] 20:00:41:118 consola/(22044:22046): Status:N
+[INFO] 20:00:41:118 consola/(22044:22046): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:00:41:118 consola/(22044:22046): Se paso nodo a Ready
+[INFO] 20:00:41:118 consola/(22044:22046): ----------------------------------
+[INFO] 20:00:41:119 consola/(22044:22046): Se ejecuta el hilo de New a Ready
+[INFO] 20:00:41:119 consola/(22044:22046): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:00:41:119 consola/(22044:22046): TID:2
+[INFO] 20:00:41:119 consola/(22044:22046): Status:N
+[INFO] 20:00:41:119 consola/(22044:22046): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:00:41:119 consola/(22044:22046): Se paso nodo a Ready
+[INFO] 20:00:41:120 consola/(22044:22046): ----------------------------------
+[INFO] 20:00:41:120 consola/(22044:22046): Se ejecuta el hilo de New a Ready
+[INFO] 20:00:41:120 consola/(22044:22046): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:00:41:120 consola/(22044:22046): TID:3
+[INFO] 20:00:41:120 consola/(22044:22046): Status:N
+[INFO] 20:00:41:121 consola/(22044:22046): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:00:41:121 consola/(22044:22046): Se paso nodo a Ready
+[INFO] 20:00:41:121 consola/(22044:22046): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 20:00:41:121 consola/(22044:22046): ----------------------------------
+[INFO] 20:00:41:122 consola/(22044:22047): ----------------------------------
+[INFO] 20:00:41:122 consola/(22044:22047): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:00:41:122 consola/(22044:22047): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:00:41:122 consola/(22044:22047): TID:0
+[INFO] 20:00:41:123 consola/(22044:22047): Status:R
+[INFO] 20:00:41:123 consola/(22044:22047): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:00:41:123 consola/(22044:22047): Se paso Tripulante a Exec
+[INFO] 20:00:41:123 consola/(22044:22047): Hay 1 nodos en Exec
+[INFO] 20:00:41:123 consola/(22044:22047): ----------------------------------
+[INFO] 20:00:41:123 consola/(22044:22047): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:00:41:124 consola/(22044:22047): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:00:41:124 consola/(22044:22047): TID:1
+[INFO] 20:00:41:124 consola/(22044:22047): Status:R
+[INFO] 20:00:41:125 consola/(22044:22047): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:00:41:125 consola/(22044:22047): Se paso Tripulante a Exec
+[INFO] 20:00:41:125 consola/(22044:22047): Hay 2 nodos en Exec
+[INFO] 20:00:41:125 consola/(22044:22047): ----------------------------------
+[INFO] 20:00:41:126 consola/(22044:22047): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:00:41:126 consola/(22044:22047): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:00:41:126 consola/(22044:22047): TID:2
+[INFO] 20:00:41:126 consola/(22044:22047): Status:R
+[INFO] 20:00:41:127 consola/(22044:22047): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:00:41:127 consola/(22044:22047): Se paso Tripulante a Exec
+[INFO] 20:00:41:127 consola/(22044:22047): Hay 3 nodos en Exec
+[INFO] 20:00:41:127 consola/(22044:22047): Se comienza a iterar signals...
+[INFO] 20:00:41:127 consola/(22044:22047): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 20:00:41:127 consola/(22044:22053): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:0 
+[INFO] 20:00:41:127 consola/(22044:22055): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:2 
+[INFO] 20:00:41:128 consola/(22044:22055): Tripulante:2 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:00:41:127 consola/(22044:22054): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:1 
+[INFO] 20:00:41:128 consola/(22044:22047): ----------------------------------
+[INFO] 20:00:41:128 consola/(22044:22055): Se ejecuta la tarea del tripulante
+[INFO] 20:00:41:128 consola/(22044:22053): Tripulante:0 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:00:41:129 consola/(22044:22054): Tripulante:1 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:00:41:129 consola/(22044:22054): Se ejecuta la tarea del tripulante
+[INFO] 20:00:41:130 consola/(22044:22054): Se comienza a mover el tripulante una posicion..
+[INFO] 20:00:41:129 consola/(22044:22055): Se comienza a mover el tripulante una posicion..
+[INFO] 20:00:41:129 consola/(22044:22053): Se ejecuta la tarea del tripulante
+[INFO] 20:00:41:130 consola/(22044:22054): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:00:41:130 consola/(22044:22053): Se comienza a mover el tripulante una posicion..
+[INFO] 20:00:41:130 consola/(22044:22055): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[ERROR] 20:00:41:131 consola/(22044:22054): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:00:41:131 consola/(22044:22053): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[ERROR] 20:00:41:131 consola/(22044:22055): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[ERROR] 20:00:41:132 consola/(22044:22053): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:03:07:166 consola/(22100:22100): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:03:07:167 consola/(22100:22100): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 20:03:07:167 consola/(22100:22100): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 20:03:07:168 consola/(22100:22100): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 20:03:07:168 consola/(22100:22100): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 20:03:07:170 consola/(22100:22101): HOLAAA
+[INFO] 20:03:19:763 consola/(22100:22100): Entró comando: INICIAR_PATOTA
+[INFO] 20:03:19:771 consola/(22100:22100): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:03:19:772 consola/(22100:22100): HOLIS
+[INFO] 20:03:26:340 consola/(22110:22110): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:03:26:341 consola/(22110:22110): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 20:03:26:344 consola/(22110:22110): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 20:03:26:345 consola/(22110:22110): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 20:03:26:346 consola/(22110:22110): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 20:03:26:348 consola/(22110:22111): HOLAAA
+[INFO] 20:03:36:208 consola/(22110:22110): Entró comando: INICIAR_PATOTA
+[INFO] 20:03:36:214 consola/(22110:22110): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:03:36:215 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:215 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:215 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:216 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:216 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:217 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:217 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:217 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:217 consola/(22110:22110): HOLIS
+[ERROR] 20:03:36:218 consola/(22110:22110): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:03:36:218 consola/(22110:22110): HOLIS
+[INFO] 20:03:36:218 consola/(22110:22110): Recibi el siguiente mensaje..
+[INFO] 20:03:36:219 consola/(22110:22110): Proceso: �/
+[INFO] 20:03:36:219 consola/(22110:22110): Comando: 909326899
+[INFO] 20:03:36:219 consola/(22110:22110): Tamanio: 1095910656
+[ERROR] 20:03:36:221 consola/(22110:22110): No se pudo crear el PCB por falta de memoria
+[INFO] 20:04:03:578 consola/(22136:22136): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:04:03:579 consola/(22136:22136): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:04:03:580 consola/(22136:22136): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 20:04:03:583 consola/(22136:22136): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 20:04:03:584 consola/(22136:22136): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 20:04:03:586 consola/(22136:22138): HOLAAA
+[INFO] 20:04:13:609 consola/(22136:22136): Entró comando: INICIAR_PATOTA
+[INFO] 20:04:13:613 consola/(22136:22136): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:04:13:614 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:614 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:614 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:614 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:615 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:615 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:615 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:615 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:615 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:616 consola/(22136:22136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:04:13:616 consola/(22136:22136): HOLIS
+[INFO] 20:04:13:617 consola/(22136:22136): Recibi el siguiente mensaje..
+[INFO] 20:04:13:618 consola/(22136:22136): Proceso: RAM
+[INFO] 20:04:13:618 consola/(22136:22136): Comando: 200
+[INFO] 20:04:13:619 consola/(22136:22136): Tamanio: 9
+[INFO] 20:04:13:619 consola/(22136:22136): Memoria OK
+[INFO] 20:04:13:619 consola/(22136:22136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:04:13:620 consola/(22136:22136): Recibi el siguiente mensaje..
+[INFO] 20:04:13:660 consola/(22136:22136): Proceso: RAM
+[INFO] 20:04:13:697 consola/(22136:22136): Comando: 200
+[INFO] 20:04:13:698 consola/(22136:22136): Tamanio: 30
+[INFO] 20:04:13:699 consola/(22136:22136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:04:13:699 consola/(22136:22136): Recibi el siguiente mensaje..
+[INFO] 20:04:13:699 consola/(22136:22148): ----------------------------------
+[INFO] 20:04:13:700 consola/(22136:22147): ----------------------------------
+[INFO] 20:04:13:700 consola/(22136:22146): ----------------------------------
+[INFO] 20:04:13:700 consola/(22136:22145): ----------------------------------
+[INFO] 20:04:13:738 consola/(22136:22136): Proceso: RAM
+[INFO] 20:04:13:777 consola/(22136:22136): Comando: 200
+[INFO] 20:04:13:778 consola/(22136:22136): Tamanio: 30
+[INFO] 20:04:13:779 consola/(22136:22136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:04:13:779 consola/(22136:22136): Recibi el siguiente mensaje..
+[INFO] 20:04:13:779 consola/(22136:22152): ----------------------------------
+[INFO] 20:04:13:780 consola/(22136:22150): ----------------------------------
+[INFO] 20:04:13:779 consola/(22136:22151): ----------------------------------
+[INFO] 20:04:13:780 consola/(22136:22149): ----------------------------------
+[INFO] 20:04:13:818 consola/(22136:22136): Proceso: RAM
+[INFO] 20:04:13:858 consola/(22136:22136): Comando: 200
+[INFO] 20:04:13:858 consola/(22136:22136): Tamanio: 30
+[INFO] 20:04:13:859 consola/(22136:22136): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:04:13:859 consola/(22136:22136): Recibi el siguiente mensaje..
+[INFO] 20:04:13:859 consola/(22136:22156): ----------------------------------
+[INFO] 20:04:13:859 consola/(22136:22154): ----------------------------------
+[INFO] 20:04:13:859 consola/(22136:22155): ----------------------------------
+[INFO] 20:04:13:859 consola/(22136:22153): ----------------------------------
+[INFO] 20:04:13:899 consola/(22136:22136): Proceso: RAM
+[INFO] 20:04:13:937 consola/(22136:22136): Comando: 200
+[INFO] 20:04:13:938 consola/(22136:22136): Tamanio: 30
+[INFO] 20:04:13:938 consola/(22136:22160): ----------------------------------
+[INFO] 20:04:13:939 consola/(22136:22158): ----------------------------------
+[INFO] 20:04:13:939 consola/(22136:22159): ----------------------------------
+[INFO] 20:04:13:939 consola/(22136:22157): ----------------------------------
+[INFO] 20:04:19:580 consola/(22136:22136): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:04:19:581 consola/(22136:22136): Se inició la planificación. Estado de la flag: 1
+[INFO] 20:04:19:581 consola/(22136:22138): ----------------------------------
+[INFO] 20:04:19:581 consola/(22136:22138): Se ejecuta el hilo de New a Ready
+[INFO] 20:04:19:582 consola/(22136:22138): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:04:19:582 consola/(22136:22138): TID:0
+[INFO] 20:04:19:582 consola/(22136:22138): Status:N
+[INFO] 20:04:19:582 consola/(22136:22138): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:04:19:582 consola/(22136:22138): Se paso nodo a Ready
+[INFO] 20:04:19:582 consola/(22136:22138): ----------------------------------
+[INFO] 20:04:19:583 consola/(22136:22138): Se ejecuta el hilo de New a Ready
+[INFO] 20:04:19:583 consola/(22136:22138): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:04:19:583 consola/(22136:22138): TID:1
+[INFO] 20:04:19:583 consola/(22136:22138): Status:N
+[INFO] 20:04:19:583 consola/(22136:22138): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:04:19:584 consola/(22136:22138): Se paso nodo a Ready
+[INFO] 20:04:19:584 consola/(22136:22138): ----------------------------------
+[INFO] 20:04:19:584 consola/(22136:22138): Se ejecuta el hilo de New a Ready
+[INFO] 20:04:19:584 consola/(22136:22138): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:04:19:584 consola/(22136:22138): TID:2
+[INFO] 20:04:19:585 consola/(22136:22138): Status:N
+[INFO] 20:04:19:585 consola/(22136:22138): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:04:19:585 consola/(22136:22138): Se paso nodo a Ready
+[INFO] 20:04:19:585 consola/(22136:22138): ----------------------------------
+[INFO] 20:04:19:586 consola/(22136:22138): Se ejecuta el hilo de New a Ready
+[INFO] 20:04:19:586 consola/(22136:22138): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:04:19:586 consola/(22136:22138): TID:3
+[INFO] 20:04:19:586 consola/(22136:22138): Status:N
+[INFO] 20:04:19:586 consola/(22136:22138): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:04:19:586 consola/(22136:22138): Se paso nodo a Ready
+[INFO] 20:04:19:587 consola/(22136:22138): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 20:04:19:587 consola/(22136:22138): ----------------------------------
+[INFO] 20:04:19:587 consola/(22136:22139): ----------------------------------
+[INFO] 20:04:19:587 consola/(22136:22139): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:04:19:587 consola/(22136:22139): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:04:19:588 consola/(22136:22139): TID:0
+[INFO] 20:04:19:588 consola/(22136:22139): Status:R
+[INFO] 20:04:19:588 consola/(22136:22139): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:04:19:588 consola/(22136:22139): Se paso Tripulante a Exec
+[INFO] 20:04:19:589 consola/(22136:22139): Hay 1 nodos en Exec
+[INFO] 20:04:19:589 consola/(22136:22139): ----------------------------------
+[INFO] 20:04:19:589 consola/(22136:22139): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:04:19:590 consola/(22136:22139): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:04:19:590 consola/(22136:22139): TID:1
+[INFO] 20:04:19:590 consola/(22136:22139): Status:R
+[INFO] 20:04:19:590 consola/(22136:22139): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:04:19:591 consola/(22136:22139): Se paso Tripulante a Exec
+[INFO] 20:04:19:591 consola/(22136:22139): Hay 2 nodos en Exec
+[INFO] 20:04:19:591 consola/(22136:22139): ----------------------------------
+[INFO] 20:04:19:591 consola/(22136:22139): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:04:19:591 consola/(22136:22139): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:04:19:592 consola/(22136:22139): TID:2
+[INFO] 20:04:19:592 consola/(22136:22139): Status:R
+[INFO] 20:04:19:592 consola/(22136:22139): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:04:19:592 consola/(22136:22139): Se paso Tripulante a Exec
+[INFO] 20:04:19:592 consola/(22136:22139): Hay 3 nodos en Exec
+[INFO] 20:04:19:593 consola/(22136:22139): Se comienza a iterar signals...
+[INFO] 20:04:19:593 consola/(22136:22139): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 20:04:19:593 consola/(22136:22145): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:0 
+[INFO] 20:04:19:593 consola/(22136:22147): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:2 
+[INFO] 20:04:19:593 consola/(22136:22145): Tripulante:0 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:04:19:593 consola/(22136:22146): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:1 
+[INFO] 20:04:19:594 consola/(22136:22146): Tripulante:1 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:04:19:594 consola/(22136:22147): Tripulante:2 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:04:19:594 consola/(22136:22147): Se ejecuta la tarea del tripulante
+[INFO] 20:04:19:594 consola/(22136:22146): Se ejecuta la tarea del tripulante
+[INFO] 20:04:19:595 consola/(22136:22146): Se comienza a mover el tripulante una posicion..
+[INFO] 20:04:19:595 consola/(22136:22147): Se comienza a mover el tripulante una posicion..
+[INFO] 20:04:19:595 consola/(22136:22146): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:04:19:594 consola/(22136:22145): Se ejecuta la tarea del tripulante
+[INFO] 20:04:19:596 consola/(22136:22147): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[ERROR] 20:04:19:596 consola/(22136:22147): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:04:19:596 consola/(22136:22145): El tripulante llegó a la posición
+[INFO] 20:04:19:597 consola/(22136:22145): Se procede a enviar los mensajes a los otros procesos..
+[INFO] 20:04:19:593 consola/(22136:22139): ----------------------------------
+[ERROR] 20:04:19:596 consola/(22136:22146): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[ERROR] 20:04:19:597 consola/(22136:22145): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:04:19:598 consola/(22136:22145): Se debe realizar una tarea normal (no de I/O)
+[INFO] 20:05:55:511 consola/(22136:22136): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 20:06:01:993 consola/(22136:22136): --------------------------------------------------------------------
+[INFO] 20:06:01:993 consola/(22136:22136): Entró comando: LISTAR_TRIPULANTES
+[INFO] 20:06:01:994 consola/(22136:22136): Estado de la Nave: 28/06/21 20:06:01
+[INFO] 20:06:01:994 consola/(22136:22136): Tripulante: 0	
+[INFO] 20:06:01:995 consola/(22136:22136): Patota: 1	
+[INFO] 20:06:01:995 consola/(22136:22136): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:06:01:995 consola/(22136:22136): Posicion X e Y: 1 - 1
+
+[INFO] 20:06:01:995 consola/(22136:22136): Status: EXEC
+
+[INFO] 20:06:01:996 consola/(22136:22136): Tripulante: 1	
+[INFO] 20:06:01:996 consola/(22136:22136): Patota: 1	
+[INFO] 20:06:01:996 consola/(22136:22136): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:06:01:996 consola/(22136:22136): Posicion X e Y: 1 - 0
+
+[INFO] 20:06:01:997 consola/(22136:22136): Status: EXEC
+
+[INFO] 20:06:01:997 consola/(22136:22136): Tripulante: 2	
+[INFO] 20:06:01:997 consola/(22136:22136): Patota: 1	
+[INFO] 20:06:01:997 consola/(22136:22136): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:06:01:997 consola/(22136:22136): Posicion X e Y: 1 - 0
+
+[INFO] 20:06:01:998 consola/(22136:22136): Status: EXEC
+
+[INFO] 20:06:01:998 consola/(22136:22136): Tripulante: 3	
+[INFO] 20:06:01:998 consola/(22136:22136): Patota: 1	
+[INFO] 20:06:01:998 consola/(22136:22136): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:06:01:998 consola/(22136:22136): Posicion X e Y: 0 - 0
+
+[INFO] 20:06:01:999 consola/(22136:22136): Status: READY
+
+[INFO] 20:06:01:999 consola/(22136:22136): --------------------------------------------------------------------
+[INFO] 20:07:09:804 consola/(22182:22182): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, FIFO, 3, 20, 1
+[INFO] 20:07:09:808 consola/(22182:22182): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:07:09:808 consola/(22182:22182): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 20:07:09:809 consola/(22182:22182): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 20:07:09:809 consola/(22182:22182): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 20:07:09:812 consola/(22182:22184): HOLAAA
+[INFO] 20:07:39:058 consola/(22182:22182): Entró comando: INICIAR_PATOTA
+[INFO] 20:07:39:064 consola/(22182:22182): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:07:39:064 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:065 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:065 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:066 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:066 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:066 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:067 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:067 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:067 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:068 consola/(22182:22182): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:07:39:068 consola/(22182:22182): HOLIS
+[INFO] 20:07:39:070 consola/(22182:22182): Recibi el siguiente mensaje..
+[INFO] 20:07:39:074 consola/(22182:22182): Proceso: RAM
+[INFO] 20:07:39:074 consola/(22182:22182): Comando: 200
+[INFO] 20:07:39:074 consola/(22182:22182): Tamanio: 9
+[INFO] 20:07:39:075 consola/(22182:22182): Memoria OK
+[INFO] 20:07:39:075 consola/(22182:22182): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:07:39:075 consola/(22182:22182): Recibi el siguiente mensaje..
+[INFO] 20:07:39:114 consola/(22182:22182): Proceso: RAM
+[INFO] 20:07:39:154 consola/(22182:22182): Comando: 200
+[INFO] 20:07:39:154 consola/(22182:22182): Tamanio: 30
+[INFO] 20:07:39:155 consola/(22182:22182): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:07:39:155 consola/(22182:22182): Recibi el siguiente mensaje..
+[INFO] 20:07:39:155 consola/(22182:22194): ----------------------------------
+[INFO] 20:07:39:156 consola/(22182:22192): ----------------------------------
+[INFO] 20:07:39:155 consola/(22182:22193): ----------------------------------
+[INFO] 20:07:39:156 consola/(22182:22191): ----------------------------------
+[INFO] 20:07:39:195 consola/(22182:22182): Proceso: RAM
+[INFO] 20:07:39:233 consola/(22182:22182): Comando: 200
+[INFO] 20:07:39:233 consola/(22182:22182): Tamanio: 30
+[INFO] 20:07:39:234 consola/(22182:22182): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:07:39:234 consola/(22182:22182): Recibi el siguiente mensaje..
+[INFO] 20:07:39:234 consola/(22182:22198): ----------------------------------
+[INFO] 20:07:39:235 consola/(22182:22196): ----------------------------------
+[INFO] 20:07:39:234 consola/(22182:22197): ----------------------------------
+[INFO] 20:07:39:235 consola/(22182:22195): ----------------------------------
+[INFO] 20:07:39:275 consola/(22182:22182): Proceso: RAM
+[INFO] 20:07:39:313 consola/(22182:22182): Comando: 200
+[INFO] 20:07:39:313 consola/(22182:22182): Tamanio: 30
+[INFO] 20:07:39:314 consola/(22182:22182): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:07:39:315 consola/(22182:22182): Recibi el siguiente mensaje..
+[INFO] 20:07:39:315 consola/(22182:22202): ----------------------------------
+[INFO] 20:07:39:315 consola/(22182:22200): ----------------------------------
+[INFO] 20:07:39:316 consola/(22182:22199): ----------------------------------
+[INFO] 20:07:39:315 consola/(22182:22201): ----------------------------------
+[INFO] 20:07:39:355 consola/(22182:22182): Proceso: RAM
+[INFO] 20:07:39:394 consola/(22182:22182): Comando: 200
+[INFO] 20:07:39:394 consola/(22182:22182): Tamanio: 30
+[INFO] 20:07:39:395 consola/(22182:22206): ----------------------------------
+[INFO] 20:07:39:395 consola/(22182:22205): ----------------------------------
+[INFO] 20:07:39:395 consola/(22182:22204): ----------------------------------
+[INFO] 20:07:39:395 consola/(22182:22203): ----------------------------------
+[INFO] 20:07:53:514 consola/(22182:22182): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:07:53:515 consola/(22182:22182): Se inició la planificación. Estado de la flag: 1
+[INFO] 20:07:53:515 consola/(22182:22184): ----------------------------------
+[INFO] 20:07:53:515 consola/(22182:22184): Se ejecuta el hilo de New a Ready
+[INFO] 20:07:53:515 consola/(22182:22184): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:07:53:516 consola/(22182:22184): TID:0
+[INFO] 20:07:53:516 consola/(22182:22184): Status:N
+[INFO] 20:07:53:516 consola/(22182:22184): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:07:53:516 consola/(22182:22184): Se paso nodo a Ready
+[INFO] 20:07:53:517 consola/(22182:22184): ----------------------------------
+[INFO] 20:07:53:517 consola/(22182:22184): Se ejecuta el hilo de New a Ready
+[INFO] 20:07:53:517 consola/(22182:22184): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:07:53:517 consola/(22182:22184): TID:1
+[INFO] 20:07:53:517 consola/(22182:22184): Status:N
+[INFO] 20:07:53:518 consola/(22182:22184): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:07:53:518 consola/(22182:22184): Se paso nodo a Ready
+[INFO] 20:07:53:518 consola/(22182:22184): ----------------------------------
+[INFO] 20:07:53:518 consola/(22182:22184): Se ejecuta el hilo de New a Ready
+[INFO] 20:07:53:519 consola/(22182:22184): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:07:53:519 consola/(22182:22184): TID:2
+[INFO] 20:07:53:519 consola/(22182:22184): Status:N
+[INFO] 20:07:53:519 consola/(22182:22184): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:07:53:520 consola/(22182:22184): Se paso nodo a Ready
+[INFO] 20:07:53:520 consola/(22182:22184): ----------------------------------
+[INFO] 20:07:53:520 consola/(22182:22184): Se ejecuta el hilo de New a Ready
+[INFO] 20:07:53:520 consola/(22182:22184): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 20:07:53:520 consola/(22182:22184): TID:3
+[INFO] 20:07:53:521 consola/(22182:22184): Status:N
+[INFO] 20:07:53:521 consola/(22182:22184): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:07:53:521 consola/(22182:22184): Se paso nodo a Ready
+[INFO] 20:07:53:521 consola/(22182:22184): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 20:07:53:521 consola/(22182:22184): ----------------------------------
+[INFO] 20:07:53:522 consola/(22182:22185): ----------------------------------
+[INFO] 20:07:53:522 consola/(22182:22185): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:07:53:522 consola/(22182:22185): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:07:53:522 consola/(22182:22185): TID:0
+[INFO] 20:07:53:523 consola/(22182:22185): Status:R
+[INFO] 20:07:53:523 consola/(22182:22185): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:07:53:523 consola/(22182:22185): Se paso Tripulante a Exec
+[INFO] 20:07:53:523 consola/(22182:22185): Hay 1 nodos en Exec
+[INFO] 20:07:53:524 consola/(22182:22185): ----------------------------------
+[INFO] 20:07:53:524 consola/(22182:22185): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:07:53:524 consola/(22182:22185): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:07:53:524 consola/(22182:22185): TID:1
+[INFO] 20:07:53:525 consola/(22182:22185): Status:R
+[INFO] 20:07:53:525 consola/(22182:22185): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:07:53:525 consola/(22182:22185): Se paso Tripulante a Exec
+[INFO] 20:07:53:526 consola/(22182:22185): Hay 2 nodos en Exec
+[INFO] 20:07:53:526 consola/(22182:22185): ----------------------------------
+[INFO] 20:07:53:526 consola/(22182:22185): Se ejecuta el hilo de Ready a Exec
+[INFO] 20:07:53:526 consola/(22182:22185): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 20:07:53:526 consola/(22182:22185): TID:2
+[INFO] 20:07:53:527 consola/(22182:22185): Status:R
+[INFO] 20:07:53:527 consola/(22182:22185): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 20:07:53:527 consola/(22182:22185): Se paso Tripulante a Exec
+[INFO] 20:07:53:527 consola/(22182:22185): Hay 3 nodos en Exec
+[INFO] 20:07:53:527 consola/(22182:22185): Se comienza a iterar signals...
+[INFO] 20:07:53:528 consola/(22182:22185): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 20:07:53:528 consola/(22182:22191): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:0 
+[INFO] 20:07:53:528 consola/(22182:22193): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:2 
+[INFO] 20:07:53:528 consola/(22182:22193): Tripulante:2 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:07:53:528 consola/(22182:22192): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:1 
+[INFO] 20:07:53:528 consola/(22182:22192): Tripulante:1 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:07:53:528 consola/(22182:22191): Tripulante:0 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 20:07:53:529 consola/(22182:22192): Se ejecuta la tarea del tripulante
+[INFO] 20:07:53:528 consola/(22182:22193): Se ejecuta la tarea del tripulante
+[INFO] 20:07:53:529 consola/(22182:22193): Se comienza a mover el tripulante una posicion..
+[INFO] 20:07:53:529 consola/(22182:22192): Se comienza a mover el tripulante una posicion..
+[INFO] 20:07:53:529 consola/(22182:22191): Se ejecuta la tarea del tripulante
+[INFO] 20:07:53:528 consola/(22182:22185): ----------------------------------
+[INFO] 20:07:53:530 consola/(22182:22193): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:07:53:530 consola/(22182:22192): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:07:53:530 consola/(22182:22191): El tripulante llegó a la posición
+[INFO] 20:07:53:531 consola/(22182:22191): Se procede a enviar los mensajes a los otros procesos..
+[ERROR] 20:07:53:531 consola/(22182:22192): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[ERROR] 20:07:53:531 consola/(22182:22191): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:07:53:532 consola/(22182:22191): Se debe realizar una tarea normal (no de I/O)
+[ERROR] 20:07:53:531 consola/(22182:22193): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻

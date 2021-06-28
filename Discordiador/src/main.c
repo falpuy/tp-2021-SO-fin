@@ -74,12 +74,12 @@ void setearConfiguraciones (){
 
     
     pthread_create(&hNewaReady, NULL, (void *) funcionhNewaReady, logger);
-    // pthread_create(&hReadyaExec, NULL, (void *) funcionhReadyaExec, logger);
-    // pthread_create(&hExecaReady, NULL, (void *) funcionhExecaReady, logger);
-    // pthread_create(&hExecaBloqIO, NULL, (void *) funcionhExecaBloqIO, logger);
-    // pthread_create(&hExecaExit, NULL, (void *) funcionhExecaExit, logger);
-    // pthread_create(&hBloqIO, NULL, (void *) funcionhBloqIO, logger);
-    // pthread_create(&hExit, NULL, (void *) funcionhExit, logger);
+    pthread_create(&hReadyaExec, NULL, (void *) funcionhReadyaExec, logger);
+    pthread_create(&hExecaReady, NULL, (void *) funcionhExecaReady, logger);
+    pthread_create(&hExecaBloqIO, NULL, (void *) funcionhExecaBloqIO, logger);
+    pthread_create(&hExecaExit, NULL, (void *) funcionhExecaExit, logger);
+    pthread_create(&hBloqIO, NULL, (void *) funcionhBloqIO, logger);
+    pthread_create(&hExit, NULL, (void *) funcionhExit, logger);
         // pthread_create(&hExecReadyaBloqEmer, NULL, (void *) funcionhExecReadyaBloqEmer, logger);
         // pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
 

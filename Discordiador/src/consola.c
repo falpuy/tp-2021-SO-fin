@@ -45,7 +45,7 @@ void funcionConsola(){
                 case C_INICIAR_PATOTA: 
                     log_info(logger, "Entró comando: INICIAR_PATOTA" );
                     pcb* nuevoPCB = crear_PCB (parametros, conexion_RAM, logger);
-                		
+
                 	if (nuevoPCB) {
                     	list_add (listaPCB, (void*) nuevoPCB);
 
@@ -176,7 +176,7 @@ void funcionConsola(){
                     break;
             }
 
-            if (!temp_validador) {
+            if (!validador) {
                 break;
             }
         }

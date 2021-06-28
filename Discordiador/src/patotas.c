@@ -30,7 +30,7 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     nuevoPCB->rutaTareas[strlen(parametros[2])]='\0';
   	// cargo lista de tareas
   	char *tareas = get_tareas(nuevoPCB->rutaTareas, logger);
-    log_info(logger,"HOLIS");
+    log_info(logger,"Tareas: %s", tareas);
 		
   	// buffer->[idpcb, largo_tareas, lista_tareas, cant_tripulantes, n_tcbs....]
   	int tamanioBuffer = sizeof(int) * 3 + strlen(tareas) + cant_tripulantes * (sizeof(int)*4 + sizeof(char));
@@ -223,7 +223,7 @@ void funcionTripulante (void* item){
                         log_info(logger, "Se debe realizar una tarea de I/O");
                         sleep(1);
                         tcbTripulante->status = 'I';
-                        // sem_post(&semEBIO);
+                        sem_post(&semEBIO);
                     }
                     else if (esTareaIO(tarea[0]) == 0) {
                         log_info(logger, "Se debe realizar una tarea normal (no de I/O)");
@@ -233,7 +233,7 @@ void funcionTripulante (void* item){
                         if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){
                             tcbTripulante->status = 'R';
                             tcbTripulante->ciclosCumplidos = 0;
-                            // sem_post(&semER);
+                            sem_post(&semER);
                         }
                         else if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR || !strcmp(algoritmo,"FIFO")){
                             cantidadTripulantesEnExec = queue_size(exec);
@@ -400,11 +400,11 @@ char *get_tareas(char *ruta_archivo, t_log* logger) {
     char *temp_string = string_new();
 
     fp = fopen(ruta_archivo, "r");
-    if (fp == NULL)
+
+    if (fp == NULL){
         exit(EXIT_FAILURE);
-
+    }
     while ((read = getline(&line, &len, fp)) != -1) {
-
         if (line[ read - 1 ] == '\n') {
             read--;
             memset(line + read, 0, 1);

@@ -32,7 +32,6 @@ void funcionPlanificador(t_log* logger) {
 /*---------------------------------NEW->READY--------------------------*/
 
 void funcionhNewaReady (t_log* logger) {
-    log_info(logger, "HOLAAA");
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
@@ -69,7 +68,7 @@ void funcionhNewaReady (t_log* logger) {
             log_info(logger,"----------------------------------");
         }
 
-        // sem_post(&semRE);
+        sem_post(&semRE);
     }
 }
 
@@ -84,7 +83,7 @@ void funcionhReadyaExec (t_log* logger){
         sem_wait(&semRE);
 
         if(planificacion_viva) {
-            while(!queue_is_empty(ready) && queue_size(exec) < grado_multitarea){
+            while(!queue_is_empty(ready) && queue_size(exec) <= grado_multitarea){
                 log_info(logger,"----------------------------------");
                 log_info(logger, "Se ejecuta el hilo de Ready a Exec");
                 tcb* aux_TCB = malloc (sizeof(tcb));
@@ -111,6 +110,7 @@ void funcionhReadyaExec (t_log* logger){
             log_info(logger, "Se comienza a iterar signals...");
             list_iterate(exec->elements, signalHilosTripulantes);
             log_info(logger,"Se hizo una ejecución de CPU en Ready->Exec");
+
             log_info(logger,"----------------------------------");
         }
     }

@@ -744,11 +744,12 @@ void lru_replacer(void *item) {
 
     if (global_lru_page == NULL) {
         global_lru_page = page;
-    } else {
-        if (global_lru_page -> frame -> presence && atoi(global_lru_page -> frame -> time) > atoi(page -> frame -> time)) {
-            global_lru_page = page;
-        }
     }
+    
+    if (global_lru_page -> frame -> presence && atoi(global_lru_page -> frame -> time) > atoi(page -> frame -> time)) {
+        global_lru_page = page;
+    }
+    
 }
 
 void lru_iterator(char *key, void *item) {
@@ -858,7 +859,7 @@ uint32_t get_frame() {
     // frame_t *replacing_frame = get_next_lru_frame();
     frame_t *replacing_frame = hasLRU ? get_next_lru_frame() : get_next_clock_frame();
 
-    printf("Reemplazo este frame: %d", replacing_frame -> number);
+    printf("Reemplazo este frame: %d - %s\n", replacing_frame -> number, replacing_frame -> time);
 
     if (replacing_frame != NULL) {
         // busco lugar en virtual
@@ -882,7 +883,10 @@ uint32_t get_frame() {
                 replacing_frame -> number = i;
                 replacing_frame -> start = i * page_size;
                 replacing_frame -> presence = 0;
+                free(replacing_frame -> time);
                 replacing_frame -> time = temporal_get_string_time("%H%M%S");
+                printf("TIMEdadsad: %s\n", replacing_frame -> time);
+                sleep(1);
                 // devuelvo el bit qe unsetie
                 // printf("Devuelvo: %d", value);
                 return value;
@@ -1014,6 +1018,8 @@ void save_data_in_memory(void *memory, t_dictionary *table_collection, t_diction
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
             frame -> presence = 1;
+
+            printf("TIME: %s\n", frame -> time);
 
             sleep(1);
 
@@ -1653,29 +1659,29 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
         // Leo solo el primer int, que representa el tid
         memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb)), sizeof(uint32_t));
 
-        // tcb *prueba = malloc(sizeof(tcb));
+        tcb *prueba = malloc(sizeof(tcb));
 
-        // memcpy(&prueba -> tid, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
-        // auxoff += sizeof(uint32_t);
-        // memcpy(&prueba -> pid, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
-        // auxoff += sizeof(uint32_t);
-        // memcpy(&prueba -> status, temp + data_tcb -> start + auxoff, sizeof(char));
-        // auxoff += sizeof(char);
-        // memcpy(&prueba -> xpos, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
-        // auxoff += sizeof(uint32_t);
-        // memcpy(&prueba -> ypos, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
-        // auxoff += sizeof(uint32_t);
-        // memcpy(&prueba -> next, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
-        // auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> tid, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> pid, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> status, temp + data_tcb -> start + auxoff, sizeof(char));
+        auxoff += sizeof(char);
+        memcpy(&prueba -> xpos, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> ypos, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> next, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
 
-        // printf("TCB: %d\n%d\n%c\n%d\n%d\n%d\n", prueba -> tid,
-        // prueba -> pid,
-        // prueba -> status,
-        // prueba -> xpos,
-        // prueba -> ypos,
-        // prueba -> next);
+        printf("TCB: %d\n%d\n%c\n%d\n%d\n%d\n", prueba -> tid,
+        prueba -> pid,
+        prueba -> status,
+        prueba -> xpos,
+        prueba -> ypos,
+        prueba -> next);
 
-        // free(prueba);
+        free(prueba);
 
         if (temp_id == id_tcb) {
 

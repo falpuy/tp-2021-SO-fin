@@ -12,11 +12,36 @@
     #include<sys/socket.h>
     #include<unnamed/socket.h>
     #include<unnamed/serialization.h>
+
     #include"planificador.h"
 
+    enum tipo_mensaje_consola {
+        C_INICIAR_PLANIFICACION,
+        C_PAUSAR_PLANIFICACION,
+        C_INICIAR_PATOTA,
+        C_LISTAR_TRIPULANTES,
+        C_EXPULSAR_TRIPULANTE,
+        C_OBTENER_BITACORA,
+        C_SALIR
+    };
+
+
     int loEncontro;
+
+    void funcionConsola();
+    
+    int obtener_tipo_mensaje_consola(char *mensaje);
+
     void mostrarTripulante(void* elemento);
     void mostrarListaTripulantes(void* elemento);
-    void funcionConsola(t_log* logger, int conexion_RAM, int conexion_IMS);
+    bool buscarTripulante (void* elemento);
+    
+    void iterar_en_lista(t_list* self, void(*closure)(void*, t_list*, pthread_mutex_t, int), pthread_mutex_t mutexCola);
+    
+    void extraerTripulante (void* nodo, t_list* cola, pthread_mutex_t mutexCola, int posicion);
+    void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola);
+    
+    void liberarMemoria();
+
 
 #endif

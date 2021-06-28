@@ -17,40 +17,28 @@
     #include<unnamed/socket.h>
     #include<unnamed/serialization.h>
 
-    #include "sabotaje.h"
+    #include "patotas.h"
 
-    enum comandos {
-        SUCCESS=200,
-        RECIBIR_UBICACION_TRIPULANTE=510,
-        ENVIAR_TAREA=520,
-        EXPULSAR_TRIPULANTE=530,
-        ERROR_CANTIDAD_TRIPULANTES=554,
-        ERROR_POR_FALTA_DE_MEMORIA=555,
-        ERROR_NO_HAY_TAREAS=560,
-        INICIAR_PATOTA=610,
-        ENVIAR_OBTENER_BITACORA=760,
-        MOVER_TRIPULANTE=761,
-        COMENZAR_EJECUCION_TAREA=762,
-        FINALIZAR_EJECUCION_TAREA=763,
-        RESPUESTA_OBTENER_BITACORA=766,
-        INICIO_DISCORDIADOR=770,
-        INVOCAR_FSCK=771
-    };
+    void funcionPlanificador(t_log* logger);
 
-    
-
-    void funcionTripulante (void* item);
     void funcionhNewaReady (t_log* logger);
     void funcionhReadyaExec (t_log* logger);
-    void funcionCambioExecIO(void* nodo, int posicion);
-    void list_iterate_position(t_list *self, void(*closure)());
-    void funcionhExecaBloqIO (t_log* logger);
-    void funcionhBloqEmeraReady (t_log* logger);
-    void funcionhBloqIOaReady (t_log* logger);
-    void funcionhExecaExit (t_log* logger);
-    void funcionPlanificador(t_log* logger);
-    void send_tareas(int id_pcb, char *ruta_archivo, int conexion_RAM, t_log* logger);
-    tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger);
-    pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger);
 
+    void funcionCambioExecIO(void* nodo, int posicion);
+    void funcionhExecaBloqIO (t_log* logger);
+    
+    void funcionhBloqIO (t_log* logger);
+    void funcionContadorEnBloqIO(void* nodo, int posicion);
+
+    void funcionCambioExecReady(void* nodo, int posicion);
+    void funcionhExecaReady (t_log* logger);
+
+    void funcionCambioExecExit(void* nodo, int posicion);
+    void funcionhExecaExit (t_log* logger);
+
+    void funcionhExit (t_log* logger);
+
+    /*------------------ADICIONALES--------------------*/
+    void signalHilosTripulantes(void *nodo);
+    void list_iterate_position(t_list *self, void(*closure)());
 #endif

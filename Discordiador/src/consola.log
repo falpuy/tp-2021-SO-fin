@@ -9514,3 +9514,2334 @@
 [INFO] 20:28:42:931 consola/(5001:5001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 20:28:42:933 consola/(5001:5001): Recibi el siguiente mensaje..
 [INFO] 20:28:42:933 consola/(5001:5003): Se ejecuta el hilo de New a Ready
+[ERROR] 19:02:19:954 consola/(17239:17239): [Shared Library]: Error al crear socket de servidor. /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:04:07:010 consola/(17314:17314): [Shared Library]: Error al crear socket de servidor. /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:05:26:233 consola/(17345:17345): [Shared Library]: Error al crear socket de servidor. /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:06:25:678 consola/(17365:17365): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[ERROR] 19:06:25:683 consola/(17365:17365): [Shared Library]: Error al crear socket de servidor. /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:08:38:031 consola/(17793:17793): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:08:38:037 consola/(17793:17793): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 19:08:38:038 consola/(17793:17793): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:08:38:040 consola/(17793:17793): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:08:56:749 consola/(17833:17833): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:08:56:966 consola/(17833:17833): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:08:56:971 consola/(17833:17833): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:08:57:026 consola/(17833:17833): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:09:06:253 consola/(17853:17853): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:09:06:455 consola/(17853:17853): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:09:06:482 consola/(17853:17853): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:09:06:537 consola/(17853:17853): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:13:17:255 consola/(17918:17918): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:13:17:443 consola/(17918:17918): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:13:17:450 consola/(17918:17918): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:13:17:514 consola/(17918:17918): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:13:59:969 consola/(17942:17942): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:14:00:214 consola/(17942:17942): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 19:14:00:226 consola/(17942:17942): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:14:00:289 consola/(17942:17942): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:14:16:217 consola/(17942:17942): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:14:16:219 consola/(17942:17942): Se inició la planificación. Estado de la flag: 0
+[INFO] 19:14:19:050 consola/(17942:17942): Salimos de la consola
+[INFO] 19:16:50:517 consola/(17971:17971): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:16:50:710 consola/(17971:17971): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 19:16:50:721 consola/(17971:17971): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:16:50:778 consola/(17971:17971): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:16:58:307 consola/(17971:17971): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:16:58:309 consola/(17971:17971): Se inició la planificación. Estado de la flag: 0
+[INFO] 19:17:00:304 consola/(17971:17971): Salimos de la consola
+[INFO] 19:20:45:587 consola/(18018:18018): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:20:45:692 consola/(18018:18018): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 19:20:45:696 consola/(18018:18018): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:20:45:740 consola/(18018:18018): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:51:306 consola/(18018:18018): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:20:51:309 consola/(18018:18018): Se inició la planificación. Estado de la flag: 0
+[INFO] 19:20:53:130 consola/(18018:18018): Salimos de la consola
+[INFO] 19:23:26:328 consola/(18084:18084): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:23:26:486 consola/(18084:18084): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 19:23:26:502 consola/(18084:18084): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:23:26:575 consola/(18084:18084): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:096 consola/(18233:18233): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:25:32:252 consola/(18233:18233): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:25:32:259 consola/(18233:18233): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:25:32:307 consola/(18233:18233): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:27:14:497 consola/(18259:18259): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:27:14:600 consola/(18259:18259): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:27:14:605 consola/(18259:18259): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:27:14:608 consola/(18259:18259): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:29:40:661 consola/(18279:18279): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:29:40:809 consola/(18279:18279): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:29:40:819 consola/(18279:18279): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:29:40:825 consola/(18279:18279): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:30:02:149 consola/(18303:18303): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:30:02:351 consola/(18303:18303): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:30:02:356 consola/(18303:18303): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:30:02:377 consola/(18303:18303): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:32:17:115 consola/(18324:18324): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:32:17:257 consola/(18324:18324): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:32:17:267 consola/(18324:18324): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:32:17:326 consola/(18324:18324): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:43:44:926 consola/(18412:18412): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:43:45:098 consola/(18412:18412): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:43:45:115 consola/(18412:18412): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 19:43:45:206 consola/(18412:18412): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:44:40:375 consola/(18543:18543): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:44:40:563 consola/(18543:18543): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 19:44:40:594 consola/(18543:18543): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:44:40:658 consola/(18543:18543): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:44:49:477 consola/(18543:18543): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:44:49:479 consola/(18543:18543): Se inició la planificación. Estado de la flag: 0
+[INFO] 19:47:18:356 consola/(18561:18561): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:47:18:514 consola/(18561:18561): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 19:47:18:519 consola/(18561:18561): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:47:18:568 consola/(18561:18561): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:47:23:253 consola/(18561:18561): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:47:23:255 consola/(18561:18561): Se inició la planificación. Estado de la flag: 0
+[INFO] 19:48:18:741 consola/(18561:18561): Entró comando: INICIAR_PATOTA
+[ERROR] 19:48:18:825 consola/(18561:18561): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:48:18:833 consola/(18561:18561): Recibi el siguiente mensaje..
+[INFO] 19:48:18:843 consola/(18561:18561): Proceso: 
+[INFO] 19:48:18:858 consola/(18561:18561): Comando: 0
+[INFO] 19:48:18:859 consola/(18561:18561): Tamanio: 0
+[INFO] 19:48:32:158 consola/(18561:18561): --------------------------------------------------------------------
+[INFO] 19:48:32:160 consola/(18561:18561): Entró comando: LISTAR_TRIPULANTES
+[INFO] 19:48:32:165 consola/(18561:18561): Estado de la Nave: 26/06/21 19:48:32
+[INFO] 19:48:32:167 consola/(18561:18561): --------------------------------------------------------------------
+[INFO] 19:48:39:682 consola/(18561:18561): Salimos de la consola
+[INFO] 19:59:00:195 consola/(4293:4293): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:59:00:196 consola/(4293:4293): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:59:00:197 consola/(4293:4293): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 19:59:00:198 consola/(4293:4293): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 19:59:30:948 consola/(4293:4293): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:59:30:949 consola/(4293:4293): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:00:18:831 consola/(4293:4293): Entró comando: INICIAR_PATOTA
+[INFO] 20:00:18:834 consola/(4293:4293): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:00:18:835 consola/(4293:4293): Recibi el siguiente mensaje..
+[INFO] 20:01:41:543 consola/(4407:4407): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:01:41:544 consola/(4407:4407): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:01:41:544 consola/(4407:4407): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:01:41:545 consola/(4407:4407): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:01:51:724 consola/(4407:4407): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:01:51:725 consola/(4407:4407): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:02:06:351 consola/(4407:4407): Entró comando: INICIAR_PATOTA
+[INFO] 20:02:06:356 consola/(4407:4407): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:02:06:359 consola/(4407:4407): Recibi el siguiente mensaje..
+[INFO] 20:02:06:359 consola/(4407:4407): Proceso: RAM
+[INFO] 20:02:06:360 consola/(4407:4407): Comando: 200
+[INFO] 20:02:06:360 consola/(4407:4407): Tamanio: 9
+[INFO] 20:02:06:360 consola/(4407:4407): Memoria OK
+[INFO] 20:02:42:051 consola/(4407:4407): --------------------------------------------------------------------
+[INFO] 20:02:42:052 consola/(4407:4407): Entró comando: LISTAR_TRIPULANTES
+[INFO] 20:02:42:052 consola/(4407:4407): Estado de la Nave: 26/06/21 20:02:42
+[INFO] 20:02:42:052 consola/(4407:4407): Tripulante: 0	
+[INFO] 20:02:42:052 consola/(4407:4407): Patota: 1	
+[INFO] 20:02:42:052 consola/(4407:4407): Status: NEW
+
+[INFO] 20:02:42:052 consola/(4407:4407): Tripulante: 1	
+[INFO] 20:02:42:052 consola/(4407:4407): Patota: 1	
+[INFO] 20:02:42:053 consola/(4407:4407): Status: NEW
+
+[INFO] 20:02:42:053 consola/(4407:4407): Tripulante: 2	
+[INFO] 20:02:42:053 consola/(4407:4407): Patota: 1	
+[INFO] 20:02:42:053 consola/(4407:4407): Status: NEW
+
+[INFO] 20:02:42:053 consola/(4407:4407): Tripulante: 3	
+[INFO] 20:02:42:053 consola/(4407:4407): Patota: 1	
+[INFO] 20:02:42:053 consola/(4407:4407): Status: NEW
+
+[INFO] 20:02:42:053 consola/(4407:4407): --------------------------------------------------------------------
+[INFO] 20:03:45:544 consola/(4456:4456): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:03:45:633 consola/(4456:4456): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:03:45:639 consola/(4456:4456): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:03:45:689 consola/(4456:4456): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:03:50:908 consola/(4456:4456): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:03:50:910 consola/(4456:4456): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:04:02:226 consola/(4456:4456): Entró comando: INICIAR_PATOTA
+[INFO] 20:04:02:333 consola/(4456:4456): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:04:02:342 consola/(4456:4456): Recibi el siguiente mensaje..
+[INFO] 20:04:02:345 consola/(4456:4456): Proceso: RAM
+[INFO] 20:04:02:347 consola/(4456:4456): Comando: 200
+[INFO] 20:04:02:350 consola/(4456:4456): Tamanio: 9
+[INFO] 20:04:02:363 consola/(4456:4456): Memoria OK
+[INFO] 20:04:06:925 consola/(4456:4456): --------------------------------------------------------------------
+[INFO] 20:04:06:927 consola/(4456:4456): Entró comando: LISTAR_TRIPULANTES
+[INFO] 20:04:06:932 consola/(4456:4456): Estado de la Nave: 26/06/21 20:04:06
+[INFO] 20:04:06:935 consola/(4456:4456): Tripulante: 0	
+[INFO] 20:04:06:937 consola/(4456:4456): Patota: 1	
+[INFO] 20:04:06:938 consola/(4456:4456): Status: NEW
+
+[INFO] 20:04:06:943 consola/(4456:4456): Tripulante: 1	
+[INFO] 20:04:06:945 consola/(4456:4456): Patota: 1	
+[INFO] 20:04:06:946 consola/(4456:4456): Status: NEW
+
+[INFO] 20:04:06:947 consola/(4456:4456): Tripulante: 2	
+[INFO] 20:04:06:948 consola/(4456:4456): Patota: 1	
+[INFO] 20:04:06:950 consola/(4456:4456): Status: NEW
+
+[INFO] 20:04:06:951 consola/(4456:4456): Tripulante: 3	
+[INFO] 20:04:06:952 consola/(4456:4456): Patota: 1	
+[INFO] 20:04:06:954 consola/(4456:4456): Status: NEW
+
+[INFO] 20:04:06:965 consola/(4456:4456): --------------------------------------------------------------------
+[INFO] 20:04:09:540 consola/(4456:4456): Salimos de la consola
+[INFO] 20:13:30:131 consola/(4682:4682): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:13:30:323 consola/(4682:4682): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:13:30:336 consola/(4682:4682): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:13:30:396 consola/(4682:4682): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:13:39:792 consola/(4682:4682): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:13:39:794 consola/(4682:4682): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:13:46:694 consola/(4682:4682): Entró comando: INICIAR_PATOTA
+[INFO] 20:14:15:842 consola/(4733:4733): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:14:16:047 consola/(4733:4733): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:14:16:062 consola/(4733:4733): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:14:16:146 consola/(4733:4733): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:14:40:211 consola/(4733:4733): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:14:40:214 consola/(4733:4733): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:15:06:712 consola/(4733:4733): Entró comando: INICIAR_PATOTA
+[INFO] 20:15:06:828 consola/(4733:4733): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:15:06:831 consola/(4733:4733): Recibi el siguiente mensaje..
+[INFO] 20:15:06:837 consola/(4733:4733): Proceso: RAM
+[INFO] 20:15:06:849 consola/(4733:4733): Comando: 200
+[INFO] 20:15:06:852 consola/(4733:4733): Tamanio: 9
+[INFO] 20:15:06:859 consola/(4733:4733): Memoria OK
+[INFO] 20:15:14:620 consola/(4733:4733): --------------------------------------------------------------------
+[INFO] 20:15:14:622 consola/(4733:4733): Entró comando: LISTAR_TRIPULANTES
+[INFO] 20:15:14:625 consola/(4733:4733): Estado de la Nave: 26/06/21 20:15:14
+[INFO] 20:15:14:628 consola/(4733:4733): Tripulante: 0	
+[INFO] 20:15:14:631 consola/(4733:4733): Patota: 1	
+[INFO] 20:15:14:640 consola/(4733:4733): Status: NEW
+
+[INFO] 20:15:14:642 consola/(4733:4733): Tripulante: 1	
+[INFO] 20:15:14:642 consola/(4733:4733): Patota: 1	
+[INFO] 20:15:14:643 consola/(4733:4733): Status: NEW
+
+[INFO] 20:15:14:644 consola/(4733:4733): Tripulante: 2	
+[INFO] 20:15:14:648 consola/(4733:4733): Patota: 1	
+[INFO] 20:15:14:649 consola/(4733:4733): Status: NEW
+
+[INFO] 20:15:14:650 consola/(4733:4733): Tripulante: 3	
+[INFO] 20:15:14:652 consola/(4733:4733): Patota: 1	
+[INFO] 20:15:14:653 consola/(4733:4733): Status: NEW
+
+[INFO] 20:15:14:655 consola/(4733:4733): --------------------------------------------------------------------
+[INFO] 20:15:19:873 consola/(4733:4733): Salimos de la consola
+[INFO] 20:19:28:234 consola/(4874:4874): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:19:28:355 consola/(4874:4874): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:19:28:369 consola/(4874:4874): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:19:28:428 consola/(4874:4874): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:19:37:106 consola/(4874:4874): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:19:37:108 consola/(4874:4874): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:20:01:054 consola/(4874:4874): Entró comando: INICIAR_PATOTA
+[INFO] 20:20:01:141 consola/(4874:4874): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:20:01:146 consola/(4874:4874): Recibi el siguiente mensaje..
+[INFO] 20:20:01:149 consola/(4874:4874): Proceso: RAM
+[INFO] 20:20:01:150 consola/(4874:4874): Comando: 200
+[INFO] 20:20:01:152 consola/(4874:4874): Tamanio: 9
+[INFO] 20:20:01:168 consola/(4874:4874): Memoria OK
+[INFO] 20:20:01:176 consola/(4874:4874): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:20:01:177 consola/(4874:4874): Recibi el siguiente mensaje..
+[INFO] 20:20:01:217 consola/(4874:4874): Proceso: RAM
+[INFO] 20:20:01:256 consola/(4874:4874): Comando: 200
+[INFO] 20:20:01:257 consola/(4874:4874): Tamanio: 30
+[INFO] 20:20:01:274 consola/(4874:4874): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:20:01:278 consola/(4874:4874): Recibi el siguiente mensaje..
+[INFO] 20:21:34:544 consola/(4920:4920): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:21:34:692 consola/(4920:4920): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:21:34:697 consola/(4920:4920): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:21:34:761 consola/(4920:4920): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:21:39:450 consola/(4920:4920): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:21:39:452 consola/(4920:4920): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:21:51:163 consola/(4920:4920): Entró comando: INICIAR_PATOTA
+[INFO] 20:21:51:266 consola/(4920:4920): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:21:51:269 consola/(4920:4920): Recibi el siguiente mensaje..
+[INFO] 20:21:51:283 consola/(4920:4920): Proceso: RAM
+[INFO] 20:21:51:288 consola/(4920:4920): Comando: 200
+[INFO] 20:21:51:290 consola/(4920:4920): Tamanio: 9
+[INFO] 20:21:51:309 consola/(4920:4920): Memoria OK
+[INFO] 20:21:51:321 consola/(4920:4920): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:21:51:325 consola/(4920:4920): Recibi el siguiente mensaje..
+[INFO] 20:21:51:362 consola/(4920:4920): Proceso: RAM
+[INFO] 20:21:51:364 consola/(4920:4920): Comando: 200
+[INFO] 20:21:51:365 consola/(4920:4920): Tamanio: 30
+[INFO] 20:21:51:415 consola/(4920:4920): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+O] 20:21:51:415 consola/(4920:4920): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:33:49:630 consola/(5689:5689): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:33:49:834 consola/(5689:5689): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:33:49:841 consola/(5689:5689): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:33:49:890 consola/(5689:5689): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:33:55:857 consola/(5689:5689): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:33:55:860 consola/(5689:5689): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:34:13:454 consola/(5689:5689): Entró comando: INICIAR_PATOTA
+[INFO] 20:34:13:550 consola/(5689:5689): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:34:13:559 consola/(5689:5689): Recibi el siguiente mensaje..
+[INFO] 20:34:13:570 consola/(5689:5689): Proceso: RAM
+[INFO] 20:34:13:572 consola/(5689:5689): Comando: 555
+[INFO] 20:34:13:577 consola/(5689:5689): Tamanio: 9
+[ERROR] 20:34:13:580 consola/(5689:5689): No se pudo crear el PCB por falta de memoria
+[INFO] 20:34:40:450 consola/(5689:5689): Salimos de la consola
+[INFO] 20:34:51:073 consola/(5721:5721): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:34:51:222 consola/(5721:5721): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:34:51:233 consola/(5721:5721): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:34:51:291 consola/(5721:5721): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:34:55:595 consola/(5721:5721): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:34:55:606 consola/(5721:5721): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:35:05:728 consola/(5721:5721): Entró comando: INICIAR_PATOTA
+[INFO] 20:35:05:827 consola/(5721:5721): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:05:830 consola/(5721:5721): Recibi el siguiente mensaje..
+[INFO] 20:35:05:847 consola/(5721:5721): Proceso: RAM
+[INFO] 20:35:05:853 consola/(5721:5721): Comando: 200
+[INFO] 20:35:05:854 consola/(5721:5721): Tamanio: 9
+[INFO] 20:35:05:858 consola/(5721:5721): Memoria OK
+[INFO] 20:35:05:863 consola/(5721:5721): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:05:864 consola/(5721:5721): Recibi el siguiente mensaje..
+[INFO] 20:35:05:902 consola/(5721:5721): Proceso: RAM
+[INFO] 20:35:05:940 consola/(5721:5721): Comando: 200
+[INFO] 20:35:05:947 consola/(5721:5721): Tamanio: 30
+[INFO] 20:35:05:989 consola/(5721:5721): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:05:990 consola/(5721:5721): Recibi el siguiente mensaje..
+[INFO] 20:35:06:029 consola/(5721:5721): Proceso: RAM
+[INFO] 20:35:06:029 consola/(5721:5721): Comando: 200
+[INFO] 20:35:06:030 consola/(5721:5721): Tamanio: 30
+[INFO] 20:35:06:054 consola/(5721:5721): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:06:060 consola/(5721:5721): Recibi el siguiente mensaje..
+[INFO] 20:35:06:092 consola/(5721:5721): Proceso: RAM
+[INFO] 20:35:06:132 consola/(5721:5721): Comando: 200
+[INFO] 20:35:06:132 consola/(5721:5721): Tamanio: 30
+[INFO] 20:35:06:138 consola/(5721:5721): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:06:139 consola/(5721:5721): Recibi el siguiente mensaje..
+[INFO] 20:35:06:177 consola/(5721:5721): Proceso: RAM
+[INFO] 20:35:06:216 consola/(5721:5721): Comando: 200
+[INFO] 20:35:06:217 consola/(5721:5721): Tamanio: 30
+[INFO] 20:35:15:949 consola/(5721:5721): --------------------------------------------------------------------
+[INFO] 20:35:15:951 consola/(5721:5721): Entró comando: LISTAR_TRIPULANTES
+[INFO] 20:35:15:955 consola/(5721:5721): Estado de la Nave: 26/06/21 20:35:15
+[INFO] 20:35:15:958 consola/(5721:5721): Tripulante: 0	
+[INFO] 20:35:15:960 consola/(5721:5721): Patota: 1	
+[INFO] 20:35:15:962 consola/(5721:5721): Status: NEW
+
+[INFO] 20:35:15:967 consola/(5721:5721): Tripulante: 1	
+[INFO] 20:35:15:969 consola/(5721:5721): Patota: 1	
+[INFO] 20:35:15:970 consola/(5721:5721): Status: NEW
+
+[INFO] 20:35:15:971 consola/(5721:5721): Tripulante: 2	
+[INFO] 20:35:15:972 consola/(5721:5721): Patota: 1	
+[INFO] 20:35:15:973 consola/(5721:5721): Status: NEW
+
+[INFO] 20:35:15:975 consola/(5721:5721): Tripulante: 3	
+[INFO] 20:35:15:976 consola/(5721:5721): Patota: 1	
+[INFO] 20:35:15:988 consola/(5721:5721): Status: NEW
+
+[INFO] 20:35:15:990 consola/(5721:5721): --------------------------------------------------------------------
+[INFO] 20:35:21:686 consola/(5721:5721): Salimos de la consola
+[INFO] 20:37:19:006 consola/(6108:6108): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:37:19:160 consola/(6108:6108): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:37:19:186 consola/(6108:6108): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:37:19:255 consola/(6108:6108): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:37:23:158 consola/(6108:6108): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:37:23:168 consola/(6108:6108): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:37:36:907 consola/(6108:6108): Entró comando: INICIAR_PATOTA
+[INFO] 20:37:56:915 consola/(6124:6124): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:37:57:093 consola/(6124:6124): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:37:57:100 consola/(6124:6124): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:37:57:152 consola/(6124:6124): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:38:01:605 consola/(6124:6124): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:38:01:609 consola/(6124:6124): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:38:14:410 consola/(6124:6124): Entró comando: INICIAR_PATOTA
+[INFO] 20:38:14:509 consola/(6124:6124): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:512 consola/(6124:6124): Recibi el siguiente mensaje..
+[INFO] 20:38:14:521 consola/(6124:6124): Proceso: RAM
+[INFO] 20:38:14:536 consola/(6124:6124): Comando: 200
+[INFO] 20:38:14:544 consola/(6124:6124): Tamanio: 9
+[INFO] 20:38:14:554 consola/(6124:6124): Memoria OK
+[INFO] 20:38:14:574 consola/(6124:6124): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:589 consola/(6124:6124): Recibi el siguiente mensaje..
+[INFO] 20:38:14:613 consola/(6124:6124): Proceso: RAM
+[INFO] 20:38:14:614 consola/(6124:6124): Comando: 200
+[INFO] 20:38:14:615 consola/(6124:6124): Tamanio: 30
+[INFO] 20:38:14:637 consola/(6124:6124): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:638 consola/(6124:6124): Recibi el siguiente mensaje..
+[INFO] 20:38:14:678 consola/(6124:6124): Proceso: RAM
+[INFO] 20:38:14:716 consola/(6124:6124): Comando: 200
+[INFO] 20:38:14:717 consola/(6124:6124): Tamanio: 30
+[INFO] 20:38:14:732 consola/(6124:6124): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:733 consola/(6124:6124): Recibi el siguiente mensaje..
+[INFO] 20:38:14:773 consola/(6124:6124): Proceso: RAM
+[INFO] 20:38:14:812 consola/(6124:6124): Comando: 200
+[INFO] 20:38:14:813 consola/(6124:6124): Tamanio: 30
+[INFO] 20:38:14:822 consola/(6124:6124): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:823 consola/(6124:6124): Recibi el siguiente mensaje..
+[INFO] 20:38:14:861 consola/(6124:6124): Proceso: RAM
+[INFO] 20:38:14:899 consola/(6124:6124): Comando: 200
+[INFO] 20:38:14:900 consola/(6124:6124): Tamanio: 30
+[INFO] 20:38:21:109 consola/(6124:6124): --------------------------------------------------------------------
+[INFO] 20:38:21:111 consola/(6124:6124): Entró comando: LISTAR_TRIPULANTES
+[INFO] 20:38:21:115 consola/(6124:6124): Estado de la Nave: 26/06/21 20:38:21
+[INFO] 20:38:21:118 consola/(6124:6124): Tripulante: 0	
+[INFO] 20:38:21:119 consola/(6124:6124): Patota: 1	
+[INFO] 20:38:21:121 consola/(6124:6124): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:38:21:123 consola/(6124:6124): Posicion X e Y: 1 - 1
+
+[INFO] 20:38:21:128 consola/(6124:6124): Status: NEW
+
+[INFO] 20:38:21:130 consola/(6124:6124): Tripulante: 1	
+[INFO] 20:38:21:131 consola/(6124:6124): Patota: 1	
+[INFO] 20:38:21:132 consola/(6124:6124): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:38:21:133 consola/(6124:6124): Posicion X e Y: 1 - 1
+
+[INFO] 20:38:21:134 consola/(6124:6124): Status: NEW
+
+[INFO] 20:38:21:135 consola/(6124:6124): Tripulante: 2	
+[INFO] 20:38:21:136 consola/(6124:6124): Patota: 1	
+[INFO] 20:38:21:138 consola/(6124:6124): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:38:21:149 consola/(6124:6124): Posicion X e Y: 0 - 0
+
+[INFO] 20:38:21:150 consola/(6124:6124): Status: NEW
+
+[INFO] 20:38:21:155 consola/(6124:6124): Tripulante: 3	
+[INFO] 20:38:21:156 consola/(6124:6124): Patota: 1	
+[INFO] 20:38:21:157 consola/(6124:6124): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:38:21:158 consola/(6124:6124): Posicion X e Y: 0 - 0
+
+[INFO] 20:38:21:160 consola/(6124:6124): Status: NEW
+
+[INFO] 20:38:21:162 consola/(6124:6124): --------------------------------------------------------------------
+[INFO] 20:39:27:191 consola/(6124:6124): --------------------------------------------------------------------
+[INFO] 20:39:27:192 consola/(6124:6124): Entró comando: LISTAR_TRIPULANTES
+[INFO] 20:39:27:193 consola/(6124:6124): Estado de la Nave: 26/06/21 20:39:27
+[INFO] 20:39:27:195 consola/(6124:6124): Tripulante: 0	
+[INFO] 20:39:27:196 consola/(6124:6124): Patota: 1	
+[INFO] 20:39:27:197 consola/(6124:6124): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:39:27:198 consola/(6124:6124): Posicion X e Y: 1 - 1
+
+[INFO] 20:39:27:199 consola/(6124:6124): Status: NEW
+
+[INFO] 20:39:27:200 consola/(6124:6124): Tripulante: 1	
+[INFO] 20:39:27:201 consola/(6124:6124): Patota: 1	
+[INFO] 20:39:27:202 consola/(6124:6124): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:39:27:203 consola/(6124:6124): Posicion X e Y: 1 - 1
+
+[INFO] 20:39:27:204 consola/(6124:6124): Status: NEW
+
+[INFO] 20:39:27:209 consola/(6124:6124): Tripulante: 2	
+[INFO] 20:39:27:210 consola/(6124:6124): Patota: 1	
+[INFO] 20:39:27:211 consola/(6124:6124): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:39:27:212 consola/(6124:6124): Posicion X e Y: 0 - 0
+
+[INFO] 20:39:27:214 consola/(6124:6124): Status: NEW
+
+[INFO] 20:39:27:216 consola/(6124:6124): Tripulante: 3	
+[INFO] 20:39:27:217 consola/(6124:6124): Patota: 1	
+[INFO] 20:39:27:218 consola/(6124:6124): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 20:39:27:220 consola/(6124:6124): Posicion X e Y: 0 - 0
+
+[INFO] 20:39:27:232 consola/(6124:6124): Status: NEW
+
+[INFO] 20:39:27:233 consola/(6124:6124): --------------------------------------------------------------------
+[INFO] 20:41:04:098 consola/(6124:6124): Salimos de la consola
+[INFO] 20:48:44:882 consola/(6267:6267): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:48:45:015 consola/(6267:6267): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:48:45:033 consola/(6267:6267): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:48:45:066 consola/(6267:6267): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:48:48:657 consola/(6267:6267): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:48:48:660 consola/(6267:6267): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:49:12:527 consola/(6267:6267): Entró comando: INICIAR_PATOTA
+[INFO] 20:49:12:636 consola/(6267:6267): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:644 consola/(6267:6267): Recibi el siguiente mensaje..
+[INFO] 20:49:12:650 consola/(6267:6267): Proceso: RAM
+[INFO] 20:49:12:652 consola/(6267:6267): Comando: 200
+[INFO] 20:49:12:656 consola/(6267:6267): Tamanio: 9
+[INFO] 20:49:12:666 consola/(6267:6267): Memoria OK
+[INFO] 20:49:12:705 consola/(6267:6267): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:706 consola/(6267:6267): Recibi el siguiente mensaje..
+[INFO] 20:49:12:745 consola/(6267:6267): Proceso: RAM
+[INFO] 20:49:12:746 consola/(6267:6267): Comando: 200
+[INFO] 20:49:12:747 consola/(6267:6267): Tamanio: 30
+[INFO] 20:49:12:811 consola/(6267:6267): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:815 consola/(6267:6267): Recibi el siguiente mensaje..
+[INFO] 20:49:12:849 consola/(6267:6267): Proceso: RAM
+[INFO] 20:49:12:850 consola/(6267:6267): Comando: 200
+[INFO] 20:49:12:851 consola/(6267:6267): Tamanio: 30
+[INFO] 20:49:12:861 consola/(6267:6267): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:862 consola/(6267:6267): Recibi el siguiente mensaje..
+[INFO] 20:49:12:900 consola/(6267:6267): Proceso: RAM
+[INFO] 20:49:12:940 consola/(6267:6267): Comando: 200
+[INFO] 20:49:12:942 consola/(6267:6267): Tamanio: 30
+[INFO] 20:49:12:952 consola/(6267:6267): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:961 consola/(6267:6267): Recibi el siguiente mensaje..
+[INFO] 20:49:12:989 consola/(6267:6267): Proceso: RAM
+[INFO] 20:49:13:028 consola/(6267:6267): Comando: 200
+[INFO] 20:49:13:028 consola/(6267:6267): Tamanio: 30
+[INFO] 20:49:19:161 consola/(6267:6267): Salimos de la consola
+[INFO] 20:55:02:906 consola/(6370:6370): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:55:03:069 consola/(6370:6370): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:55:03:082 consola/(6370:6370): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:55:03:158 consola/(6370:6370): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:55:07:138 consola/(6370:6370): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:55:07:140 consola/(6370:6370): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:55:24:927 consola/(6383:6383): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:55:25:052 consola/(6383:6383): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:55:25:058 consola/(6383:6383): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:55:25:130 consola/(6383:6383): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:55:31:880 consola/(6383:6383): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:55:31:882 consola/(6383:6383): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:55:44:457 consola/(6383:6383): Entró comando: INICIAR_PATOTA
+[INFO] 20:55:44:555 consola/(6383:6383): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:557 consola/(6383:6383): Recibi el siguiente mensaje..
+[INFO] 20:55:44:574 consola/(6383:6383): Proceso: RAM
+[INFO] 20:55:44:580 consola/(6383:6383): Comando: 200
+[INFO] 20:55:44:581 consola/(6383:6383): Tamanio: 9
+[INFO] 20:55:44:584 consola/(6383:6383): Memoria OK
+[INFO] 20:55:44:602 consola/(6383:6383): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:608 consola/(6383:6383): Recibi el siguiente mensaje..
+[INFO] 20:55:44:642 consola/(6383:6383): Proceso: RAM
+[INFO] 20:55:44:643 consola/(6383:6383): Comando: 200
+[INFO] 20:55:44:645 consola/(6383:6383): Tamanio: 30
+[INFO] 20:55:44:685 consola/(6383:6383): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:687 consola/(6383:6383): Recibi el siguiente mensaje..
+[INFO] 20:55:44:725 consola/(6383:6383): Proceso: RAM
+[INFO] 20:55:44:726 consola/(6383:6383): Comando: 200
+[INFO] 20:55:44:731 consola/(6383:6383): Tamanio: 30
+[INFO] 20:55:44:769 consola/(6383:6383): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:770 consola/(6383:6383): Recibi el siguiente mensaje..
+[INFO] 20:55:44:808 consola/(6383:6383): Proceso: RAM
+[INFO] 20:55:44:809 consola/(6383:6383): Comando: 200
+[INFO] 20:55:44:810 consola/(6383:6383): Tamanio: 30
+[INFO] 20:55:44:825 consola/(6383:6383): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:832 consola/(6383:6383): Recibi el siguiente mensaje..
+[INFO] 20:55:44:865 consola/(6383:6383): Proceso: RAM
+[INFO] 20:55:44:903 consola/(6383:6383): Comando: 200
+[INFO] 20:55:44:904 consola/(6383:6383): Tamanio: 30
+[INFO] 20:55:48:714 consola/(6383:6383): Salimos de la consola
+[INFO] 20:57:52:522 consola/(6469:6469): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:57:52:653 consola/(6469:6469): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:57:52:678 consola/(6469:6469): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:57:52:754 consola/(6469:6469): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:58:01:252 consola/(6493:6493): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 20:58:01:415 consola/(6493:6493): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 20:58:01:431 consola/(6493:6493): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 20:58:01:505 consola/(6493:6493): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 20:58:05:723 consola/(6493:6493): Entró comando: INICIAR_PLANIFICACION
+[INFO] 20:58:05:725 consola/(6493:6493): Se inició la planificación. Estado de la flag: 0
+[INFO] 20:58:27:253 consola/(6493:6493): Entró comando: INICIAR_PATOTA
+[INFO] 20:58:27:348 consola/(6493:6493): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:351 consola/(6493:6493): Recibi el siguiente mensaje..
+[INFO] 20:58:27:359 consola/(6493:6493): Proceso: RAM
+[INFO] 20:58:27:376 consola/(6493:6493): Comando: 200
+[INFO] 20:58:27:386 consola/(6493:6493): Tamanio: 9
+[INFO] 20:58:27:390 consola/(6493:6493): Memoria OK
+[INFO] 20:58:27:415 consola/(6493:6493): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:421 consola/(6493:6493): Recibi el siguiente mensaje..
+[INFO] 20:58:27:454 consola/(6493:6493): Proceso: RAM
+[INFO] 20:58:27:455 consola/(6493:6493): Comando: 200
+[INFO] 20:58:27:457 consola/(6493:6493): Tamanio: 30
+[INFO] 20:58:27:501 consola/(6493:6493): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:507 consola/(6493:6493): Recibi el siguiente mensaje..
+[INFO] 20:58:27:542 consola/(6493:6493): Proceso: RAM
+[INFO] 20:58:27:543 consola/(6493:6493): Comando: 200
+[INFO] 20:58:27:548 consola/(6493:6493): Tamanio: 30
+[INFO] 20:58:27:601 consola/(6493:6493): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:602 consola/(6493:6493): Recibi el siguiente mensaje..
+[INFO] 20:58:27:641 consola/(6493:6493): Proceso: RAM
+[INFO] 20:58:27:643 consola/(6493:6493): Comando: 200
+[INFO] 20:58:27:645 consola/(6493:6493): Tamanio: 30
+[INFO] 20:58:27:657 consola/(6493:6493): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:658 consola/(6493:6493): Recibi el siguiente mensaje..
+[INFO] 20:58:27:697 consola/(6493:6493): Proceso: RAM
+[INFO] 20:58:27:736 consola/(6493:6493): Comando: 200
+[INFO] 20:58:27:737 consola/(6493:6493): Tamanio: 30
+[INFO] 20:58:30:258 consola/(6493:6493): Salimos de la consola
+[INFO] 22:19:21:323 consola/(7850:7850): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:19:21:420 consola/(7850:7850): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:19:21:424 consola/(7850:7850): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:19:21:513 consola/(7850:7850): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:19:26:396 consola/(7850:7850): Entró comando: INICIAR_PLANIFICACION
+[INFO] 22:19:26:399 consola/(7850:7850): Se inició la planificación. Estado de la flag: 0
+[INFO] 22:19:47:071 consola/(7850:7850): Entró comando: INICIAR_PATOTA
+[INFO] 22:19:47:176 consola/(7850:7850): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:192 consola/(7850:7850): Recibi el siguiente mensaje..
+[INFO] 22:19:47:198 consola/(7850:7850): Proceso: RAM
+[INFO] 22:19:47:205 consola/(7850:7850): Comando: 200
+[INFO] 22:19:47:207 consola/(7850:7850): Tamanio: 9
+[INFO] 22:19:47:216 consola/(7850:7850): Memoria OK
+[INFO] 22:19:47:230 consola/(7850:7850): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:236 consola/(7850:7850): Recibi el siguiente mensaje..
+[INFO] 22:19:47:270 consola/(7850:7850): Proceso: RAM
+[INFO] 22:19:47:275 consola/(7850:7850): Comando: 200
+[INFO] 22:19:47:276 consola/(7850:7850): Tamanio: 30
+[INFO] 22:19:47:285 consola/(7850:7850): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:285 consola/(7850:7850): Recibi el siguiente mensaje..
+[INFO] 22:19:47:325 consola/(7850:7850): Proceso: RAM
+[INFO] 22:19:47:364 consola/(7850:7850): Comando: 200
+[INFO] 22:19:47:366 consola/(7850:7850): Tamanio: 30
+[INFO] 22:19:47:374 consola/(7850:7850): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:375 consola/(7850:7850): Recibi el siguiente mensaje..
+[INFO] 22:19:47:417 consola/(7850:7850): Proceso: RAM
+[INFO] 22:19:47:456 consola/(7850:7850): Comando: 200
+[INFO] 22:19:47:457 consola/(7850:7850): Tamanio: 30
+[INFO] 22:19:47:484 consola/(7850:7850): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:485 consola/(7850:7850): Recibi el siguiente mensaje..
+[INFO] 22:19:47:525 consola/(7850:7850): Proceso: RAM
+[INFO] 22:19:47:564 consola/(7850:7850): Comando: 200
+[INFO] 22:19:47:565 consola/(7850:7850): Tamanio: 30
+[INFO] 22:20:03:653 consola/(7850:7850): --------------------------------------------------------------------
+[INFO] 22:20:03:657 consola/(7850:7850): Entró comando: LISTAR_TRIPULANTES
+[INFO] 22:20:03:661 consola/(7850:7850): Estado de la Nave: 26/06/21 22:20:03
+[INFO] 22:20:03:665 consola/(7850:7850): Tripulante: 0	
+[INFO] 22:20:03:670 consola/(7850:7850): Patota: 1	
+[INFO] 22:20:03:672 consola/(7850:7850): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 22:20:03:674 consola/(7850:7850): Posicion X e Y: 1 - 1
+
+[INFO] 22:20:03:676 consola/(7850:7850): Status: NEW
+
+[INFO] 22:20:03:678 consola/(7850:7850): Tripulante: 1	
+[INFO] 22:20:03:679 consola/(7850:7850): Patota: 1	
+[INFO] 22:20:03:680 consola/(7850:7850): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 22:20:03:681 consola/(7850:7850): Posicion X e Y: 1 - 1
+
+[INFO] 22:20:03:692 consola/(7850:7850): Status: NEW
+
+[INFO] 22:20:03:693 consola/(7850:7850): Tripulante: 2	
+[INFO] 22:20:03:695 consola/(7850:7850): Patota: 1	
+[INFO] 22:20:03:700 consola/(7850:7850): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 22:20:03:702 consola/(7850:7850): Posicion X e Y: 0 - 0
+
+[INFO] 22:20:03:703 consola/(7850:7850): Status: NEW
+
+[INFO] 22:20:03:705 consola/(7850:7850): Tripulante: 3	
+[INFO] 22:20:03:707 consola/(7850:7850): Patota: 1	
+[INFO] 22:20:03:708 consola/(7850:7850): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 22:20:03:710 consola/(7850:7850): Posicion X e Y: 0 - 0
+
+[INFO] 22:20:03:711 consola/(7850:7850): Status: NEW
+
+[INFO] 22:20:03:712 consola/(7850:7850): --------------------------------------------------------------------
+[INFO] 22:23:30:094 consola/(7919:7919): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:23:30:188 consola/(7919:7919): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:23:30:196 consola/(7919:7919): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:23:30:276 consola/(7919:7919): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:23:49:151 consola/(7955:7955): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:23:49:268 consola/(7955:7955): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:23:49:277 consola/(7955:7955): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:23:49:350 consola/(7955:7955): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:23:52:893 consola/(7972:7972): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:23:52:898 consola/(7972:7972): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:23:52:899 consola/(7972:7972): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:23:52:901 consola/(7972:7972): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:27:02:783 consola/(8003:8003): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:27:02:891 consola/(8003:8003): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:27:02:914 consola/(8003:8003): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:27:02:979 consola/(8003:8003): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:28:16:802 consola/(8053:8053): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:28:16:804 consola/(8053:8053): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:28:16:805 consola/(8053:8053): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:28:16:806 consola/(8053:8053): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:28:29:462 consola/(8072:8072): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:28:29:547 consola/(8072:8072): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:28:29:558 consola/(8072:8072): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:28:29:611 consola/(8072:8072): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:52:42:860 consola/(8668:8668): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:52:42:928 consola/(8668:8668): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:52:42:934 consola/(8668:8668): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:52:42:973 consola/(8668:8668): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:54:02:454 consola/(8715:8715): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:54:02:519 consola/(8715:8715): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:54:02:525 consola/(8715:8715): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:54:02:561 consola/(8715:8715): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:54:02:566 consola/(8715:8715): 4
+[INFO] 22:54:02:567 consola/(8715:8715): 0
+[INFO] 22:54:58:553 consola/(8742:8742): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:54:58:618 consola/(8742:8742): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:54:58:624 consola/(8742:8742): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:54:58:658 consola/(8742:8742): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:59:59:210 consola/(8817:8817): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 22:59:59:211 consola/(8817:8817): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:59:59:212 consola/(8817:8817): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 22:59:59:212 consola/(8817:8817): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:00:09:099 consola/(8829:8829): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:00:09:179 consola/(8829:8829): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:00:09:185 consola/(8829:8829): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:00:09:226 consola/(8829:8829): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:00:27:248 consola/(8848:8848): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:00:27:357 consola/(8848:8848): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:00:27:364 consola/(8848:8848): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:00:27:405 consola/(8848:8848): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:01:37:438 consola/(8874:8874): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:01:37:538 consola/(8874:8874): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:01:37:542 consola/(8874:8874): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:01:37:580 consola/(8874:8874): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:01:37:593 consola/(8874:8874): HOLA
+[INFO] 23:03:04:394 consola/(8905:8905): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:03:04:495 consola/(8905:8905): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:03:04:499 consola/(8905:8905): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:03:04:537 consola/(8905:8905): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:03:04:542 consola/(8905:8905): HOLA
+[INFO] 23:04:16:856 consola/(8947:8947): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:04:16:968 consola/(8947:8947): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:04:16:972 consola/(8947:8947): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:04:17:010 consola/(8947:8947): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:04:17:016 consola/(8947:8947): HOLA
+[INFO] 23:04:37:087 consola/(8972:8972): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:04:37:192 consola/(8972:8972): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:04:37:205 consola/(8972:8972): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:04:37:243 consola/(8972:8972): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:04:37:250 consola/(8972:8972): HOLA
+[INFO] 23:06:28:291 consola/(9000:9000): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:06:28:402 consola/(9000:9000): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:06:28:417 consola/(9000:9000): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:06:28:463 consola/(9000:9000): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:06:28:476 consola/(9000:9000): HOLA
+[INFO] 23:06:28:477 consola/(9000:9000): HOLA
+[INFO] 23:06:34:630 consola/(9000:9000): Entró comando: INICIAR_PLANIFICACION
+[INFO] 23:06:34:631 consola/(9000:9000): Se inició la planificación. Estado de la flag: 0
+[INFO] 23:06:55:385 consola/(9000:9000): Entró comando: INICIAR_PATOTA
+[INFO] 23:06:55:428 consola/(9000:9000): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:429 consola/(9000:9000): Recibi el siguiente mensaje..
+[INFO] 23:06:55:431 consola/(9000:9000): Proceso: RAM
+[INFO] 23:06:55:431 consola/(9000:9000): Comando: 200
+[INFO] 23:06:55:436 consola/(9000:9000): Tamanio: 9
+[INFO] 23:06:55:438 consola/(9000:9000): Memoria OK
+[INFO] 23:06:55:443 consola/(9000:9000): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:444 consola/(9000:9000): Recibi el siguiente mensaje..
+[INFO] 23:06:55:481 consola/(9000:9000): Proceso: RAM
+[INFO] 23:06:55:519 consola/(9000:9000): Comando: 200
+[INFO] 23:06:55:521 consola/(9000:9000): Tamanio: 30
+[INFO] 23:06:55:535 consola/(9000:9000): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:536 consola/(9000:9000): Recibi el siguiente mensaje..
+[INFO] 23:06:55:572 consola/(9000:9000): Proceso: RAM
+[INFO] 23:06:55:612 consola/(9000:9000): Comando: 200
+[INFO] 23:06:55:613 consola/(9000:9000): Tamanio: 30
+[INFO] 23:06:55:624 consola/(9000:9000): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:624 consola/(9000:9000): Recibi el siguiente mensaje..
+[INFO] 23:06:55:664 consola/(9000:9000): Proceso: RAM
+[INFO] 23:06:55:704 consola/(9000:9000): Comando: 200
+[INFO] 23:06:55:704 consola/(9000:9000): Tamanio: 30
+[INFO] 23:06:55:709 consola/(9000:9000): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:714 consola/(9000:9000): Recibi el siguiente mensaje..
+[INFO] 23:06:55:749 consola/(9000:9000): Proceso: RAM
+[INFO] 23:06:55:788 consola/(9000:9000): Comando: 200
+[INFO] 23:06:55:789 consola/(9000:9000): Tamanio: 30
+[INFO] 23:07:00:355 consola/(9000:9000): Salimos de la consola
+[INFO] 23:10:18:729 consola/(9076:9076): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:10:18:869 consola/(9076:9076): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:10:18:885 consola/(9076:9076): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:10:18:942 consola/(9076:9076): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:20:53:137 consola/(9241:9241): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:20:53:138 consola/(9241:9241): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:20:53:139 consola/(9241:9241): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:20:53:140 consola/(9241:9241): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:21:42:460 consola/(9276:9276): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:21:42:461 consola/(9276:9276): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:21:42:466 consola/(9276:9276): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:21:42:467 consola/(9276:9276): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:22:17:470 consola/(9303:9303): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:22:17:470 consola/(9303:9303): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:22:17:471 consola/(9303:9303): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:22:17:473 consola/(9303:9303): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:22:17:480 consola/(9303:9305): Se ejecuta el hilo de New a Ready
+[INFO] 23:22:17:481 consola/(9303:9306): Se ejecuta el hilo de Ready a Exec
+[INFO] 23:22:17:482 consola/(9303:9306): Se comienza a iterar signals...
+[INFO] 23:22:53:240 consola/(9317:9317): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:22:53:431 consola/(9317:9317): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:22:53:462 consola/(9317:9317): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:22:53:526 consola/(9317:9317): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:23:18:180 consola/(9345:9345): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:23:18:300 consola/(9345:9345): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:23:18:305 consola/(9345:9345): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:23:18:357 consola/(9345:9345): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:23:35:634 consola/(9358:9358): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:23:35:829 consola/(9358:9358): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:23:35:850 consola/(9358:9358): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:23:35:958 consola/(9358:9358): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:23:40:802 consola/(9380:9380): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:23:40:944 consola/(9380:9380): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:23:40:968 consola/(9380:9380): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:23:41:033 consola/(9380:9380): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:24:18:588 consola/(9400:9400): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:24:18:678 consola/(9400:9400): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:24:18:681 consola/(9400:9400): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:24:18:837 consola/(9400:9400): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:29:41:612 consola/(9503:9503): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:29:41:751 consola/(9503:9503): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:29:41:765 consola/(9503:9503): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:29:41:950 consola/(9503:9503): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:31:07:386 consola/(9547:9547): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:31:07:457 consola/(9547:9547): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:31:07:474 consola/(9547:9547): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:31:07:687 consola/(9547:9547): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:32:10:735 consola/(9581:9581): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:32:10:736 consola/(9581:9581): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:32:10:736 consola/(9581:9581): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:32:10:738 consola/(9581:9581): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:32:49:641 consola/(9620:9620): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:32:49:747 consola/(9620:9620): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:32:49:762 consola/(9620:9620): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:32:49:815 consola/(9620:9620): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:51:43:276 consola/(11113:11113): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 23:51:43:282 consola/(11113:11113): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:51:43:287 consola/(11113:11113): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[ERROR] 23:51:43:288 consola/(11113:11113): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:51:43:312 consola/(11113:11115): Se ejecuta el hilo de New a Ready
+[INFO] 23:51:43:312 consola/(11113:11116): Se ejecuta el hilo de Ready a Exec
+[INFO] 23:51:43:313 consola/(11113:11116): Se comienza a iterar signals...
+[INFO] 15:41:17:331 consola/(13458:13458): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:41:17:334 consola/(13458:13458): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 15:41:17:337 consola/(13458:13458): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 15:41:17:342 consola/(13458:13458): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 15:41:17:358 consola/(13458:13459): Se ejecuta el hilo de New a Ready
+[INFO] 15:41:17:363 consola/(13458:13460): Se ejecuta el hilo de Ready a Exec
+[INFO] 15:41:17:363 consola/(13458:13460): Se comienza a iterar signals...
+[INFO] 15:41:33:799 consola/(13470:13470): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 15:41:33:912 consola/(13470:13470): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 15:41:33:921 consola/(13470:13470): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 15:41:33:965 consola/(13470:13470): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 16:43:03:552 consola/(14153:14153): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:43:03:554 consola/(14153:14153): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 16:43:03:554 consola/(14153:14153): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 16:43:03:558 consola/(14153:14153): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 16:43:08:109 consola/(14163:14163): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 16:43:08:124 consola/(14163:14163): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 16:43:08:125 consola/(14163:14163): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 16:43:08:126 consola/(14163:14163): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 16:43:08:138 consola/(14163:14165): ----------------------------------
+[INFO] 16:43:08:145 consola/(14163:14165): Se ejecuta el hilo de New a Ready
+[INFO] 16:43:08:147 consola/(14163:14165): Nodo encontrado. Moviendolo a Ready...
+[INFO] 16:43:08:148 consola/(14163:14165): TID:1
+[INFO] 16:43:08:148 consola/(14163:14165): Status:N
+[INFO] 16:43:08:150 consola/(14163:14165): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 16:43:08:150 consola/(14163:14165): Se paso nodo a Ready
+[INFO] 16:43:08:151 consola/(14163:14165): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 16:43:08:151 consola/(14163:14165): ----------------------------------
+[INFO] 16:43:08:151 consola/(14163:14166): ----------------------------------
+[INFO] 16:43:08:151 consola/(14163:14166): Se ejecuta el hilo de Ready a Exec
+[INFO] 16:43:08:151 consola/(14163:14166): Nodo encontrado. Moviendolo a Ready...
+[INFO] 16:43:08:151 consola/(14163:14166): TID:1
+[INFO] 16:43:08:152 consola/(14163:14166): Status:R
+[INFO] 16:43:08:152 consola/(14163:14166): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 16:43:08:152 consola/(14163:14166): Se paso nodo a Exec
+[INFO] 16:43:08:152 consola/(14163:14166): Hay 1 nodos en Exec
+[INFO] 16:43:08:152 consola/(14163:14166): Se comienza a iterar signals...
+[INFO] 17:14:43:213 consola/(15110:15110): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:43:215 consola/(15110:15110): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:14:43:216 consola/(15110:15110): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:14:43:218 consola/(15110:15110): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:14:43:243 consola/(15110:15111): ----------------------------------
+[INFO] 17:14:43:244 consola/(15110:15111): Se ejecuta el hilo de New a Ready
+[INFO] 17:14:43:244 consola/(15110:15111): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:14:43:248 consola/(15110:15111): TID:1
+[INFO] 17:14:43:249 consola/(15110:15111): Status:N
+[INFO] 17:14:43:250 consola/(15110:15111): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:14:43:250 consola/(15110:15111): Se paso nodo a Ready
+[INFO] 17:14:43:250 consola/(15110:15111): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:14:43:250 consola/(15110:15111): ----------------------------------
+[INFO] 17:14:43:252 consola/(15110:15112): ----------------------------------
+[INFO] 17:14:43:252 consola/(15110:15112): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:14:43:252 consola/(15110:15112): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:14:43:252 consola/(15110:15112): TID:1
+[INFO] 17:14:43:252 consola/(15110:15112): Status:R
+[INFO] 17:14:43:252 consola/(15110:15112): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:14:43:252 consola/(15110:15112): Se paso Tripulante a Exec
+[INFO] 17:14:43:253 consola/(15110:15112): Hay 1 nodos en Exec
+[INFO] 17:14:43:253 consola/(15110:15112): Se comienza a iterar signals...
+[INFO] 17:14:46:093 consola/(15123:15123): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:46:096 consola/(15123:15123): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:14:46:097 consola/(15123:15123): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:14:46:100 consola/(15123:15123): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:14:52:024 consola/(15133:15133): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:52:027 consola/(15133:15133): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:14:52:028 consola/(15133:15133): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:14:52:034 consola/(15133:15133): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:14:53:303 consola/(15143:15143): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:53:304 consola/(15143:15143): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:14:53:305 consola/(15143:15143): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:14:53:308 consola/(15143:15143): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:14:55:634 consola/(15153:15153): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:55:636 consola/(15153:15153): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:14:55:638 consola/(15153:15153): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:14:55:639 consola/(15153:15153): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:14:57:480 consola/(15163:15163): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:57:481 consola/(15163:15163): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:14:57:482 consola/(15163:15163): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:14:57:485 consola/(15163:15163): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:14:59:267 consola/(15173:15173): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:14:59:268 consola/(15173:15173): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:14:59:269 consola/(15173:15173): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:14:59:271 consola/(15173:15173): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:15:01:617 consola/(15183:15183): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:15:01:619 consola/(15183:15183): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:15:01:620 consola/(15183:15183): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:15:01:622 consola/(15183:15183): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:15:02:786 consola/(15193:15193): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:15:02:788 consola/(15193:15193): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:15:02:789 consola/(15193:15193): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:15:02:791 consola/(15193:15193): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:16:20:315 consola/(15218:15218): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:16:20:316 consola/(15218:15218): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:16:20:317 consola/(15218:15218): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:16:20:320 consola/(15218:15218): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:16:41:811 consola/(15227:15227): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:16:41:884 consola/(15227:15227): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:16:41:900 consola/(15227:15227): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 17:16:42:039 consola/(15227:15227): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 17:20:16:187 consola/(15272:15272): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:20:16:257 consola/(15272:15272): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:20:16:271 consola/(15272:15272): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:32:14:259 consola/(16171:16171): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:32:14:343 consola/(16171:16171): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:32:14:351 consola/(16171:16171): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:32:58:746 consola/(16181:16181): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:32:58:748 consola/(16181:16181): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:32:58:749 consola/(16181:16181): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:32:58:758 consola/(16181:16182): ----------------------------------
+[INFO] 17:32:58:759 consola/(16181:16182): Se ejecuta el hilo de New a Ready
+[INFO] 17:32:58:760 consola/(16181:16182): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:32:58:760 consola/(16181:16182): TID:1
+[INFO] 17:32:58:760 consola/(16181:16182): Status:N
+[INFO] 17:32:58:761 consola/(16181:16182): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:32:58:761 consola/(16181:16182): Se paso nodo a Ready
+[INFO] 17:32:58:761 consola/(16181:16182): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:32:58:762 consola/(16181:16182): ----------------------------------
+[INFO] 17:32:58:762 consola/(16181:16183): ----------------------------------
+[INFO] 17:32:58:762 consola/(16181:16183): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:32:58:762 consola/(16181:16183): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:32:58:762 consola/(16181:16183): TID:1
+[INFO] 17:32:58:762 consola/(16181:16183): Status:R
+[INFO] 17:32:58:763 consola/(16181:16183): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:32:58:763 consola/(16181:16183): Se paso Tripulante a Exec
+[INFO] 17:32:58:763 consola/(16181:16183): Hay 1 nodos en Exec
+[INFO] 17:32:58:763 consola/(16181:16183): Se comienza a iterar signals...
+[INFO] 17:33:07:009 consola/(16190:16190): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:07:011 consola/(16190:16190): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:07:011 consola/(16190:16190): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:07:018 consola/(16190:16191): ----------------------------------
+[INFO] 17:33:07:023 consola/(16190:16191): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:07:024 consola/(16190:16191): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:07:025 consola/(16190:16191): TID:1
+[INFO] 17:33:07:025 consola/(16190:16191): Status:N
+[INFO] 17:33:07:025 consola/(16190:16191): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:07:025 consola/(16190:16191): Se paso nodo a Ready
+[INFO] 17:33:07:025 consola/(16190:16191): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:07:026 consola/(16190:16191): ----------------------------------
+[INFO] 17:33:07:026 consola/(16190:16192): ----------------------------------
+[INFO] 17:33:07:026 consola/(16190:16192): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:07:027 consola/(16190:16192): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:07:027 consola/(16190:16192): TID:1
+[INFO] 17:33:07:027 consola/(16190:16192): Status:R
+[INFO] 17:33:07:027 consola/(16190:16192): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:07:027 consola/(16190:16192): Se paso Tripulante a Exec
+[INFO] 17:33:07:027 consola/(16190:16192): Hay 1 nodos en Exec
+[INFO] 17:33:07:027 consola/(16190:16192): Se comienza a iterar signals...
+[INFO] 17:33:08:845 consola/(16199:16199): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:08:847 consola/(16199:16199): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:08:848 consola/(16199:16199): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:08:858 consola/(16199:16200): ----------------------------------
+[INFO] 17:33:08:859 consola/(16199:16200): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:08:859 consola/(16199:16200): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:08:859 consola/(16199:16200): TID:1
+[INFO] 17:33:08:859 consola/(16199:16200): Status:N
+[INFO] 17:33:08:860 consola/(16199:16200): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:08:860 consola/(16199:16200): Se paso nodo a Ready
+[INFO] 17:33:08:860 consola/(16199:16200): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:08:860 consola/(16199:16200): ----------------------------------
+[INFO] 17:33:08:860 consola/(16199:16201): ----------------------------------
+[INFO] 17:33:08:860 consola/(16199:16201): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:08:860 consola/(16199:16201): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:08:860 consola/(16199:16201): TID:1
+[INFO] 17:33:08:861 consola/(16199:16201): Status:R
+[INFO] 17:33:08:861 consola/(16199:16201): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:08:861 consola/(16199:16201): Se paso Tripulante a Exec
+[INFO] 17:33:08:861 consola/(16199:16201): Hay 1 nodos en Exec
+[INFO] 17:33:08:861 consola/(16199:16201): Se comienza a iterar signals...
+[INFO] 17:33:10:198 consola/(16208:16208): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:10:200 consola/(16208:16208): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:10:201 consola/(16208:16208): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:10:210 consola/(16208:16209): ----------------------------------
+[INFO] 17:33:10:211 consola/(16208:16209): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:10:212 consola/(16208:16209): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:10:213 consola/(16208:16209): TID:1
+[INFO] 17:33:10:213 consola/(16208:16209): Status:N
+[INFO] 17:33:10:214 consola/(16208:16209): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:10:214 consola/(16208:16209): Se paso nodo a Ready
+[INFO] 17:33:10:214 consola/(16208:16209): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:10:214 consola/(16208:16209): ----------------------------------
+[INFO] 17:33:10:215 consola/(16208:16210): ----------------------------------
+[INFO] 17:33:10:215 consola/(16208:16210): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:10:215 consola/(16208:16210): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:10:215 consola/(16208:16210): TID:1
+[INFO] 17:33:10:215 consola/(16208:16210): Status:R
+[INFO] 17:33:10:215 consola/(16208:16210): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:10:216 consola/(16208:16210): Se paso Tripulante a Exec
+[INFO] 17:33:10:216 consola/(16208:16210): Hay 1 nodos en Exec
+[INFO] 17:33:10:216 consola/(16208:16210): Se comienza a iterar signals...
+[INFO] 17:33:11:034 consola/(16217:16217): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:11:036 consola/(16217:16217): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:11:036 consola/(16217:16217): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:11:046 consola/(16217:16218): ----------------------------------
+[INFO] 17:33:11:047 consola/(16217:16218): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:11:047 consola/(16217:16218): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:11:047 consola/(16217:16218): TID:1
+[INFO] 17:33:11:048 consola/(16217:16218): Status:N
+[INFO] 17:33:11:048 consola/(16217:16218): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:11:048 consola/(16217:16218): Se paso nodo a Ready
+[INFO] 17:33:11:048 consola/(16217:16218): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:11:049 consola/(16217:16218): ----------------------------------
+[INFO] 17:33:11:049 consola/(16217:16219): ----------------------------------
+[INFO] 17:33:11:049 consola/(16217:16219): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:11:049 consola/(16217:16219): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:11:049 consola/(16217:16219): TID:1
+[INFO] 17:33:11:050 consola/(16217:16219): Status:R
+[INFO] 17:33:11:050 consola/(16217:16219): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:11:050 consola/(16217:16219): Se paso Tripulante a Exec
+[INFO] 17:33:11:050 consola/(16217:16219): Hay 1 nodos en Exec
+[INFO] 17:33:11:050 consola/(16217:16219): Se comienza a iterar signals...
+[INFO] 17:33:11:745 consola/(16226:16226): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:11:747 consola/(16226:16226): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:11:748 consola/(16226:16226): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:11:758 consola/(16226:16227): ----------------------------------
+[INFO] 17:33:11:759 consola/(16226:16227): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:11:759 consola/(16226:16227): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:11:759 consola/(16226:16227): TID:1
+[INFO] 17:33:11:759 consola/(16226:16227): Status:N
+[INFO] 17:33:11:760 consola/(16226:16227): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:11:760 consola/(16226:16227): Se paso nodo a Ready
+[INFO] 17:33:11:760 consola/(16226:16227): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:11:760 consola/(16226:16227): ----------------------------------
+[INFO] 17:33:11:760 consola/(16226:16228): ----------------------------------
+[INFO] 17:33:11:761 consola/(16226:16228): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:11:761 consola/(16226:16228): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:11:761 consola/(16226:16228): TID:1
+[INFO] 17:33:11:761 consola/(16226:16228): Status:R
+[INFO] 17:33:11:761 consola/(16226:16228): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:11:761 consola/(16226:16228): Se paso Tripulante a Exec
+[INFO] 17:33:11:761 consola/(16226:16228): Hay 1 nodos en Exec
+[INFO] 17:33:11:761 consola/(16226:16228): Se comienza a iterar signals...
+[INFO] 17:33:12:504 consola/(16235:16235): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:12:505 consola/(16235:16235): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:12:506 consola/(16235:16235): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:12:515 consola/(16235:16236): ----------------------------------
+[INFO] 17:33:12:516 consola/(16235:16236): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:12:518 consola/(16235:16236): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:12:518 consola/(16235:16236): TID:1
+[INFO] 17:33:12:519 consola/(16235:16236): Status:N
+[INFO] 17:33:12:519 consola/(16235:16236): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:12:520 consola/(16235:16236): Se paso nodo a Ready
+[INFO] 17:33:12:520 consola/(16235:16236): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:12:521 consola/(16235:16236): ----------------------------------
+[INFO] 17:33:12:522 consola/(16235:16237): ----------------------------------
+[INFO] 17:33:12:523 consola/(16235:16237): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:12:523 consola/(16235:16237): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:12:523 consola/(16235:16237): TID:1
+[INFO] 17:33:12:523 consola/(16235:16237): Status:R
+[INFO] 17:33:12:523 consola/(16235:16237): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:12:523 consola/(16235:16237): Se paso Tripulante a Exec
+[INFO] 17:33:12:523 consola/(16235:16237): Hay 1 nodos en Exec
+[INFO] 17:33:12:523 consola/(16235:16237): Se comienza a iterar signals...
+[INFO] 17:33:13:212 consola/(16244:16244): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:13:214 consola/(16244:16244): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:13:214 consola/(16244:16244): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:13:226 consola/(16244:16245): ----------------------------------
+[INFO] 17:33:13:227 consola/(16244:16245): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:13:227 consola/(16244:16245): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:13:227 consola/(16244:16245): TID:1
+[INFO] 17:33:13:228 consola/(16244:16245): Status:N
+[INFO] 17:33:13:228 consola/(16244:16245): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:13:228 consola/(16244:16245): Se paso nodo a Ready
+[INFO] 17:33:13:228 consola/(16244:16245): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:13:228 consola/(16244:16245): ----------------------------------
+[INFO] 17:33:13:229 consola/(16244:16246): ----------------------------------
+[INFO] 17:33:13:229 consola/(16244:16246): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:13:229 consola/(16244:16246): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:13:230 consola/(16244:16246): TID:1
+[INFO] 17:33:13:230 consola/(16244:16246): Status:R
+[INFO] 17:33:13:230 consola/(16244:16246): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:13:230 consola/(16244:16246): Se paso Tripulante a Exec
+[INFO] 17:33:13:230 consola/(16244:16246): Hay 1 nodos en Exec
+[INFO] 17:33:13:230 consola/(16244:16246): Se comienza a iterar signals...
+[INFO] 17:33:13:895 consola/(16253:16253): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:13:897 consola/(16253:16253): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:13:899 consola/(16253:16253): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:13:910 consola/(16253:16254): ----------------------------------
+[INFO] 17:33:13:911 consola/(16253:16254): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:13:912 consola/(16253:16254): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:13:912 consola/(16253:16254): TID:1
+[INFO] 17:33:13:912 consola/(16253:16254): Status:N
+[INFO] 17:33:13:912 consola/(16253:16254): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:13:912 consola/(16253:16254): Se paso nodo a Ready
+[INFO] 17:33:13:912 consola/(16253:16254): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:13:913 consola/(16253:16254): ----------------------------------
+[INFO] 17:33:13:913 consola/(16253:16255): ----------------------------------
+[INFO] 17:33:13:913 consola/(16253:16255): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:13:913 consola/(16253:16255): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:13:913 consola/(16253:16255): TID:1
+[INFO] 17:33:13:913 consola/(16253:16255): Status:R
+[INFO] 17:33:13:914 consola/(16253:16255): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:13:914 consola/(16253:16255): Se paso Tripulante a Exec
+[INFO] 17:33:13:914 consola/(16253:16255): Hay 1 nodos en Exec
+[INFO] 17:33:13:914 consola/(16253:16255): Se comienza a iterar signals...
+[INFO] 17:33:14:631 consola/(16262:16262): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:14:632 consola/(16262:16262): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:14:633 consola/(16262:16262): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:14:643 consola/(16262:16263): ----------------------------------
+[INFO] 17:33:14:644 consola/(16262:16263): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:14:644 consola/(16262:16263): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:14:645 consola/(16262:16263): TID:1
+[INFO] 17:33:14:645 consola/(16262:16263): Status:N
+[INFO] 17:33:14:645 consola/(16262:16263): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:14:646 consola/(16262:16263): Se paso nodo a Ready
+[INFO] 17:33:14:646 consola/(16262:16263): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:14:647 consola/(16262:16263): ----------------------------------
+[INFO] 17:33:14:647 consola/(16262:16264): ----------------------------------
+[INFO] 17:33:14:647 consola/(16262:16264): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:14:647 consola/(16262:16264): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:14:648 consola/(16262:16264): TID:1
+[INFO] 17:33:14:648 consola/(16262:16264): Status:R
+[INFO] 17:33:14:648 consola/(16262:16264): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:14:648 consola/(16262:16264): Se paso Tripulante a Exec
+[INFO] 17:33:14:648 consola/(16262:16264): Hay 1 nodos en Exec
+[INFO] 17:33:14:648 consola/(16262:16264): Se comienza a iterar signals...
+[INFO] 17:33:15:341 consola/(16271:16271): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:15:343 consola/(16271:16271): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:15:344 consola/(16271:16271): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:15:354 consola/(16271:16272): ----------------------------------
+[INFO] 17:33:15:355 consola/(16271:16272): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:15:355 consola/(16271:16272): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:15:356 consola/(16271:16272): TID:1
+[INFO] 17:33:15:356 consola/(16271:16272): Status:N
+[INFO] 17:33:15:356 consola/(16271:16272): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:15:356 consola/(16271:16272): Se paso nodo a Ready
+[INFO] 17:33:15:357 consola/(16271:16272): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:15:357 consola/(16271:16272): ----------------------------------
+[INFO] 17:33:15:357 consola/(16271:16273): ----------------------------------
+[INFO] 17:33:15:357 consola/(16271:16273): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:15:357 consola/(16271:16273): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:15:357 consola/(16271:16273): TID:1
+[INFO] 17:33:15:358 consola/(16271:16273): Status:R
+[INFO] 17:33:15:358 consola/(16271:16273): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:15:358 consola/(16271:16273): Se paso Tripulante a Exec
+[INFO] 17:33:15:358 consola/(16271:16273): Hay 1 nodos en Exec
+[INFO] 17:33:15:358 consola/(16271:16273): Se comienza a iterar signals...
+[INFO] 17:33:15:995 consola/(16280:16280): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:15:996 consola/(16280:16280): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:15:997 consola/(16280:16280): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:16:005 consola/(16280:16281): ----------------------------------
+[INFO] 17:33:16:007 consola/(16280:16281): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:16:007 consola/(16280:16281): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:16:009 consola/(16280:16281): TID:1
+[INFO] 17:33:16:009 consola/(16280:16281): Status:N
+[INFO] 17:33:16:010 consola/(16280:16281): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:16:011 consola/(16280:16281): Se paso nodo a Ready
+[INFO] 17:33:16:011 consola/(16280:16281): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:16:011 consola/(16280:16281): ----------------------------------
+[INFO] 17:33:16:011 consola/(16280:16282): ----------------------------------
+[INFO] 17:33:16:012 consola/(16280:16282): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:16:012 consola/(16280:16282): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:16:012 consola/(16280:16282): TID:1
+[INFO] 17:33:16:012 consola/(16280:16282): Status:R
+[INFO] 17:33:16:012 consola/(16280:16282): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:16:012 consola/(16280:16282): Se paso Tripulante a Exec
+[INFO] 17:33:16:012 consola/(16280:16282): Hay 1 nodos en Exec
+[INFO] 17:33:16:012 consola/(16280:16282): Se comienza a iterar signals...
+[INFO] 17:33:16:669 consola/(16289:16289): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:16:671 consola/(16289:16289): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:16:671 consola/(16289:16289): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:16:678 consola/(16289:16290): ----------------------------------
+[INFO] 17:33:16:683 consola/(16289:16290): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:16:683 consola/(16289:16290): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:16:683 consola/(16289:16290): TID:1
+[INFO] 17:33:16:684 consola/(16289:16290): Status:N
+[INFO] 17:33:16:684 consola/(16289:16290): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:16:684 consola/(16289:16290): Se paso nodo a Ready
+[INFO] 17:33:16:684 consola/(16289:16290): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:16:684 consola/(16289:16290): ----------------------------------
+[INFO] 17:33:16:684 consola/(16289:16291): ----------------------------------
+[INFO] 17:33:16:684 consola/(16289:16291): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:16:685 consola/(16289:16291): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:16:685 consola/(16289:16291): TID:1
+[INFO] 17:33:16:685 consola/(16289:16291): Status:R
+[INFO] 17:33:16:685 consola/(16289:16291): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:16:685 consola/(16289:16291): Se paso Tripulante a Exec
+[INFO] 17:33:16:685 consola/(16289:16291): Hay 1 nodos en Exec
+[INFO] 17:33:16:685 consola/(16289:16291): Se comienza a iterar signals...
+[INFO] 17:33:17:361 consola/(16298:16298): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:17:363 consola/(16298:16298): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:17:363 consola/(16298:16298): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:17:374 consola/(16298:16299): ----------------------------------
+[INFO] 17:33:17:374 consola/(16298:16299): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:17:375 consola/(16298:16299): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:17:375 consola/(16298:16299): TID:1
+[INFO] 17:33:17:375 consola/(16298:16299): Status:N
+[INFO] 17:33:17:375 consola/(16298:16299): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:17:376 consola/(16298:16299): Se paso nodo a Ready
+[INFO] 17:33:17:376 consola/(16298:16299): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:17:376 consola/(16298:16299): ----------------------------------
+[INFO] 17:33:17:377 consola/(16298:16300): ----------------------------------
+[INFO] 17:33:17:377 consola/(16298:16300): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:17:377 consola/(16298:16300): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:17:377 consola/(16298:16300): TID:1
+[INFO] 17:33:17:377 consola/(16298:16300): Status:R
+[INFO] 17:33:17:377 consola/(16298:16300): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:17:377 consola/(16298:16300): Se paso Tripulante a Exec
+[INFO] 17:33:17:377 consola/(16298:16300): Hay 1 nodos en Exec
+[INFO] 17:33:17:377 consola/(16298:16300): Se comienza a iterar signals...
+[INFO] 17:33:18:037 consola/(16307:16307): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:18:039 consola/(16307:16307): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:18:039 consola/(16307:16307): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:18:050 consola/(16307:16308): ----------------------------------
+[INFO] 17:33:18:050 consola/(16307:16308): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:18:051 consola/(16307:16308): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:18:051 consola/(16307:16308): TID:1
+[INFO] 17:33:18:051 consola/(16307:16308): Status:N
+[INFO] 17:33:18:051 consola/(16307:16308): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:18:051 consola/(16307:16308): Se paso nodo a Ready
+[INFO] 17:33:18:052 consola/(16307:16308): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:18:052 consola/(16307:16308): ----------------------------------
+[INFO] 17:33:18:052 consola/(16307:16309): ----------------------------------
+[INFO] 17:33:18:053 consola/(16307:16309): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:18:053 consola/(16307:16309): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:18:053 consola/(16307:16309): TID:1
+[INFO] 17:33:18:053 consola/(16307:16309): Status:R
+[INFO] 17:33:18:053 consola/(16307:16309): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:18:053 consola/(16307:16309): Se paso Tripulante a Exec
+[INFO] 17:33:18:054 consola/(16307:16309): Hay 1 nodos en Exec
+[INFO] 17:33:18:054 consola/(16307:16309): Se comienza a iterar signals...
+[INFO] 17:33:18:687 consola/(16316:16316): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:18:688 consola/(16316:16316): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:18:689 consola/(16316:16316): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:18:698 consola/(16316:16317): ----------------------------------
+[INFO] 17:33:18:699 consola/(16316:16317): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:18:699 consola/(16316:16317): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:18:700 consola/(16316:16317): TID:1
+[INFO] 17:33:18:701 consola/(16316:16317): Status:N
+[INFO] 17:33:18:702 consola/(16316:16317): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:18:702 consola/(16316:16317): Se paso nodo a Ready
+[INFO] 17:33:18:703 consola/(16316:16317): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:18:703 consola/(16316:16317): ----------------------------------
+[INFO] 17:33:18:703 consola/(16316:16318): ----------------------------------
+[INFO] 17:33:18:703 consola/(16316:16318): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:18:703 consola/(16316:16318): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:18:703 consola/(16316:16318): TID:1
+[INFO] 17:33:18:703 consola/(16316:16318): Status:R
+[INFO] 17:33:18:704 consola/(16316:16318): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:18:704 consola/(16316:16318): Se paso Tripulante a Exec
+[INFO] 17:33:18:704 consola/(16316:16318): Hay 1 nodos en Exec
+[INFO] 17:33:18:704 consola/(16316:16318): Se comienza a iterar signals...
+[INFO] 17:33:19:193 consola/(16325:16325): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:19:195 consola/(16325:16325): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:19:195 consola/(16325:16325): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:19:202 consola/(16325:16326): ----------------------------------
+[INFO] 17:33:19:207 consola/(16325:16326): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:19:207 consola/(16325:16326): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:19:207 consola/(16325:16326): TID:1
+[INFO] 17:33:19:208 consola/(16325:16326): Status:N
+[INFO] 17:33:19:208 consola/(16325:16326): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:19:208 consola/(16325:16326): Se paso nodo a Ready
+[INFO] 17:33:19:208 consola/(16325:16326): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:19:208 consola/(16325:16326): ----------------------------------
+[INFO] 17:33:19:208 consola/(16325:16327): ----------------------------------
+[INFO] 17:33:19:208 consola/(16325:16327): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:19:209 consola/(16325:16327): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:19:209 consola/(16325:16327): TID:1
+[INFO] 17:33:19:209 consola/(16325:16327): Status:R
+[INFO] 17:33:19:209 consola/(16325:16327): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:19:209 consola/(16325:16327): Se paso Tripulante a Exec
+[INFO] 17:33:19:209 consola/(16325:16327): Hay 1 nodos en Exec
+[INFO] 17:33:19:210 consola/(16325:16327): Se comienza a iterar signals...
+[INFO] 17:33:19:629 consola/(16334:16334): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:19:631 consola/(16334:16334): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:19:632 consola/(16334:16334): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:19:638 consola/(16334:16335): ----------------------------------
+[INFO] 17:33:19:643 consola/(16334:16335): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:19:644 consola/(16334:16335): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:19:644 consola/(16334:16335): TID:1
+[INFO] 17:33:19:644 consola/(16334:16335): Status:N
+[INFO] 17:33:19:644 consola/(16334:16335): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:19:645 consola/(16334:16335): Se paso nodo a Ready
+[INFO] 17:33:19:645 consola/(16334:16335): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:19:645 consola/(16334:16335): ----------------------------------
+[INFO] 17:33:19:645 consola/(16334:16336): ----------------------------------
+[INFO] 17:33:19:645 consola/(16334:16336): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:19:645 consola/(16334:16336): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:19:645 consola/(16334:16336): TID:1
+[INFO] 17:33:19:646 consola/(16334:16336): Status:R
+[INFO] 17:33:19:646 consola/(16334:16336): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:19:646 consola/(16334:16336): Se paso Tripulante a Exec
+[INFO] 17:33:19:646 consola/(16334:16336): Hay 1 nodos en Exec
+[INFO] 17:33:19:646 consola/(16334:16336): Se comienza a iterar signals...
+[INFO] 17:33:20:023 consola/(16343:16343): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:20:025 consola/(16343:16343): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:20:026 consola/(16343:16343): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:20:034 consola/(16343:16344): ----------------------------------
+[INFO] 17:33:20:035 consola/(16343:16344): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:20:037 consola/(16343:16344): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:20:037 consola/(16343:16344): TID:1
+[INFO] 17:33:20:038 consola/(16343:16344): Status:N
+[INFO] 17:33:20:038 consola/(16343:16344): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:20:038 consola/(16343:16344): Se paso nodo a Ready
+[INFO] 17:33:20:039 consola/(16343:16344): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:20:039 consola/(16343:16344): ----------------------------------
+[INFO] 17:33:20:039 consola/(16343:16345): ----------------------------------
+[INFO] 17:33:20:039 consola/(16343:16345): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:20:039 consola/(16343:16345): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:20:040 consola/(16343:16345): TID:1
+[INFO] 17:33:20:040 consola/(16343:16345): Status:R
+[INFO] 17:33:20:040 consola/(16343:16345): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:20:040 consola/(16343:16345): Se paso Tripulante a Exec
+[INFO] 17:33:20:040 consola/(16343:16345): Hay 1 nodos en Exec
+[INFO] 17:33:20:040 consola/(16343:16345): Se comienza a iterar signals...
+[INFO] 17:33:20:423 consola/(16352:16352): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:20:424 consola/(16352:16352): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:20:425 consola/(16352:16352): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:20:434 consola/(16352:16353): ----------------------------------
+[INFO] 17:33:20:435 consola/(16352:16353): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:20:436 consola/(16352:16353): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:20:436 consola/(16352:16353): TID:1
+[INFO] 17:33:20:437 consola/(16352:16353): Status:N
+[INFO] 17:33:20:437 consola/(16352:16353): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:20:437 consola/(16352:16353): Se paso nodo a Ready
+[INFO] 17:33:20:437 consola/(16352:16353): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:20:438 consola/(16352:16353): ----------------------------------
+[INFO] 17:33:20:438 consola/(16352:16354): ----------------------------------
+[INFO] 17:33:20:438 consola/(16352:16354): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:20:438 consola/(16352:16354): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:20:438 consola/(16352:16354): TID:1
+[INFO] 17:33:20:438 consola/(16352:16354): Status:R
+[INFO] 17:33:20:439 consola/(16352:16354): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:20:439 consola/(16352:16354): Se paso Tripulante a Exec
+[INFO] 17:33:20:439 consola/(16352:16354): Hay 1 nodos en Exec
+[INFO] 17:33:20:439 consola/(16352:16354): Se comienza a iterar signals...
+[INFO] 17:33:20:838 consola/(16361:16361): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:20:839 consola/(16361:16361): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:20:840 consola/(16361:16361): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:20:850 consola/(16361:16362): ----------------------------------
+[INFO] 17:33:20:851 consola/(16361:16362): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:20:851 consola/(16361:16362): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:20:852 consola/(16361:16362): TID:1
+[INFO] 17:33:20:852 consola/(16361:16362): Status:N
+[INFO] 17:33:20:852 consola/(16361:16362): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:20:852 consola/(16361:16362): Se paso nodo a Ready
+[INFO] 17:33:20:852 consola/(16361:16362): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:20:852 consola/(16361:16362): ----------------------------------
+[INFO] 17:33:20:852 consola/(16361:16363): ----------------------------------
+[INFO] 17:33:20:853 consola/(16361:16363): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:20:853 consola/(16361:16363): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:20:853 consola/(16361:16363): TID:1
+[INFO] 17:33:20:853 consola/(16361:16363): Status:R
+[INFO] 17:33:20:853 consola/(16361:16363): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:20:853 consola/(16361:16363): Se paso Tripulante a Exec
+[INFO] 17:33:20:853 consola/(16361:16363): Hay 1 nodos en Exec
+[INFO] 17:33:20:853 consola/(16361:16363): Se comienza a iterar signals...
+[INFO] 17:33:21:272 consola/(16370:16370): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:21:274 consola/(16370:16370): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:21:275 consola/(16370:16370): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:21:282 consola/(16370:16371): ----------------------------------
+[INFO] 17:33:21:288 consola/(16370:16371): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:21:289 consola/(16370:16371): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:21:289 consola/(16370:16371): TID:1
+[INFO] 17:33:21:289 consola/(16370:16371): Status:N
+[INFO] 17:33:21:290 consola/(16370:16371): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:21:290 consola/(16370:16371): Se paso nodo a Ready
+[INFO] 17:33:21:290 consola/(16370:16371): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:21:291 consola/(16370:16371): ----------------------------------
+[INFO] 17:33:21:291 consola/(16370:16372): ----------------------------------
+[INFO] 17:33:21:291 consola/(16370:16372): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:21:291 consola/(16370:16372): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:21:291 consola/(16370:16372): TID:1
+[INFO] 17:33:21:292 consola/(16370:16372): Status:R
+[INFO] 17:33:21:292 consola/(16370:16372): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:21:292 consola/(16370:16372): Se paso Tripulante a Exec
+[INFO] 17:33:21:292 consola/(16370:16372): Hay 1 nodos en Exec
+[INFO] 17:33:21:292 consola/(16370:16372): Se comienza a iterar signals...
+[INFO] 17:33:21:693 consola/(16379:16379): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:21:695 consola/(16379:16379): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:21:696 consola/(16379:16379): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:21:706 consola/(16379:16380): ----------------------------------
+[INFO] 17:33:21:707 consola/(16379:16380): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:21:707 consola/(16379:16380): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:21:707 consola/(16379:16380): TID:1
+[INFO] 17:33:21:707 consola/(16379:16380): Status:N
+[INFO] 17:33:21:708 consola/(16379:16380): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:21:708 consola/(16379:16380): Se paso nodo a Ready
+[INFO] 17:33:21:708 consola/(16379:16380): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:21:708 consola/(16379:16380): ----------------------------------
+[INFO] 17:33:21:708 consola/(16379:16381): ----------------------------------
+[INFO] 17:33:21:709 consola/(16379:16381): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:21:709 consola/(16379:16381): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:21:709 consola/(16379:16381): TID:1
+[INFO] 17:33:21:709 consola/(16379:16381): Status:R
+[INFO] 17:33:21:709 consola/(16379:16381): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:21:709 consola/(16379:16381): Se paso Tripulante a Exec
+[INFO] 17:33:21:709 consola/(16379:16381): Hay 1 nodos en Exec
+[INFO] 17:33:21:709 consola/(16379:16381): Se comienza a iterar signals...
+[INFO] 17:33:22:108 consola/(16388:16388): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:22:110 consola/(16388:16388): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:22:111 consola/(16388:16388): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:22:118 consola/(16388:16389): ----------------------------------
+[INFO] 17:33:22:123 consola/(16388:16389): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:22:124 consola/(16388:16389): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:22:124 consola/(16388:16389): TID:1
+[INFO] 17:33:22:124 consola/(16388:16389): Status:N
+[INFO] 17:33:22:125 consola/(16388:16389): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:22:125 consola/(16388:16389): Se paso nodo a Ready
+[INFO] 17:33:22:125 consola/(16388:16389): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:22:125 consola/(16388:16389): ----------------------------------
+[INFO] 17:33:22:125 consola/(16388:16390): ----------------------------------
+[INFO] 17:33:22:125 consola/(16388:16390): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:22:126 consola/(16388:16390): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:22:126 consola/(16388:16390): TID:1
+[INFO] 17:33:22:126 consola/(16388:16390): Status:R
+[INFO] 17:33:22:126 consola/(16388:16390): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:22:126 consola/(16388:16390): Se paso Tripulante a Exec
+[INFO] 17:33:22:126 consola/(16388:16390): Hay 1 nodos en Exec
+[INFO] 17:33:22:127 consola/(16388:16390): Se comienza a iterar signals...
+[INFO] 17:33:22:535 consola/(16397:16397): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:22:537 consola/(16397:16397): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:22:538 consola/(16397:16397): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:22:546 consola/(16397:16398): ----------------------------------
+[INFO] 17:33:22:547 consola/(16397:16398): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:22:548 consola/(16397:16398): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:22:549 consola/(16397:16398): TID:1
+[INFO] 17:33:22:550 consola/(16397:16398): Status:N
+[INFO] 17:33:22:550 consola/(16397:16398): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:22:551 consola/(16397:16398): Se paso nodo a Ready
+[INFO] 17:33:22:551 consola/(16397:16398): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:22:551 consola/(16397:16398): ----------------------------------
+[INFO] 17:33:22:552 consola/(16397:16399): ----------------------------------
+[INFO] 17:33:22:552 consola/(16397:16399): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:22:552 consola/(16397:16399): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:22:552 consola/(16397:16399): TID:1
+[INFO] 17:33:22:552 consola/(16397:16399): Status:R
+[INFO] 17:33:22:552 consola/(16397:16399): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:22:552 consola/(16397:16399): Se paso Tripulante a Exec
+[INFO] 17:33:22:552 consola/(16397:16399): Hay 1 nodos en Exec
+[INFO] 17:33:22:552 consola/(16397:16399): Se comienza a iterar signals...
+[INFO] 17:33:23:499 consola/(16406:16406): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:23:500 consola/(16406:16406): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:23:501 consola/(16406:16406): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:23:510 consola/(16406:16407): ----------------------------------
+[INFO] 17:33:23:511 consola/(16406:16407): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:23:512 consola/(16406:16407): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:23:512 consola/(16406:16407): TID:1
+[INFO] 17:33:23:512 consola/(16406:16407): Status:N
+[INFO] 17:33:23:513 consola/(16406:16407): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:23:513 consola/(16406:16407): Se paso nodo a Ready
+[INFO] 17:33:23:513 consola/(16406:16407): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:23:513 consola/(16406:16407): ----------------------------------
+[INFO] 17:33:23:514 consola/(16406:16408): ----------------------------------
+[INFO] 17:33:23:514 consola/(16406:16408): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:23:514 consola/(16406:16408): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:23:514 consola/(16406:16408): TID:1
+[INFO] 17:33:23:514 consola/(16406:16408): Status:R
+[INFO] 17:33:23:514 consola/(16406:16408): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:23:514 consola/(16406:16408): Se paso Tripulante a Exec
+[INFO] 17:33:23:515 consola/(16406:16408): Hay 1 nodos en Exec
+[INFO] 17:33:23:515 consola/(16406:16408): Se comienza a iterar signals...
+[INFO] 17:33:24:010 consola/(16415:16415): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:24:011 consola/(16415:16415): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:24:012 consola/(16415:16415): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:24:022 consola/(16415:16416): ----------------------------------
+[INFO] 17:33:24:023 consola/(16415:16416): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:24:023 consola/(16415:16416): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:24:024 consola/(16415:16416): TID:1
+[INFO] 17:33:24:024 consola/(16415:16416): Status:N
+[INFO] 17:33:24:024 consola/(16415:16416): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:24:024 consola/(16415:16416): Se paso nodo a Ready
+[INFO] 17:33:24:024 consola/(16415:16416): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:24:025 consola/(16415:16416): ----------------------------------
+[INFO] 17:33:24:025 consola/(16415:16417): ----------------------------------
+[INFO] 17:33:24:025 consola/(16415:16417): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:24:025 consola/(16415:16417): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:24:025 consola/(16415:16417): TID:1
+[INFO] 17:33:24:025 consola/(16415:16417): Status:R
+[INFO] 17:33:24:026 consola/(16415:16417): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:24:026 consola/(16415:16417): Se paso Tripulante a Exec
+[INFO] 17:33:24:026 consola/(16415:16417): Hay 1 nodos en Exec
+[INFO] 17:33:24:026 consola/(16415:16417): Se comienza a iterar signals...
+[INFO] 17:33:25:573 consola/(16424:16424): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:25:574 consola/(16424:16424): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:25:575 consola/(16424:16424): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:25:583 consola/(16424:16425): ----------------------------------
+[INFO] 17:33:25:587 consola/(16424:16425): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:25:588 consola/(16424:16425): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:25:588 consola/(16424:16425): TID:1
+[INFO] 17:33:25:588 consola/(16424:16425): Status:N
+[INFO] 17:33:25:589 consola/(16424:16425): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:25:589 consola/(16424:16425): Se paso nodo a Ready
+[INFO] 17:33:25:589 consola/(16424:16425): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:25:589 consola/(16424:16425): ----------------------------------
+[INFO] 17:33:25:589 consola/(16424:16426): ----------------------------------
+[INFO] 17:33:25:589 consola/(16424:16426): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:25:589 consola/(16424:16426): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:25:589 consola/(16424:16426): TID:1
+[INFO] 17:33:25:590 consola/(16424:16426): Status:R
+[INFO] 17:33:25:590 consola/(16424:16426): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:25:590 consola/(16424:16426): Se paso Tripulante a Exec
+[INFO] 17:33:25:590 consola/(16424:16426): Hay 1 nodos en Exec
+[INFO] 17:33:25:590 consola/(16424:16426): Se comienza a iterar signals...
+[INFO] 17:33:26:119 consola/(16433:16433): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:26:121 consola/(16433:16433): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:26:122 consola/(16433:16433): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:26:139 consola/(16433:16434): ----------------------------------
+[INFO] 17:33:26:146 consola/(16433:16434): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:26:146 consola/(16433:16434): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:26:146 consola/(16433:16434): TID:1
+[INFO] 17:33:26:147 consola/(16433:16434): Status:N
+[INFO] 17:33:26:148 consola/(16433:16434): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:26:148 consola/(16433:16434): Se paso nodo a Ready
+[INFO] 17:33:26:148 consola/(16433:16434): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:26:148 consola/(16433:16434): ----------------------------------
+[INFO] 17:33:26:148 consola/(16433:16435): ----------------------------------
+[INFO] 17:33:26:149 consola/(16433:16435): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:26:149 consola/(16433:16435): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:26:149 consola/(16433:16435): TID:1
+[INFO] 17:33:26:149 consola/(16433:16435): Status:R
+[INFO] 17:33:26:150 consola/(16433:16435): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:26:150 consola/(16433:16435): Se paso Tripulante a Exec
+[INFO] 17:33:26:150 consola/(16433:16435): Hay 1 nodos en Exec
+[INFO] 17:33:26:150 consola/(16433:16435): Se comienza a iterar signals...
+[INFO] 17:33:27:452 consola/(16442:16442): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:27:454 consola/(16442:16442): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:27:455 consola/(16442:16442): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:27:462 consola/(16442:16443): ----------------------------------
+[INFO] 17:33:27:467 consola/(16442:16443): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:27:467 consola/(16442:16443): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:27:467 consola/(16442:16443): TID:1
+[INFO] 17:33:27:468 consola/(16442:16443): Status:N
+[INFO] 17:33:27:468 consola/(16442:16443): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:27:468 consola/(16442:16443): Se paso nodo a Ready
+[INFO] 17:33:27:468 consola/(16442:16443): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:27:468 consola/(16442:16443): ----------------------------------
+[INFO] 17:33:27:469 consola/(16442:16444): ----------------------------------
+[INFO] 17:33:27:469 consola/(16442:16444): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:27:469 consola/(16442:16444): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:27:469 consola/(16442:16444): TID:1
+[INFO] 17:33:27:469 consola/(16442:16444): Status:R
+[INFO] 17:33:27:469 consola/(16442:16444): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:27:469 consola/(16442:16444): Se paso Tripulante a Exec
+[INFO] 17:33:27:470 consola/(16442:16444): Hay 1 nodos en Exec
+[INFO] 17:33:27:470 consola/(16442:16444): Se comienza a iterar signals...
+[INFO] 17:33:28:257 consola/(16451:16451): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:28:259 consola/(16451:16451): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:28:261 consola/(16451:16451): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:28:271 consola/(16451:16452): ----------------------------------
+[INFO] 17:33:28:272 consola/(16451:16452): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:28:273 consola/(16451:16452): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:28:273 consola/(16451:16452): TID:1
+[INFO] 17:33:28:275 consola/(16451:16452): Status:N
+[INFO] 17:33:28:275 consola/(16451:16452): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:28:276 consola/(16451:16452): Se paso nodo a Ready
+[INFO] 17:33:28:277 consola/(16451:16452): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:28:277 consola/(16451:16452): ----------------------------------
+[INFO] 17:33:28:278 consola/(16451:16453): ----------------------------------
+[INFO] 17:33:28:285 consola/(16451:16453): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:28:285 consola/(16451:16453): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:28:285 consola/(16451:16453): TID:1
+[INFO] 17:33:28:286 consola/(16451:16453): Status:R
+[INFO] 17:33:28:286 consola/(16451:16453): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:28:286 consola/(16451:16453): Se paso Tripulante a Exec
+[INFO] 17:33:28:286 consola/(16451:16453): Hay 1 nodos en Exec
+[INFO] 17:33:28:286 consola/(16451:16453): Se comienza a iterar signals...
+[INFO] 17:33:28:986 consola/(16460:16460): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:28:988 consola/(16460:16460): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:28:989 consola/(16460:16460): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:28:998 consola/(16460:16461): ----------------------------------
+[INFO] 17:33:28:999 consola/(16460:16461): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:28:999 consola/(16460:16461): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:29:001 consola/(16460:16461): TID:1
+[INFO] 17:33:29:001 consola/(16460:16461): Status:N
+[INFO] 17:33:29:001 consola/(16460:16461): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:29:001 consola/(16460:16461): Se paso nodo a Ready
+[INFO] 17:33:29:001 consola/(16460:16461): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:29:002 consola/(16460:16461): ----------------------------------
+[INFO] 17:33:29:002 consola/(16460:16462): ----------------------------------
+[INFO] 17:33:29:002 consola/(16460:16462): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:29:002 consola/(16460:16462): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:29:002 consola/(16460:16462): TID:1
+[INFO] 17:33:29:002 consola/(16460:16462): Status:R
+[INFO] 17:33:29:002 consola/(16460:16462): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:29:003 consola/(16460:16462): Se paso Tripulante a Exec
+[INFO] 17:33:29:003 consola/(16460:16462): Hay 1 nodos en Exec
+[INFO] 17:33:29:003 consola/(16460:16462): Se comienza a iterar signals...
+[INFO] 17:33:29:817 consola/(16469:16469): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:29:819 consola/(16469:16469): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:29:819 consola/(16469:16469): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:29:826 consola/(16469:16470): ----------------------------------
+[INFO] 17:33:29:831 consola/(16469:16470): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:29:831 consola/(16469:16470): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:29:832 consola/(16469:16470): TID:1
+[INFO] 17:33:29:832 consola/(16469:16470): Status:N
+[INFO] 17:33:29:832 consola/(16469:16470): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:29:832 consola/(16469:16470): Se paso nodo a Ready
+[INFO] 17:33:29:832 consola/(16469:16470): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:29:833 consola/(16469:16470): ----------------------------------
+[INFO] 17:33:29:833 consola/(16469:16471): ----------------------------------
+[INFO] 17:33:29:833 consola/(16469:16471): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:29:833 consola/(16469:16471): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:29:833 consola/(16469:16471): TID:1
+[INFO] 17:33:29:833 consola/(16469:16471): Status:R
+[INFO] 17:33:29:834 consola/(16469:16471): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:29:834 consola/(16469:16471): Se paso Tripulante a Exec
+[INFO] 17:33:29:834 consola/(16469:16471): Hay 1 nodos en Exec
+[INFO] 17:33:29:834 consola/(16469:16471): Se comienza a iterar signals...
+[INFO] 17:33:30:648 consola/(16478:16478): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:30:650 consola/(16478:16478): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:30:651 consola/(16478:16478): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:30:662 consola/(16478:16479): ----------------------------------
+[INFO] 17:33:30:662 consola/(16478:16479): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:30:663 consola/(16478:16479): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:30:663 consola/(16478:16479): TID:1
+[INFO] 17:33:30:663 consola/(16478:16479): Status:N
+[INFO] 17:33:30:663 consola/(16478:16479): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:30:663 consola/(16478:16479): Se paso nodo a Ready
+[INFO] 17:33:30:663 consola/(16478:16479): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:30:663 consola/(16478:16479): ----------------------------------
+[INFO] 17:33:30:664 consola/(16478:16480): ----------------------------------
+[INFO] 17:33:30:664 consola/(16478:16480): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:30:664 consola/(16478:16480): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:30:664 consola/(16478:16480): TID:1
+[INFO] 17:33:30:664 consola/(16478:16480): Status:R
+[INFO] 17:33:30:664 consola/(16478:16480): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:30:665 consola/(16478:16480): Se paso Tripulante a Exec
+[INFO] 17:33:30:665 consola/(16478:16480): Hay 1 nodos en Exec
+[INFO] 17:33:30:665 consola/(16478:16480): Se comienza a iterar signals...
+[INFO] 17:33:33:462 consola/(16501:16501): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:33:464 consola/(16501:16501): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:33:464 consola/(16501:16501): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:33:474 consola/(16501:16502): ----------------------------------
+[INFO] 17:33:33:475 consola/(16501:16502): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:33:475 consola/(16501:16502): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:33:475 consola/(16501:16502): TID:1
+[INFO] 17:33:33:476 consola/(16501:16502): Status:N
+[INFO] 17:33:33:476 consola/(16501:16502): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:33:476 consola/(16501:16502): Se paso nodo a Ready
+[INFO] 17:33:33:476 consola/(16501:16502): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:33:476 consola/(16501:16502): ----------------------------------
+[INFO] 17:33:33:477 consola/(16501:16503): ----------------------------------
+[INFO] 17:33:33:477 consola/(16501:16503): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:33:477 consola/(16501:16503): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:33:478 consola/(16501:16503): TID:1
+[INFO] 17:33:33:478 consola/(16501:16503): Status:R
+[INFO] 17:33:33:478 consola/(16501:16503): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:33:478 consola/(16501:16503): Se paso Tripulante a Exec
+[INFO] 17:33:33:478 consola/(16501:16503): Hay 1 nodos en Exec
+[INFO] 17:33:33:478 consola/(16501:16503): Se comienza a iterar signals...
+[INFO] 17:33:35:454 consola/(16510:16510): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:35:457 consola/(16510:16510): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:35:458 consola/(16510:16510): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:35:466 consola/(16510:16511): ----------------------------------
+[INFO] 17:33:35:467 consola/(16510:16511): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:35:467 consola/(16510:16511): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:35:467 consola/(16510:16511): TID:1
+[INFO] 17:33:35:468 consola/(16510:16511): Status:N
+[INFO] 17:33:35:468 consola/(16510:16511): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:35:468 consola/(16510:16511): Se paso nodo a Ready
+[INFO] 17:33:35:468 consola/(16510:16511): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:35:469 consola/(16510:16511): ----------------------------------
+[INFO] 17:33:35:469 consola/(16510:16512): ----------------------------------
+[INFO] 17:33:35:469 consola/(16510:16512): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:35:470 consola/(16510:16512): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:35:470 consola/(16510:16512): TID:1
+[INFO] 17:33:35:470 consola/(16510:16512): Status:R
+[INFO] 17:33:35:472 consola/(16510:16512): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:35:473 consola/(16510:16512): Se paso Tripulante a Exec
+[INFO] 17:33:35:473 consola/(16510:16512): Hay 1 nodos en Exec
+[INFO] 17:33:35:473 consola/(16510:16512): Se comienza a iterar signals...
+[INFO] 17:33:37:812 consola/(16519:16519): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:33:37:814 consola/(16519:16519): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:33:37:814 consola/(16519:16519): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:33:37:822 consola/(16519:16520): ----------------------------------
+[INFO] 17:33:37:823 consola/(16519:16520): Se ejecuta el hilo de New a Ready
+[INFO] 17:33:37:824 consola/(16519:16520): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 17:33:37:825 consola/(16519:16520): TID:1
+[INFO] 17:33:37:825 consola/(16519:16520): Status:N
+[INFO] 17:33:37:827 consola/(16519:16520): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:37:827 consola/(16519:16520): Se paso nodo a Ready
+[INFO] 17:33:37:828 consola/(16519:16520): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:33:37:828 consola/(16519:16520): ----------------------------------
+[INFO] 17:33:37:828 consola/(16519:16521): ----------------------------------
+[INFO] 17:33:37:828 consola/(16519:16521): Se ejecuta el hilo de Ready a Exec
+[INFO] 17:33:37:828 consola/(16519:16521): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 17:33:37:828 consola/(16519:16521): TID:1
+[INFO] 17:33:37:828 consola/(16519:16521): Status:R
+[INFO] 17:33:37:829 consola/(16519:16521): Instruccion Actual:GENERAR_OXIGENO
+[INFO] 17:33:37:829 consola/(16519:16521): Se paso Tripulante a Exec
+[INFO] 17:33:37:829 consola/(16519:16521): Hay 1 nodos en Exec
+[INFO] 17:33:37:829 consola/(16519:16521): Se comienza a iterar signals...
+[INFO] 17:35:07:317 consola/(16552:16552): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:35:07:320 consola/(16552:16552): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:35:07:326 consola/(16552:16552): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:35:07:330 consola/(16552:16553): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 17:35:07:330 consola/(16552:16553): ----------------------------------
+[INFO] 17:35:07:332 consola/(16552:16554): Se comienza a iterar signals...
+[INFO] 17:35:07:333 consola/(16552:16554): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 17:35:07:334 consola/(16552:16554): ----------------------------------
+[INFO] 17:35:32:968 consola/(16575:16575): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:35:33:043 consola/(16575:16575): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:35:33:052 consola/(16575:16575): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:35:41:865 consola/(16575:16575): Entró comando: INICIAR_PLANIFICACION
+[INFO] 17:35:41:868 consola/(16575:16575): Se inició la planificación. Estado de la flag: 0
+[INFO] 17:35:49:116 consola/(16575:16575): Entró comando: INICIAR_PATOTA
+[INFO] 17:43:40:406 consola/(16687:16687): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:40:408 consola/(16687:16687): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:40:409 consola/(16687:16687): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:41:665 consola/(16689:16689): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:41:667 consola/(16689:16689): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:41:667 consola/(16689:16689): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:42:860 consola/(16691:16691): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:42:862 consola/(16691:16691): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:42:863 consola/(16691:16691): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:43:678 consola/(16693:16693): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:43:679 consola/(16693:16693): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:43:680 consola/(16693:16693): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:44:206 consola/(16695:16695): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:44:207 consola/(16695:16695): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:44:208 consola/(16695:16695): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:44:653 consola/(16697:16697): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:44:655 consola/(16697:16697): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:44:656 consola/(16697:16697): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:45:081 consola/(16699:16699): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:45:083 consola/(16699:16699): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:45:083 consola/(16699:16699): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:45:827 consola/(16701:16701): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:45:828 consola/(16701:16701): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:45:829 consola/(16701:16701): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:46:277 consola/(16705:16705): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:46:284 consola/(16705:16705): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:46:285 consola/(16705:16705): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:46:696 consola/(16707:16707): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:46:698 consola/(16707:16707): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:46:699 consola/(16707:16707): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:47:113 consola/(16709:16709): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:47:115 consola/(16709:16709): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:47:115 consola/(16709:16709): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:47:565 consola/(16711:16711): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:47:566 consola/(16711:16711): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:47:567 consola/(16711:16711): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:47:989 consola/(16713:16713): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:47:990 consola/(16713:16713): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:47:991 consola/(16713:16713): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:48:411 consola/(16715:16715): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:48:416 consola/(16715:16715): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:48:420 consola/(16715:16715): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:48:847 consola/(16720:16720): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:48:849 consola/(16720:16720): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:48:850 consola/(16720:16720): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:49:245 consola/(16722:16722): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:49:247 consola/(16722:16722): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:49:248 consola/(16722:16722): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:43:52:845 consola/(16724:16724): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:43:52:916 consola/(16724:16724): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:43:52:926 consola/(16724:16724): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:44:18:638 consola/(16746:16746): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:44:18:639 consola/(16746:16746): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:44:18:640 consola/(16746:16746): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:57:00:860 consola/(16970:16970): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:57:00:860 consola/(16970:16970): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:57:00:861 consola/(16970:16970): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:57:26:998 consola/(16985:16985): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:57:26:998 consola/(16985:16985): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:57:26:999 consola/(16985:16985): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:57:26:999 consola/(16985:16985): Creando hilo consola..
+[INFO] 17:58:01:665 consola/(17003:17003): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:58:01:665 consola/(17003:17003): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:58:01:666 consola/(17003:17003): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:58:01:666 consola/(17003:17003): Creando hilo consola..
+[INFO] 17:58:15:955 consola/(17018:17018): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:58:15:956 consola/(17018:17018): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:58:15:956 consola/(17018:17018): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:58:15:956 consola/(17018:17018): Creando hilo consola..
+[INFO] 17:59:18:357 consola/(17046:17046): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:59:18:357 consola/(17046:17046): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:59:18:357 consola/(17046:17046): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:59:18:358 consola/(17046:17046): Creando hilo consola..
+[INFO] 17:59:46:944 consola/(17074:17074): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 17:59:46:944 consola/(17074:17074): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 17:59:46:945 consola/(17074:17074): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 17:59:46:945 consola/(17074:17074): Creando hilo consola..
+[INFO] 18:01:06:522 consola/(17114:17114): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:01:06:523 consola/(17114:17114): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:01:06:523 consola/(17114:17114): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:01:06:523 consola/(17114:17114): Creando hilo consola..
+[INFO] 18:01:27:930 consola/(17130:17130): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:01:27:931 consola/(17130:17130): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:01:27:931 consola/(17130:17130): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:01:27:931 consola/(17130:17130): Creando hilo consola..
+[INFO] 18:21:39:293 consola/(17438:17438): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:21:39:294 consola/(17438:17438): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:21:39:294 consola/(17438:17438): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:21:39:295 consola/(17438:17438): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:21:39:299 consola/(17438:17438): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:21:39:300 consola/(17438:17438): Creando hilo consola..
+[INFO] 18:22:09:705 consola/(17456:17456): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:22:09:706 consola/(17456:17456): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:22:09:706 consola/(17456:17456): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:22:09:707 consola/(17456:17456): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:22:09:707 consola/(17456:17456): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:22:09:707 consola/(17456:17456): Creando hilo consola..
+[INFO] 18:23:51:134 consola/(17587:17587): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:23:51:135 consola/(17587:17587): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:23:51:136 consola/(17587:17587): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:23:51:142 consola/(17587:17587): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:23:51:143 consola/(17587:17587): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:24:11:953 consola/(17587:17587): Salimos de la consola
+[INFO] 18:24:14:778 consola/(17587:17587): Salimos de la consola
+[INFO] 18:26:23:539 consola/(17633:17633): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:26:23:540 consola/(17633:17633): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:26:23:544 consola/(17633:17633): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:26:23:545 consola/(17633:17633): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:26:23:545 consola/(17633:17633): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:26:23:548 consola/(17633:17634): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 18:26:23:549 consola/(17633:17634): ----------------------------------
+[INFO] 18:26:23:549 consola/(17633:17635): Se comienza a iterar signals...
+[INFO] 18:26:23:549 consola/(17633:17635): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 18:26:23:550 consola/(17633:17635): ----------------------------------
+[INFO] 18:26:35:825 consola/(17633:17633): --------------------------------------------------------------------
+[INFO] 18:26:35:825 consola/(17633:17633): Entró comando: LISTAR_TRIPULANTES
+[INFO] 18:26:35:826 consola/(17633:17633): Estado de la Nave: 27/06/21 18:26:35
+[INFO] 18:26:35:826 consola/(17633:17633): --------------------------------------------------------------------
+[INFO] 18:28:23:345 consola/(17664:17664): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:28:23:347 consola/(17664:17664): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:28:23:348 consola/(17664:17664): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:28:23:349 consola/(17664:17664): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:28:23:350 consola/(17664:17664): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:28:23:351 consola/(17664:17665): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 18:28:23:352 consola/(17664:17665): ----------------------------------
+[INFO] 18:28:23:353 consola/(17664:17666): Se comienza a iterar signals...
+[INFO] 18:28:23:354 consola/(17664:17666): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 18:28:23:354 consola/(17664:17666): ----------------------------------
+[INFO] 18:44:37:389 consola/(17782:17782): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:44:37:390 consola/(17782:17782): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:44:37:390 consola/(17782:17782): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:44:37:391 consola/(17782:17782): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:44:37:391 consola/(17782:17782): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:44:37:393 consola/(17782:17783): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 18:44:37:393 consola/(17782:17783): ----------------------------------
+[INFO] 18:44:37:394 consola/(17782:17784): Se comienza a iterar signals...
+[INFO] 18:44:37:394 consola/(17782:17784): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 18:44:37:394 consola/(17782:17784): ----------------------------------
+[INFO] 18:44:41:471 consola/(17782:17782): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 18:46:00:243 consola/(17782:17782): Entró comando: INICIAR_PATOTA
+[ERROR] 18:46:00:249 consola/(17782:17782): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 18:46:00:250 consola/(17782:17782): Recibi el siguiente mensaje..
+[INFO] 18:46:00:250 consola/(17782:17782): Proceso: �
+[INFO] 18:46:00:251 consola/(17782:17782): Comando: 808466998
+[INFO] 18:46:00:251 consola/(17782:17782): Tamanio: 0
+[ERROR] 18:46:00:251 consola/(17782:17782): No se pudo crear el PCB por falta de memoria
+[INFO] 18:46:06:263 consola/(17969:17969): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:46:06:264 consola/(17969:17969): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:46:06:265 consola/(17969:17969): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:46:06:268 consola/(17969:17969): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:46:06:269 consola/(17969:17969): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:46:06:271 consola/(17969:17971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 18:46:06:272 consola/(17969:17971): ----------------------------------
+[INFO] 18:46:06:272 consola/(17969:17972): Se comienza a iterar signals...
+[INFO] 18:46:06:273 consola/(17969:17972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 18:46:06:273 consola/(17969:17972): ----------------------------------
+[INFO] 18:46:25:764 consola/(17969:17969): Entró comando: INICIAR_PATOTA
+[INFO] 18:46:25:769 consola/(17969:17969): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:25:769 consola/(17969:17969): Recibi el siguiente mensaje..
+[INFO] 18:46:25:771 consola/(17969:17969): Proceso: RAM
+[INFO] 18:46:25:772 consola/(17969:17969): Comando: 200
+[INFO] 18:46:25:772 consola/(17969:17969): Tamanio: 9
+[INFO] 18:46:25:772 consola/(17969:17969): Memoria OK
+[INFO] 18:46:25:773 consola/(17969:17969): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:25:773 consola/(17969:17969): Recibi el siguiente mensaje..
+[INFO] 18:46:25:815 consola/(17969:17969): Proceso: RAM
+[INFO] 18:46:25:858 consola/(17969:17969): Comando: 200
+[INFO] 18:46:25:858 consola/(17969:17969): Tamanio: 30
+[INFO] 18:46:25:859 consola/(17969:17969): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:25:859 consola/(17969:17969): Recibi el siguiente mensaje..
+[INFO] 18:46:25:860 consola/(17969:17981): ----------------------------------
+[INFO] 18:46:25:860 consola/(17969:17980): ----------------------------------
+[INFO] 18:46:25:860 consola/(17969:17979): ----------------------------------
+[INFO] 18:46:25:861 consola/(17969:17978): ----------------------------------
+[INFO] 18:46:25:900 consola/(17969:17969): Proceso: RAM
+[INFO] 18:46:25:938 consola/(17969:17969): Comando: 200
+[INFO] 18:46:25:938 consola/(17969:17969): Tamanio: 30
+[INFO] 18:46:25:939 consola/(17969:17969): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:25:939 consola/(17969:17969): Recibi el siguiente mensaje..
+[INFO] 18:46:25:940 consola/(17969:17985): ----------------------------------
+[INFO] 18:46:25:941 consola/(17969:17984): ----------------------------------
+[INFO] 18:46:25:941 consola/(17969:17983): ----------------------------------
+[INFO] 18:46:25:941 consola/(17969:17982): ----------------------------------
+[INFO] 18:46:25:979 consola/(17969:17969): Proceso: RAM
+[INFO] 18:46:26:018 consola/(17969:17969): Comando: 200
+[INFO] 18:46:26:018 consola/(17969:17969): Tamanio: 30
+[INFO] 18:46:26:018 consola/(17969:17969): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:26:019 consola/(17969:17969): Recibi el siguiente mensaje..
+[INFO] 18:46:26:019 consola/(17969:17988): ----------------------------------
+[INFO] 18:46:26:019 consola/(17969:17989): ----------------------------------
+[INFO] 18:46:26:019 consola/(17969:17986): ----------------------------------
+[INFO] 18:46:26:019 consola/(17969:17987): ----------------------------------
+[INFO] 18:46:26:063 consola/(17969:17969): Proceso: RAM
+[INFO] 18:46:26:102 consola/(17969:17969): Comando: 200
+[INFO] 18:46:26:102 consola/(17969:17969): Tamanio: 30
+[INFO] 18:46:26:103 consola/(17969:17993): ----------------------------------
+[INFO] 18:46:26:103 consola/(17969:17992): ----------------------------------
+[INFO] 18:46:26:103 consola/(17969:17990): ----------------------------------
+[INFO] 18:46:26:103 consola/(17969:17991): ----------------------------------
+[INFO] 18:46:52:436 consola/(17969:17969): --------------------------------------------------------------------
+[INFO] 18:46:52:437 consola/(17969:17969): Entró comando: LISTAR_TRIPULANTES
+[INFO] 18:46:52:437 consola/(17969:17969): Estado de la Nave: 27/06/21 18:46:52
+[INFO] 18:46:52:437 consola/(17969:17969): Tripulante: 0	
+[INFO] 18:46:52:438 consola/(17969:17969): Patota: 1	
+[INFO] 18:46:52:438 consola/(17969:17969): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 18:46:52:438 consola/(17969:17969): Posicion X e Y: 1 - 1
+
+[INFO] 18:46:52:438 consola/(17969:17969): Status: NEW
+
+[INFO] 18:46:52:438 consola/(17969:17969): Tripulante: 1	
+[INFO] 18:46:52:439 consola/(17969:17969): Patota: 1	
+[INFO] 18:46:52:439 consola/(17969:17969): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 18:46:52:439 consola/(17969:17969): Posicion X e Y: 1 - 1
+
+[INFO] 18:46:52:439 consola/(17969:17969): Status: NEW
+
+[INFO] 18:46:52:439 consola/(17969:17969): Tripulante: 2	
+[INFO] 18:46:52:440 consola/(17969:17969): Patota: 1	
+[INFO] 18:46:52:440 consola/(17969:17969): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 18:46:52:440 consola/(17969:17969): Posicion X e Y: 0 - 0
+
+[INFO] 18:46:52:440 consola/(17969:17969): Status: NEW
+
+[INFO] 18:46:52:441 consola/(17969:17969): Tripulante: 3	
+[INFO] 18:46:52:441 consola/(17969:17969): Patota: 1	
+[INFO] 18:46:52:441 consola/(17969:17969): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 18:46:52:441 consola/(17969:17969): Posicion X e Y: 0 - 0
+
+[INFO] 18:46:52:442 consola/(17969:17969): Status: NEW
+
+[INFO] 18:46:52:442 consola/(17969:17969): --------------------------------------------------------------------
+[INFO] 18:49:09:521 consola/(18028:18028): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:49:09:522 consola/(18028:18028): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:49:09:526 consola/(18028:18028): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:49:09:526 consola/(18028:18028): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:49:09:527 consola/(18028:18028): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:49:09:529 consola/(18028:18030): HOLAAA
+[INFO] 18:49:09:529 consola/(18028:18030): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 18:49:09:530 consola/(18028:18030): ----------------------------------
+[INFO] 18:49:09:530 consola/(18028:18031): Se comienza a iterar signals...
+[INFO] 18:49:09:531 consola/(18028:18031): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 18:49:09:532 consola/(18028:18031): ----------------------------------
+[INFO] 18:49:43:137 consola/(18028:18028): Entró comando: INICIAR_PATOTA
+[INFO] 18:49:43:143 consola/(18028:18028): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:144 consola/(18028:18028): Recibi el siguiente mensaje..
+[INFO] 18:49:43:146 consola/(18028:18028): Proceso: RAM
+[INFO] 18:49:43:146 consola/(18028:18028): Comando: 200
+[INFO] 18:49:43:146 consola/(18028:18028): Tamanio: 9
+[INFO] 18:49:43:146 consola/(18028:18028): Memoria OK
+[INFO] 18:49:43:147 consola/(18028:18028): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:147 consola/(18028:18028): Recibi el siguiente mensaje..
+[INFO] 18:49:43:187 consola/(18028:18028): Proceso: RAM
+[INFO] 18:49:43:226 consola/(18028:18028): Comando: 200
+[INFO] 18:49:43:227 consola/(18028:18028): Tamanio: 30
+[INFO] 18:49:43:227 consola/(18028:18028): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:227 consola/(18028:18028): Recibi el siguiente mensaje..
+[INFO] 18:49:43:227 consola/(18028:18040): ----------------------------------
+[INFO] 18:49:43:228 consola/(18028:18039): ----------------------------------
+[INFO] 18:49:43:228 consola/(18028:18038): ----------------------------------
+[INFO] 18:49:43:228 consola/(18028:18037): ----------------------------------
+[INFO] 18:49:43:267 consola/(18028:18028): Proceso: RAM
+[INFO] 18:49:43:306 consola/(18028:18028): Comando: 200
+[INFO] 18:49:43:306 consola/(18028:18028): Tamanio: 30
+[INFO] 18:49:43:306 consola/(18028:18028): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:306 consola/(18028:18028): Recibi el siguiente mensaje..
+[INFO] 18:49:43:307 consola/(18028:18044): ----------------------------------
+[INFO] 18:49:43:307 consola/(18028:18043): ----------------------------------
+[INFO] 18:49:43:307 consola/(18028:18042): ----------------------------------
+[INFO] 18:49:43:307 consola/(18028:18041): ----------------------------------
+[INFO] 18:49:43:348 consola/(18028:18028): Proceso: RAM
+[INFO] 18:49:43:386 consola/(18028:18028): Comando: 200
+[INFO] 18:49:43:386 consola/(18028:18028): Tamanio: 30
+[INFO] 18:49:43:387 consola/(18028:18028): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:387 consola/(18028:18028): Recibi el siguiente mensaje..
+[INFO] 18:49:43:387 consola/(18028:18048): ----------------------------------
+[INFO] 18:49:43:387 consola/(18028:18047): ----------------------------------
+[INFO] 18:49:43:387 consola/(18028:18046): ----------------------------------
+[INFO] 18:49:43:388 consola/(18028:18045): ----------------------------------
+[INFO] 18:49:43:427 consola/(18028:18028): Proceso: RAM
+[INFO] 18:49:43:467 consola/(18028:18028): Comando: 200
+[INFO] 18:49:43:468 consola/(18028:18028): Tamanio: 30
+[INFO] 18:49:43:469 consola/(18028:18052): ----------------------------------
+[INFO] 18:49:43:469 consola/(18028:18051): ----------------------------------
+[INFO] 18:49:43:469 consola/(18028:18050): ----------------------------------
+[INFO] 18:49:43:475 consola/(18028:18049): ----------------------------------
+[INFO] 18:49:48:917 consola/(18028:18028): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:49:48:918 consola/(18028:18028): Se inició la planificación. Estado de la flag: 0
+[INFO] 18:50:26:766 consola/(18077:18077): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:50:26:767 consola/(18077:18077): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:50:26:768 consola/(18077:18077): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:50:26:769 consola/(18077:18077): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:50:26:770 consola/(18077:18077): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:50:26:772 consola/(18077:18079): HOLAAA
+[INFO] 18:50:26:772 consola/(18077:18079): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 18:50:26:773 consola/(18077:18079): ----------------------------------
+[INFO] 18:50:26:773 consola/(18077:18080): Se comienza a iterar signals...
+[INFO] 18:50:26:774 consola/(18077:18080): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 18:50:26:774 consola/(18077:18080): ----------------------------------
+[INFO] 18:51:08:238 consola/(18077:18077): Entró comando: INICIAR_PATOTA
+[INFO] 18:51:08:243 consola/(18077:18077): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:243 consola/(18077:18077): Recibi el siguiente mensaje..
+[INFO] 18:51:08:245 consola/(18077:18077): Proceso: RAM
+[INFO] 18:51:08:245 consola/(18077:18077): Comando: 200
+[INFO] 18:51:08:245 consola/(18077:18077): Tamanio: 9
+[INFO] 18:51:08:246 consola/(18077:18077): Memoria OK
+[INFO] 18:51:08:246 consola/(18077:18077): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:246 consola/(18077:18077): Recibi el siguiente mensaje..
+[INFO] 18:51:08:288 consola/(18077:18077): Proceso: RAM
+[INFO] 18:51:08:326 consola/(18077:18077): Comando: 200
+[INFO] 18:51:08:327 consola/(18077:18077): Tamanio: 30
+[INFO] 18:51:08:328 consola/(18077:18077): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:328 consola/(18077:18077): Recibi el siguiente mensaje..
+[INFO] 18:51:08:328 consola/(18077:18090): ----------------------------------
+[INFO] 18:51:08:329 consola/(18077:18089): ----------------------------------
+[INFO] 18:51:08:328 consola/(18077:18091): ----------------------------------
+[INFO] 18:51:08:329 consola/(18077:18088): ----------------------------------
+[INFO] 18:51:08:368 consola/(18077:18077): Proceso: RAM
+[INFO] 18:51:08:407 consola/(18077:18077): Comando: 200
+[INFO] 18:51:08:407 consola/(18077:18077): Tamanio: 30
+[INFO] 18:51:08:408 consola/(18077:18077): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:408 consola/(18077:18077): Recibi el siguiente mensaje..
+[INFO] 18:51:08:409 consola/(18077:18095): ----------------------------------
+[INFO] 18:51:08:414 consola/(18077:18094): ----------------------------------
+[INFO] 18:51:08:414 consola/(18077:18093): ----------------------------------
+[INFO] 18:51:08:415 consola/(18077:18092): ----------------------------------
+[INFO] 18:51:08:447 consola/(18077:18077): Proceso: RAM
+[INFO] 18:51:08:486 consola/(18077:18077): Comando: 200
+[INFO] 18:51:08:487 consola/(18077:18077): Tamanio: 30
+[INFO] 18:51:08:488 consola/(18077:18077): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:488 consola/(18077:18077): Recibi el siguiente mensaje..
+[INFO] 18:51:08:488 consola/(18077:18098): ----------------------------------
+[INFO] 18:51:08:488 consola/(18077:18099): ----------------------------------
+[INFO] 18:51:08:488 consola/(18077:18097): ----------------------------------
+[INFO] 18:51:08:488 consola/(18077:18096): ----------------------------------
+[INFO] 18:51:08:531 consola/(18077:18077): Proceso: RAM
+[INFO] 18:51:08:570 consola/(18077:18077): Comando: 200
+[INFO] 18:51:08:571 consola/(18077:18077): Tamanio: 30
+[INFO] 18:51:08:571 consola/(18077:18103): ----------------------------------
+[INFO] 18:51:08:572 consola/(18077:18101): ----------------------------------
+[INFO] 18:51:08:572 consola/(18077:18102): ----------------------------------
+[INFO] 18:51:08:572 consola/(18077:18100): ----------------------------------
+[INFO] 18:51:13:990 consola/(18077:18077): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:51:13:990 consola/(18077:18077): Se inició la planificación. Estado de la flag: 1
+[INFO] 18:52:17:686 consola/(18107:18107): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 18:52:17:687 consola/(18107:18107): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 18:52:17:688 consola/(18107:18107): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:52:17:689 consola/(18107:18107): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:52:17:693 consola/(18107:18107): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:52:17:696 consola/(18107:18109): HOLAAA
+[INFO] 18:52:17:697 consola/(18107:18109): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 18:52:17:697 consola/(18107:18109): ----------------------------------
+[INFO] 18:52:17:698 consola/(18107:18110): Se comienza a iterar signals...
+[INFO] 18:52:17:698 consola/(18107:18110): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 18:52:17:698 consola/(18107:18110): ----------------------------------
+[INFO] 18:52:23:648 consola/(18107:18107): --------------------------------------------------------------------
+[INFO] 18:52:23:649 consola/(18107:18107): Entró comando: LISTAR_TRIPULANTES
+[INFO] 18:52:23:649 consola/(18107:18107): Estado de la Nave: 27/06/21 18:52:23
+[INFO] 18:52:23:649 consola/(18107:18107): --------------------------------------------------------------------
+[INFO] 18:52:30:556 consola/(18107:18107): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:52:30:557 consola/(18107:18107): Se inició la planificación. Estado de la flag: 1
+[INFO] 19:19:47:145 consola/(18495:18495): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:19:47:149 consola/(18495:18495): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:19:47:150 consola/(18495:18495): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:19:47:151 consola/(18495:18495): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:19:47:151 consola/(18495:18495): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:19:47:153 consola/(18495:18497): HOLAAA
+[INFO] 19:20:13:088 consola/(18495:18495): Entró comando: INICIAR_PATOTA
+[INFO] 19:20:13:093 consola/(18495:18495): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:094 consola/(18495:18495): Recibi el siguiente mensaje..
+[INFO] 19:20:13:095 consola/(18495:18495): Proceso: RAM
+[INFO] 19:20:13:096 consola/(18495:18495): Comando: 200
+[INFO] 19:20:13:096 consola/(18495:18495): Tamanio: 9
+[INFO] 19:20:13:096 consola/(18495:18495): Memoria OK
+[INFO] 19:20:13:097 consola/(18495:18495): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:097 consola/(18495:18495): Recibi el siguiente mensaje..
+[INFO] 19:20:13:135 consola/(18495:18495): Proceso: RAM
+[INFO] 19:20:13:174 consola/(18495:18495): Comando: 200
+[INFO] 19:20:13:175 consola/(18495:18495): Tamanio: 30
+[INFO] 19:20:13:175 consola/(18495:18495): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:176 consola/(18495:18495): Recibi el siguiente mensaje..
+[INFO] 19:20:13:178 consola/(18495:18511): ----------------------------------
+[INFO] 19:20:13:178 consola/(18495:18510): ----------------------------------
+[INFO] 19:20:13:178 consola/(18495:18509): ----------------------------------
+[INFO] 19:20:13:183 consola/(18495:18508): ----------------------------------
+[INFO] 19:20:13:216 consola/(18495:18495): Proceso: RAM
+[INFO] 19:20:13:254 consola/(18495:18495): Comando: 200
+[INFO] 19:20:13:254 consola/(18495:18495): Tamanio: 30
+[INFO] 19:20:13:255 consola/(18495:18495): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:255 consola/(18495:18495): Recibi el siguiente mensaje..
+[INFO] 19:20:13:255 consola/(18495:18515): ----------------------------------
+[INFO] 19:20:13:255 consola/(18495:18514): ----------------------------------
+[INFO] 19:20:13:255 consola/(18495:18512): ----------------------------------
+[INFO] 19:20:13:255 consola/(18495:18513): ----------------------------------
+[INFO] 19:20:13:295 consola/(18495:18495): Proceso: RAM
+[INFO] 19:20:13:334 consola/(18495:18495): Comando: 200
+[INFO] 19:20:13:334 consola/(18495:18495): Tamanio: 30
+[INFO] 19:20:13:335 consola/(18495:18495): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:335 consola/(18495:18495): Recibi el siguiente mensaje..
+[INFO] 19:20:13:338 consola/(18495:18519): ----------------------------------
+[INFO] 19:20:13:338 consola/(18495:18518): ----------------------------------
+[INFO] 19:20:13:338 consola/(18495:18516): ----------------------------------
+[INFO] 19:20:13:338 consola/(18495:18517): ----------------------------------
+[INFO] 19:20:13:375 consola/(18495:18495): Proceso: RAM
+[INFO] 19:20:13:414 consola/(18495:18495): Comando: 200
+[INFO] 19:20:13:414 consola/(18495:18495): Tamanio: 30
+[INFO] 19:20:13:414 consola/(18495:18523): ----------------------------------
+[INFO] 19:20:13:414 consola/(18495:18522): ----------------------------------
+[INFO] 19:20:13:414 consola/(18495:18520): ----------------------------------
+[INFO] 19:20:13:414 consola/(18495:18521): ----------------------------------
+[INFO] 19:21:01:471 consola/(18495:18495): --------------------------------------------------------------------
+[INFO] 19:21:01:472 consola/(18495:18495): Entró comando: LISTAR_TRIPULANTES
+[INFO] 19:21:01:472 consola/(18495:18495): Estado de la Nave: 27/06/21 19:21:01
+[INFO] 19:21:01:472 consola/(18495:18495): Tripulante: 0	
+[INFO] 19:21:01:473 consola/(18495:18495): Patota: 1	
+[INFO] 19:21:01:473 consola/(18495:18495): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:21:01:473 consola/(18495:18495): Posicion X e Y: 1 - 1
+
+[INFO] 19:21:01:474 consola/(18495:18495): Status: NEW
+
+[INFO] 19:21:01:474 consola/(18495:18495): Tripulante: 1	
+[INFO] 19:21:01:474 consola/(18495:18495): Patota: 1	
+[INFO] 19:21:01:474 consola/(18495:18495): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:21:01:475 consola/(18495:18495): Posicion X e Y: 1 - 1
+
+[INFO] 19:21:01:475 consola/(18495:18495): Status: NEW
+
+[INFO] 19:21:01:475 consola/(18495:18495): Tripulante: 2	
+[INFO] 19:21:01:475 consola/(18495:18495): Patota: 1	
+[INFO] 19:21:01:475 consola/(18495:18495): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:21:01:475 consola/(18495:18495): Posicion X e Y: 0 - 0
+
+[INFO] 19:21:01:476 consola/(18495:18495): Status: NEW
+
+[INFO] 19:21:01:476 consola/(18495:18495): Tripulante: 3	
+[INFO] 19:21:01:476 consola/(18495:18495): Patota: 1	
+[INFO] 19:21:01:476 consola/(18495:18495): Tarea actual: DESCARGAR_ITINERARIO;1;1;1
+
+[INFO] 19:21:01:477 consola/(18495:18495): Posicion X e Y: 0 - 0
+
+[INFO] 19:21:01:477 consola/(18495:18495): Status: NEW
+
+[INFO] 19:21:01:477 consola/(18495:18495): --------------------------------------------------------------------
+[INFO] 19:22:19:200 consola/(18547:18547): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:22:19:201 consola/(18547:18547): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:22:19:202 consola/(18547:18547): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:22:19:206 consola/(18547:18547): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:22:19:208 consola/(18547:18547): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:22:19:210 consola/(18547:18549): HOLAAA
+[INFO] 19:22:35:829 consola/(18547:18547): Entró comando: INICIAR_PATOTA
+[INFO] 19:22:35:835 consola/(18547:18547): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:22:35:836 consola/(18547:18547): Recibi el siguiente mensaje..
+[INFO] 19:22:35:837 consola/(18547:18547): Proceso: RAM
+[INFO] 19:22:35:838 consola/(18547:18547): Comando: 555
+[INFO] 19:22:35:838 consola/(18547:18547): Tamanio: 9
+[ERROR] 19:22:35:838 consola/(18547:18547): No se pudo crear el PCB por falta de memoria
+[INFO] 19:22:41:675 consola/(18547:18547): Salimos de la consola
+[INFO] 19:22:52:146 consola/(18576:18576): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:22:52:147 consola/(18576:18576): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:22:52:147 consola/(18576:18576): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:22:52:148 consola/(18576:18576): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:22:52:148 consola/(18576:18576): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:22:52:150 consola/(18576:18578): HOLAAA
+[INFO] 19:23:04:833 consola/(18576:18576): Entró comando: INICIAR_PATOTA
+[INFO] 19:23:04:839 consola/(18576:18576): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:04:840 consola/(18576:18576): Recibi el siguiente mensaje..
+[INFO] 19:23:04:842 consola/(18576:18576): Proceso: RAM
+[INFO] 19:23:04:843 consola/(18576:18576): Comando: 200
+[INFO] 19:23:04:843 consola/(18576:18576): Tamanio: 9
+[INFO] 19:23:04:843 consola/(18576:18576): Memoria OK
+[INFO] 19:23:04:844 consola/(18576:18576): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:04:844 consola/(18576:18576): Recibi el siguiente mensaje..
+[INFO] 19:23:04:884 consola/(18576:18576): Proceso: RAM
+[INFO] 19:23:04:922 consola/(18576:18576): Comando: 200
+[INFO] 19:23:04:923 consola/(18576:18576): Tamanio: 30
+[INFO] 19:23:04:925 consola/(18576:18576): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:04:925 consola/(18576:18576): Recibi el siguiente mensaje..
+[INFO] 19:23:04:925 consola/(18576:18584): ----------------------------------
+[INFO] 19:23:04:926 consola/(18576:18583): ----------------------------------
+[INFO] 19:23:04:926 consola/(18576:18581): ----------------------------------
+[INFO] 19:23:04:926 consola/(18576:18582): ----------------------------------
+[INFO] 19:23:04:965 consola/(18576:18576): Proceso: RAM
+[INFO] 19:23:05:002 consola/(18576:18576): Comando: 200
+[INFO] 19:23:05:002 consola/(18576:18576): Tamanio: 30
+[INFO] 19:23:05:003 consola/(18576:18576): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:05:003 consola/(18576:18576): Recibi el siguiente mensaje..
+[INFO] 19:23:05:003 consola/(18576:18588): ----------------------------------
+[INFO] 19:23:05:003 consola/(18576:18587): ----------------------------------
+[INFO] 19:23:05:003 consola/(18576:18586): ----------------------------------
+[INFO] 19:23:05:003 consola/(18576:18585): ----------------------------------
+[INFO] 19:23:05:043 consola/(18576:18576): Proceso: RAM
+[INFO] 19:23:05:082 consola/(18576:18576): Comando: 200
+[INFO] 19:23:05:082 consola/(18576:18576): Tamanio: 30
+[INFO] 19:23:05:082 consola/(18576:18576): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:05:082 consola/(18576:18576): Recibi el siguiente mensaje..
+[INFO] 19:23:05:082 consola/(18576:18592): ----------------------------------
+[INFO] 19:23:05:082 consola/(18576:18591): ----------------------------------
+[INFO] 19:23:05:083 consola/(18576:18589): ----------------------------------
+[INFO] 19:23:05:083 consola/(18576:18590): ----------------------------------
+[INFO] 19:23:05:124 consola/(18576:18576): Proceso: RAM
+[INFO] 19:23:05:162 consola/(18576:18576): Comando: 200
+[INFO] 19:23:05:163 consola/(18576:18576): Tamanio: 30
+[INFO] 19:23:05:166 consola/(18576:18596): ----------------------------------
+[INFO] 19:23:05:166 consola/(18576:18595): ----------------------------------
+[INFO] 19:23:05:170 consola/(18576:18594): ----------------------------------
+[INFO] 19:23:05:171 consola/(18576:18593): ----------------------------------
+[INFO] 19:23:09:208 consola/(18576:18576): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 19:25:14:322 consola/(18698:18698): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:25:14:444 consola/(18698:18698): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:25:14:449 consola/(18698:18698): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:25:14:452 consola/(18698:18698): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:25:14:454 consola/(18698:18698): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:25:14:524 consola/(18698:18700): HOLAAA
+[INFO] 19:25:32:393 consola/(18698:18698): Entró comando: INICIAR_PATOTA
+[INFO] 19:25:32:477 consola/(18698:18698): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:490 consola/(18698:18698): Recibi el siguiente mensaje..
+[INFO] 19:25:32:497 consola/(18698:18698): Proceso: RAM
+[INFO] 19:25:32:503 consola/(18698:18698): Comando: 200
+[INFO] 19:25:32:512 consola/(18698:18698): Tamanio: 9
+[INFO] 19:25:32:516 consola/(18698:18698): Memoria OK
+[INFO] 19:25:32:535 consola/(18698:18698): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:536 consola/(18698:18698): Recibi el siguiente mensaje..
+[INFO] 19:25:32:578 consola/(18698:18698): Proceso: RAM
+[INFO] 19:25:32:579 consola/(18698:18698): Comando: 200
+[INFO] 19:25:32:586 consola/(18698:18698): Tamanio: 30
+[INFO] 19:25:32:628 consola/(18698:18701): ----------------------------------
+[INFO] 19:25:32:650 consola/(18698:18702): ----------------------------------
+[INFO] 19:25:32:668 consola/(18698:18703): ----------------------------------
+[INFO] 19:25:32:691 consola/(18698:18704): ----------------------------------
+[INFO] 19:25:32:693 consola/(18698:18698): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:697 consola/(18698:18698): Recibi el siguiente mensaje..
+[INFO] 19:25:32:732 consola/(18698:18698): Proceso: RAM
+[INFO] 19:25:32:734 consola/(18698:18698): Comando: 200
+[INFO] 19:25:32:736 consola/(18698:18698): Tamanio: 30
+[INFO] 19:25:32:762 consola/(18698:18705): ----------------------------------
+[INFO] 19:25:32:774 consola/(18698:18706): ----------------------------------
+[INFO] 19:25:32:801 consola/(18698:18707): ----------------------------------
+[INFO] 19:25:32:827 consola/(18698:18708): ----------------------------------
+[INFO] 19:25:32:828 consola/(18698:18698): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:830 consola/(18698:18698): Recibi el siguiente mensaje..
+[INFO] 19:25:32:867 consola/(18698:18698): Proceso: RAM
+[INFO] 19:25:32:867 consola/(18698:18698): Comando: 200
+[INFO] 19:25:32:867 consola/(18698:18698): Tamanio: 30
+[INFO] 19:25:32:904 consola/(18698:18709): ----------------------------------
+[INFO] 19:25:32:932 consola/(18698:18710): ----------------------------------
+[INFO] 19:25:32:967 consola/(18698:18711): ----------------------------------
+[INFO] 19:25:32:989 consola/(18698:18712): ----------------------------------
+[INFO] 19:25:32:991 consola/(18698:18698): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:33:002 consola/(18698:18698): Recibi el siguiente mensaje..
+[INFO] 19:25:33:031 consola/(18698:18698): Proceso: RAM
+[INFO] 19:25:33:032 consola/(18698:18698): Comando: 200
+[INFO] 19:25:33:033 consola/(18698:18698): Tamanio: 30
+[INFO] 19:25:33:050 consola/(18698:18713): ----------------------------------
+[INFO] 19:25:33:076 consola/(18698:18714): ----------------------------------
+[INFO] 19:25:33:102 consola/(18698:18715): ----------------------------------
+[INFO] 19:25:33:123 consola/(18698:18716): ----------------------------------
+[INFO] 19:25:37:379 consola/(18698:18698): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:25:37:383 consola/(18698:18698): Se inició la planificación. Estado de la flag: 1
+[INFO] 19:25:37:397 consola/(18698:18700): ----------------------------------
+[INFO] 19:25:37:403 consola/(18698:18700): Se ejecuta el hilo de New a Ready
+[INFO] 19:25:37:415 consola/(18698:18700): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:25:37:424 consola/(18698:18700): TID:0
+[INFO] 19:25:37:428 consola/(18698:18700): Status:N
+[INFO] 19:25:37:430 consola/(18698:18700): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:25:37:433 consola/(18698:18700): Se paso nodo a Ready
+[INFO] 19:25:37:435 consola/(18698:18700): ----------------------------------
+[INFO] 19:25:37:436 consola/(18698:18700): Se ejecuta el hilo de New a Ready
+[INFO] 19:25:37:439 consola/(18698:18700): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:25:37:442 consola/(18698:18700): TID:1
+[INFO] 19:25:37:445 consola/(18698:18700): Status:N
+[INFO] 19:25:37:455 consola/(18698:18700): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:25:37:458 consola/(18698:18700): Se paso nodo a Ready
+[INFO] 19:25:37:464 consola/(18698:18700): ----------------------------------
+[INFO] 19:25:37:466 consola/(18698:18700): Se ejecuta el hilo de New a Ready
+[INFO] 19:25:37:468 consola/(18698:18700): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:25:37:470 consola/(18698:18700): TID:2
+[INFO] 19:25:37:472 consola/(18698:18700): Status:N
+[INFO] 19:25:37:476 consola/(18698:18700): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:25:37:488 consola/(18698:18700): Se paso nodo a Ready
+[INFO] 19:25:37:495 consola/(18698:18700): ----------------------------------
+[INFO] 19:25:37:497 consola/(18698:18700): Se ejecuta el hilo de New a Ready
+[INFO] 19:25:37:502 consola/(18698:18700): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 19:25:37:504 consola/(18698:18700): TID:3
+[INFO] 19:25:37:506 consola/(18698:18700): Status:N
+[INFO] 19:25:37:507 consola/(18698:18700): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 19:25:37:519 consola/(18698:18700): Se paso nodo a Ready
+[INFO] 19:25:37:527 consola/(18698:18700): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 19:25:37:529 consola/(18698:18700): ----------------------------------
+[INFO] 19:26:48:468 consola/(18726:18726): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:26:48:469 consola/(18726:18726): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:26:48:469 consola/(18726:18726): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:26:48:473 consola/(18726:18726): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:26:48:473 consola/(18726:18726): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:26:48:475 consola/(18726:18728): HOLAAA
+[INFO] 19:26:55:467 consola/(18726:18726): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:26:55:468 consola/(18726:18726): Se inició la planificación. Estado de la flag: 1
+[INFO] 19:26:55:469 consola/(18726:18728): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 19:26:55:469 consola/(18726:18728): ----------------------------------
+[INFO] 19:27:03:895 consola/(18731:18731): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:27:03:896 consola/(18731:18731): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:27:03:896 consola/(18731:18731): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:27:03:900 consola/(18731:18731): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:27:03:900 consola/(18731:18731): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:27:03:902 consola/(18731:18733): HOLAAA
+[INFO] 19:27:27:515 consola/(18731:18731): Entró comando: INICIAR_PLANIFICACION
+[INFO] 19:27:27:515 consola/(18731:18731): Se inició la planificación. Estado de la flag: 1
+[INFO] 19:27:27:516 consola/(18731:18733): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 19:27:27:516 consola/(18731:18733): ----------------------------------
+[INFO] 19:29:30:283 consola/(18757:18757): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:29:30:376 consola/(18757:18757): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 19:29:30:378 consola/(18757:18757): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:29:30:380 consola/(18757:18757): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:29:30:381 consola/(18757:18757): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:29:30:426 consola/(18757:18758): HOLAAA
+[INFO] 19:29:39:304 consola/(18761:18761): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:29:39:408 consola/(18761:18761): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:29:39:416 consola/(18761:18761): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:29:39:436 consola/(18761:18761): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:29:39:439 consola/(18761:18761): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:29:39:505 consola/(18761:18763): HOLAAA
+[INFO] 19:29:59:165 consola/(18761:18761): Entró comando: INICIAR_PATOTA
+[INFO] 19:31:11:369 consola/(18792:18792): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:31:11:572 consola/(18792:18792): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:31:11:579 consola/(18792:18792): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:31:11:581 consola/(18792:18792): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:31:11:593 consola/(18792:18792): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:31:11:668 consola/(18792:18794): HOLAAA
+[INFO] 19:31:24:731 consola/(18792:18792): Entró comando: INICIAR_PATOTA
+[INFO] 19:32:50:802 consola/(18821:18821): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:32:50:803 consola/(18821:18821): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:32:50:804 consola/(18821:18821): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:32:50:808 consola/(18821:18821): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:32:50:809 consola/(18821:18821): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:32:50:811 consola/(18821:18823): HOLAAA
+[INFO] 19:33:06:275 consola/(18821:18821): Entró comando: INICIAR_PATOTA
+[INFO] 19:33:58:249 consola/(18857:18857): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:33:58:249 consola/(18857:18857): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:33:58:250 consola/(18857:18857): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:33:58:251 consola/(18857:18857): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:33:58:254 consola/(18857:18857): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:33:58:258 consola/(18857:18859): HOLAAA
+[INFO] 19:34:21:676 consola/(18857:18857): Entró comando: INICIAR_PATOTA 1
+[INFO] 19:54:50:310 consola/(19132:19132): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, RR, 3, 20, 1
+[INFO] 19:54:50:311 consola/(19132:19132): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 19:54:50:312 consola/(19132:19132): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 19:54:50:312 consola/(19132:19132): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 19:54:50:313 consola/(19132:19132): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 19:54:50:315 consola/(19132:19134): HOLAAA
+[INFO] 19:55:10:965 consola/(19132:19132): Entró comando: INICIAR_PATOTA

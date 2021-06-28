@@ -1,0 +1,870 @@
+[INFO] 19:58:34:815 RAM/(3997:3997): Mi RAM HQ ejecutando correctamente.. PID: 3997
+[INFO] 19:58:34:816 RAM/(3997:3997): Esquema utilizado: SEGMENTACION
+[INFO] 19:58:34:817 RAM/(3997:3997): Tamanio de la memoria: 512
+[INFO] 19:58:34:820 RAM/(3997:3997): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:58:34:828 RAM/(3997:3997): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:59:00:197 RAM/(3997:3997): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:59:00:244 RAM/(3997:4294): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:00:18:835 RAM/(3997:4294): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:00:18:835 RAM/(3997:4294): -----------------------------------------------------
+[INFO] 20:00:18:835 RAM/(3997:4294): No existe la operación:610
+[INFO] 20:00:18:835 RAM/(3997:4294): -----------------------------------------------------
+[INFO] 20:01:02:870 RAM/(3997:4294): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:01:37:655 RAM/(4395:4395): Mi RAM HQ ejecutando correctamente.. PID: 4395
+[INFO] 20:01:37:655 RAM/(4395:4395): Esquema utilizado: SEGMENTACION
+[INFO] 20:01:37:656 RAM/(4395:4395): Tamanio de la memoria: 512
+[INFO] 20:01:37:657 RAM/(4395:4395): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:01:37:657 RAM/(4395:4395): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:01:41:544 RAM/(4395:4395): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:01:41:556 RAM/(4395:4408): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:02:06:356 RAM/(4395:4408): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:02:06:356 RAM/(4395:4408): -----------------------------------------------------
+[INFO] 20:02:06:356 RAM/(4395:4408): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:02:06:357 RAM/(4395:4408): ID PCB: 1
+[INFO] 20:02:06:357 RAM/(4395:4408): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:02:06:357 RAM/(4395:4408): Cantidad de tripulantes: 4
+[INFO] 20:02:06:357 RAM/(4395:4408): Size total a guardar en memoria: 215
+[INFO] 20:02:06:358 RAM/(4395:4408): Se guardaron exitosamente los datos de la patota
+[INFO] 20:02:06:358 RAM/(4395:4408): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:02:06:358 RAM/(4395:4408): -----------------------------------------------------
+[INFO] 20:03:22:915 RAM/(4395:4408): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:03:30:954 RAM/(4455:4455): Mi RAM HQ ejecutando correctamente.. PID: 4455
+[INFO] 20:03:30:955 RAM/(4455:4455): Esquema utilizado: SEGMENTACION
+[INFO] 20:03:30:955 RAM/(4455:4455): Tamanio de la memoria: 512
+[INFO] 20:03:30:956 RAM/(4455:4455): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:03:30:956 RAM/(4455:4455): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:03:45:637 RAM/(4455:4455): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:03:45:640 RAM/(4455:4457): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:04:02:319 RAM/(4455:4457): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:04:02:320 RAM/(4455:4457): -----------------------------------------------------
+[INFO] 20:04:02:320 RAM/(4455:4457): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:04:02:320 RAM/(4455:4457): ID PCB: 1
+[INFO] 20:04:02:321 RAM/(4455:4457): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:04:02:328 RAM/(4455:4457): Cantidad de tripulantes: 4
+[INFO] 20:04:02:329 RAM/(4455:4457): Size total a guardar en memoria: 215
+[INFO] 20:04:02:329 RAM/(4455:4457): Se guardaron exitosamente los datos de la patota
+[INFO] 20:04:02:330 RAM/(4455:4457): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:04:02:332 RAM/(4455:4457): -----------------------------------------------------
+[INFO] 20:04:09:672 RAM/(4455:4457): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:13:30:333 RAM/(4455:4455): [Shared Library]: Nueva conexion ID: 7
+[INFO] 20:13:30:336 RAM/(4455:4683): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 20:13:46:831 RAM/(4455:4683): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 20:14:16:059 RAM/(4455:4455): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:14:16:062 RAM/(4455:4739): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:15:06:826 RAM/(4455:4739): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:15:06:826 RAM/(4455:4739): -----------------------------------------------------
+[INFO] 20:15:06:826 RAM/(4455:4739): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:15:06:827 RAM/(4455:4739): ID PCB: 1
+[INFO] 20:15:06:827 RAM/(4455:4739): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:15:06:827 RAM/(4455:4739): Cantidad de tripulantes: 4
+[INFO] 20:15:06:827 RAM/(4455:4739): Size total a guardar en memoria: 215
+[INFO] 20:15:06:827 RAM/(4455:4739): Se guardaron exitosamente los datos de la patota
+[INFO] 20:15:06:828 RAM/(4455:4739): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:15:06:828 RAM/(4455:4739): -----------------------------------------------------
+[INFO] 20:15:19:982 RAM/(4455:4739): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:19:19:650 RAM/(4862:4862): Mi RAM HQ ejecutando correctamente.. PID: 4862
+[INFO] 20:19:19:651 RAM/(4862:4862): Esquema utilizado: SEGMENTACION
+[INFO] 20:19:19:651 RAM/(4862:4862): Tamanio de la memoria: 512
+[INFO] 20:19:19:652 RAM/(4862:4862): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:19:19:653 RAM/(4862:4862): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:19:28:358 RAM/(4862:4862): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:19:28:370 RAM/(4862:4875): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:20:01:135 RAM/(4862:4875): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:20:01:139 RAM/(4862:4875): -----------------------------------------------------
+[INFO] 20:20:01:139 RAM/(4862:4875): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:20:01:140 RAM/(4862:4875): ID PCB: 1
+[INFO] 20:20:01:140 RAM/(4862:4875): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:20:01:140 RAM/(4862:4875): Cantidad de tripulantes: 4
+[INFO] 20:20:01:140 RAM/(4862:4875): Size total a guardar en memoria: 215
+[INFO] 20:20:01:140 RAM/(4862:4875): Se guardaron exitosamente los datos de la patota
+[INFO] 20:20:01:141 RAM/(4862:4875): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:20:01:141 RAM/(4862:4875): -----------------------------------------------------
+[INFO] 20:20:01:216 RAM/(4862:4875): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:20:01:216 RAM/(4862:4875): -----------------------------------------------------
+[INFO] 20:20:01:216 RAM/(4862:4875): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:20:01:216 RAM/(4862:4875): ID PCB:1
+[INFO] 20:20:01:217 RAM/(4862:4875): ID TCB:0
+[INFO] 20:20:01:217 RAM/(4862:4875): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:20:01:217 RAM/(4862:4875): -----------------------------------------------------
+[INFO] 20:20:01:316 RAM/(4862:4875): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:20:01:316 RAM/(4862:4875): -----------------------------------------------------
+[INFO] 20:20:01:317 RAM/(4862:4875): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:20:01:317 RAM/(4862:4875): ID PCB:1
+[INFO] 20:20:01:317 RAM/(4862:4875): ID TCB:1
+[INFO] 20:20:01:317 RAM/(4862:4875): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:20:01:318 RAM/(4862:4875): -----------------------------------------------------
+[INFO] 20:20:01:599 RAM/(4862:4875): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:21:34:696 RAM/(4862:4862): [Shared Library]: Nueva conexion ID: 7
+[INFO] 20:21:34:697 RAM/(4862:4921): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 20:21:51:263 RAM/(4862:4921): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:21:51:264 RAM/(4862:4921): -----------------------------------------------------
+[INFO] 20:21:51:264 RAM/(4862:4921): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:21:51:264 RAM/(4862:4921): ID PCB: 1
+[INFO] 20:21:51:265 RAM/(4862:4921): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:21:51:265 RAM/(4862:4921): Cantidad de tripulantes: 4
+[INFO] 20:21:51:265 RAM/(4862:4921): Size total a guardar en memoria: 215
+[INFO] 20:21:51:265 RAM/(4862:4921): Se guardaron exitosamente los datos de la patota
+[INFO] 20:21:51:266 RAM/(4862:4921): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:21:51:266 RAM/(4862:4921): -----------------------------------------------------
+[INFO] 20:21:51:360 RAM/(4862:4921): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:21:51:361 RAM/(4862:4921): -----------------------------------------------------
+[INFO] 20:21:51:361 RAM/(4862:4921): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:21:51:361 RAM/(4862:4921): ID PCB:1
+[INFO] 20:21:51:361 RAM/(4862:4921): ID TCB:0
+[INFO] 20:21:51:362 RAM/(4862:4921): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:21:51:363 RAM/(4862:4921): -----------------------------------------------------
+[INFO] 20:21:51:453 RAM/(4862:4921): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:21:51:454 RAM/(4862:4921): -----------------------------------------------------
+[INFO] 20:21:51:454 RAM/(4862:4921): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:21:51:454 RAM/(4862:4921): ID PCB:1
+[INFO] 20:21:51:455 RAM/(4862:4921): ID TCB:1
+[INFO] 20:21:51:455 RAM/(4862:4921): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:21:51:455 RAM/(4862:4921): -----------------------------------------------------
+[INFO] 20:21:51:635 RAM/(4862:4921): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 20:33:49:839 RAM/(4862:4862): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:33:49:841 RAM/(4862:5690): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:34:13:544 RAM/(4862:5690): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:34:13:546 RAM/(4862:5690): -----------------------------------------------------
+[INFO] 20:34:13:547 RAM/(4862:5690): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:34:13:547 RAM/(4862:5690): ID PCB: 1
+[INFO] 20:34:13:548 RAM/(4862:5690): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:34:13:548 RAM/(4862:5690): Cantidad de tripulantes: 4
+[INFO] 20:34:13:549 RAM/(4862:5690): Size total a guardar en memoria: 215
+[ERROR] 20:34:13:549 RAM/(4862:5690): No hay mas espacio en memoria
+[INFO] 20:34:13:549 RAM/(4862:5690): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:34:13:550 RAM/(4862:5690): -----------------------------------------------------
+[INFO] 20:34:40:563 RAM/(4862:5690): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:34:43:979 RAM/(5720:5720): Mi RAM HQ ejecutando correctamente.. PID: 5720
+[INFO] 20:34:43:980 RAM/(5720:5720): Esquema utilizado: SEGMENTACION
+[INFO] 20:34:43:980 RAM/(5720:5720): Tamanio de la memoria: 512
+[INFO] 20:34:43:981 RAM/(5720:5720): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:34:43:981 RAM/(5720:5720): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:34:51:231 RAM/(5720:5720): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:34:51:234 RAM/(5720:5722): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:35:05:825 RAM/(5720:5722): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:35:05:825 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:05:825 RAM/(5720:5722): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:35:05:826 RAM/(5720:5722): ID PCB: 1
+[INFO] 20:35:05:826 RAM/(5720:5722): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:35:05:826 RAM/(5720:5722): Cantidad de tripulantes: 4
+[INFO] 20:35:05:826 RAM/(5720:5722): Size total a guardar en memoria: 215
+[INFO] 20:35:05:826 RAM/(5720:5722): Se guardaron exitosamente los datos de la patota
+[INFO] 20:35:05:827 RAM/(5720:5722): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:05:827 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:05:899 RAM/(5720:5722): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:35:05:900 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:05:900 RAM/(5720:5722): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:35:05:900 RAM/(5720:5722): ID PCB:1
+[INFO] 20:35:05:900 RAM/(5720:5722): ID TCB:0
+[INFO] 20:35:05:900 RAM/(5720:5722): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:05:900 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:06:027 RAM/(5720:5722): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:35:06:028 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:06:028 RAM/(5720:5722): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:35:06:028 RAM/(5720:5722): ID PCB:1
+[INFO] 20:35:06:028 RAM/(5720:5722): ID TCB:1
+[INFO] 20:35:06:028 RAM/(5720:5722): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:06:028 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:06:091 RAM/(5720:5722): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:35:06:092 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:06:092 RAM/(5720:5722): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:35:06:092 RAM/(5720:5722): ID PCB:1
+[INFO] 20:35:06:092 RAM/(5720:5722): ID TCB:2
+[INFO] 20:35:06:092 RAM/(5720:5722): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:06:093 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:06:175 RAM/(5720:5722): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:35:06:176 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:06:176 RAM/(5720:5722): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:35:06:176 RAM/(5720:5722): ID PCB:1
+[INFO] 20:35:06:176 RAM/(5720:5722): ID TCB:3
+[INFO] 20:35:06:176 RAM/(5720:5722): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:35:06:176 RAM/(5720:5722): -----------------------------------------------------
+[INFO] 20:35:22:525 RAM/(5720:5722): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:37:13:699 RAM/(6085:6085): Mi RAM HQ ejecutando correctamente.. PID: 6085
+[INFO] 20:37:13:700 RAM/(6085:6085): Esquema utilizado: SEGMENTACION
+[INFO] 20:37:13:700 RAM/(6085:6085): Tamanio de la memoria: 512
+[INFO] 20:37:13:700 RAM/(6085:6085): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:37:13:700 RAM/(6085:6085): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:37:19:180 RAM/(6085:6085): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:37:19:184 RAM/(6085:6109): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:37:37:336 RAM/(6085:6109): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:37:57:099 RAM/(6085:6085): [Shared Library]: Nueva conexion ID: 7
+[INFO] 20:37:57:101 RAM/(6085:6125): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 20:38:14:506 RAM/(6085:6125): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:38:14:506 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:506 RAM/(6085:6125): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:38:14:507 RAM/(6085:6125): ID PCB: 1
+[INFO] 20:38:14:507 RAM/(6085:6125): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:38:14:507 RAM/(6085:6125): Cantidad de tripulantes: 4
+[INFO] 20:38:14:508 RAM/(6085:6125): Size total a guardar en memoria: 215
+[INFO] 20:38:14:508 RAM/(6085:6125): Se guardaron exitosamente los datos de la patota
+[INFO] 20:38:14:508 RAM/(6085:6125): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:508 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:611 RAM/(6085:6125): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:38:14:612 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:612 RAM/(6085:6125): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:38:14:612 RAM/(6085:6125): ID PCB:1
+[INFO] 20:38:14:612 RAM/(6085:6125): ID TCB:0
+[INFO] 20:38:14:613 RAM/(6085:6125): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:613 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:675 RAM/(6085:6125): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:38:14:676 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:676 RAM/(6085:6125): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:38:14:677 RAM/(6085:6125): ID PCB:1
+[INFO] 20:38:14:677 RAM/(6085:6125): ID TCB:1
+[INFO] 20:38:14:677 RAM/(6085:6125): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:678 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:771 RAM/(6085:6125): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:38:14:772 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:772 RAM/(6085:6125): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:38:14:772 RAM/(6085:6125): ID PCB:1
+[INFO] 20:38:14:772 RAM/(6085:6125): ID TCB:2
+[INFO] 20:38:14:772 RAM/(6085:6125): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:773 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:860 RAM/(6085:6125): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:38:14:860 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:38:14:860 RAM/(6085:6125): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:38:14:860 RAM/(6085:6125): ID PCB:1
+[INFO] 20:38:14:860 RAM/(6085:6125): ID TCB:3
+[INFO] 20:38:14:861 RAM/(6085:6125): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:38:14:861 RAM/(6085:6125): -----------------------------------------------------
+[INFO] 20:41:05:061 RAM/(6085:6125): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 20:48:45:027 RAM/(6085:6085): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:48:45:033 RAM/(6085:6268): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:49:12:625 RAM/(6085:6268): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:49:12:626 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:626 RAM/(6085:6268): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:49:12:626 RAM/(6085:6268): ID PCB: 1
+[INFO] 20:49:12:627 RAM/(6085:6268): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:49:12:627 RAM/(6085:6268): Cantidad de tripulantes: 4
+[INFO] 20:49:12:627 RAM/(6085:6268): Size total a guardar en memoria: 215
+[INFO] 20:49:12:629 RAM/(6085:6268): Se guardaron exitosamente los datos de la patota
+[INFO] 20:49:12:629 RAM/(6085:6268): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:635 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:743 RAM/(6085:6268): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:49:12:744 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:744 RAM/(6085:6268): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:49:12:744 RAM/(6085:6268): ID PCB:1
+[INFO] 20:49:12:744 RAM/(6085:6268): ID TCB:0
+[INFO] 20:49:12:745 RAM/(6085:6268): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:746 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:848 RAM/(6085:6268): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:49:12:848 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:849 RAM/(6085:6268): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:49:12:849 RAM/(6085:6268): ID PCB:1
+[INFO] 20:49:12:849 RAM/(6085:6268): ID TCB:1
+[INFO] 20:49:12:849 RAM/(6085:6268): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:850 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:899 RAM/(6085:6268): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:49:12:900 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:900 RAM/(6085:6268): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:49:12:900 RAM/(6085:6268): ID PCB:1
+[INFO] 20:49:12:900 RAM/(6085:6268): ID TCB:2
+[INFO] 20:49:12:900 RAM/(6085:6268): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:901 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:987 RAM/(6085:6268): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:49:12:988 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:12:988 RAM/(6085:6268): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:49:12:988 RAM/(6085:6268): ID PCB:1
+[INFO] 20:49:12:988 RAM/(6085:6268): ID TCB:3
+[INFO] 20:49:12:989 RAM/(6085:6268): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:49:12:989 RAM/(6085:6268): -----------------------------------------------------
+[INFO] 20:49:20:580 RAM/(6085:6268): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:54:58:182 RAM/(6358:6358): Mi RAM HQ ejecutando correctamente.. PID: 6358
+[INFO] 20:54:58:183 RAM/(6358:6358): Esquema utilizado: SEGMENTACION
+[INFO] 20:54:58:183 RAM/(6358:6358): Tamanio de la memoria: 512
+[INFO] 20:54:58:184 RAM/(6358:6358): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:54:58:184 RAM/(6358:6358): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:55:03:080 RAM/(6358:6358): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:55:03:084 RAM/(6358:6371): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:55:18:629 RAM/(6358:6371): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:55:25:057 RAM/(6358:6358): [Shared Library]: Nueva conexion ID: 7
+[INFO] 20:55:25:058 RAM/(6358:6384): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 20:55:44:551 RAM/(6358:6384): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:55:44:553 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:553 RAM/(6358:6384): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:55:44:554 RAM/(6358:6384): ID PCB: 1
+[INFO] 20:55:44:554 RAM/(6358:6384): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:55:44:554 RAM/(6358:6384): Cantidad de tripulantes: 4
+[INFO] 20:55:44:554 RAM/(6358:6384): Size total a guardar en memoria: 215
+[INFO] 20:55:44:555 RAM/(6358:6384): Se guardaron exitosamente los datos de la patota
+[INFO] 20:55:44:555 RAM/(6358:6384): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:556 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:639 RAM/(6358:6384): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:55:44:640 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:640 RAM/(6358:6384): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:55:44:641 RAM/(6358:6384): ID PCB:1
+[INFO] 20:55:44:641 RAM/(6358:6384): ID TCB:0
+[INFO] 20:55:44:641 RAM/(6358:6384): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:642 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:724 RAM/(6358:6384): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:55:44:724 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:724 RAM/(6358:6384): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:55:44:725 RAM/(6358:6384): ID PCB:1
+[INFO] 20:55:44:725 RAM/(6358:6384): ID TCB:1
+[INFO] 20:55:44:725 RAM/(6358:6384): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:726 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:807 RAM/(6358:6384): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:55:44:808 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:808 RAM/(6358:6384): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:55:44:808 RAM/(6358:6384): ID PCB:1
+[INFO] 20:55:44:808 RAM/(6358:6384): ID TCB:2
+[INFO] 20:55:44:808 RAM/(6358:6384): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:809 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:863 RAM/(6358:6384): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:55:44:864 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:44:864 RAM/(6358:6384): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:55:44:864 RAM/(6358:6384): ID PCB:1
+[INFO] 20:55:44:864 RAM/(6358:6384): ID TCB:3
+[INFO] 20:55:44:865 RAM/(6358:6384): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:55:44:866 RAM/(6358:6384): -----------------------------------------------------
+[INFO] 20:55:49:764 RAM/(6358:6384): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 20:57:48:881 RAM/(6468:6468): Mi RAM HQ ejecutando correctamente.. PID: 6468
+[INFO] 20:57:48:881 RAM/(6468:6468): Esquema utilizado: SEGMENTACION
+[INFO] 20:57:48:882 RAM/(6468:6468): Tamanio de la memoria: 512
+[INFO] 20:57:48:882 RAM/(6468:6468): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:57:48:883 RAM/(6468:6468): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:57:52:670 RAM/(6468:6468): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:57:52:672 RAM/(6468:6471): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:57:57:219 RAM/(6468:6471): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:58:01:428 RAM/(6468:6468): [Shared Library]: Nueva conexion ID: 7
+[INFO] 20:58:01:432 RAM/(6468:6494): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 20:58:27:340 RAM/(6468:6494): Recibi la siguiente operacion de DIS: 610
+[INFO] 20:58:27:341 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:341 RAM/(6468:6494): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:58:27:341 RAM/(6468:6494): ID PCB: 1
+[INFO] 20:58:27:341 RAM/(6468:6494): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 20:58:27:342 RAM/(6468:6494): Cantidad de tripulantes: 4
+[INFO] 20:58:27:342 RAM/(6468:6494): Size total a guardar en memoria: 215
+[INFO] 20:58:27:342 RAM/(6468:6494): Se guardaron exitosamente los datos de la patota
+[INFO] 20:58:27:347 RAM/(6468:6494): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:347 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:451 RAM/(6468:6494): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:58:27:452 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:452 RAM/(6468:6494): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:58:27:452 RAM/(6468:6494): ID PCB:1
+[INFO] 20:58:27:453 RAM/(6468:6494): ID TCB:0
+[INFO] 20:58:27:453 RAM/(6468:6494): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:454 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:540 RAM/(6468:6494): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:58:27:540 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:541 RAM/(6468:6494): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:58:27:541 RAM/(6468:6494): ID PCB:1
+[INFO] 20:58:27:541 RAM/(6468:6494): ID TCB:1
+[INFO] 20:58:27:541 RAM/(6468:6494): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:542 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:639 RAM/(6468:6494): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:58:27:640 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:640 RAM/(6468:6494): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:58:27:640 RAM/(6468:6494): ID PCB:1
+[INFO] 20:58:27:640 RAM/(6468:6494): ID TCB:2
+[INFO] 20:58:27:641 RAM/(6468:6494): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:642 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:696 RAM/(6468:6494): Recibi la siguiente operacion de DIS: 520
+[INFO] 20:58:27:696 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 20:58:27:697 RAM/(6468:6494): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:58:27:697 RAM/(6468:6494): ID PCB:1
+[INFO] 20:58:27:697 RAM/(6468:6494): ID TCB:3
+[INFO] 20:58:27:697 RAM/(6468:6494): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:58:27:698 RAM/(6468:6494): -----------------------------------------------------
+[INFO] 21:00:45:769 RAM/(6468:6494): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 22:19:16:146 RAM/(7836:7836): Mi RAM HQ ejecutando correctamente.. PID: 7836
+[INFO] 22:19:16:147 RAM/(7836:7836): Esquema utilizado: SEGMENTACION
+[INFO] 22:19:16:148 RAM/(7836:7836): Tamanio de la memoria: 512
+[INFO] 22:19:16:156 RAM/(7836:7836): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:19:16:157 RAM/(7836:7836): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:19:21:423 RAM/(7836:7836): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:19:21:424 RAM/(7836:7851): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:19:47:172 RAM/(7836:7851): Recibi la siguiente operacion de DIS: 610
+[INFO] 22:19:47:173 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:173 RAM/(7836:7851): Llegó la operación: INICIAR_PATOTA 
+[INFO] 22:19:47:173 RAM/(7836:7851): ID PCB: 1
+[INFO] 22:19:47:174 RAM/(7836:7851): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 22:19:47:174 RAM/(7836:7851): Cantidad de tripulantes: 4
+[INFO] 22:19:47:174 RAM/(7836:7851): Size total a guardar en memoria: 215
+[INFO] 22:19:47:175 RAM/(7836:7851): Se guardaron exitosamente los datos de la patota
+[INFO] 22:19:47:176 RAM/(7836:7851): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:177 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:268 RAM/(7836:7851): Recibi la siguiente operacion de DIS: 520
+[INFO] 22:19:47:268 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:269 RAM/(7836:7851): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 22:19:47:269 RAM/(7836:7851): ID PCB:1
+[INFO] 22:19:47:269 RAM/(7836:7851): ID TCB:0
+[INFO] 22:19:47:269 RAM/(7836:7851): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:270 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:323 RAM/(7836:7851): Recibi la siguiente operacion de DIS: 520
+[INFO] 22:19:47:324 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:324 RAM/(7836:7851): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 22:19:47:324 RAM/(7836:7851): ID PCB:1
+[INFO] 22:19:47:325 RAM/(7836:7851): ID TCB:1
+[INFO] 22:19:47:325 RAM/(7836:7851): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:326 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:413 RAM/(7836:7851): Recibi la siguiente operacion de DIS: 520
+[INFO] 22:19:47:414 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:415 RAM/(7836:7851): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 22:19:47:415 RAM/(7836:7851): ID PCB:1
+[INFO] 22:19:47:415 RAM/(7836:7851): ID TCB:2
+[INFO] 22:19:47:416 RAM/(7836:7851): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:416 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:523 RAM/(7836:7851): Recibi la siguiente operacion de DIS: 520
+[INFO] 22:19:47:524 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:19:47:524 RAM/(7836:7851): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 22:19:47:524 RAM/(7836:7851): ID PCB:1
+[INFO] 22:19:47:525 RAM/(7836:7851): ID TCB:3
+[INFO] 22:19:47:525 RAM/(7836:7851): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:19:47:526 RAM/(7836:7851): -----------------------------------------------------
+[INFO] 22:23:19:273 RAM/(7836:7851): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:23:30:195 RAM/(7836:7836): [Shared Library]: Nueva conexion ID: 7
+[INFO] 22:23:30:197 RAM/(7836:7920): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 22:23:30:711 RAM/(7836:7920): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 22:23:44:748 RAM/(7943:7943): Mi RAM HQ ejecutando correctamente.. PID: 7943
+[INFO] 22:23:44:756 RAM/(7943:7943): Esquema utilizado: SEGMENTACION
+[INFO] 22:23:44:760 RAM/(7943:7943): Tamanio de la memoria: 512
+[INFO] 22:23:44:761 RAM/(7943:7943): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:23:44:761 RAM/(7943:7943): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:23:49:274 RAM/(7943:7943): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:23:49:277 RAM/(7943:7956): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:23:49:755 RAM/(7943:7956): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:23:52:899 RAM/(7943:7943): [Shared Library]: Nueva conexion ID: 7
+[INFO] 22:23:52:902 RAM/(7943:7973): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 22:23:52:903 RAM/(7943:7973): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 22:27:02:895 RAM/(7943:7943): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:27:02:916 RAM/(7943:8004): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:27:03:350 RAM/(7943:8004): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:28:16:805 RAM/(7943:7943): [Shared Library]: Nueva conexion ID: 7
+[INFO] 22:28:16:807 RAM/(7943:8054): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 22:28:16:807 RAM/(7943:8054): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 22:28:29:556 RAM/(7943:7943): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:28:29:559 RAM/(7943:8073): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:28:29:982 RAM/(7943:8073): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:52:37:477 RAM/(8656:8656): Mi RAM HQ ejecutando correctamente.. PID: 8656
+[INFO] 22:52:37:479 RAM/(8656:8656): Esquema utilizado: SEGMENTACION
+[INFO] 22:52:37:479 RAM/(8656:8656): Tamanio de la memoria: 512
+[INFO] 22:52:37:480 RAM/(8656:8656): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 22:52:37:480 RAM/(8656:8656): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 22:52:42:933 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:52:42:934 RAM/(8656:8669): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:52:43:353 RAM/(8656:8669): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:54:02:524 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 22:54:02:525 RAM/(8656:8716): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 22:54:02:935 RAM/(8656:8716): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 22:54:58:623 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 22:54:58:624 RAM/(8656:8743): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 22:54:59:037 RAM/(8656:8743): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 22:59:59:212 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 22:59:59:213 RAM/(8656:8818): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 22:59:59:214 RAM/(8656:8818): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:00:09:184 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:00:09:185 RAM/(8656:8830): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:00:09:620 RAM/(8656:8830): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:00:27:363 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:00:27:364 RAM/(8656:8849): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:00:27:790 RAM/(8656:8849): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:01:37:541 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:01:37:542 RAM/(8656:8875): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:01:37:980 RAM/(8656:8875): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:03:04:498 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:03:04:504 RAM/(8656:8906): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:03:04:938 RAM/(8656:8906): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:04:16:971 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:04:16:972 RAM/(8656:8948): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:04:17:423 RAM/(8656:8948): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:04:37:203 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:04:37:205 RAM/(8656:8973): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:04:37:637 RAM/(8656:8973): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:06:28:414 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:06:28:418 RAM/(8656:9001): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:06:55:413 RAM/(8656:9001): Recibi la siguiente operacion de DIS: 610
+[INFO] 23:06:55:413 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:413 RAM/(8656:9001): Llegó la operación: INICIAR_PATOTA 
+[INFO] 23:06:55:413 RAM/(8656:9001): ID PCB: 1
+[INFO] 23:06:55:414 RAM/(8656:9001): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 23:06:55:414 RAM/(8656:9001): Cantidad de tripulantes: 4
+[INFO] 23:06:55:414 RAM/(8656:9001): Size total a guardar en memoria: 215
+[INFO] 23:06:55:414 RAM/(8656:9001): Se guardaron exitosamente los datos de la patota
+[INFO] 23:06:55:414 RAM/(8656:9001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:419 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:480 RAM/(8656:9001): Recibi la siguiente operacion de DIS: 520
+[INFO] 23:06:55:480 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:480 RAM/(8656:9001): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 23:06:55:481 RAM/(8656:9001): ID PCB:1
+[INFO] 23:06:55:481 RAM/(8656:9001): ID TCB:0
+[INFO] 23:06:55:481 RAM/(8656:9001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:481 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:571 RAM/(8656:9001): Recibi la siguiente operacion de DIS: 520
+[INFO] 23:06:55:571 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:572 RAM/(8656:9001): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 23:06:55:572 RAM/(8656:9001): ID PCB:1
+[INFO] 23:06:55:572 RAM/(8656:9001): ID TCB:1
+[INFO] 23:06:55:572 RAM/(8656:9001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:572 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:663 RAM/(8656:9001): Recibi la siguiente operacion de DIS: 520
+[INFO] 23:06:55:664 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:664 RAM/(8656:9001): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 23:06:55:664 RAM/(8656:9001): ID PCB:1
+[INFO] 23:06:55:664 RAM/(8656:9001): ID TCB:2
+[INFO] 23:06:55:664 RAM/(8656:9001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:664 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:748 RAM/(8656:9001): Recibi la siguiente operacion de DIS: 520
+[INFO] 23:06:55:748 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:06:55:748 RAM/(8656:9001): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 23:06:55:748 RAM/(8656:9001): ID PCB:1
+[INFO] 23:06:55:748 RAM/(8656:9001): ID TCB:3
+[INFO] 23:06:55:748 RAM/(8656:9001): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:06:55:749 RAM/(8656:9001): -----------------------------------------------------
+[INFO] 23:07:14:362 RAM/(8656:9001): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:10:18:882 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:10:18:886 RAM/(8656:9077): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:10:19:506 RAM/(8656:9077): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:20:53:139 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:20:53:144 RAM/(8656:9242): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:21:22:533 RAM/(8656:9242): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:21:42:466 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:21:42:471 RAM/(8656:9277): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:22:13:244 RAM/(8656:9277): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:22:17:471 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:22:17:480 RAM/(8656:9304): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:22:17:797 RAM/(8656:9304): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:22:53:446 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:22:53:462 RAM/(8656:9318): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:23:13:858 RAM/(8656:9318): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:23:18:304 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:23:18:306 RAM/(8656:9346): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:23:33:886 RAM/(8656:9346): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:23:35:835 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:23:35:850 RAM/(8656:9359): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:23:37:122 RAM/(8656:9359): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:23:40:966 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:23:40:970 RAM/(8656:9381): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:23:46:024 RAM/(8656:9381): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:24:18:680 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:24:18:682 RAM/(8656:9401): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:24:45:777 RAM/(8656:9401): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:29:41:763 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:29:41:765 RAM/(8656:9504): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:31:00:803 RAM/(8656:9504): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:31:07:473 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:31:07:474 RAM/(8656:9548): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:32:06:462 RAM/(8656:9548): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:32:10:736 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:32:10:748 RAM/(8656:9582): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:32:36:939 RAM/(8656:9582): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 23:32:49:761 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 7
+[INFO] 23:32:49:762 RAM/(8656:9621): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 23:33:23:143 RAM/(8656:9621): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 23:51:43:286 RAM/(8656:8656): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:51:43:311 RAM/(8656:11114): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:51:43:522 RAM/(8656:11114): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:45:56:631 RAM/(17955:17955): Mi RAM HQ ejecutando correctamente.. PID: 17955
+[INFO] 18:45:56:632 RAM/(17955:17955): Esquema utilizado: SEGMENTACION
+[INFO] 18:45:56:633 RAM/(17955:17955): Tamanio de la memoria: 512
+[INFO] 18:45:56:634 RAM/(17955:17955): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:45:56:634 RAM/(17955:17955): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:46:06:264 RAM/(17955:17955): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:46:06:268 RAM/(17955:17970): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:46:25:769 RAM/(17955:17970): Recibi la siguiente operacion de DIS: 610
+[INFO] 18:46:25:769 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:25:770 RAM/(17955:17970): Llegó la operación: INICIAR_PATOTA 
+[INFO] 18:46:25:770 RAM/(17955:17970): ID PCB: 1
+[INFO] 18:46:25:770 RAM/(17955:17970): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 18:46:25:770 RAM/(17955:17970): Cantidad de tripulantes: 4
+[INFO] 18:46:25:771 RAM/(17955:17970): Size total a guardar en memoria: 215
+[INFO] 18:46:25:771 RAM/(17955:17970): Se guardaron exitosamente los datos de la patota
+[INFO] 18:46:25:771 RAM/(17955:17970): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:25:771 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:25:810 RAM/(17955:17970): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:46:25:813 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:25:814 RAM/(17955:17970): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:46:25:814 RAM/(17955:17970): ID PCB:1
+[INFO] 18:46:25:814 RAM/(17955:17970): ID TCB:0
+[INFO] 18:46:25:815 RAM/(17955:17970): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:25:815 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:25:898 RAM/(17955:17970): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:46:25:899 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:25:899 RAM/(17955:17970): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:46:25:899 RAM/(17955:17970): ID PCB:1
+[INFO] 18:46:25:899 RAM/(17955:17970): ID TCB:1
+[INFO] 18:46:25:900 RAM/(17955:17970): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:25:900 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:25:978 RAM/(17955:17970): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:46:25:978 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:25:978 RAM/(17955:17970): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:46:25:978 RAM/(17955:17970): ID PCB:1
+[INFO] 18:46:25:978 RAM/(17955:17970): ID TCB:2
+[INFO] 18:46:25:979 RAM/(17955:17970): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:25:979 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:26:061 RAM/(17955:17970): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:46:26:062 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:46:26:062 RAM/(17955:17970): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:46:26:062 RAM/(17955:17970): ID PCB:1
+[INFO] 18:46:26:062 RAM/(17955:17970): ID TCB:3
+[INFO] 18:46:26:063 RAM/(17955:17970): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:46:26:063 RAM/(17955:17970): -----------------------------------------------------
+[INFO] 18:47:43:180 RAM/(17955:17970): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:49:00:924 RAM/(18014:18014): Mi RAM HQ ejecutando correctamente.. PID: 18014
+[INFO] 18:49:00:925 RAM/(18014:18014): Esquema utilizado: SEGMENTACION
+[INFO] 18:49:00:926 RAM/(18014:18014): Tamanio de la memoria: 512
+[INFO] 18:49:00:926 RAM/(18014:18014): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:49:00:927 RAM/(18014:18014): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:49:09:526 RAM/(18014:18014): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:49:09:527 RAM/(18014:18029): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:49:43:143 RAM/(18014:18029): Recibi la siguiente operacion de DIS: 610
+[INFO] 18:49:43:143 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:144 RAM/(18014:18029): Llegó la operación: INICIAR_PATOTA 
+[INFO] 18:49:43:144 RAM/(18014:18029): ID PCB: 1
+[INFO] 18:49:43:144 RAM/(18014:18029): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 18:49:43:144 RAM/(18014:18029): Cantidad de tripulantes: 4
+[INFO] 18:49:43:145 RAM/(18014:18029): Size total a guardar en memoria: 215
+[INFO] 18:49:43:145 RAM/(18014:18029): Se guardaron exitosamente los datos de la patota
+[INFO] 18:49:43:145 RAM/(18014:18029): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:145 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:186 RAM/(18014:18029): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:49:43:186 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:186 RAM/(18014:18029): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:49:43:187 RAM/(18014:18029): ID PCB:1
+[INFO] 18:49:43:187 RAM/(18014:18029): ID TCB:0
+[INFO] 18:49:43:187 RAM/(18014:18029): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:188 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:266 RAM/(18014:18029): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:49:43:267 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:267 RAM/(18014:18029): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:49:43:267 RAM/(18014:18029): ID PCB:1
+[INFO] 18:49:43:267 RAM/(18014:18029): ID TCB:1
+[INFO] 18:49:43:267 RAM/(18014:18029): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:268 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:346 RAM/(18014:18029): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:49:43:347 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:347 RAM/(18014:18029): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:49:43:347 RAM/(18014:18029): ID PCB:1
+[INFO] 18:49:43:347 RAM/(18014:18029): ID TCB:2
+[INFO] 18:49:43:347 RAM/(18014:18029): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:348 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:426 RAM/(18014:18029): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:49:43:426 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:49:43:426 RAM/(18014:18029): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:49:43:427 RAM/(18014:18029): ID PCB:1
+[INFO] 18:49:43:427 RAM/(18014:18029): ID TCB:3
+[INFO] 18:49:43:427 RAM/(18014:18029): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:49:43:427 RAM/(18014:18029): -----------------------------------------------------
+[INFO] 18:50:17:593 RAM/(18014:18029): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:50:22:044 RAM/(18058:18058): Mi RAM HQ ejecutando correctamente.. PID: 18058
+[INFO] 18:50:22:045 RAM/(18058:18058): Esquema utilizado: SEGMENTACION
+[INFO] 18:50:22:046 RAM/(18058:18058): Tamanio de la memoria: 512
+[INFO] 18:50:22:046 RAM/(18058:18058): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:50:22:047 RAM/(18058:18058): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:50:26:768 RAM/(18058:18058): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:50:26:770 RAM/(18058:18078): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:51:08:243 RAM/(18058:18078): Recibi la siguiente operacion de DIS: 610
+[INFO] 18:51:08:243 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:243 RAM/(18058:18078): Llegó la operación: INICIAR_PATOTA 
+[INFO] 18:51:08:243 RAM/(18058:18078): ID PCB: 1
+[INFO] 18:51:08:244 RAM/(18058:18078): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 18:51:08:244 RAM/(18058:18078): Cantidad de tripulantes: 4
+[INFO] 18:51:08:244 RAM/(18058:18078): Size total a guardar en memoria: 215
+[INFO] 18:51:08:244 RAM/(18058:18078): Se guardaron exitosamente los datos de la patota
+[INFO] 18:51:08:245 RAM/(18058:18078): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:245 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:286 RAM/(18058:18078): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:51:08:287 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:287 RAM/(18058:18078): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:51:08:288 RAM/(18058:18078): ID PCB:1
+[INFO] 18:51:08:288 RAM/(18058:18078): ID TCB:0
+[INFO] 18:51:08:288 RAM/(18058:18078): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:289 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:366 RAM/(18058:18078): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:51:08:367 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:367 RAM/(18058:18078): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:51:08:367 RAM/(18058:18078): ID PCB:1
+[INFO] 18:51:08:367 RAM/(18058:18078): ID TCB:1
+[INFO] 18:51:08:368 RAM/(18058:18078): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:368 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:446 RAM/(18058:18078): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:51:08:446 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:446 RAM/(18058:18078): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:51:08:446 RAM/(18058:18078): ID PCB:1
+[INFO] 18:51:08:447 RAM/(18058:18078): ID TCB:2
+[INFO] 18:51:08:447 RAM/(18058:18078): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:447 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:526 RAM/(18058:18078): Recibi la siguiente operacion de DIS: 520
+[INFO] 18:51:08:530 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:51:08:530 RAM/(18058:18078): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 18:51:08:531 RAM/(18058:18078): ID PCB:1
+[INFO] 18:51:08:531 RAM/(18058:18078): ID TCB:3
+[INFO] 18:51:08:531 RAM/(18058:18078): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:51:08:532 RAM/(18058:18078): -----------------------------------------------------
+[INFO] 18:52:16:068 RAM/(18058:18078): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:52:17:688 RAM/(18058:18058): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:52:17:689 RAM/(18058:18108): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 18:52:45:200 RAM/(18058:18108): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:19:47:150 RAM/(18058:18058): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:19:47:151 RAM/(18058:18496): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:20:13:093 RAM/(18058:18496): Recibi la siguiente operacion de DIS: 610
+[INFO] 19:20:13:093 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:094 RAM/(18058:18496): Llegó la operación: INICIAR_PATOTA 
+[INFO] 19:20:13:094 RAM/(18058:18496): ID PCB: 1
+[INFO] 19:20:13:094 RAM/(18058:18496): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:20:13:094 RAM/(18058:18496): Cantidad de tripulantes: 4
+[INFO] 19:20:13:094 RAM/(18058:18496): Size total a guardar en memoria: 215
+[INFO] 19:20:13:095 RAM/(18058:18496): Se guardaron exitosamente los datos de la patota
+[INFO] 19:20:13:095 RAM/(18058:18496): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:095 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:134 RAM/(18058:18496): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:20:13:134 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:134 RAM/(18058:18496): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:20:13:135 RAM/(18058:18496): ID PCB:1
+[INFO] 19:20:13:135 RAM/(18058:18496): ID TCB:0
+[INFO] 19:20:13:135 RAM/(18058:18496): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:136 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:215 RAM/(18058:18496): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:20:13:215 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:215 RAM/(18058:18496): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:20:13:215 RAM/(18058:18496): ID PCB:1
+[INFO] 19:20:13:215 RAM/(18058:18496): ID TCB:1
+[INFO] 19:20:13:216 RAM/(18058:18496): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:216 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:294 RAM/(18058:18496): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:20:13:294 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:294 RAM/(18058:18496): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:20:13:295 RAM/(18058:18496): ID PCB:1
+[INFO] 19:20:13:295 RAM/(18058:18496): ID TCB:2
+[INFO] 19:20:13:295 RAM/(18058:18496): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:296 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:374 RAM/(18058:18496): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:20:13:375 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:20:13:375 RAM/(18058:18496): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:20:13:375 RAM/(18058:18496): ID PCB:1
+[INFO] 19:20:13:375 RAM/(18058:18496): ID TCB:3
+[INFO] 19:20:13:375 RAM/(18058:18496): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:20:13:375 RAM/(18058:18496): -----------------------------------------------------
+[INFO] 19:22:16:421 RAM/(18058:18496): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:22:19:202 RAM/(18058:18058): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:22:19:202 RAM/(18058:18548): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:22:35:835 RAM/(18058:18548): Recibi la siguiente operacion de DIS: 610
+[INFO] 19:22:35:835 RAM/(18058:18548): -----------------------------------------------------
+[INFO] 19:22:35:836 RAM/(18058:18548): Llegó la operación: INICIAR_PATOTA 
+[INFO] 19:22:35:836 RAM/(18058:18548): ID PCB: 1
+[INFO] 19:22:35:836 RAM/(18058:18548): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:22:35:836 RAM/(18058:18548): Cantidad de tripulantes: 4
+[INFO] 19:22:35:837 RAM/(18058:18548): Size total a guardar en memoria: 215
+[ERROR] 19:22:35:837 RAM/(18058:18548): No hay mas espacio en memoria
+[INFO] 19:22:35:837 RAM/(18058:18548): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:22:35:837 RAM/(18058:18548): -----------------------------------------------------
+[INFO] 19:22:42:951 RAM/(18058:18548): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:22:48:682 RAM/(18562:18562): Mi RAM HQ ejecutando correctamente.. PID: 18562
+[INFO] 19:22:48:683 RAM/(18562:18562): Esquema utilizado: SEGMENTACION
+[INFO] 19:22:48:684 RAM/(18562:18562): Tamanio de la memoria: 512
+[INFO] 19:22:48:684 RAM/(18562:18562): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:22:48:685 RAM/(18562:18562): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:22:52:147 RAM/(18562:18562): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:22:52:149 RAM/(18562:18577): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:23:04:839 RAM/(18562:18577): Recibi la siguiente operacion de DIS: 610
+[INFO] 19:23:04:839 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:04:839 RAM/(18562:18577): Llegó la operación: INICIAR_PATOTA 
+[INFO] 19:23:04:840 RAM/(18562:18577): ID PCB: 1
+[INFO] 19:23:04:840 RAM/(18562:18577): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:23:04:840 RAM/(18562:18577): Cantidad de tripulantes: 4
+[INFO] 19:23:04:841 RAM/(18562:18577): Size total a guardar en memoria: 215
+[INFO] 19:23:04:841 RAM/(18562:18577): Se guardaron exitosamente los datos de la patota
+[INFO] 19:23:04:841 RAM/(18562:18577): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:04:842 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:04:882 RAM/(18562:18577): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:23:04:883 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:04:883 RAM/(18562:18577): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:23:04:883 RAM/(18562:18577): ID PCB:1
+[INFO] 19:23:04:883 RAM/(18562:18577): ID TCB:0
+[INFO] 19:23:04:883 RAM/(18562:18577): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:04:884 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:04:962 RAM/(18562:18577): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:23:04:963 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:04:964 RAM/(18562:18577): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:23:04:964 RAM/(18562:18577): ID PCB:1
+[INFO] 19:23:04:964 RAM/(18562:18577): ID TCB:1
+[INFO] 19:23:04:965 RAM/(18562:18577): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:04:965 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:05:042 RAM/(18562:18577): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:23:05:042 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:05:043 RAM/(18562:18577): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:23:05:043 RAM/(18562:18577): ID PCB:1
+[INFO] 19:23:05:043 RAM/(18562:18577): ID TCB:2
+[INFO] 19:23:05:043 RAM/(18562:18577): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:05:043 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:05:122 RAM/(18562:18577): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:23:05:123 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:23:05:123 RAM/(18562:18577): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:23:05:123 RAM/(18562:18577): ID PCB:1
+[INFO] 19:23:05:123 RAM/(18562:18577): ID TCB:3
+[INFO] 19:23:05:124 RAM/(18562:18577): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:23:05:125 RAM/(18562:18577): -----------------------------------------------------
+[INFO] 19:24:36:131 RAM/(18562:18577): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:25:14:447 RAM/(18562:18562): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:25:14:450 RAM/(18562:18699): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:25:32:472 RAM/(18562:18699): Recibi la siguiente operacion de DIS: 610
+[INFO] 19:25:32:473 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:32:473 RAM/(18562:18699): Llegó la operación: INICIAR_PATOTA 
+[INFO] 19:25:32:473 RAM/(18562:18699): ID PCB: 1
+[INFO] 19:25:32:474 RAM/(18562:18699): Tareas de la patota: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 19:25:32:474 RAM/(18562:18699): Cantidad de tripulantes: 4
+[INFO] 19:25:32:474 RAM/(18562:18699): Size total a guardar en memoria: 215
+[INFO] 19:25:32:475 RAM/(18562:18699): Se guardaron exitosamente los datos de la patota
+[INFO] 19:25:32:475 RAM/(18562:18699): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:476 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:32:574 RAM/(18562:18699): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:25:32:575 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:32:575 RAM/(18562:18699): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:25:32:575 RAM/(18562:18699): ID PCB:1
+[INFO] 19:25:32:576 RAM/(18562:18699): ID TCB:0
+[INFO] 19:25:32:576 RAM/(18562:18699): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:577 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:32:730 RAM/(18562:18699): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:25:32:731 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:32:731 RAM/(18562:18699): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:25:32:731 RAM/(18562:18699): ID PCB:1
+[INFO] 19:25:32:731 RAM/(18562:18699): ID TCB:1
+[INFO] 19:25:32:732 RAM/(18562:18699): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:732 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:32:866 RAM/(18562:18699): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:25:32:866 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:32:866 RAM/(18562:18699): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:25:32:866 RAM/(18562:18699): ID PCB:1
+[INFO] 19:25:32:866 RAM/(18562:18699): ID TCB:2
+[INFO] 19:25:32:866 RAM/(18562:18699): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:32:866 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:33:030 RAM/(18562:18699): Recibi la siguiente operacion de DIS: 520
+[INFO] 19:25:33:031 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:25:33:031 RAM/(18562:18699): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 19:25:33:031 RAM/(18562:18699): ID PCB:1
+[INFO] 19:25:33:031 RAM/(18562:18699): ID TCB:3
+[INFO] 19:25:33:031 RAM/(18562:18699): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 19:25:33:031 RAM/(18562:18699): -----------------------------------------------------
+[INFO] 19:26:09:706 RAM/(18562:18699): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:26:48:469 RAM/(18562:18562): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:26:48:473 RAM/(18562:18727): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:27:01:746 RAM/(18562:18727): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:27:03:896 RAM/(18562:18562): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:27:03:900 RAM/(18562:18732): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:27:43:154 RAM/(18562:18732): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:29:36:158 RAM/(18760:18760): Mi RAM HQ ejecutando correctamente.. PID: 18760
+[INFO] 19:29:36:159 RAM/(18760:18760): Esquema utilizado: SEGMENTACION
+[INFO] 19:29:36:159 RAM/(18760:18760): Tamanio de la memoria: 512
+[INFO] 19:29:36:160 RAM/(18760:18760): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:29:36:160 RAM/(18760:18760): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:29:39:413 RAM/(18760:18760): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:29:39:418 RAM/(18760:18762): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:29:59:242 RAM/(18760:18762): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:31:11:578 RAM/(18760:18760): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:31:11:579 RAM/(18760:18793): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:31:24:902 RAM/(18760:18793): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:32:50:804 RAM/(18760:18760): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:32:50:809 RAM/(18760:18822): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:33:06:278 RAM/(18760:18822): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:33:58:250 RAM/(18760:18760): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:33:58:250 RAM/(18760:18858): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:34:21:679 RAM/(18760:18858): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:54:44:735 RAM/(19118:19118): Mi RAM HQ ejecutando correctamente.. PID: 19118
+[INFO] 19:54:44:746 RAM/(19118:19118): Esquema utilizado: SEGMENTACION
+[INFO] 19:54:44:747 RAM/(19118:19118): Tamanio de la memoria: 512
+[INFO] 19:54:44:747 RAM/(19118:19118): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:54:44:748 RAM/(19118:19118): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:54:50:312 RAM/(19118:19118): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:54:50:313 RAM/(19118:19133): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:55:10:970 RAM/(19118:19133): [Shared Library]: El cliente 5 se desconecto.

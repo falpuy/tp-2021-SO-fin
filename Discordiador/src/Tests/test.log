@@ -942,3 +942,46 @@
 [INFO] 20:28:42:889 test/(3722:5002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 20:28:42:974 test/(3722:5002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 20:28:44:854 test/(3722:5002): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:04:02:743 test/(17313:17313): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:04:02:744 test/(17313:17313): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:05:19:838 test/(17344:17344): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:05:19:839 test/(17344:17344): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:08:38:038 test/(17344:17344): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:08:38:057 test/(17344:17794): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:08:51:930 test/(17821:17821): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:08:51:931 test/(17821:17821): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:13:31:382 test/(17928:17928): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:13:31:382 test/(17928:17928): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:14:00:223 test/(17928:17928): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:14:00:226 test/(17928:17943): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:14:19:204 test/(17928:17943): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:16:45:652 test/(17959:17959): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:16:45:653 test/(17959:17959): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:16:50:718 test/(17959:17959): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:16:50:721 test/(17959:17972): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:17:00:468 test/(17959:17972): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:20:35:924 test/(18004:18004): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:20:35:925 test/(18004:18004): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:20:45:695 test/(18004:18004): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:20:45:697 test/(18004:18019): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:20:53:262 test/(18004:18019): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:23:26:500 test/(18004:18004): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:23:26:504 test/(18004:18085): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:44:28:238 test/(18541:18541): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:44:28:239 test/(18541:18541): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:44:40:579 test/(18541:18541): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:44:40:595 test/(18541:18544): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:47:14:163 test/(18541:18544): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:47:18:518 test/(18541:18541): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:47:18:519 test/(18541:18562): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:48:39:792 test/(18541:18562): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 18:14:02:262 TEST/(17246:17246): hola
+[INFO] 18:14:18:037 TEST/(17254:17254): hola
+[INFO] 18:14:18:037 TEST/(17254:17255): hola
+[INFO] 18:14:36:960 TEST/(17254:17255): Entró comando: INICIAR_PLANIFICACION
+[INFO] 18:14:47:051 TEST/(17254:17255): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 18:14:52:215 TEST/(17254:17255): Salimos de la consola
+[INFO] 18:16:03:213 TEST/(17388:17388): hola
+[INFO] 18:16:03:214 TEST/(17388:17389): hola
+[INFO] 18:17:27:374 TEST/(17388:17389): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 18:19:07:759 TEST/(17412:17412): hola

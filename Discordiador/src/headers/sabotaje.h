@@ -15,12 +15,64 @@
     #include<sys/socket.h>
     #include<unnamed/socket.h>
     #include<unnamed/serialization.h>
+    #include <math.h>
+
+    enum comandos {
+        SUCCESS=200,
+        RECIBIR_UBICACION_TRIPULANTE=510,
+        ENVIAR_TAREA=520,
+        EXPULSAR_TRIPULANTE=530,
+        ERROR_CANTIDAD_TRIPULANTES=554,
+        ERROR_POR_FALTA_DE_MEMORIA=555,
+        ERROR_NO_HAY_TAREAS=560,
+        INICIAR_PATOTA=610,
+        ENVIAR_OBTENER_BITACORA=760,
+        MOVER_TRIPULANTE=761,
+        COMENZAR_EJECUCION_TAREA=762,
+        FINALIZAR_EJECUCION_TAREA=763,
+        RESPUESTA_OBTENER_BITACORA=766,
+        INICIO_DISCORDIADOR=770,
+        INVOCAR_FSCK=771
+    };
+
+    //ESTRUCTURAS
 
     typedef struct{
         char* puertoDiscordiador;
         t_log* loggerDiscordiador;
     }parametrosServer;
 
+    typedef struct{
+        int conexion_RAM;
+        int conexion_IMS;
+        t_log* loggerDiscordiador;
+    }parametrosConsola;
+
+    typedef struct{
+        t_log* logger;
+        int idSemaforo;
+    }parametrosThread;
+
+    typedef struct{
+        int tid; //Identificador del Tripulante
+        int pid; //Identificador de la Patota
+        char status; //Estado del Tripulante
+        int posicionX; // Posición del tripulante en el Eje X
+        int posicionY; // Posición del tripulante en el Eje Y
+        char* instruccion_actual; // Nombre de la tarea que estamos ejecutando
+        int estaVivoElHilo; // 1= está vivo, 0= está muerto
+        int tiempoEnExec;
+        int tiempoEnBloqIO;
+        int ciclosCumplidos;
+    }tcb;
+
+    typedef struct{
+        int pid; //Identificador de la Patota
+        char* rutaTareas; //Ruta del archivo de tareas
+        t_list* listaTCB;
+    }pcb;
+
+    //-----------------------------------------------------------
     t_log* logger;
     t_config* config;
 
@@ -38,12 +90,15 @@
     char* puerto_DIS;
 
     int validador;
-    int planificacion_pausada;
+    int planificacion_viva;
     int sabotaje_activado;
+
+    //------------------HILOS - MUTEX - SEMAFOROS------------------- 
 
     pthread_t hNewaReady;
     pthread_t hReadyaExec;
     pthread_t hExecaReady;
+    pthread_t* hiloTripulante;
     pthread_t hExecaBloqIO;
     pthread_t hExecaExit;
     pthread_t hBloqIO;
@@ -58,6 +113,9 @@
     pthread_mutex_t mutexBloqIO;
     pthread_mutex_t mutexBloqEmer;
     pthread_mutex_t mutexExit;
+    pthread_mutex_t mutexValidador;
+    pthread_mutex_t mutexListaPCB;
+    
 
     sem_t semNR;
     sem_t semRE;
@@ -72,11 +130,6 @@
     int cantidadVieja;
     int contadorSemGlobal;
     
-    typedef struct{
-        t_log* logger;
-        int idSemaforo;
-    }parametrosThread;
-
     char** parametros;
 
     int contadorPCBs;
@@ -91,26 +144,17 @@
     t_queue* bloq_io;
     t_queue* bloq_emer;
     t_queue* cola_exit;
-    typedef struct
-    {
-        int tid; //Identificador del Tripulante
-        int pid; //Identificador de la Patota
-        char status; //Estado del Tripulante
-        int posicionX; // Posición del tripulante en el Eje X
-        int posicionY; // Posición del tripulante en el Eje Y
-        char* instruccion_actual; // Nombre de la tarea que estamos ejecutando
-        int estaVivoElHilo; // 1= está vivo, 0= está muerto
-        int tiempoEnExec;
-        int tiempoEnBloqIO;
-        int ciclosCumplidos;
-    }tcb;
-    typedef struct
-    {
-        int pid; //Identificador de la Patota
-        char* rutaTareas; //Ruta del archivo de tareas
-        t_list* listaTCB;
-    }pcb;
 
     t_list* listaPCB;
+
+    void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
+    bool comparadorTid(void* tripulante1, void* tripulante2);
+    
+    void funcionhExecReadyaBloqEmer (t_log* logger);
+    void funcionhBloqEmeraReady (t_log* logger);
+    
+    bool ordenarMasCercano(void* tripulante1, void* tripulante2);
+    bool compDistancias(void* tripulante1, void* tripulante2);
+
 
 #endif

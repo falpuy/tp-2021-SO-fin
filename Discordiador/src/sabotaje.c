@@ -1,10 +1,5 @@
 #include"headers/sabotaje.h"
 
-void servidor(parametrosServer* parametros){
-    while(validador){
-        _start_server(parametros->puertoDiscordiador, handler, parametros->loggerDiscordiador);
-    }
-}
 
 void handler(int client, char* identificador, int comando, void* payload, t_log* logger){
     char* buffer;
@@ -24,8 +19,10 @@ bool comparadorTid(void* tripulante1, void* tripulante2){
 }
 
 void funcionhExecReadyaBloqEmer (t_log* logger){
-  	while(validador == 1){
-        while (planificacion_pausada == 0 && sabotaje_activado == 1) {
+    pthread_mutex_lock(&mutexValidador);
+  	while(validador){
+        pthread_mutex_unlock(&mutexValidador);
+        if (planificacion_viva && sabotaje_activado) {
             list_sort(exec->elements, comparadorTid);
             while (!queue_is_empty(exec))
             {
@@ -60,10 +57,10 @@ bool ordenarMasCercano(void* tripulante1, void* tripulante2){ //Tomamos como vec
     tcb* tcb1 = (tcb*) tripulante1;
     tcb* tcb2 = (tcb*) tripulante2;
 
-    int diferenciatcb1X = posSabotajeX - tcb1->posX;
-    int diferenciatcb1Y = posSabotajeY - tcb1->posY;
-    int diferenciatcb2X = posSabotajeX - tcb2->posX;
-    int diferenciatcb2Y = posSabotajeY - tcb2->posX;
+    int diferenciatcb1X = posSabotajeX - tcb1->posicionX;
+    int diferenciatcb1Y = posSabotajeY - tcb1->posicionY;
+    int diferenciatcb2X = posSabotajeX - tcb2->posicionX;
+    int diferenciatcb2Y = posSabotajeY - tcb2->posicionY;
 
     int modulo1 = sqrt(pow(diferenciatcb1X, 2) + pow(diferenciatcb1Y, 2));
     int modulo2 = sqrt(pow(diferenciatcb2X, 2) + pow(diferenciatcb2Y, 2));
@@ -78,8 +75,10 @@ bool compDistancias(void* tripulante1, void* tripulante2){
 }
 
 void funcionhBloqEmeraReady (t_log* logger){
-  	while(validador == 1){
-        while (planificacion_pausada == 0 && sabotaje_activado == 1) {
+    pthread_mutex_lock(&mutexValidador);
+  	while(validador){
+        pthread_mutex_unlock(&mutexValidador);
+        if(planificacion_viva == 0 && sabotaje_activado == 1) {
             while (!queue_is_empty(bloq_emer))
             {
                 tcb* aux_TCB = malloc (sizeof(tcb));

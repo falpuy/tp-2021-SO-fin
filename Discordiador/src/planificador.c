@@ -24,6 +24,7 @@ void funcionPlanificador(t_log* logger) {
     exec = queue_create();
     bloq_io = queue_create();
     bloq_emer = queue_create();
+    bloq_emer_sorted = queue_create();
     cola_exit = queue_create();
 
     listaPCB = list_create();

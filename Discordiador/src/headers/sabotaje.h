@@ -92,6 +92,7 @@
     int validador;
     int planificacion_viva;
     int sabotaje_activado;
+    int ciclos_transcurridos_sabotaje;
 
     //------------------HILOS - MUTEX - SEMAFOROS------------------- 
 
@@ -125,6 +126,8 @@
     sem_t semEXIT;
     sem_t semEBIO;
     sem_t* semTripulantes;
+    sem_t semERM;
+    sem_t semMR;
 
     int cantidadActual;
     int cantidadVieja;
@@ -143,6 +146,7 @@
     t_queue* exec;
     t_queue* bloq_io;
     t_queue* bloq_emer;
+    t_queue* bloq_emer_sorted;
     t_queue* cola_exit;
 
     t_list* listaPCB;

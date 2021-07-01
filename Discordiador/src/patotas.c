@@ -157,6 +157,7 @@ void funcionTripulante (void* item){
     tcb *tcbTripulante;
 
     log_info(aux->logger,"----------------------------------");
+    log_info(aux->logger,"[Tripulante %d] Esperando Signal...", aux->idSemaforo);
 
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
@@ -164,8 +165,7 @@ void funcionTripulante (void* item){
 
     while(temp_validador){
         sem_wait(&semTripulantes[aux->idSemaforo]);
-
-
+        log_info(aux->logger,"[Tripulante %d] EJECUTANDO...", aux->idSemaforo);
         pthread_mutex_lock(&mutexExec);
         tcbTripulante = get_by_id(exec->elements, aux->idSemaforo);
         pthread_mutex_unlock(&mutexExec);
@@ -223,6 +223,7 @@ void funcionTripulante (void* item){
                         log_info(logger, "Se debe realizar una tarea de I/O");
                         sleep(1);
                         tcbTripulante->status = 'I';
+                        log_info(logger,"Ejecuto POST de semEBIO con hilo %d", aux -> idSemaforo);
                         sem_post(&semEBIO);
                     }
                     else if (esTareaIO(tarea[0]) == 0) {
@@ -233,10 +234,12 @@ void funcionTripulante (void* item){
                         if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){
                             tcbTripulante->status = 'R';
                             tcbTripulante->ciclosCumplidos = 0;
+                            log_info(logger,"Ejecuto POST de semER con hilo %d", aux -> idSemaforo);
                             sem_post(&semER);
                         }
                         else if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR || !strcmp(algoritmo,"FIFO")){
                             cantidadTripulantesEnExec = queue_size(exec);
+                            log_info(logger,"Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo);
                             _signal(1, cantidadTripulantesEnExec, semBLOCKIO);
                         }
                         else
@@ -255,10 +258,12 @@ void funcionTripulante (void* item){
                     if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){
                         tcbTripulante->status = 'R';
                         tcbTripulante->ciclosCumplidos = 0;
+                        log_info(logger,"Ejecuto POST de semER con hilo %d", aux -> idSemaforo);
                         sem_post(&semER);
                     }
                     else if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR || !strcmp(algoritmo,"FIFO")){
                         cantidadTripulantesEnExec = queue_size(exec);
+                        log_info(logger,"Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo);
                         _signal(1, cantidadTripulantesEnExec, semBLOCKIO);
                     }
                     else
@@ -418,17 +423,20 @@ char *get_tareas(char *ruta_archivo, t_log* logger) {
     return temp_string;
 }
 
-void create_tcb_by_list(t_list* self, void(*closure)(void*, int, t_log*), int conexion_RAM, t_log *logger) {
+void create_tcb_by_list(t_list* self, void(*closure)(void*, int, int, t_log*), int conexion_RAM, int cantidad_inicial, t_log *logger) {
+    int indice_tcb_temporal = cantidad_inicial;
 	t_link_element *element = self->head;
 	t_link_element *aux = NULL;
 	while (element != NULL) {
 		aux = element->next;
-		closure(element->data, conexion_RAM, logger);
+		closure(element->data, conexion_RAM, indice_tcb_temporal, logger);
+        indice_tcb_temporal++;
 		element = aux;
 	}
 }
 
-void iniciar_tcb(void *elemento, int conexion_RAM, t_log *logger) {
+void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_log *logger) {
+
 	tcb *aux = (tcb *) elemento;
   	int tamanioBuffer = sizeof(int) * 2;
   	void *buffer = _serialize(tamanioBuffer, "%d%d", aux->pid, aux->tid);
@@ -445,16 +453,16 @@ void iniciar_tcb(void *elemento, int conexion_RAM, t_log *logger) {
         aux->estaVivoElHilo = 1;
         queue_push (cola_new, (void*) aux);
 
-        for(int i=cantidadVieja; i<cantidadActual; i++){
-            parametrosThread *parametros = malloc(sizeof(parametrosThread));
-            parametros->logger=logger;
-            parametros->idSemaforo=i;
+        // for(int i=cantidadVieja; i<cantidadActual; i++){
+        parametrosThread *parametros = malloc(sizeof(parametrosThread));
+        parametros->logger=logger;
+        parametros->idSemaforo=indice_tcb_temporal;
 
-            
-            pthread_create(&hiloTripulante[i], NULL, (void *) funcionTripulante, parametros);
+        
+        pthread_create(&hiloTripulante[indice_tcb_temporal], NULL, (void *) funcionTripulante, parametros);
             //pthread_detach(hiloTripulante);
 
-        }
+        // }
        
     } else {
     	log_error(logger, "No hay tareas disponibles");

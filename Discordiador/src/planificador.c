@@ -37,8 +37,11 @@ void funcionhNewaReady (t_log* logger) {
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
 
+    log_info(logger, "[New a Rdy] esperando signal..");
+
     while (temp_validador) {
         sem_wait(&semNR);
+        log_info(logger, "[New a Rdy] Ejecutando..");
 
         if(planificacion_viva){
             while(!queue_is_empty(cola_new)){   
@@ -79,10 +82,10 @@ void funcionhReadyaExec (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
-    
+    log_info(logger, "[Rdy a Exec] esperando signal..");
     while (temp_validador) {
         sem_wait(&semRE);
-
+        log_info(logger, "[Rdy a Exec] Ejecutando..");
         if(planificacion_viva) {
             while(!queue_is_empty(ready) && queue_size(exec) <= grado_multitarea){
                 log_info(logger,"----------------------------------");
@@ -143,9 +146,10 @@ void funcionhExecaBloqIO (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
-    
+    log_info(logger, "[Exec a Bloqio] esperando signal..");
     while (temp_validador) {
         sem_wait(&semEBIO);
+        log_info(logger, "[Exec a Bloqio] ejec..");
         if(planificacion_viva) {
             while (!queue_is_empty(exec)){  
                 log_info(logger,"----------------------------------");
@@ -153,6 +157,7 @@ void funcionhExecaBloqIO (t_log* logger){
 
                 int cantidadTripulantesEnExec = queue_size(exec);
                 list_iterate_position(exec->elements, funcionCambioExecIO);
+                log_info(logger, "[Exec a Bloqio] ejecuto _SIGNAL desde semEBIO..");
                 _signal(1, cantidadTripulantesEnExec, semBLOCKIO);
             }
             
@@ -169,15 +174,17 @@ void funcionhBloqIO (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
+
+    log_info(logger, "[bloqio] esperando signal..");
     
     while (temp_validador){
         sem_wait(&semBLOCKIO);
-
+        log_info(logger, "[bloqio] ejec..");
         if(planificacion_viva ){
             log_info(logger,"----------------------------------");
             log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
-            tcb* tcbTripulante = malloc(sizeof(tcb));
-            list_iterate_position(bloq_io->elements, funcionContadorEnBloqIO);
+            // tcb* tcbTripulante = malloc(sizeof(tcb));
+            // list_iterate_position(bloq_io->elements, funcionContadorEnBloqIO);
         
             log_info(logger,"Se hizo una ejecución de CPU en BlockedIO");
             log_info(logger,"----------------------------------");
@@ -268,8 +275,13 @@ void funcionhExecaReady (t_log* logger) {
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
+
+    log_info(logger, "[Exec a Rdy] esperando signal..");
+
     while (temp_validador) {
         sem_wait(&semER);
+        log_info(logger, "[Exec a Rdy] ejec..");
+
         if(planificacion_viva) {
             while (!queue_is_empty(exec))
             {   
@@ -278,6 +290,7 @@ void funcionhExecaReady (t_log* logger) {
                 int cantidadTripulantesEnExec = queue_size(exec);
                 
                 list_iterate_position(exec->elements, funcionCambioExecReady);
+                log_info(logger, "[Exec a Rdy] ejecuto _SIGNAL desde semER..");
                 _signal(1, cantidadTripulantesEnExec, semBLOCKIO);
             }
 
@@ -312,9 +325,12 @@ void funcionhExecaExit (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
+    log_info(logger, "[Exec a Exit] esperando signal..");
     
     while (temp_validador) {
         sem_wait(&semEaX);
+        log_info(logger, "[Exec a Exit] ejec..");
+
         if (planificacion_viva) {
             while (!queue_is_empty(exec)){  
                 log_info(logger,"----------------------------------");
@@ -336,8 +352,12 @@ void funcionhExit (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
+    log_info(logger, "[Exit] esperando signal..");
+
     while (temp_validador) {
         sem_wait(&semEXIT);
+        log_info(logger, "[Exit] ejec..");
+
         if(planificacion_viva) {
             while (!queue_is_empty(cola_exit)){  
                 log_info(logger,"----------------------------------");
@@ -361,6 +381,7 @@ void funcionhExit (t_log* logger){
             log_info(logger,"Se hizo una ejecución de CPU en Exit");
             log_info(logger,"----------------------------------");
         }
+        sleep(1);
         sem_post(&semNR);
     }
 }

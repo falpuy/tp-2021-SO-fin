@@ -12922,3 +12922,599 @@ O] 20:21:51:415 consola/(4920:4920): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆�
 [ERROR] 20:07:53:531 consola/(22182:22191): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
 [INFO] 20:07:53:532 consola/(22182:22191): Se debe realizar una tarea normal (no de I/O)
 [ERROR] 20:07:53:531 consola/(22182:22193): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 00:59:20:266 consola/(13343:13343): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, FIFO, 3, 20, 1
+[INFO] 00:59:20:266 consola/(13343:13343): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 00:59:20:266 consola/(13343:13343): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 00:59:20:267 consola/(13343:13343): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 00:59:20:267 consola/(13343:13343): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:05:12:320 consola/(13389:13389): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, FIFO, 3, 20, 1
+[INFO] 01:05:12:320 consola/(13389:13389): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 01:05:12:320 consola/(13389:13389): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:05:12:321 consola/(13389:13389): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 01:05:12:321 consola/(13389:13389): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:05:12:321 consola/(13389:13393): [Exec a Bloqio] esperando signal..
+[INFO] 01:05:12:321 consola/(13389:13395): [bloqio] esperando signal..
+[INFO] 01:05:12:321 consola/(13389:13391): [Rdy a Exec] esperando signal..
+[INFO] 01:05:12:321 consola/(13389:13396): [Exit] esperando signal..
+[INFO] 01:05:12:321 consola/(13389:13394): [Exec a Exit] esperando signal..
+[INFO] 01:05:12:321 consola/(13389:13390): [New a Rdy] esperando signal..
+[INFO] 01:05:12:321 consola/(13389:13392): [Exec a Rdy] esperando signal..
+[INFO] 01:14:28:974 consola/(13657:13657): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, FIFO, 3, 20, 1
+[INFO] 01:14:28:974 consola/(13657:13657): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 01:14:28:974 consola/(13657:13657): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:14:28:974 consola/(13657:13657): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 01:14:28:974 consola/(13657:13657): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:14:28:975 consola/(13657:13658): [New a Rdy] esperando signal..
+[INFO] 01:14:28:975 consola/(13657:13664): [Exit] esperando signal..
+[INFO] 01:14:28:975 consola/(13657:13663): [bloqio] esperando signal..
+[INFO] 01:14:28:975 consola/(13657:13659): [Rdy a Exec] esperando signal..
+[INFO] 01:14:28:975 consola/(13657:13660): [Exec a Rdy] esperando signal..
+[INFO] 01:14:28:975 consola/(13657:13661): [Exec a Bloqio] esperando signal..
+[INFO] 01:14:28:975 consola/(13657:13662): [Exec a Exit] esperando signal..
+[INFO] 01:14:34:874 consola/(13657:13657): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 01:14:42:904 consola/(13657:13657): Entró comando: INICIAR_PLANIFICACION
+[INFO] 01:14:42:904 consola/(13657:13657): Se inició la planificación. Estado de la flag: 1
+[INFO] 01:14:42:904 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:42:904 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:42:904 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:42:904 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:42:904 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:42:905 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:42:905 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:42:905 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:42:905 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:42:905 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:42:905 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:42:905 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:42:905 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:42:905 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:42:905 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:43:906 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:43:906 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:43:906 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:43:906 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:43:906 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:43:906 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:43:906 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:43:906 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:43:906 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:43:907 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:43:907 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:43:907 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:43:907 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:43:907 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:43:907 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:44:908 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:44:909 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:44:909 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:44:909 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:44:909 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:44:909 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:44:909 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:44:909 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:44:909 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:44:909 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:44:909 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:44:909 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:44:909 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:44:910 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:44:910 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:45:911 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:45:911 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:45:912 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:45:912 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:45:912 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:45:912 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:45:912 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:45:912 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:45:912 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:45:912 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:45:912 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:45:912 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:45:912 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:45:912 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:45:913 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:46:913 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:46:913 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:46:913 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:46:913 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:46:913 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:46:913 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:46:913 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:46:914 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:46:914 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:46:914 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:46:914 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:46:914 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:46:914 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:46:914 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:46:914 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:47:922 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:47:922 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:47:922 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:47:922 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:47:923 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:47:923 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:47:923 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:47:923 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:47:923 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:47:923 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:47:923 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:47:923 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:47:923 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:47:923 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:47:923 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:48:924 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:48:924 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:48:924 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:48:924 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:48:924 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:48:924 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:48:924 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:48:924 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:48:925 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:48:925 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:48:925 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:48:925 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:48:925 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:48:925 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:48:925 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:49:928 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:49:928 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:49:928 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:49:928 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:49:928 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:49:929 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:49:929 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:49:929 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:49:929 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:49:929 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:49:929 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:49:929 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:49:929 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:49:929 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:49:929 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:50:931 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:50:931 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:50:931 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:50:931 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:50:932 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:50:932 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:50:932 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:50:932 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:50:932 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:50:932 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:50:932 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:50:932 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:50:932 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:50:932 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:50:932 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:51:938 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:51:939 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:51:939 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:51:939 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:51:939 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:51:939 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:51:939 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:51:939 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:51:939 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:51:939 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:51:940 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:51:940 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:51:940 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:51:940 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:51:940 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:52:942 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:52:942 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:52:942 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:52:942 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:52:942 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:52:942 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:52:942 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:52:942 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:52:943 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:52:943 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:52:943 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:52:943 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:52:943 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:52:943 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:52:943 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:53:952 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:53:952 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:53:952 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:53:952 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:53:952 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:53:953 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:53:953 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:53:953 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:53:953 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:53:953 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:53:953 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:53:953 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:53:953 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:53:953 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:53:953 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:54:962 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:54:963 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:54:963 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:54:963 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:54:963 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:54:963 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:54:963 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:54:963 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:54:963 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:54:963 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:54:963 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:54:964 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:54:964 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:54:964 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:54:964 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:55:965 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:55:966 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:55:966 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:55:966 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:55:966 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:55:966 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:55:966 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:55:966 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:55:966 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:55:966 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:55:967 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:55:967 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:55:967 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:55:967 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:55:967 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:56:968 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:56:968 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:56:969 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:56:969 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:56:969 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:56:969 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:56:969 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:56:969 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:56:969 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:56:969 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:56:969 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:56:969 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:56:969 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:56:970 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:56:970 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:57:972 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:57:972 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:57:972 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:57:972 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:57:972 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:57:972 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:57:972 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:57:972 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:57:973 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:57:973 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:57:973 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:57:973 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:57:973 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:57:973 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:57:973 consola/(13657:13664): ----------------------------------
+[INFO] 01:14:58:980 consola/(13657:13658): [New a Rdy] Ejecutando..
+[INFO] 01:14:58:980 consola/(13657:13658): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 01:14:58:981 consola/(13657:13658): ----------------------------------
+[INFO] 01:14:58:981 consola/(13657:13659): [Rdy a Exec] Ejecutando..
+[INFO] 01:14:58:981 consola/(13657:13659): Se comienza a iterar signals...
+[INFO] 01:14:58:981 consola/(13657:13659): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 01:14:58:981 consola/(13657:13663): [bloqio] ejec..
+[INFO] 01:14:58:981 consola/(13657:13659): ----------------------------------
+[INFO] 01:14:58:981 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:58:981 consola/(13657:13663): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 01:14:58:982 consola/(13657:13663): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 01:14:58:982 consola/(13657:13663): ----------------------------------
+[INFO] 01:14:58:982 consola/(13657:13664): [Exit] ejec..
+[INFO] 01:14:58:982 consola/(13657:13664): Se hizo una ejecución de CPU en Exit
+[INFO] 01:14:58:982 consola/(13657:13664): ----------------------------------
+[INFO] 01:22:41:541 consola/(13746:13746): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, FIFO, 3, 20, 1
+[INFO] 01:22:41:541 consola/(13746:13746): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 01:22:41:541 consola/(13746:13746): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:22:41:541 consola/(13746:13746): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 01:22:41:541 consola/(13746:13746): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:22:41:541 consola/(13746:13747): [New a Rdy] esperando signal..
+[INFO] 01:22:41:541 consola/(13746:13748): [Rdy a Exec] esperando signal..
+[INFO] 01:22:41:542 consola/(13746:13750): [Exec a Bloqio] esperando signal..
+[INFO] 01:22:41:542 consola/(13746:13752): [bloqio] esperando signal..
+[INFO] 01:22:41:542 consola/(13746:13749): [Exec a Rdy] esperando signal..
+[INFO] 01:22:41:542 consola/(13746:13751): [Exec a Exit] esperando signal..
+[INFO] 01:22:41:542 consola/(13746:13753): [Exit] esperando signal..
+[INFO] 01:22:47:695 consola/(13746:13746): Entró comando: INICIAR_PATOTA
+[INFO] 01:22:47:697 consola/(13746:13746): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[ERROR] 01:22:47:697 consola/(13746:13746): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 01:22:47:697 consola/(13746:13746): HOLIS
+[INFO] 01:22:47:697 consola/(13746:13746): Recibi el siguiente mensaje..
+[INFO] 01:22:47:697 consola/(13746:13746): Proceso: 
+[INFO] 01:22:47:697 consola/(13746:13746): Comando: 926169650
+[INFO] 01:22:47:697 consola/(13746:13746): Tamanio: 587202560
+[ERROR] 01:22:47:698 consola/(13746:13746): No se pudo crear el PCB por falta de memoria
+[INFO] 01:24:14:296 consola/(13926:13926): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, FIFO, 3, 20, 1
+[INFO] 01:24:14:296 consola/(13926:13926): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 01:24:14:296 consola/(13926:13926): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 01:24:14:296 consola/(13926:13926): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 01:24:14:296 consola/(13926:13926): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:24:14:297 consola/(13926:13928): [New a Rdy] esperando signal..
+[INFO] 01:24:14:297 consola/(13926:13929): [Rdy a Exec] esperando signal..
+[INFO] 01:24:14:297 consola/(13926:13930): [Exec a Rdy] esperando signal..
+[INFO] 01:24:14:297 consola/(13926:13931): [Exec a Bloqio] esperando signal..
+[INFO] 01:24:14:297 consola/(13926:13933): [bloqio] esperando signal..
+[INFO] 01:24:14:297 consola/(13926:13932): [Exec a Exit] esperando signal..
+[INFO] 01:24:14:297 consola/(13926:13934): [Exit] esperando signal..
+[INFO] 01:24:19:948 consola/(13926:13926): Entró comando: INICIAR_PATOTA
+[INFO] 01:24:19:949 consola/(13926:13926): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 01:24:19:949 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:949 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:24:19:950 consola/(13926:13926): HOLIS
+[INFO] 01:24:19:950 consola/(13926:13926): Recibi el siguiente mensaje..
+[INFO] 01:24:19:951 consola/(13926:13926): Proceso: RAM
+[INFO] 01:24:19:951 consola/(13926:13926): Comando: 200
+[INFO] 01:24:19:951 consola/(13926:13926): Tamanio: 9
+[INFO] 01:24:19:951 consola/(13926:13926): Memoria OK
+[INFO] 01:24:19:951 consola/(13926:13926): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:24:19:951 consola/(13926:13926): Recibi el siguiente mensaje..
+[INFO] 01:24:19:991 consola/(13926:13926): Proceso: RAM
+[INFO] 01:24:20:038 consola/(13926:13926): Comando: 200
+[INFO] 01:24:20:038 consola/(13926:13926): Tamanio: 30
+[INFO] 01:24:20:038 consola/(13926:13936): ----------------------------------
+[INFO] 01:24:20:038 consola/(13926:13937): ----------------------------------
+[INFO] 01:24:20:038 consola/(13926:13937): [Tripulante 1] Esperando Signal...
+[INFO] 01:24:20:038 consola/(13926:13939): ----------------------------------
+[INFO] 01:24:20:038 consola/(13926:13938): ----------------------------------
+[INFO] 01:24:20:038 consola/(13926:13938): [Tripulante 2] Esperando Signal...
+[INFO] 01:24:20:038 consola/(13926:13936): [Tripulante 0] Esperando Signal...
+[INFO] 01:24:20:038 consola/(13926:13926): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:24:20:039 consola/(13926:13926): Recibi el siguiente mensaje..
+[INFO] 01:24:20:038 consola/(13926:13939): [Tripulante 3] Esperando Signal...
+[INFO] 01:24:20:088 consola/(13926:13926): Proceso: RAM
+[INFO] 01:24:20:138 consola/(13926:13926): Comando: 200
+[INFO] 01:24:20:138 consola/(13926:13926): Tamanio: 30
+[INFO] 01:24:20:138 consola/(13926:13926): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:24:20:138 consola/(13926:13926): Recibi el siguiente mensaje..
+[INFO] 01:24:20:138 consola/(13926:13943): ----------------------------------
+[INFO] 01:24:20:139 consola/(13926:13943): [Tripulante 3] Esperando Signal...
+[INFO] 01:24:20:138 consola/(13926:13942): ----------------------------------
+[INFO] 01:24:20:138 consola/(13926:13940): ----------------------------------
+[INFO] 01:24:20:138 consola/(13926:13941): ----------------------------------
+[INFO] 01:24:20:139 consola/(13926:13941): [Tripulante 1] Esperando Signal...
+[INFO] 01:24:20:139 consola/(13926:13940): [Tripulante 0] Esperando Signal...
+[INFO] 01:24:20:139 consola/(13926:13942): [Tripulante 2] Esperando Signal...
+[INFO] 01:24:20:180 consola/(13926:13926): Proceso: RAM
+[INFO] 01:24:20:226 consola/(13926:13926): Comando: 200
+[INFO] 01:24:20:226 consola/(13926:13926): Tamanio: 30
+[INFO] 01:24:20:226 consola/(13926:13944): ----------------------------------
+[INFO] 01:24:20:226 consola/(13926:13926): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:24:20:226 consola/(13926:13946): ----------------------------------
+[INFO] 01:24:20:226 consola/(13926:13945): ----------------------------------
+[INFO] 01:24:20:226 consola/(13926:13926): Recibi el siguiente mensaje..
+[INFO] 01:24:20:227 consola/(13926:13944): [Tripulante 0] Esperando Signal...
+[INFO] 01:24:20:227 consola/(13926:13946): [Tripulante 2] Esperando Signal...
+[INFO] 01:24:20:226 consola/(13926:13947): ----------------------------------
+[INFO] 01:24:20:227 consola/(13926:13945): [Tripulante 1] Esperando Signal...
+[INFO] 01:24:20:227 consola/(13926:13947): [Tripulante 3] Esperando Signal...
+[INFO] 01:24:20:270 consola/(13926:13926): Proceso: RAM
+[INFO] 01:24:20:311 consola/(13926:13926): Comando: 200
+[INFO] 01:24:20:311 consola/(13926:13926): Tamanio: 30
+[INFO] 01:24:20:311 consola/(13926:13950): ----------------------------------
+[INFO] 01:24:20:311 consola/(13926:13951): ----------------------------------
+[INFO] 01:24:20:311 consola/(13926:13951): [Tripulante 3] Esperando Signal...
+[INFO] 01:24:20:311 consola/(13926:13949): ----------------------------------
+[INFO] 01:24:20:311 consola/(13926:13950): [Tripulante 2] Esperando Signal...
+[INFO] 01:24:20:312 consola/(13926:13949): [Tripulante 1] Esperando Signal...
+[INFO] 01:24:20:311 consola/(13926:13948): ----------------------------------
+[INFO] 01:24:20:312 consola/(13926:13948): [Tripulante 0] Esperando Signal...
+[INFO] 01:35:53:481 consola/(14075:14075): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, FIFO, 3, 20, 1
+[INFO] 01:35:53:482 consola/(14075:14075): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 01:35:53:482 consola/(14075:14075): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 01:35:53:482 consola/(14075:14075): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 01:35:53:482 consola/(14075:14075): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 01:35:53:482 consola/(14075:14080): [Exec a Bloqio] esperando signal..
+[INFO] 01:35:53:482 consola/(14075:14078): [Rdy a Exec] esperando signal..
+[INFO] 01:35:53:483 consola/(14075:14082): [bloqio] esperando signal..
+[INFO] 01:35:53:483 consola/(14075:14079): [Exec a Rdy] esperando signal..
+[INFO] 01:35:53:483 consola/(14075:14083): [Exit] esperando signal..
+[INFO] 01:35:53:483 consola/(14075:14081): [Exec a Exit] esperando signal..
+[INFO] 01:35:53:483 consola/(14075:14077): [New a Rdy] esperando signal..
+[INFO] 01:36:05:551 consola/(14075:14075): Entró comando: INICIAR_PATOTA
+[INFO] 01:36:05:552 consola/(14075:14075): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:36:05:553 consola/(14075:14075): HOLIS
+[INFO] 01:36:05:553 consola/(14075:14075): Recibi el siguiente mensaje..
+[INFO] 01:36:05:554 consola/(14075:14075): Proceso: RAM
+[INFO] 01:36:05:554 consola/(14075:14075): Comando: 200
+[INFO] 01:36:05:554 consola/(14075:14075): Tamanio: 9
+[INFO] 01:36:05:554 consola/(14075:14075): Memoria OK
+[INFO] 01:36:05:554 consola/(14075:14075): Inicializo Semaforo de TCB 0
+[INFO] 01:36:05:554 consola/(14075:14075): Inicializo Semaforo de TCB 1
+[INFO] 01:36:05:554 consola/(14075:14075): Inicializo Semaforo de TCB 2
+[INFO] 01:36:05:554 consola/(14075:14075): Inicializo Semaforo de TCB 3
+[INFO] 01:36:05:554 consola/(14075:14075): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:36:05:554 consola/(14075:14075): Recibi el siguiente mensaje..
+[INFO] 01:36:05:597 consola/(14075:14075): Proceso: RAM
+[INFO] 01:36:05:650 consola/(14075:14075): Comando: 200
+[INFO] 01:36:05:650 consola/(14075:14075): Tamanio: 30
+[INFO] 01:36:05:650 consola/(14075:14075): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:36:05:651 consola/(14075:14075): Recibi el siguiente mensaje..
+[INFO] 01:36:05:652 consola/(14075:14084): ----------------------------------
+[INFO] 01:36:05:652 consola/(14075:14084): [Tripulante 0] Esperando Signal...
+[INFO] 01:36:05:703 consola/(14075:14075): Proceso: RAM
+[INFO] 01:36:05:746 consola/(14075:14075): Comando: 200
+[INFO] 01:36:05:746 consola/(14075:14075): Tamanio: 30
+[INFO] 01:36:05:746 consola/(14075:14075): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:36:05:746 consola/(14075:14075): Recibi el siguiente mensaje..
+[INFO] 01:36:05:746 consola/(14075:14085): ----------------------------------
+[INFO] 01:36:05:747 consola/(14075:14085): [Tripulante 1] Esperando Signal...
+[INFO] 01:36:05:800 consola/(14075:14075): Proceso: RAM
+[INFO] 01:36:05:840 consola/(14075:14075): Comando: 200
+[INFO] 01:36:05:840 consola/(14075:14075): Tamanio: 30
+[INFO] 01:36:05:840 consola/(14075:14075): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 01:36:05:840 consola/(14075:14086): ----------------------------------
+[INFO] 01:36:05:840 consola/(14075:14075): Recibi el siguiente mensaje..
+[INFO] 01:36:05:840 consola/(14075:14086): [Tripulante 2] Esperando Signal...
+[INFO] 01:36:05:884 consola/(14075:14075): Proceso: RAM
+[INFO] 01:36:05:937 consola/(14075:14075): Comando: 200
+[INFO] 01:36:05:937 consola/(14075:14075): Tamanio: 30
+[INFO] 01:36:05:938 consola/(14075:14087): ----------------------------------
+[INFO] 01:36:05:938 consola/(14075:14087): [Tripulante 3] Esperando Signal...
+[INFO] 02:01:43:551 consola/(14679:14679): 127.0.0.1, 5001, 127.0.0.1, 5002, 2, FIFO, 3, 20, 1
+[INFO] 02:01:43:552 consola/(14679:14679): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 02:01:43:552 consola/(14679:14679): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 02:01:43:552 consola/(14679:14679): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 02:01:43:552 consola/(14679:14679): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 02:01:43:552 consola/(14679:14681): [New a Rdy] esperando signal..
+[INFO] 02:01:43:552 consola/(14679:14683): [Exec a Rdy] esperando signal..
+[INFO] 02:01:43:553 consola/(14679:14682): [Rdy a Exec] esperando signal..
+[INFO] 02:01:43:552 consola/(14679:14684): [Exec a Bloqio] esperando signal..
+[INFO] 02:01:43:552 consola/(14679:14687): [Exit] esperando signal..
+[INFO] 02:01:43:552 consola/(14679:14685): [Exec a Exit] esperando signal..
+[INFO] 02:01:43:552 consola/(14679:14686): [bloqio] esperando signal..
+[INFO] 02:01:55:640 consola/(14679:14679): Entró comando: INICIAR_PATOTA
+[INFO] 02:01:55:642 consola/(14679:14679): Tareas: DESCARGAR_ITINERARIO;1;1;1GENERAR_OXIGENO 10;4;4;15TOMAR_AGUA;1;1;2GENERAR_OXIGENO 10;4;4;15IRSE_A_DORMIR;9;9;1
+[INFO] 02:01:55:642 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:642 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:642 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:642 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:642 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:643 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:643 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:643 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:643 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:643 consola/(14679:14679): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 02:01:55:643 consola/(14679:14679): HOLIS
+[INFO] 02:01:55:643 consola/(14679:14679): Recibi el siguiente mensaje..
+[INFO] 02:01:55:644 consola/(14679:14679): Proceso: RAM
+[INFO] 02:01:55:644 consola/(14679:14679): Comando: 200
+[INFO] 02:01:55:644 consola/(14679:14679): Tamanio: 9
+[INFO] 02:01:55:644 consola/(14679:14679): Memoria OK
+[INFO] 02:01:55:644 consola/(14679:14679): Inicializo Semaforo de TCB 0
+[INFO] 02:01:55:644 consola/(14679:14679): Inicializo Semaforo de TCB 1
+[INFO] 02:01:55:644 consola/(14679:14679): Inicializo Semaforo de TCB 2
+[INFO] 02:01:55:644 consola/(14679:14679): Inicializo Semaforo de TCB 3
+[INFO] 02:01:55:644 consola/(14679:14679): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 02:01:55:644 consola/(14679:14679): Recibi el siguiente mensaje..
+[INFO] 02:01:55:684 consola/(14679:14679): Proceso: RAM
+[INFO] 02:01:55:742 consola/(14679:14679): Comando: 200
+[INFO] 02:01:55:743 consola/(14679:14679): Tamanio: 30
+[INFO] 02:01:55:743 consola/(14679:14679): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 02:01:55:743 consola/(14679:14693): ----------------------------------
+[INFO] 02:01:55:743 consola/(14679:14679): Recibi el siguiente mensaje..
+[INFO] 02:01:55:743 consola/(14679:14693): [Tripulante 0] Esperando Signal...
+[INFO] 02:01:55:786 consola/(14679:14679): Proceso: RAM
+[INFO] 02:01:55:831 consola/(14679:14679): Comando: 200
+[INFO] 02:01:55:831 consola/(14679:14679): Tamanio: 30
+[INFO] 02:01:55:832 consola/(14679:14694): ----------------------------------
+[INFO] 02:01:55:832 consola/(14679:14694): [Tripulante 1] Esperando Signal...
+[INFO] 02:01:55:832 consola/(14679:14679): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 02:01:55:832 consola/(14679:14679): Recibi el siguiente mensaje..
+[INFO] 02:01:55:883 consola/(14679:14679): Proceso: RAM
+[INFO] 02:01:55:939 consola/(14679:14679): Comando: 200
+[INFO] 02:01:55:939 consola/(14679:14679): Tamanio: 30
+[INFO] 02:01:55:939 consola/(14679:14679): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 02:01:55:939 consola/(14679:14695): ----------------------------------
+[INFO] 02:01:55:939 consola/(14679:14679): Recibi el siguiente mensaje..
+[INFO] 02:01:55:939 consola/(14679:14695): [Tripulante 2] Esperando Signal...
+[INFO] 02:01:55:982 consola/(14679:14679): Proceso: RAM
+[INFO] 02:01:56:023 consola/(14679:14679): Comando: 200
+[INFO] 02:01:56:023 consola/(14679:14679): Tamanio: 30
+[INFO] 02:01:56:023 consola/(14679:14696): ----------------------------------
+[INFO] 02:01:56:023 consola/(14679:14696): [Tripulante 3] Esperando Signal...
+[INFO] 02:02:05:240 consola/(14679:14679): Entró comando: INICIAR_PLANIFICACION
+[INFO] 02:02:05:240 consola/(14679:14679): Se inició la planificación. Estado de la flag: 1
+[INFO] 02:02:05:240 consola/(14679:14681): [New a Rdy] Ejecutando..
+[INFO] 02:02:05:240 consola/(14679:14681): ----------------------------------
+[INFO] 02:02:05:240 consola/(14679:14681): Se ejecuta el hilo de New a Ready
+[INFO] 02:02:05:240 consola/(14679:14681): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 02:02:05:240 consola/(14679:14681): TID:0
+[INFO] 02:02:05:240 consola/(14679:14681): Status:N
+[INFO] 02:02:05:240 consola/(14679:14681): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 02:02:05:240 consola/(14679:14681): Se paso nodo a Ready
+[INFO] 02:02:05:240 consola/(14679:14681): ----------------------------------
+[INFO] 02:02:05:240 consola/(14679:14681): Se ejecuta el hilo de New a Ready
+[INFO] 02:02:05:240 consola/(14679:14681): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 02:02:05:241 consola/(14679:14681): TID:1
+[INFO] 02:02:05:241 consola/(14679:14681): Status:N
+[INFO] 02:02:05:241 consola/(14679:14681): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 02:02:05:241 consola/(14679:14681): Se paso nodo a Ready
+[INFO] 02:02:05:241 consola/(14679:14681): ----------------------------------
+[INFO] 02:02:05:241 consola/(14679:14681): Se ejecuta el hilo de New a Ready
+[INFO] 02:02:05:241 consola/(14679:14681): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 02:02:05:241 consola/(14679:14681): TID:2
+[INFO] 02:02:05:241 consola/(14679:14681): Status:N
+[INFO] 02:02:05:241 consola/(14679:14681): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 02:02:05:241 consola/(14679:14681): Se paso nodo a Ready
+[INFO] 02:02:05:241 consola/(14679:14681): ----------------------------------
+[INFO] 02:02:05:241 consola/(14679:14681): Se ejecuta el hilo de New a Ready
+[INFO] 02:02:05:241 consola/(14679:14681): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 02:02:05:241 consola/(14679:14681): TID:3
+[INFO] 02:02:05:241 consola/(14679:14681): Status:N
+[INFO] 02:02:05:242 consola/(14679:14681): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 02:02:05:242 consola/(14679:14681): Se paso nodo a Ready
+[INFO] 02:02:05:242 consola/(14679:14681): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 02:02:05:242 consola/(14679:14681): ----------------------------------
+[INFO] 02:02:05:242 consola/(14679:14682): [Rdy a Exec] Ejecutando..
+[INFO] 02:02:05:242 consola/(14679:14682): ----------------------------------
+[INFO] 02:02:05:242 consola/(14679:14682): Se ejecuta el hilo de Ready a Exec
+[INFO] 02:02:05:242 consola/(14679:14682): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 02:02:05:242 consola/(14679:14682): TID:0
+[INFO] 02:02:05:242 consola/(14679:14682): Status:R
+[INFO] 02:02:05:242 consola/(14679:14682): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 02:02:05:242 consola/(14679:14682): Se paso Tripulante a Exec
+[INFO] 02:02:05:242 consola/(14679:14682): Hay 1 nodos en Exec
+[INFO] 02:02:05:242 consola/(14679:14682): ----------------------------------
+[INFO] 02:02:05:242 consola/(14679:14682): Se ejecuta el hilo de Ready a Exec
+[INFO] 02:02:05:242 consola/(14679:14682): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 02:02:05:242 consola/(14679:14682): TID:1
+[INFO] 02:02:05:242 consola/(14679:14682): Status:R
+[INFO] 02:02:05:242 consola/(14679:14682): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 02:02:05:243 consola/(14679:14682): Se paso Tripulante a Exec
+[INFO] 02:02:05:243 consola/(14679:14682): Hay 2 nodos en Exec
+[INFO] 02:02:05:243 consola/(14679:14682): ----------------------------------
+[INFO] 02:02:05:243 consola/(14679:14682): Se ejecuta el hilo de Ready a Exec
+[INFO] 02:02:05:243 consola/(14679:14682): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 02:02:05:243 consola/(14679:14682): TID:2
+[INFO] 02:02:05:243 consola/(14679:14682): Status:R
+[INFO] 02:02:05:243 consola/(14679:14682): Instruccion Actual:DESCARGAR_ITINERARIO;1;1;1
+[INFO] 02:02:05:243 consola/(14679:14682): Se paso Tripulante a Exec
+[INFO] 02:02:05:243 consola/(14679:14682): Hay 3 nodos en Exec
+[INFO] 02:02:05:243 consola/(14679:14682): Se comienza a iterar signals...
+[INFO] 02:02:05:243 consola/(14679:14682): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 02:02:05:243 consola/(14679:14694): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:1 
+[INFO] 02:02:05:243 consola/(14679:14694): Tripulante:1 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 02:02:05:243 consola/(14679:14694): Se ejecuta la tarea del tripulante
+[INFO] 02:02:05:243 consola/(14679:14693): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:0 
+[INFO] 02:02:05:243 consola/(14679:14682): ----------------------------------
+[INFO] 02:02:05:243 consola/(14679:14695): Se ejecuta el hilo de Funcion Tripulante (Exec) de Tripulante:2 
+[INFO] 02:02:05:243 consola/(14679:14693): Tripulante:0 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 02:02:05:244 consola/(14679:14695): Tripulante:2 no fue expulsado ni terminó su ejecución de la tarea
+[INFO] 02:02:05:244 consola/(14679:14693): Se ejecuta la tarea del tripulante
+[INFO] 02:02:05:244 consola/(14679:14695): Se ejecuta la tarea del tripulante
+[INFO] 02:02:05:244 consola/(14679:14693): El tripulante llegó a la posición
+[INFO] 02:02:05:244 consola/(14679:14695): Se comienza a mover el tripulante una posicion..
+[INFO] 02:02:05:244 consola/(14679:14693): Se procede a enviar los mensajes a los otros procesos..

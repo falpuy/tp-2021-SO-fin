@@ -60,10 +60,10 @@ void funcionConsola(){
 
                         for(int i=cantidadVieja; i<cantidadActual; i++){
                             sem_init(&semTripulantes[i], 0, 0);
-
+                            log_info(logger, "Inicializo Semaforo de TCB %d", i);
                             
                         }
-                        create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
+                        create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
                         cantidadVieja += cantidadActual;
                     } else {
                     	log_error(logger, "No se pudo crear el PCB por falta de memoria");

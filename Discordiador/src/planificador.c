@@ -111,10 +111,14 @@ void funcionhReadyaExec (t_log* logger){
 
             }
 
-            log_info(logger, "Se comienza a iterar signals...");
-            list_iterate(exec->elements, signalHilosTripulantes);
+            if (queue_is_empty(exec)) {
+                sem_post(&semBLOCKIO);
+            } else {
+                log_info(logger, "Se comienza a iterar signals...");
+                list_iterate(exec->elements, signalHilosTripulantes);
+            }
+            
             log_info(logger,"Se hizo una ejecución de CPU en Ready->Exec");
-
             log_info(logger,"----------------------------------");
         }
     }
@@ -149,16 +153,17 @@ void funcionhExecaBloqIO (t_log* logger){
     log_info(logger, "[Exec a Bloqio] esperando signal..");
     while (temp_validador) {
         sem_wait(&semEBIO);
-        log_info(logger, "[Exec a Bloqio] ejec..");
+        log_info(logger,"----------------------------------");
+        log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
         if(planificacion_viva) {
-            while (!queue_is_empty(exec)){  
-                log_info(logger,"----------------------------------");
-                log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
-
-                int cantidadTripulantesEnExec = queue_size(exec);
+            int cantidadTripulantesEnExec = queue_size(exec);
+            // TODO: CAMBIAR CANTIDADTRIPULANTESENEXEC A VARIABLE GLOBAL
+            // RESETEARLA ADENTRO DEL _SIGNAL
+            // INICIALIZARLA AL LIBERAR LOS SIGNALS DE TRIPULANTES EN EXEC
+            if (!queue_is_empty(exec)){ 
                 list_iterate_position(exec->elements, funcionCambioExecIO);
                 log_info(logger, "[Exec a Bloqio] ejecuto _SIGNAL desde semEBIO..");
-                _signal(1, cantidadTripulantesEnExec, semBLOCKIO);
+                _signal(1, cantidadTripulantesEnExec, &semBLOCKIO);
             }
             
             log_info(logger,"Se hizo una ejecución de CPU en Exec->BlockedIO");
@@ -166,8 +171,6 @@ void funcionhExecaBloqIO (t_log* logger){
         }
     }
 }
-
-//SEM POST??
 
 /*---------------------------------BlockedIO---------------------*/
 void funcionhBloqIO (t_log* logger){
@@ -180,12 +183,10 @@ void funcionhBloqIO (t_log* logger){
     while (temp_validador){
         sem_wait(&semBLOCKIO);
         log_info(logger, "[bloqio] ejec..");
-        if(planificacion_viva ){
+        if(planificacion_viva){
             log_info(logger,"----------------------------------");
             log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
-            // tcb* tcbTripulante = malloc(sizeof(tcb));
-            // list_iterate_position(bloq_io->elements, funcionContadorEnBloqIO);
-        
+            list_iterate_position(bloq_io->elements, funcionContadorEnBloqIO);
             log_info(logger,"Se hizo una ejecución de CPU en BlockedIO");
             log_info(logger,"----------------------------------");
         }
@@ -202,9 +203,9 @@ void funcionContadorEnBloqIO(void* nodo, int posicion){
     char** tareaIO;
     char** parametrosTareaIO;
 
-    log_info(logger, "Iterando la funcion de contador en Cola BlockedIO..");
+    log_info(logger, "Iterando la funcion de contador en Cola BlockedIO...");
 
-    tareaIO = string_n_split(tcbTripulante->instruccion_actual, 1, " ");
+    tareaIO = string_split(tcbTripulante->instruccion_actual, " ");
     parametrosTareaIO = string_split(tareaIO[1], ";");
     int tiempoAPasarEnBloqIO = atoi(parametrosTareaIO[3]);
 
@@ -291,7 +292,7 @@ void funcionhExecaReady (t_log* logger) {
                 
                 list_iterate_position(exec->elements, funcionCambioExecReady);
                 log_info(logger, "[Exec a Rdy] ejecuto _SIGNAL desde semER..");
-                _signal(1, cantidadTripulantesEnExec, semBLOCKIO);
+                _signal(1, cantidadTripulantesEnExec, &semBLOCKIO);
             }
 
             log_info(logger,"Se hizo una ejecución de CPU en Exec->Ready");
@@ -335,11 +336,9 @@ void funcionhExecaExit (t_log* logger){
             while (!queue_is_empty(exec)){  
                 log_info(logger,"----------------------------------");
                 log_info(logger, "Se ejecuta el hilo de Exec a Exit");
-
-
                 int cantidadTripulantesEnExec = queue_size(exec);
                 list_iterate_position(exec->elements, funcionCambioExecExit);
-                _signal(1, cantidadTripulantesEnExec, semBLOCKIO);
+                _signal(1, cantidadTripulantesEnExec, &semBLOCKIO);
             }
 
             log_info(logger,"Se hizo una ejecución de CPU en Exec->Exit");

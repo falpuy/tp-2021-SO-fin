@@ -11,7 +11,7 @@ void funcionConsola(){
     while(temp_validador) {
 
         while(strcmp(leido = readline("> "), "") != 0) { //mientras se ingrese algo por consola
-
+            add_history(leido);
             parametros = string_split(leido," "); //char**: vector de strings, cada elemento del vector es un parametro, menos el primero que es el mensaje!
             free(leido);
 

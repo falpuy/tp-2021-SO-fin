@@ -12,6 +12,7 @@
     #include<sys/socket.h>
     #include<unnamed/socket.h>
     #include<unnamed/serialization.h>
+    #include <readline/history.h>
 
     #include"planificador.h"
 

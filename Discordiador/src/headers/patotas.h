@@ -24,7 +24,7 @@
     void funcionTripulante (void* item);
 
     bool llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY);
-    void pedirProximaTarea(tcb* tcbTripulante);
+    int pedirProximaTarea(tcb* tcbTripulante);
     int esTareaIO(char *tarea);
     void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal);
 
@@ -35,5 +35,5 @@
     void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_log *logger);
 
     void * get_by_id(t_list * self, int id);
-    void _signal(int incremento, int valorMax, sem_t semaforo);
+    void _signal(int incremento, int valorMax, sem_t* semaforo);
 #endif

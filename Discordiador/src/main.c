@@ -100,7 +100,7 @@ void setearConfiguraciones (){
     // free(bufferAEnviar);
 }
 
-void servidor(parametrosServer* parametros){
+/*void servidor(parametrosServer* parametros){
     _start_server(parametros->puertoDiscordiador, handler, parametros->loggerDiscordiador);
-}
+}*/
 

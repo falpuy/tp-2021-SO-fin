@@ -10,6 +10,64 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
     char* strGuardar;
 
     switch(comando){
+        case ESPERANDO_SABOTAJE:
+            log_info(logger,"-----------------------------------------------------");
+            log_info(logger, "Se ha conectado por primera vez Discordiador");
+            log_info(logger, "Guardo socket por si llega un sabotaje");
+            
+            pthread_mutex_lock(&discordiador);
+            socketDiscordiador = client;
+            pthread_mutex_unlock(&discordiador);
+
+            log_info(logger,"-----------------------------------------------------");
+        break;
+
+        case ATIENDE_SABOTAJE:
+            log_info(logger,"-----------------------------------------------------");
+            log_info(logger, "Llego comando: Atiende sabotaje");
+            
+            memcpy(&idTripulante,payload,sizeof(int));
+            log_info(logger, "ID Tripulante:%d", idTripulante);
+            log_info(logger,"-----------------------------------------------------");
+
+            //"Se corre en pánico hacia la ubicación del sabotaje
+
+            strGuardar = string_new();
+            string_append(&strGuardar, "Se corre en pánico hacia la ubicación del sabotaje|")
+            
+            char* tripulante = crearStrTripulante(idTripulante);//Creo el path de tripulanteN.ims
+
+            bitacora = string_new();
+            string_append(&bitacora, "Bitacoras/");
+            string_append(&bitacora,tripulante);
+
+            char* path_fileTripulante = pathCompleto(bitacora);
+            free(bitacora);
+
+            pthread_mutex_lock(&blocks_bitmap);
+            if(access(path_fileTripulante,F_OK) < 0){
+                log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
+                crearMetadataBitacora(path_fileTripulante);
+            }
+            guardarEnBlocks(strGuardar,path_fileTripulante,0);
+            pthread_mutex_unlock(&blocks_bitmap);
+
+            free(tripulante);
+            free(path_fileTripulante);
+            free(strGuardar);
+            log_info(logger,"-----------------------------------------------------");
+
+
+        break;
+        case INVOCAR_FSK:
+            log_info(logger,"-----------------------------------------------------");
+            log_info(logger, "Llego comando: Invocar Protocolo FSK");
+
+            pthread_mutex_lock(&blocks_bitmap);
+            protocolo_fsck();
+            pthread_mutex_unlock(&blocks_bitmap);
+        break;
+
         case OBTENER_BITACORA:    
             log_info(logger,"-----------------------------------------------------");
             log_info(logger, "Llego comando: Obtener bitácora de.....");

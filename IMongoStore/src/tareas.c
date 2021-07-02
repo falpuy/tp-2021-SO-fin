@@ -137,13 +137,13 @@ void escribirEnBitacoraFinalizaTarea(char* tarea, int idTripulante){
     char* stringTemporal = string_new();
     string_append(&stringTemporal, "FINALIZA_EJECUCION_TAREA ");
     string_append(&stringTemporal,tarea);
+    string_append(&stringTemporal, "|");
 
     char* tripulante = crearStrTripulante(idTripulante);//Creo el path de tripulanteN.ims
             
     char* bitacora = string_new();
     string_append(&bitacora, "Bitacoras/");
     string_append(&bitacora,tripulante);
-    string_append(&stringTemporal,"|");
 
 
     char* path_fileTripulante = pathCompleto(bitacora);

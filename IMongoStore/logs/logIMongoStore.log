@@ -309,3 +309,846 @@
 [INFO] 22:04:29:675 IMS/(12804:12805): Se actualizo Bitmap en SuperBloque.ims
 [INFO] 22:04:29:678 IMS/(12804:12805): Muestro mis valores del bitmap despues sincronizar..
 [INFO] 22:04:29:678 IMS/(12804:12805): -----------------------------------------------------
+[INFO] 18:45:51:728 IMS/(6770:6770): Validando Existencia de directorios...
+[INFO] 18:45:51:729 IMS/(6770:6770): No existe directorio: Filesystem. Se crea.
+[INFO] 18:45:51:731 IMS/(6770:6770): -----------------------------------------------------
+[INFO] 18:45:51:732 IMS/(6770:6770): Validando existencia de Superbloque.ims....
+[INFO] 18:45:51:732 IMS/(6770:6770): -----------------------------------------------------
+[ERROR] 18:45:51:732 IMS/(6770:6770): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 18:45:51:732 IMS/(6770:6770): Ingresar el tamaño de cada bloque
+[INFO] 18:45:55:897 IMS/(6770:6770): Ingresar la cantidad de bloques
+[INFO] 18:45:56:875 IMS/(6770:6770): Muestro mis valores del bitmap..
+[INFO] 18:45:56:876 IMS/(6770:6770): -----------------------------------------------------
+[INFO] 18:45:56:876 IMS/(6770:6770): Se creó archivo superBloque.ims
+[INFO] 18:45:56:876 IMS/(6770:6770): -----------------------------------------------------
+[INFO] 18:45:56:876 IMS/(6770:6770): Validando existencia de Blocks.ims....
+[ERROR] 18:45:56:877 IMS/(6770:6770): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 18:45:56:879 IMS/(6770:6770): -----------------------------------------------------
+[INFO] 18:45:56:880 IMS/(6770:6770): Se creó archivo Blocks.ims
+[INFO] 18:45:56:880 IMS/(6770:6770): -----------------------------------------------------
+[INFO] 18:45:56:880 IMS/(6770:6770): Creando servidor......
+[ERROR] 18:45:57:881 IMS/(6770:6770): [Shared Library]: Error al obtener info de la conexion
+[INFO] 18:46:26:465 IMS/(6780:6780): Validando Existencia de directorios...
+[INFO] 18:46:26:520 IMS/(6780:6780): Ya existe directorio
+[INFO] 18:46:26:521 IMS/(6780:6780): -----------------------------------------------------
+[INFO] 18:46:26:522 IMS/(6780:6780): Validando existencia de Superbloque.ims....
+[INFO] 18:46:26:522 IMS/(6780:6780): -----------------------------------------------------
+[INFO] 18:46:26:523 IMS/(6780:6780): Se encontró el archivo superBloque.ims
+[INFO] 18:46:26:529 IMS/(6780:6780): Muestro mis valores del bitmap..
+[INFO] 18:46:26:533 IMS/(6780:6780): -----------------------------------------------------
+[INFO] 18:46:26:533 IMS/(6780:6780): Se muestra los datos del superBloque.
+[INFO] 18:46:26:534 IMS/(6780:6780): Tamaño de bloque: 4
+[INFO] 18:46:26:534 IMS/(6780:6780): Cantidad de bloques: 64
+[INFO] 18:46:26:535 IMS/(6780:6780): -----------------------------------------------------
+[INFO] 18:46:26:535 IMS/(6780:6780): Validando existencia de Blocks.ims....
+[INFO] 18:46:26:536 IMS/(6780:6780): -----------------------------------------------------
+[INFO] 18:46:26:537 IMS/(6780:6780): Existe archivo Blocks.ims.
+[INFO] 18:46:26:539 IMS/(6780:6780): -----------------------------------------------------
+[INFO] 18:46:26:543 IMS/(6780:6780): Creando servidor......
+[ERROR] 18:46:27:631 IMS/(6780:6780): [Shared Library]: Error al obtener info de la conexion
+[INFO] 18:47:57:781 IMS/(6811:6811): Validando Existencia de directorios...
+[INFO] 18:47:57:846 IMS/(6811:6811): Ya existe directorio
+[INFO] 18:47:57:848 IMS/(6811:6811): -----------------------------------------------------
+[INFO] 18:47:57:848 IMS/(6811:6811): Validando existencia de Superbloque.ims....
+[INFO] 18:47:57:849 IMS/(6811:6811): -----------------------------------------------------
+[INFO] 18:47:57:850 IMS/(6811:6811): Se encontró el archivo superBloque.ims
+[INFO] 18:47:57:857 IMS/(6811:6811): Muestro mis valores del bitmap..
+[INFO] 18:47:57:860 IMS/(6811:6811): -----------------------------------------------------
+[INFO] 18:47:57:860 IMS/(6811:6811): Se muestra los datos del superBloque.
+[INFO] 18:47:57:861 IMS/(6811:6811): Tamaño de bloque: 4
+[INFO] 18:47:57:862 IMS/(6811:6811): Cantidad de bloques: 64
+[INFO] 18:47:57:862 IMS/(6811:6811): -----------------------------------------------------
+[INFO] 18:47:57:863 IMS/(6811:6811): Validando existencia de Blocks.ims....
+[INFO] 18:47:57:864 IMS/(6811:6811): -----------------------------------------------------
+[INFO] 18:47:57:865 IMS/(6811:6811): Existe archivo Blocks.ims.
+[INFO] 18:47:57:867 IMS/(6811:6811): -----------------------------------------------------
+[INFO] 18:47:57:876 IMS/(6811:6811): Creando servidor......
+[ERROR] 18:47:58:970 IMS/(6811:6811): [Shared Library]: Error al obtener info de la conexion
+[INFO] 18:49:27:013 IMS/(6974:6974): Validando Existencia de directorios...
+[INFO] 18:49:27:014 IMS/(6974:6974): Ya existe directorio
+[INFO] 18:49:27:014 IMS/(6974:6974): -----------------------------------------------------
+[INFO] 18:49:27:014 IMS/(6974:6974): Validando existencia de Superbloque.ims....
+[INFO] 18:49:27:014 IMS/(6974:6974): -----------------------------------------------------
+[INFO] 18:49:27:015 IMS/(6974:6974): Se encontró el archivo superBloque.ims
+[INFO] 18:49:27:015 IMS/(6974:6974): Muestro mis valores del bitmap..
+[INFO] 18:49:27:016 IMS/(6974:6974): -----------------------------------------------------
+[INFO] 18:49:27:016 IMS/(6974:6974): Se muestra los datos del superBloque.
+[INFO] 18:49:27:016 IMS/(6974:6974): Tamaño de bloque: 4
+[INFO] 18:49:27:016 IMS/(6974:6974): Cantidad de bloques: 64
+[INFO] 18:49:27:016 IMS/(6974:6974): -----------------------------------------------------
+[INFO] 18:49:27:016 IMS/(6974:6974): Validando existencia de Blocks.ims....
+[INFO] 18:49:27:017 IMS/(6974:6974): -----------------------------------------------------
+[INFO] 18:49:27:017 IMS/(6974:6974): Existe archivo Blocks.ims.
+[INFO] 18:49:27:018 IMS/(6974:6974): -----------------------------------------------------
+[INFO] 18:49:27:018 IMS/(6974:6974): Creando servidor......
+[ERROR] 18:49:28:019 IMS/(6974:6974): [Shared Library]: Error al obtener info de la conexion
+[INFO] 18:50:34:106 IMS/(7073:7073): Validando Existencia de directorios...
+[INFO] 18:50:34:109 IMS/(7073:7073): Ya existe directorio
+[INFO] 18:50:34:110 IMS/(7073:7073): -----------------------------------------------------
+[INFO] 18:50:34:110 IMS/(7073:7073): Validando existencia de Superbloque.ims....
+[INFO] 18:50:34:110 IMS/(7073:7073): -----------------------------------------------------
+[INFO] 18:50:34:110 IMS/(7073:7073): Se encontró el archivo superBloque.ims
+[INFO] 18:50:34:111 IMS/(7073:7073): Muestro mis valores del bitmap..
+[INFO] 18:50:34:111 IMS/(7073:7073): -----------------------------------------------------
+[INFO] 18:50:34:112 IMS/(7073:7073): Se muestra los datos del superBloque.
+[INFO] 18:50:34:112 IMS/(7073:7073): Tamaño de bloque: 4
+[INFO] 18:50:34:112 IMS/(7073:7073): Cantidad de bloques: 64
+[INFO] 18:50:34:112 IMS/(7073:7073): -----------------------------------------------------
+[INFO] 18:50:34:112 IMS/(7073:7073): Validando existencia de Blocks.ims....
+[INFO] 18:50:34:113 IMS/(7073:7073): -----------------------------------------------------
+[INFO] 18:50:34:113 IMS/(7073:7073): Existe archivo Blocks.ims.
+[INFO] 18:50:34:118 IMS/(7073:7073): -----------------------------------------------------
+[INFO] 18:50:34:118 IMS/(7073:7073): Creando servidor......
+[INFO] 18:50:35:121 IMS/(7073:7073): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:50:35:122 IMS/(7073:7073): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:50:45:122 IMS/(7073:7124): -----------------------------------------------------
+[INFO] 18:50:45:123 IMS/(7073:7124): Comienza actualización de Blocks.ims...
+[INFO] 18:50:45:128 IMS/(7073:7124): Se actualizo Blocks.ims
+[INFO] 18:50:45:129 IMS/(7073:7124): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 18:50:45:131 IMS/(7073:7124): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 18:50:45:131 IMS/(7073:7124): -----------------------------------------------------
+[INFO] 18:50:55:131 IMS/(7073:7124): -----------------------------------------------------
+[INFO] 18:50:55:132 IMS/(7073:7124): Comienza actualización de Blocks.ims...
+[INFO] 18:50:55:133 IMS/(7073:7124): Se actualizo Blocks.ims
+[INFO] 18:50:55:134 IMS/(7073:7124): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 18:50:55:135 IMS/(7073:7124): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 18:50:55:135 IMS/(7073:7124): -----------------------------------------------------
+[INFO] 18:50:57:085 IMS/(7073:7073): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:50:57:086 IMS/(7073:7299): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:50:57:087 IMS/(7073:7299): LLegó nuevo comando:762
+[INFO] 18:50:57:088 IMS/(7073:7299): -----------------------------------------------------
+[INFO] 18:50:57:088 IMS/(7073:7299): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 18:50:57:088 IMS/(7073:7299): Tam tarea:15
+[INFO] 18:50:57:088 IMS/(7073:7299): Tarea:GENERAR_OXIGENO
+[INFO] 18:50:57:089 IMS/(7073:7299): Parametro de tarea:10
+[INFO] 18:50:57:089 IMS/(7073:7299): -----------------------------------------------------
+[INFO] 18:50:57:089 IMS/(7073:7299): Generando oxigeno...
+[INFO] 18:50:57:090 IMS/(7073:7299): No existe Oxigeno.ims...Se crea archivo
+[INFO] 18:50:57:104 IMS/(7073:7299): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 18:50:57:107 IMS/(7073:7299): OOOOOOOOOO
+[INFO] 18:50:57:126 IMS/(7073:7299): HOLAAAAAAAAAAAAAAAAAAAAAAAA
+[INFO] 18:50:57:128 IMS/(7073:7299): MD5: string levantado :
+[INFO] 18:50:57:141 IMS/(7073:7299): HOLAAAAAAAAAAAAAAAAAAAAAAAA
+[INFO] 18:50:57:143 IMS/(7073:7299): MD5: string levantado :OOOO
+[INFO] 18:50:57:154 IMS/(7073:7299): HOLAAAAAAAAAAAAAAAAAAAAAAAA
+[INFO] 18:50:57:156 IMS/(7073:7299): MD5: string levantado :OOOOOOOO��
+[INFO] 18:50:57:157 IMS/(7073:7299): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:51:05:136 IMS/(7073:7124): -----------------------------------------------------
+[INFO] 18:51:05:137 IMS/(7073:7124): Comienza actualización de Blocks.ims...
+[INFO] 18:51:05:138 IMS/(7073:7124): Se actualizo Blocks.ims
+[INFO] 18:51:05:139 IMS/(7073:7124): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 18:51:05:145 IMS/(7073:7124): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 18:51:05:145 IMS/(7073:7124): -----------------------------------------------------
+[INFO] 18:51:15:146 IMS/(7073:7124): -----------------------------------------------------
+[INFO] 18:51:15:147 IMS/(7073:7124): Comienza actualización de Blocks.ims...
+[INFO] 18:51:15:152 IMS/(7073:7124): Se actualizo Blocks.ims
+[INFO] 18:51:15:153 IMS/(7073:7124): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 18:51:15:154 IMS/(7073:7124): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 18:51:15:155 IMS/(7073:7124): -----------------------------------------------------
+[INFO] 18:54:07:125 IMS/(7458:7458): Validando Existencia de directorios...
+[INFO] 18:54:07:128 IMS/(7458:7458): No existe directorio: Filesystem. Se crea.
+[INFO] 18:54:07:131 IMS/(7458:7458): -----------------------------------------------------
+[INFO] 18:54:07:131 IMS/(7458:7458): Validando existencia de Superbloque.ims....
+[INFO] 18:54:07:131 IMS/(7458:7458): -----------------------------------------------------
+[ERROR] 18:54:07:132 IMS/(7458:7458): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 18:54:07:132 IMS/(7458:7458): Ingresar el tamaño de cada bloque
+[INFO] 18:54:08:835 IMS/(7458:7458): Ingresar la cantidad de bloques
+[INFO] 18:54:09:388 IMS/(7458:7458): Muestro mis valores del bitmap..
+[INFO] 18:54:09:389 IMS/(7458:7458): -----------------------------------------------------
+[INFO] 18:54:09:389 IMS/(7458:7458): Se creó archivo superBloque.ims
+[INFO] 18:54:09:389 IMS/(7458:7458): -----------------------------------------------------
+[INFO] 18:54:09:389 IMS/(7458:7458): Validando existencia de Blocks.ims....
+[ERROR] 18:54:09:390 IMS/(7458:7458): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 18:54:09:391 IMS/(7458:7458): -----------------------------------------------------
+[INFO] 18:54:09:392 IMS/(7458:7458): Se creó archivo Blocks.ims
+[INFO] 18:54:09:392 IMS/(7458:7458): -----------------------------------------------------
+[INFO] 18:54:09:392 IMS/(7458:7458): Creando servidor......
+[INFO] 18:54:10:396 IMS/(7458:7458): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:54:10:396 IMS/(7458:7458): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:54:12:226 IMS/(7458:7458): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:54:12:227 IMS/(7458:7466): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:54:12:229 IMS/(7458:7466): LLegó nuevo comando:762
+[INFO] 18:54:12:229 IMS/(7458:7466): -----------------------------------------------------
+[INFO] 18:54:12:229 IMS/(7458:7466): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 18:54:12:229 IMS/(7458:7466): Tam tarea:15
+[INFO] 18:54:12:229 IMS/(7458:7466): Tarea:GENERAR_OXIGENO
+[INFO] 18:54:12:230 IMS/(7458:7466): Parametro de tarea:10
+[INFO] 18:54:12:230 IMS/(7458:7466): -----------------------------------------------------
+[INFO] 18:54:12:230 IMS/(7458:7466): Generando oxigeno...
+[INFO] 18:54:12:231 IMS/(7458:7466): No existe Oxigeno.ims...Se crea archivo
+[INFO] 18:54:12:245 IMS/(7458:7466): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 18:54:12:246 IMS/(7458:7466): OOOOOOOOOO
+[INFO] 18:54:12:279 IMS/(7458:7466): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:54:20:404 IMS/(7458:7459): -----------------------------------------------------
+[INFO] 18:54:20:404 IMS/(7458:7459): Comienza actualización de Blocks.ims...
+[INFO] 18:54:20:405 IMS/(7458:7459): Se actualizo Blocks.ims
+[INFO] 18:54:20:406 IMS/(7458:7459): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 18:54:20:407 IMS/(7458:7459): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 18:54:20:407 IMS/(7458:7459): -----------------------------------------------------
+[INFO] 18:56:18:336 IMS/(7509:7509): Validando Existencia de directorios...
+[INFO] 18:56:18:337 IMS/(7509:7509): Ya existe directorio
+[INFO] 18:56:18:339 IMS/(7509:7509): -----------------------------------------------------
+[INFO] 18:56:18:340 IMS/(7509:7509): Validando existencia de Superbloque.ims....
+[INFO] 18:56:18:340 IMS/(7509:7509): -----------------------------------------------------
+[INFO] 18:56:18:340 IMS/(7509:7509): Se encontró el archivo superBloque.ims
+[INFO] 18:56:18:341 IMS/(7509:7509): Muestro mis valores del bitmap..
+[INFO] 18:56:18:341 IMS/(7509:7509): -----------------------------------------------------
+[INFO] 18:56:18:342 IMS/(7509:7509): Se muestra los datos del superBloque.
+[INFO] 18:56:18:342 IMS/(7509:7509): Tamaño de bloque: 4
+[INFO] 18:56:18:342 IMS/(7509:7509): Cantidad de bloques: 64
+[INFO] 18:56:18:342 IMS/(7509:7509): -----------------------------------------------------
+[INFO] 18:56:18:343 IMS/(7509:7509): Validando existencia de Blocks.ims....
+[INFO] 18:56:18:343 IMS/(7509:7509): -----------------------------------------------------
+[INFO] 18:56:18:343 IMS/(7509:7509): Existe archivo Blocks.ims.
+[INFO] 18:56:18:344 IMS/(7509:7509): -----------------------------------------------------
+[INFO] 18:56:18:344 IMS/(7509:7509): Creando servidor......
+[INFO] 18:56:19:345 IMS/(7509:7509): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:56:19:345 IMS/(7509:7509): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:56:21:762 IMS/(7509:7509): [Shared Library]: Nueva conexion ID: 5
+[INFO] 18:56:21:763 IMS/(7509:7532): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 18:56:21:764 IMS/(7509:7532): LLegó nuevo comando:762
+[INFO] 18:56:21:765 IMS/(7509:7532): -----------------------------------------------------
+[INFO] 18:56:21:765 IMS/(7509:7532): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 18:56:21:765 IMS/(7509:7532): Tam tarea:15
+[INFO] 18:56:21:765 IMS/(7509:7532): Tarea:GENERAR_OXIGENO
+[INFO] 18:56:21:765 IMS/(7509:7532): Parametro de tarea:10
+[INFO] 18:56:21:766 IMS/(7509:7532): -----------------------------------------------------
+[INFO] 18:56:21:766 IMS/(7509:7532): Generando oxigeno...
+[INFO] 18:56:21:767 IMS/(7509:7532): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 18:56:21:768 IMS/(7509:7532): OOOOOOOOOO
+[INFO] 18:56:21:781 IMS/(7509:7532): Guardandose en blocks con metadata existente..
+[INFO] 18:56:21:790 IMS/(7509:7532): OOOOOOOOOO
+[INFO] 18:56:21:814 IMS/(7509:7532): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 18:56:29:056 IMS/(7509:7510): -----------------------------------------------------
+[INFO] 18:56:29:056 IMS/(7509:7510): Comienza actualización de Blocks.ims...
+[INFO] 18:56:29:057 IMS/(7509:7510): Se actualizo Blocks.ims
+[INFO] 18:56:29:058 IMS/(7509:7510): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 18:56:29:059 IMS/(7509:7510): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 18:56:29:059 IMS/(7509:7510): -----------------------------------------------------
+[INFO] 19:25:27:568 IMS/(8770:8770): Validando Existencia de directorios...
+[INFO] 19:25:27:569 IMS/(8770:8770): No existe directorio: Filesystem. Se crea.
+[INFO] 19:25:27:584 IMS/(8770:8770): -----------------------------------------------------
+[INFO] 19:25:27:584 IMS/(8770:8770): Validando existencia de Superbloque.ims....
+[INFO] 19:25:27:585 IMS/(8770:8770): -----------------------------------------------------
+[ERROR] 19:25:27:585 IMS/(8770:8770): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 19:25:27:586 IMS/(8770:8770): Ingresar el tamaño de cada bloque
+[INFO] 19:25:29:219 IMS/(8770:8770): Ingresar la cantidad de bloques
+[INFO] 19:25:29:612 IMS/(8770:8770): Muestro mis valores del bitmap..
+[INFO] 19:25:29:613 IMS/(8770:8770): -----------------------------------------------------
+[INFO] 19:25:29:613 IMS/(8770:8770): Se creó archivo superBloque.ims
+[INFO] 19:25:29:613 IMS/(8770:8770): -----------------------------------------------------
+[INFO] 19:25:29:613 IMS/(8770:8770): Validando existencia de Blocks.ims....
+[ERROR] 19:25:29:614 IMS/(8770:8770): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:25:29:617 IMS/(8770:8770): -----------------------------------------------------
+[INFO] 19:25:29:618 IMS/(8770:8770): Se creó archivo Blocks.ims
+[INFO] 19:25:29:618 IMS/(8770:8770): -----------------------------------------------------
+[INFO] 19:25:29:619 IMS/(8770:8770): Creando servidor......
+[INFO] 19:25:30:620 IMS/(8770:8770): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:25:30:620 IMS/(8770:8770): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:25:32:732 IMS/(8770:8770): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:25:32:734 IMS/(8770:8773): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:25:32:735 IMS/(8770:8773): LLegó nuevo comando:761
+[INFO] 19:25:32:745 IMS/(8770:8773): -----------------------------------------------------
+[INFO] 19:25:32:746 IMS/(8770:8773): Llego comando: Mover Tripulante.....
+[INFO] 19:25:32:747 IMS/(8770:8773): ID Tripulante:101
+[INFO] 19:25:32:747 IMS/(8770:8773): Posicion Vieja en X:3
+[INFO] 19:25:32:748 IMS/(8770:8773): Posicion Vieja en Y:4
+[INFO] 19:25:32:748 IMS/(8770:8773): Posicion Nueva en X:5
+[INFO] 19:25:32:749 IMS/(8770:8773): Posicion Nueva en Y:6
+[INFO] 19:25:32:749 IMS/(8770:8773): -----------------------------------------------------
+[INFO] 19:25:32:751 IMS/(8770:8773): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 19:25:32:838 IMS/(8770:8773): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:25:38:735 IMS/(8770:8770): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:25:38:737 IMS/(8770:8775): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:25:38:738 IMS/(8770:8775): LLegó nuevo comando:761
+[INFO] 19:25:38:756 IMS/(8770:8775): -----------------------------------------------------
+[INFO] 19:25:38:757 IMS/(8770:8775): Llego comando: Mover Tripulante.....
+[INFO] 19:25:38:757 IMS/(8770:8775): ID Tripulante:101
+[INFO] 19:25:38:757 IMS/(8770:8775): Posicion Vieja en X:3
+[INFO] 19:25:38:757 IMS/(8770:8775): Posicion Vieja en Y:4
+[INFO] 19:25:38:758 IMS/(8770:8775): Posicion Nueva en X:5
+[INFO] 19:25:38:758 IMS/(8770:8775): Posicion Nueva en Y:6
+[INFO] 19:25:38:758 IMS/(8770:8775): -----------------------------------------------------
+[INFO] 19:25:38:768 IMS/(8770:8775): Guardandose en blocks con metadata existente..
+[INFO] 19:25:38:863 IMS/(8770:8775): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:25:40:621 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:25:40:621 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:25:40:623 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:25:40:625 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:25:40:627 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:25:40:627 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:25:50:628 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:25:50:628 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:25:50:630 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:25:50:632 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:25:50:634 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:25:50:635 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:00:636 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:00:637 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:26:00:639 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:26:00:640 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:00:643 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:26:00:643 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:10:644 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:10:645 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:26:10:647 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:26:10:648 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:10:650 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:26:10:651 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:20:652 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:20:653 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:26:20:655 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:26:20:656 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:20:658 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:26:20:659 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:30:660 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:30:660 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:26:30:662 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:26:30:664 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:30:666 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:26:30:666 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:40:667 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:40:668 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:26:40:671 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:26:40:674 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:40:677 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:26:40:682 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:50:684 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:26:50:685 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:26:50:687 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:26:50:689 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:50:692 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:26:50:693 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:00:693 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:00:694 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:27:00:696 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:27:00:697 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:00:699 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:27:00:700 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:10:701 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:10:702 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:27:10:704 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:27:10:705 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:10:707 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:27:10:708 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:20:708 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:20:709 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:27:20:711 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:27:20:713 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:20:715 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:27:20:715 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:30:716 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:30:717 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:27:30:719 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:27:30:720 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:30:723 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:27:30:723 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:40:725 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:40:725 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:27:40:727 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:27:40:729 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:40:731 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:27:40:732 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:50:733 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:27:50:734 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:27:50:736 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:27:50:737 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:50:739 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:27:50:740 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:28:00:741 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:28:00:742 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:28:00:744 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:28:00:746 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:28:00:749 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:28:00:750 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:28:10:751 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:28:10:752 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:28:10:755 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:28:10:756 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:28:10:759 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:28:10:759 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:28:20:761 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:28:20:761 IMS/(8770:8771): Comienza actualización de Blocks.ims...
+[INFO] 19:28:20:763 IMS/(8770:8771): Se actualizo Blocks.ims
+[INFO] 19:28:20:765 IMS/(8770:8771): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:28:20:767 IMS/(8770:8771): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:28:20:768 IMS/(8770:8771): -----------------------------------------------------
+[INFO] 19:29:29:660 IMS/(8885:8885): Validando Existencia de directorios...
+[INFO] 19:29:29:662 IMS/(8885:8885): No existe directorio: Filesystem. Se crea.
+[INFO] 19:29:29:677 IMS/(8885:8885): -----------------------------------------------------
+[INFO] 19:29:29:679 IMS/(8885:8885): Validando existencia de Superbloque.ims....
+[INFO] 19:29:29:680 IMS/(8885:8885): -----------------------------------------------------
+[ERROR] 19:29:29:680 IMS/(8885:8885): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 19:29:29:680 IMS/(8885:8885): Ingresar el tamaño de cada bloque
+[INFO] 19:29:30:852 IMS/(8885:8885): Ingresar la cantidad de bloques
+[INFO] 19:29:31:255 IMS/(8885:8885): Muestro mis valores del bitmap..
+[INFO] 19:29:31:257 IMS/(8885:8885): -----------------------------------------------------
+[INFO] 19:29:31:257 IMS/(8885:8885): Se creó archivo superBloque.ims
+[INFO] 19:29:31:257 IMS/(8885:8885): -----------------------------------------------------
+[INFO] 19:29:31:257 IMS/(8885:8885): Validando existencia de Blocks.ims....
+[ERROR] 19:29:31:258 IMS/(8885:8885): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:29:31:262 IMS/(8885:8885): -----------------------------------------------------
+[INFO] 19:29:31:262 IMS/(8885:8885): Se creó archivo Blocks.ims
+[INFO] 19:29:31:262 IMS/(8885:8885): -----------------------------------------------------
+[INFO] 19:29:31:263 IMS/(8885:8885): Creando servidor......
+[INFO] 19:29:32:273 IMS/(8885:8885): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:29:32:273 IMS/(8885:8885): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:29:33:847 IMS/(8885:8885): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:29:33:849 IMS/(8885:8888): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:29:33:860 IMS/(8885:8888): LLegó nuevo comando:761
+[INFO] 19:29:33:862 IMS/(8885:8888): -----------------------------------------------------
+[INFO] 19:29:33:862 IMS/(8885:8888): Llego comando: Mover Tripulante.....
+[INFO] 19:29:33:863 IMS/(8885:8888): ID Tripulante:101
+[INFO] 19:29:33:863 IMS/(8885:8888): Posicion Vieja en X:3
+[INFO] 19:29:33:864 IMS/(8885:8888): Posicion Vieja en Y:4
+[INFO] 19:29:33:864 IMS/(8885:8888): Posicion Nueva en X:5
+[INFO] 19:29:33:864 IMS/(8885:8888): Posicion Nueva en Y:6
+[INFO] 19:29:33:864 IMS/(8885:8888): -----------------------------------------------------
+[INFO] 19:29:33:866 IMS/(8885:8888): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 19:29:33:883 IMS/(8885:8888): TEMPORAL NUEVO METADATA: Se mueve de 3|4 a 5|6||
+[INFO] 19:29:33:973 IMS/(8885:8888): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:29:42:275 IMS/(8885:8886): -----------------------------------------------------
+[INFO] 19:29:42:275 IMS/(8885:8886): Comienza actualización de Blocks.ims...
+[INFO] 19:29:42:278 IMS/(8885:8886): Se actualizo Blocks.ims
+[INFO] 19:29:42:280 IMS/(8885:8886): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:29:42:282 IMS/(8885:8886): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:29:42:282 IMS/(8885:8886): -----------------------------------------------------
+[INFO] 19:29:52:283 IMS/(8885:8886): -----------------------------------------------------
+[INFO] 19:29:52:284 IMS/(8885:8886): Comienza actualización de Blocks.ims...
+[INFO] 19:29:52:286 IMS/(8885:8886): Se actualizo Blocks.ims
+[INFO] 19:29:52:288 IMS/(8885:8886): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:29:52:290 IMS/(8885:8886): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:29:52:290 IMS/(8885:8886): -----------------------------------------------------
+[INFO] 19:30:02:291 IMS/(8885:8886): -----------------------------------------------------
+[INFO] 19:30:02:292 IMS/(8885:8886): Comienza actualización de Blocks.ims...
+[INFO] 19:30:02:294 IMS/(8885:8886): Se actualizo Blocks.ims
+[INFO] 19:30:02:296 IMS/(8885:8886): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:30:02:298 IMS/(8885:8886): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:30:02:299 IMS/(8885:8886): -----------------------------------------------------
+[INFO] 19:30:12:300 IMS/(8885:8886): -----------------------------------------------------
+[INFO] 19:30:12:300 IMS/(8885:8886): Comienza actualización de Blocks.ims...
+[INFO] 19:30:12:302 IMS/(8885:8886): Se actualizo Blocks.ims
+[INFO] 19:30:12:303 IMS/(8885:8886): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:30:12:306 IMS/(8885:8886): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:30:12:307 IMS/(8885:8886): -----------------------------------------------------
+[INFO] 19:36:06:361 IMS/(9210:9210): Validando Existencia de directorios...
+[INFO] 19:36:06:363 IMS/(9210:9210): Ya existe directorio
+[INFO] 19:36:06:363 IMS/(9210:9210): -----------------------------------------------------
+[INFO] 19:36:06:364 IMS/(9210:9210): Validando existencia de Superbloque.ims....
+[INFO] 19:36:06:374 IMS/(9210:9210): -----------------------------------------------------
+[INFO] 19:36:06:376 IMS/(9210:9210): Se encontró el archivo superBloque.ims
+[INFO] 19:36:06:377 IMS/(9210:9210): Muestro mis valores del bitmap..
+[INFO] 19:36:06:378 IMS/(9210:9210): -----------------------------------------------------
+[INFO] 19:36:06:378 IMS/(9210:9210): Se muestra los datos del superBloque.
+[INFO] 19:36:06:379 IMS/(9210:9210): Tamaño de bloque: 4
+[INFO] 19:36:06:379 IMS/(9210:9210): Cantidad de bloques: 64
+[INFO] 19:36:06:379 IMS/(9210:9210): -----------------------------------------------------
+[INFO] 19:36:06:382 IMS/(9210:9210): Validando existencia de Blocks.ims....
+[INFO] 19:36:06:383 IMS/(9210:9210): -----------------------------------------------------
+[INFO] 19:36:06:383 IMS/(9210:9210): Existe archivo Blocks.ims.
+[INFO] 19:36:06:384 IMS/(9210:9210): -----------------------------------------------------
+[INFO] 19:36:06:384 IMS/(9210:9210): Creando servidor......
+[INFO] 19:36:07:386 IMS/(9210:9210): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:36:07:386 IMS/(9210:9210): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:36:17:387 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:17:388 IMS/(9210:9212): Comienza actualización de Blocks.ims...
+[INFO] 19:36:17:390 IMS/(9210:9212): Se actualizo Blocks.ims
+[INFO] 19:36:17:391 IMS/(9210:9212): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:36:17:394 IMS/(9210:9212): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:36:17:394 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:27:395 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:27:396 IMS/(9210:9212): Comienza actualización de Blocks.ims...
+[INFO] 19:36:27:399 IMS/(9210:9212): Se actualizo Blocks.ims
+[INFO] 19:36:27:401 IMS/(9210:9212): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:36:27:403 IMS/(9210:9212): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:36:27:404 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:31:322 IMS/(9210:9210): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:36:31:322 IMS/(9210:9223): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:36:31:325 IMS/(9210:9223): LLegó nuevo comando:762
+[INFO] 19:36:31:343 IMS/(9210:9223): -----------------------------------------------------
+[INFO] 19:36:31:343 IMS/(9210:9223): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:36:31:343 IMS/(9210:9223): Tam tarea:15
+[INFO] 19:36:31:346 IMS/(9210:9223): Tarea:GENERAR_OXIGENO
+[INFO] 19:36:31:346 IMS/(9210:9223): Parametro de tarea:10
+[INFO] 19:36:31:347 IMS/(9210:9223): -----------------------------------------------------
+[INFO] 19:36:31:348 IMS/(9210:9223): Generando oxigeno...
+[INFO] 19:36:31:350 IMS/(9210:9223): No existe Oxigeno.ims...Se crea archivo
+[INFO] 19:36:31:358 IMS/(9210:9223): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 19:36:31:371 IMS/(9210:9223): OOOOOOOOOO
+[INFO] 19:36:31:420 IMS/(9210:9223): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:36:37:405 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:37:406 IMS/(9210:9212): Comienza actualización de Blocks.ims...
+[INFO] 19:36:37:408 IMS/(9210:9212): Se actualizo Blocks.ims
+[INFO] 19:36:37:409 IMS/(9210:9212): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:36:37:411 IMS/(9210:9212): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:36:37:412 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:47:413 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:47:413 IMS/(9210:9212): Comienza actualización de Blocks.ims...
+[INFO] 19:36:47:415 IMS/(9210:9212): Se actualizo Blocks.ims
+[INFO] 19:36:47:417 IMS/(9210:9212): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:36:47:419 IMS/(9210:9212): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:36:47:420 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:57:420 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:36:57:421 IMS/(9210:9212): Comienza actualización de Blocks.ims...
+[INFO] 19:36:57:423 IMS/(9210:9212): Se actualizo Blocks.ims
+[INFO] 19:36:57:424 IMS/(9210:9212): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:36:57:426 IMS/(9210:9212): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:36:57:427 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:37:07:428 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:37:07:428 IMS/(9210:9212): Comienza actualización de Blocks.ims...
+[INFO] 19:37:07:431 IMS/(9210:9212): Se actualizo Blocks.ims
+[INFO] 19:37:07:432 IMS/(9210:9212): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:37:07:434 IMS/(9210:9212): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:37:07:434 IMS/(9210:9212): -----------------------------------------------------
+[INFO] 19:39:49:584 IMS/(9315:9315): Validando Existencia de directorios...
+[INFO] 19:39:49:585 IMS/(9315:9315): No existe directorio: Filesystem. Se crea.
+[INFO] 19:39:49:602 IMS/(9315:9315): -----------------------------------------------------
+[INFO] 19:39:49:602 IMS/(9315:9315): Validando existencia de Superbloque.ims....
+[INFO] 19:39:49:602 IMS/(9315:9315): -----------------------------------------------------
+[ERROR] 19:39:49:603 IMS/(9315:9315): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 19:39:49:603 IMS/(9315:9315): Ingresar el tamaño de cada bloque
+[INFO] 19:39:50:867 IMS/(9315:9315): Ingresar la cantidad de bloques
+[INFO] 19:39:51:196 IMS/(9315:9315): Muestro mis valores del bitmap..
+[INFO] 19:39:51:198 IMS/(9315:9315): -----------------------------------------------------
+[INFO] 19:39:51:198 IMS/(9315:9315): Se creó archivo superBloque.ims
+[INFO] 19:39:51:199 IMS/(9315:9315): -----------------------------------------------------
+[INFO] 19:39:51:199 IMS/(9315:9315): Validando existencia de Blocks.ims....
+[ERROR] 19:39:51:200 IMS/(9315:9315): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:39:51:203 IMS/(9315:9315): -----------------------------------------------------
+[INFO] 19:39:51:204 IMS/(9315:9315): Se creó archivo Blocks.ims
+[INFO] 19:39:51:204 IMS/(9315:9315): -----------------------------------------------------
+[INFO] 19:39:51:204 IMS/(9315:9315): Creando servidor......
+[INFO] 19:39:52:206 IMS/(9315:9315): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:39:52:206 IMS/(9315:9315): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:39:55:897 IMS/(9315:9315): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:39:55:899 IMS/(9315:9318): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:39:55:910 IMS/(9315:9318): LLegó nuevo comando:762
+[INFO] 19:39:55:913 IMS/(9315:9318): -----------------------------------------------------
+[INFO] 19:39:55:913 IMS/(9315:9318): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:39:55:913 IMS/(9315:9318): Tam tarea:15
+[INFO] 19:39:55:913 IMS/(9315:9318): Tarea:GENERAR_OXIGENO
+[INFO] 19:39:55:914 IMS/(9315:9318): Parametro de tarea:10
+[INFO] 19:39:55:914 IMS/(9315:9318): -----------------------------------------------------
+[INFO] 19:39:55:914 IMS/(9315:9318): Generando oxigeno...
+[INFO] 19:39:55:916 IMS/(9315:9318): No existe Oxigeno.ims...Se crea archivo
+[INFO] 19:39:55:930 IMS/(9315:9318): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 19:39:55:938 IMS/(9315:9318): OOOOOOOOOO
+[INFO] 19:39:56:007 IMS/(9315:9318): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:39:56:007 IMS/(9315:9318): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:39:56:007 IMS/(9315:9318): [MD5 String temporal, ultimo] �
+[INFO] 19:39:56:008 IMS/(9315:9318): [MD5 String temporal, ultimo] 
+[INFO] 19:39:56:008 IMS/(9315:9318): String total:OOOOOOOO�
+[INFO] 19:39:56:008 IMS/(9315:9318): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:40:02:207 IMS/(9315:9316): -----------------------------------------------------
+[INFO] 19:40:02:207 IMS/(9315:9316): Comienza actualización de Blocks.ims...
+[INFO] 19:40:02:209 IMS/(9315:9316): Se actualizo Blocks.ims
+[INFO] 19:40:02:210 IMS/(9315:9316): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:40:02:212 IMS/(9315:9316): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:40:02:213 IMS/(9315:9316): -----------------------------------------------------
+[INFO] 19:44:44:488 IMS/(9437:9437): Validando Existencia de directorios...
+[INFO] 19:44:44:489 IMS/(9437:9437): No existe directorio: Filesystem. Se crea.
+[INFO] 19:44:44:502 IMS/(9437:9437): -----------------------------------------------------
+[INFO] 19:44:44:502 IMS/(9437:9437): Validando existencia de Superbloque.ims....
+[INFO] 19:44:44:503 IMS/(9437:9437): -----------------------------------------------------
+[ERROR] 19:44:44:503 IMS/(9437:9437): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 19:44:44:504 IMS/(9437:9437): Ingresar el tamaño de cada bloque
+[INFO] 19:44:52:715 IMS/(9461:9461): Validando Existencia de directorios...
+[INFO] 19:44:52:716 IMS/(9461:9461): Ya existe directorio
+[INFO] 19:44:52:727 IMS/(9461:9461): -----------------------------------------------------
+[INFO] 19:44:52:727 IMS/(9461:9461): Validando existencia de Superbloque.ims....
+[INFO] 19:44:52:728 IMS/(9461:9461): -----------------------------------------------------
+[ERROR] 19:44:52:728 IMS/(9461:9461): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 19:44:52:729 IMS/(9461:9461): Ingresar el tamaño de cada bloque
+[INFO] 19:44:54:048 IMS/(9461:9461): Ingresar la cantidad de bloques
+[INFO] 19:44:58:633 IMS/(9461:9461): Muestro mis valores del bitmap..
+[INFO] 19:44:58:634 IMS/(9461:9461): -----------------------------------------------------
+[INFO] 19:44:58:635 IMS/(9461:9461): Se creó archivo superBloque.ims
+[INFO] 19:44:58:635 IMS/(9461:9461): -----------------------------------------------------
+[INFO] 19:44:58:635 IMS/(9461:9461): Validando existencia de Blocks.ims....
+[ERROR] 19:44:58:636 IMS/(9461:9461): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:44:58:639 IMS/(9461:9461): -----------------------------------------------------
+[INFO] 19:44:58:639 IMS/(9461:9461): Se creó archivo Blocks.ims
+[INFO] 19:44:58:640 IMS/(9461:9461): -----------------------------------------------------
+[INFO] 19:44:58:640 IMS/(9461:9461): Creando servidor......
+[INFO] 19:44:59:641 IMS/(9461:9461): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:44:59:641 IMS/(9461:9461): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:45:09:642 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:09:642 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:45:09:644 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:45:09:645 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:09:647 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:45:09:647 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:19:648 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:19:648 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:45:19:650 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:45:19:653 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:19:655 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:45:19:655 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:29:656 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:29:657 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:45:29:659 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:45:29:661 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:29:663 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:45:29:664 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:39:665 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:39:665 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:45:39:668 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:45:39:669 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:39:671 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:45:39:672 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:49:673 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:49:674 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:45:49:676 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:45:49:678 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:49:680 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:45:49:680 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:53:691 IMS/(9461:9461): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:45:53:694 IMS/(9461:9481): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:45:53:713 IMS/(9461:9481): LLegó nuevo comando:762
+[INFO] 19:45:53:713 IMS/(9461:9481): -----------------------------------------------------
+[INFO] 19:45:53:713 IMS/(9461:9481): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:45:53:716 IMS/(9461:9481): Tam tarea:15
+[INFO] 19:45:53:719 IMS/(9461:9481): Tarea:GENERAR_OXIGENO
+[INFO] 19:45:53:719 IMS/(9461:9481): Parametro de tarea:10
+[INFO] 19:45:53:719 IMS/(9461:9481): -----------------------------------------------------
+[INFO] 19:45:53:720 IMS/(9461:9481): Generando oxigeno...
+[INFO] 19:45:53:721 IMS/(9461:9481): No existe Oxigeno.ims...Se crea archivo
+[INFO] 19:45:53:728 IMS/(9461:9481): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 19:45:53:738 IMS/(9461:9481): OOOOOOOOOO
+[INFO] 19:45:53:790 IMS/(9461:9481): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:45:53:793 IMS/(9461:9481): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:45:53:794 IMS/(9461:9481): [MD5 String temporal, no es ultimo] OO  
+[INFO] 19:45:53:795 IMS/(9461:9481): String total:OOOOOOOOOO  
+[INFO] 19:45:53:795 IMS/(9461:9481): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:45:59:681 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:45:59:681 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:45:59:683 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:45:59:685 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:59:687 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:45:59:687 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:09:688 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:09:689 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:46:09:692 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:46:09:694 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:46:09:696 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:46:09:697 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:19:699 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:19:699 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:46:19:701 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:46:19:703 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:46:19:705 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:46:19:706 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:29:706 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:29:707 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:46:29:709 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:46:29:711 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:46:29:713 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:46:29:713 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:39:715 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:39:715 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:46:39:717 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:46:39:719 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:46:39:721 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:46:39:722 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:49:723 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:49:724 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:46:49:726 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:46:49:728 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:46:49:730 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:46:49:731 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:59:732 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:46:59:733 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:46:59:735 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:46:59:737 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:46:59:739 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:46:59:740 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:47:09:741 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:47:09:742 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:47:09:744 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:47:09:746 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:47:09:749 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:47:09:750 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:47:19:751 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:47:19:752 IMS/(9461:9462): Comienza actualización de Blocks.ims...
+[INFO] 19:47:19:753 IMS/(9461:9462): Se actualizo Blocks.ims
+[INFO] 19:47:19:754 IMS/(9461:9462): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:47:19:756 IMS/(9461:9462): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:47:19:756 IMS/(9461:9462): -----------------------------------------------------
+[INFO] 19:47:56:871 IMS/(9530:9530): Validando Existencia de directorios...
+[INFO] 19:47:56:873 IMS/(9530:9530): Ya existe directorio
+[INFO] 19:47:56:873 IMS/(9530:9530): -----------------------------------------------------
+[INFO] 19:47:56:874 IMS/(9530:9530): Validando existencia de Superbloque.ims....
+[INFO] 19:47:56:874 IMS/(9530:9530): -----------------------------------------------------
+[INFO] 19:47:56:875 IMS/(9530:9530): Se encontró el archivo superBloque.ims
+[INFO] 19:47:56:877 IMS/(9530:9530): Muestro mis valores del bitmap..
+[INFO] 19:47:56:887 IMS/(9530:9530): -----------------------------------------------------
+[INFO] 19:47:56:887 IMS/(9530:9530): Se muestra los datos del superBloque.
+[INFO] 19:47:56:887 IMS/(9530:9530): Tamaño de bloque: 4
+[INFO] 19:47:56:888 IMS/(9530:9530): Cantidad de bloques: 64
+[INFO] 19:47:56:888 IMS/(9530:9530): -----------------------------------------------------
+[INFO] 19:47:56:888 IMS/(9530:9530): Validando existencia de Blocks.ims....
+[INFO] 19:47:56:891 IMS/(9530:9530): -----------------------------------------------------
+[INFO] 19:47:56:892 IMS/(9530:9530): Existe archivo Blocks.ims.
+[INFO] 19:47:56:894 IMS/(9530:9530): -----------------------------------------------------
+[INFO] 19:47:56:894 IMS/(9530:9530): Creando servidor......
+[INFO] 19:47:57:895 IMS/(9530:9530): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:47:57:895 IMS/(9530:9530): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:48:00:038 IMS/(9530:9530): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:48:00:040 IMS/(9530:9533): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:48:00:059 IMS/(9530:9533): LLegó nuevo comando:762
+[INFO] 19:48:00:059 IMS/(9530:9533): -----------------------------------------------------
+[INFO] 19:48:00:061 IMS/(9530:9533): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:48:00:062 IMS/(9530:9533): Tam tarea:15
+[INFO] 19:48:00:064 IMS/(9530:9533): Tarea:GENERAR_OXIGENO
+[INFO] 19:48:00:064 IMS/(9530:9533): Parametro de tarea:10
+[INFO] 19:48:00:064 IMS/(9530:9533): -----------------------------------------------------
+[INFO] 19:48:00:064 IMS/(9530:9533): Generando oxigeno...
+[INFO] 19:48:00:067 IMS/(9530:9533): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 19:48:00:075 IMS/(9530:9533): OOOOOOOOOO
+[INFO] 19:48:00:075 IMS/(9530:9533): Guardandose en blocks con metadata existente..
+[INFO] 19:48:00:078 IMS/(9530:9533): OOOOOOOOOO
+[INFO] 19:48:00:127 IMS/(9530:9533): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:48:00:127 IMS/(9530:9533): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:48:00:127 IMS/(9530:9533): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:48:00:127 IMS/(9530:9533): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:48:00:128 IMS/(9530:9533): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:48:00:128 IMS/(9530:9533): String total:OOOOOOOOOOOOOOOOOOOO
+[INFO] 19:48:00:143 IMS/(9530:9533): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:48:07:896 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:07:897 IMS/(9530:9531): Comienza actualización de Blocks.ims...
+[INFO] 19:48:07:899 IMS/(9530:9531): Se actualizo Blocks.ims
+[INFO] 19:48:07:900 IMS/(9530:9531): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:48:07:902 IMS/(9530:9531): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:48:07:903 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:17:903 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:17:904 IMS/(9530:9531): Comienza actualización de Blocks.ims...
+[INFO] 19:48:17:906 IMS/(9530:9531): Se actualizo Blocks.ims
+[INFO] 19:48:17:907 IMS/(9530:9531): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:48:17:909 IMS/(9530:9531): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:48:17:910 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:27:911 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:27:911 IMS/(9530:9531): Comienza actualización de Blocks.ims...
+[INFO] 19:48:27:913 IMS/(9530:9531): Se actualizo Blocks.ims
+[INFO] 19:48:27:915 IMS/(9530:9531): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:48:27:917 IMS/(9530:9531): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:48:27:918 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:37:919 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:37:920 IMS/(9530:9531): Comienza actualización de Blocks.ims...
+[INFO] 19:48:37:922 IMS/(9530:9531): Se actualizo Blocks.ims
+[INFO] 19:48:37:924 IMS/(9530:9531): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:48:37:926 IMS/(9530:9531): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:48:37:927 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:47:928 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:48:47:929 IMS/(9530:9531): Comienza actualización de Blocks.ims...
+[INFO] 19:48:47:930 IMS/(9530:9531): Se actualizo Blocks.ims
+[INFO] 19:48:47:932 IMS/(9530:9531): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:48:47:934 IMS/(9530:9531): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:48:47:935 IMS/(9530:9531): -----------------------------------------------------
+[INFO] 19:51:58:145 IMS/(9805:9805): Validando Existencia de directorios...
+[INFO] 19:51:58:147 IMS/(9805:9805): No existe directorio: Filesystem. Se crea.
+[INFO] 19:51:58:161 IMS/(9805:9805): -----------------------------------------------------
+[INFO] 19:51:58:162 IMS/(9805:9805): Validando existencia de Superbloque.ims....
+[INFO] 19:51:58:162 IMS/(9805:9805): -----------------------------------------------------
+[ERROR] 19:51:58:166 IMS/(9805:9805): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 19:51:58:177 IMS/(9805:9805): Ingresar el tamaño de cada bloque
+[INFO] 19:51:59:710 IMS/(9805:9805): Ingresar la cantidad de bloques
+[INFO] 19:52:00:631 IMS/(9805:9805): Muestro mis valores del bitmap..
+[INFO] 19:52:00:633 IMS/(9805:9805): -----------------------------------------------------
+[INFO] 19:52:00:633 IMS/(9805:9805): Se creó archivo superBloque.ims
+[INFO] 19:52:00:633 IMS/(9805:9805): -----------------------------------------------------
+[INFO] 19:52:00:633 IMS/(9805:9805): Validando existencia de Blocks.ims....
+[ERROR] 19:52:00:634 IMS/(9805:9805): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:52:00:637 IMS/(9805:9805): -----------------------------------------------------
+[INFO] 19:52:00:638 IMS/(9805:9805): Se creó archivo Blocks.ims
+[INFO] 19:52:00:638 IMS/(9805:9805): -----------------------------------------------------
+[INFO] 19:52:00:638 IMS/(9805:9805): Creando servidor......
+[INFO] 19:52:01:639 IMS/(9805:9805): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:52:01:640 IMS/(9805:9805): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:52:03:365 IMS/(9805:9805): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:52:03:367 IMS/(9805:9813): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:52:03:382 IMS/(9805:9813): LLegó nuevo comando:762
+[INFO] 19:52:03:383 IMS/(9805:9813): -----------------------------------------------------
+[INFO] 19:52:03:385 IMS/(9805:9813): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:52:03:391 IMS/(9805:9813): Tam tarea:15
+[INFO] 19:52:03:392 IMS/(9805:9813): Tarea:GENERAR_OXIGENO
+[INFO] 19:52:03:396 IMS/(9805:9813): Parametro de tarea:10
+[INFO] 19:52:03:396 IMS/(9805:9813): -----------------------------------------------------
+[INFO] 19:52:03:397 IMS/(9805:9813): Generando oxigeno...
+[INFO] 19:52:03:399 IMS/(9805:9813): No existe Oxigeno.ims...Se crea archivo
+[INFO] 19:52:03:412 IMS/(9805:9813): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 19:52:03:415 IMS/(9805:9813): OOOOOOOOOO
+[INFO] 19:52:03:466 IMS/(9805:9813): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:52:03:466 IMS/(9805:9813): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:52:03:467 IMS/(9805:9813): [MD5 String temporal, no es ultimo] OO  
+[INFO] 19:52:03:467 IMS/(9805:9813): String total:OOOOOOOOOO  
+[INFO] 19:52:03:505 IMS/(9805:9813): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:52:11:640 IMS/(9805:9806): -----------------------------------------------------
+[INFO] 19:52:11:640 IMS/(9805:9806): Comienza actualización de Blocks.ims...
+[INFO] 19:52:11:643 IMS/(9805:9806): Se actualizo Blocks.ims
+[INFO] 19:52:11:644 IMS/(9805:9806): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:52:11:646 IMS/(9805:9806): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:52:11:646 IMS/(9805:9806): -----------------------------------------------------
+[INFO] 19:54:17:791 IMS/(9873:9873): Validando Existencia de directorios...
+[INFO] 19:54:17:792 IMS/(9873:9873): Ya existe directorio
+[INFO] 19:54:17:793 IMS/(9873:9873): -----------------------------------------------------
+[INFO] 19:54:17:794 IMS/(9873:9873): Validando existencia de Superbloque.ims....
+[INFO] 19:54:17:794 IMS/(9873:9873): -----------------------------------------------------
+[INFO] 19:54:17:795 IMS/(9873:9873): Se encontró el archivo superBloque.ims
+[INFO] 19:54:17:808 IMS/(9873:9873): Muestro mis valores del bitmap..
+[INFO] 19:54:17:808 IMS/(9873:9873): -----------------------------------------------------
+[INFO] 19:54:17:808 IMS/(9873:9873): Se muestra los datos del superBloque.
+[INFO] 19:54:17:809 IMS/(9873:9873): Tamaño de bloque: 4
+[INFO] 19:54:17:809 IMS/(9873:9873): Cantidad de bloques: 64
+[INFO] 19:54:17:809 IMS/(9873:9873): -----------------------------------------------------
+[INFO] 19:54:17:809 IMS/(9873:9873): Validando existencia de Blocks.ims....
+[INFO] 19:54:17:815 IMS/(9873:9873): -----------------------------------------------------
+[INFO] 19:54:17:815 IMS/(9873:9873): Existe archivo Blocks.ims.
+[INFO] 19:54:17:816 IMS/(9873:9873): -----------------------------------------------------
+[INFO] 19:54:17:817 IMS/(9873:9873): Creando servidor......
+[INFO] 19:54:18:818 IMS/(9873:9873): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 19:54:18:818 IMS/(9873:9873): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 19:54:20:728 IMS/(9873:9873): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:54:20:730 IMS/(9873:9881): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:54:20:745 IMS/(9873:9881): LLegó nuevo comando:762
+[INFO] 19:54:20:747 IMS/(9873:9881): -----------------------------------------------------
+[INFO] 19:54:20:748 IMS/(9873:9881): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:54:20:751 IMS/(9873:9881): Tam tarea:15
+[INFO] 19:54:20:758 IMS/(9873:9881): Tarea:GENERAR_OXIGENO
+[INFO] 19:54:20:759 IMS/(9873:9881): Parametro de tarea:10
+[INFO] 19:54:20:759 IMS/(9873:9881): -----------------------------------------------------
+[INFO] 19:54:20:759 IMS/(9873:9881): Generando oxigeno...
+[INFO] 19:54:20:760 IMS/(9873:9881): Soy recurso. String a guardar:OOOOOOOOOO
+[INFO] 19:54:20:765 IMS/(9873:9881): OOOOOOOOOO
+[INFO] 19:54:20:767 IMS/(9873:9881): Guardandose en blocks con metadata existente..
+[INFO] 19:54:20:775 IMS/(9873:9881): OOOOOOOOOO
+[INFO] 19:54:20:827 IMS/(9873:9881): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:54:20:828 IMS/(9873:9881): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:54:20:828 IMS/(9873:9881): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:54:20:828 IMS/(9873:9881): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:54:20:829 IMS/(9873:9881): [MD5 String temporal, no es ultimo] OOOO
+[INFO] 19:54:20:829 IMS/(9873:9881): String total:OOOOOOOOOOOOOOOOOOOO
+[INFO] 19:54:20:857 IMS/(9873:9881): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:54:28:820 IMS/(9873:9879): -----------------------------------------------------
+[INFO] 19:54:28:820 IMS/(9873:9879): Comienza actualización de Blocks.ims...
+[INFO] 19:54:28:822 IMS/(9873:9879): Se actualizo Blocks.ims
+[INFO] 19:54:28:823 IMS/(9873:9879): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:54:28:824 IMS/(9873:9879): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:54:28:825 IMS/(9873:9879): -----------------------------------------------------
+[INFO] 19:54:38:825 IMS/(9873:9879): -----------------------------------------------------
+[INFO] 19:54:38:826 IMS/(9873:9879): Comienza actualización de Blocks.ims...
+[INFO] 19:54:38:827 IMS/(9873:9879): Se actualizo Blocks.ims
+[INFO] 19:54:38:827 IMS/(9873:9879): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:54:38:828 IMS/(9873:9879): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:54:38:828 IMS/(9873:9879): -----------------------------------------------------
+[INFO] 19:54:48:829 IMS/(9873:9879): -----------------------------------------------------
+[INFO] 19:54:48:829 IMS/(9873:9879): Comienza actualización de Blocks.ims...
+[INFO] 19:54:48:830 IMS/(9873:9879): Se actualizo Blocks.ims
+[INFO] 19:54:48:831 IMS/(9873:9879): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:54:48:832 IMS/(9873:9879): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:54:48:832 IMS/(9873:9879): -----------------------------------------------------
+[INFO] 19:54:58:833 IMS/(9873:9879): -----------------------------------------------------
+[INFO] 19:54:58:834 IMS/(9873:9879): Comienza actualización de Blocks.ims...
+[INFO] 19:54:58:835 IMS/(9873:9879): Se actualizo Blocks.ims
+[INFO] 19:54:58:839 IMS/(9873:9879): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:54:58:842 IMS/(9873:9879): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 19:54:58:843 IMS/(9873:9879): -----------------------------------------------------

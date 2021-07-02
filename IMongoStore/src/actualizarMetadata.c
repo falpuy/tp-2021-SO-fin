@@ -76,25 +76,28 @@ void setearMD5(char* pathMetadata){
     char** listaBloques = config_get_array_value(metadata,"BLOCKS");
     int contador = 0;
     char* string_temp = string_new();
-
+    int bloquesHastaAhora = 0;
+    int bloque;
 
     while(listaBloques[contador]){ 
         contador++;
     }
 
-    int bloquesHastaAhora = 0;
-    int bloque;
-    for(int i = 0; i <= contador; i++){
+    for(int i = 0; i < contador; i++){
+        
+        // [2,3,4,5] -->3
+        if((contador - bloquesHastaAhora) != 0){ //no es el ultimo bloque-->no hay frag. interna
             
-        if((contador - bloquesHastaAhora) != 1){
             bloque = atoi(listaBloques[bloquesHastaAhora]);
-
             char* temporalBloque = malloc(tamanioBloque+1);
-            memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, tamanioBloque);
+            // void* temporalBlocks = malloc(tamanioBloque*cantidadBloques);
+            // memcpy(temporalBlocks, copiaBlocks, tamanioBloque*cantidadBloques);
+            memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, tamanioBloque);
             temporalBloque[tamanioBloque] = '\0';
                 
             string_append(&string_temp,temporalBloque);
             bloquesHastaAhora++;
+            log_info(logger, "[MD5 String temporal, no es ultimo] %s", temporalBloque);
             free(temporalBloque);
         }else{
             bloque = atoi(listaBloques[bloquesHastaAhora]);
@@ -107,28 +110,41 @@ void setearMD5(char* pathMetadata){
             temporalBloque[fragmentacion] = '\0';
                 
             string_append(&string_temp,temporalBloque);
+            log_info(logger, "[MD5 String temporal, ultimo] %s", temporalBloque);
+
             free(temporalBloque);
         }
             
     }
+    log_info(logger, "String total:%s", string_temp);
+    
+    FILE* archivo = fopen("temporal.txt","w");
+    fprintf(archivo,"%s",string_temp);
+    fclose(archivo);
 
-    log_info("MD5: string levantado :%s", string_temp);
-    // FILE* archivo = fopen("temporal.txt","w");
-    // fprintf(archivo,"%s",string_temp);
-    // fclose(archivo);
-
-    // string_append(&comando, "md5sum temporal.txt > resultado.txt");
-    // system(comando);
+    string_append(&comando, "md5sum temporal.txt > resultado.txt");
+    system(comando);
 
 
-    // char* md5 = malloc(17);
-    // FILE* archivo2 = fopen("resultado.txt","r");
-    // fscanf(archivo2,"%s",md5);
-    // md5[16] = '\0';
-    // fclose(archivo2);
+    char* md5 = malloc(33); //32 + \0
+    
+    FILE* archivo2 = fopen("resultado.txt","r");
+    fscanf(archivo2,"%s",md5);
+    md5[33] = '\0';
+    fclose(archivo2);
 
-    // config_set_value(metadata,"MD5",md5);
-    // config_save(metadata);
+    int err = remove("temporal.txt");
+    if (err < 0){
+        log_error(logger, "Error al remover archivo temporal.txt");
+    }
+    
+    err = remove("resultado.txt");
+    if(err < 0 ){
+        log_error(logger, "Error al remover archivo resultado.txt");
+    }
+
+    config_set_value(metadata,"MD5",md5);
+    config_save(metadata);
 }
 
 void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar){

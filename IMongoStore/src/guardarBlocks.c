@@ -27,8 +27,6 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
                 if(esRecurso){
                     actualizarBlockCount(metadata,flagEsGuardar);
                     config_destroy(metadata);
-                    log_info(logger,"HOLAAAAAAAAAAAAAAAAAAAAAAAA");                
-                    setearMD5(path);
                 }
                 cantidadBloquesUsados ++;
             }else{
@@ -43,10 +41,6 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
                 if(esRecurso){
                     actualizarBlockCount(metadata,flagEsGuardar);
                     config_destroy(metadata); 
-
-                    log_info(logger, "HOLAAAAAAAAAAAAAAAAAAAAAAAA");                
-
-                    setearMD5(path);
                 }
 
                 cantidadBloquesUsados ++;
@@ -78,6 +72,7 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 exit(-1);
             }
             guardarPorBloque(stringGuardar,posEnString,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);
+            setearMD5(path);
         }
         else{ //HAY ALGO EN METADATA
             log_info(logger, "Guardandose en blocks con metadata existente..");
@@ -106,8 +101,8 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 log_error(logger,"Finalizando programa...");
                 exit(-1);
             }
-
-            if(cantidadBloquesAUsar == 0){
+            
+            if(cantidadBloquesAUsar == 0){ //REVISAR
                 log_info(logger,"[Reemplazando fragmentacion interna] No hay mas bloques que usar");
             }else{
                 memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, faltante);
@@ -115,9 +110,9 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 metadata = config_create(path);
                 actualizarSize(metadata,faltante,flagEsGuardar);
                 config_destroy(metadata);
-                setearMD5(path);
 
                 guardarPorBloque(sobranteString,0,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);  
+                setearMD5(path);
                 free(sobranteString);
                 for(int i = 0; i < contador; i++){
                     free(listaBloques[i]);
@@ -132,14 +127,21 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
         config_destroy(metadata); 
 
         if(sizeGuardado == 0){//METADATA VACIA
-            int cantidadBloquesAUsar = cantidad_bloques(stringGuardar);
+            
+            char* temporal = string_new();
+            string_append(&temporal, stringGuardar);
+
+            int cantidadBloquesAUsar = cantidad_bloques(temporal);
             int err = validarBitsLibre(cantidadBloquesAUsar);
             if(err < 0){
                 log_error(logger, "No existe más espacio para guardar en filesystem");
                 log_error(logger,"Finalizando programa...");
                 exit(-1);
             }
-            guardarPorBloque(stringGuardar,posEnString,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);
+
+            log_info(logger, "TEMPORAL NUEVO METADATA: %s", temporal);
+            guardarPorBloque(temporal,posEnString,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);
+            free(temporal);
         }
         else{ //HAY ALGO EN METADATA
             log_info(logger, "Guardandose en blocks con metadata existente..");
@@ -159,7 +161,7 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
             int faltante = sizeTotal - sizeGuardado;
           	int posicion = tamanioBloque - faltante;
 
-            char* sobranteString = malloc((tamStr - faltante) + 1);
+            char* sobranteString = malloc((tamStr - faltante) + 2);
             memcpy(sobranteString,stringGuardar + faltante,tamStr - faltante);
             sobranteString[tamStr - faltante] = '\0';
             int cantidadBloquesAUsar = cantidad_bloques(sobranteString);
@@ -171,14 +173,19 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
                 exit(-1);
             }
             
+            // |O   |
+
             if(cantidadBloquesAUsar == 0){
                 log_info(logger,"[Reemplazando fragmentacion interna] No se necesitan mas bloques para pegar el string sobrante");
+                //falta rellenar ese bloque
+                // memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, faltante);
+
             }else{
                 memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, faltante);
                 metadata = config_create(path);
                 actualizarSize(metadata,faltante,flagEsGuardar);
                 config_destroy(metadata);
-                setearMD5(path);
+                // setearMD5(path);
                 
                 guardarPorBloque(sobranteString,0,cantidadBloquesAUsar,path,esRecurso,flagEsGuardar);  
                 free(sobranteString);
@@ -191,6 +198,8 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
         }           
     }
 }
+
+
 
 
 void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
@@ -236,11 +245,13 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
             metadata = config_create(path);
             actualizarSize(metadata, tamStrBorrar, 0);     
             config_destroy(metadata);
-            setearMD5(path);
+            // setearMD5(path);
 
             tamStrBorrar = 0;
       }
     } 
+
+    setearMD5(path);
     
     for(int i = 0; i <= contador; i++){
         free(listaBloques[i]);

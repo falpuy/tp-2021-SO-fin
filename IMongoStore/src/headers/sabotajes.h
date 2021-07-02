@@ -14,12 +14,28 @@
     #include <string.h>
     #include <commons/config.h> 
     #include <signal.h>
+    #include <unnamed/serialization.h>
     
+     enum COMANDOS{
+        OBTENER_BITACORA = 760 ,
+        MOVER_TRIPULANTE ,
+        COMIENZA_EJECUCION_TAREA,
+        FINALIZA_TAREA,
+        ATENDER_SABOTAJE,
+        RESUELTO_SABOTAJE,
+        RESPUESTA_OBTENER_BITACORA,
+        ESPERANDO_SABOTAJE,
+        COMIENZA_SABOTAJE,
+        ATIENDE_SABOTAJE,
+        INVOCAR_FSK = 771
+
+    };
 
     typedef struct{
         char* puntoMontaje;
         char* puerto;
-        int tiempoSincronizacion;   
+        int tiempoSincronizacion;  
+        char** posicionesSabotaje; 
     }configIMS;
     configIMS* datosConfig;
 
@@ -29,6 +45,9 @@
     uint32_t cantidadBloques;
 
     int flagEnd;
+    int contadorListaSabotajes;
+    int socketDiscordiador;
+    int testeoIDTripulante;
 
     void* copiaBlocks;
     void* copiaSB;
@@ -42,7 +61,9 @@
     pthread_mutex_t logMutex;
     pthread_mutex_t m_superBloque;
     pthread_mutex_t m_metadata;
+    pthread_mutex_t discordiador;
 
     void sabotaje();
+    void protocolo_fsck();
     
 #endif

@@ -134,26 +134,34 @@ void funcionConsola(){
                     break;
 
                 case C_OBTENER_BITACORA: 
-                    // log_info(logger, "Entró comando: OBTENER_BITACORA");
-                    // tamanioBuffer = sizeof(int);
-                	// int idTripulante = atoi(parametros[1]);
-                    // buffer = _serialize(tamanioBuffer, "%d", idTripulante);
-                    // _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
-                    // free(buffer);
-                    // t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
-                	// if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
-    				// 	log_info(logger,"La bitacora del tripulante es: %s", mensajeRecibido->payload);
-                    //   	//Esperar a delfi para ver como hace el string.
-                    // }else{
-                    //   	log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
-                    // } 
-                	// free(mensajeRecibido->payload);
-                	// free(mensajeRecibido->identifier);
-                	// free(mensajeRecibido);
+                    log_info(logger, "Entró comando: OBTENER_BITACORA");
+                    char** bitacora;
+                    tamanioBuffer = sizeof(int);
+                	int idTripulante = atoi(parametros[1]);
+                    buffer = _serialize(tamanioBuffer, "%d", idTripulante);
+                    _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
+                    free(buffer);
+                    t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
+                	if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
+    				    log_info(logger,"Bitácora del tripulante %d", idTripulante);
+                       	bitacora = string_split(mensajeRecibido->payload, "|");
+                        for(int i=0; bitacora[i]!=NULL; i++){
+                            log_info(logger, "%s");
+                        }
+                        for(int i=0; bitacora[i]!=NULL; i++){
+                            free(bitacora[i]);
+                        }  
+                        free(bitacora);
+                    }else{
+                       	log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
+                    } 
+                	free(mensajeRecibido->payload);
+                	free(mensajeRecibido->identifier);
+                	free(mensajeRecibido);
                 
-                	// free(parametros[0]);
-                	// free(parametros[1]);
-                	// free(parametros);
+                	free(parametros[0]);
+                	free(parametros[1]);
+                	free(parametros);
                     break;
                 
                 case C_SALIR: 

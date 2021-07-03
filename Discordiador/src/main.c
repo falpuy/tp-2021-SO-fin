@@ -26,7 +26,7 @@ int main () {
 
 void setearConfiguraciones (){
 
-    logger = log_create("consola.log", "consola", 1, LOG_LEVEL_INFO);
+    logger = log_create("discordiador.log", "discordiador", 1, LOG_LEVEL_INFO);
     config = config_create("archivo.config"); //Hay que ver cómo se llama el archivo.config cuando nos lo den
     
     ip_RAM = config_get_string_value(config, "IP_MI_RAM_HQ");
@@ -94,10 +94,10 @@ void setearConfiguraciones (){
     //pthread_detach(hExecReadyaBloqEmer);
     //pthread_detach(hBloqEmeraReady);
 
-    // char* bufferAEnviar = string_new();
-    // string_append(&bufferAEnviar, "Aviso de inicio Discordiador");
-    // _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, bufferAEnviar, strlen(bufferAEnviar), logger);
-    // free(bufferAEnviar);
+    char* bufferAEnviar = string_new();
+    string_append(&bufferAEnviar, "Aviso de inicio Discordiador");
+    _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, bufferAEnviar, strlen(bufferAEnviar), logger);
+    free(bufferAEnviar);
 }
 
 /*void servidor(parametrosServer* parametros){

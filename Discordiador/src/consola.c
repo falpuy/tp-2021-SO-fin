@@ -97,40 +97,40 @@ void funcionConsola(){
                     break;
 
                 case C_EXPULSAR_TRIPULANTE:
-                    // log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");
-                    // if (planificacion_viva == 0) {
-                    //     loEncontro = 0;
-                    //     tamanioBuffer = sizeof(int);
-                    //     buffer = malloc(tamanioBuffer);
-					// 	int idTripulante = atoi(parametros[1]);
-                    //     buffer = _serialize(tamanioBuffer, "%d", idTripulante);
-                    //     _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
-                    //     free(buffer);
-                    //   	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
+                    log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");
+                    if (planificacion_viva) {
+                        loEncontro = 0;
+                        tamanioBuffer = sizeof(int);
+                        buffer = malloc(tamanioBuffer);
+					 	int idTripulante = atoi(parametros[1]);
+                        tcb* tcbTripulante = obtener_tcb_en_listaPCB(listaPCB);
+                        buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante->pid, idTripulante);
+                        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
+                        free(buffer);
+                      	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
                         
-                    //   	if(mensajeRecibido->command == SUCCESS) {
-                    //     	log_info(logger, "Se expulsó correctamente el tripulante en memoria");
-                    //         expulsarNodo(cola_new, "New", mutexNew);
-                    //         expulsarNodo(ready, "Ready", mutexReady);
-                    //         expulsarNodo(ready, "Exec", mutexExec);
-                    //         expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
-                    //         expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
-                    //     }
-                    //     else {
-                    //       	log_info(logger, "No se pudo expulsar el tripulante en memoria");
-                    //     }
-                    // }
-                    // else{
-                    //     log_info(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
-                    // }
+                       	if(mensajeRecibido->command == SUCCESS) {
+                            log_info(logger, "Se expulsó correctamente el tripulante en memoria");
+                            expulsarNodo(cola_new, "New", mutexNew);
+                            expulsarNodo(ready, "Ready", mutexReady);
+                            expulsarNodo(ready, "Exec", mutexExec);
+                            expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
+                            expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
+                        }
+                        else {
+                            log_info(logger, "No se pudo expulsar el tripulante en memoria");
+                        }
+                        free(mensajeRecibido->payload);
+                	    free(mensajeRecibido->identifier);
+                	    free(mensajeRecibido);
+                    }
+                    else{
+                        log_error(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
+                    }
 
-                    // free(mensajeRecibido->payload);
-                	// free(mensajeRecibido->identifier);
-                	// free(mensajeRecibido);
-
-                    // free(parametros[0]);
-                	// free(parametros[1]);
-                	// free(parametros);
+                    free(parametros[0]);
+                	free(parametros[1]);
+                	free(parametros);
                     break;
 
                 case C_OBTENER_BITACORA: 
@@ -142,26 +142,33 @@ void funcionConsola(){
                     _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
                     free(buffer);
                     t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
-                	if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
-    				    log_info(logger,"Bitácora del tripulante %d", idTripulante);
-                       	bitacora = string_split(mensajeRecibido->payload, "|");
+                    if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
+                        log_info(logger,"Bitácora del tripulante: %d", idTripulante);
+                           
+                        int tamanioString;
+                        memcpy(&tamanioString,mensajeRecibido->payload, sizeof(int));
+                        char* str = malloc(tamanioString + 1);
+                        memcpy(str, mensajeRecibido->payload + sizeof(int) , tamanioString);
+                        str[tamanioString] = '\0';
+                        
+                        char** bitacora = string_split(str, "|");
                         for(int i=0; bitacora[i]!=NULL; i++){
-                            log_info(logger, "%s");
+                            log_info(logger, "%s", bitacora[i]);
                         }
                         for(int i=0; bitacora[i]!=NULL; i++){
                             free(bitacora[i]);
                         }  
                         free(bitacora);
                     }else{
-                       	log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
+                           log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
                     } 
-                	free(mensajeRecibido->payload);
-                	free(mensajeRecibido->identifier);
-                	free(mensajeRecibido);
+                    free(mensajeRecibido->payload);
+                    free(mensajeRecibido->identifier);
+                    free(mensajeRecibido);
                 
-                	free(parametros[0]);
-                	free(parametros[1]);
-                	free(parametros);
+                    free(parametros[0]);
+                    free(parametros[1]);
+                    free(parametros);
                     break;
                 
                 case C_SALIR: 
@@ -278,10 +285,10 @@ void extraerTripulante (void* nodo, t_list* cola, pthread_mutex_t mutexCola, int
 }
 
 void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola){
-    if (loEncontro==0){
+    if (!loEncontro){
         tcb* tripulanteAExpulsar = malloc(sizeof(tcb));
         tripulanteAExpulsar = list_find (cola->elements, buscarTripulante);
-      	if (tripulanteAExpulsar != NULL) {
+      	if (tripulanteAExpulsar) {
             log_info(logger, "Se encontró tripulante: %d a expulsar en la cola: %s", tripulanteAExpulsar->tid, nombre_cola);
           	tripulanteAExpulsar->status = 'X';
             iterar_en_lista(cola->elements, extraerTripulante, mutexCola);
@@ -295,8 +302,20 @@ void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola){
     }
 }
 
-
-
+tcb* obtener_tcb_en_listaPCB(t_list* self) {
+	t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+        pcb* patota = element->data;
+        tcb* tripulante = list_find (patota->listaTCB, buscarTripulante);
+        if(tripulante){
+            return tripulante;
+        }
+		element = aux;
+	}
+    return NULL;
+}
 
 void liberarMemoria(){
     pthread_join(hNewaReady,NULL);

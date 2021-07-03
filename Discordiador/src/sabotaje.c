@@ -1,10 +1,10 @@
 #include"headers/sabotaje.h"
 
-void servidor(parametrosServer* parametros){
+/*void servidor(parametrosServer* parametros){
     while(validador){
         _start_server(parametros->puertoDiscordiador, handler, parametros->loggerDiscordiador);
     }
-}
+}*/
 
 void handler(int client, char* identificador, int comando, void* payload, t_log* logger){
     char* buffer;
@@ -27,7 +27,7 @@ bool comparadorTid(void* tripulante1, void* tripulante2){
 
 void funcionhExecReadyaBloqEmer (t_log* logger){
   	while(validador == 1){
-        while (planificacion_pausada == 0 && sabotaje_activado == 1) {
+        while (planificacion_viva && sabotaje_activado == 1) {
             sem_wait(&semERM);
             list_sort(exec->elements, comparadorTid);
             while (!queue_is_empty(exec))
@@ -55,9 +55,9 @@ void funcionhExecReadyaBloqEmer (t_log* logger){
                 list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
                 pthread_mutex_unlock(&mutexBloqEmer);
             }
+            tcb *tripulanteFixer = malloc(sizeof(tcb));
             if(tripulanteFixer!=NULL){/*Como ya esta asignado el tripulante, no hace nada en esta parte*/}
             else{
-            tcb *tripulanteFixer = malloc(sizeof(tcb));
             tripulanteFixer = queue_pop(bloq_emer_sorted);
             list_remove(bloq_emer->elements,tripulanteFixer->tid); //--->O tid+1??
             queue_push(bloq_emer,(void*) tripulanteFixer);
@@ -87,12 +87,12 @@ bool ordenarMasCercano(void* tripulante1, void* tripulante2){
 
 void funcionhAtenderSabotaje (t_log* logger){
     while(validador == 1){
-        while (planificacion_pausada == 0 && sabotaje_activado == 1) {
+        while (planificacion_viva && sabotaje_activado == 1) {
             sem_wait(&semTripulantes[queue_size(bloq_emer)]);
             tcb *tripulanteFixer = malloc(sizeof(tcb));
             tripulanteFixer = list_get(bloq_emer->elements,queue_size(bloq_emer));
 
-            if (!llegoAPosicion((tripulanteFixer->posicionX,tripulanteFixer->posicionY,posSabotajeX,posSabotajeY))){
+            /*if (!llegoAPosicion((tripulanteFixer->posicionX,tripulanteFixer->posicionY,posSabotajeX,posSabotajeY))){
                 moverTripulanteUno(tripulanteFixer,posSabotajeX,posSabotajeY);
                 sem_post(&semERM);
             }    
@@ -102,7 +102,7 @@ void funcionhAtenderSabotaje (t_log* logger){
                 sem_post(&semERM);
             }
             else
-                sem_post(&semMR);
+                sem_post(&semMR);*/
 
         }
     }
@@ -111,7 +111,7 @@ void funcionhAtenderSabotaje (t_log* logger){
 
 void funcionhBloqEmeraReady (t_log* logger){
   	while(validador == 1){
-        while (planificacion_pausada == 0 && sabotaje_activado == 1) {
+        while (planificacion_viva && sabotaje_activado == 1) {
             sem_wait(&semMR);
             while (!queue_is_empty(bloq_emer))
             {

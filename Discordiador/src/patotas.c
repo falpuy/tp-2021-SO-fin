@@ -103,8 +103,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     cantidadActual += cant_tripulantes;
 
     _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
-    log_info(logger,"HOLIS");
-
     
   	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
 
@@ -117,7 +115,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
         log_info(logger,"Memoria OK");
         return nuevoPCB;
     }
-
 
     free(buffer_a_enviar);
     free(mensaje->payload);
@@ -246,9 +243,8 @@ void funcionTripulante (void* item){
                             sem_post(&semER);
                         }
                         else if(puedeEnviarSignal >= 0 && ((!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR) || !strcmp(algoritmo,"FIFO"))){
-                            cantidadTripulantesEnExec = queue_size(exec);
                             log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
-                            _signal(1, cantidadTripulantesEnExec, &semBLOCKIO);
+                            _signal(1, cantidadTCBEnExec, &semBLOCKIO);
                         }
                         else
                             log_info(aux->logger,"[Tripulante %d] No es un algoritmo válido", aux -> idSemaforo);
@@ -271,9 +267,8 @@ void funcionTripulante (void* item){
                         sem_post(&semER);
                     }
                     else if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR || !strcmp(algoritmo,"FIFO")){
-                        cantidadTripulantesEnExec = queue_size(exec);
                         log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
-                        _signal(1, cantidadTripulantesEnExec, &semBLOCKIO);
+                        _signal(1, cantidadTCBEnExec, &semBLOCKIO);
                     }
                     else
                         log_info(aux->logger,"No es un algoritmo válido");
@@ -303,9 +298,8 @@ bool llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY  
 }
 
 int pedirProximaTarea(tcb* tcbTripulante){
-    int cantidadTripulantesEnExec;
+    log_info(logger, "entra a proxtarea");
     int tamanioBuffer;
-    int tamanioTarea;
     void* buffer;
     tamanioBuffer = sizeof(int) * 2;
 
@@ -316,12 +310,15 @@ int pedirProximaTarea(tcb* tcbTripulante){
     t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
 
     if (mensaje->command == SUCCESS) {
-        memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
-       
-        tcbTripulante->instruccion_actual = malloc(tamanioTarea + 1);
-        memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
-        tcbTripulante->instruccion_actual[tamanioTarea] = '\0';
-        log_info(logger, "Tripulante: %d ya tiene una nueva tarea a realizar",tcbTripulante->tid);
+        log_info(logger, "entra al if en pedirproximatarea");
+        /*int tamanioTarea;
+        memcpy(&tamanioTarea, mensaje->payload, sizeof(int));*/
+        free(tcbTripulante->instruccion_actual);
+        tcbTripulante->instruccion_actual = malloc(20 + 1);
+        memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), 20);
+        tcbTripulante->instruccion_actual[20] = '\0';
+        log_info(logger, "la tarea es: %s", tcbTripulante->instruccion_actual);
+        log_info(logger, "Tripulante: %d ya tiene una nueva tarea a realizar", tcbTripulante->tid);
         free(mensaje->payload);
         free(mensaje->identifier);
         free(mensaje);
@@ -382,7 +379,6 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
     log_info(logger, "Posicion Y Actual %d", tcbTrip->posicionY);
     if (tcbTrip->posicionX < posXfinal){
         tcbTrip->posicionX++;
-        /*
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
@@ -394,11 +390,11 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-        free(bufferAIMS);*/
+        free(bufferAIMS);
     }
     else if (tcbTrip->posicionX > posXfinal){
         tcbTrip->posicionX--;
-        /*
+        
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
@@ -410,11 +406,11 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-        free(bufferAIMS);*/
+        free(bufferAIMS);
     }
     else if (tcbTrip->posicionY < posYfinal){
         tcbTrip->posicionY++;
-        /*
+        
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
@@ -426,11 +422,11 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-        free(bufferAIMS);*/
+        free(bufferAIMS);
     }
     else if (tcbTrip->posicionY > posYfinal){
         tcbTrip->posicionY--;
-        /*
+        
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
@@ -442,7 +438,7 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-        free(bufferAIMS);*/
+        free(bufferAIMS);
     }
     else{
         log_info(logger, "El tripulante ya llegó a la posición de la tarea");
@@ -555,6 +551,7 @@ void _signal(int incremento, int valorMax, sem_t *semaforo) {
     log_info(logger, "el valor despues de incrementar es: %d y el valor maximo es: %d", contadorSemGlobal, valorMax);
     if (contadorSemGlobal == valorMax) {
         log_info(logger, "manda signal a bloqio");
+        cantidadTCBEnExec = queue_size(exec);
         sem_post(semaforo);
         contadorSemGlobal = 0;
     }

@@ -41,6 +41,8 @@
     
     void extraerTripulante (void* nodo, t_list* cola, pthread_mutex_t mutexCola, int posicion);
     void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola);
+
+    tcb* obtener_tcb_en_listaPCB(t_list* self);
     
     void liberarMemoria();
 

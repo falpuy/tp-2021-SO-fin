@@ -93,6 +93,7 @@
     int planificacion_viva;
     int sabotaje_activado;
     int ciclos_transcurridos_sabotaje;
+    int cantidadTCBEnExec;
 
     //------------------HILOS - MUTEX - SEMAFOROS------------------- 
 

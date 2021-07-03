@@ -1,18 +1,17 @@
 #include "headers/syncFile.h"
 
 void actualizarArchivoBlocks(){
-    while(flagEnd){
+    
+    pthread_mutex_lock(&validador);
+    int vivo = flagEnd;
+    pthread_mutex_unlock(&validador);
+
+    while(vivo){
         sleep(datosConfig->tiempoSincronizacion);
         log_info(logger,"-----------------------------------------------------");
         log_info(logger, "Comienza actualización de Blocks.ims...");
         
         pthread_mutex_lock(&blocks_bitmap);
-        //log_info(logger, "Muestro mis valores del bitmap antes de sincronizar..");
-        // printf("\n");
-        // for(int i=0; i<cantidadBloques; i++){
-        //     printf("%d",bitarray_test_bit(bitmap,i));
-        // }  
-        // printf("\n");
 
         int archBloques = open("../Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
         void* blocks_memory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
@@ -42,6 +41,10 @@ void actualizarArchivoBlocks(){
         printf("\n");
         pthread_mutex_unlock(&blocks_bitmap);
         log_info(logger,"-----------------------------------------------------");
+
+        pthread_mutex_lock(&validador);
+        vivo = flagEnd;
+        pthread_mutex_unlock(&validador);
    }
 }
 

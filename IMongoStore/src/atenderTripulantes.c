@@ -8,6 +8,8 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
     char* tarea;
     char* bitacora;
     char* strGuardar;
+    char* path_fileTripulante;
+    char* tripulante;
 
     switch(comando){
         case ESPERANDO_SABOTAJE:
@@ -33,15 +35,15 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             //"Se corre en pánico hacia la ubicación del sabotaje
 
             strGuardar = string_new();
-            string_append(&strGuardar, "Se corre en pánico hacia la ubicación del sabotaje|")
+            string_append(&strGuardar, "Se corre en pánico hacia la ubicación del sabotaje|");
             
-            char* tripulante = crearStrTripulante(idTripulante);//Creo el path de tripulanteN.ims
+            tripulante = crearStrTripulante(idTripulante);//Creo el path de tripulanteN.ims
 
             bitacora = string_new();
             string_append(&bitacora, "Bitacoras/");
             string_append(&bitacora,tripulante);
 
-            char* path_fileTripulante = pathCompleto(bitacora);
+            path_fileTripulante = pathCompleto(bitacora);
             free(bitacora);
 
             pthread_mutex_lock(&blocks_bitmap);
@@ -74,12 +76,23 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
 
             memcpy(&idTripulante,payload,sizeof(int));
             log_info(logger, "ID Tripulante:%d", idTripulante);
-            log_info(logger,"-----------------------------------------------------");
             pthread_mutex_lock(&blocks_bitmap);
             bitacora = obtenerBitacora(idTripulante);
-            pthread_mutex_lock(&blocks_bitmap);
+            pthread_mutex_unlock(&blocks_bitmap);
 
-            _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, bitacora,string_length(bitacora), logger);
+            int tamBitacora = string_length(bitacora);
+            char* tempBitacora = malloc(tamBitacora);
+            
+            memcpy(tempBitacora, bitacora, tamBitacora - 1);
+            tempBitacora[tamBitacora-1] = '\0';
+
+            void* buffer = _serialize(sizeof(int)+ string_length(tempBitacora),"%s",tempBitacora);
+            _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, buffer,sizeof(int)+ string_length(tempBitacora), logger);
+
+            log_info(logger,"-----------------------------------------------------");
+            free(buffer);
+            free(tempBitacora);
+            free(bitacora);
             break;  
 
         case MOVER_TRIPULANTE:
@@ -109,7 +122,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             string_append(&bitacora, "Bitacoras/");
             string_append(&bitacora,tripulante);
 
-            char* path_fileTripulante = pathCompleto(bitacora);
+            path_fileTripulante = pathCompleto(bitacora);
             free(bitacora);
 
 

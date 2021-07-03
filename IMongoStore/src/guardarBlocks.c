@@ -26,8 +26,8 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
                 actualizarBlocks(metadata,i,flagEsGuardar);
                 if(esRecurso){
                     actualizarBlockCount(metadata,flagEsGuardar);
-                    config_destroy(metadata);
                 }
+                config_destroy(metadata);
                 cantidadBloquesUsados ++;
             }else{
                 //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego todo el tamaño del bloque
@@ -40,8 +40,8 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
                 actualizarBlocks(metadata,i,flagEsGuardar);
                 if(esRecurso){
                     actualizarBlockCount(metadata,flagEsGuardar);
-                    config_destroy(metadata); 
                 }
+                config_destroy(metadata); 
 
                 cantidadBloquesUsados ++;
             }

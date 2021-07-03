@@ -84,20 +84,15 @@ void setearMD5(char* pathMetadata){
     }
 
     for(int i = 0; i < contador; i++){
-        
-        // [2,3,4,5] -->3
         if((contador - bloquesHastaAhora) != 0){ //no es el ultimo bloque-->no hay frag. interna
             
             bloque = atoi(listaBloques[bloquesHastaAhora]);
             char* temporalBloque = malloc(tamanioBloque+1);
-            // void* temporalBlocks = malloc(tamanioBloque*cantidadBloques);
-            // memcpy(temporalBlocks, copiaBlocks, tamanioBloque*cantidadBloques);
             memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, tamanioBloque);
             temporalBloque[tamanioBloque] = '\0';
                 
             string_append(&string_temp,temporalBloque);
             bloquesHastaAhora++;
-            log_info(logger, "[MD5 String temporal, no es ultimo] %s", temporalBloque);
             free(temporalBloque);
         }else{
             bloque = atoi(listaBloques[bloquesHastaAhora]);
@@ -110,13 +105,11 @@ void setearMD5(char* pathMetadata){
             temporalBloque[fragmentacion] = '\0';
                 
             string_append(&string_temp,temporalBloque);
-            log_info(logger, "[MD5 String temporal, ultimo] %s", temporalBloque);
-
             free(temporalBloque);
         }
             
     }
-    log_info(logger, "String total:%s", string_temp);
+    log_info(logger, "String total para el MD5:%s", string_temp);
     
     FILE* archivo = fopen("temporal.txt","w");
     fprintf(archivo,"%s",string_temp);
@@ -125,9 +118,8 @@ void setearMD5(char* pathMetadata){
     string_append(&comando, "md5sum temporal.txt > resultado.txt");
     system(comando);
 
-
     char* md5 = malloc(33); //32 + \0
-    
+
     FILE* archivo2 = fopen("resultado.txt","r");
     fscanf(archivo2,"%s",md5);
     md5[33] = '\0';
@@ -145,6 +137,15 @@ void setearMD5(char* pathMetadata){
 
     config_set_value(metadata,"MD5",md5);
     config_save(metadata);
+    
+    for(int i = 0; i < contador; i++){
+        free(listaBloques[i]);
+    }
+    free(listaBloques);
+    free(md5);
+    free(string_temp);
+    free(comando);
+    config_destroy(metadata);
 }
 
 void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar){
@@ -253,15 +254,7 @@ char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int 
     return temporal;
 }
 
-char* crearStrTripulante(int idTripulante){
-    char* posicion = string_itoa(idTripulante);
-    char* tripulante = string_new();
-    string_append(&tripulante,"Tripulante");
-    string_append(&tripulante,posicion);
-    free(posicion);
-    string_append(&tripulante,".ims");
-    return tripulante;
-}
+
 
 int validarBitsLibre(int cantidadBloquesAUsar){
     int contador = 0;
@@ -277,56 +270,64 @@ int validarBitsLibre(int cantidadBloquesAUsar){
     return -1;
 }
 
-char* pathCompleto(char* strConcatenar){
-    return string_from_format("%s/%s",datosConfig->puntoMontaje,strConcatenar);
-}
+
 
 
 char* obtenerBitacora(int tripulante){
-    char* buffer = string_new();
+    char* buffer = string_new(); 
     char* strPath = string_new();
+
     string_append(&strPath, "Bitacoras/");
     char* strTripulante = crearStrTripulante(tripulante);
     string_append(&strPath,strTripulante);
 
     char* path = pathCompleto(strPath);
-    if(access(path,F_OK)){
+    free(strTripulante);
+    free(strPath);
+
+    if(access(path,F_OK) >= 0){
         t_config* metadata = config_create(path);
-        char* lista = config_get_string_value(metadata,"BLOCKS");
+        char** listaBloques = config_get_array_value(metadata,"BLOCKS");
         int tamanioTotal = config_get_int_value(metadata,"SIZE");
-
-        char** listaBloques = string_get_string_as_array(lista); //["2","3","9"]
-        int cantidadBloquesTotal = cantidadBloquesUsados(listaBloques);
         int contadorBloques = 0;
+        int posicionBloque = 0;
 
-        for(int i = 0; i < cantidadBloquesTotal; i++){
-            int bloque = atoi(listaBloques[i]);
+        while(listaBloques[contadorBloques]){
+            contadorBloques++;
+        }
 
-            if((cantidadBloquesTotal - contadorBloques) !=1){//no es ultimo bloque
-                char* temporal = malloc(tamanioBloque);
+        for(int i = 0; i < contadorBloques; i++){
+            int bloque = atoi(listaBloques[posicionBloque]);
+
+            if((contadorBloques - posicionBloque) != 1){//no es ultimo bloque
+                char* temporal = malloc(tamanioBloque + 1);
                 memcpy(temporal,copiaBlocks+bloque*tamanioBloque,tamanioBloque);
+                temporal[tamanioBloque] = '\0';
                 string_append(&buffer,temporal);
                 free(temporal);
+                
             }else{
                 int sizeStr = string_length(buffer); //Size hasta ahora
                 int faltaCopiar = tamanioTotal - sizeStr; 
-                char* temporal = malloc(faltaCopiar);
+                char* temporal = malloc(faltaCopiar + 1);
                 memcpy(temporal,copiaBlocks+bloque*tamanioBloque,faltaCopiar);
+                temporal[faltaCopiar] = '\0';
                 string_append(&buffer,temporal);
                 free(temporal);
             }
+            posicionBloque++;
         }
         config_destroy(metadata);
-        free(lista);
-        liberarArray(listaBloques,cantidadBloquesTotal);
+        for(int i = 0; i <= contadorBloques; i++){
+            free(listaBloques[i]);
+        }
+        free(listaBloques);
 
     }else{
         log_error(logger, "No existe bitácora para ese tripulante.");
         return buffer; //size 0
     }
-
-    free(strTripulante);
-    free(strPath);
+    free(path);
     return buffer;
 }
 

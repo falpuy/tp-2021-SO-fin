@@ -15,8 +15,10 @@
     #include <commons/config.h> 
     #include <signal.h>
     #include <unnamed/serialization.h>
+    #include <unnamed/socket.h>
+    #include <commons/bitarray.h>
     
-     enum COMANDOS{
+    enum COMANDOS{
         OBTENER_BITACORA = 760 ,
         MOVER_TRIPULANTE ,
         COMIENZA_EJECUCION_TAREA,
@@ -28,7 +30,6 @@
         COMIENZA_SABOTAJE,
         ATIENDE_SABOTAJE,
         INVOCAR_FSK = 771
-
     };
 
     typedef struct{
@@ -62,8 +63,16 @@
     pthread_mutex_t m_superBloque;
     pthread_mutex_t m_metadata;
     pthread_mutex_t discordiador;
+    pthread_mutex_t validador;
 
     void sabotaje();
     void protocolo_fsck();
+    void validacionSuperBloque();
+    void validacionFiles();
+    char* pathCompleto(char* strConcatenar);
+    void validacionBitmapRecurso(char* pathRecurso,t_bitarray* bitmapFalso);
+    void validacionBitmapTripulantes(t_bitarray* bitmapFalso);
+    char* crearStrTripulante(int idTripulante);
+
     
 #endif

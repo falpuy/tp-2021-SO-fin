@@ -25,9 +25,7 @@
     
     int cantidad_bloques(char* string);
     char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int posY_n);
-    char* crearStrTripulante(int idTripulante);
     int validarBitsLibre(int cantidadBloquesAUsar);
-    char* pathCompleto(char* strConcatenar);
     char* obtenerBitacora(int tripulante);
     int cantidadBloquesUsados(char** listaBloques);
     void liberarArray (char** array, int posiciones);

@@ -26,6 +26,8 @@
 #include <sys/types.h>
 #include <dirent.h>
 
+int timer;
+
 t_dictionary *table_collection;
 t_dictionary *admin_collection;
 
@@ -80,7 +82,7 @@ typedef struct {
     uint32_t start;
     uint8_t modified;
     uint8_t presence;
-    char *time;
+    int time;
 } frame_t;
 
 typedef struct {
@@ -739,15 +741,22 @@ int check_free_frames(int frames_count) {
 page_t *global_lru_page;
 page_t *global_clock_page;
 
+bool lru_sorter(void *uno, void *dos) {
+    page_t *page1 = uno;
+    page_t *page2 = dos;
+
+    return page1 -> frame -> time < page2 -> frame -> time;
+}
+
 void lru_replacer(void *item) {
     page_t *page = item;
 
-    if (global_lru_page == NULL) {
+    if (global_lru_page == NULL && page -> frame -> presence) {
         global_lru_page = page;
-    }
-    
-    if (global_lru_page -> frame -> presence && atoi(global_lru_page -> frame -> time) > atoi(page -> frame -> time)) {
-        global_lru_page = page;
+    } else {
+        if (page -> frame -> presence && global_lru_page -> frame -> time > page -> frame -> time) {
+            global_lru_page = page;
+        }
     }
     
 }
@@ -755,6 +764,7 @@ void lru_replacer(void *item) {
 void lru_iterator(char *key, void *item) {
     t_queue *pages = item;
 
+    // list_sort(pages -> elements, lru_sorter);
     list_iterate(pages -> elements, lru_replacer);
 }
 
@@ -859,7 +869,7 @@ uint32_t get_frame() {
     // frame_t *replacing_frame = get_next_lru_frame();
     frame_t *replacing_frame = hasLRU ? get_next_lru_frame() : get_next_clock_frame();
 
-    printf("Reemplazo este frame: %d - %s\n", replacing_frame -> number, replacing_frame -> time);
+    printf("Reemplazo este frame: %d - %d\n", replacing_frame -> number, replacing_frame -> time);
 
     if (replacing_frame != NULL) {
         // busco lugar en virtual
@@ -883,10 +893,8 @@ uint32_t get_frame() {
                 replacing_frame -> number = i;
                 replacing_frame -> start = i * page_size;
                 replacing_frame -> presence = 0;
-                free(replacing_frame -> time);
-                replacing_frame -> time = temporal_get_string_time("%H%M%S");
-                printf("TIMEdadsad: %s\n", replacing_frame -> time);
-                sleep(1);
+                replacing_frame -> time = timer++;
+                printf("TIMEdadsad: %d\n", replacing_frame -> time);
                 // devuelvo el bit qe unsetie
                 // printf("Devuelvo: %d", value);
                 return value;
@@ -1013,15 +1021,13 @@ void save_data_in_memory(void *memory, t_dictionary *table_collection, t_diction
             
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
             frame -> presence = 1;
 
-            printf("TIME: %s\n", frame -> time);
-
-            sleep(1);
+            printf("%d TIME: %d\n", frame -> number, frame -> time);
 
             // Creo pagina
             page_t *page = malloc(sizeof(page_t));
@@ -1082,7 +1088,7 @@ void save_data_in_memory(void *memory, t_dictionary *table_collection, t_diction
 void destroyer(void *item) {
 
     page_t * aux = (page_t *) item;
-    free((aux -> frame) -> time);
+    // free((aux -> frame) -> time);
     free(aux -> frame);
     free(aux);
 }
@@ -1154,7 +1160,7 @@ int get_page_number(t_dictionary *self, uint32_t frame) {
 		}
 	}
 
-    return  -1;
+    return  1;
 
 }
 
@@ -1263,7 +1269,7 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
         
         off++;
 
-        free((page_aux -> frame) -> time);
+        // free((page_aux -> frame) -> time);
         free(page_aux -> frame);
         free(page_aux);
     }
@@ -1307,7 +1313,7 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
 
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -1328,7 +1334,7 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
 
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -1397,7 +1403,7 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
         
         off++;
 
-        free((page_aux -> frame) -> time);
+        // free((page_aux -> frame) -> time);
         free(page_aux -> frame);
         free(page_aux);
     }
@@ -1434,7 +1440,7 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
 
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -1455,7 +1461,7 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
 
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -1525,7 +1531,7 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
         
         off++;
 
-        free((page_aux -> frame) -> time);
+        // free((page_aux -> frame) -> time);
         free(page_aux -> frame);
         free(page_aux);
     }
@@ -1561,7 +1567,7 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
 
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -1582,7 +1588,7 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
 
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -1644,7 +1650,7 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
         
         off++;
 
-        free((page_aux -> frame) -> time);
+        // free((page_aux -> frame) -> time);
         free(page_aux -> frame);
         free(page_aux);
     }
@@ -1731,7 +1737,7 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -1752,7 +1758,7 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
-            frame -> time = temporal_get_string_time("%H%M%S");
+            frame -> time = timer++;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -1801,7 +1807,7 @@ void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
 
         unset_bitmap(bitmap, (page_aux -> frame) -> number);
 
-        free((page_aux -> frame) -> time);
+        // free((page_aux -> frame) -> time);
         free(page_aux -> frame);
         free(page_aux);
     }
@@ -1823,8 +1829,11 @@ void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
 
 
 
-
 int main() {
+
+    char *aux_timer = temporal_get_string_time("%H%M%S");
+    timer = atoi(aux_timer);
+    free(aux_timer);
 
     t_log *logger = log_create("../logs/test.log", "TEST", 1, LOG_LEVEL_TRACE);
 
@@ -1835,7 +1844,7 @@ int main() {
     table_collection = dictionary_create();
     admin_collection = dictionary_create();
     
-    int real_size = 80;
+    int real_size = 160;
     memory = malloc(real_size);
     page_size = 10;
 
@@ -1864,7 +1873,7 @@ int main() {
 
     int arch_bitmap;
 
-    if( access( path, F_OK ) == 0 ) {
+    if( access( path, F_OK ) >= 0 ) {
         // Existe el file..
 
         // Deleteo el file
@@ -2093,7 +2102,7 @@ int main() {
     tcb *temp = malloc(sizeof(tcb));
 
     temp -> tid = 1;
-    temp -> pid = 2;
+    temp -> pid = 1;
     temp -> status = 'N';
     temp -> xpos = 3;
     temp -> ypos = 4;
@@ -2101,8 +2110,8 @@ int main() {
     
     tcb *temp2 = malloc(sizeof(tcb));
 
-    temp2 -> tid = 1;
-    temp2 -> pid = 2;
+    temp2 -> tid = 2;
+    temp2 -> pid = 1;
     temp2 -> status = 'N';
     temp2 -> xpos = 3;
     temp2 -> ypos = 4;
@@ -2138,6 +2147,58 @@ int main() {
     // paso el buffer que llega desde cliente
     save_data_in_memory(memory, table_collection, admin_collection, buffer);
 
+    // -------------------------- pcb 2 ------------------------------- //
+
+    tcb *temp3 = malloc(sizeof(tcb));
+
+    temp3 -> tid = 1;
+    temp3 -> pid = 2;
+    temp3 -> status = 'N';
+    temp3 -> xpos = 3;
+    temp3 -> ypos = 4;
+    temp3 -> next = 5;
+    
+    tcb *temp32 = malloc(sizeof(tcb));
+
+    temp32 -> tid = 2;
+    temp32 -> pid = 2;
+    temp32 -> status = 'N';
+    temp32 -> xpos = 3;
+    temp32 -> ypos = 4;
+    temp32 -> next = 5;
+
+    pcb *patota2 = malloc(sizeof(pcb));
+
+    patota2 -> pid = 2;
+
+    char *tareas2 = "TAREASNORMALES;3;2;5TAREANORMAL;2;3;1";
+
+    int size2 = ((sizeof(tcb) - sizeof(int)) * 2) + sizeof(int) * 3 + strlen(tareas2);
+
+    void *buffer2 = _serialize(
+        size2,
+        "%d%s%d%d%d%c%d%d%d%d%c%d%d",
+        patota2 -> pid,
+        tareas2,
+        2, // Cantidad tcbs
+        temp3 -> tid,
+        temp3 -> pid,
+        temp3 -> status,
+        temp3 -> xpos,
+        temp3 -> ypos,
+        temp32 -> tid,
+        temp32 -> pid,
+        temp32 -> status,
+        temp32 -> xpos,
+        temp32 -> ypos
+    );
+
+    log_info(logger, "Guardando data del pcb 2..");
+    // paso el buffer que llega desde cliente
+    save_data_in_memory(memory, table_collection, admin_collection, buffer2);
+
+    // -------------------------- pcb 2 ------------------------------- //
+
     char *string_pcb = string_new();
     string_append(&string_pcb, "1");
 
@@ -2166,10 +2227,14 @@ int main() {
     page_dump(table_collection);
 
     free(patota);
+    free(patota2);
     free(temp);
     free(temp2);
+    free(temp3);
+    free(temp32);
 
     free(buffer);
+    free(buffer2);
 
     free(bitmap);
 

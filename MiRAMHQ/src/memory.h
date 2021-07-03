@@ -51,14 +51,21 @@
 
     typedef struct {
         uint32_t number;
-        uint32_t start;
+        uint32_t start; //se podria sacar
         uint8_t modified;
         uint8_t presence;
+        int time;
     } frame_t;
 
     typedef struct {
         frame_t *frame;
     } page_t;
+
+    int global_page;
+    char* global_process;
+
+    uint8_t *bitmap;
+    int frames_memory;
 
     // --------------------- END PAGINATION ----------------------- //
 
@@ -74,12 +81,6 @@
         uint32_t id;
         uint32_t type;
         uint32_t nroSegmento;
-    } p_info;
-
-    typedef struct {
-        uint32_t id;
-        uint32_t type;
-        uint32_t nroSegmento;
         uint32_t baseAddr;
         uint32_t limit;
     } segment;
@@ -88,7 +89,7 @@
     // t_queue *segmentTable;
 
 
-    void mostrarInfo (void *element);
+    // void mostrarInfo (void *element);
 
     char *get_segment_type(uint32_t segment_type);
 
@@ -96,7 +97,7 @@
 
     void show_dictionary(t_dictionary *self);
 
-    void *find_info_by_id(t_list* self, int id);
+    // void *find_info_by_id(t_list* self, int id);
 
     void *find_segment_by_number(t_list* self, int index);
 
@@ -106,13 +107,13 @@
 
     void table_destroyer(void *item);
 
-    void memory_compaction(void *memory, int mem_size, t_dictionary* self);
+    void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* self);
 
-    int check_space_memory(void *memory, int mem_size, int total_size, t_dictionary *table_collection);
+    int check_space_memory(void *admin, int mem_size, int total_size, t_dictionary *table_collection);
 
-    int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int total_size);
+    int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int total_size);
 
-    int memory_seek(void *memory, int mem_size, int total_size, t_dictionary *table_collection);
+    int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_collection);
 
     int get_last_index (t_queue *segmentTable);
 
@@ -126,23 +127,30 @@
 
     void *get_next_task(void *memory, int start_address, int limit_address);
 
-    int remove_segment_from_memory(void *memory, int mem_size, segment *segmento);
+    int remove_segment_from_memory(void *admin, int mem_size, segment *segmento);
 
-    int save_tcb_in_memory(void *memory, int mem_size, segment *segmento, tcb_t *data);
+    void remove_segment_from_table(t_dictionary* table_collection, char *key, segment *segmento);
+
+    // void remove_pcb_from_memory(void *admin, int mem_size, t_dictionary *table_collection, char* key);
+
+    int save_tcb_in_memory(void *admin, void *memory, int mem_size, segment *segmento, tcb_t *data);
 
     tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento);
 
-    int save_pcb_in_memory(void *memory, int mem_size, segment *segmento, pcb_t *data);
+    int save_pcb_in_memory(void *admin, void *memory, int mem_size, segment *segmento, pcb_t *data);
 
     pcb_t *get_pcb_from_memory(void *memory, int mem_size, segment *segmento);
 
     // Hay que pasarle la lista completa de tareas, tal cual se guarda en memoria
-    int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *data);
+    int save_task_in_memory(void *admin, void *memory, int mem_size, segment *segmento, void *data);
+
+    segment *get_next_segment(t_dictionary *table_collection, char* key);
 
     // --------------------- END SEGMENTATION ----------------------- //
 
     // ------------------------- DUMP ------------------------------- //
     
+    void page_dump(t_dictionary *table);
     void memory_dump(t_dictionary *self, void *memory);
 
 #endif

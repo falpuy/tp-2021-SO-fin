@@ -27,13 +27,24 @@ char *KEYS[] = {
     "PUERTO"
 };
 
+int timer;
+
 t_dictionary *table_collection;
+t_dictionary *admin_collection;
+
+typedef struct {
+    uint32_t start;
+    uint32_t cantidad;
+    uint8_t *tcb;
+} admin_data;
 
 char *esquema;
 int isBestFit = 0;
 
 t_log *logger;
 t_config * config;
+
+void *admin;
 
 void *memory;
 int mem_size;
@@ -42,10 +53,8 @@ int page_size;
 void *virtual_memory;
 int virtual_size;
 
-t_bitarray *bitmap;
 t_bitarray *virtual_bitmap;
 
-int frames_memory;
 int frames_virtual;
 
 void signal_handler(int sig_number);
@@ -58,6 +67,7 @@ enum comandos {
     RECIBIR_UBICACION_TRIPULANTE,
     ENVIAR_TAREA = 520,
     EXPULSAR_TRIPULANTE = 530,
+    ELIMINAR_PATOTA = 599,
     SUCCESS = 200,
     ERROR_CANTIDAD_TRIPULANTES = 554,
     ERROR_POR_FALTA_DE_MEMORIA = 555,
@@ -70,6 +80,8 @@ void pagination_handler (int fd, char *id, int opcode, void *buffer, t_log *logg
 void segmentation_handler (int fd, char *id, int opcode, void *buffer, t_log *logger);
 
 // --------------------- END HANDLERS ----------------------- //
+
+void admin_destroyer(void *item);
 
 void setup_pagination(void *memory, char *path, int page_size, int real_size, int v_size, t_log *logger);
 

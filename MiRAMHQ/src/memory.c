@@ -17,12 +17,12 @@ void *memory_init(int size) {
 // --------------------- SEGMENTATION ----------------------- //
 
 
-void mostrarInfo (void *element) {
-    p_info *info = element;
-    printf("ID: %d\n", info -> id);
-    printf("Type: %d\n", info -> type);
-    printf("Segment: %d\n", info -> nroSegmento);
-}
+// void mostrarInfo (void *element) {
+//     p_info *info = element;
+//     printf("ID: %d\n", info -> id);
+//     printf("Type: %d\n", info -> type);
+//     printf("Segment: %d\n", info -> nroSegmento);
+// }
 
 char *get_segment_type(uint32_t segment_type) {
     switch(segment_type) {
@@ -77,23 +77,23 @@ void show_dictionary(t_dictionary *self) {
 
 }
 
-void *find_info_by_id(t_list* self, int id) {
-    p_info *temp;
-	if ((self->elements_count > 0) && (id >= 0)) {
+// void *find_info_by_id(t_list* self, int id) {
+//     p_info *temp;
+// 	if ((self->elements_count > 0) && (id >= 0)) {
 
-		t_link_element *element = self->head;
-		temp = element -> data;
+// 		t_link_element *element = self->head;
+// 		temp = element -> data;
 
-        while (temp -> id != id) {
-			element = element->next;
-            if (element != NULL)
-                temp = element -> data;
-		}
+//         while (temp -> id != id) {
+// 			element = element->next;
+//             if (element != NULL)
+//                 temp = element -> data;
+// 		}
 
-		return element -> data;
-	}
-	return NULL;
-}
+// 		return element -> data;
+// 	}
+// 	return NULL;
+// }
 
 void *find_segment_by_number(t_list* self, int index) {
     segment *temp;
@@ -166,8 +166,9 @@ void table_destroyer(void *item) {
 
 }
 
-void memory_compaction(void *memory, int mem_size, t_dictionary* self) {
+void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* self) {
     void *aux_memory = malloc(mem_size);
+    memset(admin, 0, mem_size);
 
     segment *temp;
 
@@ -205,6 +206,7 @@ void memory_compaction(void *memory, int mem_size, t_dictionary* self) {
                     
                     // Copio los datos del segmento en la memoria auxiliar
                     memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+                    memset(admin + offset, 1, data_size);
 
                     new_base = offset;
                     new_limit = offset + data_size;
@@ -235,30 +237,27 @@ void memory_compaction(void *memory, int mem_size, t_dictionary* self) {
     free(aux_memory);
 }
 
-int check_space_memory(void *memory, int mem_size, int total_size, t_dictionary *table_collection) {
-    // Auxiliar para guardar el limite de cada segmento ocupado
-    int limit;
+int check_space_memory(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
+
+    if (total_size > mem_size) {
+        return 0;
+    }
 
     // Contador de bytes libres en la memoria
     int segment_counter = 0;
 
     for(int i = 0; i < mem_size; i ++) {
-        if (memcmp(memory + i, "\0", 1)) {
-            printf("Direccion ocupada: %d\n", i);
-            limit = get_segment_limit(table_collection, i);
-            if (limit < 0) return -1;
-            printf("Final de segmento: %d\n", limit);
-            i = limit - 1;
-        } else {
-            printf("Direccion vacia: %d\n", i);
+        if (!memcmp(admin + i, "\0", 1)) {
+
+            // printf("Direccion vacia: %d\n", i);
             segment_counter ++;
             if (segment_counter == total_size) {
-                printf("Encontre un segmento disponible: %d\n", i - (total_size - 1));
+                // printf("Hay espacio disponible en memoria..\n");
                 return 1;
             }
         }
     }
-    return -1;
+    return 0;
 }
 
 typedef struct {
@@ -282,9 +281,7 @@ void best_fit_destroyer(void *data) {
     free(temp);
 }
 
-int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int total_size) {
-    // Auxiliar para guardar el limite de cada segmento ocupado
-    int limit;
+int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int total_size) {
 
     t_list *temp = list_create();
 
@@ -292,74 +289,77 @@ int memory_best_fit(void *memory, int mem_size, t_dictionary *collection, int to
 
     int start = 0;
 
+    int j;
+
     // Contador de bytes libres en la memoria
     int segment_counter = 0;
 
     // Busco espacio libre en la memoria
     for(int i = 0; i < mem_size; i ++) {
-        if (memcmp(memory + i, "\0", 1)) {
-            printf("Direccion ocupada: %d\n", i);
-            if (segment_counter >= total_size) {
-                printf("Encontre un segmento: %d - %d\n", start, segment_counter);
-                best_fit_data *data = malloc(sizeof(best_fit_data));
-                data -> addr = start;
-                data -> counter = segment_counter;
-                list_add_sorted(temp, data, segment_cmp);
+        if (!memcmp(admin + i, "\0", 1)) {
+            // printf("Segmento Libre en: %d\n", i);
+            start = i;
+            j = i;
+            while(j < mem_size && !memcmp(admin + j, "\0", 1)) {
+                // printf("siguiente en: %d\n", j);
+                segment_counter ++;
+                j++;
             }
-            segment_counter = 0;
-            limit = get_segment_limit(collection, i);
-            if (limit < 0) return -1;
-            printf("Final de segmento: %d\n", limit);
-            i = limit - 1;
-            start = limit;
-        } else {
-            printf("Direccion vacia: %d\n", i);
-            segment_counter ++;
-        }
-    }
+            i = j;
+            // printf("Data: %d - %d - %d\n", i, segment_counter, mem_size);
+            if (i <= mem_size) {
+                if (segment_counter >= total_size) {
+                    best_fit_data *data = malloc(sizeof(best_fit_data));
+                    data -> addr = start;
+                    data -> counter = segment_counter;
+                    list_add_sorted(temp, data, segment_cmp);
+                }
 
-    if (segment_counter >= total_size) {
-        printf("Encontre un segmento: %d\n", start);
-        best_fit_data *data = malloc(sizeof(best_fit_data));
-        data -> addr = start;
-        data -> counter = segment_counter;
-        list_add_sorted(temp, data, segment_cmp);
+                segment_counter = 0;
+            }
+
+        }
+
     }
 
     if (list_size(temp) > 0) {
         best_fit_data *aux = list_get(temp, 0);
         result = aux -> addr;
         list_destroy_and_destroy_elements(temp, best_fit_destroyer);
-        printf("Direccion a devolver: %d\n", result);
+        // printf("Direccion a devolver: %d\n", result);
         return result;
     }
 
     return -1;
 }
 
-int memory_seek(void *memory, int mem_size, int total_size, t_dictionary *table_collection) {
-    // Auxiliar para guardar el limite de cada segmento ocupado
-    int limit;
+
+int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
 
     // Contador de bytes libres en la memoria
     int segment_counter = 0;
 
+    int start;
+    int j;
+
     // Busco espacio libre en la memoria
     for(int i = 0; i < mem_size; i ++) {
-        if (memcmp(memory + i, "\0", 1)) {
-            printf("Direccion ocupada: %d\n", i);
-            limit = get_segment_limit(table_collection, i);
-            if (limit < 0) return -1;
-            printf("Final de segmento: %d\n", limit);
-            i = limit - 1;
-            segment_counter = 0;
-        } else {
-            printf("Direccion vacia: %d\n", i);
-            segment_counter ++;
-            if (segment_counter == total_size) {
-                printf("Encontre un segmento disponible: %d\n", i - (total_size - 1));
-                return i - (total_size - 1);
+        if (!memcmp(admin + i, "\0", 1)) {
+            // printf("Segmento Libre en: %d\n", i);
+            start = i;
+            j = i;
+            while(!memcmp(admin + j, "\0", 1) && j < mem_size) {
+                // printf("siguiente en: %d\n", j);
+                segment_counter ++;
+                j++;
+
+                if (segment_counter >= total_size) {
+                    // printf("Direccion a devolver: %d\n", start);
+                    return start;
+                }
             }
+            i = j;
+
         }
     }
     return -1;
@@ -525,7 +525,7 @@ int remove_segment_from_memory(void *memory, int mem_size, segment *segmento) {
 //     uint32_t next;
 // } tcb;
 
-int save_tcb_in_memory(void *memory, int mem_size, segment *segmento, tcb_t *data) {
+int save_tcb_in_memory(void *admin, void *memory, int mem_size, segment *segmento, tcb_t *data) {
     int offset = 0;
     if (segmento -> limit < mem_size) {
         memcpy(memory + segmento -> baseAddr + offset, &(data -> tid), sizeof(uint32_t));
@@ -540,6 +540,8 @@ int save_tcb_in_memory(void *memory, int mem_size, segment *segmento, tcb_t *dat
         offset = sizeof(uint32_t);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> next), sizeof(uint32_t));
         offset = sizeof(uint32_t);
+
+        memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
 
         return 1;
     }
@@ -572,13 +574,15 @@ tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
     return NULL;
 }
 
-int save_pcb_in_memory(void *memory, int mem_size, segment *segmento, pcb_t *data) {
+int save_pcb_in_memory(void *admin, void *memory, int mem_size, segment *segmento, pcb_t *data) {
     int offset = 0;
     if (segmento -> limit < mem_size) {
         memcpy(memory + segmento -> baseAddr + offset, &(data -> pid), sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> tasks), sizeof(uint32_t));
         offset = sizeof(uint32_t);
+
+        memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
 
         return 1;
     }
@@ -603,11 +607,11 @@ pcb_t *get_pcb_from_memory(void *memory, int mem_size, segment *segmento) {
 }
 
 // Hay que pasarle la lista completa de tareas, tal cual se guarda en memoria
-int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *data) {
+int save_task_in_memory(void *admin, void *memory, int mem_size, segment *segmento, void *data) {
 
     if (segmento -> limit < mem_size) {
         memcpy(memory + segmento -> baseAddr, data, segmento -> limit - segmento -> baseAddr);
-
+        memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
         return 1;
     }
 
@@ -666,16 +670,197 @@ int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *dat
 //     free(buffer);
 // }
 
+void remove_segment_from_table(t_dictionary* table_collection, char *key, segment *segmento) {
+    segment *temp;
+
+    int index = 0;
+
+    t_queue *self = dictionary_get(table_collection, key);
+
+	if (self -> elements -> elements_count > 0) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        while (element != NULL) {
+
+            if (temp -> nroSegmento == segmento -> nroSegmento) {
+                // return element -> data;
+                break;
+            }
+
+			element = element->next;
+
+            if (element != NULL){
+                index ++;
+                temp = element -> data;
+            }
+		}
+
+        list_remove_and_destroy_element(self -> elements, index, destroyer);
+	}
+
+}
+
+segment *get_next_segment(t_dictionary *table_collection, char* key) {
+    segment *temp;
+
+    t_queue *self = dictionary_get(table_collection, key);
+
+	if (self -> elements -> elements_count > 0) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        if (element != NULL) {
+            return temp;
+        }
+	}
+
+    return NULL;
+}
+
+void remove_pcb_from_memory(void *memory, int mem_size, t_dictionary *table_collection, char* key) {
+    printf("Key: %s\n", key);
+    segment *temp;
+
+    int index = 0;
+
+    t_queue *self = dictionary_get(table_collection, key);
+
+    printf("CANTIDAD ELEMENTOS: %d\n", self -> elements -> elements_count);
+
+	if (self -> elements -> elements_count > 0) {
+
+		t_link_element *element = self -> elements -> head;
+		temp = element -> data;
+
+        while (element != NULL) {
+
+            // Segment
+            // element -> data;
+            printf("Data: %d", temp -> type);
+
+			element = element->next;
+
+            if (element != NULL){
+                index ++;
+                temp = element -> data;
+            }
+		}
+	}
+}
+
 // --------------------- END SEGMENTATION ----------------------- //
 
 
 // --------------------- DUMP ----------------------- //
 
+int get_page_number(t_dictionary *self, uint32_t frame) {
+
+    t_queue *aux;
+
+    // Recorro el diccionario
+    int table_index;
+
+    int index;
+
+
+	for (table_index = 0; table_index < self->table_max_size; table_index++) {
+		t_hash_element *element = self->elements[table_index];
+		t_hash_element *next_element = NULL;
+
+		while (element != NULL) {
+
+			next_element = element->next;
+
+            aux = element -> data;
+
+            // page_iterate(aux -> elements, save_in_file, memory, file, index, element -> key);
+            // ITERACION DE LISTA
+
+            t_link_element *elementl = (aux -> elements)->head;
+            t_link_element *aux2 = NULL;
+
+            index = 0;
+
+            while (elementl != NULL) {
+                aux2 = elementl->next;
+                page_t *page = elementl -> data;
+                if((page -> frame) -> number == frame && (page -> frame) -> presence) {
+                    global_process = string_new();
+                    string_append(&global_process, element -> key);
+                    global_page = index;
+                    return 1;
+                }
+                elementl = aux2;
+                index++;
+            }
+
+            // END INTERATION
+
+			element = next_element;
+		}
+	}
+
+    return  1;
+
+}
+
+void page_dump(t_dictionary *table) {
+
+    //  Dump_<Timestamp>.dmp
+    char *timestamp = temporal_get_string_time("%d-%m-%y");
+    char *file_name = string_new();
+    string_append(&file_name, "./Dump_");
+    string_append(&file_name, timestamp);
+    string_append(&file_name, ".dmp");
+
+    FILE* file = fopen(file_name, "w");
+
+    if(file == NULL)
+    {
+        perror("Error al abrir archivo Dump");
+    }
+
+    free(timestamp);
+    free(file_name);
+
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+    char *title = string_new();
+    char *date = temporal_get_string_time("%d/%m/%y %H:%M:%S");
+    string_append_with_format(&title, "Dump: %s\n", date);
+    txt_write_in_file(file, title);
+    free(date);
+    free(title);
+    
+    for (int i = 0; i < frames_memory; i++) {
+        char *line = string_new(); 
+        
+        if (bitmap[i]) {
+            if(get_page_number(table, i)) {
+                string_append_with_format(&line, "Marco: %d\t\tEstado: %s\t\tProceso: %s\t\tPagina: %d\n", i, "Ocupado", global_process, global_page);
+                free(global_process); 
+            }
+        } else {
+            string_append_with_format(&line, "Marco: %d\t\tEstado: %s\t\tProceso: %s\t\tPagina: %s\n", i, "Libre", "-", "-");
+        }
+        
+        txt_write_in_file(file, line);
+
+        free(line);
+    }
+
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+
+    txt_close_file(file);
+}
+
 void save_in_file (void *element, void *memory, FILE *file) {
     segment *segmento = element;
 
     char *line = string_new();
-    string_append_with_format(&line, "Proceso: %d\tSegmento: %d\tInicio: %p\tTam: %db\n", segmento -> id, segmento -> nroSegmento, (memory + segmento -> baseAddr), segmento -> limit - segmento -> baseAddr);
+    string_append_with_format(&line, "Proceso: %d\t\tSegmento: %d\t\tInicio: %p\t\tTam: %db\n", segmento -> id, segmento -> nroSegmento, (memory + segmento -> baseAddr), segmento -> limit - segmento -> baseAddr);
     
     txt_write_in_file(file, line);
 

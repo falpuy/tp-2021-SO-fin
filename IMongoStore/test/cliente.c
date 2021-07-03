@@ -22,14 +22,13 @@ int main(){
 
    //COMIENZA EJECUCION TAREA: IdTripulante TamTarea Tarea ParametrosTarea 
     t_log* log = log_create("cliente.log","clienteTest", 1,  LOG_LEVEL_INFO);
-    int socket = _connect("127.0.0.1", "5001", log);
+    int socket = _connect("127.0.0.1", "5002", log);
 
-    // char* tarea = string_new();
-    // string_append(&tarea, "GENERAR_OXIGENO");
-    // void* buffer = _serialize(sizeof(int)*3 + string_length(tarea),"%d%s%d",101,tarea,10);
+    char* tarea = string_new();
+    string_append(&tarea, "GENERAR_OXIGENO");
+    void* buffer = _serialize(sizeof(int)*3 + string_length(tarea),"%d%s%d",101,tarea,10);
 
-    void* buffer = _serialize(sizeof(int),"%d",101);
-
+    // void* buffer = _serialize(sizeof(int),"%d",101);
 
     // string_append(&tarea, "CONSUMIR_OXIGENO");
     // void* buffer = _serialize(sizeof(int)*3 + string_length(tarea) ,"%d%s%d",101,tarea,4);
@@ -37,8 +36,9 @@ int main(){
     // void* buffer = _serialize(sizeof(int)*6,"%d%d%d%d%d%d",101,3,4,5,6,7);
 
 
-    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer,sizeof(int)*3 + string_length(tarea), log);  
-    _send_message(socket, "DIS",OBTENER_BITACORA, buffer,sizeof(int), log);  
+    _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer,sizeof(int)*3 + string_length(tarea), log);
 
+   
+    
     return 0;
 }

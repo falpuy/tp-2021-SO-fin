@@ -415,3 +415,111 @@
 [INFO] 21:37:35:820 clienteTest/(17881:17881): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
 [INFO] 21:37:35:823 clienteTest/(17881:17881): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
 [INFO] 21:37:35:825 clienteTest/(17881:17881): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:56:43:632 clienteTest/(24054:24054): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 17:56:43:635 clienteTest/(24054:24054): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 17:56:43:636 clienteTest/(24054:24054): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:06:38:209 clienteTest/(24211:24211): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:06:38:210 clienteTest/(24211:24211): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:06:38:212 clienteTest/(24211:24211): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:06:38:212 clienteTest/(24211:24211): Recibi el siguiente mensaje..
+[INFO] 18:07:38:188 clienteTest/(24246:24246): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:07:38:189 clienteTest/(24246:24246): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:07:38:191 clienteTest/(24246:24246): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:07:38:191 clienteTest/(24246:24246): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:07:38:192 clienteTest/(24246:24246): Recibi el siguiente mensaje..
+[INFO] 18:07:38:379 clienteTest/(24246:24246): Proceso: IMS
+[INFO] 18:07:38:379 clienteTest/(24246:24246): Comando: 766
+[INFO] 18:07:38:380 clienteTest/(24246:24246): Tamanio: 127
+[INFO] 18:07:38:380 clienteTest/(24246:24246): z
+[INFO] 18:10:40:337 clienteTest/(24266:24266): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:10:40:338 clienteTest/(24266:24266): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:10:40:339 clienteTest/(24266:24266): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:10:40:340 clienteTest/(24266:24266): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:10:40:340 clienteTest/(24266:24266): Recibi el siguiente mensaje..
+[INFO] 18:10:40:564 clienteTest/(24266:24266): Proceso: IMS
+[INFO] 18:10:40:567 clienteTest/(24266:24266): Comando: 766
+[INFO] 18:10:40:567 clienteTest/(24266:24266): Tamanio: 168
+[INFO] 18:10:40:567 clienteTest/(24266:24266): �
+[INFO] 18:14:00:170 clienteTest/(24285:24285): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:14:00:173 clienteTest/(24285:24285): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:14:00:174 clienteTest/(24285:24285): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:00:183 clienteTest/(24285:24285): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:00:183 clienteTest/(24285:24285): Recibi el siguiente mensaje..
+[INFO] 18:14:00:341 clienteTest/(24285:24285): Proceso: `�
+[INFO] 18:14:00:341 clienteTest/(24285:24285): Comando: 808466996
+[INFO] 18:14:00:342 clienteTest/(24285:24285): Tamanio: 160170752
+[INFO] 18:14:00:342 clienteTest/(24285:24285): 
+[INFO] 18:14:16:454 clienteTest/(24313:24313): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:14:16:455 clienteTest/(24313:24313): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:14:16:456 clienteTest/(24313:24313): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:16:456 clienteTest/(24313:24313): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:14:16:457 clienteTest/(24313:24313): Recibi el siguiente mensaje..
+[INFO] 18:14:16:682 clienteTest/(24313:24313): Proceso: IMS
+[INFO] 18:14:16:683 clienteTest/(24313:24313): Comando: 766
+[INFO] 18:14:16:683 clienteTest/(24313:24313): Tamanio: 250
+[INFO] 18:14:16:683 clienteTest/(24313:24313): �
+[INFO] 18:15:02:870 clienteTest/(24358:24358): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:15:02:871 clienteTest/(24358:24358): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:15:02:872 clienteTest/(24358:24358): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:15:02:873 clienteTest/(24358:24358): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:15:02:874 clienteTest/(24358:24358): Recibi el siguiente mensaje..
+[INFO] 18:15:03:063 clienteTest/(24358:24358): Proceso: IMS
+[INFO] 18:15:03:063 clienteTest/(24358:24358): Comando: 766
+[INFO] 18:15:03:063 clienteTest/(24358:24358): Tamanio: 45
+[INFO] 18:15:03:063 clienteTest/(24358:24358): (
+[INFO] 18:15:58:176 clienteTest/(24367:24367): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:15:58:177 clienteTest/(24367:24367): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:15:58:178 clienteTest/(24367:24367): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:15:58:179 clienteTest/(24367:24367): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:15:58:179 clienteTest/(24367:24367): Recibi el siguiente mensaje..
+[INFO] 18:15:58:405 clienteTest/(24367:24367): Proceso: IMS
+[INFO] 18:15:58:405 clienteTest/(24367:24367): Comando: 766
+[INFO] 18:15:58:405 clienteTest/(24367:24367): Tamanio: 86
+[INFO] 18:15:58:405 clienteTest/(24367:24367): Q
+[INFO] 18:16:46:460 clienteTest/(24379:24379): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:16:46:460 clienteTest/(24379:24379): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:16:46:461 clienteTest/(24379:24379): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:16:46:461 clienteTest/(24379:24379): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:16:46:461 clienteTest/(24379:24379): Recibi el siguiente mensaje..
+[INFO] 18:16:46:664 clienteTest/(24379:24379): Proceso: IMS
+[INFO] 18:16:46:664 clienteTest/(24379:24379): Comando: 766
+[INFO] 18:16:46:664 clienteTest/(24379:24379): Tamanio: 127
+[INFO] 18:16:46:664 clienteTest/(24379:24379): z
+[INFO] 18:20:49:611 clienteTest/(24402:24402): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:20:49:626 clienteTest/(24402:24402): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:20:49:627 clienteTest/(24402:24402): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:20:49:628 clienteTest/(24402:24402): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:20:49:628 clienteTest/(24402:24402): Recibi el siguiente mensaje..
+[INFO] 18:20:49:827 clienteTest/(24402:24402): Proceso: IMS
+[INFO] 18:20:49:827 clienteTest/(24402:24402): Comando: 766
+[INFO] 18:20:49:827 clienteTest/(24402:24402): Tamanio: 168
+[INFO] 18:20:49:827 clienteTest/(24402:24402): �
+[INFO] 18:21:41:542 clienteTest/(24452:24452): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:21:41:543 clienteTest/(24452:24452): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:21:41:544 clienteTest/(24452:24452): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:21:41:545 clienteTest/(24452:24452): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:21:41:545 clienteTest/(24452:24452): Recibi el siguiente mensaje..
+[INFO] 18:21:41:777 clienteTest/(24452:24452): Proceso: IMS
+[INFO] 18:21:41:777 clienteTest/(24452:24452): Comando: 766
+[INFO] 18:21:41:778 clienteTest/(24452:24452): Tamanio: 45
+[INFO] 18:21:41:778 clienteTest/(24452:24452): (
+[INFO] 18:27:44:465 clienteTest/(24476:24476): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:27:44:466 clienteTest/(24476:24476): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:27:44:467 clienteTest/(24476:24476): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:27:44:468 clienteTest/(24476:24476): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:27:44:468 clienteTest/(24476:24476): Recibi el siguiente mensaje..
+[INFO] 18:27:44:683 clienteTest/(24476:24476): Proceso: IMS
+[INFO] 18:27:44:686 clienteTest/(24476:24476): Comando: 766
+[INFO] 18:27:44:687 clienteTest/(24476:24476): Tamanio: 86
+[INFO] 18:27:44:687 clienteTest/(24476:24476): Q
+[INFO] 18:27:44:687 clienteTest/(24476:24476): Q
+[INFO] 18:31:56:139 clienteTest/(24497:24497): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 18:31:56:140 clienteTest/(24497:24497): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 18:31:56:141 clienteTest/(24497:24497): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:31:56:142 clienteTest/(24497:24497): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 18:31:56:142 clienteTest/(24497:24497): Recibi el siguiente mensaje..
+[INFO] 18:31:56:372 clienteTest/(24497:24497): Proceso: IMS
+[INFO] 18:31:56:372 clienteTest/(24497:24497): Comando: 766
+[INFO] 18:31:56:372 clienteTest/(24497:24497): Tamanio: 127
+[INFO] 18:31:56:373 clienteTest/(24497:24497): COMIENZA_EJECUCION_TAREA GENERAR_OXIGENO|COMIENZA_EJECUCION_TAREA GENERAR_OXIGENO|COMIENZA_EJECUCION_TAREA GENERAR_OXIGENO
+[INFO] 18:31:56:373 clienteTest/(24497:24497): z

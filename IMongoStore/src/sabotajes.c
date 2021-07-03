@@ -43,11 +43,11 @@ void validarCantidadBloques(){
     int archSB = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
     void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
     
-    unint32_t cantidadBloquesDisco;
+    uint32_t cantidadBloquesDisco;
     memcpy(&cantidadBloquesDisco, superBloqueTemp + sizeof(uint32_t), sizeof(uint32_t));
     munmap(superBloqueTemp,sizeof(uint32_t)*2);
 
-    if(cantidadBloques == cantidadDisco){
+    if(cantidadBloques == cantidadBloquesDisco){
         log_info(logger,"Cantidad de bloques... OK");
     }else{
         log_info(logger, "Cantidad de Bloques... NOT OK");

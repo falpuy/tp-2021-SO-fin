@@ -84,8 +84,10 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             memcpy(tempBitacora, bitacora, tamBitacora - 1);
             tempBitacora[tamBitacora-1] = '\0';
 
-            void* buffer = _serialize(sizeof(int)+ string_length(tempBitacora),"%s",tempBitacora);
-            _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, buffer,sizeof(int)+ string_length(tempBitacora), logger);
+            //Falta enviar que no existe bitacora
+
+            void* buffer = _serialize(sizeof(int)+ (tamBitacora),"%s",tempBitacora);
+            _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, buffer,sizeof(int)+ tamBitacora, logger);
 
             log_info(logger,"-----------------------------------------------------");
             free(buffer);

@@ -28,7 +28,6 @@
         RESPUESTA_OBTENER_BITACORA,
         ESPERANDO_SABOTAJE,
         COMIENZA_SABOTAJE,
-        ATIENDE_SABOTAJE,
         INVOCAR_FSK = 771
     };
 
@@ -36,7 +35,6 @@
         char* puntoMontaje;
         char* puerto;
         int tiempoSincronizacion;  
-        char** posicionesSabotaje; 
     }configIMS;
     configIMS* datosConfig;
 
@@ -46,9 +44,11 @@
     uint32_t cantidadBloques;
 
     int flagEnd;
-    int contadorListaSabotajes;
     int socketDiscordiador;
     int testeoIDTripulante;
+    int contadorListaSabotajes;
+
+    char** posicionesSabotajes;
 
     void* copiaBlocks;
     void* copiaSB;

@@ -24,26 +24,24 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             log_info(logger,"-----------------------------------------------------");
         break;
 
-        case ATIENDE_SABOTAJE:
+        case ATENDER_SABOTAJE:
             log_info(logger,"-----------------------------------------------------");
             log_info(logger, "Llego comando: Atiende sabotaje");
             
             memcpy(&idTripulante,payload,sizeof(int));
             log_info(logger, "ID Tripulante:%d", idTripulante);
-            log_info(logger,"-----------------------------------------------------");
-
-            //"Se corre en pánico hacia la ubicación del sabotaje
 
             strGuardar = string_new();
-            string_append(&strGuardar, "Se corre en pánico hacia la ubicación del sabotaje|");
-            
-            tripulante = crearStrTripulante(idTripulante);//Creo el path de tripulanteN.ims
+            string_append(&strGuardar, "Se corre en pánico hacia la Ubicación del Sabotaje|");
+
+            tripulante = crearStrTripulante(idTripulante);
 
             bitacora = string_new();
             string_append(&bitacora, "Bitacoras/");
             string_append(&bitacora,tripulante);
 
             path_fileTripulante = pathCompleto(bitacora);
+            free(tripulante);
             free(bitacora);
 
             pthread_mutex_lock(&blocks_bitmap);
@@ -180,22 +178,6 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             log_info(logger,"-----------------------------------------------------");
 
             break;
-
-        case ATENDER_SABOTAJE:  
-            log_info(logger,"-----------------------------------------------------");
-            log_info(logger, "Llego comando: Atender Sabotaje.....");
-
-            memcpy(&idTripulante,payload,sizeof(int));
-            log_info(logger, "ID Tripulante:%d", idTripulante);
-            log_info(logger,"-----------------------------------------------------");
-
-            pthread_mutex_lock(&blocks_bitmap);
-            // atenderSabotaje(idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
-
-
-            break;
-
         case RESUELTO_SABOTAJE:
             log_info(logger,"-----------------------------------------------------");
             log_info(logger, "Llego comando:Se resolvio Sabotaje.....");

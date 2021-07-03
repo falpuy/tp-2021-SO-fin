@@ -2,14 +2,17 @@
 
 
 void sabotaje(){
+    char* strPosiciones = string_new();
+    string_append(&strPosiciones, posicionesSabotajes[contadorListaSabotajes]);
+    char** posicion = string_split(strPosiciones,"|");
 
-    char* str = string_new();
-    //falta la posicion y sumar en 1 el contador para saber el prox a mandar
-    string_append(&str, "VACIO");
-    void* buffer = _serialize(sizeof(int)+ string_length(str) ,"%s",str);
-    _send_message(socketDiscordiador, "IMS",COMIENZA_SABOTAJE, buffer,sizeof(int) + string_length(str), logger);
+    void* buffer = _serialize(sizeof(int)*2,"%d%d",posicion[0],posicion[1]);
+    _send_message(socketDiscordiador,"IMS",COMIENZA_SABOTAJE,buffer,sizeof(int)*2,logger);
 
-    free(str);
+    free(strPosiciones);
+    free(posicion[0]);
+    free(posicion[1]);
+    free(posicion);
     free(buffer);
 }
 

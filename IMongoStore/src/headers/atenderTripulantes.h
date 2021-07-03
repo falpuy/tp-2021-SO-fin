@@ -14,8 +14,6 @@
     #include <commons/bitarray.h>
     #include "tareas.h"
 
-    
-
 
     void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
     

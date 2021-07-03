@@ -17,51 +17,57 @@ void sabotaje(){
 }
 
 void protocolo_fsck(){
-    log_info(logger,"-----------------------------------------------------");
-    log_info(logger, "Se comienza protocolo FSCK");
+    log_info(logger,"-------------------------------------------------");
+    log_info(logger, "Comenzando Protocolo:FSCK...");
 
     validacionSuperBloque();
     validacionFiles();
 
-    log_info(logger, "Finalizó protocolo FSCK");
-    log_info(logger,"-----------------------------------------------------");
+    log_info(logger, "Finalizando Protocolo:FSCK");
+    log_info(logger,"-------------------------------------------------");
 }
 
 void validacionSuperBloque(){
     
     log_info(logger,"-----------------------------------------------------");
     log_info(logger, "Validacion SuperBloque:Cantidad de Bloques");
+    validarCantidadBloques();
+    
+    log_info(logger,"-----------------------------------------------------");
+    log_info(logger, "Validacion SuperBloque: Bitmap");
+    validarBitmapSabotaje();
+    log_info(logger,"-----------------------------------------------------");
+}
+
+void validarCantidadBloques(){
     int archSB = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
     void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
     
-    int cantidadDisco;
-    memcpy(&cantidadDisco, superBloqueTemp + sizeof(uint32_t), sizeof(uint32_t));
+    unint32_t cantidadBloquesDisco;
+    memcpy(&cantidadBloquesDisco, superBloqueTemp + sizeof(uint32_t), sizeof(uint32_t));
     munmap(superBloqueTemp,sizeof(uint32_t)*2);
 
     if(cantidadBloques == cantidadDisco){
         log_info(logger,"Cantidad de bloques... OK");
     }else{
         log_info(logger, "Cantidad de Bloques... NOT OK");
-        log_info(logger,"Comienza Reparacion de SuperBloque");
+        log_info(logger,"Reparación: Se sobreescribe la cantidadBloques en sistema con la del disco");
 
-        void* sb_memoria = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
-        memcpy(sb_memoria + sizeof(uint32_t),&cantidadBloques,sizeof(uint32_t));
-        msync(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8,0);
-        munmap(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8);        
-        
-        log_info(logger, "Finalizó reparación de SuperBloque");
+        cantidadBloques = cantidadBloquesDisco;
+
+        log_info(logger, "Finalizó reparación de cantidadBloques");
     }
-    log_info(logger,"-----------------------------------------------------");
-    log_info(logger, "Validacion SuperBloque: Bitmap");
 
-    log_info(logger, "Comienzo validación de directorio: Bitacora");
+    close(archSB);
+}
 
-    superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
-    t_bitarray* bitmapFalso;
+void validarBitmapSabotaje(){
+    int archSB = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+    void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
     
     void* memoriaBitmap = malloc(cantidadBloques/8);
     memcpy(memoriaBitmap, superBloqueTemp + sizeof(uint32_t)*2, cantidadBloques/8);
-    bitmapFalso = bitarray_create_with_mode((char*)memoriaBitmap, cantidadBloques / 8, MSB_FIRST);  
+    t_bitarray* bitmapFalso = bitarray_create_with_mode((char*)memoriaBitmap, cantidadBloques / 8, MSB_FIRST);  
     
     log_info(logger, "Comienzo validación de Tripulantes..");
     validacionBitmapTripulantes(bitmapFalso);
@@ -69,7 +75,6 @@ void validacionSuperBloque(){
 
     log_info(logger, "Comienzo validación de directorio: Files");
 
-    //Faltan mutex?
     char* pathOxigeno =  pathCompleto("Files/Oxigeno.ims");
     validacionBitmapRecurso(pathOxigeno,bitmapFalso);
     free(pathOxigeno);
@@ -83,13 +88,10 @@ void validacionSuperBloque(){
     free(pathBasura);
 
 
-
     bitarray_destroy(bitmapFalso);
     free(memoriaBitmap);
     munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
     close(archSB);
-    log_info(logger,"-----------------------------------------------------");
-
 }
 
 
@@ -246,6 +248,7 @@ void validacionBitmapTripulantes(t_bitarray* bitmapFalso){
             if(!bitarray_test_bit(bitmapFalso,bloque)){
                 bitarray_set_bit(bitmapFalso,bloque);   
             };
+            bloquesHastaAhora++;
         }
 
         //Free de listaBloques
@@ -254,9 +257,9 @@ void validacionBitmapTripulantes(t_bitarray* bitmapFalso){
         }
         free(listaBloques);
         config_destroy(metadata);
-
         free(pathTripulante);
         testeoIDTripulante++;
+        free(tripulante);
         
         //Armo proximo path de tripulante
         tripulante = crearStrTripulante(testeoIDTripulante);

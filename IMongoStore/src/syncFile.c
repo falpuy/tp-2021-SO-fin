@@ -21,10 +21,10 @@ void actualizarArchivoBlocks(){
         log_info(logger, "Se actualizo Blocks.ims");
         
         int archSB = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
-        void* sb_memoria = mmap(NULL, sizeof(int)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
-        memcpy(sb_memoria,copiaSB,sizeof(int)*2 + cantidadBloques/8);
-        msync(sb_memoria,sizeof(int)*2 + cantidadBloques/8,0);
-        munmap(sb_memoria,sizeof(int)*2 + cantidadBloques/8);
+        void* sb_memoria = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
+        memcpy(sb_memoria,copiaSB,sizeof(uint32_t)*2 + cantidadBloques/8);
+        msync(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8,0);
+        munmap(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8);
         
         log_info(logger, "Se actualizo Bitmap en SuperBloque.ims");
 
@@ -33,6 +33,7 @@ void actualizarArchivoBlocks(){
         
         
         log_info(logger, "Muestro mis valores del bitmap despues sincronizar..");
+        printf("\t");
 
         for(int i=0; i<cantidadBloques; i++){
             printf("%d",bitarray_test_bit(bitmap,i));

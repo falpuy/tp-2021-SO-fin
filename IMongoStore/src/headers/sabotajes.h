@@ -68,6 +68,8 @@
     void sabotaje();
     void protocolo_fsck();
     void validacionSuperBloque();
+    void validarCantidadBloques();
+    void validarBitmapSabotaje();
     void validacionFiles();
     char* pathCompleto(char* strConcatenar);
     void validacionBitmapRecurso(char* pathRecurso,t_bitarray* bitmapFalso);

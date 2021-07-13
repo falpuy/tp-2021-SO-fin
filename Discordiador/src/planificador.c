@@ -41,6 +41,10 @@ void funcionhNewaReady (t_log* logger) {
 
     while (temp_validador) {
         sem_wait(&semNR);
+        if(sabotaje_activado){
+            log_info(logger,"Sabotaje en curso, nuevos tripulantes quedan en espera hasta que finalice");
+            while(sabotaje_activado){/*Queda esperando hasta que termine*/}
+        }
         log_info(logger, "[New a Rdy] Ejecutando..");
 
         if(planificacion_viva){
@@ -99,7 +103,8 @@ void funcionhReadyaExec (t_log* logger){
                 log_info(logger,"Tripulante encontrado. Moviendolo a Exec...");
                 log_info(logger,"TID:%d", aux_TCB->tid);
                 log_info(logger,"Status:%c",aux_TCB->status);
-                log_info(logger,"Instruccion Actual:%s", aux_TCB->instruccion_actual);
+                if(!sabotaje_activado)
+                    log_info(logger,"Instruccion Actual:%s", aux_TCB->instruccion_actual);
 
                 aux_TCB->status = 'E';
                 pthread_mutex_lock(&mutexExec);
@@ -111,7 +116,7 @@ void funcionhReadyaExec (t_log* logger){
 
             }
 
-            if (queue_is_empty(exec)) {
+            if (queue_is_empty(exec) && sabotaje_activado == 0) {
                 sem_post(&semBLOCKIO);
             } else {
                 log_info(logger, "Se comienza a iterar signals...");
@@ -179,6 +184,10 @@ void funcionhBloqIO (t_log* logger){
     
     while (temp_validador){
         sem_wait(&semBLOCKIO);
+        if(sabotaje_activado){
+            log_info(logger,"Sabotaje en curso, el bloqueo por I/O queda suspendido hasta su resolucion");
+            while(sabotaje_activado){/*Queda esperando hasta que termine*/}
+        }
         log_info(logger, "[bloqio] ejec..");
         if(planificacion_viva){
             log_info(logger,"----------------------------------");
@@ -261,8 +270,10 @@ void funcionCambioExecReady(void* nodo, int posicion){
         log_info(logger,"Tripulante encontrado. Moviendolo a Ready...");
         log_info(logger,"TID:%d", tcbAMover->tid);
         log_info(logger,"Status:%c",tcbAMover->status);
-        log_info(logger,"Instruccion Actual:%s", tcbAMover->instruccion_actual);
-        
+        if(!sabotaje_activado)
+            log_info(logger,"Instruccion Actual: %s", tcbAMover->instruccion_actual);
+        else
+            log_info(logger,"Instruccion Actual: ATENDIENDO SABOTAJE");
         pthread_mutex_lock(&mutexReady);
         queue_push(ready, (void*)tcbAMover);
         pthread_mutex_unlock(&mutexReady);
@@ -289,7 +300,10 @@ void funcionhExecaReady (t_log* logger) {
                 
                 list_iterate_position(exec->elements, funcionCambioExecReady);
                 log_info(logger, "[Exec a Rdy] ejecuto _SIGNAL desde semER..");
-                _signal(1, cantidadTCBEnExec, &semBLOCKIO);
+                if(!sabotaje_activado)
+                    _signal(1, cantidadTCBEnExec, &semBLOCKIO);
+                else
+                    sem_post(&semRE);
             }
 
             log_info(logger,"Se hizo una ejecución de CPU en Exec->Ready");

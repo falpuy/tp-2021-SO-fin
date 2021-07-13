@@ -31,8 +31,12 @@
         COMENZAR_EJECUCION_TAREA=762,
         FINALIZAR_EJECUCION_TAREA=763,
         RESPUESTA_OBTENER_BITACORA=766,
+        ESPERANDO_SABOTAJE=767,
+        COMIENZA_SABOTAJE=768,
+        ATIENDE_SABOTAJE=769,
         INICIO_DISCORDIADOR=770,
-        INVOCAR_FSCK=771
+        INVOCAR_FSCK=771,
+        RESOLUCION_SABOTAJE=772
     };
 
     //ESTRUCTURAS
@@ -93,7 +97,10 @@
     int planificacion_viva;
     int sabotaje_activado;
     int ciclos_transcurridos_sabotaje;
+    int ciclos_cumplidos_fixer_pre_sabotaje;
     int cantidadTCBEnExec;
+
+    tcb *tripulanteFixer;
 
     //------------------HILOS - MUTEX - SEMAFOROS------------------- 
 
@@ -128,7 +135,9 @@
     sem_t semEBIO;
     sem_t* semTripulantes;
     sem_t semERM;
+    sem_t semFMR;
     sem_t semMR;
+
 
     int cantidadActual;
     int cantidadVieja;

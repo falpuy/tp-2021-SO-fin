@@ -50,7 +50,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
   	
     free(tareas);
   	free(temp);
-    log_info(logger,"HOLIS");
     
   
   	// Copio la cantidad de tcbs
@@ -80,7 +79,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
       
         int tid = cantidadTCBTotales;
         cantidadTCBTotales++;
-        log_info(logger,"HOLIS");
       	
         tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, logger);
         list_add (nuevoPCB->listaTCB, (void*) nuevoTCB);
@@ -95,8 +93,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
         offset += sizeof(int);
         memcpy(buffer_a_enviar + offset, &nuevoTCB->posicionY, sizeof(int));
         offset += sizeof(int);  
-    log_info(logger,"HOLIS");
-
 
     }
     
@@ -352,15 +348,17 @@ int pedirProximaTarea(tcb* tcbTripulante){
     free(buffer);
 
     t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-
+    //25GENERAR_OXIGENO 10;4;4;15
     if (mensaje->command == SUCCESS) {
         log_info(logger, "entra al if en pedirproximatarea");
-        /*int tamanioTarea;
-        memcpy(&tamanioTarea, mensaje->payload, sizeof(int));*/
+        log_info(logger, "el tamanio de la tarea total es %d", mensaje->pay_len);
+        int tamanioTarea;
+        memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
+        log_info(logger, "el tamanio de la tarea es %d", tamanioTarea);
         free(tcbTripulante->instruccion_actual);
-        tcbTripulante->instruccion_actual = malloc(20 + 1);
-        memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), 20);
-        tcbTripulante->instruccion_actual[20] = '\0';
+        tcbTripulante->instruccion_actual = malloc(tamanioTarea+1);
+        memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
+        tcbTripulante->instruccion_actual[tamanioTarea] = '\0';
         log_info(logger, "la tarea es: %s", tcbTripulante->instruccion_actual);
         log_info(logger, "Tripulante: %d ya tiene una nueva tarea a realizar", tcbTripulante->tid);
         free(mensaje->payload);

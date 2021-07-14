@@ -60,6 +60,7 @@ void setearConfiguraciones (){
     pthread_mutex_init(&mutexExec, NULL);
     pthread_mutex_init(&mutexBloqIO, NULL);
     pthread_mutex_init(&mutexBloqEmer, NULL);
+    pthread_mutex_init(&mutexBloqEmerSorted, NULL);
     pthread_mutex_init(&mutexExit, NULL);
     pthread_mutex_init(&mutexValidador, NULL);
     pthread_mutex_init(&mutexListaPCB, NULL);
@@ -74,8 +75,6 @@ void setearConfiguraciones (){
     sem_init(&semERM, 0, 0);
     sem_init(&semMR, 0, 0);
     sem_init(&semFMR, 0, 0);
-    sem_init(&semFRE, 0, 0);
-    sem_init(&semFER, 0, 0);
     
     pthread_create(&hNewaReady, NULL, (void *) funcionhNewaReady, logger);
     pthread_create(&hReadyaExec, NULL, (void *) funcionhReadyaExec, logger);
@@ -84,8 +83,10 @@ void setearConfiguraciones (){
     pthread_create(&hExecaExit, NULL, (void *) funcionhExecaExit, logger);
     pthread_create(&hBloqIO, NULL, (void *) funcionhBloqIO, logger);
     pthread_create(&hExit, NULL, (void *) funcionhExit, logger);
-        // pthread_create(&hExecReadyaBloqEmer, NULL, (void *) funcionhExecReadyaBloqEmer, logger);
-        // pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
+
+    pthread_create(&hExecReadyaBloqEmer, NULL, (void *) funcionhExecReadyaBloqEmer, logger);
+    pthread_create(&hFixerdeEmeraReady, NULL, (void *) funcionhFixerdeEmeraReady, logger);
+    pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
 
    //pthread_detach(hNewaReady);
     //pthread_detach(hReadyaExec);
@@ -103,7 +104,7 @@ void setearConfiguraciones (){
     free(bufferAEnviar);
 }
 
-/*void servidor(parametrosServer* parametros){
+void servidor(parametrosServer* parametros){
     _start_server(parametros->puertoDiscordiador, handler, parametros->loggerDiscordiador);
-}*/
+}
 

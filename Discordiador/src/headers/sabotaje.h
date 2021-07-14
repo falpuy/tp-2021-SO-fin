@@ -30,10 +30,9 @@
         MOVER_TRIPULANTE=761,
         COMENZAR_EJECUCION_TAREA=762,
         FINALIZAR_EJECUCION_TAREA=763,
+        ATIENDE_SABOTAJE=764,
         RESPUESTA_OBTENER_BITACORA=766,
-        ESPERANDO_SABOTAJE=767,
         COMIENZA_SABOTAJE=768,
-        ATIENDE_SABOTAJE=769,
         INICIO_DISCORDIADOR=770,
         INVOCAR_FSCK=771,
         RESOLUCION_SABOTAJE=772
@@ -115,6 +114,7 @@
     pthread_t hEsperarSabotaje;
     pthread_t hExecReadyaBloqEmer;
     pthread_t hBloqEmeraReady;
+    pthread_t hFixerdeEmeraReady;
 
     pthread_mutex_t mutexNew;
     pthread_mutex_t mutexReady;
@@ -122,6 +122,7 @@
     pthread_mutex_t mutexBloqIO;
     pthread_mutex_t mutexBloqEmer;
     pthread_mutex_t mutexExit;
+    pthread_mutex_t mutexBloqEmerSorted;
     pthread_mutex_t mutexValidador;
     pthread_mutex_t mutexListaPCB;
     
@@ -165,6 +166,7 @@
     bool comparadorTid(void* tripulante1, void* tripulante2);
     
     void funcionhExecReadyaBloqEmer (t_log* logger);
+    void funcionhFixerdeEmeraReady(t_log* logger);
     void funcionhBloqEmeraReady (t_log* logger);
     
     bool ordenarMasCercano(void* tripulante1, void* tripulante2);

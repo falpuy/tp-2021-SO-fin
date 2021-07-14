@@ -37,17 +37,13 @@ void funcionhNewaReady (t_log* logger) {
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
 
-    log_info(logger, "[New a Rdy] esperando signal..");
+    log_info(logger, "[New a Ready] esperando signal...");
 
     while (temp_validador) {
         sem_wait(&semNR);
-        if(sabotaje_activado){
-            log_info(logger,"Sabotaje en curso, nuevos tripulantes quedan en espera hasta que finalice");
-            while(sabotaje_activado){/*Queda esperando hasta que termine*/}
-        }
-        log_info(logger, "[New a Rdy] Ejecutando..");
-
-        if(planificacion_viva){
+        
+        if(planificacion_viva && sabotaje_activado == 0){
+            log_info(logger, "[New a Ready] Ejecutando...");
             while(!queue_is_empty(cola_new)){   
                 
                 log_info(logger,"----------------------------------");
@@ -131,7 +127,7 @@ void funcionhReadyaExec (t_log* logger){
 }
 
 
-/*---------------------------------EXEC-> BLOCKED_IO---------------------*/
+/*---------------------------------EXEC -> BLOCKED_IO---------------------*/
 void funcionCambioExecIO(void* nodo, int posicion){
     tcb* aux = (tcb *) nodo;
     if(aux->status == 'I'){
@@ -140,9 +136,9 @@ void funcionCambioExecIO(void* nodo, int posicion){
         pthread_mutex_unlock(&mutexExec);
 
         log_info(logger,"Tripulante encontrado. Moviendolo a Blocked IO...");
-        log_info(logger,"TID:%d", tcbAMover->tid);
-        log_info(logger,"Status:%c",tcbAMover->status);
-        log_info(logger,"Instruccion Actual:%s", tcbAMover->instruccion_actual);
+        log_info(logger,"TID: %d", tcbAMover->tid);
+        log_info(logger,"Status: %c",tcbAMover->status);
+        log_info(logger,"Instruccion Actual: %s", tcbAMover->instruccion_actual);
         
         pthread_mutex_lock(&mutexBloqIO);
         queue_push(bloq_io, (void*)tcbAMover);
@@ -156,7 +152,7 @@ void funcionhExecaBloqIO (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
-    log_info(logger, "[Exec a Bloqio] esperando signal..");
+    log_info(logger, "[Exec a Bloqio] esperando signal...");
     while (temp_validador) {
         sem_wait(&semEBIO);
         log_info(logger,"----------------------------------");
@@ -164,7 +160,7 @@ void funcionhExecaBloqIO (t_log* logger){
         if(planificacion_viva) {
             if (!queue_is_empty(exec)){ 
                 list_iterate_position(exec->elements, funcionCambioExecIO);
-                log_info(logger, "[Exec a Bloqio] ejecuto _SIGNAL desde semEBIO..");
+                log_info(logger, "[Exec a Bloqio] ejecuto _SIGNAL desde semEBIO...");
                 _signal(1, cantidadTCBEnExec, &semBLOCKIO);
             }
             
@@ -184,12 +180,9 @@ void funcionhBloqIO (t_log* logger){
     
     while (temp_validador){
         sem_wait(&semBLOCKIO);
-        if(sabotaje_activado){
-            log_info(logger,"Sabotaje en curso, el bloqueo por I/O queda suspendido hasta su resolucion");
-            while(sabotaje_activado){/*Queda esperando hasta que termine*/}
-        }
-        log_info(logger, "[bloqio] ejec..");
-        if(planificacion_viva){
+        
+        if(planificacion_viva && sabotaje_activado == 0){
+            log_info(logger, "[bloqio] ejec..");
             log_info(logger,"----------------------------------");
             log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
             list_iterate_position(bloq_io->elements, funcionContadorEnBloqIO);

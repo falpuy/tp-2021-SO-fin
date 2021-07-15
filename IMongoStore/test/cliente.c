@@ -44,15 +44,15 @@ int main(){
     t_log* log = log_create("cliente.log","clienteTest", 1,  LOG_LEVEL_INFO);
     int socket = _connect("127.0.0.1", "5002", log);
 
-    char* tarea = string_new();
-    string_append(&tarea, "GENERAR_OXIGENO");
-    void* buffer = _serialize(sizeof(int)*3 + string_length(tarea),"%d%s%d",101,tarea,10);
-    _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer,sizeof(int)*3 + string_length(tarea), log);
+    // char* tarea = string_new();
+    // string_append(&tarea, "GENERAR_OXIGENO");
+    // void* buffer = _serialize(sizeof(int)*3 + string_length(tarea),"%d%s%d",101,tarea,10);
+    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer,sizeof(int)*3 + string_length(tarea), log);
 
-    char* tarea2 = string_new();
-    string_append(&tarea2, "GENERAR_OXIGENO");
-    void* buffer1 = _serialize(sizeof(int)*3 + string_length(tarea2),"%d%s%d",101,tarea2,10);
-    _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer1,sizeof(int)*3 + string_length(tarea2), log);
+    // char* tarea2 = string_new();
+    // string_append(&tarea2, "GENERAR_OXIGENO");
+    // void* buffer1 = _serialize(sizeof(int)*3 + string_length(tarea2),"%d%s%d",101,tarea2,10);
+    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer1,sizeof(int)*3 + string_length(tarea2), log);
 
 
     // void* buffer = _serialize(sizeof(int),"%d",101);

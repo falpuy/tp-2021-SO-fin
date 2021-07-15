@@ -1,7 +1,5 @@
 #include "./headers/guardarBlocks.h"
 
-
-//Falta agregar \0
 void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar){
     
     int cantidadBloquesUsados = 0;
@@ -207,9 +205,9 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
   	t_config* metadata = config_create(path);
   	int sizeAnterior = config_get_int_value(metadata, "SIZE");
   	char** listaBloques = config_get_array_value(metadata,"BLOCKS");
-    config_destroy(metadata);
   	int contador = 0;
   	int tamStrBorrar = string_length(stringABorrar);
+    config_destroy(metadata);
   
     while(listaBloques[contador]){ 
         contador++;
@@ -245,8 +243,6 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
             metadata = config_create(path);
             actualizarSize(metadata, tamStrBorrar, 0);     
             config_destroy(metadata);
-            // setearMD5(path);
-
             tamStrBorrar = 0;
       }
     } 
@@ -257,9 +253,6 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
         free(listaBloques[i]);
     }
     free(listaBloques);
-
-    config_destroy(metadata);
-
     
 }
 

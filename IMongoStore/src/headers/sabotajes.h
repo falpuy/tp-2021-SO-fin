@@ -9,6 +9,7 @@
     #include <commons/log.h>
     #include <stdint.h>
     #include <commons/bitarray.h>
+    #include <commons/string.h>
     #include <sys/stat.h>
     #include <fcntl.h>
     #include <string.h>
@@ -16,6 +17,7 @@
     #include <signal.h>
     #include <unnamed/serialization.h>
     #include <unnamed/socket.h>
+    #include <string.h>
     #include <commons/bitarray.h>
     
     enum COMANDOS{
@@ -47,6 +49,7 @@
     int socketDiscordiador;
     int testeoIDTripulante;
     int contadorListaSabotajes;
+    int contadorSabotajeLeido;
 
     char** posicionesSabotajes;
 
@@ -68,12 +71,22 @@
     void sabotaje();
     void protocolo_fsck();
     void validacionSuperBloque();
+    void validacionFiles();
     void validarCantidadBloques();
     void validarBitmapSabotaje();
-    void validacionFiles();
+    void corregirBitmap(int encontroVacio);
+    void corregirBitmapTripulantes(int encontroVacio);
+    void corregirBitmapRecursos(int encontroVacio);
+    void validarSizeFile();
+    void validarSizeRecurso(char* path);
+    void validarBlocksBlockCount();
+    void validarBlockCountRecurso(char* path);
+    void validacionBlocks();
+    void validarBlocksRecursos(char* path);
+
+
+
     char* pathCompleto(char* strConcatenar);
-    void validacionBitmapRecurso(char* pathRecurso,t_bitarray* bitmapFalso);
-    void validacionBitmapTripulantes(t_bitarray* bitmapFalso);
     char* crearStrTripulante(int idTripulante);
 
     

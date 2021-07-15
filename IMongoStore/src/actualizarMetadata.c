@@ -122,7 +122,7 @@ void setearMD5(char* pathMetadata){
 
     FILE* archivo2 = fopen("resultado.txt","r");
     fscanf(archivo2,"%s",md5);
-    md5[33] = '\0';
+    md5[32] = '\0';
     fclose(archivo2);
 
     int err = remove("temporal.txt");

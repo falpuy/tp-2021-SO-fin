@@ -1,8 +1,14 @@
 #include "headers/main.h"
+#include <commons/process.h>
 
 int main() {
     setearConfiguraciones();
     inicializacionFS(logger);
+    
+    unsigned int pid = process_getpid();
+    log_info(logger,"-----------------------------------------------------");
+    log_info(logger, "N° Proceso es:%d",pid);
+    log_info(logger,"-----------------------------------------------------");
 
     signal(SIGINT, finalizarProceso);
     signal(SIGUSR1, sabotaje);
@@ -22,6 +28,7 @@ void setearConfiguraciones(){
     socketDiscordiador = 0;
     testeoIDTripulante = 0;
     contadorListaSabotajes = 0;
+    contadorSabotajeLeido = 0;
 
     config = config_create(CONFIG_PATH);
     logger = log_create(LOG_PATH,"IMS",1,LOG_LEVEL_INFO);
@@ -31,6 +38,10 @@ void setearConfiguraciones(){
     datosConfig->puerto = config_get_string_value(config,"PUERTO");
     datosConfig->tiempoSincronizacion = config_get_int_value(config,"TIEMPO_SINCRONIZACION");
     posicionesSabotajes = config_get_array_value(config,"POSICIONES_SABOTAJE");
+
+    for(int i = 0; posicionesSabotajes[contadorListaSabotajes] != NULL; i++){
+        contadorListaSabotajes++;
+    }
 
     pthread_mutex_init(&blocks_bitmap, NULL); 
     pthread_mutex_init(&m_superBloque, NULL); 
@@ -49,10 +60,9 @@ void finalizarProceso(){
     flagEnd = 0;
     pthread_mutex_unlock(&validador);
     pthread_join(sync_blocks,NULL);
-
-    int contadorSabotajes = 0;
     int contador_temp = 0;
-    for(int i = 0; i < contadorSabotajes; i++){
+
+    for(int i = 0; i <= contadorListaSabotajes; i++){
         free(posicionesSabotajes[contador_temp]);
         contador_temp++;
     }
@@ -74,43 +84,3 @@ void finalizarProceso(){
 
     exit(EXIT_SUCCESS);
 }
-
-
-
-
-
-
-// void signal_handler(int sig_number) {
-
-//   switch(sig_number) {
-//     case SIGINT:
-//         pthread_mutex_lock(&validador);
-//         flagEnd = 0;
-//         pthread_mutex_unlock(&validador);
-        
-//         pthread_join(sync_blocks,NULL);
-        
-//         config_destroy(config);
-//         log_destroy(logger);
-
-//         free(copiaBlocks);
-//         free(copiaSB);
-//         bitarray_destroy(bitmap);
-//         free(memBitmap);
-//         free(datosConfig);
-
-//         pthread_mutex_destroy(&blocks_bitmap); 
-//         pthread_mutex_destroy(&m_superBloque); 
-//         pthread_mutex_destroy(&m_metadata);
-//         pthread_mutex_destroy(&discordiador);
-//         pthread_mutex_destroy(&validador);
-
-
-//         exit(EXIT_SUCCESS);
-//         break;
-//     case SIGUSR1:
-//         sabotaje();
-//         break;
-//     }
-
-// }

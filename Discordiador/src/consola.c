@@ -1,6 +1,5 @@
 #include "headers/consola.h"
 
-
 void funcionConsola(){
     char* leido;
     
@@ -101,25 +100,44 @@ void funcionConsola(){
                     if (planificacion_viva) {
                         loEncontro = 0;
                         tamanioBuffer = sizeof(int);
-                        buffer = malloc(tamanioBuffer);
 					 	int idTripulante = atoi(parametros[1]);
                         tcb* tcbTripulante = obtener_tcb_en_listaPCB(listaPCB);
                         buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante->pid, idTripulante);
-                        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
+                        //_send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
                         free(buffer);
-                      	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
+                      	//t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
                         
-                       	if(mensajeRecibido->command == SUCCESS) {
+                       	//if(mensajeRecibido->command == SUCCESS) {
                             log_info(logger, "Se expulsó correctamente el tripulante en memoria");
-                            expulsarNodo(cola_new, "New", mutexNew);
-                            expulsarNodo(ready, "Ready", mutexReady);
-                            expulsarNodo(ready, "Exec", mutexExec);
-                            expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
-                            expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
-                        }
-                        else {
-                            log_info(logger, "No se pudo expulsar el tripulante en memoria");
-                        }
+                            switch(tcbTripulante->status){
+                                case 'N':
+                                    log_info(logger, "Se expulsa al tripulante de la cola NEW");
+                                    expulsarNodo(cola_new, "New", mutexNew);
+                                    break;
+                                case 'R':
+                                    log_info(logger, "Se expulsa al tripulante de la cola READY");
+                                    expulsarNodo(ready, "Ready", mutexReady);
+                                    break;
+                                case 'E':
+                                    log_info(logger, "Se expulsa al tripulante de la cola EXEC");
+                                    expulsarNodo(exec, "Exec", mutexExec);
+                                    break;
+                                case 'I':
+                                    log_info(logger, "Se expulsa al tripulante de la cola BLOQ IO");
+                                    expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
+                                    break;
+                                case 'M':
+                                    log_info(logger, "Se expulsa al tripulante de la cola BLOQ EMERGENCIA");
+                                    expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
+                                    break;
+                                case 'X':
+                                    log_info(logger, "El tripulante ya se encuentra en la cola EXIT");
+                                    break;
+                            }   
+                        //}
+                        //else{
+                        //    log_info(logger, "No se pudo expulsar el tripulante en memoria");
+                        //}
                         free(mensajeRecibido->payload);
                 	    free(mensajeRecibido->identifier);
                 	    free(mensajeRecibido);
@@ -256,7 +274,8 @@ void mostrarListaTripulantes(void* elemento){
 
 bool buscarTripulante (void* elemento){
     tcb* tripulante = (tcb*) elemento;
-    return tripulante->tid == atoi(parametros[1]);
+    int idBuscado = atoi(parametros[1]);
+    return tripulante->tid == idBuscado;
 }
 
 void iterar_en_lista(t_list* self, void(*closure)(void*, t_list*, pthread_mutex_t, int), pthread_mutex_t mutexCola) {
@@ -285,20 +304,15 @@ void extraerTripulante (void* nodo, t_list* cola, pthread_mutex_t mutexCola, int
 }
 
 void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola){
-    if (!loEncontro){
-        tcb* tripulanteAExpulsar = malloc(sizeof(tcb));
-        tripulanteAExpulsar = list_find (cola->elements, buscarTripulante);
-      	if (tripulanteAExpulsar) {
-            log_info(logger, "Se encontró tripulante: %d a expulsar en la cola: %s", tripulanteAExpulsar->tid, nombre_cola);
-          	tripulanteAExpulsar->status = 'X';
-            iterar_en_lista(cola->elements, extraerTripulante, mutexCola);
-			log_info(logger, "Se movió tripulante: %d de la cola: %s a la cola: EXIT", tripulanteAExpulsar->tid, nombre_cola);
-            loEncontro=1;
-        }
-        else{
-            log_info(logger, "No se encontro el tripulante en la cola %s", nombre_cola);
-          	free(tripulanteAExpulsar);
-        }
+    tcb* tripulanteAExpulsar = malloc(sizeof(tcb));
+    tripulanteAExpulsar = list_find(cola->elements, buscarTripulante);
+    if (tripulanteAExpulsar!=NULL) {
+        tripulanteAExpulsar->status = 'X';
+        iterar_en_lista(cola->elements, extraerTripulante, mutexCola);
+    }
+    else{
+        log_info(logger, "No se encontro el tripulante en la cola %s", nombre_cola);
+        //free(tripulanteAExpulsar);
     }
 }
 

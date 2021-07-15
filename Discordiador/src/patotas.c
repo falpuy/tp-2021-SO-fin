@@ -50,7 +50,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
   	
     free(tareas);
   	free(temp);
-    log_info(logger,"HOLIS");
     
   
   	// Copio la cantidad de tcbs
@@ -80,7 +79,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
       
         int tid = cantidadTCBTotales;
         cantidadTCBTotales++;
-        log_info(logger,"HOLIS");
       	
         tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, logger);
         list_add (nuevoPCB->listaTCB, (void*) nuevoTCB);
@@ -95,8 +93,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
         offset += sizeof(int);
         memcpy(buffer_a_enviar + offset, &nuevoTCB->posicionY, sizeof(int));
         offset += sizeof(int);  
-    log_info(logger,"HOLIS");
-
 
     }
     
@@ -153,6 +149,10 @@ void funcionTripulante (void* item){
     int puedeEnviarSignal = 1;
     int auxX;
     int auxY;
+    int param;
+    int posicionX;
+    int posicionY;
+    int tiempoTarea;
     tcb *tcbTripulante;
 
     log_info(aux->logger,"----------------------------------");
@@ -168,9 +168,11 @@ void funcionTripulante (void* item){
         pthread_mutex_lock(&mutexExec);
         tcbTripulante = get_by_id(exec->elements, aux->idSemaforo);
         pthread_mutex_unlock(&mutexExec);
+        if(!sabotaje_activado)
+            log_info(aux->logger,"[Tripulante %d] DATOS TRIPULANTE: %d - %s", aux->idSemaforo, tcbTripulante -> tid, tcbTripulante -> instruccion_actual);
+        else
+            log_info(aux->logger,"[Tripulante %d] DATOS TRIPULANTE: %d - ATENDIENDO SABOTAJE", aux->idSemaforo, tcbTripulante -> tid);
 
-        log_info(aux->logger,"[Tripulante %d] DATOS TRIPULANTE: %d - %s", aux->idSemaforo, tcbTripulante -> tid, tcbTripulante -> instruccion_actual);
-        
         if(tcbTripulante->estaVivoElHilo){
             
             if(tcbTripulante->status == 'E' && planificacion_viva){
@@ -178,8 +180,15 @@ void funcionTripulante (void* item){
                 
                 //Spliteo la tarea
                 tarea = string_split(tcbTripulante->instruccion_actual, " ");
-                log_info(aux->logger, "el nombre de la tarea es %s", tarea[0]);
-                if (tarea[1]!=NULL){
+                if(!sabotaje_activado)
+                    log_info(aux->logger, "el nombre de la tarea es %s", tarea[0]);
+               
+                if(sabotaje_activado){
+                    log_info(aux->logger, "La posicion en x del sabotaje es: %d", posSabotajeX);
+                    log_info(aux->logger, "La posicion en y del sabotaje es: %d", posSabotajeY);
+                    log_info(aux->logger, "La duracion del sabotaje es: %d", duracion_sabotaje);
+                    llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX,tcbTripulante->posicionY,posSabotajeX,posSabotajeY);
+                }else if (tarea[1]!=NULL){
                     log_info(aux->logger, "Es tarea IO");
                     parametrosTarea = string_split(tarea[1], ";");
                 }else{
@@ -187,22 +196,24 @@ void funcionTripulante (void* item){
                     parametrosTarea = string_split(tarea[0], ";");
                     strcpy(parametrosTarea[0],"-1");
                 }
+                param = atoi(parametrosTarea[0]);
+                posicionX = atoi(parametrosTarea[1]);
+                posicionY = atoi(parametrosTarea[2]);
+                tiempoTarea = atoi(parametrosTarea[3]);
 
-                int param = atoi(parametrosTarea[0]);
-                log_info(aux->logger, "el parametro de la tarea es: %d", param);
-                int posicionX = atoi(parametrosTarea[1]);
-                log_info(aux->logger, "la posicion en x de la tarea es: %d", posicionX);
-                int posicionY = atoi(parametrosTarea[2]);
-                log_info(aux->logger, "la posicion en y de la tarea es: %d", posicionY);
-                int tiempoTarea = atoi(parametrosTarea[3]);
-                log_info(aux->logger, "el tiempo de la tarea es: %d", tiempoTarea);
+                if(!sabotaje_activado){
+                    log_info(aux->logger, "El parametro de la tarea es: %d", param);
+                    log_info(aux->logger, "La posicion en x de la tarea es: %d", posicionX);
+                    log_info(aux->logger, "La posicion en y de la tarea es: %d", posicionY);
+                    log_info(aux->logger, "El tiempo de la tarea es: %d", tiempoTarea);
+                    llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX,tcbTripulante->posicionY,posicionX,posicionY);
+                }
 
-                llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX,tcbTripulante->posicionY,posicionX,posicionY);
-                
                 if(llegoALaPosicion){
-                    log_info(aux->logger, "[Tripulante %d] El tripulante %d llegó a la posición, la tarea es %s, es tarea IO? %d", aux -> idSemaforo, tcbTripulante->tid, tarea[0], esTareaIO(tarea[0]));
+                    if(!sabotaje_activado)
+                        log_info(aux->logger, "[Tripulante %d] El tripulante %d llegó a la posición, la tarea es %s, es tarea IO? %d", aux -> idSemaforo, tcbTripulante->tid, tarea[0], esTareaIO(tarea[0]));
 
-                    if(mensajeInicialIMS == 0){//Manda mensaje a IMS de "Comienza Ejecucion Tarea"
+                    if(mensajeInicialIMS == 0 && sabotaje_activado == 0){//Manda mensaje a IMS de "Comienza Ejecucion Tarea"
                         log_info(aux->logger, "antes de mandar mensaje a IMS");
                         tamanioTarea = strlen(tarea[0]);
                         tamanioBuffer = sizeof(int)*6 + tamanioTarea;
@@ -212,8 +223,29 @@ void funcionTripulante (void* item){
                         mensajeInicialIMS = 1;
                         log_info(aux->logger, "despues de mandar mensaje a IMS");
                     }
-                    
-                    if(esTareaIO(tarea[0])){ //Si es de IO manda signal a hilo de Exec a Bloqueado
+
+                    if(sabotaje_activado){
+                        if(ciclos_transcurridos_sabotaje == 0){
+                            char* bufferAEnviar = string_new();
+                            string_append(&bufferAEnviar, "Se invoco FSCK");
+                            _send_message(conexion_IMS, "DIS", INVOCAR_FSCK, bufferAEnviar, strlen(bufferAEnviar), logger);
+                            free(bufferAEnviar);
+                        }
+                        if(ciclos_transcurridos_sabotaje == duracion_sabotaje){
+                            sem_post(&semERM);
+                        }
+                        else{
+                            tcbTripulante->ciclosCumplidos++;
+                            ciclos_transcurridos_sabotaje++;
+                            if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos == quantum_RR){
+                                tcbTripulante->ciclosCumplidos = 0;
+                                tcbTripulante->status='R';
+                            }
+                            sem_post(&semER);
+                        }
+                    }
+
+                    else if(esTareaIO(tarea[0])){ //Si es de IO manda signal a hilo de Exec a Bloqueado
                         log_info(aux->logger, "[Tripulante %d] Se debe realizar una tarea de I/O", aux -> idSemaforo);
                         sleep(1);
                         tcbTripulante->status = 'I';
@@ -256,8 +288,13 @@ void funcionTripulante (void* item){
 
                 }
                 else{
-                    log_info(aux->logger, "[Tripulante %d] Se comienza a mover el tripulante %d a la posicion %d - %d", aux -> idSemaforo, tcbTripulante -> tid, posicionX, posicionY);
-                    moverTripulanteUno(tcbTripulante, posicionX, posicionY);
+                    if(!sabotaje_activado){
+                        log_info(aux->logger, "[Tripulante %d] Se comienza a mover el tripulante %d a la posicion %d - %d", aux -> idSemaforo, tcbTripulante -> tid, posicionX, posicionY);
+                        moverTripulanteUno(tcbTripulante, posicionX, posicionY);
+                    }else{
+                        log_info(aux->logger, "[Tripulante %d] Se comienza a mover el tripulante %d a la posicion %d - %d", aux -> idSemaforo, tcbTripulante -> tid, posSabotajeX, posSabotajeY);
+                        moverTripulanteUno(tcbTripulante, posSabotajeX, posSabotajeY);
+                    }
                     log_info(aux->logger, "[Tripulante %d] se movio una posicion el tripulante", aux -> idSemaforo);
                     tcbTripulante->ciclosCumplidos++;
                     if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){
@@ -268,7 +305,10 @@ void funcionTripulante (void* item){
                     }
                     else if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR || !strcmp(algoritmo,"FIFO")){
                         log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
-                        _signal(1, cantidadTCBEnExec, &semBLOCKIO);
+                        if(!sabotaje_activado)
+                            _signal(1, cantidadTCBEnExec, &semBLOCKIO);
+                        else
+                            sem_post(&semER);
                     }
                     else
                         log_info(aux->logger,"No es un algoritmo válido");
@@ -308,15 +348,24 @@ int pedirProximaTarea(tcb* tcbTripulante){
     free(buffer);
 
     t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+    char* buffer_recibido;
+    int tamanioBufferR = mensaje->pay_len;
+    buffer_recibido= malloc(tamanioBufferR+1);
+    memcpy(buffer_recibido, mensaje->payload, tamanioBufferR);
+    buffer_recibido[tamanioBufferR]='\0';
+    log_info(logger, "Tamaño buffer recibido: %d", tamanioBufferR);
+    log_info(logger, "Buffer recibido: %s", buffer_recibido);
 
     if (mensaje->command == SUCCESS) {
         log_info(logger, "entra al if en pedirproximatarea");
-        /*int tamanioTarea;
-        memcpy(&tamanioTarea, mensaje->payload, sizeof(int));*/
+        log_info(logger, "el tamanio de la tarea total es %d", mensaje->pay_len);
+        int tamanioTarea;
+        memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
+        log_info(logger, "el tamanio de la tarea es %d", tamanioTarea);
         free(tcbTripulante->instruccion_actual);
-        tcbTripulante->instruccion_actual = malloc(20 + 1);
-        memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), 20);
-        tcbTripulante->instruccion_actual[20] = '\0';
+        tcbTripulante->instruccion_actual = malloc(tamanioTarea+1);
+        memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
+        tcbTripulante->instruccion_actual[tamanioTarea] = '\0';
         log_info(logger, "la tarea es: %s", tcbTripulante->instruccion_actual);
         log_info(logger, "Tripulante: %d ya tiene una nueva tarea a realizar", tcbTripulante->tid);
         free(mensaje->payload);

@@ -1,19 +1,14 @@
 #include"headers/sabotaje.h"
 
-/*void servidor(parametrosServer* parametros){
-    while(validador){
-        _start_server(parametros->puertoDiscordiador, handler, parametros->loggerDiscordiador);
-    }
-}*/
-
 void handler(int client, char* identificador, int comando, void* payload, t_log* logger){
     char* buffer;
     switch (comando) {
-        case 771: //SABOTAJE
+        case COMIENZA_SABOTAJE:
             sabotaje_activado=1;
             ciclos_transcurridos_sabotaje = 0;
             memcpy(&posSabotajeX, payload, sizeof(int));
             memcpy(&posSabotajeY, payload + sizeof(int), sizeof(int));
+            tripulanteFixer = malloc(sizeof(tcb));
             sem_post(&semERM);
         break;
     }
@@ -26,9 +21,23 @@ bool comparadorTid(void* tripulante1, void* tripulante2){
 }
 
 void funcionhExecReadyaBloqEmer (t_log* logger){
+    pthread_mutex_lock(&mutexValidador);
   	while(validador == 1){
+        pthread_mutex_unlock(&mutexValidador);
         while (planificacion_viva && sabotaje_activado == 1) {
             sem_wait(&semERM);
+            if(ciclos_transcurridos_sabotaje == duracion_sabotaje){
+                pthread_mutex_lock(&mutexExec);
+                tcb* aux_Fixer_Fin = queue_pop(exec);
+                pthread_mutex_unlock(&mutexExec);
+                aux_Fixer_Fin->status = 'M';
+                aux_Fixer_Fin->ciclosCumplidos = ciclos_cumplidos_fixer_pre_sabotaje;
+                pthread_mutex_lock(&mutexBloqEmer);
+                queue_push(bloq_emer,(void*) aux_Fixer_Fin);
+                pthread_mutex_unlock(&mutexBloqEmer);
+                sem_post(&semMR);
+            }
+            else{
             list_sort(exec->elements, comparadorTid);
             while (!queue_is_empty(exec))
             {
@@ -52,20 +61,36 @@ void funcionhExecReadyaBloqEmer (t_log* logger){
                 aux_TCB->status = 'M';
                 pthread_mutex_lock(&mutexBloqEmer);
                 queue_push(bloq_emer, (void*) aux_TCB);
-                list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
                 pthread_mutex_unlock(&mutexBloqEmer);
+                pthread_mutex_lock(&mutexBloqEmerSorted);
+                list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
+                pthread_mutex_unlock(&mutexBloqEmerSorted);
             }
-            tcb *tripulanteFixer = malloc(sizeof(tcb));
-            if(tripulanteFixer!=NULL){/*Como ya esta asignado el tripulante, no hace nada en esta parte*/}
-            else{
+
             tripulanteFixer = queue_pop(bloq_emer_sorted);
-            list_remove(bloq_emer->elements,tripulanteFixer->tid); //--->O tid+1??
+            if(tripulanteFixer->ciclosCumplidos != 0){ 
+                ciclos_cumplidos_fixer_pre_sabotaje = tripulanteFixer->ciclosCumplidos;
+                tripulanteFixer->ciclosCumplidos = 0;
+            }
+
+            list_remove(bloq_emer->elements,tripulanteFixer->tid);
+            pthread_mutex_lock(&mutexBloqEmer);
             queue_push(bloq_emer,(void*) tripulanteFixer);
+            pthread_mutex_lock(&mutexBloqEmer);
 
             while (!queue_is_empty(bloq_emer_sorted))  
                 queue_pop(bloq_emer_sorted);
+            
+            int tamanioBuffer = sizeof(int);
+            void* buffer = malloc(tamanioBuffer);
+			int idTripulante = tripulanteFixer->tid;
+            buffer = _serialize(tamanioBuffer, "%d", idTripulante);
+            _send_message(conexion_RAM, "DIS", ATIENDE_SABOTAJE, buffer, tamanioBuffer, logger);
+            free(buffer);
+
+            sem_post(&semFMR);
             }
-            sem_post(&semTripulantes[tripulanteFixer->tid]);
+
         }
     }
 }
@@ -85,32 +110,30 @@ bool ordenarMasCercano(void* tripulante1, void* tripulante2){
     return modulo1 < modulo2;
 }
 
-void funcionhAtenderSabotaje (t_log* logger){
+void funcionhFixerdeEmeraReady(t_log* logger){
+    pthread_mutex_lock(&mutexValidador);
     while(validador == 1){
+        pthread_mutex_unlock(&mutexValidador);
         while (planificacion_viva && sabotaje_activado == 1) {
-            sem_wait(&semTripulantes[queue_size(bloq_emer)]);
-            tcb *tripulanteFixer = malloc(sizeof(tcb));
-            tripulanteFixer = list_get(bloq_emer->elements,queue_size(bloq_emer));
+            sem_wait(&semFMR);
+            tcb* aux_Fixer = malloc(sizeof(tcb));
+            pthread_mutex_lock(&mutexBloqEmer);
+            aux_Fixer = list_remove(bloq_emer->elements,tripulanteFixer->tid);
+            pthread_mutex_unlock(&mutexBloqEmer);
+            aux_Fixer->status = 'R';
+            pthread_mutex_lock(&mutexReady);
+            queue_push(ready,(void*) aux_Fixer);
+            pthread_mutex_unlock(&mutexReady);
 
-            /*if (!llegoAPosicion((tripulanteFixer->posicionX,tripulanteFixer->posicionY,posSabotajeX,posSabotajeY))){
-                moverTripulanteUno(tripulanteFixer,posSabotajeX,posSabotajeY);
-                sem_post(&semERM);
-            }    
-            else if(ciclos_transcurridos_sabotaje<duracion_sabotaje){
-                //fsck(); --> Como un send o una funcion cualquiera??
-                ciclos_transcurridos_sabotaje++;
-                sem_post(&semERM);
-            }
-            else
-                sem_post(&semMR);*/
-
+            sem_post(&semRE);
         }
     }
 }
 
-
 void funcionhBloqEmeraReady (t_log* logger){
+    pthread_mutex_lock(&mutexValidador);
   	while(validador == 1){
+        pthread_mutex_unlock(&mutexValidador);
         while (planificacion_viva && sabotaje_activado == 1) {
             sem_wait(&semMR);
             while (!queue_is_empty(bloq_emer))
@@ -125,6 +148,10 @@ void funcionhBloqEmeraReady (t_log* logger){
                 pthread_mutex_unlock(&mutexReady);
             }
             sabotaje_activado = 0;
+            char* bufferAEnviar = string_new();
+            string_append(&bufferAEnviar, "Se resolvio el sabotaje");
+            _send_message(conexion_IMS, "DIS", RESOLUCION_SABOTAJE, bufferAEnviar, strlen(bufferAEnviar), logger);
+            free(bufferAEnviar);
             sem_post(&semNR);
         }
     }

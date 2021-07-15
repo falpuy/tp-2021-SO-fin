@@ -985,3 +985,14 @@
 [INFO] 18:16:03:214 TEST/(17388:17389): hola
 [INFO] 18:17:27:374 TEST/(17388:17389): El mensaje ingresado no corresponde a una acción propia del Discordiador
 [INFO] 18:19:07:759 TEST/(17412:17412): hola
+[ERROR] 23:51:00:346 test/(8408:8408): [Shared Library]: Error al obtener info de la conexion
+[INFO] 23:52:29:889 test/(8651:8651): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 23:52:29:889 test/(8651:8651): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 23:52:36:986 test/(8651:8651): [Shared Library]: Nueva conexion ID: 5
+[INFO] 23:52:37:015 test/(8651:8678): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 23:54:14:105 test/(8651:8678): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:17:44:808 test/(4545:4545): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:17:44:810 test/(4545:4545): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:18:20:382 test/(4545:4545): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:18:20:391 test/(4545:4635): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:36:51:995 test/(4545:4635): [Shared Library]: El cliente 5 se desconecto.

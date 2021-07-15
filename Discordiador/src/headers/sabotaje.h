@@ -30,9 +30,12 @@
         MOVER_TRIPULANTE=761,
         COMENZAR_EJECUCION_TAREA=762,
         FINALIZAR_EJECUCION_TAREA=763,
+        ATIENDE_SABOTAJE=764,
         RESPUESTA_OBTENER_BITACORA=766,
+        COMIENZA_SABOTAJE=768,
         INICIO_DISCORDIADOR=770,
-        INVOCAR_FSCK=771
+        INVOCAR_FSCK=771,
+        RESOLUCION_SABOTAJE=772
     };
 
     //ESTRUCTURAS
@@ -93,7 +96,10 @@
     int planificacion_viva;
     int sabotaje_activado;
     int ciclos_transcurridos_sabotaje;
+    int ciclos_cumplidos_fixer_pre_sabotaje;
     int cantidadTCBEnExec;
+
+    tcb *tripulanteFixer;
 
     //------------------HILOS - MUTEX - SEMAFOROS------------------- 
 
@@ -108,6 +114,7 @@
     pthread_t hEsperarSabotaje;
     pthread_t hExecReadyaBloqEmer;
     pthread_t hBloqEmeraReady;
+    pthread_t hFixerdeEmeraReady;
 
     pthread_mutex_t mutexNew;
     pthread_mutex_t mutexReady;
@@ -115,6 +122,7 @@
     pthread_mutex_t mutexBloqIO;
     pthread_mutex_t mutexBloqEmer;
     pthread_mutex_t mutexExit;
+    pthread_mutex_t mutexBloqEmerSorted;
     pthread_mutex_t mutexValidador;
     pthread_mutex_t mutexListaPCB;
     
@@ -128,7 +136,9 @@
     sem_t semEBIO;
     sem_t* semTripulantes;
     sem_t semERM;
+    sem_t semFMR;
     sem_t semMR;
+
 
     int cantidadActual;
     int cantidadVieja;
@@ -156,6 +166,7 @@
     bool comparadorTid(void* tripulante1, void* tripulante2);
     
     void funcionhExecReadyaBloqEmer (t_log* logger);
+    void funcionhFixerdeEmeraReady(t_log* logger);
     void funcionhBloqEmeraReady (t_log* logger);
     
     bool ordenarMasCercano(void* tripulante1, void* tripulante2);

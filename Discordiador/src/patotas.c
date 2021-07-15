@@ -348,7 +348,14 @@ int pedirProximaTarea(tcb* tcbTripulante){
     free(buffer);
 
     t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-    //25GENERAR_OXIGENO 10;4;4;15
+    char* buffer_recibido;
+    int tamanioBufferR = mensaje->pay_len;
+    buffer_recibido= malloc(tamanioBufferR+1);
+    memcpy(buffer_recibido, mensaje->payload, tamanioBufferR);
+    buffer_recibido[tamanioBufferR]='\0';
+    log_info(logger, "Tamaño buffer recibido: %d", tamanioBufferR);
+    log_info(logger, "Buffer recibido: %s", buffer_recibido);
+
     if (mensaje->command == SUCCESS) {
         log_info(logger, "entra al if en pedirproximatarea");
         log_info(logger, "el tamanio de la tarea total es %d", mensaje->pay_len);

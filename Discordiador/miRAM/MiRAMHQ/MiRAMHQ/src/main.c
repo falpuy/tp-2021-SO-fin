@@ -117,8 +117,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
     int idTCB;
     int posX;
     int posY;
-
+    int tarea = 1;
     int error;
+    int tamanioTarea;
+    char* buffer_a_enviar;
 
     char status;
   
@@ -384,7 +386,55 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
         break;
 
         case ENVIAR_TAREA://idpcb, idtcb
-						
+						log_info(logger,"-----------------------------------------------------");
+			      log_info(logger,"Llegó operación: ENVIAR_PROXIMA_TAREA");
+
+            //-----------------------Deserializacion---------------------
+            memcpy(&idPCB, buffer, sizeof(int));
+			      memcpy(&idTCB, buffer + sizeof(int), sizeof(int));
+
+            log_info(logger,"ID PCB: %d", idPCB);
+			      log_info(logger,"ID TCB: %d", idTCB);
+            //-----------------------------------------------------------
+
+			      respuesta = string_new();
+            string_append(&respuesta, "answer");
+    
+            if(tarea==0){
+				      log_info(logger, "No hay mas tareas que mandar");
+              _send_message(fd, "RAM", 560, respuesta, string_length(respuesta), logger);
+
+            }else{
+				      log_info(logger, "Hay más tareas para mandar");
+
+                //void* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea), "%s", tarea);
+                buffer_a_enviar = string_new();
+                char* cadena;
+                cadena = malloc(35);
+                strcpy(cadena, "26GENERAR_OXIGENO 10;4;4;15");
+                string_append(&buffer_a_enviar, cadena);
+
+                
+                memcpy(&tamanioTarea, buffer_a_enviar, sizeof(int));
+                log_info(logger, "el tamanio de la tarea es %d", tamanioTarea);
+                char* instruccion_actual = malloc(tamanioTarea+1);
+                memcpy(instruccion_actual, buffer_a_enviar + sizeof(int), tamanioTarea);
+                instruccion_actual[tamanioTarea] = '\0';
+                log_info(logger, "la tarea es: %s", instruccion_actual);
+
+                _send_message(fd, "RAM", 200, buffer_a_enviar, sizeof(int)+strlen(buffer_a_enviar), logger);
+              	
+              	free(buffer_a_enviar);
+                free(cadena);
+                free(instruccion_actual);
+
+            }
+			      free(respuesta);
+			      log_info(logger,"-----------------------------------------------------");
+
+            /*
+            LO QUE TENÍAN LOS CHICOS ANTES (mandaba uesta9):
+
             log_info(logger,"-----------------------------------------------------");
 						log_info(logger,"Llegó operación: ENVIAR_PROXIMA_TAREA");
 
@@ -404,7 +454,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
 
 						respuesta = string_new();
-            string_append(&respuesta, "Respuesta");
+            string_append(&respuesta, "hellodarknessmyoldfriend");
                 
             char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit);
                 
@@ -413,12 +463,21 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                 _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, respuesta, string_length(respuesta), logger);
 
             }else{
-								
+								log_info(logger, "Hay más tareas para mandar");
               	nuestroTCB->next += string_length(tarea);
 
                 save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
-              
-                char* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea), "%s",tarea);
+                //void* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea), "%s", tarea);
+                char* buffer_a_enviar = string_new();
+                string_append(&buffer_a_enviar, "se manda bien la tarea gracias universo");
+
+                int tamanioTarea;
+                memcpy(&tamanioTarea, buffer_a_enviar, sizeof(int));
+                log_info(logger, "el tamanio de la tarea es %d", tamanioTarea);
+                char* instruccion_actual = malloc(tamanioTarea+1);
+                memcpy(instruccion_actual, buffer_a_enviar + sizeof(int), tamanioTarea);
+                instruccion_actual[tamanioTarea] = '\0';
+                log_info(logger, "la tarea es: %s", instruccion_actual);
 
                 _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+string_length(tarea), logger);
               	
@@ -426,7 +485,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
             }
 						free(respuesta);
-						log_info(logger,"-----------------------------------------------------");
+						log_info(logger,"-----------------------------------------------------");*/
         break;
 
         case ELIMINAR_PATOTA:

@@ -11,6 +11,10 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
     char* str;
     char* buffer;
     void* buffercito;
+    int idPCB;
+    int idTCB;
+    int tarea = 1;
+    char *respuestaMala;
     switch (comando) {
         case 610:
             log_info(logger, "me llegó para iniciar_patota :)");
@@ -29,12 +33,56 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             free(buffer);
             break;
         case 520:
-            str = string_new();
+            
+            log_info(logger,"-----------------------------------------------------");
+			log_info(logger,"Llegó operación: ENVIAR_PROXIMA_TAREA");
+
+            //-----------------------Deserializacion---------------------
+            memcpy(&idPCB, payload, sizeof(int));
+			memcpy(&idTCB, payload + sizeof(int), sizeof(int));
+
+            log_info(logger,"ID PCB: %d", idPCB);
+			log_info(logger,"ID TCB: %d", idTCB);
+            //-----------------------------------------------------------
+
+			respuestaMala = string_new();
+            string_append(&respuestaMala, "answer");
+    
+                
+            if(tarea==0){
+				log_info(logger, "No hay mas tareas que mandar");
+                _send_message(client, "RAM", 560, respuestaMala, string_length(respuestaMala), logger);
+
+            }else{
+				log_info(logger, "Hay más tareas para mandar");
+
+                //void* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea), "%s", tarea);
+                char* buffer_a_enviar = string_new();
+                string_append(&buffer_a_enviar, "26GENERAR_OXIGENO 10;4;4;15");
+
+                int tamanioTarea;
+                memcpy(&tamanioTarea, buffer_a_enviar, sizeof(int));
+                log_info(logger, "el tamanio de la tarea es %d", tamanioTarea);
+                char* instruccion_actual = malloc(tamanioTarea+1);
+                memcpy(instruccion_actual, buffer_a_enviar + sizeof(int), tamanioTarea);
+                instruccion_actual[tamanioTarea] = '\0';
+                log_info(logger, "la tarea es: %s", instruccion_actual);
+
+                _send_message(client, "RAM", 200, buffer_a_enviar, sizeof(int)+string_length(instruccion_actual), logger);
+              	
+              	free(buffer_a_enviar);
+
+            }
+			free(respuestaMala);
+			log_info(logger,"-----------------------------------------------------");
+
+            /*str = string_new();
             string_append(&str, "CANTAR;1;2;3");
             buffercito = _serialize(sizeof(int)+string_length(str), "%s", str);
             _send_message(client, "RAM", 200, buffercito, string_length(str)+sizeof(int), logger);
             free(buffercito);
-            free(str);
+            free(str);*/
+
             break;
         case 521:
             str = string_new();

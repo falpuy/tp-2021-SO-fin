@@ -36,7 +36,9 @@ void setearConfiguraciones (){
     cantidadVieja = 0;
     cantidadActual = 0;
     contadorPCBs = 0;
+    contadorSemGlobal = 0;
     cantidadTCBTotales = 0;
+    
     validador = 1;
     planificacion_viva = 1;
     sabotaje_activado = 0;
@@ -53,6 +55,8 @@ void setearConfiguraciones (){
     pthread_mutex_init(&mutexExit, NULL);
     pthread_mutex_init(&mutexValidador, NULL);
     pthread_mutex_init(&mutexListaPCB, NULL);
+    pthread_mutex_init(&mutex_cantidadVieja,NULL);
+    pthread_mutex_init(&mutex_cantidadActual,NULL);
 
     sem_init(&semNR, 0, 0);
     sem_init(&semRE, 0, 0);

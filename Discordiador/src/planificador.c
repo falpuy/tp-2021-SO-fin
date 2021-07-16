@@ -33,19 +33,14 @@ void funcionPlanificador(t_log* logger) {
 /*---------------------------------NEW->READY--------------------------*/
 
 void funcionhNewaReady (t_log* logger) {
-    log_info(logger, "HOLA");
     pthread_mutex_lock(&mutexValidador);
-    log_info(logger,"Hola");
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
-
-    log_info(logger, "[New a Ready] esperando signal...");
 
     while (temp_validador) {
         sem_wait(&semNR);
         
         if(planificacion_viva && sabotaje_activado == 0){
-            log_info(logger, "[New a Ready] Ejecutando...");
             while(!queue_is_empty(cola_new)){   
                 
                 log_info(logger,"----------------------------------");
@@ -58,15 +53,13 @@ void funcionhNewaReady (t_log* logger) {
 
                 log_info(logger,"Tripulante encontrado. Moviendolo a Ready...");
                 log_info(logger,"TID:%d", aux_TCB->tid);
-                log_info(logger,"Status:%c",aux_TCB->status);
                 log_info(logger,"Instruccion Actual:%s", aux_TCB->instruccion_actual);
 
                 aux_TCB->status = 'R';
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready, (void*) aux_TCB);
                 pthread_mutex_unlock(&mutexReady);
-
-                log_info(logger, "Se paso nodo a Ready");
+                log_info(logger,"----------------------------------");
 
             }
 
@@ -84,10 +77,10 @@ void funcionhReadyaExec (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
-    log_info(logger, "[Rdy a Exec] esperando signal..");
+    
+
     while (temp_validador) {
         sem_wait(&semRE);
-        log_info(logger, "[Rdy a Exec] Ejecutando..");
         if(planificacion_viva) {
             while(!queue_is_empty(ready) && queue_size(exec) <= grado_multitarea){
                 log_info(logger,"----------------------------------");
@@ -100,7 +93,6 @@ void funcionhReadyaExec (t_log* logger){
 
                 log_info(logger,"Tripulante encontrado. Moviendolo a Exec...");
                 log_info(logger,"TID:%d", aux_TCB->tid);
-                log_info(logger,"Status:%c",aux_TCB->status);
                 if(!sabotaje_activado)
                     log_info(logger,"Instruccion Actual:%s", aux_TCB->instruccion_actual);
 
@@ -108,6 +100,10 @@ void funcionhReadyaExec (t_log* logger){
                 pthread_mutex_lock(&mutexExec);
                 queue_push(exec, (void*) aux_TCB);
                 pthread_mutex_unlock(&mutexExec);
+                
+                pthread_mutex_lock(&mutex_cantidadTCB);
+                cantidadTCBEnExec--;
+                pthread_mutex_unlock(&mutex_cantidadTCB);
 
                 log_info(logger, "Se paso Tripulante a Exec");
                 log_info(logger, "Hay %d nodos en Exec", queue_size(exec));
@@ -133,13 +129,13 @@ void funcionhReadyaExec (t_log* logger){
 void funcionCambioExecIO(void* nodo, int posicion){
     tcb* aux = (tcb *) nodo;
     if(aux->status == 'I'){
+        
         pthread_mutex_lock(&mutexExec);
   		tcb *tcbAMover = list_remove(exec->elements, posicion);
         pthread_mutex_unlock(&mutexExec);
 
-        log_info(logger,"Tripulante encontrado. Moviendolo a Blocked IO...");
+        log_info(logger,"[CambioExecIO] Tripulante encontrado. Moviendolo a Blocked IO...");
         log_info(logger,"TID: %d", tcbAMover->tid);
-        log_info(logger,"Status: %c",tcbAMover->status);
         log_info(logger,"Instruccion Actual: %s", tcbAMover->instruccion_actual);
         
         pthread_mutex_lock(&mutexBloqIO);
@@ -154,7 +150,7 @@ void funcionhExecaBloqIO (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
-    log_info(logger, "[Exec a Bloqio] esperando signal...");
+    
     while (temp_validador) {
         sem_wait(&semEBIO);
         log_info(logger,"----------------------------------");
@@ -162,7 +158,7 @@ void funcionhExecaBloqIO (t_log* logger){
         if(planificacion_viva) {
             if (!queue_is_empty(exec)){ 
                 list_iterate_position(exec->elements, funcionCambioExecIO);
-                log_info(logger, "[Exec a Bloqio] ejecuto _SIGNAL desde semEBIO...");
+                // log_info(logger, "[Exec a Bloqio] ejecuto _SIGNAL desde semEBIO...");
                 _signal(1, cantidadTCBEnExec, &semBLOCKIO);
             }
             
@@ -178,13 +174,11 @@ void funcionhBloqIO (t_log* logger){
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
 
-    log_info(logger, "[bloqio] esperando signal..");
     
     while (temp_validador){
         sem_wait(&semBLOCKIO);
         
         if(planificacion_viva && sabotaje_activado == 0){
-            log_info(logger, "[bloqio] ejec..");
             log_info(logger,"----------------------------------");
             log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
             list_iterate_position(bloq_io->elements, funcionContadorEnBloqIO);
@@ -204,7 +198,7 @@ void funcionContadorEnBloqIO(void* nodo, int posicion){
     char** tareaIO;
     char** parametrosTareaIO;
 
-    log_info(logger, "Iterando la funcion de contador en Cola BlockedIO...");
+    // log_info(logger, "Iterando la funcion de contador en Cola BlockedIO...");
 
     tareaIO = string_split(tcbTripulante->instruccion_actual, " ");
     parametrosTareaIO = string_split(tareaIO[1], ";");
@@ -212,6 +206,7 @@ void funcionContadorEnBloqIO(void* nodo, int posicion){
 
     if(tcbTripulante->tiempoEnBloqIO == tiempoAPasarEnBloqIO){
         
+        log_info(logger,"----------------------------------");
         log_info(logger, "Tripulante:%d pasó el tiempo en bloqueado IO", tcbTripulante->tid);
         pthread_mutex_lock(&mutexBloqIO);
         tcbTripulante = list_remove(bloq_io->elements, posicion);
@@ -225,7 +220,10 @@ void funcionContadorEnBloqIO(void* nodo, int posicion){
         _send_message(conexion_IMS, "IMS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
         free(buffer);
 
-        log_info(logger, "Se finalizo la tarea. Tripulante:%d pide la próxima tarea", tcbTripulante->tid);
+        log_info(logger,"----------------------------------");
+        log_info(logger, "[IMPORTANTE] Se finalizo la tarea. Tripulante:%d pide la próxima tarea", tcbTripulante->tid);
+        log_info(logger,"----------------------------------");
+
         pedirProximaTarea(tcbTripulante);
                 
         tcbTripulante->status = 'R';
@@ -233,13 +231,18 @@ void funcionContadorEnBloqIO(void* nodo, int posicion){
         queue_push(ready, (void*) tcbTripulante);
         pthread_mutex_unlock(&mutexReady);
         
+        log_info(logger,"----------------------------------");
         log_info(logger, "Se paso nodo tripulante:%d a Ready con nueva tarea", tcbTripulante->tid);
+        log_info(logger,"----------------------------------");
+
 
     }
     else{
+        log_info(logger,"----------------------------------");
         log_info(logger, "Tripulante:%d tiene que seguir en bloqueadoIO", tcbTripulante->tid);
         log_info(logger, "Va esperando:%d ciclos", tcbTripulante->tiempoEnBloqIO);
         log_info(logger, "Son en total: %d", tiempoAPasarEnBloqIO);
+        log_info(logger,"----------------------------------");
 
         tcbTripulante->tiempoEnBloqIO++;
     }
@@ -251,7 +254,6 @@ void funcionContadorEnBloqIO(void* nodo, int posicion){
     free(parametrosTareaIO[2]);
     free(parametrosTareaIO[3]);
     free(parametrosTareaIO);
-    log_info(logger,"----------------------------------");
 
 }
 /*---------------------------------EXEC->READY-----------------------------*/
@@ -264,7 +266,6 @@ void funcionCambioExecReady(void* nodo, int posicion){
 
         log_info(logger,"Tripulante encontrado. Moviendolo a Ready...");
         log_info(logger,"TID:%d", tcbAMover->tid);
-        log_info(logger,"Status:%c",tcbAMover->status);
         if(!sabotaje_activado)
             log_info(logger,"Instruccion Actual: %s", tcbAMover->instruccion_actual);
         else
@@ -280,12 +281,9 @@ void funcionhExecaReady (t_log* logger) {
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
 
-    log_info(logger, "[Exec a Rdy] esperando signal..");
 
     while (temp_validador) {
         sem_wait(&semER);
-        log_info(logger, "[Exec a Rdy] ejec..");
-
         if(planificacion_viva) {
             while (!queue_is_empty(exec))
             {   
@@ -316,15 +314,22 @@ void funcionCambioExecExit(void* nodo, int posicion){
   		tcb *tcbAMover = list_remove(exec->elements, posicion);
         pthread_mutex_unlock(&mutexExec);
 
-        log_info(logger,"Tripulante encontrado. Moviendolo a Ready...");
+        log_info(logger,"----------------------------------");
+
+        log_info(logger,"[CambioExecExit]Tripulante encontrado. Moviendolo a Exit...");
         log_info(logger,"TID:%d", tcbAMover->tid);
         log_info(logger,"Status:%c",tcbAMover->status);
         log_info(logger,"Instruccion Actual:%s", tcbAMover->instruccion_actual);
+        log_info(logger,"----------------------------------");
 
 
         pthread_mutex_lock(&mutexExit);
         queue_push(cola_exit, (void*)tcbAMover);
         pthread_mutex_unlock(&mutexExit);
+        
+        pthread_mutex_lock(&mutex_cantidadTCB);
+        cantidadTCBEnExec--;
+        pthread_mutex_unlock(&mutex_cantidadTCB);
     }
 }
 
@@ -332,11 +337,10 @@ void funcionhExecaExit (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
-    log_info(logger, "[Exec a Exit] esperando signal..");
+
     
     while (temp_validador) {
         sem_wait(&semEaX);
-        log_info(logger, "[Exec a Exit] ejec..");
 
         if (planificacion_viva) {
             while (!queue_is_empty(exec)){  
@@ -344,7 +348,7 @@ void funcionhExecaExit (t_log* logger){
                 log_info(logger, "Se ejecuta el hilo de Exec a Exit");
 
                 list_iterate_position(exec->elements, funcionCambioExecExit);
-                _signal(1, cantidadTCBEnExec, &semBLOCKIO);
+                _signal(1, cantidadTCBEnExec, &semEXIT);
             }
 
             log_info(logger,"Se hizo una ejecución de CPU en Exec->Exit");
@@ -357,12 +361,10 @@ void funcionhExit (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
-    log_info(logger, "[Exit] esperando signal..");
+
 
     while (temp_validador) {
         sem_wait(&semEXIT);
-        log_info(logger, "[Exit] ejec..");
-
         if(planificacion_viva) {
             while (!queue_is_empty(cola_exit)){  
                 log_info(logger,"----------------------------------");
@@ -373,11 +375,16 @@ void funcionhExit (t_log* logger){
                 pthread_mutex_unlock(&mutexExit);
                 
                 if(tcbAEliminar){
-                    log_info(logger,"Tripulante encontrado. Moviendolo a Ready...");
+                    log_info(logger,"Tripulante encontrado...");
                     log_info(logger,"TID:%d", tcbAEliminar->tid);
                     log_info(logger,"Status:%c",tcbAEliminar->status);
                     log_info(logger,"Instruccion Actual:%s", tcbAEliminar->instruccion_actual);
+                    
                     tcbAEliminar->estaVivoElHilo = 0;
+                    free(tcbAEliminar->instruccion_actual);
+                    free(tcbAEliminar);
+                    log_info(logger,"Se elimino Tripulante...");
+
                 }else{
                     log_info(logger, "No existe un tripulante a eliminar");
                 }

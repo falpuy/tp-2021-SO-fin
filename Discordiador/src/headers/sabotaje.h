@@ -19,13 +19,13 @@
 
     enum comandos {
         SUCCESS=200,
-        RECIBIR_UBICACION_TRIPULANTE=510,
+        RECIBIR_UBICACION_TRIPULANTE=502,
         ENVIAR_TAREA=520,
         EXPULSAR_TRIPULANTE=530,
         ERROR_CANTIDAD_TRIPULANTES=554,
         ERROR_POR_FALTA_DE_MEMORIA=555,
         ERROR_NO_HAY_TAREAS=560,
-        INICIAR_PATOTA=610,
+        INICIAR_PATOTA=500,
         ENVIAR_OBTENER_BITACORA=760,
         MOVER_TRIPULANTE=761,
         COMENZAR_EJECUCION_TAREA=762,
@@ -127,8 +127,10 @@
     pthread_mutex_t mutexBloqEmerSorted;
     pthread_mutex_t mutexValidador;
     pthread_mutex_t mutexListaPCB;
+    pthread_mutex_t mutex_cantidadTCB;
+    pthread_mutex_t mutex_cantidadVieja;
+    pthread_mutex_t mutex_cantidadActual;
     
-
     sem_t semNR;
     sem_t semRE;
     sem_t semER;
@@ -141,13 +143,11 @@
     sem_t semFMR;
     sem_t semMR;
 
-
-    int cantidadActual;
     int cantidadVieja;
+    int cantidadActual;
     int contadorSemGlobal;
+
     
-
-
     int contadorPCBs;
     int cantidadTCBTotales;
 

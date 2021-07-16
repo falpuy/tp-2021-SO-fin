@@ -19,7 +19,7 @@ void funcionConsola(){
                 	free(parametros[0]); 
                 	free(parametros);
                     
-                    //sem_post(&semNR); //Le avisa a New->Ready q es su turno
+                    sem_post(&semNR); //Le avisa a New->Ready q es su turno
                     break;
 
                 case C_PAUSAR_PLANIFICACION: 
@@ -35,31 +35,32 @@ void funcionConsola(){
                     log_info(logger, "Entró comando: INICIAR_PATOTA" );
                     pcb* nuevoPCB = crear_PCB (parametros, conexion_RAM, logger);
 
-                	// if (nuevoPCB) {
-                    // 	list_add (listaPCB, (void*) nuevoPCB);
+                    pthread_mutex_lock(&mutex_cantidadVieja);
+                	if (nuevoPCB) {
+                        if(cantidadVieja == 0){
+                            log_info(logger, "AHHHHHHHHHHHHHHHHHHHH%d",cantidadActual);
+                            semTripulantes = malloc(sizeof(sem_t)*cantidadActual); 
+                            hiloTripulante = malloc(sizeof(pthread_t) * cantidadActual); 
+                        }else{
+                            semTripulantes = realloc(semTripulantes,(sizeof(sem_t)) * cantidadActual);
+                            hiloTripulante = realloc(hiloTripulante , sizeof(pthread_t) * cantidadActual); 
+                        } 
 
-                    //     // if(cantidadVieja == 0){
-                    //     //     semTripulantes = malloc(sizeof(sem_t)*cantidadActual); 
-                    //     //     hiloTripulante = malloc(sizeof(pthread_t) * cantidadActual); 
-                    //     // }else{
-                    //     //     semTripulantes = realloc(semTripulantes,(sizeof(sem_t)) * cantidadActual);
-                    //     //     hiloTripulante = realloc(hiloTripulante , sizeof(pthread_t) * cantidadActual); 
-                    //     // } 
-
-                    //     // for(int i=cantidadVieja; i<cantidadActual; i++){
-                    //     //     sem_init(&semTripulantes[i], 0, 0);
-                    //     //     log_info(logger, "Inicializo Semaforo de TCB %d", i);
+                        for(int i=cantidadVieja; i<cantidadActual; i++){
+                            sem_init(&semTripulantes[i], 0, 0);
+                            log_info(logger, "Inicializo Semaforo de TCB %d", i);
                             
-                    //     // }
-                    //     create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
-                    //     cantidadVieja += cantidadActual;
-                    // } else {
-                    // 	log_error(logger, "No se pudo crear el PCB");
-                    //     cantidadActual-=atoi(parametros[1]);
-                    // }
-                		
+                        }
+            
+                        create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
+                        cantidadVieja += cantidadActual;
+                    } else {
+                    	log_error(logger, "No se pudo crear el PCB");
+                        cantidadActual-=atoi(parametros[1]);
+                    }
+
+                    pthread_mutex_unlock(&mutex_cantidadVieja);
                 	free(parametros[0]); //iniciarPatota
-                	// int cantidadTripulantes = atoi(parametros[1]);
                 	free(parametros[1]);//5 (en formato de char*)
                 	free(parametros[2]);//listaTareas
                 
@@ -77,7 +78,11 @@ void funcionConsola(){
                     hora_y_fecha_actual = temporal_get_string_time("%d/%m/%y %H:%M:%S");
                     
                     log_info(logger, "Estado de la Nave: %s", hora_y_fecha_actual);
+
+                    pthread_mutex_lock(&mutexListaPCB);
                     list_iterate(listaPCB, mostrarListaTripulantes);
+                    pthread_mutex_unlock(&mutexListaPCB);
+
                     log_info(logger, "--------------------------------------------------------------------");
                 	
                     free(hora_y_fecha_actual);
@@ -91,16 +96,17 @@ void funcionConsola(){
                     
                     // if (planificacion_viva) {
                     //     loEncontro = 0;
-                    //     tamanioBuffer = sizeof(int);
 					//  	int idTripulante = atoi(parametros[1]);
                     //     tcb* tcbTripulante = obtener_tcb_en_listaPCB(listaPCB);
-                    //     buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante->pid, idTripulante);
-                    //     //_send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
-                    //     free(buffer);
-                    //   	//t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
                         
-                    //    	//if(mensajeRecibido->command == SUCCESS) {
+                    //     buffer = _serialize(sizeof(int), "%d%d", tcbTripulante->pid, idTripulante);
+                    //     _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
+                    //     free(buffer);
+                    //   	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
+                        
+                    //    	if(mensajeRecibido->command == SUCCESS) {
                     //         log_info(logger, "Se expulsó correctamente el tripulante en memoria");
+                            
                     //         switch(tcbTripulante->status){
                     //             case 'N':
                     //                 log_info(logger, "Se expulsa al tripulante de la cola NEW");
@@ -124,20 +130,15 @@ void funcionConsola(){
                     //                 break;
                     //             case 'X':
                     //                 log_info(logger, "El tripulante ya se encuentra en la cola EXIT");
-                    //                 break;
-                    //         }   
-                    //     //}
-                        //else{
-                        //    log_info(logger, "No se pudo expulsar el tripulante en memoria");
-                        //}
-                    
-                    // else{
+                    //             break;
+                    //         }
+                    //     }else{
+                    //         log_info(logger, "No se pudo expulsar el tripulante en memoria");
+                    //     }
+                    // }else{
                     //     log_error(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
                     // }
 
-                    // free(mensajeRecibido->payload);
-                    // free(mensajeRecibido->identifier);
-                    // free(mensajeRecibido);
                     // free(parametros[0]);
                 	// free(parametros[1]);
                 	// free(parametros);
@@ -296,6 +297,7 @@ void extraerTripulante (void* nodo, t_list* cola, pthread_mutex_t mutexCola, int
 void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola){
     tcb* tripulanteAExpulsar = malloc(sizeof(tcb));
     tripulanteAExpulsar = list_find(cola->elements, buscarTripulante);
+
     if (tripulanteAExpulsar!=NULL) {
         tripulanteAExpulsar->status = 'X';
         iterar_en_lista(cola->elements, extraerTripulante, mutexCola);
@@ -331,11 +333,6 @@ void liberarMemoria(){
     queue_destroy_and_destroy_elements(cola_exit, destruirTCB);
     list_destroy_and_destroy_elements(listaPCB, destruirPCB);
 
-    //  for(int i = 0; i < cantidadTCBTotales; i++){
-    //     pthread_join(hiloTripulante[i],NULL);
-    // }
-
-  	
 	
   	pthread_mutex_destroy(&mutexNew);
   	pthread_mutex_destroy(&mutexReady);
@@ -344,6 +341,8 @@ void liberarMemoria(){
   	pthread_mutex_destroy(&mutexBloqEmer);
   	pthread_mutex_destroy(&mutexExit);
     pthread_mutex_destroy(&mutexListaPCB);
+    pthread_mutex_destroy(&mutex_cantidadVieja);
+    pthread_mutex_destroy(&mutex_cantidadActual);
     
     sem_destroy(&semNR);
     sem_destroy(&semRE);

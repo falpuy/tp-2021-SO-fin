@@ -477,7 +477,6 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     memset(tareas + limit_address, '\0', 1);
 
     printf("Lista: %s\n",(char*) tareas);
-
     int cantidadLetrasLeidas = 0;
     
     // TOMAR AIRE;2,2,THCONSUMIR OXIGENO P;3;3;THOLA
@@ -487,7 +486,7 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     int offset = 0;
     while (memcmp(tareas + offset, ";", 1) && tareas + offset != NULL && cantidadLetrasLeidas < limit_address ) {
         // printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
-        log_info(logger,"%d",(int) get_char_value(tareas,offset));
+        //log_info(logger,"%d",(int) get_char_value(tareas,offset));
         
         if(get_char_value(tareas,offset) != '\n'){
             cantidadLetrasLeidas++;
@@ -495,13 +494,21 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
 
         offset++;
     }
+    if(primeraVez=0 /*idea no implementada*/){
+        cantidadLetrasLeidas--;
+    }
+    
     log_info(logger, "Cantidad letras hasta primer ;%d",cantidadLetrasLeidas);
 
-    while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) &&tareas + cantidadLetrasLeidas != NULL && cantidadLetrasLeidas < limit_address){
+    while (!isalpha(get_char_value(tareas, offset)) &&tareas + offset != NULL && cantidadLetrasLeidas < limit_address){
         // printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
+        if(get_char_value(tareas,offset) != '\n'){
+            cantidadLetrasLeidas++;
+        }
 
-        cantidadLetrasLeidas++;
+        offset++;
     }
+    cantidadLetrasLeidas--;
     log_info(logger, "Cantidad letras despues de segundo while: %d",cantidadLetrasLeidas);
 
     void *recv_task = malloc(cantidadLetrasLeidas + 1);
@@ -509,7 +516,6 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     memset(recv_task + cantidadLetrasLeidas, '\0', 1);
 
     free(tareas);
-    
     
     return recv_task;
 }

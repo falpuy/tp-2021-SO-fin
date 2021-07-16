@@ -559,7 +559,7 @@ void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_lo
         memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
        
         aux->instruccion_actual = malloc(tamanioTarea + 1);
-        memcpy(aux->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
+        memmove(aux->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
         aux->instruccion_actual[tamanioTarea] = '\0';
        
         aux->estaVivoElHilo = 1;

@@ -38,7 +38,6 @@ void funcionConsola(){
                     pthread_mutex_lock(&mutex_cantidadVieja);
                 	if (nuevoPCB) {
                         if(cantidadVieja == 0){
-                            log_info(logger, "AHHHHHHHHHHHHHHHHHHHH%d",cantidadActual);
                             semTripulantes = malloc(sizeof(sem_t)*cantidadActual); 
                             hiloTripulante = malloc(sizeof(pthread_t) * cantidadActual); 
                         }else{

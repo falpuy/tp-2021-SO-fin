@@ -90,6 +90,7 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
     free(buffer_a_enviar);
 
+    log_info(logger, "..Esperando mensaje de respuesta de INICIAR_PATOTA de RAM");
   	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
 
   	if (mensaje->command == SUCCESS) {
@@ -335,40 +336,44 @@ int pedirProximaTarea(tcb* tcbTripulante){
     _send_message(conexion_RAM, "DIS",ENVIAR_TAREA, buffer, tamanioBuffer, logger);
     free(buffer);
 
-    t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-    char* buffer_recibido;
-    int tamanioBufferR = mensaje->pay_len;
-    
-    buffer_recibido= malloc(tamanioBufferR+1);
-    memcpy(buffer_recibido, mensaje->payload, tamanioBufferR);
-    buffer_recibido[tamanioBufferR]='\0';
-    log_info(logger, "Tamaño buffer recibido: %d", tamanioBufferR);
-    log_info(logger, "Buffer recibido: %s", buffer_recibido);
+    t_mensaje *mensajito = _receive_message(conexion_RAM, logger);
 
-    if (mensaje->command == SUCCESS) {
-        log_info(logger, "entra al if en pedirproximatarea");
-        log_info(logger, "el tamanio de la tarea total es %d", mensaje->pay_len);
-        int tamanioTarea;
+    if (mensajito->command == SUCCESS) {
+        log_info(logger, "SUCCESS: Pedirproximatarea");
         
-        memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
-        log_info(logger, "el tamanio de la tarea es %d", tamanioTarea);
+        // void* temporal = malloc(mensajito->pay_len + 1);
+        // memmove(temporal, mensajito->payload , mensajito->pay_len);
+         int tamanioTareaRecibida;
+
+        memcpy(&tamanioTareaRecibida, mensajito->payload, sizeof(int));
+        log_info(logger, "El tamaño de la tarea es: %d", tamanioTareaRecibida);
+
+        char* buffer_recibido = malloc(tamanioTareaRecibida + 1);
+        memmove(buffer_recibido,mensajito->payload + sizeof(int), tamanioTareaRecibida);
+        buffer_recibido[tamanioTareaRecibida]='\0';
+        
+        log_info(logger, "El tamanio de la tarea recibida es:%d", tamanioTareaRecibida);
+        log_info(logger, "Buffer recibido: %s", buffer_recibido);
+
+
         free(tcbTripulante->instruccion_actual);
-        tcbTripulante->instruccion_actual = malloc(tamanioTarea+1);
-        memcpy(tcbTripulante->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
-        tcbTripulante->instruccion_actual[tamanioTarea] = '\0';
-        log_info(logger, "la tarea es: %s", tcbTripulante->instruccion_actual);
-        log_info(logger, "Tripulante: %d ya tiene una nueva tarea a realizar", tcbTripulante->tid);
-        free(mensaje->payload);
-        free(mensaje->identifier);
-        free(mensaje);
+        
+        tcbTripulante->instruccion_actual = malloc(tamanioTareaRecibida+1);
+        memmove(tcbTripulante->instruccion_actual, mensajito->payload + sizeof(int), tamanioTareaRecibida);
+        tcbTripulante->instruccion_actual[tamanioTareaRecibida] = '\0';
+        
+        log_info(logger, "La tarea del tripulante %d ahora es: %s",tcbTripulante->tid, tcbTripulante->instruccion_actual);
+        free(mensajito->payload);
+        free(mensajito->identifier);
+        free(mensajito);
         return 1;
     }
-    else if (mensaje->command == ERROR_NO_HAY_TAREAS) {
+    else if (mensajito->command == ERROR_NO_HAY_TAREAS) {
         log_info(logger, "Tripulante: %d ya realizó todas las tareas", tcbTripulante->tid);
         tcbTripulante->status = 'X';
-        free(mensaje->payload);
-        free(mensaje->identifier);
-        free(mensaje);
+        free(mensajito->payload);
+        free(mensajito->identifier);
+        free(mensajito);
         sem_post(&semEaX);
     }
     return -1;
@@ -506,13 +511,12 @@ char *get_tareas(char *ruta_archivo, t_log* logger) {
     fclose(archivo);
 
     archivo = fopen(ruta_archivo,"r");
-    while ((read = getline(&line, &len, archivo)) != -1 && contador > 0) {
-
-        int posicionFinal;
+    while ((read = getline(&line, &len, archivo)) != -1) {
+        int posicionFinal = read;
         if(contador == 1){ //ULTIMA LINEA /UNICA LINEA
             posicionFinal = read;
         }else{
-            posicionFinal = read-2;
+            posicionFinal = read-1;
         }
         contador--;
         memset(line+posicionFinal,'\0',1);

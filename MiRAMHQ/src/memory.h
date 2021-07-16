@@ -125,7 +125,7 @@
 
     char get_char_value(void *buffer, int index);
 
-    void *get_next_task(void *memory, int start_address, int limit_address);
+    void *get_next_task(void *memory, int start_address, int limit_address,t_log* logger);
 
     int remove_segment_from_memory(void *admin, int mem_size, segment *segmento);
 

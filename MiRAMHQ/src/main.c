@@ -327,22 +327,22 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
             error = save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
 					
-            respuesta = string_new();
-            string_append(&respuesta, "Respuesta");
+            char* respuesta2 = string_new();
+            string_append(&respuesta2, "Respuesta");
             
             if(error == -1){
               	log_error(logger, "No se pudo guardar el TCB: %d", idTCB);
-                _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta, string_length(respuesta) , logger);
+                _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta2, string_length(respuesta2) , logger);
             }
             else{
-                _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
+                _send_message(fd, "RAM", SUCCESS , respuesta2, string_length(respuesta2), logger);
 								log_info(logger, "Se mando con éxito el estado del tripulante");
 
             }
 						
 						//TO DO: actualizar_mapa(nuestroTCB);
             log_info(logger,"-----------------------------------------------------");
-            free(respuesta);					
+            free(respuesta2);					
             free(nuestroTCB);
         break;
 
@@ -377,22 +377,22 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
             error = save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
 					
-            respuesta = string_new();
-            string_append(&respuesta, "Respuesta");
+            char* respuesta3 = string_new();
+            string_append(&respuesta3, "Respuesta");
             
             if(error == -1){
               	log_error(logger, "No se pudo guardar el TCB: %d", idTCB);
-                _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta, string_length(respuesta) , logger);
+                _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta3, string_length(respuesta3) , logger);
             }
             else{
-                _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
+                _send_message(fd, "RAM", SUCCESS , respuesta3, string_length(respuesta3), logger);
 								log_info(logger, "Se mando con éxito la ubicación del tripulante");
 
             }
 						
 						//TO DO: actualizar_mapa(nuestroTCB);
             log_info(logger,"-----------------------------------------------------");
-            free(respuesta);					
+            free(respuesta3);					
             free(nuestroTCB);
         break;
 
@@ -416,29 +416,30 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
             nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
 
-						respuesta = string_new();
-            string_append(&respuesta, "Respuesta");
-                
-            char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit);
-                
+            char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit,logger);
+            log_info(logger, "La tarea a enviar es:%s",tarea);
+            
             if(!tarea){
 								log_info(logger, "No hay mas tareas que mandar");
-                _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, respuesta, string_length(respuesta), logger);
-
+                char* temp = string_new();
+                string_append(&temp, "h");
+                
+                _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, temp, string_length(temp), logger);
             }else{
 								
               	nuestroTCB->next += string_length(tarea);
 
                 save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
-              
-                char* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea), "%s",tarea);
+                log_info(logger, "La tarea a enviar es:%s",tarea);
+                log_info(logger, "El tamaño de tarea a enviar es:%d",string_length(tarea));
+
+                char* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea),"%s",tarea);
 
                 _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+string_length(tarea), logger);
               	
               	free(buffer_a_enviar);
 
             }
-						free(respuesta);
 						log_info(logger,"-----------------------------------------------------");
         break;
 
@@ -469,10 +470,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
               
             //----------------------------------------------------
 
-            respuesta = string_new();
-            string_append(&respuesta, "Respuesta");
-            _send_message(fd, "RAM", SUCCESS,respuesta,string_length(respuesta),logger);
-            free(respuesta);
+            char* respuesta4 = string_new();
+            string_append(&respuesta4, "Respuesta");
+            _send_message(fd, "RAM", SUCCESS,respuesta4,string_length(respuesta4),logger);
+            free(respuesta4);
 
             log_info(logger,"-----------------------------------------------------");
 
@@ -511,10 +512,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
             //eliminar_tripulante_mapa();
 
-              respuesta = string_new();
-              string_append(&respuesta, "Respuesta");
-              _send_message(fd, "RAM", SUCCESS,respuesta,string_length(respuesta),logger);
-              free(respuesta);
+              char* respuesta5 = string_new();
+              string_append(&respuesta5, "Respuesta");
+              _send_message(fd, "RAM", SUCCESS,respuesta5,string_length(respuesta5),logger);
+              free(respuesta5);
               log_info(logger,"-----------------------------------------------------");
 
             }

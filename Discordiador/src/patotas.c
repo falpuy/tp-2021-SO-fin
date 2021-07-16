@@ -21,103 +21,106 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     contadorPCBs++;
   
     pcb* nuevoPCB = malloc(sizeof(pcb));
-    nuevoPCB->pid = contadorPCBs;
-
-    nuevoPCB->listaTCB = list_create();
     
-  	nuevoPCB->rutaTareas = malloc (strlen(parametros[2]) + 1);
+    nuevoPCB->pid = contadorPCBs;
+  	nuevoPCB->rutaTareas = malloc(strlen(parametros[2]) + 1);
     strcpy(nuevoPCB->rutaTareas, parametros[2]);
     nuevoPCB->rutaTareas[strlen(parametros[2])]='\0';
-  	// cargo lista de tareas
+    nuevoPCB->listaTCB = list_create();
+      
   	char *tareas = get_tareas(nuevoPCB->rutaTareas, logger);
-    log_info(logger,"Tareas: %s", tareas);
 		
-  	// buffer->[idpcb, largo_tareas, lista_tareas, cant_tripulantes, n_tcbs....]
-  	int tamanioBuffer = sizeof(int) * 3 + strlen(tareas) + cant_tripulantes * (sizeof(int)*4 + sizeof(char));
-
-  	void *buffer_a_enviar = malloc(tamanioBuffer);	
+  	// buffer->[idpcb, largo_tareas, lista_tareas, cant_tripulantes, n_tcbs ()....]
+  	// int tamanioBuffer = sizeof(int) * 3 + strlen(tareas) + cant_tripulantes * (sizeof(int)*4 + sizeof(char));
+  	// void *buffer_a_enviar = malloc(tamanioBuffer);	
   
-  	// copio id pcb
-  	memcpy(buffer_a_enviar, &nuevoPCB->pid, sizeof(int));
-  	offset += sizeof(int);
+  	// memcpy(buffer_a_enviar, &nuevoPCB->pid, sizeof(int));
+    // offset += sizeof(int);
 
-  	// copio la lista de tareas serializadas
-  	void *temp = _serialize(sizeof(int) + strlen(tareas), "%s", tareas);
+    // char** tareasParseadas = string_split(tareas,"\n");
+    // char* temporal = string_new();
+    
+    // for(int i=0; tareasParseadas[i]!=NULL; i++){
+    //     string_append(&temporal,tareasParseadas[i]);
+    // }
+    log_info(logger,"%s",tareas);
+
+  	// void *temp = _serialize(sizeof(int) + strlen(tareas), "%s", tareas);
   
-  	memcpy(buffer_a_enviar + offset, temp, sizeof(int) + strlen(tareas));
-  	offset += sizeof(int) + strlen(tareas);
+  	// memcpy(buffer_a_enviar + offset, temp, sizeof(int) + strlen(tareas));
+  	// offset += sizeof(int) + strlen(tareas);
 
   	
-    free(tareas);
-  	free(temp);
+    // free(tareas);
+  	// free(temp);
     
   
-  	// Copio la cantidad de tcbs
-  	memcpy(buffer_a_enviar + offset, &cant_tripulantes, sizeof(int));
-  	offset += sizeof(int);
+  	// // Copio la cantidad de tcbs
+  	// memcpy(buffer_a_enviar + offset, &cant_tripulantes, sizeof(int));
+  	// offset += sizeof(int);
     
-  	int posX;
-    int posY;
-    bool hayParametros = true;
-    for(int i = 1; i<=cant_tripulantes; i++){
-        if (hayParametros) {
-            if (parametros[2+i] == NULL) {
-                hayParametros = false;
-                posX = 0;
-                posY = 0;
-            }else {
-                char** posicion = string_split(parametros[2+i], "|");
-                posX = atoi(posicion[0]);
-                posY = atoi(posicion[1]);
+  	// int posX;
+    // int posY;
+    // bool hayParametros = true;
+    // for(int i = 1; i<=cant_tripulantes; i++){
+    //     if (hayParametros) {
+    //         if (parametros[2+i] == NULL) {
+    //             hayParametros = false;
+    //             posX = 0;
+    //             posY = 0;
+    //         }else {
+    //             char** posicion = string_split(parametros[2+i], "|");
+    //             posX = atoi(posicion[0]);
+    //             posY = atoi(posicion[1]);
 
-                for(int j = 0; posicion[j] != NULL; j++){
-                    free(posicion[j]);
-                }
-                free(posicion);
-            }
-        }
+    //             for(int j = 0; posicion[j] != NULL; j++){
+    //                 free(posicion[j]);
+    //             }
+    //             free(posicion);
+    //         }
+    //     }
       
-        int tid = cantidadTCBTotales;
-        cantidadTCBTotales++;
+    //     int tid = cantidadTCBTotales;
+    //     cantidadTCBTotales++;
       	
-        tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, logger);
-        list_add (nuevoPCB->listaTCB, (void*) nuevoTCB);
+    //     tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, logger);
+    //     list_add (nuevoPCB->listaTCB, (void*) nuevoTCB);
         
-      	memcpy(buffer_a_enviar + offset, &nuevoTCB->tid, sizeof(int));
-        offset += sizeof(int);
-        memcpy(buffer_a_enviar + offset, &nuevoTCB->pid, sizeof(int));
-        offset += sizeof(int);
-        memcpy(buffer_a_enviar + offset, &nuevoTCB->status, sizeof(char));
-        offset += sizeof(char);
-        memcpy(buffer_a_enviar + offset, &nuevoTCB->posicionX, sizeof(int));
-        offset += sizeof(int);
-        memcpy(buffer_a_enviar + offset, &nuevoTCB->posicionY, sizeof(int));
-        offset += sizeof(int);  
+    //   	memcpy(buffer_a_enviar + offset, &nuevoTCB->tid, sizeof(int));
+    //     offset += sizeof(int);
+    //     memcpy(buffer_a_enviar + offset, &nuevoTCB->pid, sizeof(int));
+    //     offset += sizeof(int);
+    //     memcpy(buffer_a_enviar + offset, &nuevoTCB->status, sizeof(char));
+    //     offset += sizeof(char);
+    //     memcpy(buffer_a_enviar + offset, &nuevoTCB->posicionX, sizeof(int));
+    //     offset += sizeof(int);
+    //     memcpy(buffer_a_enviar + offset, &nuevoTCB->posicionY, sizeof(int));
+    //     offset += sizeof(int);  
 
-    }
+    // }
     
-    cantidadActual += cant_tripulantes;
+    // cantidadActual += cant_tripulantes;
 
-    _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
+    // _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
     
-  	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+  	// t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
 
-  	if (mensaje->command == SUCCESS) {
-        free(buffer_a_enviar);
-        free(mensaje->payload);
-        free(mensaje->identifier);
-        free(mensaje);
+  	// if (mensaje->command == SUCCESS) {
+    //     free(buffer_a_enviar);
+    //     free(mensaje->payload);
+    //     free(mensaje->identifier);
+    //     free(mensaje);
 
-        log_info(logger,"Memoria OK");
-        return nuevoPCB;
-    }
+    //     log_info(logger,"Memoria OK");
+    //     return nuevoPCB;
+    // }
 
-    free(buffer_a_enviar);
-    free(mensaje->payload);
-    free(mensaje->identifier);
-    free(mensaje);
+    // free(buffer_a_enviar);
+    // free(mensaje->payload);
+    // free(mensaje->identifier);
+    // free(mensaje);
   
-  	return NULL;
+  	return nuevoPCB;
 }
 
 void destruirTCB(void* nodo){
@@ -143,12 +146,12 @@ void funcionTripulante (void* item){
     char** parametrosTarea;
     char** tarea;
     int mensajeInicialIMS=0;
-    int cantidadTripulantesEnExec;
+    // int cantidadTripulantesEnExec;
     bool llegoALaPosicion = false;
-    bool esTareaNormal = false;
+    // bool esTareaNormal = false;
     int puedeEnviarSignal = 1;
-    int auxX;
-    int auxY;
+    // int auxX;
+    // int auxY;
     int param;
     int posicionX;
     int posicionY;
@@ -303,7 +306,7 @@ void funcionTripulante (void* item){
                         log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semER con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
                         sem_post(&semER);
                     }
-                    else if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR || !strcmp(algoritmo,"FIFO")){
+                    else if((!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR )|| !strcmp(algoritmo,"FIFO")){
                         log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
                         if(!sabotaje_activado)
                             _signal(1, cantidadTCBEnExec, &semBLOCKIO);
@@ -498,36 +501,45 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
     log_info(logger, "Posicion Y Actual %d", tcbTrip->posicionY);
 }
 
-
 char *get_tareas(char *ruta_archivo, t_log* logger) {
-    FILE * fp;
+    FILE* archivo;
+    // FILE* archivo2;
+    char* stringTemporal = string_new();
     char * line = NULL;
     size_t len = 0;
     ssize_t read;
+    int contador = 0;
 
-    int b_size = 0;
-    int offset = 0;
+    archivo = fopen(ruta_archivo,"r");
 
-    char *temp_string = string_new();
-
-    fp = fopen(ruta_archivo, "r");
-
-    if (fp == NULL){
-        exit(EXIT_FAILURE);
+    while ((read = getline(&line, &len, archivo)) != -1) {
+        contador++;
     }
-    while ((read = getline(&line, &len, fp)) != -1) {
-        if (line[ read - 1 ] == '\n') {
-            read--;
-            memset(line + read, 0, 1);
+    log_info(logger,"%d",contador);
+    fclose(archivo);
+
+    archivo = fopen(ruta_archivo,"r");
+    while ((read = getline(&line, &len, archivo)) != -1 && contador > 0) {
+
+        int posicionFinal;
+        if(contador == 1){ //ULTIMA LINEA /UNICA LINEA
+            posicionFinal = read;
+        }else{
+            posicionFinal = read-2;
         }
-        string_append(&temp_string, line);
+        contador--;
+        memset(line+posicionFinal,'\0',1);
+        string_append(&stringTemporal, line);
     }
-
-    fclose(fp);
+    fclose(archivo);
     if (line)
         free(line);
-    return temp_string;
+
+    log_info(logger, "Las tareas a mandar son:%s", stringTemporal);
+    return stringTemporal;
+
 }
+
 
 void create_tcb_by_list(t_list* self, void(*closure)(void*, int, int, t_log*), int conexion_RAM, int cantidad_inicial, t_log *logger) {
     int indice_tcb_temporal = cantidad_inicial;
@@ -580,7 +592,6 @@ void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_lo
 }
 
 void * get_by_id(t_list * self, int id) {
-    tcb *nodo;
     t_link_element *element = self->head;
 	t_link_element *aux = NULL;
 	while (element != NULL) {

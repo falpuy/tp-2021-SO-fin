@@ -100,6 +100,8 @@
     int cantidadTCBEnExec;
 
     tcb *tripulanteFixer;
+    
+    char** parametros;
 
     //------------------HILOS - MUTEX - SEMAFOROS------------------- 
 
@@ -144,7 +146,7 @@
     int cantidadVieja;
     int contadorSemGlobal;
     
-    char** parametros;
+
 
     int contadorPCBs;
     int cantidadTCBTotales;

@@ -33,7 +33,9 @@ void funcionPlanificador(t_log* logger) {
 /*---------------------------------NEW->READY--------------------------*/
 
 void funcionhNewaReady (t_log* logger) {
+    log_info(logger, "HOLA");
     pthread_mutex_lock(&mutexValidador);
+    log_info(logger,"Hola");
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
 

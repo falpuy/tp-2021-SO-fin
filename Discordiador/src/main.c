@@ -2,25 +2,14 @@
 
 int main () {
     setearConfiguraciones();
-    
+    signal(SIGINT,liberarMemoria);
     funcionPlanificador(logger);
-
-    //Declaro el struct de los parametros para handler.
-    // parametrosServer* parametros = malloc(sizeof(parametrosServer)); --> buscar como liberar esta mem
-    // parametros->puertoDiscordiador = string_new();
-    // string_append(&parametros->puertoDiscordiador,puerto_DIS);
-    // parametros->loggerDiscordiador = logger;
-
-
     // pthread_create(&hEsperarSabotaje, NULL,(void*) servidor, parametros);
     // pthread_detach(hEsperarSabotaje);
     //
 
     funcionConsola();
 
-    // while(1){
-    //     sleep(5);
-    // }
     return 0;
 }
 
@@ -88,20 +77,21 @@ void setearConfiguraciones (){
     pthread_create(&hFixerdeEmeraReady, NULL, (void *) funcionhFixerdeEmeraReady, logger);
     pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
 
-   //pthread_detach(hNewaReady);
-    //pthread_detach(hReadyaExec);
-    //pthread_detach(hExecaReady);
-    //pthread_detach(hExecaBloqIO);
-    //pthread_detach(hExecaExit);
-    //pthread_detach(hBloqIO);
-    //pthread_detach(hExit);
-    //pthread_detach(hExecReadyaBloqEmer);
-    //pthread_detach(hBloqEmeraReady);
+    pthread_detach(hNewaReady);
+    pthread_detach(hReadyaExec);
+    pthread_detach(hExecaReady);
+    pthread_detach(hExecaBloqIO);
+    pthread_detach(hExecaExit);
+    pthread_detach(hBloqIO);
+    pthread_detach(hExit);
+    pthread_detach(hExecReadyaBloqEmer);
+    pthread_detach(hBloqEmeraReady);
+    pthread_detach(hFixerdeEmeraReady);
 
-    char* bufferAEnviar = string_new();
-    string_append(&bufferAEnviar, "Aviso de inicio Discordiador");
-    _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, bufferAEnviar, strlen(bufferAEnviar), logger);
-    free(bufferAEnviar);
+    // char* bufferAEnviar = string_new();
+    // string_append(&bufferAEnviar, "Aviso de inicio Discordiador");
+    // _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, bufferAEnviar, strlen(bufferAEnviar), logger);
+    // free(bufferAEnviar);
 }
 
 void servidor(parametrosServer* parametros){

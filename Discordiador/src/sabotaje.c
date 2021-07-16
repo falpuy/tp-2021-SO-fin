@@ -1,7 +1,6 @@
 #include"headers/sabotaje.h"
 
 void handler(int client, char* identificador, int comando, void* payload, t_log* logger){
-    char* buffer;
     switch (comando) {
         case COMIENZA_SABOTAJE:
             sabotaje_activado=1;
@@ -10,6 +9,8 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             memcpy(&posSabotajeY, payload + sizeof(int), sizeof(int));
             tripulanteFixer = malloc(sizeof(tcb));
             sem_post(&semERM);
+            // free(payload);
+            // free(identificador);
         break;
     }
 }

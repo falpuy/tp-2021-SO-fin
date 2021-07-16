@@ -1,42 +1,32 @@
 #include "headers/consola.h"
 
 void funcionConsola(){
-    char* leido;
     
-    pthread_mutex_lock(&mutexValidador);
-    int temp_validador = validador;
-    pthread_mutex_unlock(&mutexValidador);
-    
-    while(temp_validador) {
-
-        while(strcmp(leido = readline("> "), "") != 0) { //mientras se ingrese algo por consola
-            add_history(leido);
+    while(validador) {
+        char* leido;
+        while(strcmp(leido = readline("> "), "") != 0) { 
             parametros = string_split(leido," "); //char**: vector de strings, cada elemento del vector es un parametro, menos el primero que es el mensaje!
             free(leido);
 
-            t_mensaje *mensajeRecibido = malloc (sizeof(t_mensaje));
-            int tamanioBuffer;
-            void* buffer;
-          
-            switch (obtener_tipo_mensaje_consola(parametros[0])) {
-                case C_INICIAR_PLANIFICACION: 
+            int tipoMensaje = obtener_tipo_mensaje_consola(parametros[0]);
+            switch (tipoMensaje) {
+                case C_INICIAR_PLANIFICACION:
+
                     log_info(logger, "Entró comando: INICIAR_PLANIFICACION");
                     planificacion_viva = 1;  //activa flag para que se ejecuten los hilos
                     log_info(logger, "Se inició la planificación. Estado de la flag: %d", planificacion_viva);
 
-                	free(mensajeRecibido);
                 	free(parametros[0]); 
                 	free(parametros);
                     
-                    sem_post(&semNR); //Le avisa a New->Ready q es su turno
+                    //sem_post(&semNR); //Le avisa a New->Ready q es su turno
                     break;
 
                 case C_PAUSAR_PLANIFICACION: 
                 	log_info(logger, "Entró comando: PAUSAR_PLANIFICACION");
                 	planificacion_viva = 0;
                 	log_info(logger, "Se pausó la planificación.");
-                
-                	free(mensajeRecibido);
+
                 	free(parametros[0]); 
                 	free(parametros);
                     break;
@@ -45,32 +35,31 @@ void funcionConsola(){
                     log_info(logger, "Entró comando: INICIAR_PATOTA" );
                     pcb* nuevoPCB = crear_PCB (parametros, conexion_RAM, logger);
 
-                	if (nuevoPCB) {
-                    	list_add (listaPCB, (void*) nuevoPCB);
+                	// if (nuevoPCB) {
+                    // 	list_add (listaPCB, (void*) nuevoPCB);
 
-                        if(cantidadVieja == 0){
-                            semTripulantes = malloc(sizeof(sem_t)*cantidadActual); 
-                            hiloTripulante = malloc(sizeof(pthread_t) * cantidadActual); 
-                        }else{
-                            semTripulantes = realloc(semTripulantes,(sizeof(sem_t)) * cantidadActual);
-                            hiloTripulante = realloc(hiloTripulante , sizeof(pthread_t) * cantidadActual); 
+                    //     // if(cantidadVieja == 0){
+                    //     //     semTripulantes = malloc(sizeof(sem_t)*cantidadActual); 
+                    //     //     hiloTripulante = malloc(sizeof(pthread_t) * cantidadActual); 
+                    //     // }else{
+                    //     //     semTripulantes = realloc(semTripulantes,(sizeof(sem_t)) * cantidadActual);
+                    //     //     hiloTripulante = realloc(hiloTripulante , sizeof(pthread_t) * cantidadActual); 
+                    //     // } 
 
-                        } 
-
-                        for(int i=cantidadVieja; i<cantidadActual; i++){
-                            sem_init(&semTripulantes[i], 0, 0);
-                            log_info(logger, "Inicializo Semaforo de TCB %d", i);
+                    //     // for(int i=cantidadVieja; i<cantidadActual; i++){
+                    //     //     sem_init(&semTripulantes[i], 0, 0);
+                    //     //     log_info(logger, "Inicializo Semaforo de TCB %d", i);
                             
-                        }
-                        create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
-                        cantidadVieja += cantidadActual;
-                    } else {
-                    	log_error(logger, "No se pudo crear el PCB por falta de memoria");
-                        cantidadActual-=atoi(parametros[1]);
-                    }
+                    //     // }
+                    //     create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
+                    //     cantidadVieja += cantidadActual;
+                    // } else {
+                    // 	log_error(logger, "No se pudo crear el PCB");
+                    //     cantidadActual-=atoi(parametros[1]);
+                    // }
                 		
                 	free(parametros[0]); //iniciarPatota
-                	int cantidadTripulantes = atoi(parametros[1]);
+                	// int cantidadTripulantes = atoi(parametros[1]);
                 	free(parametros[1]);//5 (en formato de char*)
                 	free(parametros[2]);//listaTareas
                 
@@ -78,137 +67,138 @@ void funcionConsola(){
                     	free(parametros[i]);
                     }
                 	free(parametros);
-                	free(mensajeRecibido);
                     break;
 
                 case C_LISTAR_TRIPULANTES:
                     log_info(logger, "--------------------------------------------------------------------");
                     log_info(logger, "Entró comando: LISTAR_TRIPULANTES");
+                    
                     char* hora_y_fecha_actual;
                     hora_y_fecha_actual = temporal_get_string_time("%d/%m/%y %H:%M:%S");
+                    
                     log_info(logger, "Estado de la Nave: %s", hora_y_fecha_actual);
                     list_iterate(listaPCB, mostrarListaTripulantes);
                     log_info(logger, "--------------------------------------------------------------------");
-                	free(hora_y_fecha_actual);
-                	free(mensajeRecibido);
+                	
+                    free(hora_y_fecha_actual);
                 	free(parametros[0]);
                 	free(parametros);
+
                     break;
 
                 case C_EXPULSAR_TRIPULANTE:
-                    log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");
-                    if (planificacion_viva) {
-                        loEncontro = 0;
-                        tamanioBuffer = sizeof(int);
-					 	int idTripulante = atoi(parametros[1]);
-                        tcb* tcbTripulante = obtener_tcb_en_listaPCB(listaPCB);
-                        buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante->pid, idTripulante);
-                        //_send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
-                        free(buffer);
-                      	//t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
+                    // log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");
+                    
+                    // if (planificacion_viva) {
+                    //     loEncontro = 0;
+                    //     tamanioBuffer = sizeof(int);
+					//  	int idTripulante = atoi(parametros[1]);
+                    //     tcb* tcbTripulante = obtener_tcb_en_listaPCB(listaPCB);
+                    //     buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante->pid, idTripulante);
+                    //     //_send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
+                    //     free(buffer);
+                    //   	//t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
                         
-                       	//if(mensajeRecibido->command == SUCCESS) {
-                            log_info(logger, "Se expulsó correctamente el tripulante en memoria");
-                            switch(tcbTripulante->status){
-                                case 'N':
-                                    log_info(logger, "Se expulsa al tripulante de la cola NEW");
-                                    expulsarNodo(cola_new, "New", mutexNew);
-                                    break;
-                                case 'R':
-                                    log_info(logger, "Se expulsa al tripulante de la cola READY");
-                                    expulsarNodo(ready, "Ready", mutexReady);
-                                    break;
-                                case 'E':
-                                    log_info(logger, "Se expulsa al tripulante de la cola EXEC");
-                                    expulsarNodo(exec, "Exec", mutexExec);
-                                    break;
-                                case 'I':
-                                    log_info(logger, "Se expulsa al tripulante de la cola BLOQ IO");
-                                    expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
-                                    break;
-                                case 'M':
-                                    log_info(logger, "Se expulsa al tripulante de la cola BLOQ EMERGENCIA");
-                                    expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
-                                    break;
-                                case 'X':
-                                    log_info(logger, "El tripulante ya se encuentra en la cola EXIT");
-                                    break;
-                            }   
-                        //}
+                    //    	//if(mensajeRecibido->command == SUCCESS) {
+                    //         log_info(logger, "Se expulsó correctamente el tripulante en memoria");
+                    //         switch(tcbTripulante->status){
+                    //             case 'N':
+                    //                 log_info(logger, "Se expulsa al tripulante de la cola NEW");
+                    //                 expulsarNodo(cola_new, "New", mutexNew);
+                    //                 break;
+                    //             case 'R':
+                    //                 log_info(logger, "Se expulsa al tripulante de la cola READY");
+                    //                 expulsarNodo(ready, "Ready", mutexReady);
+                    //                 break;
+                    //             case 'E':
+                    //                 log_info(logger, "Se expulsa al tripulante de la cola EXEC");
+                    //                 expulsarNodo(exec, "Exec", mutexExec);
+                    //                 break;
+                    //             case 'I':
+                    //                 log_info(logger, "Se expulsa al tripulante de la cola BLOQ IO");
+                    //                 expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
+                    //                 break;
+                    //             case 'M':
+                    //                 log_info(logger, "Se expulsa al tripulante de la cola BLOQ EMERGENCIA");
+                    //                 expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
+                    //                 break;
+                    //             case 'X':
+                    //                 log_info(logger, "El tripulante ya se encuentra en la cola EXIT");
+                    //                 break;
+                    //         }   
+                    //     //}
                         //else{
                         //    log_info(logger, "No se pudo expulsar el tripulante en memoria");
                         //}
-                        free(mensajeRecibido->payload);
-                	    free(mensajeRecibido->identifier);
-                	    free(mensajeRecibido);
-                    }
-                    else{
-                        log_error(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
-                    }
+                    
+                    // else{
+                    //     log_error(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
+                    // }
 
-                    free(parametros[0]);
-                	free(parametros[1]);
-                	free(parametros);
+                    // free(mensajeRecibido->payload);
+                    // free(mensajeRecibido->identifier);
+                    // free(mensajeRecibido);
+                    // free(parametros[0]);
+                	// free(parametros[1]);
+                	// free(parametros);
                     break;
 
                 case C_OBTENER_BITACORA: 
-                    log_info(logger, "Entró comando: OBTENER_BITACORA");
-                    char** bitacora;
-                    tamanioBuffer = sizeof(int);
-                	int idTripulante = atoi(parametros[1]);
-                    buffer = _serialize(tamanioBuffer, "%d", idTripulante);
-                    _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
-                    free(buffer);
-                    t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
-                    if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
-                        log_info(logger,"Bitácora del tripulante: %d", idTripulante);
+                    // log_info(logger, "Entró comando: OBTENER_BITACORA");
+                    // // char** bitacora;
+                	// int idTripulante = atoi(parametros[1]);
+                    
+                    // buffer = _serialize(sizeof(int), "%d", idTripulante);
+                    // _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
+                    // free(buffer);
+                    
+                    // t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
+                   
+                    // if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
+                    //     log_info(logger,"Bitácora del tripulante: %d", idTripulante);
                            
-                        int tamanioString;
-                        memcpy(&tamanioString,mensajeRecibido->payload, sizeof(int));
-                        char* str = malloc(tamanioString + 1);
-                        memcpy(str, mensajeRecibido->payload + sizeof(int) , tamanioString);
-                        str[tamanioString] = '\0';
+                    //     int tamanioString;
+                    //     memcpy(&tamanioString,mensajeRecibido->payload, sizeof(int));
+                    //     char* str = malloc(tamanioString + 1);
+                    //     memcpy(str, mensajeRecibido->payload + sizeof(int) , tamanioString);
+                    //     str[tamanioString] = '\0';
                         
-                        char** bitacora = string_split(str, "|");
-                        for(int i=0; bitacora[i]!=NULL; i++){
-                            log_info(logger, "%s", bitacora[i]);
-                        }
-                        for(int i=0; bitacora[i]!=NULL; i++){
-                            free(bitacora[i]);
-                        }  
-                        free(bitacora);
-                    }else{
-                           log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
-                    } 
-                    free(mensajeRecibido->payload);
-                    free(mensajeRecibido->identifier);
-                    free(mensajeRecibido);
+                    //     char** bitacora = string_split(str, "|");
+                    //     for(int i=0; bitacora[i]!=NULL; i++){
+                    //         log_info(logger, "%s", bitacora[i]);
+                    //     }
+                    //     for(int i=0; bitacora[i]!=NULL; i++){
+                    //         free(bitacora[i]);
+                    //     }  
+                    //     free(bitacora);
+                    // }else{
+                    //     log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
+                    // } 
+                    // free(mensajeRecibido->payload);
+                    // free(mensajeRecibido->identifier);
+                    // free(mensajeRecibido);
                 
-                    free(parametros[0]);
-                    free(parametros[1]);
-                    free(parametros);
+                    // free(parametros[0]);
+                    // free(parametros[1]);
+                    // free(parametros);
                     break;
                 
                 case C_SALIR: 
                     log_info(logger, "Salimos de la consola");
-                    pthread_mutex_lock(&mutexValidador);
-                    validador = 0;
-                    pthread_mutex_unlock(&mutexValidador);
-
-                	free(mensajeRecibido);
+                
                     free(parametros[0]);
                 	free(parametros);
+                    
                     liberarMemoria();
+                    validador = 0;
                     break;
 
                 default:
                     log_info(logger, "El mensaje ingresado no corresponde a una acción propia del Discordiador");
-                	free(mensajeRecibido);
                     free(parametros[0]);
                 	free(parametros);
                     break;
             }
-
             if (!validador) {
                 break;
             }
@@ -332,28 +322,21 @@ tcb* obtener_tcb_en_listaPCB(t_list* self) {
 }
 
 void liberarMemoria(){
-    pthread_join(hNewaReady,NULL);
-    pthread_join(hReadyaExec,NULL);
-    pthread_join(hExecaReady,NULL);
-    pthread_join(hExecaExit,NULL);
-    pthread_join(hExecaBloqIO,NULL);
-    pthread_join(hBloqIO,NULL);
-    pthread_join(hExit,NULL);
 
-     for(int i = 0; i < cantidadTCBTotales; i++){
-        pthread_join(hiloTripulante[i],NULL);
-    }
+    queue_destroy_and_destroy_elements(cola_new, destruirTCB);
+    queue_destroy_and_destroy_elements(ready, destruirTCB);
+    queue_destroy_and_destroy_elements(exec, destruirTCB);        
+    queue_destroy_and_destroy_elements(bloq_io, destruirTCB);
+    queue_destroy_and_destroy_elements(bloq_emer, destruirTCB);
+    queue_destroy_and_destroy_elements(cola_exit, destruirTCB);
+    list_destroy_and_destroy_elements(listaPCB, destruirPCB);
 
-  	queue_destroy_and_destroy_elements(cola_new, destruirTCB);
-  	queue_destroy_and_destroy_elements(ready, destruirTCB);
-  	queue_destroy_and_destroy_elements(exec, destruirTCB);
-  	queue_destroy_and_destroy_elements(bloq_io, destruirTCB);
-  	queue_destroy_and_destroy_elements(bloq_emer, destruirTCB);
-  	queue_destroy_and_destroy_elements(cola_exit, destruirTCB);
-		
-  	list_destroy_and_destroy_elements(listaPCB, destruirPCB);
+    //  for(int i = 0; i < cantidadTCBTotales; i++){
+    //     pthread_join(hiloTripulante[i],NULL);
+    // }
 
-		
+  	
+	
   	pthread_mutex_destroy(&mutexNew);
   	pthread_mutex_destroy(&mutexReady);
   	pthread_mutex_destroy(&mutexExec);
@@ -370,14 +353,15 @@ void liberarMemoria(){
     sem_destroy(&semEBIO);
     sem_destroy(&semEaX);
 
-    for(int i = 0; i < cantidadTCBTotales; i++){
-        sem_destroy(&semTripulantes[i]);
-        //pthread_join(hiloTripulante[i],NULL);
-    }
+    // for(int i = 0; i < cantidadTCBTotales; i++){
+    //     sem_destroy(&semTripulantes[i]);
+    //     //pthread_join(hiloTripulante[i],NULL);
+    // }
 
+    rl_clear_history();
     log_destroy(logger);
   	config_destroy(config);
 
-    exit(1);
+    // exit(1);
   	
 }

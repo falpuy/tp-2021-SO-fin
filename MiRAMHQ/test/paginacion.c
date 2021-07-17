@@ -93,37 +93,6 @@ int err;
 int frames_memory;
 int frames_virtual;
 
-// void mostrarInfo (void *element) {
-//     p_info *info = element;
-//     printf("ID: %d\n", info -> id);
-//     printf("Type: %d\n", info -> type);
-//     printf("Segment: %d\n", info -> nroSegmento);
-// }
-
-// char *get_segment_type(uint32_t segment_type) {
-//     switch(segment_type) {
-//         case PCB:
-//             return "PCB";
-//         break;
-//         case TCB:
-//             return "TCB";
-//         break;
-//         case TASK:
-//             return "TASK";
-//         break;
-//     }
-
-//     return "N/A";
-// }
-
-// void mostrarSegemento (void *element) {
-//     segment *segmento = element;
-//     printf("ID: %d\n", segmento -> id);
-//     printf("Type: %s\n", get_segment_type(segmento -> type));
-//     printf("Start: %d\n", segmento -> baseAddr);
-//     printf("End: %d\n", segmento -> limit);
-//     printf("Segment: %d\n\n", segmento -> nroSegmento);
-// }
 
 // void show_dictionary(t_dictionary *self) {
 
@@ -169,71 +138,6 @@ int frames_virtual;
 // 		return element -> data;
 // 	}
 // 	return NULL;
-// }
-
-// void *find_segment_by_number(t_list* self, int index) {
-//     segment *temp;
-
-// 	if ((self->elements_count > 0) && (index >= 0)) {
-
-// 		t_link_element *element = self->head;
-// 		temp = element -> data;
-
-//         while (temp -> nroSegmento != index) {
-// 			element = element->next;
-//             if (element != NULL)
-//                 temp = element -> data;
-// 		}
-
-// 		return element -> data;
-// 	}
-// 	return NULL;
-// }
-
-// int get_segment_limit(t_dictionary* self, int start) {
-
-//     segment *temp;
-
-//     t_queue *aux;
-
-//     // Recorro el diccionario
-//     int table_index;
-
-// 	for (table_index = 0; table_index < self->table_max_size; table_index++) {
-// 		t_hash_element *element = self->elements[table_index];
-// 		t_hash_element *next_element = NULL;
-
-// 		while (element != NULL) {
-
-// 			next_element = element->next;
-
-//             aux = element -> data;
-
-//             if ((aux -> elements -> elements_count > 0) && (start >= 0)) {
-
-//                 t_link_element *element = aux -> elements -> head;
-//                 temp = element -> data;
-
-//                 while (temp -> baseAddr != start && element != NULL) {
-
-//                     element = element->next;
-//                     if (element != NULL)
-//                         temp = element -> data;
-//                 }
-
-//                 if (temp -> baseAddr == start)
-//                     return temp -> limit;
-//             }
-
-// 			element = next_element;
-// 		}
-// 	}
-
-//     return -1;
-// }
-
-// void destroyer(void *item) {
-//     free(item);
 // }
 
 // void table_destroyer(void *item) {
@@ -360,77 +264,7 @@ int frames_virtual;
 //     return -1;
 // }
 
-// void *find_tcb_segment(int id, char *key, t_dictionary *table) {
-//     segment *temp;
 
-//     t_queue *self = dictionary_get(table, key);
-
-// 	if ((self -> elements -> elements_count > 0) && (id >= 0)) {
-
-// 		t_link_element *element = self -> elements -> head;
-// 		temp = element -> data;
-
-//         while (element != NULL) {
-
-//             if (temp -> id == id && temp -> type == TCB) {
-//                 return element -> data;
-//             }
-
-// 			element = element->next;
-//             if (element != NULL)
-//                 temp = element -> data;
-// 		}
-// 	}
-// 	return NULL;
-// }
-
-// void *find_task_segment(char *key, t_dictionary *table) {
-//     segment *temp;
-
-//     t_queue *self = dictionary_get(table, key);
-
-// 	if (self -> elements -> elements_count > 0) {
-
-// 		t_link_element *element = self -> elements -> head;
-// 		temp = element -> data;
-
-//         while (element != NULL) {
-
-//             if (temp -> type == TASK) {
-//                 return element -> data;
-//             }
-
-// 			element = element->next;
-//             if (element != NULL)
-//                 temp = element -> data;
-// 		}
-// 	}
-// 	return NULL;
-// }
-
-// void *find_pcb_segment(char *key, t_dictionary *table) {
-//     segment *temp;
-
-//     t_queue *self = dictionary_get(table, key);
-
-// 	if (self -> elements -> elements_count > 0) {
-
-// 		t_link_element *element = self -> elements -> head;
-// 		temp = element -> data;
-
-//         while (element != NULL) {
-
-//             if (temp -> type == PCB) {
-//                 return element -> data;
-//             }
-
-// 			element = element->next;
-//             if (element != NULL)
-//                 temp = element -> data;
-// 		}
-// 	}
-// 	return NULL;
-// }
 
 char get_char_value(void *buffer, int index) {
 
@@ -474,16 +308,6 @@ char get_char_value(void *buffer, int index) {
 //     return recv_task;
 // }
 
-// int remove_segment_from_memory(void *memory, int mem_size, segment *segmento) {
-//     if (segmento -> limit < mem_size) {
-//         memset(memory + segmento -> baseAddr, 0 , segmento -> limit - segmento -> baseAddr);
-//         return 1;
-//     }
-
-//     // printf("El segmento que se intento eliminar es invalido.\n");
-//     return -1;
-// }
-
 // // typedef struct {
 // //     uint32_t pid;
 // //     uint32_t tasks;
@@ -498,94 +322,6 @@ char get_char_value(void *buffer, int index) {
 // //     uint32_t next;
 // // } tcb;
 
-// int save_tcb_in_memory(void *memory, int mem_size, segment *segmento, tcb *data) {
-//     int offset = 0;
-//     if (segmento -> limit < mem_size) {
-//         memcpy(memory + segmento -> baseAddr + offset, data -> tid, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(memory + segmento -> baseAddr + offset, data -> pid, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(memory + segmento -> baseAddr + offset, data -> status, sizeof(char));
-//         offset = sizeof(char);
-//         memcpy(memory + segmento -> baseAddr + offset, data -> xpos, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(memory + segmento -> baseAddr + offset, data -> ypos, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(memory + segmento -> baseAddr + offset, data -> next, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-
-//         return 1;
-//     }
-
-//     return -1;
-// }
-
-// tcb *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
-//     tcb *temp = malloc(sizeof(tcb));
-
-//     int offset = 0;
-
-//     if (segmento -> limit < mem_size) {
-//         memcpy(temp -> tid, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(temp -> pid, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(temp -> status, memory + segmento -> baseAddr + offset, sizeof(char));
-//         offset = sizeof(char);
-//         memcpy(temp -> xpos, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(temp -> ypos, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(temp -> next, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-
-//         return temp;
-//     }
-
-//     return NULL;
-// }
-
-// int save_pcb_in_memory(void *memory, int mem_size, segment *segmento, pcb *data) {
-//     int offset = 0;
-//     if (segmento -> limit < mem_size) {
-//         memcpy(memory + segmento -> baseAddr + offset, data -> pid, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(memory + segmento -> baseAddr + offset, data -> tasks, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-
-//         return 1;
-//     }
-
-//     return -1;
-// }
-
-// pcb *save_pcb_in_memory(void *memory, int mem_size, segment *segmento) {
-//     int offset = 0;
-
-//     pcb *temp = malloc(sizeof(pcb));
-//     if (segmento -> limit < mem_size) {
-//         memcpy(temp -> pid, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-//         memcpy(temp -> tasks, memory + segmento -> baseAddr + offset, sizeof(uint32_t));
-//         offset = sizeof(uint32_t);
-
-//         return temp;
-//     }
-
-//     return NULL;
-// }
-
-// // Hay que pasarle la lista completa de tareas, tal cual se guarda en memoria
-// int save_task_in_memory(void *memory, int mem_size, segment *segmento, void *data) {
-
-//     if (segmento -> limit < mem_size) {
-//         memcpy(memory + segmento -> baseAddr, data, segmento -> limit - segmento -> baseAddr);
-
-//         return 1;
-//     }
-
-//     return -1;
-// }
 
 uint32_t get_next_page(t_queue *page_table, uint32_t index) {
 
@@ -822,52 +558,57 @@ void save_data_in_memory(void *buffer) {
     // ---------------- GUARDO FRAMES ---------------- //
 
     // Busco si hay frames libres en memoria/disco
-    if (check_free_frames(frames_count)) {
-        // Creo tabla de paginas
-        t_queue *tabla = queue_create();
+    // Creo tabla de paginas
+    t_queue *tabla = queue_create();
 
-        // Si hay, guardo la data
-        int bytes_left = memory_size;
+    // Si hay, guardo la data
+    int bytes_left = memory_size;
 
-        for (int j = 0; j < frames_count; j++) {
-            uint32_t n_frame = get_frame();
+    for (int j = 0; j < frames_count; j++) {
+        uint32_t n_frame = get_frame();
 
-            set_bitmap(bitmap, n_frame);
+        set_bitmap(bitmap, n_frame);
             
-            // Creo frame
-            frame_t *frame = malloc(sizeof(frame_t));
-            frame -> number = n_frame;
-            frame -> start = n_frame * page_size;
-            frame -> modified = 1;
-            frame -> presence = 1;
+        // Creo frame
+        frame_t *frame = malloc(sizeof(frame_t));
+        frame -> number = n_frame;
+        frame -> start = n_frame * page_size;
+        frame -> modified = 1;
+        frame -> presence = 1;
 
-            // Creo pagina
-            page_t *page = malloc(sizeof(page_t));
-            page -> frame = frame;
+        // Creo pagina
+        page_t *page = malloc(sizeof(page_t));
+        page -> frame = frame;
 
-            if (bytes_left < page_size) {
-                // copio bytes_left
-                memcpy(memory + (n_frame * page_size), temp, bytes_left);
-            } else {
-                // copio page_size
-                memcpy(memory + (n_frame * page_size), temp, page_size);
-                bytes_left -= page_size;
-            }
-
-            queue_push(tabla, page);
+        if (bytes_left < page_size) {
+            // copio bytes_left
+            memcpy(memory + (n_frame * page_size), temp, bytes_left);
+        } else {
+            // copio page_size
+            memcpy(memory + (n_frame * page_size), temp, page_size);
+            bytes_left -= page_size;
         }
-        // Agrego tabla al diccionario
-        dictionary_put(table_collection, pid, tabla);
 
-    } else {
-        printf("No hay espacio disponible en memoria\n");
+        queue_push(tabla, page);
     }
+    // Agrego tabla al diccionario
+    dictionary_put(table_collection, pid, tabla);
 
     free(temp);
     free(pid);
 
 }
 
+int verificarCondicionDeMemoria(void* buffer){
+
+    if(check_free_frames(frame_count)){
+        return 1;
+    }
+    else{
+        return -1;
+    }
+
+}
 // int s_tcb = 16;
 
 // typedef struct {
@@ -1134,75 +875,7 @@ int main() {
 
     // bitarray_destroy(virtual_bitmap);
 
-    // //////////////////////////// GONZA //////////////////////////////////// //
-
-//     void inicializar_superbloque()
-// {
-//     superbloque = open(SUPERBLOQUE_PATH, O_RDWR, (mode_t)0777); // Intenta abrir el archivo con permisos de lectura y escritura.
-//     if (superbloque == -1)
-//     {
-//         superbloque = open(SUPERBLOQUE_PATH, O_CREAT | O_RDWR, (mode_t)0777); // Si no existe el archivo lo crea con permisos de lectura y escritura.
-
-//         uint32_t block_size = config_get_int_value(config_file, "BLOCK_SIZE");
-//         uint32_t block_count = config_get_int_value(config_file, "BLOCKS");
-//         void *segmento_bitmap = malloc(block_count / 8);
-//         t_bitarray *bitmap = bitarray_create_with_mode((char *)segmento_bitmap, block_count / 8, LSB_FIRST);
-//         for (int i = 0; i < block_count; i++)
-//         {
-//             bitarray_clean_bit(bitmap, i);
-//         }
-
-//         ftruncate(superbloque, 2 * sizeof(uint32_t) + block_count / 8);
-
-//         uint32_t offset = 0;
-//         void *contenido_superbloque = malloc(2 * sizeof(uint32_t) + block_count / 8);
-//         memcpy(contenido_superbloque + offset, &block_size, sizeof(uint32_t));
-//         offset += sizeof(uint32_t);
-//         memcpy(contenido_superbloque + offset, &block_count, sizeof(uint32_t));
-//         offset += sizeof(uint32_t);
-//         memcpy(contenido_superbloque + offset, bitmap->bitarray, block_count / 8);
-
-//         void *contenido_archivo = mmap(NULL, 2 * sizeof(uint32_t) + block_count / 8, PROT_READ | PROT_WRITE, MAP_SHARED, superbloque, 0); // Mapear todo el superbloque
-//         if (contenido_archivo == MAP_FAILED)
-//         {
-//             printf("Error al mapear el archivo superbloque. Errno: %d.\n", errno);
-//         }
-
-//         memcpy(contenido_archivo, contenido_superbloque, 2 * sizeof(uint32_t) + block_count / 8);
-//         msync(contenido_archivo, 2 * sizeof(uint32_t) + block_count / 8, MS_SYNC);
-
-//         free(segmento_bitmap);
-//         bitarray_destroy(bitmap);
-//         free(contenido_superbloque);
-//         close(superbloque);
-//         log_info(log_file, "Archivo SuperBloque creado correctamente.\n");
-//     }
-//     else
-//     {
-//         uint32_t block_size = config_get_int_value(config_file, "BLOCK_SIZE");
-//         uint32_t block_count = config_get_int_value(config_file, "BLOCKS");
-
-//         void *contenido_archivo = mmap(NULL, 2 * sizeof(uint32_t) + block_count / 8, PROT_READ | PROT_WRITE, MAP_SHARED, superbloque, 0);
-
-//         uint32_t offset = 0;
-//         memcpy(&block_size, contenido_archivo + offset, sizeof(uint32_t));
-//         offset += sizeof(uint32_t);
-//         memcpy(&block_count, contenido_archivo + offset, sizeof(uint32_t));
-//         offset += sizeof(uint32_t);
-//         void *segmento_bitmap = malloc(block_count / 8);
-//         memcpy(segmento_bitmap, contenido_archivo + offset, block_count / 8);
-
-//         t_bitarray *bitmap = bitarray_create_with_mode((char *)segmento_bitmap, block_count / 8, LSB_FIRST);
-
-//         free(segmento_bitmap);
-//         bitarray_destroy(bitmap);
-//         close(superbloque);
-//         log_info(log_file, "Archivo SuperBloque abierto correctamente.\n");
-//     }
-// }
-
-    // //////////////////////////// GONZA //////////////////////////////////// //
-
+ 
     // --------------- TEST DATA SPLIT --------------- //
 
     // // Test data split in memory

@@ -416,6 +416,9 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
     void* bufferAIMS;
     int posXVieja;
     int posYVieja;
+
+    t_mensaje *mensajito;
+
     log_info(logger, "Moviendo al tripulante %d", tcbTrip->tid);
     log_info(logger, "Posicion X Nueva %d", posXfinal);
     log_info(logger, "Posicion Y Nueva %d", posYfinal);
@@ -428,6 +431,14 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
         free(bufferARAM);
+
+        mensajito = _receive_message(conexion_RAM, logger);
+        if (mensajito->command != SUCCESS) {
+            perror("Comando RECIBIR_UBICACION_TRIPULANTE\n");
+        }
+        free(mensajito -> identifier);
+        free(mensajito -> payload);
+        free(mensajito);
         
         //Notificar desplazamiento a IMS
         posXVieja = tcbTrip->posicionX - 1;
@@ -435,6 +446,7 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
         free(bufferAIMS);
+
     }
     else if (tcbTrip->posicionX > posXfinal){
         tcbTrip->posicionX--;
@@ -444,6 +456,14 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
         free(bufferARAM);
+
+        mensajito = _receive_message(conexion_RAM, logger);
+        if (mensajito->command != SUCCESS) {
+            perror("Comando RECIBIR_UBICACION_TRIPULANTE\n");
+        }
+        free(mensajito -> identifier);
+        free(mensajito -> payload);
+        free(mensajito);
         
         //Notificar desplazamiento a IMS
         posXVieja = tcbTrip->posicionX + 1;
@@ -451,6 +471,7 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
         free(bufferAIMS);
+
     }
     else if (tcbTrip->posicionY < posYfinal){
         tcbTrip->posicionY++;
@@ -461,12 +482,21 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
         free(bufferARAM);
 
+        mensajito = _receive_message(conexion_RAM, logger);
+        if (mensajito->command != SUCCESS) {
+            perror("Comando RECIBIR_UBICACION_TRIPULANTE\n");
+        }
+        free(mensajito -> identifier);
+        free(mensajito -> payload);
+        free(mensajito);
+
         //Notificar desplazamiento a IMS
         posYVieja = tcbTrip->posicionY - 1;
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
         free(bufferAIMS);
+
     }
     else if (tcbTrip->posicionY > posYfinal){
         tcbTrip->posicionY--;
@@ -476,6 +506,14 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
         _send_message(conexion_RAM, "RAM", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
         free(bufferARAM);
+
+        mensajito = _receive_message(conexion_RAM, logger);
+        if (mensajito->command != SUCCESS) {
+            perror("Comando RECIBIR_UBICACION_TRIPULANTE\n");
+        }
+        free(mensajito -> identifier);
+        free(mensajito -> payload);
+        free(mensajito);
 
         //Notificar desplazamiento a IMS
         posYVieja = tcbTrip->posicionY + 1;

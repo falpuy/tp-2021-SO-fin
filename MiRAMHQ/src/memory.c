@@ -471,23 +471,23 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     if (start_address >= limit_address) {
         return NULL;
     }
+    log_info(logger, "Limit address:%d", limit_address);
 
     void *tareas = malloc(limit_address - start_address + 1);
     memcpy(tareas, memory + start_address, limit_address - start_address);
-    memset(tareas + limit_address, '\0', 1);
+    memset(tareas + (limit_address-start_address), '\0', 1);
 
     printf("Lista: %s\n",(char*) tareas);
 
     int cantidadLetrasLeidas = 0;
     
-    // TOMAR AIRE;2,2,THCONSUMIR OXIGENO P;3;3;THOLA
+    // TOMAR AIRE;2,2,T|HCONSUMIR OXIGENO P;3;3;T|HOLA
 
     // Get one byte of the memory as a CHAR
     // char test_c = get_char_value(tareas, counter);
     int offset = 0;
     while (memcmp(tareas + offset, ";", 1) && tareas + offset != NULL && cantidadLetrasLeidas < limit_address ) {
         // printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
-        log_info(logger,"%d",(int) get_char_value(tareas,offset));
         
         if(get_char_value(tareas,offset) != '\n'){
             cantidadLetrasLeidas++;
@@ -497,8 +497,8 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     }
     log_info(logger, "Cantidad letras hasta primer ;%d",cantidadLetrasLeidas);
 
-    while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) &&tareas + cantidadLetrasLeidas != NULL && cantidadLetrasLeidas < limit_address){
-        // printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
+    while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) && cantidadLetrasLeidas < limit_address){
+        printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
 
         cantidadLetrasLeidas++;
     }

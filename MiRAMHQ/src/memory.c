@@ -478,7 +478,6 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     memset(tareas + (limit_address-start_address), '\0', 1);
 
     printf("Lista: %s\n",(char*) tareas);
-
     int cantidadLetrasLeidas = 0;
     
     // TOMAR AIRE;2,2,T|HCONSUMIR OXIGENO P;3;3;T|HOLA
@@ -495,13 +494,18 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
 
         offset++;
     }
+    if(primeraVez=0 /*idea no implementada*/){
+        cantidadLetrasLeidas--;
+    }
+    
     log_info(logger, "Cantidad letras hasta primer ;%d",cantidadLetrasLeidas);
 
     while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) && cantidadLetrasLeidas < limit_address){
         printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
 
-        cantidadLetrasLeidas++;
+        offset++;
     }
+    cantidadLetrasLeidas--;
     log_info(logger, "Cantidad letras despues de segundo while: %d",cantidadLetrasLeidas);
 
     void *recv_task = malloc(cantidadLetrasLeidas + 1);
@@ -509,7 +513,6 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     memset(recv_task + cantidadLetrasLeidas, '\0', 1);
 
     free(tareas);
-    
     
     return recv_task;
 }

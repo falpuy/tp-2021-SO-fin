@@ -422,19 +422,19 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             if(!tarea){
 								log_info(logger, "No hay mas tareas que mandar");
                 char* temp = string_new();
-                string_append(&temp, "h");
-                
-                _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, temp, string_length(temp), logger);
+                string_append(&temp, "answer");
+                char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
+
+                _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
             }else{
 								
-              	nuestroTCB->next += string_length(tarea);
+              	nuestroTCB->next += strlen(tarea);
 
                 save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
-                log_info(logger, "La tarea a enviar es:%s",tarea);
-                log_info(logger, "El tamaño de tarea a enviar es:%d",string_length(tarea));
+                log_info(logger, "La tarea a enviar es: %s",tarea);
+                log_info(logger, "El tamaño de tarea a enviar es: %d",strlen(tarea));
 
-                char* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea),"%s",tarea);
-
+                char* buffer_a_enviar =  _serialize(sizeof(int)+strlen(tarea),"%s",tarea);
                 _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+string_length(tarea), logger);
               	
               	free(buffer_a_enviar);

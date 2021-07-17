@@ -1,0 +1,335 @@
+[INFO] 17:37:58:556 IMS/(5517:5517): Validando Existencia de directorios...
+[INFO] 17:37:58:557 IMS/(5517:5517): No existe directorio: Filesystem. Se crea.
+[INFO] 17:37:58:560 IMS/(5517:5517): -----------------------------------------------------
+[INFO] 17:37:58:560 IMS/(5517:5517): Validando existencia de Superbloque.ims....
+[INFO] 17:37:58:560 IMS/(5517:5517): -----------------------------------------------------
+[ERROR] 17:37:58:561 IMS/(5517:5517): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 17:37:58:561 IMS/(5517:5517): Ingresar el tamaño de cada bloque
+[INFO] 17:38:03:564 IMS/(5517:5517): Ingresar la cantidad de bloques
+[INFO] 17:38:05:410 IMS/(5517:5517): Muestro mis valores del bitmap..
+[INFO] 17:38:05:411 IMS/(5517:5517): -----------------------------------------------------
+[INFO] 17:38:05:411 IMS/(5517:5517): Se creó archivo superBloque.ims
+[INFO] 17:38:05:411 IMS/(5517:5517): -----------------------------------------------------
+[INFO] 17:38:05:411 IMS/(5517:5517): Validando existencia de Blocks.ims....
+[ERROR] 17:38:05:411 IMS/(5517:5517): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 17:38:05:414 IMS/(5517:5517): -----------------------------------------------------
+[INFO] 17:38:05:414 IMS/(5517:5517): Se creó archivo Blocks.ims
+[INFO] 17:38:05:414 IMS/(5517:5517): -----------------------------------------------------
+[INFO] 17:38:05:414 IMS/(5517:5517): -----------------------------------------------------
+[INFO] 17:38:05:414 IMS/(5517:5517): N° Proceso es:5517
+[INFO] 17:38:05:414 IMS/(5517:5517): -----------------------------------------------------
+[INFO] 17:38:05:414 IMS/(5517:5517): Creando servidor......
+[INFO] 17:38:06:416 IMS/(5517:5517): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 17:38:06:416 IMS/(5517:5517): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 17:38:18:417 IMS/(5517:5519): -----------------------------------------------------
+[INFO] 17:38:18:417 IMS/(5517:5519): Comienza actualización de Blocks.ims...
+[INFO] 17:38:18:419 IMS/(5517:5519): Se actualizo Blocks.ims
+[INFO] 17:38:18:419 IMS/(5517:5519): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:38:18:420 IMS/(5517:5519): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:38:18:421 IMS/(5517:5519): -----------------------------------------------------
+[INFO] 17:38:25:226 IMS/(5517:5517): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:38:25:247 IMS/(5517:5556): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:38:30:421 IMS/(5517:5519): -----------------------------------------------------
+[INFO] 17:38:30:421 IMS/(5517:5519): Comienza actualización de Blocks.ims...
+[INFO] 17:38:30:422 IMS/(5517:5519): Se actualizo Blocks.ims
+[INFO] 17:38:30:423 IMS/(5517:5519): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:38:30:424 IMS/(5517:5519): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:38:30:425 IMS/(5517:5519): -----------------------------------------------------
+[INFO] 17:38:42:425 IMS/(5517:5519): -----------------------------------------------------
+[INFO] 17:38:42:425 IMS/(5517:5519): Comienza actualización de Blocks.ims...
+[INFO] 17:38:42:427 IMS/(5517:5519): Se actualizo Blocks.ims
+[INFO] 17:38:42:428 IMS/(5517:5519): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:38:42:429 IMS/(5517:5519): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:38:42:429 IMS/(5517:5519): -----------------------------------------------------
+[INFO] 17:38:46:406 IMS/(5517:5556): LLegó nuevo comando:761
+[INFO] 17:38:46:406 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:46:406 IMS/(5517:5556): Llego comando: Mover Tripulante.....
+[INFO] 17:38:46:406 IMS/(5517:5556): ID Tripulante:0
+[INFO] 17:38:46:406 IMS/(5517:5556): Posicion Vieja en X:1
+[INFO] 17:38:46:407 IMS/(5517:5556): Posicion Vieja en Y:0
+[INFO] 17:38:46:407 IMS/(5517:5556): Posicion Nueva en X:2
+[INFO] 17:38:46:407 IMS/(5517:5556): Posicion Nueva en Y:0
+[INFO] 17:38:46:407 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:46:408 IMS/(5517:5556): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 17:38:46:413 IMS/(5517:5556): TEMPORAL NUEVO METADATA: Se mueve de 1|0 a 2|0|
+[INFO] 17:38:47:450 IMS/(5517:5556): LLegó nuevo comando:761
+[INFO] 17:38:47:450 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:47:450 IMS/(5517:5556): Llego comando: Mover Tripulante.....
+[INFO] 17:38:47:450 IMS/(5517:5556): ID Tripulante:0
+[INFO] 17:38:47:450 IMS/(5517:5556): Posicion Vieja en X:2
+[INFO] 17:38:47:450 IMS/(5517:5556): Posicion Vieja en Y:0
+[INFO] 17:38:47:450 IMS/(5517:5556): Posicion Nueva en X:3
+[INFO] 17:38:47:450 IMS/(5517:5556): Posicion Nueva en Y:0
+[INFO] 17:38:47:451 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:47:455 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[INFO] 17:38:48:497 IMS/(5517:5556): LLegó nuevo comando:761
+[INFO] 17:38:48:497 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:48:497 IMS/(5517:5556): Llego comando: Mover Tripulante.....
+[INFO] 17:38:48:498 IMS/(5517:5556): ID Tripulante:0
+[INFO] 17:38:48:498 IMS/(5517:5556): Posicion Vieja en X:3
+[INFO] 17:38:48:498 IMS/(5517:5556): Posicion Vieja en Y:0
+[INFO] 17:38:48:498 IMS/(5517:5556): Posicion Nueva en X:4
+[INFO] 17:38:48:498 IMS/(5517:5556): Posicion Nueva en Y:0
+[INFO] 17:38:48:498 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:48:500 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[INFO] 17:38:49:542 IMS/(5517:5556): LLegó nuevo comando:761
+[INFO] 17:38:49:542 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:49:542 IMS/(5517:5556): Llego comando: Mover Tripulante.....
+[INFO] 17:38:49:542 IMS/(5517:5556): ID Tripulante:0
+[INFO] 17:38:49:542 IMS/(5517:5556): Posicion Vieja en X:4
+[INFO] 17:38:49:542 IMS/(5517:5556): Posicion Vieja en Y:0
+[INFO] 17:38:49:542 IMS/(5517:5556): Posicion Nueva en X:5
+[INFO] 17:38:49:542 IMS/(5517:5556): Posicion Nueva en Y:0
+[INFO] 17:38:49:543 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:49:545 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[INFO] 17:38:50:588 IMS/(5517:5556): LLegó nuevo comando:761
+[INFO] 17:38:50:588 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:50:589 IMS/(5517:5556): Llego comando: Mover Tripulante.....
+[INFO] 17:38:50:589 IMS/(5517:5556): ID Tripulante:0
+[INFO] 17:38:50:589 IMS/(5517:5556): Posicion Vieja en X:5
+[INFO] 17:38:50:589 IMS/(5517:5556): Posicion Vieja en Y:0
+[INFO] 17:38:50:589 IMS/(5517:5556): Posicion Nueva en X:6
+[INFO] 17:38:50:589 IMS/(5517:5556): Posicion Nueva en Y:0
+[INFO] 17:38:50:590 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:50:593 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[INFO] 17:38:51:633 IMS/(5517:5556): LLegó nuevo comando:761
+[INFO] 17:38:51:633 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:51:634 IMS/(5517:5556): Llego comando: Mover Tripulante.....
+[INFO] 17:38:51:634 IMS/(5517:5556): ID Tripulante:0
+[INFO] 17:38:51:634 IMS/(5517:5556): Posicion Vieja en X:6
+[INFO] 17:38:51:634 IMS/(5517:5556): Posicion Vieja en Y:0
+[INFO] 17:38:51:634 IMS/(5517:5556): Posicion Nueva en X:7
+[INFO] 17:38:51:634 IMS/(5517:5556): Posicion Nueva en Y:0
+[INFO] 17:38:51:634 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:51:636 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[INFO] 17:38:52:682 IMS/(5517:5556): LLegó nuevo comando:761
+[INFO] 17:38:52:682 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:52:682 IMS/(5517:5556): Llego comando: Mover Tripulante.....
+[INFO] 17:38:52:682 IMS/(5517:5556): ID Tripulante:0
+[INFO] 17:38:52:682 IMS/(5517:5556): Posicion Vieja en X:7
+[INFO] 17:38:52:682 IMS/(5517:5556): Posicion Vieja en Y:0
+[INFO] 17:38:52:683 IMS/(5517:5556): Posicion Nueva en X:7
+[INFO] 17:38:52:683 IMS/(5517:5556): Posicion Nueva en Y:1
+[INFO] 17:38:52:683 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:52:686 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[INFO] 17:38:53:729 IMS/(5517:5556): LLegó nuevo comando:761
+[INFO] 17:38:53:729 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:53:729 IMS/(5517:5556): Llego comando: Mover Tripulante.....
+[INFO] 17:38:53:730 IMS/(5517:5556): ID Tripulante:0
+[INFO] 17:38:53:730 IMS/(5517:5556): Posicion Vieja en X:7
+[INFO] 17:38:53:730 IMS/(5517:5556): Posicion Vieja en Y:1
+[INFO] 17:38:53:730 IMS/(5517:5556): Posicion Nueva en X:7
+[INFO] 17:38:53:730 IMS/(5517:5556): Posicion Nueva en Y:2
+[INFO] 17:38:53:730 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:53:733 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[INFO] 17:38:54:430 IMS/(5517:5519): -----------------------------------------------------
+[INFO] 17:38:54:430 IMS/(5517:5519): Comienza actualización de Blocks.ims...
+[INFO] 17:38:54:431 IMS/(5517:5519): Se actualizo Blocks.ims
+[INFO] 17:38:54:432 IMS/(5517:5519): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:38:54:433 IMS/(5517:5519): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:38:54:433 IMS/(5517:5519): -----------------------------------------------------
+[INFO] 17:38:54:735 IMS/(5517:5556): LLegó nuevo comando:762
+[INFO] 17:38:54:735 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:54:736 IMS/(5517:5556): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 17:38:54:736 IMS/(5517:5556): Tam tarea:22
+[INFO] 17:38:54:736 IMS/(5517:5556): Tarea:ARREGLAR_REACTOR;7;2;4
+[INFO] 17:38:54:736 IMS/(5517:5556): Parametro de tarea:-1
+[INFO] 17:38:54:736 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:54:736 IMS/(5517:5556): Descartando basura...
+[INFO] 17:38:54:738 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[INFO] 17:38:57:747 IMS/(5517:5556): LLegó nuevo comando:763
+[INFO] 17:38:57:747 IMS/(5517:5556): -----------------------------------------------------
+[INFO] 17:38:57:747 IMS/(5517:5556): Llego comando: Finaliza tarea.....
+[INFO] 17:38:57:748 IMS/(5517:5556): Tarea:ARREGLAR_REACTOR;7;2;4
+[INFO] 17:38:57:748 IMS/(5517:5556): Finaliza tarea:Descartando basura...
+[INFO] 17:38:57:749 IMS/(5517:5556): Soy recurso. String a guardar:FINALIZA_EJECUCION_TAREA ARREGLAR_REACTOR;7;2;4|
+[INFO] 17:38:57:750 IMS/(5517:5556): FINALIZA_EJECUCION_TAREA ARREGLAR_REACTOR;7;2;4|
+[INFO] 17:38:57:750 IMS/(5517:5556): Guardandose en blocks con metadata existente..
+[ERROR] 17:38:57:751 IMS/(5517:5556): No existe más espacio para guardar en filesystem
+[ERROR] 17:38:57:751 IMS/(5517:5556): Finalizando programa...
+[INFO] 17:40:21:258 IMS/(5626:5626): Validando Existencia de directorios...
+[INFO] 17:40:21:259 IMS/(5626:5626): No existe directorio: Filesystem. Se crea.
+[INFO] 17:40:21:263 IMS/(5626:5626): -----------------------------------------------------
+[INFO] 17:40:21:264 IMS/(5626:5626): Validando existencia de Superbloque.ims....
+[INFO] 17:40:21:264 IMS/(5626:5626): -----------------------------------------------------
+[ERROR] 17:40:21:264 IMS/(5626:5626): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 17:40:21:264 IMS/(5626:5626): Ingresar el tamaño de cada bloque
+[INFO] 17:40:27:209 IMS/(5626:5626): Ingresar la cantidad de bloques
+[INFO] 17:40:34:907 IMS/(5626:5626): Muestro mis valores del bitmap..
+[INFO] 17:40:34:920 IMS/(5626:5626): -----------------------------------------------------
+[INFO] 17:40:34:920 IMS/(5626:5626): Se creó archivo superBloque.ims
+[INFO] 17:40:34:920 IMS/(5626:5626): -----------------------------------------------------
+[INFO] 17:40:34:920 IMS/(5626:5626): Validando existencia de Blocks.ims....
+[ERROR] 17:40:34:921 IMS/(5626:5626): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 17:40:35:126 IMS/(5626:5626): -----------------------------------------------------
+[INFO] 17:40:35:127 IMS/(5626:5626): Se creó archivo Blocks.ims
+[INFO] 17:40:35:127 IMS/(5626:5626): -----------------------------------------------------
+[INFO] 17:40:35:127 IMS/(5626:5626): -----------------------------------------------------
+[INFO] 17:40:35:127 IMS/(5626:5626): N° Proceso es:5626
+[INFO] 17:40:35:127 IMS/(5626:5626): -----------------------------------------------------
+[INFO] 17:40:35:128 IMS/(5626:5626): Creando servidor......
+[INFO] 17:40:36:128 IMS/(5626:5626): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 17:40:36:128 IMS/(5626:5626): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 17:40:48:130 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:40:48:130 IMS/(5626:5627): Comienza actualización de Blocks.ims...
+[INFO] 17:40:48:266 IMS/(5626:5627): Se actualizo Blocks.ims
+[INFO] 17:40:48:267 IMS/(5626:5627): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:40:48:401 IMS/(5626:5627): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:40:48:417 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:00:417 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:00:417 IMS/(5626:5627): Comienza actualización de Blocks.ims...
+[INFO] 17:41:00:424 IMS/(5626:5627): Se actualizo Blocks.ims
+[INFO] 17:41:00:425 IMS/(5626:5627): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:41:00:560 IMS/(5626:5627): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:41:00:574 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:12:575 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:12:576 IMS/(5626:5627): Comienza actualización de Blocks.ims...
+[INFO] 17:41:12:582 IMS/(5626:5627): Se actualizo Blocks.ims
+[INFO] 17:41:12:583 IMS/(5626:5627): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:41:12:718 IMS/(5626:5627): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:41:12:733 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:24:734 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:24:735 IMS/(5626:5627): Comienza actualización de Blocks.ims...
+[INFO] 17:41:24:741 IMS/(5626:5627): Se actualizo Blocks.ims
+[INFO] 17:41:24:742 IMS/(5626:5627): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:41:24:864 IMS/(5626:5627): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:41:24:878 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:36:879 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:36:879 IMS/(5626:5627): Comienza actualización de Blocks.ims...
+[INFO] 17:41:36:884 IMS/(5626:5627): Se actualizo Blocks.ims
+[INFO] 17:41:36:885 IMS/(5626:5627): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:41:37:012 IMS/(5626:5627): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:41:37:027 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:49:027 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:41:49:028 IMS/(5626:5627): Comienza actualización de Blocks.ims...
+[INFO] 17:41:49:034 IMS/(5626:5627): Se actualizo Blocks.ims
+[INFO] 17:41:49:035 IMS/(5626:5627): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:41:49:173 IMS/(5626:5627): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:41:49:191 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:42:01:192 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:42:01:193 IMS/(5626:5627): Comienza actualización de Blocks.ims...
+[INFO] 17:42:01:199 IMS/(5626:5627): Se actualizo Blocks.ims
+[INFO] 17:42:01:200 IMS/(5626:5627): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:42:01:332 IMS/(5626:5627): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:42:01:347 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:42:13:348 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:42:13:348 IMS/(5626:5627): Comienza actualización de Blocks.ims...
+[INFO] 17:42:13:354 IMS/(5626:5627): Se actualizo Blocks.ims
+[INFO] 17:42:13:355 IMS/(5626:5627): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:42:13:476 IMS/(5626:5627): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:42:13:491 IMS/(5626:5627): -----------------------------------------------------
+[INFO] 17:43:02:743 IMS/(6023:6023): Validando Existencia de directorios...
+[INFO] 17:43:02:743 IMS/(6023:6023): Ya existe directorio
+[INFO] 17:43:02:744 IMS/(6023:6023): -----------------------------------------------------
+[INFO] 17:43:02:744 IMS/(6023:6023): Validando existencia de Superbloque.ims....
+[INFO] 17:43:02:744 IMS/(6023:6023): -----------------------------------------------------
+[INFO] 17:43:02:745 IMS/(6023:6023): Se encontró el archivo superBloque.ims
+[INFO] 17:43:02:746 IMS/(6023:6023): Muestro mis valores del bitmap..
+[INFO] 17:43:02:770 IMS/(6023:6023): -----------------------------------------------------
+[INFO] 17:43:02:770 IMS/(6023:6023): Se muestra los datos del superBloque.
+[INFO] 17:43:02:770 IMS/(6023:6023): Tamaño de bloque: 256
+[INFO] 17:43:02:770 IMS/(6023:6023): Cantidad de bloques: 32768
+[INFO] 17:43:02:770 IMS/(6023:6023): -----------------------------------------------------
+[INFO] 17:43:02:770 IMS/(6023:6023): Validando existencia de Blocks.ims....
+[INFO] 17:43:02:770 IMS/(6023:6023): -----------------------------------------------------
+[INFO] 17:43:02:771 IMS/(6023:6023): Existe archivo Blocks.ims.
+[INFO] 17:43:02:775 IMS/(6023:6023): -----------------------------------------------------
+[INFO] 17:43:02:776 IMS/(6023:6023): -----------------------------------------------------
+[INFO] 17:43:02:776 IMS/(6023:6023): N° Proceso es:6023
+[INFO] 17:43:02:776 IMS/(6023:6023): -----------------------------------------------------
+[INFO] 17:43:02:776 IMS/(6023:6023): Creando servidor......
+[INFO] 17:43:03:776 IMS/(6023:6023): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 17:43:03:777 IMS/(6023:6023): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 17:43:15:778 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:43:15:778 IMS/(6023:6029): Comienza actualización de Blocks.ims...
+[INFO] 17:43:15:784 IMS/(6023:6029): Se actualizo Blocks.ims
+[INFO] 17:43:15:785 IMS/(6023:6029): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:43:15:909 IMS/(6023:6029): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:43:15:924 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:43:27:924 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:43:27:924 IMS/(6023:6029): Comienza actualización de Blocks.ims...
+[INFO] 17:43:27:930 IMS/(6023:6029): Se actualizo Blocks.ims
+[INFO] 17:43:27:932 IMS/(6023:6029): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:43:28:066 IMS/(6023:6029): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:43:28:070 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:43:40:070 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:43:40:070 IMS/(6023:6029): Comienza actualización de Blocks.ims...
+[INFO] 17:43:40:075 IMS/(6023:6029): Se actualizo Blocks.ims
+[INFO] 17:43:40:076 IMS/(6023:6029): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:43:40:208 IMS/(6023:6029): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:43:40:223 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:43:52:224 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:43:52:224 IMS/(6023:6029): Comienza actualización de Blocks.ims...
+[INFO] 17:43:52:230 IMS/(6023:6029): Se actualizo Blocks.ims
+[INFO] 17:43:52:231 IMS/(6023:6029): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:43:52:367 IMS/(6023:6029): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:43:52:383 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:04:384 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:04:384 IMS/(6023:6029): Comienza actualización de Blocks.ims...
+[INFO] 17:44:04:390 IMS/(6023:6029): Se actualizo Blocks.ims
+[INFO] 17:44:04:391 IMS/(6023:6029): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:44:04:521 IMS/(6023:6029): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:44:04:535 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:10:923 IMS/(6023:6023): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:44:10:943 IMS/(6023:6094): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:44:16:535 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:16:536 IMS/(6023:6029): Comienza actualización de Blocks.ims...
+[INFO] 17:44:16:541 IMS/(6023:6029): Se actualizo Blocks.ims
+[INFO] 17:44:16:552 IMS/(6023:6029): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:44:16:717 IMS/(6023:6029): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:44:16:737 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:28:740 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:28:740 IMS/(6023:6029): Comienza actualización de Blocks.ims...
+[INFO] 17:44:28:746 IMS/(6023:6029): Se actualizo Blocks.ims
+[INFO] 17:44:28:757 IMS/(6023:6029): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:44:28:938 IMS/(6023:6029): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:44:28:952 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:40:952 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:40:953 IMS/(6023:6029): Comienza actualización de Blocks.ims...
+[INFO] 17:44:40:957 IMS/(6023:6029): Se actualizo Blocks.ims
+[INFO] 17:44:40:966 IMS/(6023:6029): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 17:44:41:133 IMS/(6023:6029): Muestro mis valores del bitmap despues sincronizar..
+[INFO] 17:44:41:147 IMS/(6023:6029): -----------------------------------------------------
+[INFO] 17:44:49:932 IMS/(6023:6094): LLegó nuevo comando:761
+[INFO] 17:44:49:932 IMS/(6023:6094): -----------------------------------------------------
+[INFO] 17:44:49:932 IMS/(6023:6094): Llego comando: Mover Tripulante.....
+[INFO] 17:44:49:932 IMS/(6023:6094): ID Tripulante:2
+[INFO] 17:44:49:932 IMS/(6023:6094): Posicion Vieja en X:0
+[INFO] 17:44:49:932 IMS/(6023:6094): Posicion Vieja en Y:0
+[INFO] 17:44:49:932 IMS/(6023:6094): Posicion Nueva en X:1
+[INFO] 17:44:49:932 IMS/(6023:6094): Posicion Nueva en Y:0
+[INFO] 17:44:49:933 IMS/(6023:6094): -----------------------------------------------------
+[INFO] 17:44:49:934 IMS/(6023:6094): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 17:44:49:941 IMS/(6023:6094): TEMPORAL NUEVO METADATA: Se mueve de 0|0 a 1|0|
+[INFO] 17:44:49:951 IMS/(6023:6094): LLegó nuevo comando:761
+[INFO] 17:44:49:951 IMS/(6023:6094): -----------------------------------------------------
+[INFO] 17:44:49:951 IMS/(6023:6094): Llego comando: Mover Tripulante.....
+[INFO] 17:44:49:951 IMS/(6023:6094): ID Tripulante:1
+[INFO] 17:44:49:951 IMS/(6023:6094): Posicion Vieja en X:0
+[INFO] 17:44:49:951 IMS/(6023:6094): Posicion Vieja en Y:0
+[INFO] 17:44:49:955 IMS/(6023:6094): Posicion Nueva en X:1
+[INFO] 17:44:49:959 IMS/(6023:6094): Posicion Nueva en Y:0
+[INFO] 17:44:49:965 IMS/(6023:6094): -----------------------------------------------------
+[INFO] 17:44:49:966 IMS/(6023:6094): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 17:44:49:970 IMS/(6023:6094): TEMPORAL NUEVO METADATA: Se mueve de 0|0 a 1|0|
+[INFO] 17:44:49:975 IMS/(6023:6094): LLegó nuevo comando:761
+[INFO] 17:44:49:975 IMS/(6023:6094): -----------------------------------------------------
+[INFO] 17:44:49:975 IMS/(6023:6094): Llego comando: Mover Tripulante.....
+[INFO] 17:44:49:975 IMS/(6023:6094): ID Tripulante:0
+[INFO] 17:44:49:975 IMS/(6023:6094): Posicion Vieja en X:9
+[INFO] 17:44:49:975 IMS/(6023:6094): Posicion Vieja en Y:0
+[INFO] 17:44:49:976 IMS/(6023:6094): Posicion Nueva en X:8
+[INFO] 17:44:49:976 IMS/(6023:6094): Posicion Nueva en Y:0
+[INFO] 17:44:49:976 IMS/(6023:6094): -----------------------------------------------------
+[INFO] 17:44:49:976 IMS/(6023:6094): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 17:44:49:985 IMS/(6023:6094): TEMPORAL NUEVO METADATA: Se mueve de 9|0 a 8|0|
+[INFO] 17:44:50:990 IMS/(6023:6094): LLegó nuevo comando:761
+[INFO] 17:44:50:990 IMS/(6023:6094): -----------------------------------------------------
+[INFO] 17:44:50:990 IMS/(6023:6094): Llego comando: Mover Tripulante.....
+[INFO] 17:44:50:990 IMS/(6023:6094): ID Tripulante:1
+[INFO] 17:44:50:990 IMS/(6023:6094): Posicion Vieja en X:1
+[INFO] 17:44:50:990 IMS/(6023:6094): Posicion Vieja en Y:0
+[INFO] 17:44:50:991 IMS/(6023:6094): Posicion Nueva en X:2
+[INFO] 17:44:50:991 IMS/(6023:6094): Posicion Nueva en Y:0
+[INFO] 17:44:50:992 IMS/(6023:6094): -----------------------------------------------------
+[INFO] 17:44:50:999 IMS/(6023:6094): Guardandose en blocks con metadata existente..

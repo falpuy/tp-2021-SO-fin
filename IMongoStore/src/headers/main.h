@@ -17,8 +17,8 @@
     #include "preparacionFS.h"
     
 
-    #define CONFIG_PATH "/home/utnso/Escritorio/TP/tp-2021-1c-Unnamed-Group/IMongoStore/configuraciones/ims.config"
-    #define LOG_PATH "/home/utnso/Escritorio/TP/tp-2021-1c-Unnamed-Group/IMongoStore/logs/logIMongoStore.log"
+    #define CONFIG_PATH "ims.config"
+    #define LOG_PATH "../logs/logIMongoStore.log"
     #define PROGRAM "IMS"
 
     void setearConfiguraciones();

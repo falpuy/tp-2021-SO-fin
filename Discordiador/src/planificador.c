@@ -348,7 +348,7 @@ void funcionhExecaExit (t_log* logger){
                 log_info(logger, "Se ejecuta el hilo de Exec a Exit");
 
                 list_iterate_position(exec->elements, funcionCambioExecExit);
-                _signal(1, cantidadTCBEnExec, &semEXIT);
+                _signal(1, cantidadTCBEnExec, &semBLOCKIO);
             }
 
             log_info(logger,"Se hizo una ejecución de CPU en Exec->Exit");

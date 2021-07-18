@@ -25,7 +25,7 @@
     };
 
     int comandoTarea(char* tarea);
-    void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulante);
+    void finalizaEjecutarTarea(int lenTarea,char* tarea,int idTripulante);
     void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulante);
     
     void escribirEnBitacoraFinalizaTarea(char* tarea, int idTripulante);

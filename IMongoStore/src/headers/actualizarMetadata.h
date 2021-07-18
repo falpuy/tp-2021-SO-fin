@@ -15,8 +15,8 @@
 
     #include <commons/bitarray.h>
 
-    char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar, int flagEsGuardar);
-    void actualizarBlocks(t_config* metadataBitacora,int bloque,int flagEsGuardar);
+    char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar, int flagEsGuardar,char* path);
+    void actualizarBlocks(int bloque,int flagEsGuardar,char* path);
     void setearMD5(char* pathMetadata);
     void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar);
     void actualizarSize(t_config* metadataBitacora,int tamanio, int flagEsGuardar);

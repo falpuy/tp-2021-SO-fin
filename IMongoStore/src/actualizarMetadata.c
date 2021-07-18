@@ -1,11 +1,11 @@
 #include "./headers/actualizarMetadata.h"
 
 
-char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGuardar){
+char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGuardar,char* path){
     int tamListaVieja = string_length(listaVieja);
     char *bloque = string_itoa(bloqueAModificar);
-    
     char* listaNueva  = malloc(tamListaVieja);
+
     memcpy(listaNueva, listaVieja, tamListaVieja - 1); //copio hasta ']'
     listaNueva[tamListaVieja - 1] = '\0';
 
@@ -18,8 +18,19 @@ char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGu
         }
     }else{ //Es para borrar
         if (tamListaVieja > 2) { //[2,44
-
             int tamListaNueva = string_length(listaNueva);
+            t_config* metadata = config_create(path);
+            int bloques = config_get_int_value(metadata,"BLOCK_COUNT");
+            config_destroy(metadata);
+
+            if(bloques == 0){
+                char* temporal = string_new();
+                string_append(&temporal,"[]");
+                free(bloque);
+                free(listaNueva);
+                return temporal;
+            }
+
             int aux = tamListaNueva;
             
             while(aux != 0 && memcmp(listaNueva + aux, ",", 1)) { 
@@ -39,32 +50,20 @@ char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGu
             listaNueva[aux+1] = '\0';
             free(listaTemporal);
 
-
-        } else {//[X
-            char* listaTemporal = malloc(strlen(listaNueva));
-            int tamListaNueva = strlen(listaNueva);
-            memcpy(listaTemporal, listaNueva,tamListaNueva  - 1);//copio hasta antes del numero
-            listaTemporal[tamListaNueva- 1] = '\0';
-            string_append(&listaTemporal, "]");
-            free(listaNueva);
-            
-            //vuelvo a crear la listaNueva para poder retornarla
-            listaNueva = malloc(string_length(listaTemporal)+1);
-            memcpy(listaNueva, listaTemporal,string_length(listaTemporal));
-            listaNueva[string_length(listaTemporal)] = '\0';
-            free(listaTemporal);
         }
     }
     free(bloque);
     return listaNueva;
 }
 
-void actualizarBlocks(t_config* metadataBitacora,int bloque,int flagEsGuardar){
+void actualizarBlocks(int bloque,int flagEsGuardar,char* path){
+    t_config* metadataBitacora = config_create(path);
     char* lista = config_get_string_value(metadataBitacora,"BLOCKS"); 
-    char* bloquesNuevos = crearNuevaListaBloques(lista,bloque,flagEsGuardar);
+    char* bloquesNuevos = crearNuevaListaBloques(lista,bloque,flagEsGuardar,path);
 
     config_set_value(metadataBitacora,"BLOCKS",bloquesNuevos);
     config_save(metadataBitacora);
+    config_destroy(metadataBitacora);
 
     free(bloquesNuevos);
 }
@@ -166,7 +165,6 @@ void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar){
 }
 
 void actualizarSize(t_config* metadataBitacora,int tamanio, int flagEsGuardar){
-    
     int size = config_get_int_value(metadataBitacora,"SIZE");
     if(flagEsGuardar){
         size += tamanio;

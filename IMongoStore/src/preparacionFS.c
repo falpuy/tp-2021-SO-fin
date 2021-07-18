@@ -9,12 +9,12 @@ void inicializacionFS(){
 
 void validarDirectorioFS(){
     log_info(logger, "Validando Existencia de directorios...");
-    DIR* dir = opendir("../Filesystem");
+    DIR* dir = opendir("./Filesystem");
     if(ENOENT == errno){
         log_info(logger, "No existe directorio: Filesystem. Se crea.");
-        mkdir("../Filesystem", 0777);
-        mkdir("../Filesystem/Bitacoras",0777);
-        mkdir("../Filesystem/Files",0777);
+        mkdir("./Filesystem", 0777);
+        mkdir("./Filesystem/Bitacoras",0777);
+        mkdir("./Filesystem/Files",0777);
         closedir(dir);
     }
     else{
@@ -29,7 +29,7 @@ void validarSuperBloque(){
     log_info(logger, "-----------------------------------------------------");
 
 
-    if(access("../Filesystem/SuperBloque.ims",F_OK) < 0){
+    if(access("./Filesystem/SuperBloque.ims",F_OK) < 0){
         log_error(logger, "No se encontró archivo SuperBloque.ims. Se crea archivo");
            
         log_info(logger, "Ingresar el tamaño de cada bloque");
@@ -43,7 +43,7 @@ void validarSuperBloque(){
             scanf("%d", &cantidadBloques);
         }
 
-        int superBloque = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR,0664);
+        int superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR,0664);
         
         if(superBloque<0){
             log_error(logger, "Error al abrir/crear Superbloque");
@@ -94,7 +94,7 @@ void validarSuperBloque(){
 
         log_info(logger, "Se encontró el archivo superBloque.ims");
 
-        int superBloque = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+        int superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
         
         //Mapeo para sacar el tamaño y cantidad solo
         void* sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
@@ -137,10 +137,10 @@ void validarBlocks(){
     log_info(logger, "Validando existencia de Blocks.ims....");
     
 
-    if(access("../Filesystem/Blocks.ims",F_OK) < 0){
+    if(access("./Filesystem/Blocks.ims",F_OK) < 0){
         log_error(logger, "No se encontró archivo Blocks.ims. Se crea archivo");
         
-        int blocks = open("../Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
+        int blocks = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
         
         int tamanioAGuardar = (tamanioBloque * cantidadBloques);
         copiaBlocks = malloc(tamanioBloque* cantidadBloques);
@@ -158,7 +158,7 @@ void validarBlocks(){
         log_info(logger, "-----------------------------------------------------");
         log_info(logger,"Existe archivo Blocks.ims.");
         
-        int blocks = open("../Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
+        int blocks = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
         copiaBlocks = malloc(tamanioBloque*cantidadBloques);
 
         void* blocks_memory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, blocks, 0);

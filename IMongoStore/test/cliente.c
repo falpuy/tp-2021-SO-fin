@@ -44,28 +44,54 @@ int main(){
     t_log* log = log_create("cliente.log","clienteTest", 1,  LOG_LEVEL_INFO);
     int socket = _connect("127.0.0.1", "5002", log);
 
-    // char* tarea = string_new();
-    // string_append(&tarea, "GENERAR_OXIGENO");
-    // void* buffer = _serialize(sizeof(int)*3 + string_length(tarea),"%d%s%d",101,tarea,10);
-    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer,sizeof(int)*3 + string_length(tarea), log);
 
-    // char* tarea2 = string_new();
-    // string_append(&tarea2, "GENERAR_OXIGENO");
-    // void* buffer1 = _serialize(sizeof(int)*3 + string_length(tarea2),"%d%s%d",101,tarea2,10);
-    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer1,sizeof(int)*3 + string_length(tarea2), log);
+    // for(int i = 0; i < 5; i++){
+    // sleep(5);
+    char* tarea = string_new();
+    string_append(&tarea, "GENERAR_OXIGENO");
+    void* buffer = _serialize(sizeof(int)*3 + string_length(tarea),"%d%s%d",1,tarea,15);
+    _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer,sizeof(int)*3 + string_length(tarea), log);
 
+    // sleep(5);
+    char* tarea2 = string_new();
+    string_append(&tarea2, "CONSUMIR_OXIGENO");
+    void* buffer3 = _serialize(sizeof(int)*3 + string_length(tarea2),"%d%s%d",1,tarea2,15);
+    _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer3,sizeof(int)*3 + string_length(tarea2), log);
 
-    // void* buffer = _serialize(sizeof(int),"%d",101);
-    char* tarea3 = string_new();
-    string_append(&tarea3, "CONSUMIR_OXIGENO");
-    void* buffer2 = _serialize(sizeof(int)*3 + string_length(tarea3) ,"%d%s%d",101,tarea3,7);
-    _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer2,sizeof(int)*3 + string_length(tarea3), log);
+    // // sleep(5);
 
-    // void* buffer = _serialize(sizeof(int)*6,"%d%d%d%d%d%d",101,3,4,5,6,7);
+    // char* tarea3 = string_new();
+    // string_append(&tarea3, "GENERAR_COMIDA");
+    // void* buffer2 = _serialize(sizeof(int)*3 + string_length(tarea3) ,"%d%s%d",0,tarea3,12);
+    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer2,sizeof(int)*3 + string_length(tarea3), log);
 
+    // // sleep(5);
 
+    // // void* buffer = _serialize(sizeof(int)*6,"%d%d%d%d%d%d",101,3,4,5,6,7);
+    // char* tarea4 = string_new();
+    // string_append(&tarea4, "JUEGA_GEARS_OF_WAR");
+    // void* buffer4 = _serialize(sizeof(int)*2 + string_length(tarea4),"%d%s",1,tarea4);
+    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer4,sizeof(int)*2 + string_length(tarea4), log);
 
-   
+    // // sleep(5);
+
+    // char* tarea5 = string_new();
+    // string_append(&tarea5, "GENERAR_BASURA");
+    // void* buffer5 = _serialize(sizeof(int)*3 + string_length(tarea5),"%d%s%d",1,tarea5,12);
+    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer5,sizeof(int)*3 + string_length(tarea5), log);
+
+    // char* tarea6 = string_new();
+    // string_append(&tarea6, "JUEGA_HALO");
+    // void* buffer6 = _serialize(sizeof(int)*2 + string_length(tarea6),"%d%s",1,tarea6);
+    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer6,sizeof(int)*2 + string_length(tarea6), log);
+
+    // char* tarea7 = string_new();
+    // string_append(&tarea7, "GRITARLE_A_PATOTA_B");
+    // void* buffer7 = _serialize(sizeof(int)*2 + string_length(tarea7),"%d%s",1,tarea7);
+    // _send_message(socket, "DIS",COMIENZA_EJECUCION_TAREA, buffer5,sizeof(int)*2 + string_length(tarea7), log);
+
+    // // }
+
     
     return 0;
 }

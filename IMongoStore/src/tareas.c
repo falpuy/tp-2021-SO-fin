@@ -7,11 +7,10 @@ int comandoTarea(char* tarea){
     else if(!strcmp(tarea,"DESCARTAR_BASURA")){return DESCARTAR_BASURA;}
     else if(!strcmp(tarea,"GENERAR_COMIDA")){return GENERAR_COMIDA;}
     else if(!strcmp(tarea,"CONSUMIR_COMIDA")){return CONSUMIR_COMIDA;}
-    else{return TAREA_NO_IO;}
-    return ERROR_NO_EXISTE_TAREA;   
+    return TAREA_NO_IO;
 }
 
-void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulante){ //preguntar que hace finalizar tarea ademas de escribir bitacora
+void finalizaEjecutarTarea(int lenTarea,char* tarea,int idTripulante){ //preguntar que hace finalizar tarea ademas de escribir bitacora
     
     int comando = comandoTarea(tarea);
     switch(comando){
@@ -54,7 +53,7 @@ void finalizaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulan
             pthread_mutex_unlock(&blocks_bitmap);
         break;
         case TAREA_NO_IO:
-            log_info(logger,"Finaliza tarea:Descartando basura...");
+            log_info(logger,"Finaliza tarea de no IO...");
 
             pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraFinalizaTarea(tarea,idTripulante);
@@ -116,12 +115,11 @@ void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulan
             pthread_mutex_unlock(&blocks_bitmap);
         break;
         case TAREA_NO_IO:
-            log_info(logger,"Descartando basura...");
+            log_info(logger,"Ejecutando tarea de no IO...");
 
             pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraComienzaTarea(tarea,idTripulante);
             pthread_mutex_unlock(&blocks_bitmap);
-
         break;
         default:
             log_error(logger,"[ComienzaEjecutarTarea] No existe comando");
@@ -155,7 +153,7 @@ void escribirEnBitacoraFinalizaTarea(char* tarea, int idTripulante){
         crearMetadataBitacora(path_fileTripulante);
     }
 
-    guardarEnBlocks(stringTemporal,path_fileTripulante,1);
+    guardarEnBlocks(stringTemporal,path_fileTripulante,0);
     free(stringTemporal);
     free(path_fileTripulante);
 }
@@ -295,7 +293,7 @@ void generarOxigeno(int parametroTarea){
 }
 
 void generarComida(int parametroTarea){
-    char* path_comida = pathCompleto("Files/Basura.ims");
+    char* path_comida = pathCompleto("Files/Comida.ims");
     
     if(access(path_comida,F_OK)<0){
         log_info(logger, "No existe Oxigeno.ims...Se crea archivo");

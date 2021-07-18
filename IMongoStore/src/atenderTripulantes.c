@@ -149,15 +149,20 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             tarea = malloc(tamTarea+1);
             memcpy(tarea,payload+sizeof(int)*2,tamTarea);
             tarea[tamTarea]='\0';
-            memcpy(&parametro,payload + sizeof(int)*2+ tamTarea,sizeof(int));
-
 
             log_info(logger, "Tam tarea:%d", tamTarea);
             log_info(logger, "Tarea:%s", tarea);
-            log_info(logger, "Parametro de tarea:%d", parametro);
+
+            if(comandoTarea(tarea) == 7){
+                comienzaEjecutarTarea(tamTarea,tarea,-1,idTripulante);
+            }else{
+                memcpy(&parametro,payload + sizeof(int)*2+ tamTarea,sizeof(int));
+                log_info(logger, "Parametro de tarea:%d", parametro);
+                comienzaEjecutarTarea(tamTarea,tarea,parametro,idTripulante);
+
+            }
             log_info(logger,"-----------------------------------------------------");
 
-            comienzaEjecutarTarea(tamTarea,tarea,parametro,idTripulante);
             free(tarea);
             break;
 
@@ -171,11 +176,10 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             tarea = malloc(tamTarea+1);
             memcpy(tarea,payload+sizeof(int)*2,tamTarea);
             tarea[tamTarea]='\0';
-            memcpy(&parametro,payload + sizeof(int)*2+ tamTarea,sizeof(int));
 
             log_info(logger, "Tarea:%s", tarea);
 
-            finalizaEjecutarTarea(tamTarea,tarea,parametro,idTripulante);
+            finalizaEjecutarTarea(tamTarea,tarea,idTripulante);
             free(tarea);
             log_info(logger,"-----------------------------------------------------");
 

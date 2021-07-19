@@ -16,7 +16,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             log_info(logger,"-----------------------------------------------------");
             log_info(logger, "Se ha conectado por primera vez Discordiador");
             log_info(logger, "Guardo socket por si llega un sabotaje");
-            
+
             pthread_mutex_lock(&discordiador);
             socketDiscordiador = client;
             pthread_mutex_unlock(&discordiador);

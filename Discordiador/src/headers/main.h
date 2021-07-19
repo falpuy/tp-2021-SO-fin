@@ -16,7 +16,7 @@
     #include"consola.h"
 
     void setearConfiguraciones ();
-    void servidor(parametrosServer* parametros);
+    void servidor();
     
 
 

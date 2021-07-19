@@ -4,12 +4,12 @@ int main () {
     setearConfiguraciones();
     signal(SIGINT,liberarMemoria);
     funcionPlanificador(logger);
-    // pthread_create(&hEsperarSabotaje, NULL,(void*) servidor, parametros);
-    // pthread_detach(hEsperarSabotaje);
-    //
 
+
+    pthread_create(&hEsperarSabotaje, NULL,(void*) servidor, parametros);
+    pthread_detach(hEsperarSabotaje);
+    
     funcionConsola();
-
     return 0;
 }
 
@@ -92,13 +92,17 @@ void setearConfiguraciones (){
     pthread_detach(hBloqEmeraReady);
     pthread_detach(hFixerdeEmeraReady);
 
-    // char* bufferAEnviar = string_new();
-    // string_append(&bufferAEnviar, "Aviso de inicio Discordiador");
-    // _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, bufferAEnviar, strlen(bufferAEnviar), logger);
-    // free(bufferAEnviar);
+    char* bufferAEnviar = string_new();
+    string_append(&bufferAEnviar, "Holis");
+
+    void* buffer2 = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s",bufferAEnviar);
+    _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, buffer2,sizeof(int) + string_length(bufferAEnviar) , logger);
+    
+    free(bufferAEnviar);
+    free(buffer2);
 }
 
-void servidor(parametrosServer* parametros){
-    _start_server(parametros->puertoDiscordiador, handler, parametros->loggerDiscordiador);
+void servidor(){
+    _start_server(puerto_DIS, handler, logger);
 }
 

@@ -153,43 +153,43 @@ void funcionConsola(){
                     break;
 
                 case C_OBTENER_BITACORA: 
-                    // log_info(logger, "Entró comando: OBTENER_BITACORA");
-                    // // char** bitacora;
-                	// int idTripulante = atoi(parametros[1]);
+                    log_info(logger, "Entró comando: OBTENER_BITACORA");
+                    // char** bitacora;
+                	int idTripulante = atoi(parametros[1]);
                     
-                    // buffer = _serialize(sizeof(int), "%d", idTripulante);
-                    // _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
-                    // free(buffer);
+                    buffer = _serialize(sizeof(int), "%d", idTripulante);
+                    _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
+                    free(buffer);
                     
-                    // t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
+                    t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
                    
-                    // if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
-                    //     log_info(logger,"Bitácora del tripulante: %d", idTripulante);
+                    if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
+                        log_info(logger,"Bitácora del tripulante: %d", idTripulante);
                            
-                    //     int tamanioString;
-                    //     memcpy(&tamanioString,mensajeRecibido->payload, sizeof(int));
-                    //     char* str = malloc(tamanioString + 1);
-                    //     memcpy(str, mensajeRecibido->payload + sizeof(int) , tamanioString);
-                    //     str[tamanioString] = '\0';
+                        int tamanioString;
+                        memcpy(&tamanioString,mensajeRecibido->payload, sizeof(int));
+                        char* str = malloc(tamanioString + 1);
+                        memcpy(str, mensajeRecibido->payload + sizeof(int) , tamanioString);
+                        str[tamanioString] = '\0';
                         
-                    //     char** bitacora = string_split(str, "|");
-                    //     for(int i=0; bitacora[i]!=NULL; i++){
-                    //         log_info(logger, "%s", bitacora[i]);
-                    //     }
-                    //     for(int i=0; bitacora[i]!=NULL; i++){
-                    //         free(bitacora[i]);
-                    //     }  
-                    //     free(bitacora);
-                    // }else{
-                    //     log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
-                    // } 
-                    // free(mensajeRecibido->payload);
-                    // free(mensajeRecibido->identifier);
-                    // free(mensajeRecibido);
+                        char** bitacora = string_split(str, "|");
+                        for(int i=0; bitacora[i]!=NULL; i++){
+                            log_info(logger, "%s", bitacora[i]);
+                        }
+                        for(int i=0; bitacora[i]!=NULL; i++){
+                            free(bitacora[i]);
+                        }  
+                        free(bitacora);
+                    }else{
+                        log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
+                    } 
+                    free(mensajeRecibido->payload);
+                    free(mensajeRecibido->identifier);
+                    free(mensajeRecibido);
                 
-                    // free(parametros[0]);
-                    // free(parametros[1]);
-                    // free(parametros);
+                    free(parametros[0]);
+                    free(parametros[1]);
+                    free(parametros);
                     break;
                 
                 case C_SALIR: 

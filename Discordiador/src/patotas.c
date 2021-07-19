@@ -113,7 +113,7 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
 void destruirTCB(void* nodo){
     tcb* tcbADestruir = (tcb*) nodo;
     free(tcbADestruir->instruccion_actual);
-    free(tcbADestruir);
+    //free(tcbADestruir);
 }
 
 void destruirPCB(void* nodo){
@@ -214,8 +214,10 @@ void funcionTripulante (void* item){
                         if(ciclos_transcurridos_sabotaje == 0){
                             char* bufferAEnviar = string_new();
                             string_append(&bufferAEnviar, "Se invoco FSCK");
-                            _send_message(conexion_IMS, "DIS", INVOCAR_FSCK, bufferAEnviar, strlen(bufferAEnviar), logger);
+                            buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s", bufferAEnviar);
+                            _send_message(conexion_IMS, "DIS", INVOCAR_FSCK, buffer,sizeof(int) + string_length(bufferAEnviar), logger);
                             free(bufferAEnviar);
+                            free(buffer);
                         }
                         if(ciclos_transcurridos_sabotaje == duracion_sabotaje){
                             sem_post(&semERM);

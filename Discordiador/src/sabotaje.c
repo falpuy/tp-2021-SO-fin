@@ -26,71 +26,90 @@ void funcionhExecReadyaBloqEmer (t_log* logger){
   	while(validador == 1){
         pthread_mutex_unlock(&mutexValidador);
         while (planificacion_viva && sabotaje_activado == 1) {
+
             sem_wait(&semERM);
-            if(ciclos_transcurridos_sabotaje == duracion_sabotaje){
+
+            if(ciclos_transcurridos_sabotaje == duracion_sabotaje) // SI SE COMPLETÓ EL SABOTAJE
+            {
                 pthread_mutex_lock(&mutexExec);
                 tcb* aux_Fixer_Fin = queue_pop(exec);
                 pthread_mutex_unlock(&mutexExec);
+
                 aux_Fixer_Fin->status = 'M';
                 aux_Fixer_Fin->ciclosCumplidos = ciclos_cumplidos_fixer_pre_sabotaje;
+
                 pthread_mutex_lock(&mutexBloqEmer);
                 queue_push(bloq_emer,(void*) aux_Fixer_Fin);
                 pthread_mutex_unlock(&mutexBloqEmer);
+
                 sem_post(&semMR);
             }
-            else{
-            list_sort(exec->elements, comparadorTid);
-            while (!queue_is_empty(exec))
-            {
-                tcb* aux_TCB = malloc (sizeof(tcb));
-                pthread_mutex_lock(&mutexExec);
-                aux_TCB = queue_pop(exec);
-                pthread_mutex_unlock(&mutexExec);
-                aux_TCB->status = 'M';
+            else { // SI NO SE COMPLETÓ EL SABOTAJE
+
+                list_sort(exec->elements, comparadorTid);
+                while (!queue_is_empty(exec))
+                {
+                    tcb* aux_TCB = malloc (sizeof(tcb));
+
+                    pthread_mutex_lock(&mutexExec);
+                    aux_TCB = queue_pop(exec);
+                    pthread_mutex_unlock(&mutexExec);
+
+                    aux_TCB->status = 'M';
+
+                    pthread_mutex_lock(&mutexBloqEmer);
+                    queue_push(bloq_emer, (void*) aux_TCB);
+                    pthread_mutex_unlock(&mutexBloqEmer);
+
+                    pthread_mutex_lock(&mutexBloqEmerSorted);
+                    list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
+                    pthread_mutex_unlock(&mutexBloqEmerSorted);
+                }
+
+                list_sort(ready->elements, comparadorTid);
+                while (!queue_is_empty(ready))
+                {
+                    tcb* aux_TCB = malloc (sizeof(tcb));
+
+                    pthread_mutex_lock(&mutexReady);
+                    aux_TCB = queue_pop(ready);
+                    pthread_mutex_unlock(&mutexReady);
+
+                    aux_TCB->status = 'M';
+
+                    pthread_mutex_lock(&mutexBloqEmer);
+                    queue_push(bloq_emer, (void*) aux_TCB);
+                    pthread_mutex_unlock(&mutexBloqEmer);
+
+                    pthread_mutex_lock(&mutexBloqEmerSorted);
+                    list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
+                    pthread_mutex_unlock(&mutexBloqEmerSorted);
+                }
+
+                tripulanteFixer = queue_pop(bloq_emer_sorted);
+
+                if(tripulanteFixer->ciclosCumplidos != 0){ 
+                    ciclos_cumplidos_fixer_pre_sabotaje = tripulanteFixer->ciclosCumplidos;
+                    tripulanteFixer->ciclosCumplidos = 0;
+                }
+
+                list_remove(bloq_emer->elements,tripulanteFixer->tid);
                 pthread_mutex_lock(&mutexBloqEmer);
-                queue_push(bloq_emer, (void*) aux_TCB);
-                list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
-                pthread_mutex_unlock(&mutexBloqEmer);
-            }
-            list_sort(ready->elements, comparadorTid);
-            while (!queue_is_empty(ready))
-            {
-                tcb* aux_TCB = malloc (sizeof(tcb));
-                pthread_mutex_lock(&mutexReady);
-                aux_TCB = queue_pop(ready);
-                pthread_mutex_unlock(&mutexReady);
-                aux_TCB->status = 'M';
+                queue_push(bloq_emer,(void*) tripulanteFixer);
                 pthread_mutex_lock(&mutexBloqEmer);
-                queue_push(bloq_emer, (void*) aux_TCB);
-                pthread_mutex_unlock(&mutexBloqEmer);
-                pthread_mutex_lock(&mutexBloqEmerSorted);
-                list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
-                pthread_mutex_unlock(&mutexBloqEmerSorted);
-            }
 
-            tripulanteFixer = queue_pop(bloq_emer_sorted);
-            if(tripulanteFixer->ciclosCumplidos != 0){ 
-                ciclos_cumplidos_fixer_pre_sabotaje = tripulanteFixer->ciclosCumplidos;
-                tripulanteFixer->ciclosCumplidos = 0;
-            }
+                while (!queue_is_empty(bloq_emer_sorted))  
+                    queue_pop(bloq_emer_sorted);
+                
+                int tamanioBuffer = sizeof(int);
+                void* buffer = malloc(tamanioBuffer);
+                int idTripulante = tripulanteFixer->tid;
+                buffer = _serialize(tamanioBuffer, "%d", idTripulante);
+                _send_message(conexion_IMS, "DIS", ATIENDE_SABOTAJE, buffer, tamanioBuffer, logger);
+                free(buffer);
 
-            list_remove(bloq_emer->elements,tripulanteFixer->tid);
-            pthread_mutex_lock(&mutexBloqEmer);
-            queue_push(bloq_emer,(void*) tripulanteFixer);
-            pthread_mutex_lock(&mutexBloqEmer);
-
-            while (!queue_is_empty(bloq_emer_sorted))  
-                queue_pop(bloq_emer_sorted);
-            
-            int tamanioBuffer = sizeof(int);
-            void* buffer = malloc(tamanioBuffer);
-			int idTripulante = tripulanteFixer->tid;
-            buffer = _serialize(tamanioBuffer, "%d", idTripulante);
-            _send_message(conexion_RAM, "DIS", ATIENDE_SABOTAJE, buffer, tamanioBuffer, logger);
-            free(buffer);
-
-            sem_post(&semFMR);
-            }
+                sem_post(&semFMR);
+                }
 
         }
     }

@@ -125,7 +125,7 @@ void destruirPCB(void* nodo){
 
 
 /*---------------------------FUNCION TRIPULANTE (EXEC)----------------------*/
-void funcionTripulante (void* item){
+void funcionTripulante (void* item) {
     parametrosThread* aux = (parametrosThread*) item;
     int tamanioBuffer;
     int tamanioTarea;
@@ -148,70 +148,29 @@ void funcionTripulante (void* item){
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
 
-    while(temp_validador){
+    while(temp_validador){// MIENTRAS ESTÉ EN FUNCIONAMIENTO EL PROCESO
         sem_wait(&semTripulantes[aux->idSemaforo]);
         log_info(aux->logger,"[Tripulante %d] EJECUTANDO...", aux->idSemaforo);
+
         pthread_mutex_lock(&mutexExec);
         tcbTripulante = get_by_id(exec->elements, aux->idSemaforo);
         pthread_mutex_unlock(&mutexExec);
-        if(!sabotaje_activado)
-            log_info(aux->logger,"[Tripulante %d] DATOS TRIPULANTE: %d - %s", aux->idSemaforo, tcbTripulante -> tid, tcbTripulante -> instruccion_actual);
-        else
-            log_info(aux->logger,"[Tripulante %d] DATOS TRIPULANTE: %d - ATENDIENDO SABOTAJE", aux->idSemaforo, tcbTripulante -> tid);
 
-        if(tcbTripulante->estaVivoElHilo){
+        if(tcbTripulante->estaVivoElHilo){// SI ESTÁ VIVO EL TRIPULANTE (HILO)
             
-            if(tcbTripulante->status == 'E' && planificacion_viva){
-                log_info(aux->logger, "[Tripulante %d] esta en ejecucion", aux->idSemaforo);
-                
-                //Spliteo la tarea
-                tarea = string_split(tcbTripulante->instruccion_actual, " ");
-                if(!sabotaje_activado)
-                    log_info(aux->logger, "el nombre de la tarea es %s", tarea[0]);
-               
-                if(sabotaje_activado){
-                    log_info(aux->logger, "La posicion en x del sabotaje es: %d", posSabotajeX);
-                    log_info(aux->logger, "La posicion en y del sabotaje es: %d", posSabotajeY);
-                    log_info(aux->logger, "La duracion del sabotaje es: %d", duracion_sabotaje);
-                    llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX,tcbTripulante->posicionY,posSabotajeX,posSabotajeY);
-                }else if (tarea[1]!=NULL){
-                    log_info(aux->logger, "Es tarea IO");
-                    parametrosTarea = string_split(tarea[1], ";");
-                }else{
-                    log_info(aux->logger, "Es tarea normal");
-                    parametrosTarea = string_split(tarea[0], ";");
-                    strcpy(parametrosTarea[0],"-1");
-                }
-                param = atoi(parametrosTarea[0]);
-                posicionX = atoi(parametrosTarea[1]);
-                posicionY = atoi(parametrosTarea[2]);
-                tiempoTarea = atoi(parametrosTarea[3]);
+            if(tcbTripulante->status == 'E' && planificacion_viva){//SI EL TRIULANTE ESTÁ EN EXEC Y LA PLANIFICACIÓN NO ESTÁ PAUSADA
+                log_info(aux->logger, "[Tripulante %d] esta en ejecución", aux->idSemaforo);
 
-                if(!sabotaje_activado){
-                    log_info(aux->logger, "El parametro de la tarea es: %d", param);
-                    log_info(aux->logger, "La posicion en x de la tarea es: %d", posicionX);
-                    log_info(aux->logger, "La posicion en y de la tarea es: %d", posicionY);
-                    log_info(aux->logger, "El tiempo de la tarea es: %d", tiempoTarea);
-                    llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX,tcbTripulante->posicionY,posicionX,posicionY);
-                }
+                if(sabotaje_activado){// SI HAY UN SABOTAJE
+                    log_info(aux->logger,"[Tripulante %d] DATOS TRIPULANTE: %d - ATENDIENDO SABOTAJE", aux->idSemaforo, tcbTripulante -> tid);
 
-                if(llegoALaPosicion){
-                    if(!sabotaje_activado)
-                        log_info(aux->logger, "[Tripulante %d] El tripulante %d llegó a la posición, la tarea es %s, es tarea IO? %d", aux -> idSemaforo, tcbTripulante->tid, tarea[0], esTareaIO(tarea[0]));
+                    log_info(aux->logger, "La posición en X del sabotaje es: %d", posSabotajeX);
+                    log_info(aux->logger, "La posición en Y del sabotaje es: %d", posSabotajeY);
+                    log_info(aux->logger, "La duración del sabotaje es: %d", duracion_sabotaje);
+                    llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posSabotajeX, posSabotajeY);
 
-                    if(mensajeInicialIMS == 0 && sabotaje_activado == 0){//Manda mensaje a IMS de "Comienza Ejecucion Tarea"
-                        log_info(aux->logger, "antes de mandar mensaje a IMS");
-                        tamanioTarea = strlen(tarea[0]);
-                        tamanioBuffer = sizeof(int)*6 + tamanioTarea;
-                        buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tcbTripulante->tid, tarea[0], param, posicionX, posicionY, tiempoTarea);
-                        _send_message(conexion_IMS, "IMS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, aux->logger);
-                        free(buffer);
-                        mensajeInicialIMS = 1;
-                        log_info(aux->logger, "despues de mandar mensaje a IMS");
-                    }
-
-                    if(sabotaje_activado){
-                        if(ciclos_transcurridos_sabotaje == 0){
+                    if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DEL SABOTAJE
+                        if (ciclos_transcurridos_sabotaje == 0) {//SI TODAVÍA NO SE COMENZÓ A REPARAR EL SABOTAJE
                             char* bufferAEnviar = string_new();
                             string_append(&bufferAEnviar, "Se invoco FSCK");
                             buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s", bufferAEnviar);
@@ -219,13 +178,13 @@ void funcionTripulante (void* item){
                             free(bufferAEnviar);
                             free(buffer);
                         }
-                        if(ciclos_transcurridos_sabotaje == duracion_sabotaje){
+                        if (ciclos_transcurridos_sabotaje == duracion_sabotaje) {//SI SE TERMINÓ DE REPARAR EL SABOTAJE
                             sem_post(&semERM);
                         }
-                        else{
+                        else {// SI NO SE TERMINÓ DE REPARAR EL SABOTAJE
                             tcbTripulante->ciclosCumplidos++;
                             ciclos_transcurridos_sabotaje++;
-                            if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos == quantum_RR){
+                            if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos == quantum_RR) {// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
                                 tcbTripulante->ciclosCumplidos = 0;
                                 tcbTripulante->status='R';
                             }
@@ -233,72 +192,122 @@ void funcionTripulante (void* item){
                         }
                     }
 
-                    else if(esTareaIO(tarea[0])){ //Si es de IO manda signal a hilo de Exec a Bloqueado
-                        log_info(aux->logger, "[Tripulante %d] Se debe realizar una tarea de I/O", aux -> idSemaforo);
-                        sleep(1);
-                        tcbTripulante->status = 'I';
-                        tcbTripulante->ciclosCumplidos = 0;
-                        log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semEBIO con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
-                        sem_post(&semEBIO);
-                    }
-                    else if (esTareaIO(tarea[0]) == 0) {
-                        log_info(aux->logger, "[Tripulante %d] Se debe realizar una tarea normal (no de I/O)", aux -> idSemaforo);
-                        tcbTripulante->tiempoEnExec++;
+                    else {// NO LLEGÓ A LA POSICIÓN DEL SABOTAJE
+                        log_info(aux->logger, "[Tripulante %d] Se comienza a mover a la posición %d - %d", aux -> idSemaforo, posSabotajeX, posSabotajeY);
+                        moverTripulanteUno(tcbTripulante, posSabotajeX, posSabotajeY);
+                        log_info(aux->logger, "[Tripulante %d] se movio una posicion el tripulante", aux -> idSemaforo);
                         tcbTripulante->ciclosCumplidos++;
-                        log_info(aux->logger, "El tiempo en exec es: %d", tcbTripulante->tiempoEnExec);
-                        if(tcbTripulante->tiempoEnExec == tiempoTarea){
-                            log_info(aux->logger, "[Tripulante %d] Termino la tarea normal el tripulante %d", aux -> idSemaforo, tcbTripulante->tid);
-                            tamanioBuffer = sizeof(int)*2 + tamanioTarea;
-                            buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tarea[0]);
-                            _send_message(conexion_IMS, "IMS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
-                            free(buffer);
 
-                            puedeEnviarSignal = pedirProximaTarea(tcbTripulante);
-                            tcbTripulante->tiempoEnExec = 0;
-                        } 
-
-                        if(puedeEnviarSignal >= 0 && !strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){
+                        if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
                             tcbTripulante->status = 'R';
                             tcbTripulante->ciclosCumplidos = 0;
                             log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semER con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
                             sem_post(&semER);
                         }
-                        else {
+                        else if((!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR )|| !strcmp(algoritmo,"FIFO")){// SI ES FIFO O RR Y NO COMPLETÓ EL QUANTUM
+                            log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
+                            sem_post(&semER);
+                        }
+                        else // NO ES FIFO  NI RR
+                            log_info(aux->logger,"No es un algoritmo válido");
+                    }
+                }
+
+
+                else {// SI NO HAY UN SABOTAJE
+                    log_info(aux->logger,"[Tripulante %d] DATOS TRIPULANTE: %d - %s", aux->idSemaforo, tcbTripulante -> tid, tcbTripulante -> instruccion_actual);
+
+                    tarea = string_split(tcbTripulante->instruccion_actual, " ");
+                    if (tarea[1]!=NULL){
+                    log_info(aux->logger, "Es tarea IO");
+                    parametrosTarea = string_split(tarea[1], ";");
+                    }else{
+                    log_info(aux->logger, "Es tarea normal");
+                    parametrosTarea = string_split(tarea[0], ";");
+                    strcpy(parametrosTarea[0],"-1");
+                    }
+                    param = atoi(parametrosTarea[0]);
+                    posicionX = atoi(parametrosTarea[1]);
+                    posicionY = atoi(parametrosTarea[2]);
+                    tiempoTarea = atoi(parametrosTarea[3]);
+                
+                    log_info(aux->logger, "El parametro de la tarea es: %d", param);
+                    log_info(aux->logger, "La posición en X de la tarea es: %d", posicionX);
+                    log_info(aux->logger, "La posición en Y de la tarea es: %d", posicionY);
+                    log_info(aux->logger, "El tiempo de la tarea es: %d", tiempoTarea);
+                    llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posicionX, posicionY);
+
+                    if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DE LA TAREA
+                        log_info(aux->logger, "[Tripulante %d] Llegó a la posición, la tarea es %s, es tarea IO? %d", aux -> idSemaforo, tarea[0], esTareaIO(tarea[0]));
+                        
+                        if (mensajeInicialIMS == 0){//MANDA MENSAJE A IMS DE "Comienza Ejecucion Tarea"
+                            tamanioTarea = strlen(tarea[0]);
+                            tamanioBuffer = sizeof(int)*6 + tamanioTarea;
+                            buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tcbTripulante->tid, tarea[0], param, posicionX, posicionY, tiempoTarea);
+                            _send_message(conexion_IMS, "IMS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, aux->logger);
+                            free(buffer);
+                            mensajeInicialIMS = 1;
+                        }
+
+                        if (esTareaIO(tarea[0])) {// ES TAREA DE I/O
+                            log_info(aux->logger, "[Tripulante %d] Se debe realizar una tarea de I/O", aux -> idSemaforo);
+                            sleep(1);
+                            tcbTripulante->status = 'I';
+                            tcbTripulante->ciclosCumplidos = 0;
+                            log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semEBIO con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
+                            sem_post(&semEBIO);
+                        }
+                        else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
+                            log_info(aux->logger, "[Tripulante %d] Se debe realizar una tarea normal (no de I/O)", aux -> idSemaforo);
+                            tcbTripulante->tiempoEnExec++;
+                            tcbTripulante->ciclosCumplidos++;
+                            log_info(aux->logger, "El tiempo en exec es: %d", tcbTripulante->tiempoEnExec);
+
+                            if(tcbTripulante->tiempoEnExec == tiempoTarea){// COMPLETÓ LA TAREA NORMAL
+                                log_info(aux->logger, "[Tripulante %d] Termino la tarea normal el tripulante %d", aux -> idSemaforo, tcbTripulante->tid);
+                                tamanioBuffer = sizeof(int)*2 + tamanioTarea;
+                                buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tarea[0]);
+                                _send_message(conexion_IMS, "IMS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+                                free(buffer);
+
+                                puedeEnviarSignal = pedirProximaTarea(tcbTripulante);
+                                tcbTripulante->tiempoEnExec = 0;
+                            } 
+
+                            if(puedeEnviarSignal >= 0 && !strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){//ES RR Y COMPLETÓ EL QUANTUM
+                                tcbTripulante->status = 'R';
+                                tcbTripulante->ciclosCumplidos = 0;
+                                log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semER con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
+                                sem_post(&semER);
+                            }
+                            else {// ES FIFO O RR Y NO COMPLETÓ EL QUANTUM
+                                log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
+                                _signal(1, cantidadTCBEnExec, &semBLOCKIO);
+                            }
+                        }
+                        else
+                            log_error(aux->logger, "[Tripulante %d] La tarea ingresada no posee un formato de tarea correcto", aux -> idSemaforo);
+            
+                    }
+                    else {// NO LLEGÓ A LA POSICIÓN DE LA TAREA
+                        log_info(aux->logger, "[Tripulante %d] Se comienza a mover a la posición %d - %d", aux -> idSemaforo, posicionX, posicionY);
+                        moverTripulanteUno(tcbTripulante, posicionX, posicionY);
+                        log_info(aux->logger, "[Tripulante %d] se movio una posicion el tripulante", aux -> idSemaforo);
+                        tcbTripulante->ciclosCumplidos++;
+
+                        if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
+                            tcbTripulante->status = 'R';
+                            tcbTripulante->ciclosCumplidos = 0;
+                            log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semER con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
+                            sem_post(&semER);
+                        }
+                        else if((!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR )|| !strcmp(algoritmo,"FIFO")){// SI ES FIFO O RR Y NO COMPLETÓ EL QUANTUM
                             log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
                             _signal(1, cantidadTCBEnExec, &semBLOCKIO);
                         }
+                        else //NO ES FIFO NI RR
+                            log_info(aux->logger,"No es un algoritmo válido");
                     }
-
-                    else{
-                        log_error(aux->logger, "[Tripulante %d] La tarea ingresada no posee un formato de tarea correcto", aux -> idSemaforo);
-                    }
-
-                }
-                else{
-                    if(!sabotaje_activado){
-                        log_info(aux->logger, "[Tripulante %d] Se comienza a mover el tripulante %d a la posicion %d - %d", aux -> idSemaforo, tcbTripulante -> tid, posicionX, posicionY);
-                        moverTripulanteUno(tcbTripulante, posicionX, posicionY);
-                    }else{
-                        log_info(aux->logger, "[Tripulante %d] Se comienza a mover el tripulante %d a la posicion %d - %d", aux -> idSemaforo, tcbTripulante -> tid, posSabotajeX, posSabotajeY);
-                        moverTripulanteUno(tcbTripulante, posSabotajeX, posSabotajeY);
-                    }
-                    log_info(aux->logger, "[Tripulante %d] se movio una posicion el tripulante", aux -> idSemaforo);
-                    tcbTripulante->ciclosCumplidos++;
-                    if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){
-                        tcbTripulante->status = 'R';
-                        tcbTripulante->ciclosCumplidos = 0;
-                        log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semER con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
-                        sem_post(&semER);
-                    }
-                    else if((!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR )|| !strcmp(algoritmo,"FIFO")){
-                        log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
-                        if(!sabotaje_activado)
-                            _signal(1, cantidadTCBEnExec, &semBLOCKIO);
-                        else
-                            sem_post(&semER);
-                    }
-                    else
-                        log_info(aux->logger,"No es un algoritmo válido");
                 }
 
                 free(parametrosTarea[0]);
@@ -310,7 +319,9 @@ void funcionTripulante (void* item){
                 free(tarea[1]);
                 free(tarea);
             }
-        }else{
+
+        }
+        else {// NO ESTÁ VIVO EL TRIPULANTE (HILO)
             free(tcbTripulante->instruccion_actual);
             free(tcbTripulante);
             break;

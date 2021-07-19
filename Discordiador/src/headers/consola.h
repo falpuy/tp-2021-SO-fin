@@ -27,10 +27,9 @@
     };
 
 
-    int loEncontro;
-
     void funcionConsola();
     
+    int hayTripulantesNave();
     int obtener_tipo_mensaje_consola(char *mensaje);
 
     void mostrarTripulante(void* elemento);

@@ -73,7 +73,8 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
       	
         tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, logger);
         list_add (nuevoPCB->listaTCB, (void*) nuevoTCB);
-        
+        log_info(logger, "agregó a la listaTCB el nuevo TCB");
+
       	memcpy(buffer_a_enviar + offset, &nuevoTCB->tid, sizeof(int));
         offset += sizeof(int);
         memcpy(buffer_a_enviar + offset, &nuevoTCB->pid, sizeof(int));
@@ -132,12 +133,8 @@ void funcionTripulante (void* item){
     char** parametrosTarea;
     char** tarea;
     int mensajeInicialIMS=0;
-    // int cantidadTripulantesEnExec;
     bool llegoALaPosicion = false;
-    // bool esTareaNormal = false;
     int puedeEnviarSignal = 1;
-    // int auxX;
-    // int auxY;
     int param;
     int posicionX;
     int posicionY;
@@ -238,6 +235,7 @@ void funcionTripulante (void* item){
                         log_info(aux->logger, "[Tripulante %d] Se debe realizar una tarea de I/O", aux -> idSemaforo);
                         sleep(1);
                         tcbTripulante->status = 'I';
+                        tcbTripulante->ciclosCumplidos = 0;
                         log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semEBIO con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
                         sem_post(&semEBIO);
                     }
@@ -263,12 +261,10 @@ void funcionTripulante (void* item){
                             log_info(aux->logger,"[Tripulante %d] Ejecuto POST de semER con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
                             sem_post(&semER);
                         }
-                        else if(puedeEnviarSignal >= 0 && ((!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos!=quantum_RR) || !strcmp(algoritmo,"FIFO"))){
+                        else {
                             log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
                             _signal(1, cantidadTCBEnExec, &semBLOCKIO);
                         }
-                        else
-                            log_info(aux->logger,"[Tripulante %d] No es un algoritmo válido", aux -> idSemaforo);
                     }
 
                     else{
@@ -564,7 +560,7 @@ char *get_tareas(char *ruta_archivo, t_log* logger) {
     if (line)
         free(line);
 
-    log_info(logger, "Las tareas a mandar son:%s", stringTemporal);
+    log_info(logger, "Las tareas a mandar son: %s", stringTemporal);
     return stringTemporal;
 
 }

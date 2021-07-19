@@ -153,10 +153,10 @@ void funcionhExecaBloqIO (t_log* logger){
     
     while (temp_validador) {
         sem_wait(&semEBIO);
-        log_info(logger,"----------------------------------");
-        log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
         if(planificacion_viva) {
             if (!queue_is_empty(exec)){ 
+                log_info(logger,"----------------------------------");
+                log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
                 list_iterate_position(exec->elements, funcionCambioExecIO);
                 // log_info(logger, "[Exec a Bloqio] ejecuto _SIGNAL desde semEBIO...");
                 _signal(1, cantidadTCBEnExec, &semBLOCKIO);
@@ -366,7 +366,7 @@ void funcionhExit (t_log* logger){
     while (temp_validador) {
         sem_wait(&semEXIT);
         if(planificacion_viva) {
-            while (!queue_is_empty(cola_exit)){  
+            if (!queue_is_empty(cola_exit)){  
                 log_info(logger,"----------------------------------");
                 log_info(logger, "Se ejecuta el hilo de Exit");
 

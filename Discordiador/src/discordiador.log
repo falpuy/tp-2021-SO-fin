@@ -9543,3 +9543,12 @@
 [INFO] 17:42:54:916 discordiador/(7489:7489): COMIENZA_EJECUCION_TAREA ARREGLAR_REACTOR;0;0;600
 [INFO] 17:42:54:917 discordiador/(7489:7489): COMIENZA_EJECUCION_TAREA ARREGLAR_REACTOR;0;0;600
 [INFO] 17:42:58:643 discordiador/(7489:7489): Salimos de la consola
+[INFO] 18:10:56:130 discordiador/(8181:8181): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 18:10:56:194 discordiador/(8181:8181): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[ERROR] 18:10:56:199 discordiador/(8181:8181): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[INFO] 18:10:56:201 discordiador/(8181:8181): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 18:10:56:203 discordiador/(8181:8181): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 18:10:56:468 discordiador/(8181:8181): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 18:10:56:644 discordiador/(8181:8192): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 18:10:56:673 discordiador/(8181:8192): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 18:11:00:048 discordiador/(8181:8181): Salimos de la consola

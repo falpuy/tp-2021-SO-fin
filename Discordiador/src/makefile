@@ -40,3 +40,6 @@ run:
 # make test : Ejecuta la aplicacion utilizando Valgrind
 test:
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind-out.txt --verbose ./main
+# make helgrind: Ejecuta helgrind
+helgrind:
+	valgrind --tool=helgrind --log-file=helgrind.txt --verbose ./main

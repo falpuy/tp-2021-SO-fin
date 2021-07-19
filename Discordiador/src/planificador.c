@@ -45,10 +45,10 @@ void funcionhNewaReady (t_log* logger) {
                 
                 log_info(logger,"----------------------------------");
                 log_info(logger, "Se ejecuta el hilo de New a Ready");
-                tcb* aux_TCB = malloc (sizeof(tcb));
+                //tcb* aux_TCB = malloc (sizeof(tcb));
 
                 pthread_mutex_lock(&mutexNew);
-                aux_TCB = queue_pop(cola_new);
+                tcb* aux_TCB = queue_pop(cola_new);
                 pthread_mutex_unlock(&mutexNew);
 
                 log_info(logger,"Tripulante encontrado. Moviendolo a Ready...");
@@ -59,8 +59,8 @@ void funcionhNewaReady (t_log* logger) {
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready, (void*) aux_TCB);
                 pthread_mutex_unlock(&mutexReady);
-                log_info(logger,"----------------------------------");
 
+                log_info(logger,"----------------------------------");
             }
 
             log_info(logger,"Se hizo una ejecución de CPU en NEW->READY");
@@ -85,10 +85,10 @@ void funcionhReadyaExec (t_log* logger){
             while(!queue_is_empty(ready) && queue_size(exec) <= grado_multitarea){
                 log_info(logger,"----------------------------------");
                 log_info(logger, "Se ejecuta el hilo de Ready a Exec");
-                tcb* aux_TCB = malloc (sizeof(tcb));
+                //  aux_TCB = malloc (sizeof(tcb));
 
                 pthread_mutex_lock(&mutexReady);
-                aux_TCB = queue_pop(ready);
+                tcb* aux_TCB = queue_pop(ready);
                 pthread_mutex_unlock(&mutexReady);
 
                 log_info(logger,"Tripulante encontrado. Moviendolo a Exec...");

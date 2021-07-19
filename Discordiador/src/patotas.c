@@ -73,7 +73,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
       	
         tcb* nuevoTCB = crear_TCB(contadorPCBs, posX, posY, tid, logger);
         list_add (nuevoPCB->listaTCB, (void*) nuevoTCB);
-        log_info(logger, "agregó a la listaTCB el nuevo TCB");
 
       	memcpy(buffer_a_enviar + offset, &nuevoTCB->tid, sizeof(int));
         offset += sizeof(int);
@@ -90,19 +89,6 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     cantidadActual += cant_tripulantes;
     _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
     free(buffer_a_enviar);
-
-    log_info(logger, "..Esperando mensaje de respuesta de INICIAR_PATOTA de RAM");
-  	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-
-  	if (mensaje->command == SUCCESS) {
-        free(mensaje->payload);
-        free(mensaje->identifier);
-        free(mensaje);
-
-        log_info(logger,"Se guardó en Memoria OK");
-        return nuevoPCB;
-    }//agregar caso de que miram no tiene mas memoria 
-
     free(mensaje->payload);
     free(mensaje->identifier);
     free(mensaje);
@@ -111,8 +97,8 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
 }
 
 void destruirTCB(void* nodo){
-    tcb* tcbADestruir = (tcb*) nodo;
-    free(tcbADestruir->instruccion_actual);
+    // tcb* tcbADestruir = (tcb*) nodo;
+    // free(tcbADestruir->instruccion_actual);
     //free(tcbADestruir);
 }
 
@@ -327,6 +313,8 @@ void funcionTripulante (void* item) {
             break;
         }
     }
+
+    free(aux);
 }
 
 /*-------------------------------ADICIONALES------------------------------*/

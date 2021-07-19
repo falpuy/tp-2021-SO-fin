@@ -7,10 +7,9 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             ciclos_transcurridos_sabotaje = 0;
             memcpy(&posSabotajeX, payload, sizeof(int));
             memcpy(&posSabotajeY, payload + sizeof(int), sizeof(int));
-            tripulanteFixer = malloc(sizeof(tcb));
+            log_info(logger, "Llego comando: Comienza Sabotaje con posicion en %d-%d",posSabotajeX,posSabotajeY);
+            // tripulanteFixer = malloc(sizeof(tcb));
             sem_post(&semERM);
-            // free(payload);
-            // free(identificador);
         break;
     }
 }
@@ -49,10 +48,10 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 list_sort(exec->elements, comparadorTid);
                 while (!queue_is_empty(exec))// SE PASAN LOS TRIPULANTES DE EXEC A BLOCK_EMER
                 {
-                    tcb* aux_TCB = malloc (sizeof(tcb));
+                    //  aux_TCB = malloc (sizeof(tcb));
 
                     pthread_mutex_lock(&mutexExec);
-                    aux_TCB = queue_pop(exec);
+                    tcb* aux_TCB = queue_pop(exec);
                     pthread_mutex_unlock(&mutexExec);
 
                     aux_TCB->status = 'M';
@@ -69,10 +68,10 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 list_sort(ready->elements, comparadorTid);
                 while (!queue_is_empty(ready))// SE PASAN LOS TRIPULANTES DE READY A BLOCK_EMER
                 {
-                    tcb* aux_TCB = malloc (sizeof(tcb));
+                    //  aux_TCB = malloc (sizeof(tcb));
 
                     pthread_mutex_lock(&mutexReady);
-                    aux_TCB = queue_pop(ready);
+                    tcb* aux_TCB = queue_pop(ready);
                     pthread_mutex_unlock(&mutexReady);
 
                     aux_TCB->status = 'M';
@@ -106,9 +105,9 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                     queue_pop(bloq_emer_sorted);
                 
                 int tamanioBuffer = sizeof(int);
-                void* buffer = malloc(tamanioBuffer);
+                
                 int idTripulante = tripulanteFixer->tid;
-                buffer = _serialize(tamanioBuffer, "%d", idTripulante);
+                void* buffer = _serialize(tamanioBuffer, "%d", idTripulante);
                 _send_message(conexion_IMS, "DIS", ATIENDE_SABOTAJE, buffer, tamanioBuffer, logger);//SE AVISA A IMS QUE SE ATENDERÁ EL SABOTAJE
                 free(buffer);
 
@@ -140,10 +139,10 @@ void funcionhFixerdeEmeraReady(t_log* logger){// SACA AL FIXER DE BLOCK_EMER Y L
         while (planificacion_viva && sabotaje_activado == 1) {
             sem_wait(&semFMR);
 
-            tcb* aux_Fixer = malloc(sizeof(tcb));
+            //  aux_Fixer = malloc(sizeof(tcb));
 
             pthread_mutex_lock(&mutexBloqEmer);
-            aux_Fixer = list_remove(bloq_emer->elements,tripulanteFixer->tid);
+            tcb* aux_Fixer = list_remove(bloq_emer->elements,tripulanteFixer->tid);
             pthread_mutex_unlock(&mutexBloqEmer);
 
             aux_Fixer->status = 'R';
@@ -167,10 +166,10 @@ void funcionhBloqEmeraReady (t_log* logger){
 
             while (!queue_is_empty(bloq_emer))
             {
-                tcb* aux_TCB = malloc (sizeof(tcb));
+                //  aux_TCB = malloc (sizeof(tcb));
 
                 pthread_mutex_lock(&mutexBloqEmer);
-                aux_TCB = queue_pop(bloq_emer);
+                tcb* aux_TCB = queue_pop(bloq_emer);
                 pthread_mutex_unlock(&mutexBloqEmer);
 
                 aux_TCB->status = 'R';
@@ -183,6 +182,7 @@ void funcionhBloqEmeraReady (t_log* logger){
 
             char* bufferAEnviar = string_new();
             string_append(&bufferAEnviar, "Se resolvio el sabotaje");
+            // void* buffer = _serialize(sizeof(int) )
             _send_message(conexion_IMS, "DIS", RESOLUCION_SABOTAJE, bufferAEnviar, strlen(bufferAEnviar), logger);//SE ENVÍA A IMS QUE SE TERMINÓ EL SABOTAJE
             free(bufferAEnviar);
 

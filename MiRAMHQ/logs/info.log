@@ -1,0 +1,131 @@
+[INFO] 17:09:12:478 RAM/(6468:6468): Mi RAM HQ ejecutando correctamente.. PID: 6468
+[INFO] 17:09:12:479 RAM/(6468:6468): Esquema utilizado: SEGMENTACION
+[INFO] 17:09:12:479 RAM/(6468:6468): Tamanio de la memoria: 2048
+[INFO] 17:09:12:480 RAM/(6468:6468): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:09:12:480 RAM/(6468:6468): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:09:24:324 RAM/(6468:6468): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:09:24:327 RAM/(6468:6501): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:09:46:178 RAM/(6468:6501): Recibi la siguiente operacion de DIS: 500
+[INFO] 17:09:46:178 RAM/(6468:6501): -----------------------------------------------------
+[INFO] 17:09:46:180 RAM/(6468:6501): Llegó la operación: INICIAR_PATOTA 
+[INFO] 17:09:46:180 RAM/(6468:6501): ID PCB: 1
+[INFO] 17:09:46:180 RAM/(6468:6501): Tareas de la patota: ARREGLAR_REACTOR;0;0;600
+[INFO] 17:09:46:180 RAM/(6468:6501): Cantidad de tripulantes: 1
+[INFO] 17:09:46:180 RAM/(6468:6501): Size total a guardar en memoria: 56
+[INFO] 17:09:46:182 RAM/(6468:6501): Se guardaron exitosamente los datos de la patota
+[INFO] 17:09:46:182 RAM/(6468:6501): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:09:46:182 RAM/(6468:6501): -----------------------------------------------------
+[INFO] 17:09:46:393 RAM/(6468:6501): Recibi la siguiente operacion de DIS: 520
+[INFO] 17:09:46:398 RAM/(6468:6501): -----------------------------------------------------
+[INFO] 17:09:46:399 RAM/(6468:6501): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 17:09:46:399 RAM/(6468:6501): ID PCB:1
+[INFO] 17:09:46:399 RAM/(6468:6501): ID TCB:0
+[INFO] 17:09:46:399 RAM/(6468:6501): Limit address:24
+[INFO] 17:09:46:399 RAM/(6468:6501): Cantidad letras hasta primer ;16
+[INFO] 17:09:46:399 RAM/(6468:6501): Cantidad letras despues de segundo while: 24
+[INFO] 17:09:46:399 RAM/(6468:6501): La tarea a enviar es:ARREGLAR_REACTOR;0;0;600
+[INFO] 17:09:46:400 RAM/(6468:6501): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 17:09:46:400 RAM/(6468:6501): El tamaño de tarea a enviar es: 24
+[INFO] 17:09:46:400 RAM/(6468:6501): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:09:46:401 RAM/(6468:6501): -----------------------------------------------------
+[INFO] 17:11:06:422 RAM/(6468:6501): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:11:28:702 RAM/(6620:6620): Mi RAM HQ ejecutando correctamente.. PID: 6620
+[INFO] 17:11:28:703 RAM/(6620:6620): Esquema utilizado: SEGMENTACION
+[INFO] 17:11:28:704 RAM/(6620:6620): Tamanio de la memoria: 2048
+[INFO] 17:11:28:705 RAM/(6620:6620): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:11:28:705 RAM/(6620:6620): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:11:35:420 RAM/(6620:6620): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:11:35:424 RAM/(6620:6623): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:11:58:246 RAM/(6620:6623): Recibi la siguiente operacion de DIS: 500
+[INFO] 17:11:58:246 RAM/(6620:6623): -----------------------------------------------------
+[INFO] 17:11:58:246 RAM/(6620:6623): Llegó la operación: INICIAR_PATOTA 
+[INFO] 17:11:58:247 RAM/(6620:6623): ID PCB: 1
+[INFO] 17:11:58:247 RAM/(6620:6623): Tareas de la patota: ARREGLAR_REACTOR;0;0;600
+[INFO] 17:11:58:247 RAM/(6620:6623): Cantidad de tripulantes: 1
+[INFO] 17:11:58:247 RAM/(6620:6623): Size total a guardar en memoria: 56
+[INFO] 17:11:58:247 RAM/(6620:6623): Se guardaron exitosamente los datos de la patota
+[INFO] 17:11:58:247 RAM/(6620:6623): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:11:58:247 RAM/(6620:6623): -----------------------------------------------------
+[INFO] 17:11:58:381 RAM/(6620:6623): Recibi la siguiente operacion de DIS: 520
+[INFO] 17:11:58:388 RAM/(6620:6623): -----------------------------------------------------
+[INFO] 17:11:58:389 RAM/(6620:6623): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 17:11:58:389 RAM/(6620:6623): ID PCB:1
+[INFO] 17:11:58:389 RAM/(6620:6623): ID TCB:0
+[INFO] 17:11:58:389 RAM/(6620:6623): Limit address:24
+[INFO] 17:11:58:389 RAM/(6620:6623): Cantidad letras hasta primer ;16
+[INFO] 17:11:58:389 RAM/(6620:6623): Cantidad letras despues de segundo while: 24
+[INFO] 17:11:58:390 RAM/(6620:6623): La tarea a enviar es:ARREGLAR_REACTOR;0;0;600
+[INFO] 17:11:58:390 RAM/(6620:6623): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 17:11:58:390 RAM/(6620:6623): El tamaño de tarea a enviar es: 24
+[INFO] 17:11:58:390 RAM/(6620:6623): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:11:58:390 RAM/(6620:6623): -----------------------------------------------------
+[INFO] 17:14:26:130 RAM/(6620:6623): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:21:30:630 RAM/(6956:6956): Mi RAM HQ ejecutando correctamente.. PID: 6956
+[INFO] 17:21:30:630 RAM/(6956:6956): Esquema utilizado: SEGMENTACION
+[INFO] 17:21:30:631 RAM/(6956:6956): Tamanio de la memoria: 2048
+[INFO] 17:21:30:632 RAM/(6956:6956): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:21:30:632 RAM/(6956:6956): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:21:44:276 RAM/(6956:6956): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:21:44:280 RAM/(6956:6974): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:22:08:515 RAM/(6956:6974): Recibi la siguiente operacion de DIS: 500
+[INFO] 17:22:08:515 RAM/(6956:6974): -----------------------------------------------------
+[INFO] 17:22:08:518 RAM/(6956:6974): Llegó la operación: INICIAR_PATOTA 
+[INFO] 17:22:08:518 RAM/(6956:6974): ID PCB: 1
+[INFO] 17:22:08:519 RAM/(6956:6974): Tareas de la patota: ARREGLAR_REACTOR;0;0;600
+[INFO] 17:22:08:519 RAM/(6956:6974): Cantidad de tripulantes: 1
+[INFO] 17:22:08:519 RAM/(6956:6974): Size total a guardar en memoria: 56
+[INFO] 17:22:08:519 RAM/(6956:6974): Se guardaron exitosamente los datos de la patota
+[INFO] 17:22:08:519 RAM/(6956:6974): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:22:08:519 RAM/(6956:6974): -----------------------------------------------------
+[INFO] 17:22:08:706 RAM/(6956:6974): Recibi la siguiente operacion de DIS: 520
+[INFO] 17:22:08:706 RAM/(6956:6974): -----------------------------------------------------
+[INFO] 17:22:08:707 RAM/(6956:6974): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 17:22:08:707 RAM/(6956:6974): ID PCB:1
+[INFO] 17:22:08:707 RAM/(6956:6974): ID TCB:0
+[INFO] 17:22:08:708 RAM/(6956:6974): Limit address:24
+[INFO] 17:22:08:708 RAM/(6956:6974): Cantidad letras hasta primer ;16
+[INFO] 17:22:08:708 RAM/(6956:6974): Cantidad letras despues de segundo while: 24
+[INFO] 17:22:08:709 RAM/(6956:6974): La tarea a enviar es:ARREGLAR_REACTOR;0;0;600
+[INFO] 17:22:08:709 RAM/(6956:6974): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 17:22:08:709 RAM/(6956:6974): El tamaño de tarea a enviar es: 24
+[INFO] 17:22:08:710 RAM/(6956:6974): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:22:08:710 RAM/(6956:6974): -----------------------------------------------------
+[INFO] 17:24:15:280 RAM/(6956:6974): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 17:25:32:108 RAM/(6956:6956): [Shared Library]: Nueva conexion ID: 7
+[INFO] 17:25:32:110 RAM/(6956:7274): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 17:25:55:480 RAM/(6956:7274): Recibi la siguiente operacion de DIS: 500
+[INFO] 17:25:55:480 RAM/(6956:7274): -----------------------------------------------------
+[INFO] 17:25:55:480 RAM/(6956:7274): Llegó la operación: INICIAR_PATOTA 
+[INFO] 17:25:55:480 RAM/(6956:7274): ID PCB: 1
+[INFO] 17:25:55:484 RAM/(6956:7274): Tareas de la patota: ARREGLAR_REACTOR;0;0;600
+[INFO] 17:25:55:485 RAM/(6956:7274): Cantidad de tripulantes: 1
+[INFO] 17:25:55:487 RAM/(6956:7274): Size total a guardar en memoria: 56
+[INFO] 17:25:55:488 RAM/(6956:7274): Se guardaron exitosamente los datos de la patota
+[INFO] 17:25:55:488 RAM/(6956:7274): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:25:55:488 RAM/(6956:7274): -----------------------------------------------------
+[INFO] 17:25:55:627 RAM/(6956:7274): Recibi la siguiente operacion de DIS: 520
+[INFO] 17:25:55:632 RAM/(6956:7274): -----------------------------------------------------
+[INFO] 17:25:55:632 RAM/(6956:7274): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 17:25:55:632 RAM/(6956:7274): ID PCB:1
+[INFO] 17:25:55:632 RAM/(6956:7274): ID TCB:0
+[INFO] 17:25:55:632 RAM/(6956:7274): Limit address:80
+[INFO] 17:25:55:633 RAM/(6956:7274): Cantidad letras hasta primer ;16
+[INFO] 17:25:55:633 RAM/(6956:7274): Cantidad letras despues de segundo while: 32
+[INFO] 17:25:55:633 RAM/(6956:7274): La tarea a enviar es:ARREGLAR_REACTOR;0;0;600
+[INFO] 17:25:55:633 RAM/(6956:7274): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 17:25:55:633 RAM/(6956:7274): El tamaño de tarea a enviar es: 24
+[INFO] 17:25:55:633 RAM/(6956:7274): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 17:25:55:634 RAM/(6956:7274): -----------------------------------------------------
+[INFO] 17:27:04:183 RAM/(6956:7274): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 17:28:16:433 RAM/(7317:7317): Mi RAM HQ ejecutando correctamente.. PID: 7317
+[INFO] 17:28:16:434 RAM/(7317:7317): Esquema utilizado: SEGMENTACION
+[INFO] 17:28:16:434 RAM/(7317:7317): Tamanio de la memoria: 2048
+[INFO] 17:28:16:435 RAM/(7317:7317): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 17:28:16:436 RAM/(7317:7317): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 17:28:20:031 RAM/(7317:7317): [Shared Library]: Nueva conexion ID: 5
+[INFO] 17:28:20:032 RAM/(7317:7320): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 17:28:52:420 RAM/(7317:7320): Recibi la siguiente operacion de DIS: 760
+[INFO] 17:28:52:420 RAM/(7317:7320): -----------------------------------------------------
+[INFO] 17:28:52:420 RAM/(7317:7320): No existe la operación:760
+[INFO] 17:28:52:420 RAM/(7317:7320): -----------------------------------------------------
+[INFO] 17:29:46:905 RAM/(7317:7320): [Shared Library]: El cliente 5 se desconecto.

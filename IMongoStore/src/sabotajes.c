@@ -12,9 +12,10 @@
         void* buffer = _serialize(sizeof(int)*2,"%d%d",posicionX,posicionY);
         _send_message(socketDiscordiador,"IMS",COMIENZA_SABOTAJE,buffer,sizeof(int)*2,logger);
         contadorSabotajeLeido++;
+        free(buffer);
     
     }
-    
+
     void protocolo_fsck(){
         log_info(logger,"-------------------------------------------------");
         log_info(logger, "Comenzando Protocolo:FSCK...");

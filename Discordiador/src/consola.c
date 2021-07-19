@@ -4,6 +4,7 @@ void funcionConsola(){
     
     while(validador) {
         char* leido;
+        void* buffer;
         while(strcmp(leido = readline("> "), "") != 0) { 
             parametros = string_split(leido," "); //char**: vector de strings, cada elemento del vector es un parametro, menos el primero que es el mensaje!
             free(leido);
@@ -98,7 +99,7 @@ void funcionConsola(){
                 case C_EXPULSAR_TRIPULANTE:
                     log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");
                     int tamanioBuffer;
-                    char* buffer;
+                    
                     
                     if (planificacion_viva) {
 					  	int idTripulante = atoi(parametros[1]);
@@ -140,13 +141,17 @@ void funcionConsola(){
                                     log_info(logger, "El tripulante ya se encuentra en la cola EXIT");
                                     break;
                             }
-                        } else{
+                        }else{
                             log_info(logger, "No se pudo expulsar el tripulante en memoria");
                         }
-                    } else{
+
+                        free(mensajeRecibido->identifier);
+                        free(mensajeRecibido->payload);
+                        free(mensajeRecibido);
+                    }else{
                         log_error(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
                     }
-
+                    
                     free(parametros[0]);
                 	free(parametros[1]);
                 	free(parametros);
@@ -154,11 +159,10 @@ void funcionConsola(){
 
                 case C_OBTENER_BITACORA: 
                     log_info(logger, "Entró comando: OBTENER_BITACORA");
-                    // char** bitacora;
                 	int idTripulante = atoi(parametros[1]);
                     
                     buffer = _serialize(sizeof(int), "%d", idTripulante);
-                    _send_message(conexion_RAM, "DIS", ENVIAR_OBTENER_BITACORA, buffer, tamanioBuffer, logger); //ENVIAR_OBTENER_BITACORA: 760
+                    _send_message(conexion_IMS, "DIS", ENVIAR_OBTENER_BITACORA, buffer, sizeof(int), logger); //ENVIAR_OBTENER_BITACORA: 760
                     free(buffer);
                     
                     t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
@@ -168,6 +172,7 @@ void funcionConsola(){
                            
                         int tamanioString;
                         memcpy(&tamanioString,mensajeRecibido->payload, sizeof(int));
+                        
                         char* str = malloc(tamanioString + 1);
                         memcpy(str, mensajeRecibido->payload + sizeof(int) , tamanioString);
                         str[tamanioString] = '\0';
@@ -179,6 +184,7 @@ void funcionConsola(){
                         for(int i=0; bitacora[i]!=NULL; i++){
                             free(bitacora[i]);
                         }  
+                        free(str);
                         free(bitacora);
                     }else{
                         log_error(logger, "No se encontró bitácora para el tripulante: %d", idTripulante);
@@ -347,6 +353,7 @@ void liberarMemoria(){
     queue_destroy_and_destroy_elements(bloq_io, destruirTCB);
     queue_destroy_and_destroy_elements(bloq_emer, destruirTCB);
     queue_destroy_and_destroy_elements(cola_exit, destruirTCB);
+    queue_destroy_and_destroy_elements(bloq_emer_sorted, destruirTCB);
     list_destroy_and_destroy_elements(listaPCB, destruirPCB);
 
 	

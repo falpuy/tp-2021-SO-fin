@@ -541,7 +541,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
     int tamStrTareas;
     int idPCB;
     int offset;
-    char* idPCBstr;  
+    char idPCBstr;  
     char *respuesta;
   
     int size_a_guardar;

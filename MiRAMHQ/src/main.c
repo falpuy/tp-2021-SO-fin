@@ -32,7 +32,6 @@ int main() {
     memory = malloc(mem_size);
     admin = malloc(mem_size);
     memset(admin, 0, mem_size);
-
     table_collection = dictionary_create();
     admin_collection = dictionary_create();
 
@@ -529,7 +528,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
     }
 
-}*/
+}
 
 
 void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
@@ -542,7 +541,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
     int tamStrTareas;
     int idPCB;
     int offset;
-      
+    char* idPCBstr;  
     char *respuesta;
   
     int size_a_guardar;
@@ -555,7 +554,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
         break;*/
 
         
-        /*case INICIAR_PATOTA: // idPCB - tareas - cantTCB - IDTCB.... (N id) // TERMINADO
+        case INICIAR_PATOTA: // idPCB - tareas - cantTCB - IDTCB.... (N id)
 
         		log_info(logger,"-----------------------------------------------------");
             log_info(logger,"Llegó la operación: INICIAR_PATOTA ");
@@ -597,7 +596,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
 
               log_info(logger, "--------------------------------------");
               if(hayEspacio > 0){
-                save_data_in_memory(buffer);
+                save_data_in_memory(memory, table_collection, admin_collection, buffer);
                 log_info(logger, "Se pudo guardar correctamente en memoria, enviando respuesta a Discordiador\n");
                 _send_message(fd, "RAM", SUCCESS, respuesta, string_length(respuesta), logger);
               }else{
@@ -616,11 +615,11 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             free(data_tareas);     
             free(respuesta); 
               
-        break;*/
+        break;
                 
         
 
-        /*case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y //A TERMINAR
+        case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y 
           	log_info(logger,"-----------------------------------------------------");
             log_info(logger,"Llegó la operación: RECIBIR_UBICACION_TRIPULANTE");
             //------------Deserializo parámetros-------------------
@@ -640,33 +639,22 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           	log_info(logger,"Posicion en X: %d", posX);
             log_info(logger,"Posicion en Y: %d", posY);
             //----------------------------------------------------
-						//t_queue* segment_pcb = dictionary_get(diccionario, idPCB); 
-            //segmento_tcb = get_tcb_by_id(segmento_pcb, idTCB);
-
-            //nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
-
-            //error = save_tcb_in_memory(&memory, mem_size, segmento_tcb, nuestroTCB);
-
-
-            //necesito obtener la pagina donde esta ubicado el tcb, para ello necesito???
+            idPCBstr = itoa(idPCB);
+            update_position_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB, posX, posY);
 					
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
             
-            if(error == -1){
-              	log_error(logger, "No se pudo guardar el TCB: %d", idTCB);
-                _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta, string_length(respuesta) , logger);
-            }
-            else{
-                _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
-								log_info(logger, "Se mando con éxito la ubicación del tripulante");
-            }
+            
+            _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
+						log_info(logger, "Se mando con éxito la ubicación del tripulante");
+            
 						
 						//TO DO: actualizar_mapa(nuestroTCB);
             log_info(logger,"-----------------------------------------------------");
             free(respuesta);					
             free(nuestroTCB);
-            break;*/
+            break;
 
         case ENVIAR_PROXIMA_TAREA://idpcb, idtcb
 						
@@ -691,40 +679,26 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             paginaTareasStart->start = numPag * page_size;
 
             //ahora necesito buscar el tamaño del string de tareas, para luego poder buscar el tcb en las paginas
-            
-
-            //segmento_tcb = get_tcb_by_id(tabla, idTCB);
-                
-            //nuestroTCB = get_tcb_from_memory(segmento_tcb);
-            
-            //segment* segmento_tareas = get_tareas_by_idPCB(segmentos, idPCB);
-
-            int limite = confirmar_limite_tarea(segmento_tarea, nuestroTCB->next);
+            idPCBstr = itoa(idPCB);
+            char* tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB);
 
 						respuesta = string_new();
             string_append(&respuesta, "Respuesta");
 
-            if(limite < 0){
-								log_info(logger, "No hay mas tareas que mandar");
-                _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, respuesta, string_length(respuesta), logger);
+            int tamTarea = string_length(tarea);  
+            char* buffer_a_enviar =  _serialize(sizeof(int) + tamTarea, tarea);
 
-            }else{
-                char* tarea = get_next_task(memory,nuestroTCB->next, segmento_tareas->limit);
-								
-              	nuestroTCB->next += string_length(tarea);
-              
-                char* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea), "%s",tarea);
-
-                _send_message(fd, "RAM", ENVIAR_TAREA , buffer_a_enviar, sizeof(sizeof(int)+string_length(tarea), "%s",tarea), logger);
+            _send_message(fd, "RAM", ENVIAR_TAREA , buffer_a_enviar, sizeof(sizeof(int) + tamTarea), logger);
               	
-              	free(buffer_a_enviar);
+            free(buffer_a_enviar);
+            free(tarea);
 
             }
 						free(respuesta);
 						log_info(logger,"-----------------------------------------------------");
             break;
 
-        /*case EXPULSAR_TRIPULANTE:	
+        case EXPULSAR_TRIPULANTE:	
                    
 						log_info(logger,"-----------------------------------------------------");
 						log_info(logger,"Llegó operación: EXPULSAR_TRIPULANTE");
@@ -734,29 +708,26 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             memcpy(&idTCB, buffer + sizeof(int), sizeof(int));
             log_info(logger,"ID PCB:%d", idPCB);
 						log_info(logger,"ID TCB:%d", idTCB);     
-            
-            //---------------------------------------------------
-            t_queue* segmento_pcb = dictionary_get(diccionario, idPCB);
-            segmento_tcb = get_tcb_by_id(segmento_pcb, idTCB);
-
-            error =  remove_segment_from_memory (memory, memory_size, segmento_tcb);
-						
-          	if(error < 0){
-              log_error(logger, "Error al eliminar el segmento asociado")
-						} else {
+            //"-----------------------------------------------------"
             //// Elimino el tcb del mapa
 
             //eliminar_tripulante_mapa();
 
-              respuesta = string_new();
-              string_append(&respuesta, "Respuesta");
-              _send_message(fd, "RAM", SUCCESS,respuesta,string_length(respuesta),logger);
-              free(respuesta);
-              log_info(logger,"-----------------------------------------------------");
+            idPCBstr = itoa(idPCB);
+
+            respuesta = string_new();
+            string_append(&respuesta, "Respuesta");
+
+            remove_tcb_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB);
+            _send_message(fd, "RAM", SUCCESS,respuesta, string_length(respuesta), logger);
+            
+            free(respuesta);
+            
+            log_info(logger,"-----------------------------------------------------");
 
             }
 
-        break;*/
+        break;
 
         default:
           log_info(logger,"-----------------------------------------------------");
@@ -765,8 +736,6 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
         break;
 
     }
-
-  
 
 }
 

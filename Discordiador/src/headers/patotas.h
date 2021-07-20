@@ -21,7 +21,7 @@
     void destruirTCB(void* nodo);
     void destruirPCB(void* nodo);
 
-    void funcionTripulante (void* item);
+    void funcionTripulante (int idSemTripulante);
 
     bool llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY);
     int pedirProximaTarea(tcb* tcbTripulante);

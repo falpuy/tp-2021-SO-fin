@@ -91,6 +91,7 @@
     int duracion_sabotaje;
     int ciclo_CPU;
     char* puerto_DIS;
+    char* buffer;
 
     int validador;
     int planificacion_viva;
@@ -133,6 +134,8 @@
     pthread_mutex_t mutex_cantidadTCB;
     pthread_mutex_t mutex_cantidadVieja;
     pthread_mutex_t mutex_cantidadActual;
+    pthread_mutex_t mutexBuffer;
+    pthread_mutex_t mutexSemaforosTrip;
     
     sem_t semNR;
     sem_t semRE;

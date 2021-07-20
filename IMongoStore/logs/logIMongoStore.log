@@ -1781,3 +1781,293 @@
 [INFO] 18:06:24:624 IMS/(7355:7356): Se actualizo Blocks.ims
 [INFO] 18:06:24:626 IMS/(7355:7356): Se actualizo Bitmap en SuperBloque.ims
 [INFO] 18:06:24:656 IMS/(7355:7356): -----------------------------------------------------
+[INFO] 00:11:03:596 IMS/(3949:3949): Validando Existencia de directorios...
+[INFO] 00:11:03:598 IMS/(3949:3949): Ya existe directorio
+[INFO] 00:11:03:599 IMS/(3949:3949): -----------------------------------------------------
+[INFO] 00:11:03:599 IMS/(3949:3949): Validando existencia de Superbloque.ims....
+[INFO] 00:11:03:600 IMS/(3949:3949): -----------------------------------------------------
+[INFO] 00:11:03:601 IMS/(3949:3949): Se encontró el archivo superBloque.ims
+[INFO] 00:11:03:607 IMS/(3949:3949): Muestro mis valores del bitmap..
+[INFO] 00:11:03:612 IMS/(3949:3949): -----------------------------------------------------
+[INFO] 00:11:03:613 IMS/(3949:3949): Se muestra los datos del superBloque.
+[INFO] 00:11:03:613 IMS/(3949:3949): Tamaño de bloque: 32
+[INFO] 00:11:03:613 IMS/(3949:3949): Cantidad de bloques: 16384
+[INFO] 00:11:03:614 IMS/(3949:3949): -----------------------------------------------------
+[INFO] 00:11:03:614 IMS/(3949:3949): Validando existencia de Blocks.ims....
+[INFO] 00:11:03:615 IMS/(3949:3949): -----------------------------------------------------
+[INFO] 00:11:03:615 IMS/(3949:3949): Existe archivo Blocks.ims.
+[INFO] 00:11:03:647 IMS/(3949:3949): -----------------------------------------------------
+[INFO] 00:11:03:650 IMS/(3949:3949): -----------------------------------------------------
+[INFO] 00:11:03:650 IMS/(3949:3949): N° Proceso es:3949
+[INFO] 00:11:03:650 IMS/(3949:3949): -----------------------------------------------------
+[INFO] 00:11:03:651 IMS/(3949:3949): Creando servidor......
+[INFO] 00:11:04:652 IMS/(3949:3949): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 00:11:04:652 IMS/(3949:3949): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 00:11:16:654 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:11:16:655 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:11:16:658 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:11:16:661 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:11:16:702 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:11:28:704 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:11:28:704 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:11:28:709 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:11:28:710 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:11:28:753 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:11:40:755 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:11:40:756 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:11:40:760 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:11:40:763 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:11:40:804 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:11:52:805 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:11:52:806 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:11:52:810 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:11:52:813 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:11:52:849 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:11:53:458 IMS/(3949:3949): [Shared Library]: Nueva conexion ID: 5
+[INFO] 00:11:53:460 IMS/(3949:4071): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 00:11:53:865 IMS/(3949:4071): LLegó nuevo comando:770
+[INFO] 00:11:53:866 IMS/(3949:4071): -----------------------------------------------------
+[INFO] 00:11:53:866 IMS/(3949:4071): Se ha conectado por primera vez Discordiador
+[INFO] 00:11:53:867 IMS/(3949:4071): Guardo socket por si llega un sabotaje
+[INFO] 00:11:53:867 IMS/(3949:4071): -----------------------------------------------------
+[INFO] 00:12:04:850 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:04:851 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:12:04:853 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:12:04:855 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:12:04:890 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:16:892 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:16:893 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:12:16:898 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:12:16:900 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:12:16:925 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:28:926 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:28:926 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:12:28:932 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:12:28:934 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:12:28:972 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:40:976 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:40:977 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:12:40:980 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:12:40:982 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:12:41:016 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:53:016 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:12:53:017 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:12:53:019 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:12:53:021 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:12:53:052 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:01:193 IMS/(3949:4071): LLegó nuevo comando:761
+[INFO] 00:13:01:193 IMS/(3949:4071): -----------------------------------------------------
+[INFO] 00:13:01:193 IMS/(3949:4071): Llego comando: Mover Tripulante.....
+[INFO] 00:13:01:193 IMS/(3949:4071): ID Tripulante:0
+[INFO] 00:13:01:194 IMS/(3949:4071): Posicion Vieja en X:1
+[INFO] 00:13:01:195 IMS/(3949:4071): Posicion Vieja en Y:1
+[INFO] 00:13:01:195 IMS/(3949:4071): Posicion Nueva en X:2
+[INFO] 00:13:01:195 IMS/(3949:4071): Posicion Nueva en Y:1
+[INFO] 00:13:01:195 IMS/(3949:4071): -----------------------------------------------------
+[INFO] 00:13:01:197 IMS/(3949:4071): Tamanio string a pegar:22
+[INFO] 00:13:01:199 IMS/(3949:4071): Guardandose en blocks con metadata existente..
+[INFO] 00:13:01:212 IMS/(3949:4071): Ultimo bloque de la lista es: 14
+[INFO] 00:13:01:212 IMS/(3949:4071): Frag. Interna en ese bloque: 30
+[INFO] 00:13:01:212 IMS/(3949:4071): Voy a comenzar a pegar el string en la posicion:2
+[INFO] 00:13:01:223 IMS/(3949:4071): Se puede guardar dentro de una fragmentacion
+[INFO] 00:13:05:052 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:05:053 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:13:05:055 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:13:05:056 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:13:05:077 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:17:078 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:17:079 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:13:17:082 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:13:17:083 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:13:17:117 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:19:848 IMS/(3949:4071): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 00:13:29:119 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:29:119 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:13:29:122 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:13:29:125 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:13:29:165 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:41:166 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:41:166 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:13:41:169 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:13:41:171 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:13:41:220 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:53:222 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:13:53:223 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:13:53:226 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:13:53:229 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:13:53:265 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:05:272 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:05:273 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:14:05:277 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:14:05:279 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:14:05:310 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:17:311 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:17:312 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:14:17:315 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:14:17:317 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:14:17:361 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:29:365 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:29:366 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:14:29:369 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:14:29:372 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:14:29:413 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:41:414 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:41:414 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:14:41:418 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:14:41:420 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:14:41:460 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:53:462 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:14:53:463 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:14:53:467 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:14:53:469 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:14:53:498 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:05:499 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:05:500 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:15:05:502 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:15:05:504 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:15:05:531 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:17:532 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:17:533 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:15:17:536 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:15:17:538 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:15:17:579 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:29:580 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:29:581 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:15:29:584 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:15:29:586 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:15:29:629 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:41:630 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:41:630 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:15:41:633 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:15:41:635 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:15:41:677 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:53:679 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:15:53:679 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:15:53:683 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:15:53:685 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:15:53:727 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:05:729 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:05:730 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:16:05:733 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:16:05:735 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:16:05:777 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:17:779 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:17:780 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:16:17:783 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:16:17:785 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:16:17:823 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:29:824 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:29:825 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:16:29:829 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:16:29:831 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:16:29:872 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:41:873 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:41:874 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:16:41:877 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:16:41:880 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:16:41:919 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:53:921 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:16:53:921 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:16:53:925 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:16:53:928 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:16:53:967 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:05:969 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:05:970 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:17:05:974 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:17:05:977 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:17:06:018 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:18:019 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:18:020 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:17:18:024 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:17:18:026 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:17:18:065 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:30:066 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:30:066 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:17:30:071 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:17:30:073 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:17:30:118 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:42:121 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:42:121 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:17:42:124 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:17:42:126 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:17:42:147 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:54:154 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:17:54:155 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:17:54:159 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:17:54:161 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:17:54:201 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:06:203 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:06:204 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:18:06:208 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:18:06:211 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:18:06:251 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:18:251 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:18:252 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:18:18:255 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:18:18:257 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:18:18:272 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:30:274 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:30:275 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:18:30:278 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:18:30:281 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:18:30:324 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:42:327 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:42:327 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:18:42:331 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:18:42:333 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:18:42:374 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:54:376 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:18:54:376 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:18:54:380 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:18:54:382 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:18:54:423 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:06:426 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:06:427 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:19:06:430 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:19:06:432 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:19:06:475 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:18:476 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:18:477 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:19:18:480 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:19:18:482 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:19:18:524 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:30:527 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:30:528 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:19:30:532 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:19:30:534 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:19:30:582 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:42:582 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:42:583 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:19:42:586 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:19:42:588 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:19:42:633 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:54:633 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:19:54:634 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:19:54:638 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:19:54:641 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:19:54:681 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:06:682 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:06:683 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:20:06:692 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:20:06:697 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:20:06:729 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:18:730 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:18:730 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:20:18:734 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:20:18:736 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:20:18:775 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:30:777 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:30:778 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:20:30:781 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:20:30:784 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:20:30:826 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:42:828 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:42:829 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:20:42:832 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:20:42:834 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:20:42:874 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:54:876 IMS/(3949:3950): -----------------------------------------------------
+[INFO] 00:20:54:877 IMS/(3949:3950): Comienza actualización de Blocks.ims...
+[INFO] 00:20:54:881 IMS/(3949:3950): Se actualizo Blocks.ims
+[INFO] 00:20:54:883 IMS/(3949:3950): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 00:20:54:924 IMS/(3949:3950): -----------------------------------------------------

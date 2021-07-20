@@ -4,7 +4,7 @@ void funcionConsola(){
     
     while(validador) {
         char* leido;
-        void* buffer;
+        
         while(strcmp(leido = readline("> "), "") != 0) { 
             parametros = string_split(leido," "); //char**: vector de strings, cada elemento del vector es un parametro, menos el primero que es el mensaje!
             free(leido);
@@ -36,31 +36,36 @@ void funcionConsola(){
                     log_info(logger, "Entró comando: INICIAR_PATOTA" );
                     pcb* nuevoPCB = crear_PCB (parametros, conexion_RAM, logger);
 
-                    pthread_mutex_lock(&mutex_cantidadVieja);
                 	if (nuevoPCB) {
                         list_add(listaPCB, nuevoPCB);
                         if(cantidadVieja == 0){
+
                             semTripulantes = malloc(sizeof(sem_t)*cantidadActual); 
                             hiloTripulante = malloc(sizeof(pthread_t) * cantidadActual); 
+                        
                         }else{
                             semTripulantes = realloc(semTripulantes,(sizeof(sem_t)) * cantidadActual);
-                            hiloTripulante = realloc(hiloTripulante , sizeof(pthread_t) * cantidadActual); 
+                            hiloTripulante = realloc(hiloTripulante , sizeof(pthread_t) * cantidadActual);
+
                         } 
 
-                        for(int i=cantidadVieja; i<cantidadActual; i++){
+                        for(int i = cantidadVieja; i < cantidadActual; i++){
                             sem_init(&semTripulantes[i], 0, 0);
+
                             log_info(logger, "Inicializo Semaforo de TCB %d", i);
                             
                         }
-            
                         create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
+                        
+                        pthread_mutex_lock(&mutex_cantidadVieja);
                         cantidadVieja += cantidadActual;
+                        pthread_mutex_unlock(&mutex_cantidadVieja);
+
                     } else {
                     	log_error(logger, "No se pudo crear el PCB");
                         cantidadActual-=atoi(parametros[1]);
                     }
 
-                    pthread_mutex_unlock(&mutex_cantidadVieja);
                 	free(parametros[0]); //iniciarPatota
                 	free(parametros[1]);//5 (en formato de char*)
                 	free(parametros[2]);//listaTareas
@@ -97,21 +102,20 @@ void funcionConsola(){
                     break;
 
                 case C_EXPULSAR_TRIPULANTE:
-                    log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");
-                    int tamanioBuffer;
-                    
-                    
+                    log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");                    
                     if (planificacion_viva) {
 					  	int idTripulante = atoi(parametros[1]);
+                       
                         pthread_mutex_lock(&mutexListaPCB);
                         tcb* tcbTripulante = obtener_tcb_en_listaPCB(listaPCB);
                         pthread_mutex_unlock(&mutexListaPCB);
                         
-                        tamanioBuffer = 2*sizeof(int);
-                        buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante->pid, idTripulante);
-                        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, tamanioBuffer, logger);
+                        pthread_mutex_lock(&mutexBuffer);
+                        buffer = _serialize(2*sizeof(int), "%d%d", tcbTripulante->pid, idTripulante);
+                        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, 2*sizeof(int), logger);
                         free(buffer);
                       	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
+                        pthread_mutex_unlock(&mutexBuffer);
                         
                        	if(mensajeRecibido->command == SUCCESS) {
                             log_info(logger, "Se expulsó correctamente el tripulante en memoria");
@@ -161,11 +165,13 @@ void funcionConsola(){
                     log_info(logger, "Entró comando: OBTENER_BITACORA");
                 	int idTripulante = atoi(parametros[1]);
                     
+                    pthread_mutex_lock(&mutexBuffer);
                     buffer = _serialize(sizeof(int), "%d", idTripulante);
                     _send_message(conexion_IMS, "DIS", ENVIAR_OBTENER_BITACORA, buffer, sizeof(int), logger); //ENVIAR_OBTENER_BITACORA: 760
                     free(buffer);
                     
                     t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
+                    pthread_mutex_unlock(&mutexBuffer);
                    
                     if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
                         log_info(logger,"Bitácora del tripulante: %d", idTripulante);
@@ -205,7 +211,7 @@ void funcionConsola(){
                 	free(parametros);
                     
                     liberarMemoria();
-                    validador = 0;
+                    
                     break;
 
                 default:
@@ -252,10 +258,8 @@ int obtener_tipo_mensaje_consola(char *mensaje) {
 
 void mostrarTripulante(void* elemento){
     tcb* tripulante = (tcb*) elemento;
-    log_info(logger, "Tripulante: %d\t", tripulante->tid);
-    log_info(logger, "Patota: %d\t", tripulante->pid);
-    log_info(logger,"Tarea actual: %s\n", tripulante->instruccion_actual);
-    log_info(logger,"Posicion X e Y: %d - %d\n", tripulante->posicionX, tripulante->posicionY);
+    log_info(logger, "Tripulante: %d\t Patota:%d\t Tarea:%s\t", tripulante->tid,tripulante->pid,tripulante->instruccion_actual);
+    log_info(logger,"Posicion Actual X e Y: %d - %d\n", tripulante->posicionX, tripulante->posicionY);
 
     switch(tripulante->status){
         case 'N':
@@ -326,7 +330,6 @@ void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola){
     }
     else{
         log_info(logger, "No se encontro el tripulante en la cola %s", nombre_cola);
-        //free(tripulanteAExpulsar);
     }
 }
 
@@ -346,6 +349,8 @@ tcb* obtener_tcb_en_listaPCB(t_list* self) {
 }
 
 void liberarMemoria(){
+
+    validador = 0;
 
     queue_destroy_and_destroy_elements(cola_new, destruirTCB);
     queue_destroy_and_destroy_elements(ready, destruirTCB);
@@ -383,15 +388,9 @@ void liberarMemoria(){
     sem_destroy(&semERM);
     sem_destroy(&semMR);
 
-    // for(int i = 0; i < cantidadTCBTotales; i++){
-    //     sem_destroy(&semTripulantes[i]);
-    //     //pthread_join(hiloTripulante[i],NULL);
-    // }
-
-    rl_clear_history();
     log_destroy(logger);
   	config_destroy(config);
 
-    // exit(1);
+    exit(1);
   	
 }

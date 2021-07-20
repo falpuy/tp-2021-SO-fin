@@ -14,7 +14,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             memcpy(&posSabotajeX, payload, sizeof(int));
             memcpy(&posSabotajeY, payload + sizeof(int), sizeof(int));
             log_info(logger, "Llego comando COMIENZA_SABOTAJE con posición en %d-%d",posSabotajeX,posSabotajeY);
-            // tripulanteFixer = malloc(sizeof(tcb));
+
             sem_post(&semERM);
         break;
     }
@@ -115,11 +115,13 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 }
 
                 //SE AVISA A IMS QUE SE ATENDERÁ EL SABOTAJE
-                int tamanioBuffer = sizeof(int);
                 int idTripulante = tripulanteFixer->tid;
-                void* buffer = _serialize(tamanioBuffer, "%d", idTripulante);
-                _send_message(conexion_IMS, "DIS", ATIENDE_SABOTAJE, buffer, tamanioBuffer, logger);
+                
+                pthread_mutex_lock(&mutexBuffer);
+                buffer = _serialize(sizeof(int), "%d", idTripulante);
+                _send_message(conexion_IMS, "DIS", ATIENDE_SABOTAJE, buffer, sizeof(int), logger);
                 free(buffer);
+                pthread_mutex_unlock(&mutexBuffer);
 
                 // SACA AL FIXER DE BLOCK_EMER Y LO COLOCA EN READY
                 pthread_mutex_lock(&mutexBloqEmer);
@@ -193,10 +195,13 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
             //SE ENVÍA A IMS QUE SE TERMINÓ EL SABOTAJE
             char* bufferAEnviar = string_new();
             string_append(&bufferAEnviar, "Se resolvio el sabotaje");
-            void* buffer = _serialize(sizeof(int) + string_length(bufferAEnviar), "%s", bufferAEnviar);
+           
+            pthread_mutex_lock(&mutexBuffer);
+            buffer = _serialize(sizeof(int) + string_length(bufferAEnviar), "%s", bufferAEnviar);
             _send_message(conexion_IMS, "DIS", RESOLUCION_SABOTAJE, buffer, sizeof(int) + strlen(bufferAEnviar), logger);
             free(bufferAEnviar);
             free(buffer);
+            pthread_mutex_unlock(&mutexBuffer);
 
             sem_post(&semNR);
         }

@@ -1,11 +1,12 @@
 #include "headers/main.h"
+#include <commons/process.h>
 
 int main () {
     setearConfiguraciones();
+    unsigned int pid = process_getpid();
+    log_info(logger, "N° proceso:%d", pid);
     signal(SIGINT,liberarMemoria);
     funcionPlanificador(logger);
-
-
     pthread_create(&hEsperarSabotaje, NULL,(void*) servidor, parametros);
     pthread_detach(hEsperarSabotaje);
     
@@ -60,6 +61,8 @@ void setearConfiguraciones (){
     pthread_mutex_init(&mutexListaPCB, NULL);
     pthread_mutex_init(&mutex_cantidadVieja,NULL);
     pthread_mutex_init(&mutex_cantidadActual,NULL);
+    pthread_mutex_init(&mutexBuffer,NULL);
+    pthread_mutex_init(&mutexSemaforosTrip,NULL);
 
     sem_init(&semNR, 0, 0);
     sem_init(&semRE, 0, 0);
@@ -95,11 +98,13 @@ void setearConfiguraciones (){
     char* bufferAEnviar = string_new();
     string_append(&bufferAEnviar, "Comienza Discordiador");
 
-    void* buffer2 = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s",bufferAEnviar);
-    _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, buffer2,sizeof(int) + string_length(bufferAEnviar) , logger);
+    pthread_mutex_lock(&mutexBuffer);
+    buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s",bufferAEnviar);
+    _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, buffer,sizeof(int) + string_length(bufferAEnviar) , logger);
     
     free(bufferAEnviar);
-    free(buffer2);
+    free(buffer);
+    pthread_mutex_unlock(&mutexBuffer);
 }
 
 void servidor(){

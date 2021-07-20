@@ -9609,3 +9609,22 @@
 [INFO] 20:10:57:557 discordiador/(4503:4503): Comando: 200
 [INFO] 20:10:57:558 discordiador/(4503:4503): Tamanio: 9
 [INFO] 20:10:57:558 discordiador/(4503:4503): el tamaño de la tarea es: 1886610770
+[INFO] 21:38:58:843 discordiador/(6189:6189): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 21:38:59:246 discordiador/(6189:6189): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 21:38:59:274 discordiador/(6189:6189): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 21:38:59:281 discordiador/(6189:6189): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 21:38:59:295 discordiador/(6189:6189): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 21:39:00:517 discordiador/(6189:6189): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 21:39:02:131 discordiador/(6189:6209): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 21:39:02:164 discordiador/(6189:6209): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 21:39:17:676 discordiador/(6189:6189): Entró comando: INICIAR_PATOTA
+[INFO] 21:39:17:740 discordiador/(6189:6189): 3
+[INFO] 21:39:17:815 discordiador/(6189:6189): Las tareas a mandar son: ARREGLAR_REACTOR;7;2;5BARRER;7;7;5SALUDAR;2;7;1
+[INFO] 21:39:17:858 discordiador/(6189:6189): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:39:17:868 discordiador/(6189:6189): Inicializo Semaforo de TCB 0
+[INFO] 21:39:17:895 discordiador/(6189:6189): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 21:39:17:900 discordiador/(6189:6189): Recibi el siguiente mensaje..
+[INFO] 21:39:17:919 discordiador/(6189:6189): Proceso: RAM
+[INFO] 21:39:17:925 discordiador/(6189:6189): Comando: 200
+[INFO] 21:39:17:929 discordiador/(6189:6189): Tamanio: 9
+[INFO] 21:39:17:943 discordiador/(6189:6189): el tamaño de la tarea es: 1886610770

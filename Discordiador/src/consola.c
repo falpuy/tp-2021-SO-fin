@@ -382,7 +382,6 @@ void liberarMemoria(){
     sem_destroy(&semEaX);
     sem_destroy(&semERM);
     sem_destroy(&semMR);
-    sem_destroy(&semFMR);
 
     // for(int i = 0; i < cantidadTCBTotales; i++){
     //     sem_destroy(&semTripulantes[i]);

@@ -219,3 +219,8 @@
 [INFO] 17:42:11:949 RAM/(7358:7490): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 17:42:11:950 RAM/(7358:7490): -----------------------------------------------------
 [INFO] 17:42:59:236 RAM/(7358:7490): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 20:01:57:656 RAM/(3220:3220): Mi RAM HQ ejecutando correctamente.. PID: 3220
+[INFO] 20:01:57:657 RAM/(3220:3220): Esquema utilizado: SEGMENTACION
+[INFO] 20:01:57:658 RAM/(3220:3220): Tamanio de la memoria: 2048
+[INFO] 20:01:57:659 RAM/(3220:3220): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:01:57:659 RAM/(3220:3220): [Shared Library]: Esperando conexiones en puerto: 5001

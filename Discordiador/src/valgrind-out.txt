@@ -1,0 +1,451 @@
+==3411== Memcheck, a memory error detector
+==3411== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==3411== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==3411== Command: ./main
+==3411== Parent PID: 3410
+==3411== 
+--3411-- 
+--3411-- Valgrind options:
+--3411--    --leak-check=full
+--3411--    --show-leak-kinds=all
+--3411--    --track-origins=yes
+--3411--    --log-file=valgrind-out.txt
+--3411--    --verbose
+--3411-- Contents of /proc/version:
+--3411--   Linux version 4.4.0-116-generic (buildd@lgw01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #140-Ubuntu SMP Mon Feb 12 21:22:43 UTC 2018
+--3411-- 
+--3411-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3
+--3411-- Page sizes: currently 4096, max supported 4096
+--3411-- Valgrind library directory: /usr/lib/valgrind
+--3411-- Reading syms from /lib/i386-linux-gnu/ld-2.23.so
+--3411--   Considering /lib/i386-linux-gnu/ld-2.23.so ..
+--3411--   .. CRC mismatch (computed 596cb2b8 wanted 417b32cc)
+--3411--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.23.so ..
+--3411--   .. CRC is valid
+--3411-- Reading syms from /home/utnso/shared/tp-2021-1c-Unnamed-Group/Discordiador/src/main
+--3411-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
+--3411--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
+--3411--   .. CRC mismatch (computed 6036da3f wanted 652e483f)
+--3411--    object doesn't have a symbol table
+--3411--    object doesn't have a dynamic symbol table
+--3411-- Scheduler: using generic scheduler lock implementation.
+--3411-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==3411== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-3411-by-utnso-on-???
+==3411== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-3411-by-utnso-on-???
+==3411== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-3411-by-utnso-on-???
+==3411== 
+==3411== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==3411== don't want to do, unless you know exactly what you're doing,
+==3411== or are doing some strange experiment):
+==3411==   /usr/lib/valgrind/../../bin/vgdb --pid=3411 ...command...
+==3411== 
+==3411== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==3411==   /path/to/gdb ./main
+==3411== and then give GDB the following command
+==3411==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=3411
+==3411== --pid is optional if only one valgrind process is running
+==3411== 
+--3411-- REDIR: 0x4018eb0 (ld-linux.so.2:strlen) redirected to 0x380490f2 (???)
+--3411-- REDIR: 0x4018c70 (ld-linux.so.2:index) redirected to 0x380490cd (???)
+--3411-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
+--3411--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
+--3411--   .. CRC mismatch (computed 5b95c0c4 wanted 39e79efa)
+--3411--    object doesn't have a symbol table
+--3411-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
+--3411--   Considering /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so ..
+--3411--   .. CRC mismatch (computed 4d5a1526 wanted 33571d5b)
+--3411--    object doesn't have a symbol table
+==3411== WARNING: new redirection conflicts with existing -- ignoring it
+--3411--     old: 0x04018eb0 (strlen              ) R-> (0000.0) 0x380490f2 ???
+--3411--     new: 0x04018eb0 (strlen              ) R-> (2007.0) 0x0402f410 strlen
+--3411-- Reading syms from /usr/lib/libcommons.so
+--3411-- Reading syms from /lib/i386-linux-gnu/libreadline.so.6.3
+--3411--   Considering /lib/i386-linux-gnu/libreadline.so.6.3 ..
+--3411--   .. CRC mismatch (computed ae23cd8f wanted 3f613fc8)
+--3411--    object doesn't have a symbol table
+--3411-- Reading syms from /usr/lib/libunnamed.so
+--3411-- Reading syms from /lib/i386-linux-gnu/libm-2.23.so
+--3411--   Considering /lib/i386-linux-gnu/libm-2.23.so ..
+--3411--   .. CRC mismatch (computed 9ba663e0 wanted 0c56bc99)
+--3411--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.23.so ..
+--3411--   .. CRC is valid
+--3411-- Reading syms from /lib/i386-linux-gnu/libpthread-2.23.so
+--3411--   Considering /usr/lib/debug/.build-id/12/78da59ecc0791dce5c44d8b8756a0480be3a5b.debug ..
+--3411--   .. build-id is valid
+--3411-- Reading syms from /lib/i386-linux-gnu/libc-2.23.so
+--3411--   Considering /lib/i386-linux-gnu/libc-2.23.so ..
+--3411--   .. CRC mismatch (computed af9c0474 wanted a5de3f2a)
+--3411--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.23.so ..
+--3411--   .. CRC is valid
+--3411-- Reading syms from /lib/i386-linux-gnu/libtinfo.so.5.9
+--3411--    object doesn't have a symbol table
+--3411-- REDIR: 0x41904b0 (libc.so.6:strncasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x4197140 (libc.so.6:memrchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x41a9b20 (libc.so.6:wcslen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x418f350 (libc.so.6:strstr) redirected to 0x4033700 (strstr)
+--3411-- REDIR: 0x418e7e0 (libc.so.6:__GI_strrchr) redirected to 0x402ee00 (__GI_strrchr)
+--3411-- REDIR: 0x4189f00 (libc.so.6:malloc) redirected to 0x402c110 (malloc)
+--3411-- REDIR: 0x418e5c0 (libc.so.6:__GI_strlen) redirected to 0x402f390 (__GI_strlen)
+--3411-- REDIR: 0x4190680 (libc.so.6:__GI_memcpy) redirected to 0x4030fb0 (__GI_memcpy)
+--3411-- REDIR: 0x418a810 (libc.so.6:calloc) redirected to 0x402e010 (calloc)
+--3411-- REDIR: 0x4192280 (libc.so.6:strchrnul) redirected to 0x40330b0 (strchrnul)
+--3411-- REDIR: 0x41900d0 (libc.so.6:__GI_mempcpy) redirected to 0x40332c0 (__GI_mempcpy)
+--3411-- REDIR: 0x418dd20 (libc.so.6:__GI_strchr) redirected to 0x402ef30 (__GI_strchr)
+--3411-- REDIR: 0x418a520 (libc.so.6:realloc) redirected to 0x402e250 (realloc)
+--3411-- REDIR: 0x418a470 (libc.so.6:free) redirected to 0x402d2f0 (free)
+--3411-- REDIR: 0x418e580 (libc.so.6:strlen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x4197440 (libc.so.6:__strlen_sse2_bsf) redirected to 0x402f370 (strlen)
+--3411-- REDIR: 0x418e700 (libc.so.6:strncmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x424e5c0 (libc.so.6:__strncmp_ssse3) redirected to 0x402fab0 (strncmp)
+--3411-- REDIR: 0x418dae0 (libc.so.6:strcat) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x41a2b30 (libc.so.6:__strcat_ssse3) redirected to 0x402f030 (strcat)
+--3411-- REDIR: 0x4190610 (libc.so.6:memcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x4240b70 (libc.so.6:__memcpy_ssse3) redirected to 0x4030cc0 (memcpy)
+--3411-- REDIR: 0x418fc10 (libc.so.6:__GI_memcmp) redirected to 0x4031ef0 (__GI_memcmp)
+--3411-- REDIR: 0x41921b0 (libc.so.6:__GI___rawmemchr) redirected to 0x4033110 (__GI___rawmemchr)
+--3411-- REDIR: 0x418ffc0 (libc.so.6:memset) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x423e4d0 (libc.so.6:__memset_sse2) redirected to 0x40327d0 (memset)
+--3411-- REDIR: 0x418fa30 (libc.so.6:__GI_memchr) redirected to 0x40306d0 (__GI_memchr)
+--3411-- REDIR: 0x42524c0 (libc.so.6:__strncasecmp_ssse3) redirected to 0x402fe10 (strncasecmp)
+--3411-- REDIR: 0x418df30 (libc.so.6:__GI_strcmp) redirected to 0x40304b0 (__GI_strcmp)
+--3411-- REDIR: 0x41902e0 (libc.so.6:__GI_stpcpy) redirected to 0x4032290 (__GI_stpcpy)
+--3411-- Reading syms from /lib/i386-linux-gnu/libnss_files-2.23.so
+--3411--   Considering /lib/i386-linux-gnu/libnss_files-2.23.so ..
+--3411--   .. CRC mismatch (computed 8c99c30c wanted 2d8e767c)
+--3411--   Considering /usr/lib/debug/lib/i386-linux-gnu/libnss_files-2.23.so ..
+--3411--   .. CRC is valid
+--3411-- REDIR: 0x418dfe0 (libc.so.6:__GI_strcpy) redirected to 0x402f520 (__GI_strcpy)
+--3411-- REDIR: 0x4192170 (libc.so.6:rawmemchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x41a8ee0 (libc.so.6:__rawmemchr_sse2_bsf) redirected to 0x40330f0 (rawmemchr)
+--3411-- REDIR: 0x418dee0 (libc.so.6:strcmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--3411-- REDIR: 0x424d150 (libc.so.6:__strcmp_ssse3) redirected to 0x4030450 (strcmp)
+==3411== Use of uninitialised value of size 4
+==3411==    at 0x40A1E5A: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== Use of uninitialised value of size 4
+==3411==    at 0x40A1E60: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== Use of uninitialised value of size 4
+==3411==    at 0x40A1E66: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== Syscall param socketcall.socket(args) points to uninitialised byte(s)
+==3411==    at 0x4201601: socket (socket.c:32)
+==3411==    by 0x40A1E73: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Address 0xbef20b28 is on thread 1's stack
+==3411==  in frame #0, created by socket (socket.c:28)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x804A546: main (main.c:4)
+==3411== 
+==3411== Conditional jump or move depends on uninitialised value(s)
+==3411==    at 0x41E82C4: freeaddrinfo (getaddrinfo.c:2688)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== Use of uninitialised value of size 4
+==3411==    at 0x41E82D0: freeaddrinfo (getaddrinfo.c:2691)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== Conditional jump or move depends on uninitialised value(s)
+==3411==    at 0x402D31B: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x41E82DD: freeaddrinfo (getaddrinfo.c:2692)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x804A539: main (main.c:3)
+==3411== 
+==3411== Invalid free() / delete / delete[] / realloc()
+==3411==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x41E82DD: freeaddrinfo (getaddrinfo.c:2692)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Address 0x42cb000 is in the GOTPLT segment of /lib/i386-linux-gnu/libc-2.23.so
+==3411== 
+==3411== Conditional jump or move depends on uninitialised value(s)
+==3411==    at 0x402D31B: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x41E82E7: freeaddrinfo (getaddrinfo.c:2693)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== Invalid free() / delete / delete[] / realloc()
+==3411==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x41E82E7: freeaddrinfo (getaddrinfo.c:2693)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Address 0xbef20be8 is on thread 1's stack
+==3411==  in frame #3, created by setearConfiguraciones (main.c:16)
+==3411== 
+==3411== Conditional jump or move depends on uninitialised value(s)
+==3411==    at 0x41E82ED: freeaddrinfo (getaddrinfo.c:2688)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x804A539: main (main.c:3)
+==3411== 
+==3411== Invalid read of size 4
+==3411==    at 0x41E82D0: freeaddrinfo (getaddrinfo.c:2691)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Address 0x600f66ed is not stack'd, malloc'd or (recently) free'd
+==3411== 
+==3411== 
+==3411== Process terminating with default action of signal 11 (SIGSEGV)
+==3411==  Access not within mapped region at address 0x600F66ED
+==3411==    at 0x41E82D0: freeaddrinfo (getaddrinfo.c:2691)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  If you believe this happened as a result of a stack
+==3411==  overflow in your program's main thread (unlikely but
+==3411==  possible), you can try to increase the size of the
+==3411==  main thread stack using the --main-stacksize= flag.
+==3411==  The main thread stack size used in this run was 8388608.
+--3411-- Discarding syms at 0x46f5a50-0x46fbb62 in /lib/i386-linux-gnu/libnss_files-2.23.so due to munmap()
+==3411== 
+==3411== HEAP SUMMARY:
+==3411==     in use at exit: 874 bytes in 37 blocks
+==3411==   total heap usage: 204 allocs, 173 frees, 2,118,186 bytes allocated
+==3411== 
+==3411== Searching for pointers to 37 not-freed blocks
+==3411== Checked 102,448 bytes
+==3411== 
+==3411== 8 bytes in 1 blocks are still reachable in loss record 1 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x4055BC9: config_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5E6: setearConfiguraciones (main.c:19)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 13 bytes in 1 blocks are still reachable in loss record 2 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x418E2C5: strdup (strdup.c:42)
+==3411==    by 0x40568D7: string_duplicate (in /usr/lib/libcommons.so)
+==3411==    by 0x40561F7: log_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5D1: setearConfiguraciones (main.c:18)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 15 bytes in 1 blocks are still reachable in loss record 3 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x418E2C5: strdup (strdup.c:42)
+==3411==    by 0x4055BDD: config_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5E6: setearConfiguraciones (main.c:19)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 16 bytes in 1 blocks are still reachable in loss record 4 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x4053C5B: dictionary_create (in /usr/lib/libcommons.so)
+==3411==    by 0x4055BEC: config_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5E6: setearConfiguraciones (main.c:19)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 20 bytes in 1 blocks are still reachable in loss record 5 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x4056151: log_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5D1: setearConfiguraciones (main.c:18)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 59 bytes in 10 blocks are still reachable in loss record 6 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x418E2C5: strdup (strdup.c:42)
+==3411==    by 0x40568D7: string_duplicate (in /usr/lib/libcommons.so)
+==3411==    by 0x40573E2: _string_split (in /usr/lib/libcommons.so)
+==3411==    by 0x4056EE4: string_n_split (in /usr/lib/libcommons.so)
+==3411==    by 0x4055AE6: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==3411==    by 0x4057092: string_iterate_lines (in /usr/lib/libcommons.so)
+==3411==    by 0x4055C7A: config_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5E6: setearConfiguraciones (main.c:19)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 80 bytes in 1 blocks are still reachable in loss record 7 of 10
+==3411==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x4053C7C: dictionary_create (in /usr/lib/libcommons.so)
+==3411==    by 0x4055BEC: config_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5E6: setearConfiguraciones (main.c:19)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 159 bytes in 10 blocks are still reachable in loss record 8 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x418E2C5: strdup (strdup.c:42)
+==3411==    by 0x4053D91: dictionary_put (in /usr/lib/libcommons.so)
+==3411==    by 0x4055B09: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==3411==    by 0x4057092: string_iterate_lines (in /usr/lib/libcommons.so)
+==3411==    by 0x4055C7A: config_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5E6: setearConfiguraciones (main.c:19)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 160 bytes in 10 blocks are still reachable in loss record 9 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x4054268: dictionary_create_element (in /usr/lib/libcommons.so)
+==3411==    by 0x4053DA3: dictionary_put (in /usr/lib/libcommons.so)
+==3411==    by 0x4055B09: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==3411==    by 0x4057092: string_iterate_lines (in /usr/lib/libcommons.so)
+==3411==    by 0x4055C7A: config_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5E6: setearConfiguraciones (main.c:19)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== 344 bytes in 1 blocks are still reachable in loss record 10 of 10
+==3411==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x4177359: __fopen_internal (iofopen.c:69)
+==3411==    by 0x417741D: fopen@@GLIBC_2.1 (iofopen.c:97)
+==3411==    by 0x40575B4: txt_open_for_append (in /usr/lib/libcommons.so)
+==3411==    by 0x4056191: log_create (in /usr/lib/libcommons.so)
+==3411==    by 0x804A5D1: setearConfiguraciones (main.c:18)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411== 
+==3411== LEAK SUMMARY:
+==3411==    definitely lost: 0 bytes in 0 blocks
+==3411==    indirectly lost: 0 bytes in 0 blocks
+==3411==      possibly lost: 0 bytes in 0 blocks
+==3411==    still reachable: 874 bytes in 37 blocks
+==3411==         suppressed: 0 bytes in 0 blocks
+==3411== 
+==3411== ERROR SUMMARY: 18 errors from 12 contexts (suppressed: 0 from 0)
+==3411== 
+==3411== 1 errors in context 1 of 12:
+==3411== Invalid read of size 4
+==3411==    at 0x41E82D0: freeaddrinfo (getaddrinfo.c:2691)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Address 0x600f66ed is not stack'd, malloc'd or (recently) free'd
+==3411== 
+==3411== 
+==3411== 1 errors in context 2 of 12:
+==3411== Conditional jump or move depends on uninitialised value(s)
+==3411==    at 0x41E82ED: freeaddrinfo (getaddrinfo.c:2688)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x804A539: main (main.c:3)
+==3411== 
+==3411== 
+==3411== 1 errors in context 3 of 12:
+==3411== Conditional jump or move depends on uninitialised value(s)
+==3411==    at 0x402D31B: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x41E82DD: freeaddrinfo (getaddrinfo.c:2692)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x804A539: main (main.c:3)
+==3411== 
+==3411== 
+==3411== 1 errors in context 4 of 12:
+==3411== Conditional jump or move depends on uninitialised value(s)
+==3411==    at 0x41E82C4: freeaddrinfo (getaddrinfo.c:2688)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== 
+==3411== 1 errors in context 5 of 12:
+==3411== Syscall param socketcall.socket(args) points to uninitialised byte(s)
+==3411==    at 0x4201601: socket (socket.c:32)
+==3411==    by 0x40A1E73: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Address 0xbef20b28 is on thread 1's stack
+==3411==  in frame #0, created by socket (socket.c:28)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x804A546: main (main.c:4)
+==3411== 
+==3411== 
+==3411== 1 errors in context 6 of 12:
+==3411== Use of uninitialised value of size 4
+==3411==    at 0x40A1E66: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== 
+==3411== 1 errors in context 7 of 12:
+==3411== Use of uninitialised value of size 4
+==3411==    at 0x40A1E60: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== 
+==3411== 1 errors in context 8 of 12:
+==3411== Use of uninitialised value of size 4
+==3411==    at 0x40A1E5A: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== 
+==3411== 2 errors in context 9 of 12:
+==3411== Conditional jump or move depends on uninitialised value(s)
+==3411==    at 0x402D31B: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x41E82E7: freeaddrinfo (getaddrinfo.c:2693)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== 
+==3411== 2 errors in context 10 of 12:
+==3411== Use of uninitialised value of size 4
+==3411==    at 0x41E82D0: freeaddrinfo (getaddrinfo.c:2691)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Uninitialised value was created by a stack allocation
+==3411==    at 0x40A1DF8: _connect (in /usr/lib/libunnamed.so)
+==3411== 
+==3411== 
+==3411== 3 errors in context 11 of 12:
+==3411== Invalid free() / delete / delete[] / realloc()
+==3411==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x41E82E7: freeaddrinfo (getaddrinfo.c:2693)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Address 0xbef20be8 is on thread 1's stack
+==3411==  in frame #3, created by setearConfiguraciones (main.c:16)
+==3411== 
+==3411== 
+==3411== 3 errors in context 12 of 12:
+==3411== Invalid free() / delete / delete[] / realloc()
+==3411==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==3411==    by 0x41E82DD: freeaddrinfo (getaddrinfo.c:2692)
+==3411==    by 0x40A1EA0: _connect (in /usr/lib/libunnamed.so)
+==3411==    by 0x804A7CF: setearConfiguraciones (main.c:46)
+==3411==    by 0x804A54A: main (main.c:4)
+==3411==  Address 0x42cb000 is in the GOTPLT segment of /lib/i386-linux-gnu/libc-2.23.so
+==3411== 
+==3411== ERROR SUMMARY: 18 errors from 12 contexts (suppressed: 0 from 0)

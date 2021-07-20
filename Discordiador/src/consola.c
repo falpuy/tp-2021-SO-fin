@@ -366,6 +366,12 @@ void liberarMemoria(){
     pthread_mutex_destroy(&mutexListaPCB);
     pthread_mutex_destroy(&mutex_cantidadVieja);
     pthread_mutex_destroy(&mutex_cantidadActual);
+    pthread_mutex_destroy(&mutexBloqEmerSorted);
+    pthread_mutex_destroy(&mutexValidador);
+    pthread_mutex_destroy(&mutexPlanificacionViva);
+    pthread_mutex_destroy(&mutexSabotajeActivado);
+    pthread_mutex_destroy(&mutexCiclosTranscurridosSabotaje);
+    pthread_mutex_destroy(&mutex_cantidadTCB);
     
     sem_destroy(&semNR);
     sem_destroy(&semRE);
@@ -374,6 +380,9 @@ void liberarMemoria(){
     sem_destroy(&semEXIT);
     sem_destroy(&semEBIO);
     sem_destroy(&semEaX);
+    sem_destroy(&semERM);
+    sem_destroy(&semMR);
+    sem_destroy(&semFMR);
 
     // for(int i = 0; i < cantidadTCBTotales; i++){
     //     sem_destroy(&semTripulantes[i]);

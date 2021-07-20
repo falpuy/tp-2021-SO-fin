@@ -89,16 +89,13 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     cantidadActual += cant_tripulantes;
     _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
     free(buffer_a_enviar);
-    free(mensaje->payload);
-    free(mensaje->identifier);
-    free(mensaje);
   
   	return nuevoPCB;
 }
 
 void destruirTCB(void* nodo){
-    // tcb* tcbADestruir = (tcb*) nodo;
-    // free(tcbADestruir->instruccion_actual);
+    tcb* tcbADestruir = (tcb*) nodo;
+    free(tcbADestruir->instruccion_actual);
     //free(tcbADestruir);
 }
 
@@ -121,7 +118,7 @@ void funcionTripulante (void* item) {
     int mensajeInicialIMS=0;
     bool llegoALaPosicion = false;
     int puedeEnviarSignal = 1;
-    int param;
+    int parametro;
     int posicionX;
     int posicionY;
     int tiempoTarea;
@@ -156,7 +153,11 @@ void funcionTripulante (void* item) {
                     llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posSabotajeX, posSabotajeY);
 
                     if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DEL SABOTAJE
+
+                        pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
                         if (ciclos_transcurridos_sabotaje == 0) {//SI TODAVÍA NO SE COMENZÓ A REPARAR EL SABOTAJE
+                            pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
+
                             char* bufferAEnviar = string_new();
                             string_append(&bufferAEnviar, "Se invoco FSCK");
                             buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s", bufferAEnviar);
@@ -164,12 +165,20 @@ void funcionTripulante (void* item) {
                             free(bufferAEnviar);
                             free(buffer);
                         }
+
+                        pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
                         if (ciclos_transcurridos_sabotaje == duracion_sabotaje) {//SI SE TERMINÓ DE REPARAR EL SABOTAJE
+                            pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
                             sem_post(&semERM);
                         }
                         else {// SI NO SE TERMINÓ DE REPARAR EL SABOTAJE
+                            pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
                             tcbTripulante->ciclosCumplidos++;
+
+                            pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
                             ciclos_transcurridos_sabotaje++;
+                            pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
+
                             if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos == quantum_RR) {// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
                                 tcbTripulante->ciclosCumplidos = 0;
                                 tcbTripulante->status='R';
@@ -194,7 +203,7 @@ void funcionTripulante (void* item) {
                             log_info(aux->logger,"[Tripulante %d] Ejecuto _SIGNAL con hilo %d", aux -> idSemaforo, aux -> idSemaforo);
                             sem_post(&semER);
                         }
-                        else // NO ES FIFO  NI RR
+                        else // NO ES FIFO NI RR
                             log_info(aux->logger,"No es un algoritmo válido");
                     }
                 }
@@ -204,20 +213,22 @@ void funcionTripulante (void* item) {
                     log_info(aux->logger,"[Tripulante %d] DATOS TRIPULANTE: %d - %s", aux->idSemaforo, tcbTripulante -> tid, tcbTripulante -> instruccion_actual);
 
                     tarea = string_split(tcbTripulante->instruccion_actual, " ");
+
                     if (tarea[1]!=NULL){
                     log_info(aux->logger, "Es tarea IO");
                     parametrosTarea = string_split(tarea[1], ";");
-                    }else{
+                    }
+                    else{
                     log_info(aux->logger, "Es tarea normal");
                     parametrosTarea = string_split(tarea[0], ";");
                     strcpy(parametrosTarea[0],"-1");
                     }
-                    param = atoi(parametrosTarea[0]);
+                    parametro = atoi(parametrosTarea[0]);
                     posicionX = atoi(parametrosTarea[1]);
                     posicionY = atoi(parametrosTarea[2]);
                     tiempoTarea = atoi(parametrosTarea[3]);
                 
-                    log_info(aux->logger, "El parametro de la tarea es: %d", param);
+                    log_info(aux->logger, "El parametro de la tarea es: %d", parametro);
                     log_info(aux->logger, "La posición en X de la tarea es: %d", posicionX);
                     log_info(aux->logger, "La posición en Y de la tarea es: %d", posicionY);
                     log_info(aux->logger, "El tiempo de la tarea es: %d", tiempoTarea);
@@ -229,7 +240,7 @@ void funcionTripulante (void* item) {
                         if (mensajeInicialIMS == 0){//MANDA MENSAJE A IMS DE "Comienza Ejecucion Tarea"
                             tamanioTarea = strlen(tarea[0]);
                             tamanioBuffer = sizeof(int)*6 + tamanioTarea;
-                            buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tcbTripulante->tid, tarea[0], param, posicionX, posicionY, tiempoTarea);
+                            buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tcbTripulante->tid, tarea[0], parametro, posicionX, posicionY, tiempoTarea);
                             _send_message(conexion_IMS, "IMS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, aux->logger);
                             free(buffer);
                             mensajeInicialIMS = 1;
@@ -591,14 +602,17 @@ void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_lo
   	
       if (mensaje->command == SUCCESS) { // Recibi la primer tarea
         int tamanioTarea;
-        memcpy(&tamanioTarea, mensaje->payload, sizeof(int));
-       
+        memmove(&tamanioTarea, mensaje->payload, sizeof(int));
+        log_info(logger, "el tamaño de la tarea es: %d", tamanioTarea);
         aux->instruccion_actual = malloc(tamanioTarea + 1);
-        memcpy(aux->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
+        memmove(aux->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
         aux->instruccion_actual[tamanioTarea] = '\0';
-       
+        log_info(logger, "la tarea es: %s", aux->instruccion_actual);
+
         aux->estaVivoElHilo = 1;
+        pthread_mutex_lock(&mutexNew);
         queue_push (cola_new, (void*) aux);
+        pthread_mutex_unlock(&mutexNew);
 
         // for(int i=cantidadVieja; i<cantidadActual; i++){
         parametrosThread *parametros = malloc(sizeof(parametrosThread));
@@ -639,7 +653,11 @@ void _signal(int incremento, int valorMax, sem_t *semaforo) {
     contadorSemGlobal += incremento;
     if (contadorSemGlobal == valorMax) {
         log_info(logger, "manda signal a bloqio");
+
+        pthread_mutex_lock(&mutex_cantidadTCB);
         cantidadTCBEnExec = queue_size(exec);
+        pthread_mutex_unlock(&mutex_cantidadTCB);
+
         sem_post(semaforo);
         contadorSemGlobal = 0;
     }

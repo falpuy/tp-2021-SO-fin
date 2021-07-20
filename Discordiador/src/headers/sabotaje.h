@@ -126,6 +126,9 @@
     pthread_mutex_t mutexExit;
     pthread_mutex_t mutexBloqEmerSorted;
     pthread_mutex_t mutexValidador;
+    pthread_mutex_t mutexPlanificacionViva;
+    pthread_mutex_t mutexSabotajeActivado;
+    pthread_mutex_t mutexCiclosTranscurridosSabotaje;
     pthread_mutex_t mutexListaPCB;
     pthread_mutex_t mutex_cantidadTCB;
     pthread_mutex_t mutex_cantidadVieja;
@@ -140,13 +143,11 @@
     sem_t semEBIO;
     sem_t* semTripulantes;
     sem_t semERM;
-    sem_t semFMR;
     sem_t semMR;
 
     int cantidadVieja;
     int cantidadActual;
     int contadorSemGlobal;
-
     
     int contadorPCBs;
     int cantidadTCBTotales;
@@ -168,7 +169,6 @@
     bool comparadorTid(void* tripulante1, void* tripulante2);
     
     void funcionhExecReadyaBloqEmer (t_log* logger);
-    void funcionhFixerdeEmeraReady(t_log* logger);
     void funcionhBloqEmeraReady (t_log* logger);
     
     bool ordenarMasCercano(void* tripulante1, void* tripulante2);

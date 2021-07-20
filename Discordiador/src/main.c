@@ -54,6 +54,9 @@ void setearConfiguraciones (){
     pthread_mutex_init(&mutexBloqEmerSorted, NULL);
     pthread_mutex_init(&mutexExit, NULL);
     pthread_mutex_init(&mutexValidador, NULL);
+    pthread_mutex_init(&mutexPlanificacionViva, NULL);
+    pthread_mutex_init(&mutexSabotajeActivado, NULL);
+    pthread_mutex_init(&mutexCiclosTranscurridosSabotaje, NULL);
     pthread_mutex_init(&mutexListaPCB, NULL);
     pthread_mutex_init(&mutex_cantidadVieja,NULL);
     pthread_mutex_init(&mutex_cantidadActual,NULL);
@@ -67,7 +70,6 @@ void setearConfiguraciones (){
     sem_init(&semEaX, 0, 0);
     sem_init(&semERM, 0, 0);
     sem_init(&semMR, 0, 0);
-    sem_init(&semFMR, 0, 0);
     
     pthread_create(&hNewaReady, NULL, (void *) funcionhNewaReady, logger);
     pthread_create(&hReadyaExec, NULL, (void *) funcionhReadyaExec, logger);
@@ -78,7 +80,6 @@ void setearConfiguraciones (){
     pthread_create(&hExit, NULL, (void *) funcionhExit, logger);
 
     pthread_create(&hExecReadyaBloqEmer, NULL, (void *) funcionhExecReadyaBloqEmer, logger);
-    pthread_create(&hFixerdeEmeraReady, NULL, (void *) funcionhFixerdeEmeraReady, logger);
     pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
 
     pthread_detach(hNewaReady);
@@ -90,10 +91,9 @@ void setearConfiguraciones (){
     pthread_detach(hExit);
     pthread_detach(hExecReadyaBloqEmer);
     pthread_detach(hBloqEmeraReady);
-    pthread_detach(hFixerdeEmeraReady);
 
     char* bufferAEnviar = string_new();
-    string_append(&bufferAEnviar, "Holis");
+    string_append(&bufferAEnviar, "Comienza Discordiador");
 
     void* buffer2 = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s",bufferAEnviar);
     _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, buffer2,sizeof(int) + string_length(bufferAEnviar) , logger);

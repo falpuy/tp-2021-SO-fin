@@ -9628,3 +9628,2144 @@
 [INFO] 21:39:17:925 discordiador/(6189:6189): Comando: 200
 [INFO] 21:39:17:929 discordiador/(6189:6189): Tamanio: 9
 [INFO] 21:39:17:943 discordiador/(6189:6189): el tamaño de la tarea es: 1886610770
+[INFO] 22:54:06:240 discordiador/(3842:3842): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 22:54:06:703 discordiador/(3842:3842): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:54:06:736 discordiador/(3842:3842): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 22:54:06:743 discordiador/(3842:3842): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 22:54:06:749 discordiador/(3842:3842): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 22:54:08:141 discordiador/(3842:3842): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:54:09:709 discordiador/(3842:3865): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 22:54:09:863 discordiador/(3842:3865): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 22:54:39:907 discordiador/(3842:3842): Entró comando: INICIAR_PATOTA
+[INFO] 22:54:39:988 discordiador/(3842:3842): 3
+[INFO] 22:54:40:099 discordiador/(3842:3842): Las tareas a mandar son: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 22:54:40:159 discordiador/(3842:3842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:54:40:164 discordiador/(3842:3842): Recibi el siguiente mensaje..
+[INFO] 22:54:40:185 discordiador/(3842:3842): Proceso: RAM
+[INFO] 22:54:40:190 discordiador/(3842:3842): Comando: 200
+[INFO] 22:54:40:216 discordiador/(3842:3842): Tamanio: 9
+[INFO] 22:54:40:248 discordiador/(3842:3842): Se guardó en Memoria OK
+[INFO] 22:54:40:267 discordiador/(3842:3842): Inicializo Semaforo de TCB 0
+[INFO] 22:54:40:294 discordiador/(3842:3842): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:54:40:297 discordiador/(3842:3842): Recibi el siguiente mensaje..
+[INFO] 22:54:40:334 discordiador/(3842:3842): Proceso: RAM
+[INFO] 22:54:40:336 discordiador/(3842:3842): Comando: 200
+[INFO] 22:54:40:349 discordiador/(3842:3842): Tamanio: 28
+[INFO] 22:54:40:353 discordiador/(3842:3842): el tamaño de la tarea es: 24
+[INFO] 22:54:40:380 discordiador/(3842:3842): la tarea es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 22:54:40:621 discordiador/(3842:3949): ----------------------------------
+[INFO] 22:54:40:625 discordiador/(3842:3949): [Tripulante 0] Esperando Signal...
+[INFO] 22:55:13:300 discordiador/(3842:3842): Entró comando: INICIAR_PLANIFICACION
+[INFO] 22:55:13:304 discordiador/(3842:3842): Se inició la planificación. Estado de la flag: 1
+[INFO] 22:55:30:300 discordiador/(3842:3842): --------------------------------------------------------------------
+[INFO] 22:55:30:303 discordiador/(3842:3842): Entró comando: LISTAR_TRIPULANTES
+[INFO] 22:55:30:318 discordiador/(3842:3842): Estado de la Nave: 19/07/21 22:55:30
+[INFO] 22:55:30:338 discordiador/(3842:3842): Tripulante: 0	
+[INFO] 22:55:30:341 discordiador/(3842:3842): Patota: 1	
+[INFO] 22:55:30:345 discordiador/(3842:3842): Tarea actual: ESCANEAR_MUESTRAS;3;3;5
+
+[INFO] 22:55:30:347 discordiador/(3842:3842): Posicion X e Y: 0 - 0
+
+[INFO] 22:55:30:350 discordiador/(3842:3842): Status: NEW
+
+[INFO] 22:55:30:355 discordiador/(3842:3842): --------------------------------------------------------------------
+[INFO] 22:57:58:897 discordiador/(3842:3842): Salimos de la consola
+[INFO] 22:58:09:486 discordiador/(4368:4368): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 22:58:09:487 discordiador/(4368:4368): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 22:58:09:488 discordiador/(4368:4368): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 22:58:09:488 discordiador/(4368:4368): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 22:58:09:489 discordiador/(4368:4368): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 22:58:09:489 discordiador/(4368:4368): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 22:58:09:491 discordiador/(4368:4379): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 22:58:09:492 discordiador/(4368:4379): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 22:58:19:022 discordiador/(4368:4368): Entró comando: INICIAR_PATOTA
+[INFO] 22:58:19:026 discordiador/(4368:4368): 3
+[INFO] 22:58:19:029 discordiador/(4368:4368): Las tareas a mandar son: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 22:58:19:029 discordiador/(4368:4368): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:58:19:030 discordiador/(4368:4368): Recibi el siguiente mensaje..
+[INFO] 22:58:19:031 discordiador/(4368:4368): Proceso: RAM
+[INFO] 22:58:19:031 discordiador/(4368:4368): Comando: 200
+[INFO] 22:58:19:032 discordiador/(4368:4368): Tamanio: 9
+[INFO] 22:58:19:032 discordiador/(4368:4368): Se guardó en Memoria OK
+[INFO] 22:58:19:032 discordiador/(4368:4368): Inicializo Semaforo de TCB 0
+[INFO] 22:58:19:032 discordiador/(4368:4368): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:58:19:034 discordiador/(4368:4368): Recibi el siguiente mensaje..
+[INFO] 22:58:19:073 discordiador/(4368:4368): Proceso: RAM
+[INFO] 22:58:19:110 discordiador/(4368:4368): Comando: 200
+[INFO] 22:58:19:110 discordiador/(4368:4368): Tamanio: 28
+[INFO] 22:58:19:110 discordiador/(4368:4368): el tamaño de la tarea es: 24
+[INFO] 22:58:19:111 discordiador/(4368:4368): la tarea es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 22:58:19:111 discordiador/(4368:4398): ----------------------------------
+[INFO] 22:58:19:111 discordiador/(4368:4398): [Tripulante 0] Esperando Signal...
+[INFO] 22:58:26:643 discordiador/(4368:4368): Entró comando: INICIAR_PLANIFICACION
+[INFO] 22:58:26:643 discordiador/(4368:4368): Se inició la planificación. Estado de la flag: 1
+[INFO] 22:59:18:169 discordiador/(4368:4368): --------------------------------------------------------------------
+[INFO] 22:59:18:170 discordiador/(4368:4368): Entró comando: LISTAR_TRIPULANTES
+[INFO] 22:59:18:170 discordiador/(4368:4368): Estado de la Nave: 19/07/21 22:59:18
+[INFO] 22:59:18:170 discordiador/(4368:4368): Tripulante: 0	
+[INFO] 22:59:18:170 discordiador/(4368:4368): Patota: 1	
+[INFO] 22:59:18:171 discordiador/(4368:4368): Tarea actual: ESCANEAR_MUESTRAS;3;3;5
+
+[INFO] 22:59:18:171 discordiador/(4368:4368): Posicion X e Y: 0 - 0
+
+[INFO] 22:59:18:171 discordiador/(4368:4368): Status: NEW
+
+[INFO] 22:59:18:171 discordiador/(4368:4368): --------------------------------------------------------------------
+[INFO] 22:59:29:883 discordiador/(4368:4368): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 22:59:40:943 discordiador/(4368:4368): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 22:59:50:847 discordiador/(4368:4368): Entró comando: EXPULSAR_TRIPULANTE
+[INFO] 22:59:50:847 discordiador/(4368:4368): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 22:59:50:848 discordiador/(4368:4368): Recibi el siguiente mensaje..
+[INFO] 22:59:50:888 discordiador/(4368:4368): Proceso: RAM
+[INFO] 22:59:50:888 discordiador/(4368:4368): Comando: 200
+[INFO] 22:59:50:888 discordiador/(4368:4368): Tamanio: 9
+[INFO] 22:59:50:888 discordiador/(4368:4368): Se expulsó correctamente el tripulante en memoria
+[INFO] 22:59:50:889 discordiador/(4368:4368): Se expulsa al tripulante de la cola NEW
+[INFO] 22:59:50:889 discordiador/(4368:4368): El tripulante ya fue expulsado de la cola New
+[INFO] 22:59:58:326 discordiador/(4368:4368): --------------------------------------------------------------------
+[INFO] 22:59:58:326 discordiador/(4368:4368): Entró comando: LISTAR_TRIPULANTES
+[INFO] 22:59:58:327 discordiador/(4368:4368): Estado de la Nave: 19/07/21 22:59:58
+[INFO] 22:59:58:327 discordiador/(4368:4368): Tripulante: 0	
+[INFO] 22:59:58:327 discordiador/(4368:4368): Patota: 1	
+[INFO] 22:59:58:327 discordiador/(4368:4368): Tarea actual: ESCANEAR_MUESTRAS;3;3;5
+
+[INFO] 22:59:58:328 discordiador/(4368:4368): Posicion X e Y: 0 - 0
+
+[INFO] 22:59:58:328 discordiador/(4368:4368): Status: EXIT
+
+[INFO] 22:59:58:328 discordiador/(4368:4368): --------------------------------------------------------------------
+[INFO] 23:00:02:198 discordiador/(4368:4368): Salimos de la consola
+[INFO] 23:00:34:886 discordiador/(4713:4713): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 23:00:34:888 discordiador/(4713:4713): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:00:34:888 discordiador/(4713:4713): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:00:34:889 discordiador/(4713:4713): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 23:00:34:889 discordiador/(4713:4713): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 23:00:34:890 discordiador/(4713:4713): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:00:34:892 discordiador/(4713:4724): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 23:00:34:892 discordiador/(4713:4724): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 23:00:42:955 discordiador/(4713:4713): Entró comando: INICIAR_PATOTA
+[INFO] 23:00:42:959 discordiador/(4713:4713): 3
+[INFO] 23:00:42:962 discordiador/(4713:4713): Las tareas a mandar son: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 23:00:42:962 discordiador/(4713:4713): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:00:42:964 discordiador/(4713:4713): Recibi el siguiente mensaje..
+[INFO] 23:00:42:964 discordiador/(4713:4713): Proceso: RAM
+[INFO] 23:00:42:965 discordiador/(4713:4713): Comando: 200
+[INFO] 23:00:42:965 discordiador/(4713:4713): Tamanio: 9
+[INFO] 23:00:42:966 discordiador/(4713:4713): Se guardó en Memoria OK
+[INFO] 23:00:42:966 discordiador/(4713:4713): Inicializo Semaforo de TCB 0
+[INFO] 23:00:42:966 discordiador/(4713:4713): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:00:42:967 discordiador/(4713:4713): Recibi el siguiente mensaje..
+[INFO] 23:00:43:009 discordiador/(4713:4713): Proceso: RAM
+[INFO] 23:00:43:046 discordiador/(4713:4713): Comando: 200
+[INFO] 23:00:43:047 discordiador/(4713:4713): Tamanio: 28
+[INFO] 23:00:43:047 discordiador/(4713:4713): el tamaño de la tarea es: 24
+[INFO] 23:00:43:047 discordiador/(4713:4713): la tarea es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:00:43:048 discordiador/(4713:4741): ----------------------------------
+[INFO] 23:00:43:048 discordiador/(4713:4741): [Tripulante 0] Esperando Signal...
+[INFO] 23:00:50:381 discordiador/(4713:4713): Entró comando: INICIAR_PLANIFICACION
+[INFO] 23:00:50:382 discordiador/(4713:4713): Se inició la planificación. Estado de la flag: 1
+[INFO] 23:00:50:382 discordiador/(4713:4715): ----------------------------------
+[INFO] 23:00:50:382 discordiador/(4713:4715): Se ejecuta el hilo de New a Ready
+[INFO] 23:00:50:383 discordiador/(4713:4715): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 23:00:50:383 discordiador/(4713:4715): TID:0
+[INFO] 23:00:50:383 discordiador/(4713:4715): Instruccion Actual:ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:00:50:383 discordiador/(4713:4715): ----------------------------------
+[INFO] 23:00:50:384 discordiador/(4713:4715): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:00:50:384 discordiador/(4713:4715): ----------------------------------
+[INFO] 23:02:58:144 discordiador/(4713:4713): --------------------------------------------------------------------
+[INFO] 23:02:58:145 discordiador/(4713:4713): Entró comando: LISTAR_TRIPULANTES
+[INFO] 23:02:58:145 discordiador/(4713:4713): Estado de la Nave: 19/07/21 23:02:58
+[INFO] 23:02:58:146 discordiador/(4713:4713): Tripulante: 0	
+[INFO] 23:02:58:146 discordiador/(4713:4713): Patota: 1	
+[INFO] 23:02:58:146 discordiador/(4713:4713): Tarea actual: ESCANEAR_MUESTRAS;3;3;5
+
+[INFO] 23:02:58:146 discordiador/(4713:4713): Posicion X e Y: 0 - 0
+
+[INFO] 23:02:58:147 discordiador/(4713:4713): Status: READY
+
+[INFO] 23:02:58:147 discordiador/(4713:4713): --------------------------------------------------------------------
+[INFO] 23:03:05:048 discordiador/(4713:4713): El mensaje ingresado no corresponde a una acción propia del Discordiador
+[INFO] 23:03:10:839 discordiador/(4713:4713): Entró comando: EXPULSAR_TRIPULANTE
+[INFO] 23:03:10:840 discordiador/(4713:4713): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:03:10:840 discordiador/(4713:4713): Recibi el siguiente mensaje..
+[INFO] 23:03:10:879 discordiador/(4713:4713): Proceso: RAM
+[INFO] 23:03:10:880 discordiador/(4713:4713): Comando: 200
+[INFO] 23:03:10:880 discordiador/(4713:4713): Tamanio: 9
+[INFO] 23:03:10:880 discordiador/(4713:4713): Se expulsó correctamente el tripulante en memoria
+[INFO] 23:03:10:880 discordiador/(4713:4713): Se expulsa al tripulante de la cola READY
+[INFO] 23:03:10:881 discordiador/(4713:4713): El tripulante ya fue expulsado de la cola Ready
+[INFO] 23:03:18:603 discordiador/(4713:4713): --------------------------------------------------------------------
+[INFO] 23:03:18:603 discordiador/(4713:4713): Entró comando: LISTAR_TRIPULANTES
+[INFO] 23:03:18:604 discordiador/(4713:4713): Estado de la Nave: 19/07/21 23:03:18
+[INFO] 23:03:18:604 discordiador/(4713:4713): Tripulante: 0	
+[INFO] 23:03:18:604 discordiador/(4713:4713): Patota: 1	
+[INFO] 23:03:18:604 discordiador/(4713:4713): Tarea actual: ESCANEAR_MUESTRAS;3;3;5
+
+[INFO] 23:03:18:605 discordiador/(4713:4713): Posicion X e Y: 0 - 0
+
+[INFO] 23:03:18:605 discordiador/(4713:4713): Status: EXIT
+
+[INFO] 23:03:18:605 discordiador/(4713:4713): --------------------------------------------------------------------
+[INFO] 23:03:23:093 discordiador/(4713:4713): Salimos de la consola
+[INFO] 23:15:43:981 discordiador/(6713:6713): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 23:15:44:381 discordiador/(6713:6713): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:15:44:402 discordiador/(6713:6713): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:15:44:414 discordiador/(6713:6713): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 23:15:44:428 discordiador/(6713:6713): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 23:15:45:775 discordiador/(6713:6713): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:15:48:153 discordiador/(6713:6738): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 23:15:48:646 discordiador/(6713:6738): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 23:16:08:976 discordiador/(6713:6713): Entró comando: INICIAR_PATOTA
+[INFO] 23:16:09:305 discordiador/(6713:6713): 3
+[INFO] 23:16:09:691 discordiador/(6713:6713): Las tareas a mandar son: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 23:16:09:946 discordiador/(6713:6713): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:16:10:117 discordiador/(6713:6713): Recibi el siguiente mensaje..
+[INFO] 23:16:10:178 discordiador/(6713:6713): Proceso: RAM
+[INFO] 23:16:10:336 discordiador/(6713:6713): Comando: 200
+[INFO] 23:16:10:442 discordiador/(6713:6713): Tamanio: 9
+[INFO] 23:16:10:500 discordiador/(6713:6713): Se guardó en Memoria OK
+[INFO] 23:16:10:714 discordiador/(6713:6713): Inicializo Semaforo de TCB 0
+[INFO] 23:16:10:973 discordiador/(6713:6713): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:16:11:040 discordiador/(6713:6713): Recibi el siguiente mensaje..
+[INFO] 23:16:11:230 discordiador/(6713:6713): Proceso: RAM
+[INFO] 23:16:11:387 discordiador/(6713:6713): Comando: 200
+[INFO] 23:16:11:452 discordiador/(6713:6713): Tamanio: 28
+[INFO] 23:16:11:625 discordiador/(6713:6713): el tamaño de la tarea es: 24
+[INFO] 23:16:11:704 discordiador/(6713:6713): la tarea es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:12:104 discordiador/(6713:6792): ----------------------------------
+[INFO] 23:16:12:169 discordiador/(6713:6792): [Tripulante 0] Esperando Signal...
+[INFO] 23:16:19:960 discordiador/(6713:6713): Entró comando: INICIAR_PLANIFICACION
+[INFO] 23:16:20:025 discordiador/(6713:6713): Se inició la planificación. Estado de la flag: 1
+[INFO] 23:16:20:273 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:20:327 discordiador/(6713:6729): Se ejecuta el hilo de New a Ready
+[INFO] 23:16:20:556 discordiador/(6713:6729): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 23:16:20:621 discordiador/(6713:6729): TID:0
+[INFO] 23:16:20:798 discordiador/(6713:6729): Instruccion Actual:ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:20:866 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:21:045 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:16:21:225 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:21:590 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:16:21:721 discordiador/(6713:6730): Se ejecuta el hilo de Ready a Exec
+[INFO] 23:16:21:903 discordiador/(6713:6730): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 23:16:22:046 discordiador/(6713:6730): TID:0
+[INFO] 23:16:22:107 discordiador/(6713:6730): Instrucción Actual: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:22:309 discordiador/(6713:6730): Se paso Tripulante a Exec
+[INFO] 23:16:22:371 discordiador/(6713:6730): Hay 1 nodos en Exec
+[INFO] 23:16:22:610 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:16:22:759 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:16:22:875 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:16:22:872 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:16:23:014 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:16:23:147 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:23:307 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:16:23:445 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:16:23:563 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:16:23:620 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:16:23:792 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:16:23:969 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:16:24:105 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:16:24:163 discordiador/(6713:6792): Posicion X Nueva 3
+[INFO] 23:16:24:334 discordiador/(6713:6792): Posicion Y Nueva 3
+[INFO] 23:16:24:400 discordiador/(6713:6792): Posicion X Actual 0
+[INFO] 23:16:24:620 discordiador/(6713:6792): Posicion Y Actual 0
+[INFO] 23:16:24:879 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:16:24:961 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:16:25:129 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:16:25:295 discordiador/(6713:6792): Comando: 200
+[INFO] 23:16:25:413 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:16:25:662 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:16:25:781 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:16:25:950 discordiador/(6713:6792): Posicion X Actual 1
+[INFO] 23:16:26:066 discordiador/(6713:6792): Posicion Y Actual 0
+[INFO] 23:16:26:132 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:16:26:302 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:16:26:370 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:16:26:715 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:26:768 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:16:26:945 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:16:27:012 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:27:238 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:16:27:304 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:16:28:522 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:16:28:693 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:28:769 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:16:28:771 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:16:28:777 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:16:28:772 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:16:28:974 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:28:976 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:16:28:978 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:16:29:160 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:16:29:216 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:16:29:419 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:16:29:496 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:16:29:685 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:16:29:687 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:16:29:884 discordiador/(6713:6792): Posicion X Nueva 3
+[INFO] 23:16:29:951 discordiador/(6713:6792): Posicion Y Nueva 3
+[INFO] 23:16:30:144 discordiador/(6713:6792): Posicion X Actual 1
+[INFO] 23:16:30:146 discordiador/(6713:6792): Posicion Y Actual 0
+[INFO] 23:16:30:223 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:16:30:444 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:16:30:619 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:16:30:692 discordiador/(6713:6792): Comando: 200
+[INFO] 23:16:30:895 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:16:30:972 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:16:31:190 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:16:31:378 discordiador/(6713:6792): Posicion X Actual 2
+[INFO] 23:16:31:454 discordiador/(6713:6792): Posicion Y Actual 0
+[INFO] 23:16:31:667 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:16:31:735 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:16:31:939 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:16:32:208 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:32:373 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:16:32:376 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:16:32:475 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:32:666 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:16:32:860 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:16:34:260 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:16:34:446 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:34:523 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:16:34:700 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:16:34:701 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:16:34:703 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:16:34:705 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:16:34:891 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:34:955 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:16:35:121 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:16:35:186 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:16:35:354 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:16:35:521 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:16:35:586 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:16:35:588 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:16:35:770 discordiador/(6713:6792): Posicion X Nueva 3
+[INFO] 23:16:35:829 discordiador/(6713:6792): Posicion Y Nueva 3
+[INFO] 23:16:35:996 discordiador/(6713:6792): Posicion X Actual 2
+[INFO] 23:16:36:163 discordiador/(6713:6792): Posicion Y Actual 0
+[INFO] 23:16:36:229 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:16:36:425 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:16:36:478 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:16:36:644 discordiador/(6713:6792): Comando: 200
+[INFO] 23:16:36:819 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:16:36:889 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:16:37:069 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:16:37:122 discordiador/(6713:6792): Posicion X Actual 3
+[INFO] 23:16:37:289 discordiador/(6713:6792): Posicion Y Actual 0
+[INFO] 23:16:37:456 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:16:37:530 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:16:37:686 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:16:38:125 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:38:280 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:16:38:344 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:16:38:511 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:38:677 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:16:38:741 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:16:40:504 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:16:40:657 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:40:722 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:16:40:724 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:16:40:726 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:16:40:725 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:16:40:904 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:40:906 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:16:40:908 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:16:41:085 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:16:41:150 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:16:41:323 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:16:41:397 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:16:41:567 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:16:41:570 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:16:41:742 discordiador/(6713:6792): Posicion X Nueva 3
+[INFO] 23:16:41:822 discordiador/(6713:6792): Posicion Y Nueva 3
+[INFO] 23:16:41:999 discordiador/(6713:6792): Posicion X Actual 3
+[INFO] 23:16:42:067 discordiador/(6713:6792): Posicion Y Actual 0
+[INFO] 23:16:42:453 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:16:42:535 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:16:42:723 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:16:42:782 discordiador/(6713:6792): Comando: 200
+[INFO] 23:16:42:784 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:16:43:172 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:16:43:245 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:16:43:407 discordiador/(6713:6792): Posicion X Actual 3
+[INFO] 23:16:43:475 discordiador/(6713:6792): Posicion Y Actual 1
+[INFO] 23:16:43:658 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:16:43:840 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:16:43:911 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:16:44:516 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:44:674 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:16:44:742 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:16:44:930 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:45:111 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:16:45:177 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:16:46:950 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:16:46:952 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:47:227 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:16:47:411 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:16:47:413 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:16:47:415 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:16:47:417 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:16:47:615 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:47:689 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:16:47:877 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:16:47:954 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:16:48:137 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:16:48:326 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:16:48:400 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:16:48:581 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:16:48:649 discordiador/(6713:6792): Posicion X Nueva 3
+[INFO] 23:16:48:651 discordiador/(6713:6792): Posicion Y Nueva 3
+[INFO] 23:16:48:852 discordiador/(6713:6792): Posicion X Actual 3
+[INFO] 23:16:49:019 discordiador/(6713:6792): Posicion Y Actual 1
+[INFO] 23:16:49:099 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:16:49:308 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:16:49:368 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:16:49:565 discordiador/(6713:6792): Comando: 200
+[INFO] 23:16:49:750 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:16:49:837 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:16:50:034 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:16:50:094 discordiador/(6713:6792): Posicion X Actual 3
+[INFO] 23:16:50:275 discordiador/(6713:6792): Posicion Y Actual 2
+[INFO] 23:16:50:449 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:16:50:520 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:16:50:690 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:16:51:159 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:51:318 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:16:51:387 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:16:51:564 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:51:738 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:16:51:740 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:16:52:962 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:16:52:964 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:53:221 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:16:53:383 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:16:53:384 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:16:53:386 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:16:53:387 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:16:53:575 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:53:641 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:16:53:819 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:16:53:821 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:16:53:887 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:16:54:059 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:16:54:229 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:16:54:301 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:16:54:480 discordiador/(6713:6792): Posicion X Nueva 3
+[INFO] 23:16:54:547 discordiador/(6713:6792): Posicion Y Nueva 3
+[INFO] 23:16:54:717 discordiador/(6713:6792): Posicion X Actual 3
+[INFO] 23:16:54:900 discordiador/(6713:6792): Posicion Y Actual 2
+[INFO] 23:16:54:968 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:16:55:164 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:16:55:217 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:16:55:385 discordiador/(6713:6792): Comando: 200
+[INFO] 23:16:55:557 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:16:55:624 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:16:55:812 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:16:55:815 discordiador/(6713:6792): Posicion X Actual 3
+[INFO] 23:16:55:882 discordiador/(6713:6792): Posicion Y Actual 3
+[INFO] 23:16:56:052 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:16:56:227 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:16:56:296 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:16:56:929 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:57:089 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:16:57:091 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:16:57:157 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:16:57:339 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:16:57:520 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:16:58:751 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:16:58:913 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:16:58:978 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:16:59:146 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:16:59:147 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:16:59:316 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:16:59:318 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:16:59:320 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:16:59:385 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:16:59:558 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:16:59:622 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:16:59:803 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:16:59:991 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:17:00:067 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:00:256 discordiador/(6713:6792): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[ERROR] 23:17:00:522 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:17:00:718 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:00:778 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:00:961 discordiador/(6713:6792): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:17:01:016 discordiador/(6713:6792): El tiempo en exec es: 1
+[INFO] 23:17:01:192 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:01:380 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:02:032 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:02:188 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:02:256 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:02:430 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:02:607 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:02:677 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:04:431 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:04:593 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:04:660 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:04:832 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:04:833 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:04:835 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:04:837 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:05:026 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:17:05:091 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:17:05:265 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:17:05:333 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:17:05:510 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:17:05:683 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:17:05:748 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:05:918 discordiador/(6713:6792): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:17:05:984 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:06:150 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:06:318 discordiador/(6713:6792): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:17:06:391 discordiador/(6713:6792): El tiempo en exec es: 2
+[INFO] 23:17:06:392 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:06:573 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:07:007 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:07:161 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:07:227 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:07:397 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:07:568 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:07:632 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:09:368 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:09:536 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:09:602 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:09:770 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:09:771 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:09:773 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:09:774 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:09:959 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:17:10:024 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:17:10:192 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:17:10:256 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:17:10:424 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:17:10:590 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:17:10:654 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:10:824 discordiador/(6713:6792): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:17:10:889 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:11:056 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:11:222 discordiador/(6713:6792): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:17:11:287 discordiador/(6713:6792): El tiempo en exec es: 3
+[INFO] 23:17:11:454 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:11:518 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:11:909 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:11:911 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:12:080 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:12:145 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:12:314 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:12:480 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:13:695 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:13:863 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:13:930 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:14:096 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:14:098 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:14:264 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:14:266 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:14:268 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:17:14:334 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:17:14:503 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:17:14:567 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:17:14:749 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:17:14:924 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:17:14:989 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:15:155 discordiador/(6713:6792): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:17:15:219 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:15:386 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:15:553 discordiador/(6713:6792): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:17:15:617 discordiador/(6713:6792): El tiempo en exec es: 4
+[INFO] 23:17:15:787 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:15:854 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:16:231 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:16:384 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:16:450 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:16:459 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:16:627 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:16:796 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:18:004 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:18:157 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:18:222 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:18:389 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:18:390 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:18:392 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:18:393 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:18:559 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:17:18:623 discordiador/(6713:6792): Es tarea normal
+[INFO] 23:17:18:792 discordiador/(6713:6792): El parametro de la tarea es: -1
+[INFO] 23:17:18:858 discordiador/(6713:6792): La posición en X de la tarea es: 3
+[INFO] 23:17:19:025 discordiador/(6713:6792): La posición en Y de la tarea es: 3
+[INFO] 23:17:19:193 discordiador/(6713:6792): El tiempo de la tarea es: 5
+[INFO] 23:17:19:261 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:19:429 discordiador/(6713:6792): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:17:19:496 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:19:662 discordiador/(6713:6792): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:17:19:833 discordiador/(6713:6792): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:17:19:836 discordiador/(6713:6792): El tiempo en exec es: 5
+[INFO] 23:17:19:901 discordiador/(6713:6792): [Tripulante 0] Termino la tarea normal el tripulante 0
+[ERROR] 23:17:20:074 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:17:20:148 discordiador/(6713:6792): entra a proxtarea
+[INFO] 23:17:20:398 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:17:20:519 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:17:20:583 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:17:20:749 discordiador/(6713:6792): Comando: 200
+[INFO] 23:17:20:817 discordiador/(6713:6792): Tamanio: 29
+[INFO] 23:17:20:992 discordiador/(6713:6792): SUCCESS: Pedirproximatarea
+[INFO] 23:17:21:159 discordiador/(6713:6792): El tamaño de la tarea es: 25
+[INFO] 23:17:21:228 discordiador/(6713:6792): El tamanio de la tarea recibida es:25
+[INFO] 23:17:21:409 discordiador/(6713:6792): Buffer recibido: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:17:21:466 discordiador/(6713:6792): La tarea del tripulante 0 ahora es: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:17:21:647 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:21:820 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:22:452 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:22:607 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:22:678 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:22:851 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:23:016 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:23:080 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:24:803 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:24:965 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:25:030 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:25:198 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:25:199 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:25:201 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:25:203 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:25:376 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:17:25:441 discordiador/(6713:6792): Es tarea IO
+[INFO] 23:17:25:452 discordiador/(6713:6792): El parametro de la tarea es: 0
+[INFO] 23:17:25:640 discordiador/(6713:6792): La posición en X de la tarea es: 5
+[INFO] 23:17:25:693 discordiador/(6713:6792): La posición en Y de la tarea es: 5
+[INFO] 23:17:25:864 discordiador/(6713:6792): El tiempo de la tarea es: 2
+[INFO] 23:17:26:031 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:17:26:096 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:17:26:266 discordiador/(6713:6792): Posicion X Nueva 5
+[INFO] 23:17:26:332 discordiador/(6713:6792): Posicion Y Nueva 5
+[INFO] 23:17:26:498 discordiador/(6713:6792): Posicion X Actual 3
+[INFO] 23:17:26:665 discordiador/(6713:6792): Posicion Y Actual 3
+[INFO] 23:17:26:734 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:17:26:935 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:17:26:990 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:17:27:159 discordiador/(6713:6792): Comando: 200
+[INFO] 23:17:27:329 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:17:27:395 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:17:27:563 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:17:27:627 discordiador/(6713:6792): Posicion X Actual 4
+[INFO] 23:17:27:796 discordiador/(6713:6792): Posicion Y Actual 3
+[INFO] 23:17:27:964 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:17:28:029 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:28:039 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:28:625 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:28:781 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:28:847 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:29:015 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:29:182 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:29:246 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:30:960 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:31:114 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:31:178 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:31:346 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:31:347 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:31:349 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:31:350 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:31:522 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:17:31:586 discordiador/(6713:6792): Es tarea IO
+[INFO] 23:17:31:753 discordiador/(6713:6792): El parametro de la tarea es: 0
+[INFO] 23:17:31:821 discordiador/(6713:6792): La posición en X de la tarea es: 5
+[INFO] 23:17:31:991 discordiador/(6713:6792): La posición en Y de la tarea es: 5
+[INFO] 23:17:32:161 discordiador/(6713:6792): El tiempo de la tarea es: 2
+[INFO] 23:17:32:226 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:17:32:394 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:17:32:459 discordiador/(6713:6792): Posicion X Nueva 5
+[INFO] 23:17:32:625 discordiador/(6713:6792): Posicion Y Nueva 5
+[INFO] 23:17:32:794 discordiador/(6713:6792): Posicion X Actual 4
+[INFO] 23:17:32:860 discordiador/(6713:6792): Posicion Y Actual 3
+[INFO] 23:17:33:028 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:17:33:108 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:17:33:274 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:17:33:276 discordiador/(6713:6792): Comando: 200
+[INFO] 23:17:33:456 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:17:33:511 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:17:33:690 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:17:33:743 discordiador/(6713:6792): Posicion X Actual 5
+[INFO] 23:17:33:913 discordiador/(6713:6792): Posicion Y Actual 3
+[INFO] 23:17:34:090 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:17:34:093 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:34:157 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:34:743 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:34:911 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:34:975 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:35:145 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:35:310 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:35:375 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:37:088 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:37:245 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:37:310 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:37:477 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:37:479 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:37:481 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:37:483 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:37:662 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:17:37:665 discordiador/(6713:6792): Es tarea IO
+[INFO] 23:17:37:729 discordiador/(6713:6792): El parametro de la tarea es: 0
+[INFO] 23:17:37:903 discordiador/(6713:6792): La posición en X de la tarea es: 5
+[INFO] 23:17:37:967 discordiador/(6713:6792): La posición en Y de la tarea es: 5
+[INFO] 23:17:38:135 discordiador/(6713:6792): El tiempo de la tarea es: 2
+[INFO] 23:17:38:301 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:17:38:366 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:17:38:532 discordiador/(6713:6792): Posicion X Nueva 5
+[INFO] 23:17:38:596 discordiador/(6713:6792): Posicion Y Nueva 5
+[INFO] 23:17:38:762 discordiador/(6713:6792): Posicion X Actual 5
+[INFO] 23:17:38:942 discordiador/(6713:6792): Posicion Y Actual 3
+[INFO] 23:17:39:015 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:17:39:226 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:17:39:279 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:17:39:447 discordiador/(6713:6792): Comando: 200
+[INFO] 23:17:39:615 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:17:39:682 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:17:39:869 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:17:39:922 discordiador/(6713:6792): Posicion X Actual 5
+[INFO] 23:17:40:093 discordiador/(6713:6792): Posicion Y Actual 4
+[INFO] 23:17:40:264 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:17:40:330 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:40:496 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:40:931 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:41:085 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:41:150 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:41:316 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:41:483 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:41:550 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:43:274 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:43:428 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:43:493 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:43:660 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:43:661 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:43:663 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:43:664 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:43:846 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:17:43:919 discordiador/(6713:6792): Es tarea IO
+[INFO] 23:17:43:921 discordiador/(6713:6792): El parametro de la tarea es: 0
+[INFO] 23:17:44:101 discordiador/(6713:6792): La posición en X de la tarea es: 5
+[INFO] 23:17:44:155 discordiador/(6713:6792): La posición en Y de la tarea es: 5
+[INFO] 23:17:44:321 discordiador/(6713:6792): El tiempo de la tarea es: 2
+[INFO] 23:17:44:489 discordiador/(6713:6792): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:17:44:563 discordiador/(6713:6792): Moviendo al tripulante 0
+[INFO] 23:17:44:564 discordiador/(6713:6792): Posicion X Nueva 5
+[INFO] 23:17:44:734 discordiador/(6713:6792): Posicion Y Nueva 5
+[INFO] 23:17:44:807 discordiador/(6713:6792): Posicion X Actual 5
+[INFO] 23:17:44:974 discordiador/(6713:6792): Posicion Y Actual 4
+[INFO] 23:17:45:146 discordiador/(6713:6792): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:17:45:225 discordiador/(6713:6792): Recibi el siguiente mensaje..
+[INFO] 23:17:45:228 discordiador/(6713:6792): Proceso: RAM
+[INFO] 23:17:45:397 discordiador/(6713:6792): Comando: 200
+[INFO] 23:17:45:461 discordiador/(6713:6792): Tamanio: 9
+[ERROR] 23:17:45:631 discordiador/(6713:6792): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:17:45:801 discordiador/(6713:6792): Posiciones despues de mover al tripulante 0
+[INFO] 23:17:45:866 discordiador/(6713:6792): Posicion X Actual 5
+[INFO] 23:17:46:043 discordiador/(6713:6792): Posicion Y Actual 5
+[INFO] 23:17:46:107 discordiador/(6713:6792): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:17:46:274 discordiador/(6713:6792): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:17:46:441 discordiador/(6713:6792): manda signal a bloqio
+[INFO] 23:17:47:081 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:47:238 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:47:302 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:47:468 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:47:633 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:47:698 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:49:432 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:49:589 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:49:654 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:49:826 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:49:827 discordiador/(6713:6792): [Tripulante 0] EJECUTANDO...
+[INFO] 23:17:49:829 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:17:49:831 discordiador/(6713:6792): [Tripulante 0] esta en ejecución
+[INFO] 23:17:50:002 discordiador/(6713:6792): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:17:50:069 discordiador/(6713:6792): Es tarea IO
+[INFO] 23:17:50:236 discordiador/(6713:6792): El parametro de la tarea es: 0
+[INFO] 23:17:50:300 discordiador/(6713:6792): La posición en X de la tarea es: 5
+[INFO] 23:17:50:467 discordiador/(6713:6792): La posición en Y de la tarea es: 5
+[INFO] 23:17:50:633 discordiador/(6713:6792): El tiempo de la tarea es: 2
+[INFO] 23:17:50:698 discordiador/(6713:6792): COMPARANDO TAREA: [DESCARTAR_BASURA]
+[INFO] 23:17:50:869 discordiador/(6713:6792): [Tripulante 0] Llegó a la posición, la tarea es DESCARTAR_BASURA, es tarea IO? 1
+[INFO] 23:17:50:933 discordiador/(6713:6792): COMPARANDO TAREA: [DESCARTAR_BASURA]
+[INFO] 23:17:51:101 discordiador/(6713:6792): [Tripulante 0] Se debe realizar una tarea de I/O
+[INFO] 23:17:52:311 discordiador/(6713:6792): [Tripulante 0] Ejecuto POST de semEBIO con hilo 0
+[INFO] 23:17:52:418 discordiador/(6713:6732): ----------------------------------
+[INFO] 23:17:52:484 discordiador/(6713:6732): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:52:657 discordiador/(6713:6732): [CambioExecIO] Tripulante encontrado. Moviendolo a Blocked IO...
+[INFO] 23:17:52:722 discordiador/(6713:6732): TID: 0
+[INFO] 23:17:52:894 discordiador/(6713:6732): Instruccion Actual: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:17:53:064 discordiador/(6713:6732): Se paso nodo a Exec
+[INFO] 23:17:53:130 discordiador/(6713:6732): [Exec a Bloqio] ejecuto _SIGNAL desde semEBIO...
+[INFO] 23:17:53:310 discordiador/(6713:6732): manda signal a bloqio
+[INFO] 23:17:53:364 discordiador/(6713:6732): Se hizo una ejecución de CPU en Exec->BlockedIO
+[INFO] 23:17:53:532 discordiador/(6713:6732): ----------------------------------
+[INFO] 23:17:53:762 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:53:764 discordiador/(6713:6734): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:17:53:938 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:54:004 discordiador/(6713:6734): Tripulante:0 tiene que seguir en bloqueadoIO
+[INFO] 23:17:54:171 discordiador/(6713:6734): Va esperando:0 ciclos
+[INFO] 23:17:54:340 discordiador/(6713:6734): Son en total: 2
+[INFO] 23:17:54:405 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:54:577 discordiador/(6713:6734): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:17:54:641 discordiador/(6713:6734): ----------------------------------
+[INFO] 23:17:54:809 discordiador/(6713:6735): Se hizo una ejecución de CPU en Exit
+[INFO] 23:17:54:976 discordiador/(6713:6735): ----------------------------------
+[INFO] 23:17:56:182 discordiador/(6713:6729): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:17:56:337 discordiador/(6713:6729): ----------------------------------
+[INFO] 23:17:56:401 discordiador/(6713:6730): Se comienza a iterar signals...
+[INFO] 23:17:56:403 discordiador/(6713:6730): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:17:56:570 discordiador/(6713:6730): ----------------------------------
+[INFO] 23:18:31:827 discordiador/(6713:6713): --------------------------------------------------------------------
+[INFO] 23:18:32:006 discordiador/(6713:6713): Entró comando: LISTAR_TRIPULANTES
+[INFO] 23:18:32:067 discordiador/(6713:6713): Estado de la Nave: 19/07/21 23:18:32
+[INFO] 23:18:32:250 discordiador/(6713:6713): Tripulante: 0	
+[INFO] 23:18:32:425 discordiador/(6713:6713): Patota: 1	
+[INFO] 23:18:32:479 discordiador/(6713:6713): Tarea actual: DESCARTAR_BASURA 0;5;5;2
+
+[INFO] 23:18:32:649 discordiador/(6713:6713): Posicion X e Y: 5 - 5
+
+[INFO] 23:18:32:714 discordiador/(6713:6713): Status: BLOQ IO
+
+[INFO] 23:18:32:885 discordiador/(6713:6713): --------------------------------------------------------------------
+[INFO] 23:19:25:375 discordiador/(6713:6713): Entró comando: EXPULSAR_TRIPULANTE
+[INFO] 23:19:25:626 discordiador/(6713:6713): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:19:25:810 discordiador/(6713:6713): Recibi el siguiente mensaje..
+[INFO] 23:19:25:978 discordiador/(6713:6713): Proceso: RAM
+[INFO] 23:19:26:045 discordiador/(6713:6713): Comando: 200
+[INFO] 23:19:26:210 discordiador/(6713:6713): Tamanio: 9
+[INFO] 23:19:26:274 discordiador/(6713:6713): Se expulsó correctamente el tripulante en memoria
+[INFO] 23:19:26:443 discordiador/(6713:6713): Se expulsa al tripulante de la cola BLOQ IO
+[INFO] 23:19:26:625 discordiador/(6713:6713): El tripulante ya fue expulsado de la cola Bloqueado por IO
+[INFO] 23:19:32:055 discordiador/(6713:6713): --------------------------------------------------------------------
+[INFO] 23:19:32:222 discordiador/(6713:6713): Entró comando: LISTAR_TRIPULANTES
+[INFO] 23:19:32:390 discordiador/(6713:6713): Estado de la Nave: 19/07/21 23:19:32
+[INFO] 23:19:32:454 discordiador/(6713:6713): Tripulante: 0	
+[INFO] 23:19:32:628 discordiador/(6713:6713): Patota: 1	
+[INFO] 23:19:32:693 discordiador/(6713:6713): Tarea actual: DESCARTAR_BASURA 0;5;5;2
+
+[INFO] 23:19:32:862 discordiador/(6713:6713): Posicion X e Y: 5 - 5
+
+[INFO] 23:19:33:028 discordiador/(6713:6713): Status: EXIT
+
+[INFO] 23:19:33:092 discordiador/(6713:6713): --------------------------------------------------------------------
+[INFO] 23:19:36:345 discordiador/(6713:6713): Salimos de la consola
+[INFO] 23:26:41:742 discordiador/(8055:8055): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 23:26:42:153 discordiador/(8055:8055): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:26:42:179 discordiador/(8055:8055): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:26:42:186 discordiador/(8055:8055): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 23:26:42:202 discordiador/(8055:8055): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 23:26:43:561 discordiador/(8055:8055): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:26:45:004 discordiador/(8055:8075): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 23:26:45:415 discordiador/(8055:8075): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 23:27:30:746 discordiador/(8055:8055): Entró comando: INICIAR_PATOTA
+[INFO] 23:27:31:221 discordiador/(8055:8055): 3
+[INFO] 23:27:31:661 discordiador/(8055:8055): Las tareas a mandar son: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 23:27:31:926 discordiador/(8055:8055): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:27:31:983 discordiador/(8055:8055): Recibi el siguiente mensaje..
+[INFO] 23:27:32:099 discordiador/(8055:8055): Proceso: RAM
+[INFO] 23:27:32:206 discordiador/(8055:8055): Comando: 200
+[INFO] 23:27:32:261 discordiador/(8055:8055): Tamanio: 9
+[INFO] 23:27:32:425 discordiador/(8055:8055): Se guardó en Memoria OK
+[INFO] 23:27:32:598 discordiador/(8055:8055): Inicializo Semaforo de TCB 0
+[INFO] 23:27:32:820 discordiador/(8055:8055): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:27:32:943 discordiador/(8055:8055): Recibi el siguiente mensaje..
+[INFO] 23:27:33:008 discordiador/(8055:8055): Proceso: RAM
+[INFO] 23:27:33:228 discordiador/(8055:8055): Comando: 200
+[INFO] 23:27:33:293 discordiador/(8055:8055): Tamanio: 28
+[INFO] 23:27:33:297 discordiador/(8055:8055): el tamaño de la tarea es: 24
+[INFO] 23:27:33:495 discordiador/(8055:8055): la tarea es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:27:33:831 discordiador/(8055:8156): ----------------------------------
+[INFO] 23:27:33:921 discordiador/(8055:8156): [Tripulante 0] Esperando Signal...
+[INFO] 23:27:43:209 discordiador/(8055:8055): Entró comando: INICIAR_PLANIFICACION
+[INFO] 23:27:43:275 discordiador/(8055:8055): Se inició la planificación. Estado de la flag: 1
+[INFO] 23:27:43:593 discordiador/(8055:8060): ----------------------------------
+[INFO] 23:27:43:647 discordiador/(8055:8060): Se ejecuta el hilo de New a Ready
+[INFO] 23:27:43:780 discordiador/(8055:8060): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 23:27:43:960 discordiador/(8055:8060): TID:0
+[INFO] 23:27:44:065 discordiador/(8055:8060): Instruccion Actual:ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:27:44:236 discordiador/(8055:8060): ----------------------------------
+[INFO] 23:27:44:365 discordiador/(8055:8060): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:27:44:371 discordiador/(8055:8060): ----------------------------------
+[INFO] 23:27:44:621 discordiador/(8055:8061): ----------------------------------
+[INFO] 23:27:44:674 discordiador/(8055:8061): Se ejecuta el hilo de Ready a Exec
+[INFO] 23:27:44:898 discordiador/(8055:8061): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 23:27:44:964 discordiador/(8055:8061): TID:0
+[INFO] 23:27:45:134 discordiador/(8055:8061): Instrucción Actual: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:27:45:203 discordiador/(8055:8061): Se paso Tripulante a Exec
+[INFO] 23:27:45:385 discordiador/(8055:8061): Hay 1 nodos en Exec
+[INFO] 23:27:45:544 discordiador/(8055:8061): Se comienza a iterar signals...
+[INFO] 23:27:45:666 discordiador/(8055:8156): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:05:663 discordiador/(8055:8055): Salimos de la consola
+[INFO] 23:28:17:571 discordiador/(8227:8227): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 23:28:17:572 discordiador/(8227:8227): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:28:17:572 discordiador/(8227:8227): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:28:17:573 discordiador/(8227:8227): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 23:28:17:573 discordiador/(8227:8227): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 23:28:17:574 discordiador/(8227:8227): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:17:578 discordiador/(8227:8238): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 23:28:17:589 discordiador/(8227:8238): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 23:28:31:466 discordiador/(8227:8227): Entró comando: INICIAR_PATOTA
+[INFO] 23:28:31:470 discordiador/(8227:8227): 3
+[INFO] 23:28:31:473 discordiador/(8227:8227): Las tareas a mandar son: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 23:28:31:474 discordiador/(8227:8227): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:31:478 discordiador/(8227:8227): Recibi el siguiente mensaje..
+[INFO] 23:28:31:482 discordiador/(8227:8227): Proceso: RAM
+[INFO] 23:28:31:486 discordiador/(8227:8227): Comando: 200
+[INFO] 23:28:31:486 discordiador/(8227:8227): Tamanio: 9
+[INFO] 23:28:31:487 discordiador/(8227:8227): Se guardó en Memoria OK
+[INFO] 23:28:31:490 discordiador/(8227:8227): Inicializo Semaforo de TCB 0
+[INFO] 23:28:31:491 discordiador/(8227:8227): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:31:491 discordiador/(8227:8227): Recibi el siguiente mensaje..
+[INFO] 23:28:31:535 discordiador/(8227:8227): Proceso: RAM
+[INFO] 23:28:31:579 discordiador/(8227:8227): Comando: 200
+[INFO] 23:28:31:579 discordiador/(8227:8227): Tamanio: 28
+[INFO] 23:28:31:579 discordiador/(8227:8227): el tamaño de la tarea es: 24
+[INFO] 23:28:31:580 discordiador/(8227:8227): la tarea es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:31:586 discordiador/(8227:8263): ----------------------------------
+[INFO] 23:28:31:593 discordiador/(8227:8263): [Tripulante 0] Esperando Signal...
+[INFO] 23:28:37:711 discordiador/(8227:8227): Entró comando: INICIAR_PLANIFICACION
+[INFO] 23:28:37:711 discordiador/(8227:8227): Se inició la planificación. Estado de la flag: 1
+[INFO] 23:28:37:712 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:37:712 discordiador/(8227:8229): Se ejecuta el hilo de New a Ready
+[INFO] 23:28:37:712 discordiador/(8227:8229): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 23:28:37:712 discordiador/(8227:8229): TID:0
+[INFO] 23:28:37:713 discordiador/(8227:8229): Instruccion Actual:ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:37:713 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:37:713 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:37:713 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:37:714 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:37:714 discordiador/(8227:8230): Se ejecuta el hilo de Ready a Exec
+[INFO] 23:28:37:714 discordiador/(8227:8230): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 23:28:37:715 discordiador/(8227:8230): TID:0
+[INFO] 23:28:37:715 discordiador/(8227:8230): Instrucción Actual: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:37:715 discordiador/(8227:8230): Se paso Tripulante a Exec
+[INFO] 23:28:37:715 discordiador/(8227:8230): Hay 1 nodos en Exec
+[INFO] 23:28:37:715 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:37:716 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:37:716 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:37:716 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:37:716 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:37:716 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:37:717 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:37:717 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:37:717 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:37:717 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:37:717 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:28:37:717 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:37:716 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:37:718 discordiador/(8227:8263): Posicion X Nueva 3
+[INFO] 23:28:37:718 discordiador/(8227:8263): Posicion Y Nueva 3
+[INFO] 23:28:37:718 discordiador/(8227:8263): Posicion X Actual 0
+[INFO] 23:28:37:718 discordiador/(8227:8263): Posicion Y Actual 0
+[INFO] 23:28:37:719 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:37:719 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:37:764 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:37:764 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:37:764 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:37:765 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:37:765 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:37:765 discordiador/(8227:8263): Posicion X Actual 1
+[INFO] 23:28:37:765 discordiador/(8227:8263): Posicion Y Actual 0
+[INFO] 23:28:37:766 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:37:766 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:37:766 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:37:766 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:37:767 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:37:767 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:37:767 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:37:767 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:37:768 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:38:769 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:38:769 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:38:769 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:38:769 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:38:769 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:38:770 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:38:770 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:38:770 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:38:770 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:38:771 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:38:771 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:38:771 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:38:771 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:38:772 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:28:38:772 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:38:772 discordiador/(8227:8263): Posicion X Nueva 3
+[INFO] 23:28:38:772 discordiador/(8227:8263): Posicion Y Nueva 3
+[INFO] 23:28:38:773 discordiador/(8227:8263): Posicion X Actual 1
+[INFO] 23:28:38:773 discordiador/(8227:8263): Posicion Y Actual 0
+[INFO] 23:28:38:773 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:38:773 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:38:814 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:38:815 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:38:815 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:38:816 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:38:816 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:38:816 discordiador/(8227:8263): Posicion X Actual 2
+[INFO] 23:28:38:817 discordiador/(8227:8263): Posicion Y Actual 0
+[INFO] 23:28:38:817 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:38:817 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:38:817 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:38:818 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:38:818 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:38:818 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:38:818 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:38:818 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:38:819 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:39:819 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:39:819 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:39:820 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:39:820 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:39:820 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:39:820 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:39:821 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:39:820 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:39:821 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:39:821 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:39:822 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:39:822 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:39:822 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:39:822 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:28:39:823 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:39:823 discordiador/(8227:8263): Posicion X Nueva 3
+[INFO] 23:28:39:823 discordiador/(8227:8263): Posicion Y Nueva 3
+[INFO] 23:28:39:823 discordiador/(8227:8263): Posicion X Actual 2
+[INFO] 23:28:39:823 discordiador/(8227:8263): Posicion Y Actual 0
+[INFO] 23:28:39:824 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:39:824 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:39:872 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:39:872 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:39:872 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:39:873 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:39:873 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:39:873 discordiador/(8227:8263): Posicion X Actual 3
+[INFO] 23:28:39:873 discordiador/(8227:8263): Posicion Y Actual 0
+[INFO] 23:28:39:874 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:39:874 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:39:874 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:39:874 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:39:875 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:39:875 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:39:875 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:39:875 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:39:875 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:40:876 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:40:877 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:40:877 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:40:877 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:40:877 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:40:878 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:40:877 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:40:878 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:40:878 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:40:879 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:40:879 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:40:879 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:40:879 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:40:879 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:28:40:880 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:40:880 discordiador/(8227:8263): Posicion X Nueva 3
+[INFO] 23:28:40:880 discordiador/(8227:8263): Posicion Y Nueva 3
+[INFO] 23:28:40:880 discordiador/(8227:8263): Posicion X Actual 3
+[INFO] 23:28:40:881 discordiador/(8227:8263): Posicion Y Actual 0
+[INFO] 23:28:40:881 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:40:881 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:40:921 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:40:921 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:40:921 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:40:921 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:40:922 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:40:922 discordiador/(8227:8263): Posicion X Actual 3
+[INFO] 23:28:40:922 discordiador/(8227:8263): Posicion Y Actual 1
+[INFO] 23:28:40:922 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:40:923 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:40:923 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:40:923 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:40:923 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:40:924 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:40:924 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:40:924 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:40:924 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:41:925 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:41:925 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:41:925 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:41:926 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:41:926 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:41:926 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:41:926 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:41:926 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:41:927 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:41:927 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:41:927 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:41:928 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:41:928 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:41:928 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:28:41:928 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:41:928 discordiador/(8227:8263): Posicion X Nueva 3
+[INFO] 23:28:41:929 discordiador/(8227:8263): Posicion Y Nueva 3
+[INFO] 23:28:41:929 discordiador/(8227:8263): Posicion X Actual 3
+[INFO] 23:28:41:929 discordiador/(8227:8263): Posicion Y Actual 1
+[INFO] 23:28:41:929 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:41:930 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:41:969 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:41:969 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:41:969 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:41:969 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:41:970 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:41:970 discordiador/(8227:8263): Posicion X Actual 3
+[INFO] 23:28:41:970 discordiador/(8227:8263): Posicion Y Actual 2
+[INFO] 23:28:41:970 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:41:971 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:41:971 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:41:971 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:41:971 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:41:972 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:41:972 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:41:972 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:41:972 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:42:973 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:42:973 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:42:973 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:42:974 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:42:974 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:42:974 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:42:974 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:42:974 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:42:975 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:42:975 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:42:975 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:42:975 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:42:976 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:42:976 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:28:42:976 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:42:976 discordiador/(8227:8263): Posicion X Nueva 3
+[INFO] 23:28:42:977 discordiador/(8227:8263): Posicion Y Nueva 3
+[INFO] 23:28:42:977 discordiador/(8227:8263): Posicion X Actual 3
+[INFO] 23:28:42:977 discordiador/(8227:8263): Posicion Y Actual 2
+[INFO] 23:28:42:977 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:42:977 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:43:016 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:43:017 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:43:017 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:43:018 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:43:018 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:43:018 discordiador/(8227:8263): Posicion X Actual 3
+[INFO] 23:28:43:019 discordiador/(8227:8263): Posicion Y Actual 3
+[INFO] 23:28:43:019 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:43:019 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:43:019 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:43:019 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:43:020 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:43:020 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:43:020 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:43:020 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:43:020 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:44:021 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:44:022 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:44:022 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:44:022 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:44:022 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:44:023 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:44:023 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:44:022 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:44:023 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:44:024 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:44:024 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:44:024 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:44:024 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:44:024 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:44:025 discordiador/(8227:8263): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[ERROR] 23:28:44:031 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:44:031 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:44:031 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:44:031 discordiador/(8227:8263): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:28:44:034 discordiador/(8227:8263): El tiempo en exec es: 1
+[INFO] 23:28:44:035 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:44:035 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:44:035 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:44:035 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:44:035 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:44:036 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:44:036 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:44:036 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:45:036 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:45:037 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:45:037 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:45:037 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:45:037 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:45:038 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:45:038 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:45:038 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:45:038 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:45:039 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:45:039 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:45:039 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:45:039 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:45:040 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:45:040 discordiador/(8227:8263): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:28:45:040 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:45:040 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:45:040 discordiador/(8227:8263): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:28:45:041 discordiador/(8227:8263): El tiempo en exec es: 2
+[INFO] 23:28:45:041 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:45:041 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:45:041 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:45:042 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:45:042 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:45:042 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:45:042 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:45:042 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:46:043 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:46:044 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:46:044 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:46:044 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:46:044 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:46:045 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:46:045 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:46:044 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:46:045 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:46:046 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:46:046 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:46:046 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:46:046 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:46:047 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:46:047 discordiador/(8227:8263): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:28:46:047 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:46:047 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:46:047 discordiador/(8227:8263): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:28:46:050 discordiador/(8227:8263): El tiempo en exec es: 3
+[INFO] 23:28:46:050 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:46:050 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:46:051 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:46:051 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:46:051 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:46:051 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:46:052 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:46:052 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:47:052 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:47:053 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:47:053 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:47:053 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:47:053 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:47:054 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:47:054 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:47:054 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:47:054 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:47:055 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:47:055 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:47:055 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:47:055 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:47:056 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:47:056 discordiador/(8227:8263): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:28:47:056 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:47:056 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:47:057 discordiador/(8227:8263): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:28:47:057 discordiador/(8227:8263): El tiempo en exec es: 4
+[INFO] 23:28:47:057 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:47:057 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:47:057 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:47:058 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:47:058 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:47:058 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:47:058 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:47:059 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:48:059 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:48:059 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:48:060 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:48:060 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:48:060 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:48:061 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:48:061 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:28:48:060 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:48:061 discordiador/(8227:8263): Es tarea normal
+[INFO] 23:28:48:062 discordiador/(8227:8263): El parametro de la tarea es: -1
+[INFO] 23:28:48:062 discordiador/(8227:8263): La posición en X de la tarea es: 3
+[INFO] 23:28:48:062 discordiador/(8227:8263): La posición en Y de la tarea es: 3
+[INFO] 23:28:48:062 discordiador/(8227:8263): El tiempo de la tarea es: 5
+[INFO] 23:28:48:063 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:48:063 discordiador/(8227:8263): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:28:48:063 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:48:063 discordiador/(8227:8263): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:28:48:064 discordiador/(8227:8263): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:28:48:064 discordiador/(8227:8263): El tiempo en exec es: 5
+[INFO] 23:28:48:064 discordiador/(8227:8263): [Tripulante 0] Termino la tarea normal el tripulante 0
+[ERROR] 23:28:48:064 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:48:064 discordiador/(8227:8263): entra a proxtarea
+[INFO] 23:28:48:065 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:48:065 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:48:105 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:48:106 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:48:106 discordiador/(8227:8263): Tamanio: 29
+[INFO] 23:28:48:106 discordiador/(8227:8263): SUCCESS: Pedirproximatarea
+[INFO] 23:28:48:106 discordiador/(8227:8263): El tamaño de la tarea es: 25
+[INFO] 23:28:48:107 discordiador/(8227:8263): El tamanio de la tarea recibida es:25
+[INFO] 23:28:48:107 discordiador/(8227:8263): Buffer recibido: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:28:48:107 discordiador/(8227:8263): La tarea del tripulante 0 ahora es: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:28:48:107 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:48:107 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:48:108 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:48:108 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:48:108 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:48:108 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:48:109 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:48:109 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:49:109 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:49:109 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:49:110 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:49:110 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:49:110 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:49:111 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:49:110 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:49:111 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:28:49:111 discordiador/(8227:8263): Es tarea IO
+[INFO] 23:28:49:111 discordiador/(8227:8263): El parametro de la tarea es: 0
+[INFO] 23:28:49:112 discordiador/(8227:8263): La posición en X de la tarea es: 5
+[INFO] 23:28:49:112 discordiador/(8227:8263): La posición en Y de la tarea es: 5
+[INFO] 23:28:49:112 discordiador/(8227:8263): El tiempo de la tarea es: 2
+[INFO] 23:28:49:112 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:28:49:113 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:49:113 discordiador/(8227:8263): Posicion X Nueva 5
+[INFO] 23:28:49:113 discordiador/(8227:8263): Posicion Y Nueva 5
+[INFO] 23:28:49:113 discordiador/(8227:8263): Posicion X Actual 3
+[INFO] 23:28:49:113 discordiador/(8227:8263): Posicion Y Actual 3
+[INFO] 23:28:49:114 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:49:114 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:49:156 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:49:156 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:49:156 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:49:157 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:49:157 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:49:157 discordiador/(8227:8263): Posicion X Actual 4
+[INFO] 23:28:49:158 discordiador/(8227:8263): Posicion Y Actual 3
+[INFO] 23:28:49:158 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:49:158 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:49:158 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:49:159 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:49:159 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:49:159 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:49:159 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:49:159 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:49:160 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:50:160 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:50:160 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:50:161 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:50:161 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:50:161 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:50:161 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:50:161 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:50:162 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:28:50:162 discordiador/(8227:8263): Es tarea IO
+[INFO] 23:28:50:162 discordiador/(8227:8263): El parametro de la tarea es: 0
+[INFO] 23:28:50:163 discordiador/(8227:8263): La posición en X de la tarea es: 5
+[INFO] 23:28:50:163 discordiador/(8227:8263): La posición en Y de la tarea es: 5
+[INFO] 23:28:50:163 discordiador/(8227:8263): El tiempo de la tarea es: 2
+[INFO] 23:28:50:163 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:28:50:164 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:50:164 discordiador/(8227:8263): Posicion X Nueva 5
+[INFO] 23:28:50:164 discordiador/(8227:8263): Posicion Y Nueva 5
+[INFO] 23:28:50:164 discordiador/(8227:8263): Posicion X Actual 4
+[INFO] 23:28:50:164 discordiador/(8227:8263): Posicion Y Actual 3
+[INFO] 23:28:50:165 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:50:165 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:50:205 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:50:206 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:50:206 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:50:206 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:50:206 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:50:206 discordiador/(8227:8263): Posicion X Actual 5
+[INFO] 23:28:50:207 discordiador/(8227:8263): Posicion Y Actual 3
+[INFO] 23:28:50:207 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:50:207 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:50:208 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:50:208 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:50:208 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:50:208 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:50:208 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:50:209 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:50:209 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:51:209 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:51:210 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:51:210 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:51:210 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:51:210 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:51:211 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:51:210 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:51:211 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:28:51:211 discordiador/(8227:8263): Es tarea IO
+[INFO] 23:28:51:211 discordiador/(8227:8263): El parametro de la tarea es: 0
+[INFO] 23:28:51:212 discordiador/(8227:8263): La posición en X de la tarea es: 5
+[INFO] 23:28:51:212 discordiador/(8227:8263): La posición en Y de la tarea es: 5
+[INFO] 23:28:51:212 discordiador/(8227:8263): El tiempo de la tarea es: 2
+[INFO] 23:28:51:212 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:28:51:213 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:51:213 discordiador/(8227:8263): Posicion X Nueva 5
+[INFO] 23:28:51:213 discordiador/(8227:8263): Posicion Y Nueva 5
+[INFO] 23:28:51:213 discordiador/(8227:8263): Posicion X Actual 5
+[INFO] 23:28:51:213 discordiador/(8227:8263): Posicion Y Actual 3
+[INFO] 23:28:51:214 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:51:214 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:51:253 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:51:253 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:51:253 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:51:254 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:51:254 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:51:254 discordiador/(8227:8263): Posicion X Actual 5
+[INFO] 23:28:51:254 discordiador/(8227:8263): Posicion Y Actual 4
+[INFO] 23:28:51:255 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:51:255 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:51:255 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:51:256 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:51:256 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:51:256 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:51:256 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:51:257 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:51:257 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:28:52:257 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:28:52:258 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:28:52:258 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:28:52:259 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:28:52:259 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:28:52:259 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:28:52:259 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:28:52:260 discordiador/(8227:8263): Es tarea IO
+[INFO] 23:28:52:259 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:28:52:260 discordiador/(8227:8263): El parametro de la tarea es: 0
+[INFO] 23:28:52:260 discordiador/(8227:8263): La posición en X de la tarea es: 5
+[INFO] 23:28:52:260 discordiador/(8227:8263): La posición en Y de la tarea es: 5
+[INFO] 23:28:52:261 discordiador/(8227:8263): El tiempo de la tarea es: 2
+[INFO] 23:28:52:261 discordiador/(8227:8263): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:28:52:261 discordiador/(8227:8263): Moviendo al tripulante 0
+[INFO] 23:28:52:261 discordiador/(8227:8263): Posicion X Nueva 5
+[INFO] 23:28:52:262 discordiador/(8227:8263): Posicion Y Nueva 5
+[INFO] 23:28:52:262 discordiador/(8227:8263): Posicion X Actual 5
+[INFO] 23:28:52:262 discordiador/(8227:8263): Posicion Y Actual 4
+[INFO] 23:28:52:262 discordiador/(8227:8263): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:28:52:263 discordiador/(8227:8263): Recibi el siguiente mensaje..
+[INFO] 23:28:52:304 discordiador/(8227:8263): Proceso: RAM
+[INFO] 23:28:52:304 discordiador/(8227:8263): Comando: 200
+[INFO] 23:28:52:305 discordiador/(8227:8263): Tamanio: 9
+[ERROR] 23:28:52:305 discordiador/(8227:8263): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:28:52:305 discordiador/(8227:8263): Posiciones despues de mover al tripulante 0
+[INFO] 23:28:52:306 discordiador/(8227:8263): Posicion X Actual 5
+[INFO] 23:28:52:306 discordiador/(8227:8263): Posicion Y Actual 5
+[INFO] 23:28:52:307 discordiador/(8227:8263): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:28:52:307 discordiador/(8227:8263): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:28:52:308 discordiador/(8227:8263): manda signal a bloqio
+[INFO] 23:28:52:308 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:52:308 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:28:52:309 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:28:52:309 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:28:52:309 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:28:52:310 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:31:03:669 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:31:03:669 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:31:03:669 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:31:03:670 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:31:03:670 discordiador/(8227:8263): [Tripulante 0] EJECUTANDO...
+[INFO] 23:31:03:670 discordiador/(8227:8263): [Tripulante 0] esta en ejecución
+[INFO] 23:31:03:670 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:31:03:671 discordiador/(8227:8263): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:31:03:672 discordiador/(8227:8263): Es tarea IO
+[INFO] 23:31:03:672 discordiador/(8227:8263): El parametro de la tarea es: 0
+[INFO] 23:31:03:672 discordiador/(8227:8263): La posición en X de la tarea es: 5
+[INFO] 23:31:03:672 discordiador/(8227:8263): La posición en Y de la tarea es: 5
+[INFO] 23:31:03:673 discordiador/(8227:8263): El tiempo de la tarea es: 2
+[INFO] 23:31:03:673 discordiador/(8227:8263): COMPARANDO TAREA: [DESCARTAR_BASURA]
+[INFO] 23:31:03:673 discordiador/(8227:8263): [Tripulante 0] Llegó a la posición, la tarea es DESCARTAR_BASURA, es tarea IO? 1
+[INFO] 23:31:03:673 discordiador/(8227:8263): COMPARANDO TAREA: [DESCARTAR_BASURA]
+[INFO] 23:31:03:673 discordiador/(8227:8263): [Tripulante 0] Se debe realizar una tarea de I/O
+[INFO] 23:31:04:674 discordiador/(8227:8263): [Tripulante 0] Ejecuto POST de semEBIO con hilo 0
+[INFO] 23:31:04:675 discordiador/(8227:8232): ----------------------------------
+[INFO] 23:31:04:675 discordiador/(8227:8232): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:31:04:675 discordiador/(8227:8232): [CambioExecIO] Tripulante encontrado. Moviendolo a Blocked IO...
+[INFO] 23:31:04:676 discordiador/(8227:8232): TID: 0
+[INFO] 23:31:04:676 discordiador/(8227:8232): Instruccion Actual: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:31:04:676 discordiador/(8227:8232): Se paso nodo a Exec
+[INFO] 23:31:04:676 discordiador/(8227:8232): [Exec a Bloqio] ejecuto _SIGNAL desde semEBIO...
+[INFO] 23:31:04:677 discordiador/(8227:8232): manda signal a bloqio
+[INFO] 23:31:04:677 discordiador/(8227:8232): Se hizo una ejecución de CPU en Exec->BlockedIO
+[INFO] 23:31:04:677 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:31:04:678 discordiador/(8227:8234): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:31:04:678 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:31:04:678 discordiador/(8227:8234): Tripulante:0 tiene que seguir en bloqueadoIO
+[INFO] 23:31:04:678 discordiador/(8227:8234): Va esperando:0 ciclos
+[INFO] 23:31:04:678 discordiador/(8227:8234): Son en total: 2
+[INFO] 23:31:04:679 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:31:04:679 discordiador/(8227:8234): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:31:04:679 discordiador/(8227:8234): ----------------------------------
+[INFO] 23:31:04:679 discordiador/(8227:8235): Se hizo una ejecución de CPU en Exit
+[INFO] 23:31:04:679 discordiador/(8227:8235): ----------------------------------
+[INFO] 23:31:04:677 discordiador/(8227:8232): ----------------------------------
+[INFO] 23:31:05:680 discordiador/(8227:8229): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:31:05:681 discordiador/(8227:8229): ----------------------------------
+[INFO] 23:31:05:681 discordiador/(8227:8230): Se comienza a iterar signals...
+[INFO] 23:31:05:681 discordiador/(8227:8230): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:31:05:681 discordiador/(8227:8230): ----------------------------------
+[INFO] 23:31:25:827 discordiador/(8227:8227): Salimos de la consola
+[INFO] 23:37:33:625 discordiador/(8969:8969): 127.0.0.1, 5001, 127.0.0.1, 5002, 1, FIFO, 1, 10, 1
+[INFO] 23:37:33:626 discordiador/(8969:8969): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:37:33:627 discordiador/(8969:8969): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:37:33:627 discordiador/(8969:8969): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[ERROR] 23:37:33:628 discordiador/(8969:8969): [Shared Library]: Error al conectarse con servidor /n (╯°□°）╯︵ ┻━┻
+[ERROR] 23:37:33:628 discordiador/(8969:8969): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:37:33:632 discordiador/(8969:8980): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 23:37:33:644 discordiador/(8969:8980): [Shared Library]: Esperando conexiones en puerto: 5000
+[INFO] 23:37:51:747 discordiador/(8969:8969): Entró comando: INICIAR_PATOTA
+[INFO] 23:37:51:751 discordiador/(8969:8969): 3
+[INFO] 23:37:51:760 discordiador/(8969:8969): Las tareas a mandar son: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 23:37:51:761 discordiador/(8969:8969): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:37:51:762 discordiador/(8969:8969): Recibi el siguiente mensaje..
+[INFO] 23:37:51:763 discordiador/(8969:8969): Proceso: RAM
+[INFO] 23:37:51:763 discordiador/(8969:8969): Comando: 200
+[INFO] 23:37:51:763 discordiador/(8969:8969): Tamanio: 9
+[INFO] 23:37:51:764 discordiador/(8969:8969): Se guardó en Memoria OK
+[INFO] 23:37:51:764 discordiador/(8969:8969): Inicializo Semaforo de TCB 0
+[INFO] 23:37:51:764 discordiador/(8969:8969): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:37:51:764 discordiador/(8969:8969): Recibi el siguiente mensaje..
+[INFO] 23:37:51:807 discordiador/(8969:8969): Proceso: RAM
+[INFO] 23:37:51:844 discordiador/(8969:8969): Comando: 200
+[INFO] 23:37:51:844 discordiador/(8969:8969): Tamanio: 28
+[INFO] 23:37:51:845 discordiador/(8969:8969): el tamaño de la tarea es: 24
+[INFO] 23:37:51:845 discordiador/(8969:8969): la tarea es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:37:51:869 discordiador/(8969:9002): ----------------------------------
+[INFO] 23:37:51:870 discordiador/(8969:9002): [Tripulante 0] Esperando Signal...
+[INFO] 23:37:57:477 discordiador/(8969:8969): Entró comando: INICIAR_PLANIFICACION
+[INFO] 23:37:57:478 discordiador/(8969:8969): Se inició la planificación. Estado de la flag: 1
+[INFO] 23:37:57:478 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:37:57:479 discordiador/(8969:8971): Se ejecuta el hilo de New a Ready
+[INFO] 23:37:57:479 discordiador/(8969:8971): Tripulante encontrado. Moviendolo a Ready...
+[INFO] 23:37:57:480 discordiador/(8969:8971): TID:0
+[INFO] 23:37:57:480 discordiador/(8969:8971): Instruccion Actual:ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:37:57:480 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:37:57:481 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:37:57:481 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:37:57:481 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:37:57:481 discordiador/(8969:8972): Se ejecuta el hilo de Ready a Exec
+[INFO] 23:37:57:482 discordiador/(8969:8972): Tripulante encontrado. Moviendolo a Exec...
+[INFO] 23:37:57:482 discordiador/(8969:8972): TID:0
+[INFO] 23:37:57:482 discordiador/(8969:8972): Instrucción Actual: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:37:57:482 discordiador/(8969:8972): Se paso Tripulante a Exec
+[INFO] 23:37:57:482 discordiador/(8969:8972): Hay 1 nodos en Exec
+[INFO] 23:37:57:483 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:37:57:483 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:37:57:483 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:37:57:484 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:37:57:484 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:37:57:484 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:37:57:485 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:37:57:485 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:37:57:485 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:37:57:485 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:37:57:485 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:37:57:486 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:37:57:486 discordiador/(8969:9002): Posicion X Nueva 3
+[INFO] 23:37:57:486 discordiador/(8969:9002): Posicion Y Nueva 3
+[INFO] 23:37:57:484 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:37:57:486 discordiador/(8969:9002): Posicion X Actual 0
+[INFO] 23:37:57:486 discordiador/(8969:9002): Posicion Y Actual 0
+[INFO] 23:37:57:487 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:37:57:487 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:37:57:526 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:37:57:526 discordiador/(8969:9002): Comando: 200
+[INFO] 23:37:57:526 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:37:57:527 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:37:57:527 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:37:57:530 discordiador/(8969:9002): Posicion X Actual 1
+[INFO] 23:37:57:530 discordiador/(8969:9002): Posicion Y Actual 0
+[INFO] 23:37:57:530 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:37:57:531 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:37:57:531 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:37:57:531 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:37:57:532 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:37:57:532 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:37:57:532 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:37:57:532 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:37:57:532 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:37:57:533 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:37:57:533 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:37:57:533 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:37:57:533 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:37:58:535 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:37:58:536 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:37:58:536 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:37:58:536 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:37:58:536 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:37:58:537 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:37:58:537 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:37:58:537 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:37:58:538 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:37:58:537 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:37:58:538 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:37:58:538 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:37:58:538 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:37:58:539 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:37:58:539 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:37:58:539 discordiador/(8969:9002): Posicion X Nueva 3
+[INFO] 23:37:58:539 discordiador/(8969:9002): Posicion Y Nueva 3
+[INFO] 23:37:58:540 discordiador/(8969:9002): Posicion X Actual 1
+[INFO] 23:37:58:540 discordiador/(8969:9002): Posicion Y Actual 0
+[INFO] 23:37:58:540 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:37:58:540 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:37:58:582 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:37:58:582 discordiador/(8969:9002): Comando: 200
+[INFO] 23:37:58:582 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:37:58:583 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:37:58:583 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:37:58:583 discordiador/(8969:9002): Posicion X Actual 2
+[INFO] 23:37:58:584 discordiador/(8969:9002): Posicion Y Actual 0
+[INFO] 23:37:58:584 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:37:58:584 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:37:58:584 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:37:58:585 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:37:58:585 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:37:58:585 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:37:58:585 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:37:58:585 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:37:58:586 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:37:58:586 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:37:58:586 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:37:58:586 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:37:58:586 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:37:59:587 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:37:59:590 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:37:59:590 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:37:59:590 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:37:59:590 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:37:59:591 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:37:59:591 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:37:59:591 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:37:59:591 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:37:59:592 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:37:59:592 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:37:59:592 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:37:59:593 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:37:59:593 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:37:59:593 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:37:59:593 discordiador/(8969:9002): Posicion X Nueva 3
+[INFO] 23:37:59:593 discordiador/(8969:9002): Posicion Y Nueva 3
+[INFO] 23:37:59:594 discordiador/(8969:9002): Posicion X Actual 2
+[INFO] 23:37:59:594 discordiador/(8969:9002): Posicion Y Actual 0
+[INFO] 23:37:59:594 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:37:59:594 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:37:59:634 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:37:59:634 discordiador/(8969:9002): Comando: 200
+[INFO] 23:37:59:634 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:37:59:635 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:37:59:635 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:37:59:635 discordiador/(8969:9002): Posicion X Actual 3
+[INFO] 23:37:59:636 discordiador/(8969:9002): Posicion Y Actual 0
+[INFO] 23:37:59:636 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:37:59:636 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:37:59:636 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:37:59:637 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:37:59:638 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:37:59:638 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:37:59:638 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:37:59:638 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:37:59:638 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:37:59:639 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:37:59:639 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:37:59:639 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:37:59:639 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:00:640 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:00:644 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:00:645 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:00:645 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:00:645 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:00:646 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:00:646 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:38:00:645 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:00:646 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:38:00:646 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:38:00:647 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:38:00:647 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:38:00:647 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:38:00:647 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:38:00:648 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:38:00:648 discordiador/(8969:9002): Posicion X Nueva 3
+[INFO] 23:38:00:648 discordiador/(8969:9002): Posicion Y Nueva 3
+[INFO] 23:38:00:648 discordiador/(8969:9002): Posicion X Actual 3
+[INFO] 23:38:00:648 discordiador/(8969:9002): Posicion Y Actual 0
+[INFO] 23:38:00:649 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:38:00:649 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:38:00:690 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:38:00:690 discordiador/(8969:9002): Comando: 200
+[INFO] 23:38:00:691 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:38:00:691 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:00:691 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:38:00:692 discordiador/(8969:9002): Posicion X Actual 3
+[INFO] 23:38:00:692 discordiador/(8969:9002): Posicion Y Actual 1
+[INFO] 23:38:00:692 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:38:00:692 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:00:693 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:00:693 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:00:693 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:00:693 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:00:693 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:00:694 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:00:694 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:00:694 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:00:694 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:00:694 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:00:695 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:01:695 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:01:695 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:01:696 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:01:696 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:01:696 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:01:697 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:01:697 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:38:01:696 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:01:697 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:38:01:697 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:38:01:698 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:38:01:698 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:38:01:698 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:38:01:698 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:38:01:699 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:38:01:699 discordiador/(8969:9002): Posicion X Nueva 3
+[INFO] 23:38:01:699 discordiador/(8969:9002): Posicion Y Nueva 3
+[INFO] 23:38:01:699 discordiador/(8969:9002): Posicion X Actual 3
+[INFO] 23:38:01:700 discordiador/(8969:9002): Posicion Y Actual 1
+[INFO] 23:38:01:700 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:38:01:700 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:38:01:743 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:38:01:743 discordiador/(8969:9002): Comando: 200
+[INFO] 23:38:01:744 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:38:01:744 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:01:744 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:38:01:745 discordiador/(8969:9002): Posicion X Actual 3
+[INFO] 23:38:01:745 discordiador/(8969:9002): Posicion Y Actual 2
+[INFO] 23:38:01:745 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:38:01:745 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:01:746 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:01:746 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:01:746 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:01:746 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:01:746 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:01:747 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:01:747 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:01:747 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:01:747 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:01:747 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:01:748 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:02:749 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:02:750 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:02:750 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:02:750 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:02:750 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:02:751 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:02:751 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:38:02:751 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:02:751 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:38:02:752 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:38:02:752 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:38:02:752 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:38:02:752 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:38:02:752 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 3 - 3
+[INFO] 23:38:02:753 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:38:02:753 discordiador/(8969:9002): Posicion X Nueva 3
+[INFO] 23:38:02:753 discordiador/(8969:9002): Posicion Y Nueva 3
+[INFO] 23:38:02:753 discordiador/(8969:9002): Posicion X Actual 3
+[INFO] 23:38:02:754 discordiador/(8969:9002): Posicion Y Actual 2
+[INFO] 23:38:02:756 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:38:02:757 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:38:02:802 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:38:02:802 discordiador/(8969:9002): Comando: 200
+[INFO] 23:38:02:802 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:38:02:803 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:02:803 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:38:02:803 discordiador/(8969:9002): Posicion X Actual 3
+[INFO] 23:38:02:804 discordiador/(8969:9002): Posicion Y Actual 3
+[INFO] 23:38:02:804 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:38:02:804 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:02:804 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:02:805 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:02:805 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:02:805 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:02:805 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:02:805 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:02:806 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:02:806 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:02:806 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:02:806 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:02:806 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:03:807 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:03:808 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:03:808 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:03:808 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:03:808 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:03:809 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:03:809 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:03:809 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:38:03:809 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:38:03:810 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:38:03:810 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:38:03:810 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:38:03:810 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:38:03:811 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:03:811 discordiador/(8969:9002): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[ERROR] 23:38:03:811 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:03:811 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:03:812 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:03:812 discordiador/(8969:9002): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:38:03:812 discordiador/(8969:9002): El tiempo en exec es: 1
+[INFO] 23:38:03:812 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:03:812 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:03:813 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:03:813 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:03:813 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:03:813 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:03:814 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:03:814 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:03:814 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:03:814 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:03:814 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:03:815 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:04:815 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:04:815 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:04:816 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:04:816 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:04:816 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:04:816 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:04:816 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:04:817 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:38:04:817 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:38:04:817 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:38:04:818 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:38:04:818 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:38:04:818 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:38:04:818 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:04:818 discordiador/(8969:9002): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:38:04:819 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:04:819 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:04:819 discordiador/(8969:9002): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:38:04:819 discordiador/(8969:9002): El tiempo en exec es: 2
+[INFO] 23:38:04:820 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:04:820 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:04:820 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:04:820 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:04:820 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:04:821 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:04:821 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:04:821 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:04:821 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:04:821 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:04:822 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:04:822 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:05:822 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:05:823 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:05:823 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:05:823 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:05:823 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:05:824 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:05:824 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:38:05:824 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:05:824 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:38:05:825 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:38:05:825 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:38:05:825 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:38:05:826 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:38:05:826 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:05:826 discordiador/(8969:9002): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:38:05:826 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:05:827 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:05:827 discordiador/(8969:9002): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:38:05:827 discordiador/(8969:9002): El tiempo en exec es: 3
+[INFO] 23:38:05:827 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:05:827 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:05:828 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:05:828 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:05:828 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:05:828 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:05:828 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:05:829 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:05:829 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:05:829 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:05:829 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:05:830 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:06:830 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:06:831 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:06:831 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:06:831 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:06:831 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:06:832 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:06:831 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:06:832 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:38:06:832 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:38:06:833 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:38:06:833 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:38:06:833 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:38:06:833 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:38:06:833 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:06:834 discordiador/(8969:9002): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:38:06:834 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:06:834 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:06:834 discordiador/(8969:9002): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:38:06:835 discordiador/(8969:9002): El tiempo en exec es: 4
+[INFO] 23:38:06:835 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:06:835 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:06:835 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:06:835 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:06:836 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:06:836 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:06:836 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:06:836 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:06:836 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:06:837 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:06:844 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:06:844 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:07:845 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:07:846 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:07:846 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:07:846 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:07:846 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:07:847 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:07:847 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - ESCANEAR_MUESTRAS;3;3;5
+[INFO] 23:38:07:846 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:07:847 discordiador/(8969:9002): Es tarea normal
+[INFO] 23:38:07:848 discordiador/(8969:9002): El parametro de la tarea es: -1
+[INFO] 23:38:07:848 discordiador/(8969:9002): La posición en X de la tarea es: 3
+[INFO] 23:38:07:848 discordiador/(8969:9002): La posición en Y de la tarea es: 3
+[INFO] 23:38:07:848 discordiador/(8969:9002): El tiempo de la tarea es: 5
+[INFO] 23:38:07:848 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:07:849 discordiador/(8969:9002): [Tripulante 0] Llegó a la posición, la tarea es ESCANEAR_MUESTRAS;3;3;5, es tarea IO? 0
+[INFO] 23:38:07:849 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:07:849 discordiador/(8969:9002): COMPARANDO TAREA: [ESCANEAR_MUESTRAS;3;3;5]
+[INFO] 23:38:07:849 discordiador/(8969:9002): [Tripulante 0] Se debe realizar una tarea normal (no de I/O)
+[INFO] 23:38:07:850 discordiador/(8969:9002): El tiempo en exec es: 5
+[INFO] 23:38:07:850 discordiador/(8969:9002): [Tripulante 0] Termino la tarea normal el tripulante 0
+[ERROR] 23:38:07:850 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:07:850 discordiador/(8969:9002): entra a proxtarea
+[INFO] 23:38:07:851 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:38:07:851 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:38:07:891 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:38:07:892 discordiador/(8969:9002): Comando: 200
+[INFO] 23:38:07:892 discordiador/(8969:9002): Tamanio: 29
+[INFO] 23:38:07:892 discordiador/(8969:9002): SUCCESS: Pedirproximatarea
+[INFO] 23:38:07:892 discordiador/(8969:9002): El tamaño de la tarea es: 25
+[INFO] 23:38:07:893 discordiador/(8969:9002): El tamanio de la tarea recibida es:25
+[INFO] 23:38:07:893 discordiador/(8969:9002): Buffer recibido: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:38:07:893 discordiador/(8969:9002): La tarea del tripulante 0 ahora es: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:38:07:893 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:07:893 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:07:894 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:07:894 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:07:894 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:07:894 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:07:894 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:07:895 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:07:895 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:07:895 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:07:895 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:07:895 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:08:896 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:08:896 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:08:897 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:08:897 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:08:897 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:08:897 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:08:897 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:08:898 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:38:08:898 discordiador/(8969:9002): Es tarea IO
+[INFO] 23:38:08:898 discordiador/(8969:9002): El parametro de la tarea es: 0
+[INFO] 23:38:08:899 discordiador/(8969:9002): La posición en X de la tarea es: 5
+[INFO] 23:38:08:899 discordiador/(8969:9002): La posición en Y de la tarea es: 5
+[INFO] 23:38:08:899 discordiador/(8969:9002): El tiempo de la tarea es: 2
+[INFO] 23:38:08:899 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:38:08:900 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:38:08:900 discordiador/(8969:9002): Posicion X Nueva 5
+[INFO] 23:38:08:900 discordiador/(8969:9002): Posicion Y Nueva 5
+[INFO] 23:38:08:900 discordiador/(8969:9002): Posicion X Actual 3
+[INFO] 23:38:08:900 discordiador/(8969:9002): Posicion Y Actual 3
+[INFO] 23:38:08:901 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:38:08:901 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:38:08:942 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:38:08:942 discordiador/(8969:9002): Comando: 200
+[INFO] 23:38:08:943 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:38:08:943 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:08:943 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:38:08:944 discordiador/(8969:9002): Posicion X Actual 4
+[INFO] 23:38:08:944 discordiador/(8969:9002): Posicion Y Actual 3
+[INFO] 23:38:08:944 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:38:08:945 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:08:945 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:08:948 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:08:949 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:08:949 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:08:949 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:08:949 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:08:950 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:08:950 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:08:950 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:08:950 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:08:950 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:09:951 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:09:956 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:09:958 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:09:959 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:09:959 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:09:959 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:09:959 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:38:09:960 discordiador/(8969:9002): Es tarea IO
+[INFO] 23:38:09:959 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:09:960 discordiador/(8969:9002): El parametro de la tarea es: 0
+[INFO] 23:38:09:960 discordiador/(8969:9002): La posición en X de la tarea es: 5
+[INFO] 23:38:09:961 discordiador/(8969:9002): La posición en Y de la tarea es: 5
+[INFO] 23:38:09:961 discordiador/(8969:9002): El tiempo de la tarea es: 2
+[INFO] 23:38:09:961 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:38:09:961 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:38:09:961 discordiador/(8969:9002): Posicion X Nueva 5
+[INFO] 23:38:09:962 discordiador/(8969:9002): Posicion Y Nueva 5
+[INFO] 23:38:09:962 discordiador/(8969:9002): Posicion X Actual 4
+[INFO] 23:38:09:962 discordiador/(8969:9002): Posicion Y Actual 3
+[INFO] 23:38:09:962 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:38:09:963 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:38:10:006 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:38:10:007 discordiador/(8969:9002): Comando: 200
+[INFO] 23:38:10:007 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:38:10:008 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:10:008 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:38:10:008 discordiador/(8969:9002): Posicion X Actual 5
+[INFO] 23:38:10:009 discordiador/(8969:9002): Posicion Y Actual 3
+[INFO] 23:38:10:009 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:38:10:009 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:10:009 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:10:009 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:10:010 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:10:010 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:10:010 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:10:010 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:10:010 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:10:011 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:10:011 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:10:011 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:10:011 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:11:012 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:11:016 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:11:016 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:11:017 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:11:017 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:11:017 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:11:017 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:11:017 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:38:11:018 discordiador/(8969:9002): Es tarea IO
+[INFO] 23:38:11:018 discordiador/(8969:9002): El parametro de la tarea es: 0
+[INFO] 23:38:11:018 discordiador/(8969:9002): La posición en X de la tarea es: 5
+[INFO] 23:38:11:018 discordiador/(8969:9002): La posición en Y de la tarea es: 5
+[INFO] 23:38:11:019 discordiador/(8969:9002): El tiempo de la tarea es: 2
+[INFO] 23:38:11:019 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:38:11:019 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:38:11:019 discordiador/(8969:9002): Posicion X Nueva 5
+[INFO] 23:38:11:019 discordiador/(8969:9002): Posicion Y Nueva 5
+[INFO] 23:38:11:020 discordiador/(8969:9002): Posicion X Actual 5
+[INFO] 23:38:11:020 discordiador/(8969:9002): Posicion Y Actual 3
+[INFO] 23:38:11:020 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:38:11:020 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:38:11:062 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:38:11:062 discordiador/(8969:9002): Comando: 200
+[INFO] 23:38:11:062 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:38:11:063 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:11:063 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:38:11:064 discordiador/(8969:9002): Posicion X Actual 5
+[INFO] 23:38:11:064 discordiador/(8969:9002): Posicion Y Actual 4
+[INFO] 23:38:11:065 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:38:11:065 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:11:065 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:11:066 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:11:066 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:11:066 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:11:066 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:11:066 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:11:067 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:11:067 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:11:067 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:11:067 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:11:067 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:12:068 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:12:068 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:12:068 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:12:069 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:12:069 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:12:069 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:12:069 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:38:12:069 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:12:070 discordiador/(8969:9002): Es tarea IO
+[INFO] 23:38:12:070 discordiador/(8969:9002): El parametro de la tarea es: 0
+[INFO] 23:38:12:070 discordiador/(8969:9002): La posición en X de la tarea es: 5
+[INFO] 23:38:12:071 discordiador/(8969:9002): La posición en Y de la tarea es: 5
+[INFO] 23:38:12:071 discordiador/(8969:9002): El tiempo de la tarea es: 2
+[INFO] 23:38:12:071 discordiador/(8969:9002): [Tripulante 0] Se comienza a mover a la posición 5 - 5
+[INFO] 23:38:12:071 discordiador/(8969:9002): Moviendo al tripulante 0
+[INFO] 23:38:12:076 discordiador/(8969:9002): Posicion X Nueva 5
+[INFO] 23:38:12:076 discordiador/(8969:9002): Posicion Y Nueva 5
+[INFO] 23:38:12:076 discordiador/(8969:9002): Posicion X Actual 5
+[INFO] 23:38:12:076 discordiador/(8969:9002): Posicion Y Actual 4
+[INFO] 23:38:12:077 discordiador/(8969:9002): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 23:38:12:077 discordiador/(8969:9002): Recibi el siguiente mensaje..
+[INFO] 23:38:12:122 discordiador/(8969:9002): Proceso: RAM
+[INFO] 23:38:12:122 discordiador/(8969:9002): Comando: 200
+[INFO] 23:38:12:122 discordiador/(8969:9002): Tamanio: 9
+[ERROR] 23:38:12:123 discordiador/(8969:9002): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 23:38:12:123 discordiador/(8969:9002): Posiciones despues de mover al tripulante 0
+[INFO] 23:38:12:123 discordiador/(8969:9002): Posicion X Actual 5
+[INFO] 23:38:12:123 discordiador/(8969:9002): Posicion Y Actual 5
+[INFO] 23:38:12:123 discordiador/(8969:9002): [Tripulante 0] se movio una posicion el tripulante
+[INFO] 23:38:12:124 discordiador/(8969:9002): [Tripulante 0] Ejecuto _SIGNAL con hilo 0
+[INFO] 23:38:12:124 discordiador/(8969:9002): manda signal a bloqio
+[INFO] 23:38:12:124 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:12:125 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:12:125 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:12:125 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:12:125 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:12:126 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:12:126 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:12:126 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:12:126 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:12:127 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:13:127 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:13:127 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:13:128 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:13:128 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:13:128 discordiador/(8969:9002): [Tripulante 0] EJECUTANDO...
+[INFO] 23:38:13:128 discordiador/(8969:9002): [Tripulante 0] esta en ejecución
+[INFO] 23:38:13:129 discordiador/(8969:9002): [Tripulante 0] DATOS TRIPULANTE: 0 - DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:38:13:128 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:13:129 discordiador/(8969:9002): Es tarea IO
+[INFO] 23:38:13:129 discordiador/(8969:9002): El parametro de la tarea es: 0
+[INFO] 23:38:13:130 discordiador/(8969:9002): La posición en X de la tarea es: 5
+[INFO] 23:38:13:130 discordiador/(8969:9002): La posición en Y de la tarea es: 5
+[INFO] 23:38:13:130 discordiador/(8969:9002): El tiempo de la tarea es: 2
+[INFO] 23:38:13:130 discordiador/(8969:9002): COMPARANDO TAREA: [DESCARTAR_BASURA]
+[INFO] 23:38:13:131 discordiador/(8969:9002): [Tripulante 0] Llegó a la posición, la tarea es DESCARTAR_BASURA, es tarea IO? 1
+[INFO] 23:38:13:131 discordiador/(8969:9002): COMPARANDO TAREA: [DESCARTAR_BASURA]
+[INFO] 23:38:13:131 discordiador/(8969:9002): [Tripulante 0] Se debe realizar una tarea de I/O
+[INFO] 23:38:14:132 discordiador/(8969:9002): [Tripulante 0] Ejecuto POST de semEBIO con hilo 0
+[INFO] 23:38:14:132 discordiador/(8969:8974): ----------------------------------
+[INFO] 23:38:14:133 discordiador/(8969:8974): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:14:133 discordiador/(8969:8974): [CambioExecIO] Tripulante encontrado. Moviendolo a Blocked IO...
+[INFO] 23:38:14:133 discordiador/(8969:8974): TID: 0
+[INFO] 23:38:14:134 discordiador/(8969:8974): Instruccion Actual: DESCARTAR_BASURA 0;5;5;2
+[INFO] 23:38:14:134 discordiador/(8969:8974): Se paso nodo a Exec
+[INFO] 23:38:14:134 discordiador/(8969:8974): [Exec a Bloqio] ejecuto _SIGNAL desde semEBIO...
+[INFO] 23:38:14:134 discordiador/(8969:8974): manda signal a bloqio
+[INFO] 23:38:14:135 discordiador/(8969:8974): Se hizo una ejecución de CPU en Exec->BlockedIO
+[INFO] 23:38:14:135 discordiador/(8969:8976): En BLOCKIO antes del mutex de planificacion_viva
+[INFO] 23:38:14:135 discordiador/(8969:8976): En BLOCKIO después del mutex de planificacion_viva
+[INFO] 23:38:14:135 discordiador/(8969:8976): En BLOCKIO antes del mutex de sabotaje_activado
+[INFO] 23:38:14:135 discordiador/(8969:8974): ----------------------------------
+[INFO] 23:38:14:136 discordiador/(8969:8976): En BLOCKIO después del mutex de sabotaje_activado
+[INFO] 23:38:14:136 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:14:136 discordiador/(8969:8976): Se ejecuta el hilo de Exec a BlockedIO
+[INFO] 23:38:14:137 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:14:137 discordiador/(8969:8976): Tripulante:0 tiene que seguir en bloqueadoIO
+[INFO] 23:38:14:137 discordiador/(8969:8976): Va esperando:0 ciclos
+[INFO] 23:38:14:137 discordiador/(8969:8976): Son en total: 2
+[INFO] 23:38:14:137 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:14:138 discordiador/(8969:8976): Se hizo una ejecución de CPU en BlockedIO
+[INFO] 23:38:14:138 discordiador/(8969:8976): ----------------------------------
+[INFO] 23:38:14:138 discordiador/(8969:8977): Se hizo una ejecución de CPU en Exit
+[INFO] 23:38:14:138 discordiador/(8969:8977): ----------------------------------
+[INFO] 23:38:15:139 discordiador/(8969:8971): Se hizo una ejecución de CPU en NEW->READY
+[INFO] 23:38:15:139 discordiador/(8969:8971): ----------------------------------
+[INFO] 23:38:15:139 discordiador/(8969:8972): Se comienza a iterar signals...
+[INFO] 23:38:15:140 discordiador/(8969:8972): Se hizo una ejecución de CPU en Ready->Exec
+[INFO] 23:38:15:140 discordiador/(8969:8972): ----------------------------------
+[INFO] 23:38:32:732 discordiador/(8969:8969): Salimos de la consola

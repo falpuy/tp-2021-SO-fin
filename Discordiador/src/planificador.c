@@ -41,10 +41,14 @@ void funcionhNewaReady (t_log* logger) {
         sem_wait(&semNR);
         
         pthread_mutex_lock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
         pthread_mutex_lock(&mutexSabotajeActivado);
-        if(planificacion_viva && sabotaje_activado == 0){
-            pthread_mutex_unlock(&mutexSabotajeActivado);
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_sabotaje_activado = sabotaje_activado;
+        pthread_mutex_unlock(&mutexSabotajeActivado);
+
+        if(temp_planificacion_viva && temp_sabotaje_activado == 0){
 
             while(!queue_is_empty(cola_new)){   
                 
@@ -86,8 +90,10 @@ void funcionhReadyaExec (t_log* logger){
         sem_wait(&semRE);
 
         pthread_mutex_lock(&mutexPlanificacionViva);
-        if(planificacion_viva) {
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        if(temp_planificacion_viva) {
 
             while(!queue_is_empty(ready) && queue_size(exec) <= grado_multitarea){
                 log_info(logger,"----------------------------------");
@@ -101,12 +107,13 @@ void funcionhReadyaExec (t_log* logger){
                 log_info(logger,"TID:%d", aux_TCB->tid);
 
                 pthread_mutex_lock(&mutexSabotajeActivado);
-                if(!sabotaje_activado){
-                    pthread_mutex_unlock(&mutexSabotajeActivado);
+                int temp_sabotaje_activado = sabotaje_activado;
+                pthread_mutex_unlock(&mutexSabotajeActivado);
+
+                if(!temp_sabotaje_activado){
                     log_info(logger,"Instrucción Actual: %s", aux_TCB->instruccion_actual);
                 }
                 else{
-                    pthread_mutex_unlock(&mutexSabotajeActivado);
                     log_info(logger,"Instrucción Actual: ATENDIENDO SABOTAJE");
                 }                
 
@@ -114,7 +121,7 @@ void funcionhReadyaExec (t_log* logger){
                 pthread_mutex_lock(&mutexExec);
                 queue_push(exec, (void*) aux_TCB);
                 pthread_mutex_unlock(&mutexExec);
-                
+
                 pthread_mutex_lock(&mutex_cantidadTCB);
                 cantidadTCBEnExec--;
                 pthread_mutex_unlock(&mutex_cantidadTCB);
@@ -125,9 +132,8 @@ void funcionhReadyaExec (t_log* logger){
             }
 
             log_info(logger, "Se comienza a iterar signals...");
-            pthread_mutex_lock(&mutex_cantidadTCB);
+
             cantidadTCBEnExec = queue_size(exec);
-            pthread_mutex_unlock(&mutex_cantidadTCB);
 
             list_iterate(exec->elements, signalHilosTripulantes);
             
@@ -166,8 +172,10 @@ void funcionhExecaBloqIO (t_log* logger){
         sem_wait(&semEBIO);
 
         pthread_mutex_lock(&mutexPlanificacionViva);
-        if(planificacion_viva) {
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        if(temp_planificacion_viva) {
 
             if (!queue_is_empty(exec)){ 
                 log_info(logger,"----------------------------------");
@@ -195,12 +203,21 @@ void funcionhBloqIO (t_log* logger){
     
     while (temp_validador){
         sem_wait(&semBLOCKIO);
-        
+        log_info(logger, "En BLOCKIO antes del mutex de planificacion_viva");
         pthread_mutex_lock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        log_info(logger, "En BLOCKIO después del mutex de planificacion_viva");
+        log_info(logger, "En BLOCKIO antes del mutex de sabotaje_activado");
+
         pthread_mutex_lock(&mutexSabotajeActivado);
-        if(planificacion_viva && sabotaje_activado == 0){
-            pthread_mutex_unlock(&mutexSabotajeActivado);
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_sabotaje_activado = sabotaje_activado;
+        pthread_mutex_unlock(&mutexSabotajeActivado);
+
+        log_info(logger, "En BLOCKIO después del mutex de sabotaje_activado");
+
+        if(temp_planificacion_viva && temp_sabotaje_activado == 0){
 
             log_info(logger,"----------------------------------");
             log_info(logger, "Se ejecuta el hilo de Exec a BlockedIO");
@@ -291,12 +308,13 @@ void funcionCambioExecReady(void* nodo, int posicion){
         log_info(logger,"TID:%d", tcbAMover->tid);
 
         pthread_mutex_lock(&mutexSabotajeActivado);
-        if(!sabotaje_activado){
-            pthread_mutex_unlock(&mutexSabotajeActivado);
+        int temp_sabotaje_activado = sabotaje_activado;
+        pthread_mutex_unlock(&mutexSabotajeActivado);
+
+        if(!temp_sabotaje_activado){
             log_info(logger,"Instruccion Actual: %s", tcbAMover->instruccion_actual);
         }
         else{
-            pthread_mutex_unlock(&mutexSabotajeActivado);
             log_info(logger,"Instruccion Actual: ATENDIENDO SABOTAJE");
         }
 
@@ -315,8 +333,10 @@ void funcionhExecaReady (t_log* logger) {
         sem_wait(&semER);
 
         pthread_mutex_lock(&mutexPlanificacionViva);
-        if(planificacion_viva) {
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        if(temp_planificacion_viva) {
 
             while (!queue_is_empty(exec))
             {   
@@ -328,12 +348,13 @@ void funcionhExecaReady (t_log* logger) {
                 log_info(logger, "[Exec a Rdy] ejecuto _SIGNAL desde semER..");
 
                 pthread_mutex_lock(&mutexSabotajeActivado);
-                if(!sabotaje_activado){
-                    pthread_mutex_unlock(&mutexSabotajeActivado);
+                int temp_sabotaje_activado = sabotaje_activado;
+                pthread_mutex_unlock(&mutexSabotajeActivado);
+
+                if(!temp_sabotaje_activado){
                     _signal(1, cantidadTCBEnExec, &semBLOCKIO);
                 }
                 else{
-                    pthread_mutex_unlock(&mutexSabotajeActivado);
                     sem_post(&semRE);
                 }
             }
@@ -380,8 +401,10 @@ void funcionhExecaExit (t_log* logger){
         sem_wait(&semEaX);
 
         pthread_mutex_lock(&mutexPlanificacionViva);
-        if (planificacion_viva) {
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        if (temp_planificacion_viva) {
 
             while (!queue_is_empty(exec)){  
                 log_info(logger,"----------------------------------");
@@ -409,8 +432,10 @@ void funcionhExit (t_log* logger){
         sem_wait(&semEXIT);
 
         pthread_mutex_lock(&mutexPlanificacionViva);
-        if(planificacion_viva) {
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        if(temp_planificacion_viva) {
 
             if (!queue_is_empty(cola_exit)){  
                 log_info(logger,"----------------------------------");
@@ -422,15 +447,15 @@ void funcionhExit (t_log* logger){
                 
                 if(tcbAEliminar){
                     log_info(logger,"Tripulante encontrado...");
-                    log_info(logger,"TID:%d", tcbAEliminar->tid);
-                    log_info(logger,"Status:%c",tcbAEliminar->status);
-                    log_info(logger,"Instruccion Actual:%s", tcbAEliminar->instruccion_actual);
+                    log_info(logger,"TID: %d", tcbAEliminar->tid);
+                    log_info(logger,"Status: %c",tcbAEliminar->status);
+                    log_info(logger,"Instruccion Actual: %s", tcbAEliminar->instruccion_actual);
                     
                     tcbAEliminar->estaVivoElHilo = 0;
                     //Comentado para testear si es correcto
                     //free(tcbAEliminar->instruccion_actual);
                     //free(tcbAEliminar);
-                    log_info(logger,"Se elimino Tripulante...");
+                    log_info(logger,"Se eliminó al Tripulante...");
 
                 }else{
                     log_info(logger, "No existe un tripulante a eliminar");

@@ -89,7 +89,16 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     cantidadActual += cant_tripulantes;
     _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
     free(buffer_a_enviar);
-  
+    
+  	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+
+  	if (mensaje->command == SUCCESS) {
+        log_info(logger,"Se guardó en Memoria OK");
+    }
+ 
+    free(mensaje->payload);
+    free(mensaje->identifier);
+    free(mensaje);
   	return nuevoPCB;
 }
 

@@ -35,10 +35,14 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
   	while(temp_validador) {
 
         pthread_mutex_lock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
         pthread_mutex_lock(&mutexSabotajeActivado);
-        while (planificacion_viva && sabotaje_activado) {
-            pthread_mutex_unlock(&mutexSabotajeActivado);
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_sabotaje_activado = sabotaje_activado;
+        pthread_mutex_unlock(&mutexSabotajeActivado);
+
+        while (temp_planificacion_viva && temp_sabotaje_activado) {
 
             sem_wait(&semERM);
 
@@ -156,12 +160,16 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
     pthread_mutex_unlock(&mutexValidador);
 
   	while(temp_validador){
-
+        
         pthread_mutex_lock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
         pthread_mutex_lock(&mutexSabotajeActivado);
-        while (planificacion_viva && sabotaje_activado == 1) {
-            pthread_mutex_unlock(&mutexSabotajeActivado);
-            pthread_mutex_unlock(&mutexPlanificacionViva);
+        int temp_sabotaje_activado = sabotaje_activado;
+        pthread_mutex_unlock(&mutexSabotajeActivado);
+
+        while (temp_planificacion_viva && temp_sabotaje_activado) {
 
             sem_wait(&semMR);
 

@@ -169,6 +169,7 @@
     t_queue* cola_exit;
 
     t_list* listaPCB;
+    t_list* listaSemaforos;
 
     void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
     bool comparadorTid(void* tripulante1, void* tripulante2);

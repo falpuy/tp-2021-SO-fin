@@ -23,6 +23,7 @@ void funcionPlanificador(t_log* logger) {
     bloq_emer = queue_create();
     bloq_emer_sorted = queue_create();
     cola_exit = queue_create();
+    listaSemaforos = list_create();
 
     listaPCB = list_create();
 }
@@ -344,9 +345,18 @@ void funcionCambioExecExit(void* nodo, int posicion){
         log_info(logger,"Tripulante: %d encontrado en Exec. Moviéndolo a Exit...", tcbAMover->tid);
         log_info(logger,"----------------------------------");
 
-        pthread_mutex_lock(&mutexExit);
-        queue_push(cola_exit, (void*)tcbAMover);
-        pthread_mutex_unlock(&mutexExit);
+        pthread_mutex_lock(&mutexBuffer);
+        buffer = _serialize(2*sizeof(int), "%d%d", tcbAMover -> pid, tcbAMover -> tid);
+        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, 2*sizeof(int), logger);
+        free(buffer);
+        t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
+        pthread_mutex_unlock(&mutexBuffer);
+
+        if (mensajeRecibido -> command == 200) {
+            pthread_mutex_lock(&mutexExit);
+            queue_push(cola_exit, (void*)tcbAMover);
+            pthread_mutex_unlock(&mutexExit);
+        }
     }
 }
 
@@ -415,7 +425,8 @@ void deletearTripulante(void* nodo){
 
 void signalHilosTripulantes(void *nodo) {
     tcb *tcbTripulante = (tcb *) nodo;
-    sem_post(&semTripulantes[tcbTripulante->tid]);
+    sem_t* semaforo = list_get(listaSemaforos,tcbTripulante->tid);
+    sem_post(semaforo);
     log_info(logger, "se hizo un post al tripulante: %d", tcbTripulante->tid);
 }
 

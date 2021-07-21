@@ -39,19 +39,10 @@ void funcionConsola(){
                 	if (nuevoPCB) {
                         list_add(listaPCB, nuevoPCB);
                         if(cantidadVieja == 0){
-                            semTripulantes = malloc(sizeof(sem_t)*cantidadActual); 
                             hiloTripulante = malloc(sizeof(pthread_t) * cantidadActual); 
                         }else{
-                            semTripulantes = realloc(semTripulantes,(sizeof(sem_t)) * cantidadActual);
                             hiloTripulante = realloc(hiloTripulante , sizeof(pthread_t) * cantidadActual);
                         } 
-
-                        for(int i = cantidadVieja; i < cantidadActual; i++){
-                            sem_init(&semTripulantes[i], 0, 0);
-
-                            log_info(logger, "Inicializo Semaforo de TCB %d", i);
-                            
-                        }
                         create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
                         
                         pthread_mutex_lock(&mutex_cantidadVieja);
@@ -65,7 +56,6 @@ void funcionConsola(){
                     	log_error(logger, "No se pudo crear el PCB");
                         int cant_tripulantes = atoi(parametros[1]);
                         cantidadActual -= cant_tripulantes;
-                        
                     }
 
                 	free(parametros[0]); //iniciarPatota

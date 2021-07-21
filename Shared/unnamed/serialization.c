@@ -61,7 +61,7 @@ void *_serialize(int size, char *format, ...) {
             case STRING:
                 // printf("Got a string..\n");
                 string = va_arg(lista_argumentos, char *);
-                printf("[Shared Library]: Serializing type of String: %s\n", string);
+                // printf("[Shared Library]: Serializing type of String: %s\n", string);
 
                 stringLength = strlen(string);
                 memcpy(stream + offset, &stringLength, sizeof(int));
@@ -74,7 +74,7 @@ void *_serialize(int size, char *format, ...) {
             case INT:
                 // printf("Got an Integer..\n");
                 value = va_arg(lista_argumentos, int);
-                printf("[Shared Library]: Serializing type of Int: %d\n", value);
+                // printf("[Shared Library]: Serializing type of Int: %d\n", value);
 
                 memcpy(stream + offset, &value, sizeof(int));
                 offset += sizeof(int);
@@ -84,7 +84,7 @@ void *_serialize(int size, char *format, ...) {
             case CHAR:
                 // printf("Got a Characater..\n");
                 c_value = va_arg(lista_argumentos, int);
-                printf("[Shared Library]: Serializing type of Char: %c\n", c_value);
+                // printf("[Shared Library]: Serializing type of Char: %c\n", c_value);
 
                 memcpy(stream + offset, &c_value, sizeof(char));
                 offset += sizeof(char);
@@ -94,7 +94,7 @@ void *_serialize(int size, char *format, ...) {
             case DOUBLE:
                 // printf("Got a Double..\n");
                 d_value = va_arg(lista_argumentos, double);
-                printf("[Shared Library]: Serializing type of Double: %f\n", d_value);
+                // printf("[Shared Library]: Serializing type of Double: %f\n", d_value);
 
                 memcpy(stream + offset, &d_value, sizeof(double));
                 offset += sizeof(double);
@@ -104,7 +104,7 @@ void *_serialize(int size, char *format, ...) {
             case UINT32:
                 // printf("Got an 32b Unsigned Int..\n");
                 u_value = va_arg(lista_argumentos, uint32_t);
-                printf("[Shared Library]: Serializing type of UInt32_t: %d\n", u_value);
+                // printf("[Shared Library]: Serializing type of UInt32_t: %d\n", u_value);
 
                 memcpy(stream + offset, &u_value, sizeof(uint32_t));
                 offset += sizeof(uint32_t);
@@ -112,7 +112,7 @@ void *_serialize(int size, char *format, ...) {
             break;
 
             default:
-                printf("[Shared Library]: %s Format Does not exist\n", types[i]);
+                // printf("[Shared Library]: %s Format Does not exist\n", types[i]);
                 free(stream);
                 for(int j = 0; j <= arg_c; j++){
                     free(types[j]);

@@ -56,9 +56,8 @@ void funcionhNewaReady (t_log* logger) {
                 tcb* aux_TCB = queue_pop(cola_new);
                 pthread_mutex_unlock(&mutexNew);
 
-                log_info(logger,"Tripulante encontrado. Moviendolo a Ready...");
-                log_info(logger,"TID:%d", aux_TCB->tid);
-                log_info(logger,"Instruccion Actual:%s", aux_TCB->instruccion_actual);
+                log_info(logger,"Tripulante: %d encontrado en New. Moviéndolo a Ready...", aux_TCB->tid);
+                log_info(logger,"Instruccion Actual: %s", aux_TCB->instruccion_actual);
 
                 aux_TCB->status = 'R';
 
@@ -98,8 +97,7 @@ void funcionhReadyaExec (t_log* logger){
                 tcb* aux_TCB = queue_pop(ready);
                 pthread_mutex_unlock(&mutexReady);
 
-                log_info(logger,"Tripulante encontrado en Ready. Moviendolo a Exec...");
-                log_info(logger,"TID:%d", aux_TCB->tid);
+                log_info(logger,"Tripulante: %d encontrado en Ready. Moviéndolo a Exec...", aux_TCB->tid);
 
                 pthread_mutex_lock(&mutexSabotajeActivado);
                 int temp_sabotaje_activado = sabotaje_activado;
@@ -124,18 +122,17 @@ void funcionhReadyaExec (t_log* logger){
         cantidadTCBEnExec = queue_size(exec);
         pthread_mutex_unlock(&mutex_cantidadTCB);
 
-        log_info(logger, "Cantidad tcb en exec:%d", cantidadTCBEnExec);
+        log_info(logger,"Cantidad tcb en exec: %d", cantidadTCBEnExec);
         log_info(logger,"Se ejecutó Ready->Exec");
         log_info(logger,"----------------------------------");
 
         if(cantidadTCBEnExec <= 0){
-            log_info(logger,"h1");
+            log_info(logger, "NO hay tripulantes");
             sem_post(&semBLOCKIO);
         }else{
-            log_info(logger,"h2");
-
-            tcb* test = queue_peek(exec);
-            log_info(logger, "El tripulante que esta en exec es:%d, %c",test->tid,test->status);
+            log_info(logger, "HAY tripulantes");
+            //tcb* test = queue_peek(exec);
+            //log_info(logger, "El tripulante que esta en exec es: %d, status: %c",test->tid,test->status);
             list_iterate(exec->elements, signalHilosTripulantes);
         }
     }
@@ -143,18 +140,19 @@ void funcionhReadyaExec (t_log* logger){
 
 
 /*---------------------------------EXEC -> BLOCKED_IO---------------------*/
-void funcionCambioExecIO(void* nodo, int posicion){
+void funcionCambioExecIO(void* nodo){
     tcb* aux = (tcb *) nodo;
     if(aux->status == 'I'){
-  		tcb *tcbAMover = list_remove(exec->elements, posicion);//No colocar mutex acá, ya fue colocado en funcionhExecaBloqIO
+        pthread_mutex_lock(&mutexExec);
+  		tcb *tcbAMover = queue_pop(exec);
+        pthread_mutex_unlock(&mutexExec);
 
-        log_info(logger,"Moviendo Tripulante:%d a Blocked IO...",tcbAMover->tid);
+        log_info(logger,"Tripulante: %d encontrado en Exec. Moviéndolo a BlockIO...", tcbAMover->tid);
         
         pthread_mutex_lock(&mutexBloqIO);
         queue_push(bloq_io, (void*)tcbAMover);
         pthread_mutex_unlock(&mutexBloqIO);
-
-        log_info(logger, "Se paso nodo a Blocked IO");
+        log_info(logger,"Tripulante: %d movido a BlockIO.", tcbAMover->tid);
     }
 }
  
@@ -164,7 +162,7 @@ void funcionhExecaBloqIO (t_log* logger){
     pthread_mutex_unlock(&mutexValidador);
     
     while (temp_validador) {
-        sem_wait(&semEBIO); //espere los N hilos de tripulantes
+        sem_wait(&semEBIO); //espera los N hilos de tripulantes
 
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
@@ -172,10 +170,7 @@ void funcionhExecaBloqIO (t_log* logger){
 
         if(temp_planificacion_viva) {
             if(queue_size(exec) > 0){ 
-                
-                pthread_mutex_lock(&mutexExec);
-                list_iterate_position(exec->elements, funcionCambioExecIO);
-                pthread_mutex_unlock(&mutexExec);
+                list_iterate(exec->elements, funcionCambioExecIO);
             }
         }
 
@@ -206,33 +201,17 @@ void funcionhBloqIO (t_log* logger){
         if(temp_planificacion_viva && temp_sabotaje_activado == 0 && queue_size(bloq_io) > 0){
             pthread_mutex_lock(&mutexBloqIO);
             tcb* tcbTripulante = queue_peek(bloq_io);
-
-            log_info(logger, "Tripulante: %d\t Patota:%d\t Tarea:%s\t", tcbTripulante->tid,tcbTripulante->pid,tcbTripulante->instruccion_actual);
-            log_info(logger,"Posicion Actual X e Y: %d - %d\n", tcbTripulante->posicionX, tcbTripulante->posicionY);
-
-            switch(tcbTripulante->status){
-                case 'N':
-                    log_info(logger, "Status: NEW\n");
-                    break;
-                case 'R':
-                    log_info(logger, "Status: READY\n");
-                    break;
-                case 'E':
-                    log_info(logger, "Status: EXEC\n");
-                    break;
-                case 'I':
-                    log_info(logger, "Status: BLOQ IO\n");
-                    break;
-                case 'M':
-                    log_info(logger, "Status: BLOQ EMERGENCIA\n");
-                    break;
-                case 'X':
-                    log_info(logger, "Status: EXIT\n");
-                    break;
-            }
+            log_info(logger, "Tripulante: %d\t Patota:%d\t Posición:%d-%d\t Tarea:%s\t", tcbTripulante->tid, tcbTripulante->pid, tcbTripulante->posicionX, tcbTripulante->posicionY, tcbTripulante->instruccion_actual);
             pthread_mutex_unlock(&mutexBloqIO);
+
             funcionContadorEnBloqIO(tcbTripulante);
 
+            for(int i = 1; i < queue_size(bloq_io); i++){
+                pthread_mutex_lock(&mutexBloqIO);
+                tcb* tcbTripulante = list_get(bloq_io->elements, i);
+                log_info(logger, "El tripulante: %d está esperando su turno en la cola de bloqueados", tcbTripulante->tid);
+                pthread_mutex_unlock(&mutexBloqIO);
+            }
         }
         log_info(logger,"Se ejecutó BlockedIO");
         log_info(logger,"----------------------------------");
@@ -253,13 +232,11 @@ void funcionContadorEnBloqIO(void* nodo){
     parametrosTareaIO = string_split(tareaIO[1], ";");
     int tiempoAPasarEnBloqIO = atoi(parametrosTareaIO[3]);
 
-    log_info(logger, "holisss estoy en contador io");
-
     if(tcbTripulante->tiempoEnBloqIO == tiempoAPasarEnBloqIO){
         
         log_info(logger,"----------------------------------");
         log_info(logger, "Tripulante:%d pasó el tiempo en bloqueado IO", tcbTripulante->tid);
-        tcbTripulante = queue_pop(bloq_io);//no poner mutex acá, el mutex ya está en funcionhBloqIO
+        tcbTripulante = queue_pop(bloq_io);
         
         tcbTripulante->tiempoEnBloqIO = 0;
         tamanioTarea = strlen(tareaIO[0]);
@@ -283,15 +260,15 @@ void funcionContadorEnBloqIO(void* nodo){
         pthread_mutex_unlock(&mutexReady);
         
         log_info(logger,"----------------------------------");
-        log_info(logger, "Se paso nodo tripulante:%d a Ready con nueva tarea", tcbTripulante->tid);
+        log_info(logger, "Se paso nodo tripulante: %d a Ready con nueva tarea", tcbTripulante->tid);
         log_info(logger,"----------------------------------");
 
 
     }
     else{
         log_info(logger,"----------------------------------");
-        log_info(logger, "Tripulante:%d tiene que seguir en BlockIO", tcbTripulante->tid);
-        log_info(logger, "Va esperando:%d ciclos", tcbTripulante->tiempoEnBloqIO);
+        log_info(logger, "Tripulante: %d tiene que seguir en BlockIO", tcbTripulante->tid);
+        log_info(logger, "Va esperando: %d ciclos", tcbTripulante->tiempoEnBloqIO);
         log_info(logger, "Son en total: %d", tiempoAPasarEnBloqIO);
         log_info(logger,"----------------------------------");
 
@@ -315,10 +292,10 @@ void funcionCambioExecReady(void* nodo, int posicion){
     
     if(aux->status == 'R'){
         pthread_mutex_lock(&mutexExec);
-  		tcb *tcbAMover = list_remove(exec->elements, posicion);
+  		tcb *tcbAMover = list_remove(exec->elements, 0);
         pthread_mutex_unlock(&mutexExec);
 
-        log_info(logger,"Tripulante encontrado:%d. Moviendolo a Ready...", tcbAMover->tid);
+        log_info(logger,"Tripulante: %d encontrado en Exec. Moviéndolo a Ready...", tcbAMover->tid);
 
 
         pthread_mutex_lock(&mutexReady);
@@ -360,11 +337,11 @@ void funcionCambioExecExit(void* nodo, int posicion){
     if(aux->status == 'X'){
         
         pthread_mutex_lock(&mutexExec);
-  		tcb *tcbAMover = list_remove(exec->elements, posicion);
+  		tcb *tcbAMover = list_remove(exec->elements, 0);
         pthread_mutex_unlock(&mutexExec);
 
         log_info(logger,"----------------------------------");
-        log_info(logger,"[CambioExecExit]Tripulante encontrado:%d. Moviendolo a Exit...",tcbAMover->tid);
+        log_info(logger,"Tripulante: %d encontrado en Exec. Moviéndolo a Exit...", tcbAMover->tid);
         log_info(logger,"----------------------------------");
 
         pthread_mutex_lock(&mutexExit);
@@ -386,7 +363,7 @@ void funcionhExecaExit (t_log* logger){
         pthread_mutex_unlock(&mutexPlanificacionViva);
 
         if (temp_planificacion_viva) {
-            if(!queue_is_empty(exec)){ 
+            if(!queue_is_empty(exec)){
                 list_iterate_position(exec->elements, funcionCambioExecExit);
             }
         }
@@ -430,9 +407,8 @@ void funcionhExit (t_log* logger){
 
 void deletearTripulante(void* nodo){
     tcb* tcbTripulante = (tcb*) nodo;
-    log_info(logger, "Entro en deletear tripulante");
     if(tcbTripulante->estaVivoElHilo == 1){
-        log_info(logger,"Finalizando Tripulante:%d...",tcbTripulante->tid);
+        log_info(logger,"Finalizando Tripulante: %d...",tcbTripulante->tid);
         tcbTripulante->estaVivoElHilo = 0;
     }
 }
@@ -440,6 +416,7 @@ void deletearTripulante(void* nodo){
 void signalHilosTripulantes(void *nodo) {
     tcb *tcbTripulante = (tcb *) nodo;
     sem_post(&semTripulantes[tcbTripulante->tid]);
+    log_info(logger, "se hizo un post al tripulante: %d", tcbTripulante->tid);
 }
 
 void list_iterate_position(t_list *self, void(*closure)()){

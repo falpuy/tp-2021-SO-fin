@@ -4,7 +4,7 @@
 int main () {
     setearConfiguraciones();
     unsigned int pid = process_getpid();
-    log_info(logger, "N° proceso:%d", pid);
+    log_info(logger, "N° proceso: %d", pid);
     signal(SIGINT,liberarMemoria);
     funcionPlanificador(logger);
     pthread_create(&hEsperarSabotaje, NULL,(void*) servidor, parametros);
@@ -17,7 +17,7 @@ int main () {
 void setearConfiguraciones (){
 
     logger = log_create("discordiador.log", "discordiador", 1, LOG_LEVEL_INFO);
-    config = config_create("archivo.config"); //Hay que ver cómo se llama el archivo.config cuando nos lo den
+    config = config_create("archivo.config");
     
     ip_RAM = config_get_string_value(config, "IP_MI_RAM_HQ");
     puerto_RAM = config_get_string_value(config, "PUERTO_MI_RAM_HQ");
@@ -30,19 +30,38 @@ void setearConfiguraciones (){
     ciclo_CPU = config_get_int_value (config, "RETARDO_CICLO_CPU");
     puerto_DIS = config_get_string_value(config, "PUERTO_DISCORDIADOR");
 
+    //Log de chequeo:
+    //log_info(logger, "%s, %s, %s, %s, %d, %s, %d, %d, %d", ip_RAM, puerto_RAM, ip_IMS, 
+    //puerto_IMS, grado_multitarea, algoritmo, quantum_RR, duracion_sabotaje, ciclo_CPU);
 
-    log_info(logger, "%s, %s, %s, %s, %d, %s, %d, %d, %d", ip_RAM, puerto_RAM, ip_IMS, 
-    puerto_IMS, grado_multitarea, algoritmo, quantum_RR, duracion_sabotaje, ciclo_CPU);
-
+    pthread_mutex_lock(&mutex_cantidadVieja);
     cantidadVieja = 0;
+    pthread_mutex_unlock(&mutex_cantidadVieja);
+    log_info(logger, "CantidadVieja: %d", cantidadVieja);
+
+    pthread_mutex_lock(&mutex_cantidadActual);
     cantidadActual = 0;
+    pthread_mutex_unlock(&mutex_cantidadActual);
+    log_info(logger, "CantidadActual: %d", cantidadActual);
+
     contadorPCBs = 0;
     contadorSemGlobal = 0;
     cantidadTCBTotales = 0;
     
+    pthread_mutex_lock(&mutexValidador);
     validador = 1;
-    planificacion_viva = 1;
+    pthread_mutex_unlock(&mutexValidador);
+    log_info(logger, "Validador: %d", validador);
+
+    pthread_mutex_lock(&mutexPlanificacionViva);
+    planificacion_viva = 0;
+    pthread_mutex_unlock(&mutexPlanificacionViva);
+    log_info(logger, "PlanificacionViva: %d", planificacion_viva);
+
+    pthread_mutex_lock(&mutexSabotajeActivado);
     sabotaje_activado = 0;
+    pthread_mutex_unlock(&mutexSabotajeActivado);
+    log_info(logger, "SabotajeActivado: %d", sabotaje_activado);
 
     conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);

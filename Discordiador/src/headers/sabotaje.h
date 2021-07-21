@@ -52,7 +52,6 @@
     }parametrosConsola;
 
     typedef struct{
-        t_log* logger;
         int idSemaforo;
     }parametrosThread;
 

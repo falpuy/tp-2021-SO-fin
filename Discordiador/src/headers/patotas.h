@@ -21,10 +21,10 @@
     void destruirTCB(void* nodo);
     void destruirPCB(void* nodo);
 
-    void funcionTripulante (int idSemTripulante);
+    void funcionTripulante (void* elemento);
 
     bool llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY);
-    int pedirProximaTarea(tcb* tcbTripulante);
+    void pedirProximaTarea(tcb* tcbTripulante);
     int esTareaIO(char *tarea);
     void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal);
 

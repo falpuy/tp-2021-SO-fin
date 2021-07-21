@@ -87,6 +87,7 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
 
     }
     cantidadActual += cant_tripulantes;
+    log_info(logger, "CantidadActual: %d", cantidadActual);
     
     pthread_mutex_lock(&mutexBuffer);
     _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
@@ -119,7 +120,8 @@ void destruirPCB(void* nodo){
 
 
 /*---------------------------FUNCION TRIPULANTE (EXEC)----------------------*/
-void funcionTripulante (int idSemTripulante) {
+void funcionTripulante (void* elemento) {
+    parametrosThread* param = (parametrosThread*) elemento;
     int tamanioBuffer;
     int tamanioTarea;
     void* buffer;
@@ -127,7 +129,6 @@ void funcionTripulante (int idSemTripulante) {
     char** tarea;
     int mensajeInicialIMS=0;
     bool llegoALaPosicion = false;
-    int puedeEnviarSignal = 1;
     int parametro;
     int posicionX;
     int posicionY;
@@ -139,25 +140,27 @@ void funcionTripulante (int idSemTripulante) {
     pthread_mutex_unlock(&mutexValidador);
 
     while(temp_validador){// MIENTRAS ESTÉ EN FUNCIONAMIENTO EL PROCESO
-        log_info(logger, "Tripulante:%d esta esperando el signal",idSemTripulante);
-        sem_wait(&semTripulantes[idSemTripulante]);
+        log_info(logger, "Tripulante: %d esta esperando el signal",param->idSemaforo);
+        sem_wait(&semTripulantes[param->idSemaforo]);
+        log_info(logger, "se recibió el post del tripulante: %d", param->idSemaforo);
 
         pthread_mutex_lock(&mutexExec);
-        tcbTripulante = get_by_id(exec->elements, idSemTripulante);
+        tcbTripulante = get_by_id(exec->elements, param->idSemaforo);
         pthread_mutex_unlock(&mutexExec);
-    
 
         if(!tcbTripulante){
             pthread_mutex_lock(&mutexExit);
-            tcbTripulante = get_by_id(cola_exit->elements, idSemTripulante);
+            tcbTripulante = get_by_id(cola_exit->elements, param->idSemaforo);
             pthread_mutex_unlock(&mutexExit);
         }
+        
+        log_info(logger, "ID Tripulante: %d, ID Semáforo Tripulante: %d", tcbTripulante->tid, param->idSemaforo);
 
         if(tcbTripulante->estaVivoElHilo && planificacion_viva){// SI ESTÁ VIVO EL TRIPULANTE (HILO)
-            log_info(logger, "[Tripulante %d] esta en ejecución", idSemTripulante);
+            log_info(logger, "[Tripulante %d] esta en ejecución", param->idSemaforo);
 
                 if(sabotaje_activado){// SI HAY UN SABOTAJE
-                    log_info(logger,"[Tripulante %d] Se está atendiendo sabotaje", idSemTripulante);
+                    log_info(logger,"[Tripulante %d] Se está atendiendo sabotaje", param->idSemaforo);
 
                     log_info(logger, "La posición en X|Y del sabotaje es: %d|%d con duracion:%d", posSabotajeX,posSabotajeY,duracion_sabotaje);   
                     llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posSabotajeX, posSabotajeY);
@@ -217,13 +220,11 @@ void funcionTripulante (int idSemTripulante) {
                     posicionX = atoi(parametrosTarea[1]);
                     posicionY = atoi(parametrosTarea[2]);
                     tiempoTarea = atoi(parametrosTarea[3]);
-                
-                    //Fijarse si se muestra la tarea que hace
 
                     llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posicionX, posicionY);
 
                     if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DE LA TAREA
-                        log_info(logger, "[Tripulante %d] Llegó a la posición, la tarea es %s, es tarea IO? %d",idSemTripulante, tarea[0], esTareaIO(tarea[0]));
+                        log_info(logger, "[Tripulante %d] Llegó a la posición, la tarea es %s, es tarea IO? %d",param->idSemaforo, tarea[0], esTareaIO(tarea[0]));
                         
                         if (mensajeInicialIMS == 0){//MANDA MENSAJE A IMS DE "Comienza Ejecucion Tarea"
                             tamanioTarea = strlen(tarea[0]);
@@ -238,20 +239,19 @@ void funcionTripulante (int idSemTripulante) {
                         }
 
                         if (esTareaIO(tarea[0])) {// ES TAREA DE I/O
-                            log_info(logger, "[Tripulante %d] Se debe realizar una tarea de I/O",idSemTripulante);
-                            sleep(1); 
                             tcbTripulante->status = 'I';
                             tcbTripulante->ciclosCumplidos = 0;
-        
+                            log_info(logger, "[Tripulante %d] Se debe realizar una tarea de I/O",param->idSemaforo);
+                            sleep(1); 
                         }
                         else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
-                            log_info(logger, "[Tripulante %d] Se debe realizar una tarea normal (no de I/O)",idSemTripulante);
+                            log_info(logger, "[Tripulante %d] Se debe realizar una tarea normal",param->idSemaforo);
                             tcbTripulante->tiempoEnExec++;
                             tcbTripulante->ciclosCumplidos++;
                             log_info(logger, "El tiempo en exec es: %d", tcbTripulante->tiempoEnExec);
 
                             if(tcbTripulante->tiempoEnExec == tiempoTarea){// COMPLETÓ LA TAREA NORMAL
-                                log_info(logger, "[Tripulante %d] Termino la tarea normal el tripulante %d",idSemTripulante, tcbTripulante->tid);
+                                log_info(logger, "[Tripulante %d] Termino la tarea normal el tripulante %d",param->idSemaforo, tcbTripulante->tid);
                                 tamanioBuffer = sizeof(int)*2 + tamanioTarea;
                                 
                                 pthread_mutex_lock(&mutexBuffer);
@@ -260,25 +260,27 @@ void funcionTripulante (int idSemTripulante) {
                                 free(buffer);
                                 pthread_mutex_unlock(&mutexBuffer);
 
-                                puedeEnviarSignal = pedirProximaTarea(tcbTripulante);
+                                pedirProximaTarea(tcbTripulante);
                                 tcbTripulante->tiempoEnExec = 0;
                             } 
 
-                            if(puedeEnviarSignal >= 0 && !strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){//ES RR Y COMPLETÓ EL QUANTUM
+                            if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR && tcbTripulante->status != 'X'){//ES RR Y COMPLETÓ EL QUANTUM Y NO TERMINÓ TODAS LAS TAREAS
                                 tcbTripulante->status = 'R';
                                 tcbTripulante->ciclosCumplidos = 0;
+                                log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tcbTripulante->tid);
                             }
                         }
                         else
-                            log_error(logger, "[Tripulante %d] La tarea ingresada no posee un formato de tarea correcto",idSemTripulante);
+                            log_error(logger, "[Tripulante %d] La tarea ingresada no posee un formato de tarea correcto",param->idSemaforo);
             
                     }else {// NO LLEGÓ A LA POSICIÓN DE LA TAREA
                         moverTripulanteUno(tcbTripulante, posicionX, posicionY);
                         tcbTripulante->ciclosCumplidos++;
 
-                        if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
+                        if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){//ES RR Y COMPLETÓ EL QUANTUM
                             tcbTripulante->status = 'R';
                             tcbTripulante->ciclosCumplidos = 0;
+                            log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tcbTripulante->tid);
                         }
                     }
 
@@ -295,6 +297,7 @@ void funcionTripulante (int idSemTripulante) {
                 free(tarea);
             }
 
+        log_info(logger, "Manda signal a EBIO el tripulante: %d", param->idSemaforo);
         _signal(1,cantidadTCBEnExec,&semEBIO);
     }
     
@@ -307,7 +310,7 @@ bool llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY  
     return tripulante_posX== posX && tripulante_posY == posY;
 }
 
-int pedirProximaTarea(tcb* tcbTripulante){
+void pedirProximaTarea(tcb* tcbTripulante){
     int tamanioBuffer;
     void* buffer;
     tamanioBuffer = sizeof(int) * 2;
@@ -319,7 +322,6 @@ int pedirProximaTarea(tcb* tcbTripulante){
 
     t_mensaje *mensajito = _receive_message(conexion_RAM, logger);
     pthread_mutex_unlock(&mutexBuffer);
-
 
     if (mensajito->command == SUCCESS) {
         int tamanioTareaRecibida;
@@ -341,7 +343,6 @@ int pedirProximaTarea(tcb* tcbTripulante){
         free(mensajito->identifier);
         free(mensajito);
         free(buffer_recibido);
-        return 1;
     }
     else if (mensajito->command == ERROR_NO_HAY_TAREAS) {
         log_info(logger, "Tripulante: %d ya realizó todas las tareas", tcbTripulante->tid);
@@ -349,13 +350,10 @@ int pedirProximaTarea(tcb* tcbTripulante){
         free(mensajito->payload);
         free(mensajito->identifier);
         free(mensajito);
-        sem_post(&semEaX);
     }
-    return -1;
 }
 
 int esTareaIO(char *tarea) {
-    log_info(logger, "COMPARANDO TAREA: [%s]", tarea);
     if(!strcmp(tarea, "GENERAR_OXIGENO")) {
             return 1;
     }
@@ -425,7 +423,7 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
         pthread_mutex_unlock(&mutexBuffer);
         free(bufferAIMS);
-
+        log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
     }
     else if (tcbTrip->posicionX > posXfinal){
         tcbTrip->posicionX--;
@@ -458,7 +456,7 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         pthread_mutex_unlock(&mutexBuffer);
         
         free(bufferAIMS);
-
+        log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
     }
     else if (tcbTrip->posicionY < posYfinal){
         tcbTrip->posicionY++;
@@ -489,6 +487,7 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         _send_message(conexion_IMS, "IMS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
         pthread_mutex_unlock(&mutexBuffer);
         free(bufferAIMS);
+        log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
 
     }
     else if (tcbTrip->posicionY > posYfinal){
@@ -522,6 +521,7 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         pthread_mutex_unlock(&mutexBuffer);
         
         free(bufferAIMS);
+        log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
     }
     else{
         log_info(logger, "El tripulante ya llegó a la posición de la tarea");
@@ -610,10 +610,12 @@ void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_lo
         queue_push (cola_new, (void*) aux);
         pthread_mutex_unlock(&mutexNew);
 
-        int idSemaforo=indice_tcb_temporal;
 
-        pthread_create(&hiloTripulante[idSemaforo], NULL, (void *) funcionTripulante, (void*) idSemaforo);
-        pthread_detach(hiloTripulante[idSemaforo]);
+        parametrosThread* parametros = malloc (sizeof(parametrosThread));
+        parametros->idSemaforo=indice_tcb_temporal;
+
+        pthread_create(&hiloTripulante[parametros->idSemaforo], NULL, (void *) funcionTripulante, parametros);
+        pthread_detach(hiloTripulante[parametros->idSemaforo]);
        
     } else {
     	log_error(logger, "No hay tareas disponibles");

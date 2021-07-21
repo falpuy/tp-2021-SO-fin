@@ -24,7 +24,7 @@
     void funcionhNewaReady (t_log* logger);
     void funcionhReadyaExec (t_log* logger);
 
-    void funcionCambioExecIO(void* nodo, int posicion);
+    void funcionCambioExecIO(void* nodo);
     void funcionhExecaBloqIO (t_log* logger);
     
     void funcionhBloqIO (t_log* logger);

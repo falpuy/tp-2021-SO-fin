@@ -91,7 +91,7 @@ void funcionhReadyaExec (t_log* logger){
 
         if(temp_planificacion_viva) {
 
-            while(!queue_is_empty(ready) && queue_size(exec) <= grado_multitarea){
+            while(!queue_is_empty(ready) && queue_size(exec) < grado_multitarea){
                 pthread_mutex_lock(&mutexReady);
                 tcb* aux_TCB = queue_pop(ready);
                 pthread_mutex_unlock(&mutexReady);
@@ -122,12 +122,18 @@ void funcionhReadyaExec (t_log* logger){
         cantidadTCBEnExec = queue_size(exec);
         pthread_mutex_unlock(&mutex_cantidadTCB);
 
+        log_info(logger, "Cantidad tcb en exec:%d", cantidadTCBEnExec);
         log_info(logger,"Se ejecutó Ready->Exec");
         log_info(logger,"----------------------------------");
 
         if(cantidadTCBEnExec <= 0){
+            log_info(logger,"h1");
             sem_post(&semBLOCKIO);
         }else{
+            log_info(logger,"h2");
+
+            tcb* test = queue_peek(exec);
+            log_info(logger, "El tripulante que esta en exec es:%d, %c",test->tid,test->status);
             list_iterate(exec->elements, signalHilosTripulantes);
         }
     }
@@ -420,6 +426,7 @@ void funcionhExit (t_log* logger){
 
 void deletearTripulante(void* nodo){
     tcb* tcbTripulante = (tcb*) nodo;
+    log_info(logger, "Entro en deletear tripulante");
     if(tcbTripulante->estaVivoElHilo == 1){
         log_info(logger,"Finalizando Tripulante:%d...",tcbTripulante->tid);
         tcbTripulante->estaVivoElHilo = 0;
@@ -428,7 +435,9 @@ void deletearTripulante(void* nodo){
 
 void signalHilosTripulantes(void *nodo) {
     tcb *tcbTripulante = (tcb *) nodo;
+    log_info(logger,"h3");
     sem_post(&semTripulantes[tcbTripulante->tid]);
+    log_info(logger,"h4");
 }
 
 void list_iterate_position(t_list *self, void(*closure)()){

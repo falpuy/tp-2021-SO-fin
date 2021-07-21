@@ -139,35 +139,13 @@ void funcionTripulante (int idSemTripulante) {
     pthread_mutex_unlock(&mutexValidador);
 
     while(temp_validador){// MIENTRAS ESTÉ EN FUNCIONAMIENTO EL PROCESO
+        log_info(logger, "Tripulante:%d esta esperando el signal",idSemTripulante);
         sem_wait(&semTripulantes[idSemTripulante]);
 
         pthread_mutex_lock(&mutexExec);
         tcbTripulante = get_by_id(exec->elements, idSemTripulante);
         pthread_mutex_unlock(&mutexExec);
-        
-        log_info(logger, "Tripulante: %d\t Patota:%d\t Tarea:%s\t", tcbTripulante->tid,tcbTripulante->pid,tcbTripulante->instruccion_actual);
-        log_info(logger,"Posicion Actual X e Y: %d - %d\n", tcbTripulante->posicionX, tcbTripulante->posicionY);
-
-            switch(tcbTripulante->status){
-                case 'N':
-                    log_info(logger, "Status: NEW\n");
-                    break;
-                case 'R':
-                    log_info(logger, "Status: READY\n");
-                    break;
-                case 'E':
-                    log_info(logger, "Status: EXEC\n");
-                    break;
-                case 'I':
-                    log_info(logger, "Status: BLOQ IO\n");
-                    break;
-                case 'M':
-                    log_info(logger, "Status: BLOQ EMERGENCIA\n");
-                    break;
-                case 'X':
-                    log_info(logger, "Status: EXIT\n");
-                    break;
-            }
+    
 
         if(!tcbTripulante){
             pthread_mutex_lock(&mutexExit);
@@ -264,32 +242,6 @@ void funcionTripulante (int idSemTripulante) {
                             sleep(1); 
                             tcbTripulante->status = 'I';
                             tcbTripulante->ciclosCumplidos = 0;
-
-                            log_info(logger, "Tripulante: %d\t Patota:%d\t Tarea:%s\t", tcbTripulante->tid,tcbTripulante->pid,tcbTripulante->instruccion_actual);
-                            log_info(logger,"Posicion Actual X e Y: %d - %d\n", tcbTripulante->posicionX, tcbTripulante->posicionY);
-
-                                switch(tcbTripulante->status){
-                                    case 'N':
-                                        log_info(logger, "Status: NEW\n");
-                                        break;
-                                    case 'R':
-                                        log_info(logger, "Status: READY\n");
-                                        break;
-                                    case 'E':
-                                        log_info(logger, "Status: EXEC\n");
-                                        break;
-                                    case 'I':
-                                        log_info(logger, "Status: BLOQ IO\n");
-                                        break;
-                                    case 'M':
-                                        log_info(logger, "Status: BLOQ EMERGENCIA\n");
-                                        break;
-                                    case 'X':
-                                        log_info(logger, "Status: EXIT\n");
-                                        break;
-                                }
-
-                            
         
                         }
                         else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL

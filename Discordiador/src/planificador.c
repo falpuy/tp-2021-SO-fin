@@ -34,7 +34,9 @@ void funcionhNewaReady (t_log* logger) {
     pthread_mutex_unlock(&mutexValidador);
 
     while (temp_validador) {
-        sem_wait(&semNR);
+        pthread_mutex_lock(&semaNR);
+        pthread_cond_wait(&semNR, &semaNR);
+        pthread_mutex_unlock(&semaNR);
         
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
@@ -417,7 +419,9 @@ void funcionhExit (t_log* logger){
         }
         log_info(logger,"Se ejecutó Exit");
         log_info(logger,"----------------------------------");
-        sem_post(&semNR);
+        // sem_post(&semNR);
+
+        pthread_cond_signal(&semNR);
     }    
 }
 
@@ -435,9 +439,7 @@ void deletearTripulante(void* nodo){
 
 void signalHilosTripulantes(void *nodo) {
     tcb *tcbTripulante = (tcb *) nodo;
-    log_info(logger,"h3");
     sem_post(&semTripulantes[tcbTripulante->tid]);
-    log_info(logger,"h4");
 }
 
 void list_iterate_position(t_list *self, void(*closure)()){

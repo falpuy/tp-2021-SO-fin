@@ -63,8 +63,11 @@ void setearConfiguraciones (){
     pthread_mutex_init(&mutex_cantidadActual,NULL);
     pthread_mutex_init(&mutexBuffer,NULL);
     pthread_mutex_init(&mutexSemaforosTrip,NULL);
+    pthread_mutex_init(&semaNR,NULL);
+    pthread_cond_init(&semNR,NULL);
+    
 
-    sem_init(&semNR, 0, 0);
+    // sem_init(&semNR, 0, 0);
     sem_init(&semRE, 0, 0);
     sem_init(&semER, 0, 0);
     sem_init(&semBLOCKIO, 0, 0);
@@ -82,8 +85,8 @@ void setearConfiguraciones (){
     pthread_create(&hBloqIO, NULL, (void *) funcionhBloqIO, logger);
     pthread_create(&hExit, NULL, (void *) funcionhExit, logger);
 
-    pthread_create(&hExecReadyaBloqEmer, NULL, (void *) funcionhExecReadyaBloqEmer, logger);
-    pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
+    // pthread_create(&hExecReadyaBloqEmer, NULL, (void *) funcionhExecReadyaBloqEmer, logger);
+    // pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
 
     pthread_detach(hNewaReady);
     pthread_detach(hReadyaExec);
@@ -92,8 +95,8 @@ void setearConfiguraciones (){
     pthread_detach(hExecaExit);
     pthread_detach(hBloqIO);
     pthread_detach(hExit);
-    pthread_detach(hExecReadyaBloqEmer);
-    pthread_detach(hBloqEmeraReady);
+    // pthread_detach(hExecReadyaBloqEmer);
+    // pthread_detach(hBloqEmeraReady);
 
     char* bufferAEnviar = string_new();
     string_append(&bufferAEnviar, "Comienza Discordiador");

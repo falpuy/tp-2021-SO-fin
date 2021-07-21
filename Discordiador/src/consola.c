@@ -20,7 +20,7 @@ void funcionConsola(){
                 	free(parametros[0]); 
                 	free(parametros);
                     
-                    sem_post(&semNR); //Le avisa a New->Ready q es su turno
+                    pthread_cond_signal(&semNR); //Le avisa a New->Ready q es su turno
                     break;
 
                 case C_PAUSAR_PLANIFICACION: 
@@ -350,7 +350,9 @@ tcb* obtener_tcb_en_listaPCB(t_list* self) {
 
 void liberarMemoria(){
 
+    pthread_mutex_lock(&mutexValidador);
     validador = 0;
+    pthread_mutex_unlock(&mutexValidador);
 
     queue_destroy_and_destroy_elements(cola_new, destruirTCB);
     queue_destroy_and_destroy_elements(ready, destruirTCB);
@@ -378,7 +380,7 @@ void liberarMemoria(){
     pthread_mutex_destroy(&mutexCiclosTranscurridosSabotaje);
     pthread_mutex_destroy(&mutex_cantidadTCB);
     
-    sem_destroy(&semNR);
+    // sem_destroy(&semNR);
     sem_destroy(&semRE);
     sem_destroy(&semER);
     sem_destroy(&semBLOCKIO);

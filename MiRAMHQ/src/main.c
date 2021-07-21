@@ -192,14 +192,14 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                 _send_message(fd, "RAM", ERROR_CANTIDAD_TRIPULANTES , respuesta, string_length(respuesta), logger);
             } else {
 
-             		size_a_guardar = sizeof(pcb_t) + (tamStrTareas - 1) + cantTripulantes * 21;
+             		size_a_guardar = sizeof(pcb_t) + tamStrTareas + cantTripulantes * 21;
                 log_info(logger,"Size total a guardar en memoria: %d", size_a_guardar);
             
                 if (check_space_memory(admin, mem_size, size_a_guardar, table_collection)) {
                   // creo tabla de segmentos
                   t_queue *segmentTable = queue_create();
                   // crear segmento para tareas
-                  segment_size = tamStrTareas - 1;
+                  segment_size = tamStrTareas;
                   found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
                   
                   if(found_segment < 0) {
@@ -216,7 +216,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                 
                   tareas -> nroSegmento = get_last_index (segmentTable) + 1;
                   tareas -> baseAddr = found_segment;
-                  tareas -> limit = found_segment + tamStrTareas - 1;
+                  tareas -> limit = found_segment + tamStrTareas;
                   tareas -> id = idPCB;
                   tareas -> type = TASK;
                   

@@ -1,0 +1,106 @@
+[INFO] 16:35:34:062 IMS/(7017:7017): Validando Existencia de directorios...
+[INFO] 16:35:34:206 IMS/(7017:7017): Ya existe directorio
+[INFO] 16:35:34:209 IMS/(7017:7017): -----------------------------------------------------
+[INFO] 16:35:34:210 IMS/(7017:7017): Validando existencia de Superbloque.ims....
+[INFO] 16:35:34:210 IMS/(7017:7017): -----------------------------------------------------
+[INFO] 16:35:34:212 IMS/(7017:7017): Se encontró el archivo superBloque.ims
+[INFO] 16:35:34:217 IMS/(7017:7017): Muestro mis valores del bitmap..
+[INFO] 16:35:34:467 IMS/(7017:7017): -----------------------------------------------------
+[INFO] 16:35:34:469 IMS/(7017:7017): Se muestra los datos del superBloque.
+[INFO] 16:35:34:469 IMS/(7017:7017): Tamaño de bloque: 32
+[INFO] 16:35:34:470 IMS/(7017:7017): Cantidad de bloques: 16384
+[INFO] 16:35:34:479 IMS/(7017:7017): -----------------------------------------------------
+[INFO] 16:35:34:482 IMS/(7017:7017): Validando existencia de Blocks.ims....
+[INFO] 16:35:34:487 IMS/(7017:7017): -----------------------------------------------------
+[INFO] 16:35:34:487 IMS/(7017:7017): Existe archivo Blocks.ims.
+[INFO] 16:35:34:498 IMS/(7017:7017): -----------------------------------------------------
+[INFO] 16:35:34:500 IMS/(7017:7017): -----------------------------------------------------
+[INFO] 16:35:34:500 IMS/(7017:7017): N° Proceso es:7017
+[INFO] 16:35:34:510 IMS/(7017:7017): -----------------------------------------------------
+[INFO] 16:35:34:518 IMS/(7017:7017): Creando servidor......
+[INFO] 16:35:35:824 IMS/(7017:7017): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 16:35:35:836 IMS/(7017:7017): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 16:35:47:687 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:35:47:689 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:35:47:711 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:35:47:717 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:35:47:740 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:35:59:743 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:35:59:744 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:35:59:755 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:35:59:762 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:35:59:796 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:36:11:798 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:36:11:800 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:36:11:811 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:36:11:818 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:36:11:848 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:36:23:852 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:36:23:854 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:36:23:870 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:36:23:873 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:36:23:907 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:36:35:910 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:36:35:911 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:36:35:922 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:36:35:928 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:36:35:960 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:36:47:962 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:36:47:964 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:36:47:979 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:36:47:982 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:36:48:021 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:37:00:026 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:37:00:031 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:37:00:047 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:37:00:051 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:37:00:083 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:37:12:085 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:37:12:087 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:37:12:102 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:37:12:104 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:37:12:130 IMS/(7017:7018): -----------------------------------------------------
+[ERROR] 16:37:14:289 IMS/(7017:7017): [Shared Library]: Error al enviar mensaje. (╯°□°）╯︵ ┻━┻
+[INFO] 16:37:24:132 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:37:24:133 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:37:24:150 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:37:24:155 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:37:24:195 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:37:36:199 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:37:36:201 IMS/(7017:7018): Comienza actualización de Blocks.ims...
+[INFO] 16:37:36:212 IMS/(7017:7018): Se actualizo Blocks.ims
+[INFO] 16:37:36:221 IMS/(7017:7018): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:37:36:259 IMS/(7017:7018): -----------------------------------------------------
+[INFO] 16:38:43:757 IMS/(7066:7066): Validando Existencia de directorios...
+[INFO] 16:38:43:865 IMS/(7066:7066): No existe directorio: Filesystem. Se crea.
+[INFO] 16:38:43:877 IMS/(7066:7066): -----------------------------------------------------
+[INFO] 16:38:43:878 IMS/(7066:7066): Validando existencia de Superbloque.ims....
+[INFO] 16:38:43:879 IMS/(7066:7066): -----------------------------------------------------
+[ERROR] 16:38:43:882 IMS/(7066:7066): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 16:38:43:883 IMS/(7066:7066): Ingresar el tamaño de cada bloque
+[INFO] 16:38:59:630 IMS/(7066:7066): Ingresar la cantidad de bloques
+[INFO] 16:39:02:331 IMS/(7066:7066): Muestro mis valores del bitmap..
+[INFO] 16:39:02:374 IMS/(7066:7066): -----------------------------------------------------
+[INFO] 16:39:02:387 IMS/(7066:7066): Se creó archivo superBloque.ims
+[INFO] 16:39:02:389 IMS/(7066:7066): -----------------------------------------------------
+[INFO] 16:39:02:395 IMS/(7066:7066): Validando existencia de Blocks.ims....
+[ERROR] 16:39:02:399 IMS/(7066:7066): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 16:39:02:419 IMS/(7066:7066): -----------------------------------------------------
+[INFO] 16:39:02:421 IMS/(7066:7066): Se creó archivo Blocks.ims
+[INFO] 16:39:02:423 IMS/(7066:7066): -----------------------------------------------------
+[INFO] 16:39:02:427 IMS/(7066:7066): -----------------------------------------------------
+[INFO] 16:39:02:430 IMS/(7066:7066): N° Proceso es:7066
+[INFO] 16:39:02:431 IMS/(7066:7066): -----------------------------------------------------
+[INFO] 16:39:02:460 IMS/(7066:7066): Creando servidor......
+[INFO] 16:39:03:627 IMS/(7066:7066): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 16:39:03:633 IMS/(7066:7066): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 16:39:15:566 IMS/(7066:7070): -----------------------------------------------------
+[INFO] 16:39:15:569 IMS/(7066:7070): Comienza actualización de Blocks.ims...
+[INFO] 16:39:15:586 IMS/(7066:7070): Se actualizo Blocks.ims
+[INFO] 16:39:15:592 IMS/(7066:7070): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:39:15:608 IMS/(7066:7070): -----------------------------------------------------
+[INFO] 16:39:27:615 IMS/(7066:7070): -----------------------------------------------------
+[INFO] 16:39:27:617 IMS/(7066:7070): Comienza actualización de Blocks.ims...
+[INFO] 16:39:27:620 IMS/(7066:7070): Se actualizo Blocks.ims
+[INFO] 16:39:27:621 IMS/(7066:7070): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 16:39:27:623 IMS/(7066:7070): -----------------------------------------------------

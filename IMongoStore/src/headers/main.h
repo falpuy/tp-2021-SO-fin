@@ -18,7 +18,7 @@
     
 
     #define CONFIG_PATH "ims.config"
-    #define LOG_PATH "../logs/logIMongoStore.log"
+    #define LOG_PATH "logIMongoStore.log"
     #define PROGRAM "IMS"
 
     void setearConfiguraciones();

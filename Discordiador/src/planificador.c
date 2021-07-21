@@ -345,9 +345,18 @@ void funcionCambioExecExit(void* nodo, int posicion){
         log_info(logger,"Tripulante: %d encontrado en Exec. Moviéndolo a Exit...", tcbAMover->tid);
         log_info(logger,"----------------------------------");
 
-        pthread_mutex_lock(&mutexExit);
-        queue_push(cola_exit, (void*)tcbAMover);
-        pthread_mutex_unlock(&mutexExit);
+        pthread_mutex_lock(&mutexBuffer);
+        buffer = _serialize(2*sizeof(int), "%d%d", tcbAMover -> pid, tcbAMover -> tid);
+        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, 2*sizeof(int), logger);
+        free(buffer);
+        t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
+        pthread_mutex_unlock(&mutexBuffer);
+
+        if (mensajeRecibido -> command == 200) {
+            pthread_mutex_lock(&mutexExit);
+            queue_push(cola_exit, (void*)tcbAMover);
+            pthread_mutex_unlock(&mutexExit);
+        }
     }
 }
 

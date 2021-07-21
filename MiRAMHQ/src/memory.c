@@ -1306,12 +1306,15 @@ int get_segment_limit(t_dictionary* self, int start) {
 }
 
 void destroyer(void *item) {
-    free(item);
+    segment *temp = (segment *) item;
+    free(temp);
 }
 
 void table_destroyer(void *item) {
 
-    queue_destroy_and_destroy_elements(item, destroyer);
+    t_queue *table = (t_queue *) item;
+
+    queue_destroy_and_destroy_elements(table, destroyer);
 
 }
 
@@ -1620,13 +1623,13 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     if (start_address >= limit_address) {
         return NULL;
     }
-    log_info(logger, "Limit address:%d", limit_address);
+    // log_info(logger, "Limit address:%d", limit_address);
 
     void *tareas = malloc(limit_address - start_address + 1);
     memcpy(tareas, memory + start_address, limit_address - start_address);
     memset(tareas + (limit_address-start_address), '\0', 1);
 
-    printf("Lista: %s\n",(char*) tareas);
+    // printf("Lista: %s\n",(char*) tareas);
 
     int cantidadLetrasLeidas = 0;
     
@@ -1635,7 +1638,7 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     // Get one byte of the memory as a CHAR
     // char test_c = get_char_value(tareas, counter);
     int offset = 0;
-    while (memcmp(tareas + offset, ";", 1) && tareas + offset != NULL && cantidadLetrasLeidas < limit_address ) {
+    while (memcmp(tareas + offset, ";", 1) && tareas + offset != NULL && cantidadLetrasLeidas + start_address < limit_address ) {
         // printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
         
         if(get_char_value(tareas,offset) != '\n'){
@@ -1644,14 +1647,14 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
 
         offset++;
     }
-    log_info(logger, "Cantidad letras hasta primer ;%d",cantidadLetrasLeidas);
+    // log_info(logger, "Cantidad letras hasta primer ;%d",cantidadLetrasLeidas);
 
-    while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) && cantidadLetrasLeidas < limit_address){
-        printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
+    while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) && cantidadLetrasLeidas + start_address < limit_address){
+        // printf("CHAR: %c - %d | %d\n", get_char_value(tareas, cantidadLetrasLeidas), cantidadLetrasLeidas + start_address, limit_address);
 
         cantidadLetrasLeidas++;
     }
-    log_info(logger, "Cantidad letras despues de segundo while: %d",cantidadLetrasLeidas);
+    // log_info(logger, "Cantidad letras despues de segundo while: %d",cantidadLetrasLeidas);
 
     void *recv_task = malloc(cantidadLetrasLeidas + 1);
     memcpy(recv_task, tareas, cantidadLetrasLeidas);
@@ -1712,11 +1715,12 @@ int save_tcb_in_memory(void *admin, void *memory, int mem_size, segment *segment
 }
 
 tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
-    tcb_t *temp = malloc(sizeof(tcb_t));
+    tcb_t *temp;
 
     int offset = 0;
 
     if (segmento -> limit < mem_size) {
+        temp = malloc(sizeof(tcb_t));
         memcpy(&(temp -> tid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(&(temp -> pid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
@@ -1969,11 +1973,11 @@ int get_page_number(t_dictionary *self, uint32_t frame) {
 
 }
  
-void save_in_file (void *element, void *memory, FILE *file) {
+void save_in_file (void *element, void *memory, FILE *file, char *key) {
     segment *segmento = element;
 
     char *line = string_new();
-    string_append_with_format(&line, "Proceso: %d\t\tSegmento: %d\t\tInicio: %p\t\tTam: %db\n", segmento -> id, segmento -> nroSegmento, (memory + segmento -> baseAddr), segmento -> limit - segmento -> baseAddr);
+    string_append_with_format(&line, "Proceso: %s\t\tSegmento: %d\t\tInicio: 0x%d\t\tTam: %db\n", key, segmento -> nroSegmento, segmento -> baseAddr, segmento -> limit - segmento -> baseAddr);
     
     txt_write_in_file(file, line);
 
@@ -1981,12 +1985,12 @@ void save_in_file (void *element, void *memory, FILE *file) {
 
 }
 
-void process_iterate(t_list *self, void(*closure)(), void *memory, FILE *file) {
+void process_iterate(t_list *self, void(*closure)(), void *memory, FILE *file, char *key) {
     t_link_element *element = self->head;
 	t_link_element *aux = NULL;
 	while (element != NULL) {
 		aux = element->next;
-		closure(element->data, memory, file);
+		closure(element->data, memory, file, key);
 		element = aux;
 	}
 }
@@ -2033,7 +2037,7 @@ void memory_dump(t_dictionary *self, void *memory) {
 
             aux = element -> data;
 
-            process_iterate(aux -> elements, save_in_file, memory, file);
+            process_iterate(aux -> elements, save_in_file, memory, file, element -> key);
 
 			element = next_element;
 		}

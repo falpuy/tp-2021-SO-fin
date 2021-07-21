@@ -1126,14 +1126,6 @@ void *memory_init(int size) {
 //     return recv_task;
 // }
 
-void admin_destroyer(void *item) {
-
-    admin_data * aux = (admin_data *) item;
-    free(aux -> tcb);
-    free(aux);
-
-}
-
 // void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key) {
 
     t_queue *self = dictionary_get(table_collection, key);
@@ -1164,6 +1156,14 @@ void admin_destroyer(void *item) {
 //     dictionary_put(table_collection, key, self);
 // }
  */
+
+void admin_destroyer(void *item) {
+
+    admin_data * aux = (admin_data *) item;
+    free(aux -> tcb);
+    free(aux);
+
+}
 
 // // --------------------- END PAGINATION ----------------------- //
 
@@ -1612,14 +1612,14 @@ void *find_pcb_segment(char *key, t_dictionary *table) {
 	return NULL;
 }
 
-/*char get_char_value(void *buffer, int index) {
+char get_char_value(void *buffer, int index) {
 
     char temp;
 
     memcpy(&temp, buffer + index, 1);
 
     return temp;
-}*/
+}
 
 void *get_next_task(void *memory, int start_address, int limit_address,t_log* logger) {
 
@@ -2026,7 +2026,7 @@ void remove_pcb_from_memory(void *memory, int mem_size, t_dictionary *table_coll
     txt_close_file(file);
 }*/
 
-void save_in_file (void *element, void *memory, FILE *file) {
+void save_in_file (void *element, void *memory, FILE *file, char *key) {
     segment *segmento = element;
 
     char *line = string_new();

@@ -49,7 +49,7 @@
 
     // --------------------- PAGINATION ----------------------- //
 
-    /*typedef struct {
+    typedef struct {
         uint32_t number;
         uint32_t start; //se podria sacar
         uint8_t modified;
@@ -74,8 +74,57 @@
     int global_clock_key = 0;
     int global_clock_index = 0;
 
-    int hasLRU = 1;*/
+    int hasLRU = 1;
 
+    char get_char_value(void *buffer, int index);
+
+    uint32_t get_next_page(t_queue *page_table, uint32_t index);
+
+    void *search_task(void *memory, uint32_t start_addr);
+
+    int check_free_frames(int frames_count);
+
+    bool lru_sorter(void *uno, void *dos);
+
+    void lru_replacer(void *item);
+
+    void lru_iterator(char *key, void *item);
+
+    frame_t *get_next_lru_frame();
+
+    void clock_replacer(void *item, int key_index, int frame_index);
+
+    void clock_iterator(char *key, void *item, int key_index, int frame_index);
+
+    frame_t *get_next_clock_frame();
+
+    uint32_t get_frame();
+
+    void set_bitmap(uint8_t *bitmap, int position);
+
+    void unset_bitmap(uint8_t *bitmap, int position);
+
+    void save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictionary* admin_collection, void *buffer);
+
+    int verificarCondicionDeMemoria(void* buffer);
+
+    void destroyer_pagination(void *item);
+
+    void table_destroyer_pagination(void *item);
+
+    int get_page_number(t_dictionary *self, uint32_t frame);
+
+    uint8_t frame_is_empty(void *temp, uint32_t start, uint32_t limit);  
+
+    void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb);
+
+    void update_position_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, int posx, int posy);
+
+    void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, char status);
+
+    void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb);
+
+    void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key);
 
 
     // --------------------- END PAGINATION ----------------------- //

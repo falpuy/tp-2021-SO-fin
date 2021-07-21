@@ -542,7 +542,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
     int tamStrTareas;
     int idPCB;
     int offset;
-    char idPCBstr;  
+    char idPCBkey;  
     char *respuesta;
   
     int size_a_guardar;
@@ -640,8 +640,8 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           	log_info(logger,"Posicion en X: %d", posX);
             log_info(logger,"Posicion en Y: %d", posY);
             //----------------------------------------------------
-            idPCBstr = itoa(idPCB);
-            update_position_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB, posX, posY);
+            idPCBkey = itoa(idPCB);
+            update_position_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB, posX, posY);
 					
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
@@ -680,8 +680,8 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             paginaTareasStart->start = numPag * page_size;
 
             //ahora necesito buscar el tamaño del string de tareas, para luego poder buscar el tcb en las paginas
-            idPCBstr = itoa(idPCB);
-            char* tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB);
+            idPCBkey = itoa(idPCB);
+            char* tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
 
 						respuesta = string_new();
             string_append(&respuesta, "Respuesta");
@@ -714,12 +714,12 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
 
             //eliminar_tripulante_mapa();
 
-            idPCBstr = itoa(idPCB);
+            idPCBkey = itoa(idPCB);
 
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
 
-            remove_tcb_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB);
+            remove_tcb_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
             _send_message(fd, "RAM", SUCCESS,respuesta, string_length(respuesta), logger);
             
             free(respuesta);

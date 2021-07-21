@@ -8,7 +8,7 @@ void *memory_init(int size) {
 
 // ----------------------- PAGINATION ------------------------- //
 
-/*char get_char_value(void *buffer, int index) {
+char get_char_value(void *buffer, int index) {
 
     char temp;
 
@@ -93,9 +93,6 @@ void *search_task(void *memory, uint32_t start_addr) {
     }
     // printf("\nLast Index: %d\n", counter);
 }
-
-
-// pagi
 
 int check_free_frames(int frames_count) {
     int counter = 0;
@@ -458,14 +455,6 @@ void destroyer_pagination(void *item) {
 void table_destroyer_pagination(void *item) {
 
     queue_destroy_and_destroy_elements(item, destroyer_pagination);
-
-}
-
-void admin_destroyer(void *item) {
-
-    admin_data * aux = (admin_data *) item;
-    free(aux -> tcb);
-    free(aux);
 
 }
 
@@ -1169,7 +1158,7 @@ void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
     }
 
     dictionary_put(table_collection, key, self);
-}*/
+}
 
 
 // --------------------- END PAGINATION ----------------------- //

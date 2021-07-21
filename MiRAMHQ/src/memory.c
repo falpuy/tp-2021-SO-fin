@@ -8,7 +8,7 @@ void *memory_init(int size) {
 
 // ----------------------- PAGINATION ------------------------- //
 
-char get_char_value(void *buffer, int index) {
+/*char get_char_value(void *buffer, int index) {
 
     char temp;
 
@@ -1169,7 +1169,7 @@ void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
     }
 
     dictionary_put(table_collection, key, self);
-}
+}*/
 
 
 // --------------------- END PAGINATION ----------------------- //

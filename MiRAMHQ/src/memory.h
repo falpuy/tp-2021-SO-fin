@@ -49,7 +49,7 @@
 
     // --------------------- PAGINATION ----------------------- //
 
-    typedef struct {
+    /*typedef struct {
         uint32_t number;
         uint32_t start; //se podria sacar
         uint8_t modified;
@@ -74,9 +74,9 @@
     int global_clock_key = 0;
     int global_clock_index = 0;
 
-    int hasLRU = 1;
+    int hasLRU = 1;*/
 
-    
+
 
     // --------------------- END PAGINATION ----------------------- //
 

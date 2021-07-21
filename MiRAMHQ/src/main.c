@@ -3,7 +3,12 @@
 int main() {
 
     // Inicializando
-   
+
+    isBestFit = 0;
+    global_clock_key = 0;
+    global_clock_index = 0;
+    hasLRU = 1;
+
     config = config_create(CONFIG_PATH);
     logger = log_create(ARCHIVO_LOG, PROGRAM, 1, LOG_LEVEL_TRACE);
    
@@ -79,11 +84,15 @@ void signal_handler(int sig_number) {
 
         bitarray_destroy(virtual_bitmap);
 
+        dictionary_destroy_and_destroy_elements(table_collection, table_destroyer_pagination);
+
+      }
+      else {
+        dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
       }
 
       free(memory);
       free(admin);
-      dictionary_destroy_and_destroy_elements(table_collection, table_destroyer_pagination);
       dictionary_destroy_and_destroy_elements(admin_collection, admin_destroyer);
 
       // Eliminar Archivo Swap????
@@ -541,11 +550,10 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
     int cantTripulantes;
     int tamStrTareas;
     int idPCB;
-    int offset;
-    char idPCBkey;  
+    int idTCB, posX, posY;
+    int offset = 0;
+    char* idPCBkey;  
     char *respuesta;
-  
-    int size_a_guardar;
 
     // TODO: COMANDO UPDATE STATUS
   
@@ -589,9 +597,9 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             } else {
               // guardo en memoria, primero se chequea si hay espacio o no
               int hayEspacio = 0;
-              int temporal_memory_size = sizeof(pcb) + tamStrTareas + cantTripulantes * sizeof(tcb);
+              //int temporal_memory_size = sizeof(pcb) + tamStrTareas + cantTripulantes * sizeof(tcb);
 
-              double val = memory_size / page_size;
+              double val = mem_size / page_size;
               int frames_count = ceil(val);
               hayEspacio = verificarCondicionDeMemoria(frames_count);
 
@@ -640,7 +648,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           	log_info(logger,"Posicion en X: %d", posX);
             log_info(logger,"Posicion en Y: %d", posY);
             //----------------------------------------------------
-            idPCBkey = itoa(idPCB);
+            idPCBkey = string_itoa(idPCB);
             update_position_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB, posX, posY);
 					
             respuesta = string_new();
@@ -654,10 +662,9 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
 						//TO DO: actualizar_mapa(nuestroTCB);
             log_info(logger,"-----------------------------------------------------");
             free(respuesta);					
-            free(nuestroTCB);
             break;
 
-        case ENVIAR_PROXIMA_TAREA://idpcb, idtcb
+        case ENVIAR_TAREA://idpcb, idtcb
 						
             log_info(logger,"-----------------------------------------------------");
 						log_info(logger,"Llegó operación: ENVIAR_PROXIMA_TAREA");
@@ -668,19 +675,8 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             log_info(logger,"ID PCB:%d", idPCB);
 						log_info(logger,"ID TCB:%d", idTCB);
             //-----------------------------------------------------------
-            //me traigo la tabla de paginas del pcb asociado
-            t_queue* tabla = dictionary_get(diccionario, idPCB);
-            //con la tabla de paginas puedo buscar exactamente lo que quiero
-            //primero, necesito buscar la pagina donde comienzan las tareas
             
-            double numPagTareas = sizeof(pcb) / page_size;
-            double numPag, resto;
-            resto = modf(numPagTareas, &numPag);
-            page_t paginaTareasStart = malloc(sizeof(page_t));
-            paginaTareasStart->start = numPag * page_size;
-
-            //ahora necesito buscar el tamaño del string de tareas, para luego poder buscar el tcb en las paginas
-            idPCBkey = itoa(idPCB);
+            idPCBkey = string_itoa(idPCB);
             char* tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
 
 						respuesta = string_new();
@@ -693,9 +689,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
               	
             free(buffer_a_enviar);
             free(tarea);
-
-            }
-						free(respuesta);
+            free(respuesta);
 						log_info(logger,"-----------------------------------------------------");
             break;
 
@@ -714,7 +708,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
 
             //eliminar_tripulante_mapa();
 
-            idPCBkey = itoa(idPCB);
+            idPCBkey = string_itoa(idPCB);
 
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
@@ -726,7 +720,6 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             
             log_info(logger,"-----------------------------------------------------");
 
-            }
 
         break;
 
@@ -742,18 +735,12 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
 
 // --------------------- END HANDLER ----------------------- //
 
-void admin_destroyer(void *item) {
-
-    admin_data * aux = (admin_data *) item;
-    free(aux -> tcb);
-    free(aux);
-
-}
-
 // ------------------ SETUP PAGINATION --------------------- //
 
-void setup_pagination(void *memory, char *path, int page_size, int real_size, int v_size, t_log *logger) {
+void setup_pagination(void *memory, char *path, int tam_pag, int real_size, int v_size, t_log *logger) {
 
+    page_size = tam_pag;
+    
     frames_memory = real_size / page_size;
 
     // printf("Cant: %d", frames_memory);

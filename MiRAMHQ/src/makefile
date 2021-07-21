@@ -20,7 +20,7 @@ SRCEXT := c
 CFLAGS := -g -Wall
 
 # Librerias utilizadas en la compilacion
-LIB := -lcommons -lreadline -pthread -lunnamed -lnivel-gui -lncurses
+LIB := -lcommons -lreadline -pthread -lunnamed -lnivel-gui -lncurses -lm
 
 # make o make all : Compila todos los archivos y ejecuta la aplicacion
 all: build run

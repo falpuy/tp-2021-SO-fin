@@ -26,6 +26,7 @@
     #include <sys/types.h>
     #include <dirent.h>
     #include <unnamed/socket.h>
+    #include <commons/config.h>
 
     typedef struct {
         uint32_t pid;
@@ -40,6 +41,34 @@
         uint32_t ypos;
         uint32_t next;
     } tcb_t;
+
+    int timer;
+
+    t_dictionary *table_collection;
+    t_dictionary *admin_collection;
+
+    typedef struct {
+        uint32_t start;
+        uint32_t cantidad;
+        uint8_t *tcb;
+    } admin_data;
+
+    char *esquema;
+    int isBestFit;
+
+    t_log *logger;
+    t_config * config;
+
+    void *admin;
+
+    void *memory;
+    int mem_size;
+    int page_size;
+
+    void *virtual_memory;
+    int virtual_size;
+    t_bitarray *virtual_bitmap;
+    int frames_virtual;
 
     // Asigna espacio a memoria y setea el global 'mem_size' con el tamanio de memoria asignado
     void *memory_init(int size);
@@ -71,10 +100,14 @@
     page_t *global_clock_page;
 
     int clock_flag;
-    int global_clock_key = 0;
-    int global_clock_index = 0;
+    int global_clock_key;
+    int global_clock_index;
 
-    int hasLRU = 1;
+    int hasLRU;
+
+    uint32_t global_index;
+    uint32_t global_segment;
+    uint32_t global_type;
 
     char get_char_value(void *buffer, int index);
 
@@ -106,9 +139,11 @@
 
     void save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictionary* admin_collection, void *buffer);
 
-    int verificarCondicionDeMemoria(void* buffer);
+    int verificarCondicionDeMemoria(int frame_count);
 
     void destroyer_pagination(void *item);
+
+    void admin_destroyer(void *item);
 
     void table_destroyer_pagination(void *item);
 

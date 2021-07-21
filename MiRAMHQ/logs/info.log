@@ -5790,3 +5790,8 @@
 [INFO] 14:32:24:303 RAM/(23478:23937): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 14:32:24:305 RAM/(23478:23937): -----------------------------------------------------
 [INFO] 14:32:27:865 RAM/(23478:23937): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 16:35:40:533 RAM/(25834:25834): Mi RAM HQ ejecutando correctamente.. PID: 25834
+[INFO] 16:35:40:533 RAM/(25834:25834): Esquema utilizado: SEGMENTACION
+[INFO] 16:35:40:534 RAM/(25834:25834): Tamanio de la memoria: 2048
+[INFO] 16:35:40:534 RAM/(25834:25834): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:35:40:534 RAM/(25834:25834): [Shared Library]: Esperando conexiones en puerto: 5001

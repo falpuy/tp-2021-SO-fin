@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
-#include <commons/config.h>
+
 #include <commons/log.h>
 #include <commons/process.h>
 #include <unnamed/server.h>
@@ -26,36 +26,6 @@ char *KEYS[] = {
     "CRITERIO_SELECCION",
     "PUERTO"
 };
-
-int timer;
-
-t_dictionary *table_collection;
-t_dictionary *admin_collection;
-
-typedef struct {
-    uint32_t start;
-    uint32_t cantidad;
-    uint8_t *tcb;
-} admin_data;
-
-char *esquema;
-int isBestFit = 0;
-
-t_log *logger;
-t_config * config;
-
-void *admin;
-
-void *memory;
-int mem_size;
-int page_size;
-
-void *virtual_memory;
-int virtual_size;
-
-t_bitarray *virtual_bitmap;
-
-int frames_virtual;
 
 void signal_handler(int sig_number);
 

@@ -1,16 +1,23 @@
-#ifndef DISCORD_LIB
-#define DISCORD_LIB
+#ifndef MAIN_DISCORDIADOR_H
+#define MAIN_DISCORDIADOR_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <commons/config.h>
-#include <commons/log.h>
+    #include<stdio.h>
+    #include<stdlib.h>
+    #include<ctype.h>
+    #include<pthread.h>
+    #include<commons/log.h>
+    #include<commons/string.h>
+    #include<commons/config.h>
+    #include<readline/readline.h>
+    #include<sys/socket.h>
+    #include <unnamed/server.h>
+    #include <signal.h>
 
-#define CONFIG_PATH "./src/settings.config"
-#define PROGRAM "DIS" // Se utiliza para el protocolo
+    #include"consola.h"
 
-t_log *logger;
-t_config * config;
+    void setearConfiguraciones ();
+    void servidor();
+    
 
-#endif
+
+#endif 

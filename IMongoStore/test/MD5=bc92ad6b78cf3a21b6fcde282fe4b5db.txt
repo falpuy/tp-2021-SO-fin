@@ -1,0 +1,25 @@
+MD5=bc92ad6b78cf3a21b6fcde282fe4b5db
+BLOCKS=[11,12,13,24,25]
+SIZE=20
+CARACTER_LLENADO=O
+BLOCK_COUNT=5
+
+
+COMIENZA_EJECUCION_TAREA GENERAR_OXIGENO|COMOOOOOOOOOOOOIENZA_EJECUCION_TAREA GENERAR_OXIGENO|  OOOOOOOO                                                                                                                                                        |
+
+
+elimino 7 0
+Como deberia estar
+COMIENZA_EJECUCION_TAREA GENERAR_OXIGENO|COMOOOOOOOOOOOOIENZA_EJECUCION_TAREA GENERAR_OXIGENO|  O|OOOOOOO                                                                                                                                                        |
+
+ME FALTA ELIMINAR UN 3 (FRAGMENTACION) 
+Como esta ahora:
+COMIENZA_EJECUCION_TAREA GENERAR_OXIGENO|COMOOOOOOOOOOOOIENZA_EJECUCION_TAREA GENERAR_OXIGENO|COOOOO    MIENZA_EJECUCION_TAREA CONSUMIR_OXIGENO|                                                                                                                |
+
+MD5=6d347a3722d73fe189ea258c618e5e08
+BLOCKS=[11,12,13,24]
+SIZE=13
+CARACTER_LLENADO=O
+BLOCK_COUNT=4
+
+

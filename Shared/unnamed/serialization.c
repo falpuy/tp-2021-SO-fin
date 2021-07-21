@@ -28,7 +28,6 @@ void *_serialize(int size, char *format, ...) {
 
     int arg_c = 0;
 
-    // Cuento la cantidad de argumentos
     for (int n = 0; format[n]; n++) {
         if (format[n] == '%') arg_c++;
     }

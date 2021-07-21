@@ -12,7 +12,7 @@ SRCEXT := c
 
 # Recorro todos los directorios dentro de 'src' para obtener
 # todos los archivos .c
-SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
+# ------- SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 
 # Flags para compilar
 # -g : Genera informacion util para debuggear
@@ -20,7 +20,7 @@ SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 CFLAGS := -g -Wall
 
 # Librerias utilizadas en la compilacion
-LIB := -lcommons -lreadline -pthread -lunnamed
+LIB := -lcommons -lreadline -pthread -lunnamed -lm
 
 # make o make all : Compila todos los archivos y ejecuta la aplicacion
 all: build run
@@ -31,7 +31,7 @@ clean:
 
 # make build : Compila todos los archivos .c y genera un ejecutable
 build:
-	$(CC) -o $(TARGET) $(CFLAGS) $(SOURCES) $(LIB)
+	$(CC) -o $(TARGET) ./*.$(SRCEXT) $(CFLAGS) $(LIB)
 
 # make run : Ejecuta la aplicacion
 run:
@@ -39,4 +39,7 @@ run:
 
 # make test : Ejecuta la aplicacion utilizando Valgrind
 test:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./main
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=valgrind-out.txt --verbose ./main
+# make helgrind: Ejecuta helgrind
+helgrind:
+	valgrind --tool=helgrind --log-file=helgrind.txt --verbose ./main

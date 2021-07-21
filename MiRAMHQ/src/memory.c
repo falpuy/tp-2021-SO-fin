@@ -465,39 +465,52 @@ char get_char_value(void *buffer, int index) {
     return temp;
 }
 
-void *get_next_task(void *memory, int start_address, int limit_address) {
+void *get_next_task(void *memory, int start_address, int limit_address,t_log* logger) {
 
     // printf("Values - Start: %d - End: %d\n", start_address, limit_address);
     if (start_address >= limit_address) {
         return NULL;
     }
+    log_info(logger, "Limit address:%d", limit_address);
 
-    void *aux_tareas = malloc(limit_address - start_address + 1);
-    memcpy(aux_tareas, memory + start_address, limit_address - start_address);
-    memset(aux_tareas + limit_address, '\0', 1);
+    void *tareas = malloc(limit_address - start_address + 1);
+    memcpy(tareas, memory + start_address, limit_address - start_address);
+    memset(tareas + (limit_address-start_address), '\0', 1);
 
-    // printf("Lista: %s\n", aux_tareas);
+    printf("Lista: %s\n",(char*) tareas);
 
-    int counter = 0;
+    int cantidadLetrasLeidas = 0;
     
+    // TOMAR AIRE;2,2,T|HCONSUMIR OXIGENO P;3;3;T|HOLA
+
     // Get one byte of the memory as a CHAR
-    // char test_c = get_char_value(aux_tareas, counter);
+    // char test_c = get_char_value(tareas, counter);
+    int offset = 0;
+    while (memcmp(tareas + offset, ";", 1) && tareas + offset != NULL && cantidadLetrasLeidas < limit_address ) {
+        // printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
+        
+        if(get_char_value(tareas,offset) != '\n'){
+            cantidadLetrasLeidas++;
+        }
 
-    while (memcmp(aux_tareas + counter, ";", 1) && aux_tareas + counter != NULL && counter < limit_address) {
-        // printf("CHAR: %c\n", get_char_value(aux_tareas, counter));
-        counter++;
+        offset++;
     }
-    while (!isalpha(get_char_value(aux_tareas, counter)) && aux_tareas + counter != NULL && counter < limit_address){
-        // printf("CHAR: %c\n", get_char_value(aux_tareas, counter));
-        counter++;
+    log_info(logger, "Cantidad letras hasta primer ;%d",cantidadLetrasLeidas);
+
+    while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) && cantidadLetrasLeidas < limit_address){
+        printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
+
+        cantidadLetrasLeidas++;
     }
+    log_info(logger, "Cantidad letras despues de segundo while: %d",cantidadLetrasLeidas);
 
-    void *recv_task = malloc(counter + 1);
-    memcpy(recv_task, aux_tareas, counter);
-    memset(recv_task + counter, '\0', 1);
+    void *recv_task = malloc(cantidadLetrasLeidas + 1);
+    memcpy(recv_task, tareas, cantidadLetrasLeidas);
+    memset(recv_task + cantidadLetrasLeidas, '\0', 1);
 
-    free(aux_tareas);
-
+    free(tareas);
+    
+    
     return recv_task;
 }
 

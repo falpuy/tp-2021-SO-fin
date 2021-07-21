@@ -32,7 +32,6 @@ int main() {
     memory = malloc(mem_size);
     admin = malloc(mem_size);
     memset(admin, 0, mem_size);
-
     table_collection = dictionary_create();
     admin_collection = dictionary_create();
 
@@ -113,7 +112,7 @@ void signal_handler(int sig_number) {
 }
 
 
-// --------------------- HANDLER ----------------------- //
+// --------------------- SEGMENTATION HANDLER ----------------------- //
 
 void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
@@ -535,7 +534,6 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
 void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logger) {
 
-    /*
 
     log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 
@@ -543,11 +541,8 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
     int cantTripulantes;
     int tamStrTareas;
     int idPCB;
-        
-    int segment_size;
-    int found_segment;
-    int offset = 0;	
-
+    int offset;
+    char idPCBstr;  
     char *respuesta;
   
     int size_a_guardar;
@@ -556,9 +551,10 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
   
     switch (opcode){
 
-        case RECIBIR_ESTADO_TRIPULANTE:
-        break;
+        /*case RECIBIR_ESTADO_TRIPULANTE:
+        break;*/
 
+        
         case INICIAR_PATOTA: // idPCB - tareas - cantTCB - IDTCB.... (N id)
 
         		log_info(logger,"-----------------------------------------------------");
@@ -571,11 +567,11 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
         		memcpy(&tamStrTareas, buffer + offset, sizeof(int));
             offset += sizeof(int);
             data_tareas = malloc(tamStrTareas + 1);
-        
+
         		memcpy(data_tareas, buffer + offset, tamStrTareas);
         		offset += tamStrTareas;
             data_tareas[tamStrTareas]='\0';
-        
+                    
         		memcpy(&cantTripulantes, buffer + offset, sizeof(int));
         		offset += sizeof(int);
                    
@@ -591,105 +587,28 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
               	log_error(logger, "Error: La cantidad de tripulantes es nula o no existente");
                 _send_message(fd, "RAM", ERROR_CANTIDAD_TRIPULANTES , respuesta, string_length(respuesta), logger);
             } else {
-             		size_a_guardar = sizeof(pcb_t) + tamStrTareas + cantTripulantes * sizeof(tcb_t);
-            
-                if (check_space_memory(memory, mem_size, size_a_guardar, table_collection)) {
-                  // creo tabla de segmentos
-                  t_queue *segmentTable = queue_create();
-                  // crear segmento para tareas
-                  segment_size = tamStrTareas;
-                  found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
-                  
-                  if(found_segment < 0) {
-                      memory_compaction(memory, mem_size, table_collection);
-                      found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
-                  }
-              
-                  pcb_t *temp = malloc(sizeof(pcb_t));
-                  temp -> pid = idPCB;
-                  temp -> tasks = found_segment;
-                  
-                  // guardo tareas
-                  segment *tareas = malloc(sizeof(segment));
-                
-                  tareas -> nroSegmento = get_last_index (segmentTable) + 1;
-                  tareas -> baseAddr = found_segment;
-                  tareas -> limit = found_segment + tamStrTareas;
-                  tareas -> id = idPCB;
-                  tareas -> type = TASK;
-                  
-                  save_task_in_memory(memory, mem_size, tareas, data_tareas);
+              // guardo en memoria, primero se chequea si hay espacio o no
+              int hayEspacio = 0;
+              int temporal_memory_size = sizeof(pcb) + tamStrTareas + cantTripulantes * sizeof(tcb);
 
-                  // creo segmento pcb
-                  segment *segmento_pcb = malloc(sizeof(segment));
-                
-                  segment_size = sizeof(pcb_t);
-                  found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
-              
-                  if(found_segment < 0) {
-                      memory_compaction(memory, mem_size, table_collection);
-                      found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
-                  }
-                
-                  segmento_pcb -> nroSegmento = get_last_index (segmentTable) + 1;
-                  segmento_pcb -> baseAddr = found_segment;
-                  segmento_pcb -> limit = found_segment + sizeof(pcb_t);
-                  segmento_pcb -> id = idPCB;
-                  segmento_pcb -> type = PCB;
-                  
-                  save_task_in_memory(memory, mem_size, tareas, data_tareas);
-                
-                  // guardo los segmentos
-                  queue_push(segmentTable, segmento_pcb);
-                  queue_push(segmentTable, tareas);
-                
-                  // guardo los tcbs
-                  for(int i = 0; i < cantTripulantes; i++) {
-                  
-                    tcb_t *aux = malloc(sizeof(tcb_t));
-                    
-                    memcpy(&aux -> tid, buffer + offset, sizeof(int));
-                    offset += sizeof(int);
-                    memcpy(&aux -> pid, buffer + offset, sizeof(int));
-                    offset += sizeof(int);
-                    memcpy(&aux -> status, buffer + offset, sizeof(char));
-                    offset += sizeof(char);
-                    memcpy(&aux -> xpos, buffer + offset, sizeof(int));
-                    offset += sizeof(int);
-                    memcpy(&aux -> ypos, buffer + offset, sizeof(int));
-                    offset += sizeof(int);
-                    
-                    aux -> next = temp -> tasks;
-                    
-                    segment_size = sizeof(tcb_t);
-                    found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
-                    
-                    if(found_segment < 0) {
-                        memory_compaction(memory, mem_size, table_collection);
-                        found_segment = isBestFit ? memory_best_fit(memory, mem_size, table_collection, segment_size) : memory_seek(memory, mem_size, segment_size, table_collection);
-                    }
-                    
-                    segment *segmento_tcb = malloc(sizeof(segment));
-                    segmento_tcb -> id = aux -> tid;
-                    segmento_tcb -> type = TCB;
-                    segmento_tcb -> nroSegmento = get_last_index (segmentTable) + 1;
-                    segmento_tcb -> baseAddr = found_segment;
-                    segmento_tcb -> limit = found_segment + sizeof(tcb_t);
-                    
-                    queue_push(segmentTable, segmento_tcb);
-                  }
+              double val = memory_size / page_size;
+              int frames_count = ceil(val);
+              hayEspacio = verificarCondicionDeMemoria(frames_count);
 
-                  free(temp); 
-                
-                  // guardo la tabla en el diccionario
-                  dictionary_put(table_collection, string_itoa(temp -> pid), segmentTable);
-                
-                  log_info(logger, "Se guardaron exitosamente los datos de la patota"); 
-                  _send_message(fd, "RAM", SUCCESS ,respuesta, string_length(respuesta), logger);
-                
-              } else {
-                  log_error(logger, "No hay mas espacio en memoria");
-                  _send_message(fd, "RAM", ERROR_POR_FALTA_DE_MEMORIA ,respuesta, string_length(respuesta), logger);
+              log_info(logger, "--------------------------------------");
+              if(hayEspacio > 0){
+                save_data_in_memory(memory, table_collection, admin_collection, buffer);
+                log_info(logger, "Se pudo guardar correctamente en memoria, enviando respuesta a Discordiador\n");
+                _send_message(fd, "RAM", SUCCESS, respuesta, string_length(respuesta), logger);
+              }else{
+                if(hayEspacio < 0){
+                  log_info(logger, "No habia memoria, enviamos mensaje a Discordiador\n");
+                  _send_message(fd, "RAM", ERROR_POR_FALTA_DE_MEMORIA, respuesta, string_length(respuesta), logger);
+                }
+                else{
+                  log_info(logger, "Ocurrio un error inesperado al tratar de chequear el estado de memoria\n");
+                  _send_message(fd, "RAM", ERROR_POR_FALTA_DE_MEMORIA, respuesta, string_length(respuesta), logger);
+                }
               }
       
             }
@@ -701,7 +620,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
                 
         
 
-        case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y
+        case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y 
           	log_info(logger,"-----------------------------------------------------");
             log_info(logger,"Llegó la operación: RECIBIR_UBICACION_TRIPULANTE");
             //------------Deserializo parámetros-------------------
@@ -721,26 +640,16 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           	log_info(logger,"Posicion en X: %d", posX);
             log_info(logger,"Posicion en Y: %d", posY);
             //----------------------------------------------------
-						t_queue* segmento_pcb = dictionary_get(diccionario, idPCB); 
-            segmento_tcb = get_tcb_by_id(segmento_pcb, idTCB);
-
-            nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
-
-            error = save_tcb_in_memory(&memory, mem_size, segmento_tcb, nuestroTCB);
+            idPCBstr = itoa(idPCB);
+            update_position_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB, posX, posY);
 					
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
             
-            if(error == -1){
-              	log_error(logger, "No se pudo guardar el TCB: %d", idTCB);
-                _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta, string_length(respuesta) , logger);
-            }
-            else{
-              	string_append(&respuesta, "OK");
-                _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
-								log_info(logger, "Se mando con éxito la ubicación del tripulante");
-
-            }
+            
+            _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
+						log_info(logger, "Se mando con éxito la ubicación del tripulante");
+            
 						
 						//TO DO: actualizar_mapa(nuestroTCB);
             log_info(logger,"-----------------------------------------------------");
@@ -759,32 +668,31 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             log_info(logger,"ID PCB:%d", idPCB);
 						log_info(logger,"ID TCB:%d", idTCB);
             //-----------------------------------------------------------
-            t_queue* segmentos = dictionary_get(diccionario, idPCB);
-            segmento_tcb = get_tcb_by_id(segmentos, idTCB);
-                
-            nuestroTCB = get_tcb_from_memory(segmento_tcb);
+            //me traigo la tabla de paginas del pcb asociado
+            t_queue* tabla = dictionary_get(diccionario, idPCB);
+            //con la tabla de paginas puedo buscar exactamente lo que quiero
+            //primero, necesito buscar la pagina donde comienzan las tareas
             
-            segment* segmento_tareas = get_tareas_by_idPCB(segmentos, idPCB);
+            double numPagTareas = sizeof(pcb) / page_size;
+            double numPag, resto;
+            resto = modf(numPagTareas, &numPag);
+            page_t paginaTareasStart = malloc(sizeof(page_t));
+            paginaTareasStart->start = numPag * page_size;
 
-            int limite = confirmar_limite_tarea(segmento_tarea, nuestroTCB->next);
+            //ahora necesito buscar el tamaño del string de tareas, para luego poder buscar el tcb en las paginas
+            idPCBstr = itoa(idPCB);
+            char* tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB);
 
 						respuesta = string_new();
             string_append(&respuesta, "Respuesta");
 
-            if(limite < 0){
-								log_info(logger, "No hay mas tareas que mandar");
-                _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, respuesta, string_length(respuesta), logger);
+            int tamTarea = string_length(tarea);  
+            char* buffer_a_enviar =  _serialize(sizeof(int) + tamTarea, tarea);
 
-            }else{
-                char* tarea = get_next_task(memory,nuestroTCB->next, segmento_tareas->limit);
-								
-              	nuestroTCB->next += string_length(tarea);
-              
-                char* buffer_a_enviar =  _serialize(sizeof(int)+string_length(tarea), "%s",tarea);
-
-                _send_message(fd, "RAM", ENVIAR_TAREA , buffer_a_enviar, sizeof(sizeof(int)+string_length(tarea), "%s",tarea), logger);
+            _send_message(fd, "RAM", ENVIAR_TAREA , buffer_a_enviar, sizeof(sizeof(int) + tamTarea), logger);
               	
-              	free(buffer_a_enviar);
+            free(buffer_a_enviar);
+            free(tarea);
 
             }
 						free(respuesta);
@@ -801,25 +709,22 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             memcpy(&idTCB, buffer + sizeof(int), sizeof(int));
             log_info(logger,"ID PCB:%d", idPCB);
 						log_info(logger,"ID TCB:%d", idTCB);     
-            
-            //---------------------------------------------------
-            t_queue* segmento_pcb = dictionary_get(diccionario, idPCB);
-            segmento_tcb = get_tcb_by_id(segmento_pcb, idTCB);
-
-            error =  remove_segment_from_memory (memory, memory_size, segmento_tcb);
-						
-          	if(error < 0){
-              log_error(logger, "Error al eliminar el segmento asociado")
-						} else {
+            //"-----------------------------------------------------"
             //// Elimino el tcb del mapa
 
             //eliminar_tripulante_mapa();
 
-              respuesta = string_new();
-              string_append(&respuesta, "Respuesta");
-              _send_message(fd, "RAM", SUCCESS,respuesta,string_length(respuesta),logger);
-              free(respuesta);
-              log_info(logger,"-----------------------------------------------------");
+            idPCBstr = itoa(idPCB);
+
+            respuesta = string_new();
+            string_append(&respuesta, "Respuesta");
+
+            remove_tcb_from_page(memory, admin_collection, table_collection, idPCBstr, idTCB);
+            _send_message(fd, "RAM", SUCCESS,respuesta, string_length(respuesta), logger);
+            
+            free(respuesta);
+            
+            log_info(logger,"-----------------------------------------------------");
 
             }
 
@@ -832,8 +737,6 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
         break;
 
     }
-
-    */
 
 }
 

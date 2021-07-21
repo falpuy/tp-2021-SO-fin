@@ -141,7 +141,9 @@ void funcionTripulante (void* elemento) {
 
     while(temp_validador){// MIENTRAS ESTÉ EN FUNCIONAMIENTO EL PROCESO
         log_info(logger, "Tripulante: %d esta esperando el signal",param->idSemaforo);
-        sem_wait(&semTripulantes[param->idSemaforo]);
+
+        sem_t* semaforo = list_get(listaSemaforos,param->idSemaforo);
+        sem_wait(semaforo);
         log_info(logger, "se recibió el post del tripulante: %d", param->idSemaforo);
 
         pthread_mutex_lock(&mutexExec);
@@ -610,12 +612,16 @@ void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_lo
         queue_push (cola_new, (void*) aux);
         pthread_mutex_unlock(&mutexNew);
 
+        sem_t* semTripulante = malloc(sizeof(sem_t));
+        sem_init(semTripulante, 0, 0);
 
+        list_add(listaSemaforos, semTripulante);
         parametrosThread* parametros = malloc (sizeof(parametrosThread));
         parametros->idSemaforo=indice_tcb_temporal;
 
         pthread_create(&hiloTripulante[parametros->idSemaforo], NULL, (void *) funcionTripulante, parametros);
         pthread_detach(hiloTripulante[parametros->idSemaforo]);
+
        
     } else {
     	log_error(logger, "No hay tareas disponibles");

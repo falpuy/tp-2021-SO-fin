@@ -23,6 +23,7 @@ void funcionPlanificador(t_log* logger) {
     bloq_emer = queue_create();
     bloq_emer_sorted = queue_create();
     cola_exit = queue_create();
+    listaSemaforos = list_create();
 
     listaPCB = list_create();
 }
@@ -415,7 +416,8 @@ void deletearTripulante(void* nodo){
 
 void signalHilosTripulantes(void *nodo) {
     tcb *tcbTripulante = (tcb *) nodo;
-    sem_post(&semTripulantes[tcbTripulante->tid]);
+    sem_t* semaforo = list_get(listaSemaforos,tcbTripulante->tid);
+    sem_post(semaforo);
     log_info(logger, "se hizo un post al tripulante: %d", tcbTripulante->tid);
 }
 

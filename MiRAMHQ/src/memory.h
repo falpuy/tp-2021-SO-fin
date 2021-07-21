@@ -67,6 +67,17 @@
     uint8_t *bitmap;
     int frames_memory;
 
+    page_t *global_lru_page;
+    page_t *global_clock_page;
+
+    int clock_flag;
+    int global_clock_key = 0;
+    int global_clock_index = 0;
+
+    int hasLRU = 1;
+
+    
+
     // --------------------- END PAGINATION ----------------------- //
 
     // --------------------- SEGMENTATION ----------------------- //

@@ -8,8 +8,1168 @@ void *memory_init(int size) {
 
 // ----------------------- PAGINATION ------------------------- //
 
+char get_char_value(void *buffer, int index) {
+
+    char temp;
+
+    memcpy(&temp, buffer + index, 1);
+
+    return temp;
+}
+
+uint32_t get_next_page(t_queue *page_table, uint32_t index) {
+
+    page_t *page = list_get(page_table -> elements, index);
+
+    return (page -> frame) -> start;
+}
+
+void *search_task(void *memory, uint32_t start_addr) {
+    //params?
+    t_queue* page_table;
+    frame_t* frame;
+
+    uint32_t counter = start_addr;
+    uint32_t start = start_addr;
+    void *recv_task;
+    uint32_t recv_start = 0;
+    uint32_t page_counter = 1;
+
+    if (start + 1 >= frame -> start + page_size) {
+        recv_task = malloc(1);
+        memcpy(recv_task + recv_start, memory + start, 1);
+        recv_start++;
+        counter = get_next_page(page_table, page_counter++);
+        start = counter;
+    }
+
+    if (memcmp(memory + start + 1, "\0", 1)) {
+        // printf("First step..");
+        while (memcmp(memory + counter, ";", 1) && memory + counter != NULL) {
+            counter++;
+
+            if (counter >= frame -> start + page_size) {
+                // COPIO LA MEMORIA QUE LEI HASTA EL MOMENTO
+                memcpy(recv_task + recv_start, memory + start, counter);
+                // BUSCO PROXIMO FRAME Y LO ASIGNO AL COUNTER
+                counter = get_next_page(page_table, page_counter++);
+                start = counter;
+            } else {
+                if (!memcmp(memory + counter, "\0", 1)){
+                    break;
+                }
+            }
+        }
+        
+        while (!isalpha(get_char_value(memory, counter)) && memory + counter != NULL && memcmp(memory + counter + 2, "\0", 1)){
+            counter++;
+
+            if (counter >= frame -> start + page_size) {
+                // COPIO LA MEMORIA QUE LEI HASTA EL MOMENTO
+                memcpy(recv_task + recv_start, memory + start, counter);
+                // BUSCO PROXIMO FRAME Y LO ASIGNO AL COUNTER
+                counter = get_next_page(page_table, page_counter++);
+                start = counter;
+            } else {
+                if (!memcmp(memory + counter, "\0", 1)){
+                    break;
+                }
+            }
+        }
+        
+        if (memcmp(memory + counter + 2, "\0", 1)) {
+            global_index = counter;
+        } else {
+            global_index = counter + 1;
+        }
+
+        memcpy(recv_task, memory + start, counter);
+        memset(recv_task + counter, '\0', 1);
+
+        return recv_task;
+    } else {
+
+        return NULL;
+    }
+    // printf("\nLast Index: %d\n", counter);
+}
 
 
+// pagi
+
+int check_free_frames(int frames_count) {
+    int counter = 0;
+
+    // Busco frames libres en el bitmap y agrego a un counter
+    for (int i = 0; i < frames_memory; i++) {
+        if (!bitmap[i]) {
+            counter++;
+        }
+        if(counter >= frames_count) {
+            return 1;
+        }
+    }
+
+    // lo sumo a los frames libres en disco
+    for (int j = 0; j < frames_virtual; j++) {
+        if (!bitarray_test_bit(virtual_bitmap, j)) {
+            counter++;
+        }
+        if(counter >= frames_count) {
+            return 1;
+        }
+    }
+
+    return 0;
+
+}
+
+
+bool lru_sorter(void *uno, void *dos) {
+    page_t *page1 = uno;
+    page_t *page2 = dos;
+
+    return page1 -> frame -> time < page2 -> frame -> time;
+}
+
+void lru_replacer(void *item) {
+    page_t *page = item;
+
+    if (global_lru_page == NULL && page -> frame -> presence) {
+        global_lru_page = page;
+    } else {
+        if (page -> frame -> presence && global_lru_page -> frame -> time > page -> frame -> time) {
+            global_lru_page = page;
+        }
+    }
+    
+}
+
+void lru_iterator(char *key, void *item) {
+    t_queue *pages = item;
+
+    // list_sort(pages -> elements, lru_sorter);
+    list_iterate(pages -> elements, lru_replacer);
+}
+
+frame_t *get_next_lru_frame() {
+    // printf("Checkeando LRU %d\n", dictionary_is_empty(table_collection));
+    global_lru_page = NULL;
+
+    dictionary_iterator(table_collection, lru_iterator);
+
+    return global_lru_page -> frame;
+
+}
+
+
+void clock_replacer(void *item, int key_index, int frame_index) {
+    page_t *page = item;
+
+    if (page -> frame -> presence && page -> frame -> modified == 0) {
+        page -> frame -> modified = 1;
+        global_clock_page = page;
+        clock_flag = 1;
+        global_clock_key = key_index;
+        global_clock_index = frame_index;
+    } else {
+        if (page -> frame -> presence && page -> frame -> modified) {
+            page -> frame -> modified = 0;
+        }
+    }
+}
+
+void clock_iterator(char *key, void *item, int key_index, int frame_index) {
+    t_queue *pages = item;
+    t_link_element *element = pages -> elements -> head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+        if (frame_index >= global_clock_index) {
+		    clock_replacer(element->data, key_index, frame_index);
+        }
+        if(clock_flag) {
+            break;
+        }
+		element = aux;
+	}
+    if (frame_index >= global_clock_index) {
+        global_clock_index = 0;
+    }
+    // list_iterate(pages -> elements, clock_replacer);
+}
+
+frame_t *get_next_clock_frame() {
+    // printf("Checkeando CLOCK %d\n", dictionary_is_empty(table_collection));
+    global_clock_page = NULL;
+
+    clock_flag = false;
+
+    while(!clock_flag) {
+        int table_index;
+        int frame_index = 0;
+        for (table_index = global_clock_key; table_index < table_collection->table_max_size; table_index++) {
+            t_hash_element *element = table_collection->elements[table_index];
+
+            while (element != NULL) {
+                clock_iterator(element->key, element->data, table_index, frame_index);
+                element = element->next;
+                if(clock_flag) {
+                    break;
+                }
+            }
+            if(clock_flag) {
+                break;
+            }
+        }
+        if (!clock_flag) {
+            global_clock_key = 0;
+            global_clock_index = 0;
+        }
+        // dictionary_iterator(table_collection, clock_iterator);
+    }
+
+    return global_clock_page -> frame;
+
+}
+
+
+uint32_t get_frame() {
+    int value;
+    int err;
+
+    for (int i = 0; i < frames_memory; i++) {
+        // printf("GET FRAME Bit %d: %d\n", i, bitarray_test_bit(bitmap, i));
+        if (!bitmap[i]) {
+            return i;
+        }
+    }
+    // printf("No me la conteiner hay que swapear\n");
+    // Checkeo timestamp
+    // frame_t *replacing_frame = get_next_lru_frame();
+    frame_t *replacing_frame = hasLRU ? get_next_lru_frame() : get_next_clock_frame();
+
+    printf("Reemplazo este frame: %d - %d\n", replacing_frame -> number, replacing_frame -> time);
+
+    if (replacing_frame != NULL) {
+        // busco lugar en virtual
+        for (int i = 0; i < frames_virtual; i++) {
+            // printf("GET FRAME Bit %d: %d\n", i, bitarray_test_bit(bitmap, i));
+            if (!bitarray_test_bit(virtual_bitmap, i)) {
+                // pego la data desde memoria
+                memcpy(virtual_memory + i * page_size, memory + replacing_frame -> number * page_size, page_size);
+                err = msync(virtual_memory, virtual_size + frames_virtual / 8, MS_ASYNC);
+                if (err == -1){
+                    perror("Error de sincronizar a disco memoria");
+                }
+                // seteo el bit de virtual
+                bitarray_set_bit(virtual_bitmap, i);
+                // unseteo el bit
+                bitmap[replacing_frame -> number] = 0;
+                // Actualizo el valor a devolver
+                value = replacing_frame -> number;
+
+                //updateo el frame que muevo
+                replacing_frame -> number = i;
+                replacing_frame -> start = i * page_size;
+                replacing_frame -> presence = 0;
+                replacing_frame -> time = timer++;
+                printf("TIMEdadsad: %d\n", replacing_frame -> time);
+                // devuelvo el bit qe unsetie
+                // printf("Devuelvo: %d", value);
+                return value;
+            }
+        }
+    }
+
+    return -1;
+}
+
+void set_bitmap(uint8_t *bitmap, int position) {
+    bitmap[position] = 1;
+}
+
+void unset_bitmap(uint8_t *bitmap, int position) {
+    bitmap[position] = 0;
+}
+
+void save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictionary* admin_collection, void *buffer) {
+
+    double val;
+
+    void *temp;
+    pcb *p_aux = malloc(sizeof(pcb));
+    int task_size;
+    int tcb_count;
+    int offset = 0;
+
+    int task_start = 8;
+
+    p_aux -> tasks = 8; // Al leer un frame, las tareas siempre comienzan en la posicion 8 del frame leido (paginacion)
+    memcpy(&p_aux -> pid, buffer + offset, sizeof(uint32_t));
+    offset += sizeof(int);
+    
+    memcpy(&task_size, buffer + offset, sizeof(int));
+    offset += sizeof(int);
+
+    void *tasks = malloc(task_size);
+    memcpy(tasks, buffer + offset, task_size);
+    offset += task_size;
+
+    memcpy(&tcb_count, buffer + offset, sizeof(int));
+    offset += sizeof(int);
+
+    int memory_size = sizeof(pcb) + task_size + tcb_count * sizeof(tcb);
+
+    admin_data *tcb_data = malloc(sizeof(admin_data));
+    tcb_data -> cantidad = tcb_count;
+    tcb_data -> start = sizeof(pcb) + task_size;
+    tcb_data -> tcb = malloc(sizeof(uint8_t) * tcb_count);
+
+    // Inicializo el bitmap de tcbs en 1 ya que son los que se crean al principio
+    for(int i = 0; i < tcb_count; i++) {
+        tcb_data -> tcb[i] = 1;
+    }
+
+    val = (double) memory_size / page_size;
+    int frames_count = ceil(val);
+
+    temp = malloc(memory_size);
+    int temp_off = 0;
+
+    memcpy(temp + temp_off, &p_aux -> pid, sizeof(uint32_t));
+    temp_off += sizeof(uint32_t);
+
+    memcpy(temp + temp_off, &p_aux -> tasks, sizeof(uint32_t));
+    temp_off += sizeof(uint32_t);
+
+    // Me guardo el ID del pcb como string para el diccionario
+    char *pid = string_itoa(p_aux -> pid);
+    int p_id = p_aux -> pid;
+    free(p_aux);
+
+    dictionary_put(admin_collection, pid, tcb_data);
+
+    memcpy(temp + temp_off, tasks, task_size);
+    temp_off += task_size;
+
+    free(tasks);
+
+    // printf("Size until tcbs.. %d - %d\n", temp_off, offset);
+
+    for( int i = 0; i < tcb_count; i++) {
+        memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
+        temp_off += sizeof(uint32_t);
+        offset += sizeof(uint32_t);
+        
+        memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
+        temp_off += sizeof(uint32_t);
+        offset += sizeof(uint32_t);
+        
+        memcpy(temp + temp_off, buffer + offset, sizeof(char));
+        temp_off += sizeof(char);
+        offset += sizeof(char);
+        
+        memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
+        temp_off += sizeof(uint32_t);
+        offset += sizeof(uint32_t);
+        
+        memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
+        temp_off += sizeof(uint32_t);
+        offset += sizeof(uint32_t);
+        
+        // Compio inicio de tareas en temp buffer
+        memcpy(temp + temp_off, &task_start, sizeof(uint32_t));
+        temp_off += sizeof(uint32_t);
+        offset += sizeof(uint32_t);
+    }
+
+    // ---------------- GUARDO FRAMES ---------------- //
+
+    // Busco si hay frames libres en memoria/disco
+    // Creo tabla de paginas
+    t_queue *tabla = queue_create();
+
+    // Si hay, guardo la data
+    int bytes_left = memory_size;
+
+    for (int j = 0; j < frames_count; j++) {
+        uint32_t n_frame = get_frame();
+
+        set_bitmap(bitmap, n_frame);
+            
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            printf("%d TIME: %d\n", frame -> number, frame -> time);
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            if (bytes_left < page_size) {
+                // copio bytes_left
+                memcpy(memory + (n_frame * page_size), temp + (j * page_size), bytes_left);
+            } else {
+                // copio page_size
+                memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
+                bytes_left -= page_size;
+            }
+
+            queue_push(tabla, page);
+            // Agrego tabla al diccionario
+            dictionary_put(table_collection, pid, tabla);
+        }
+
+        queue_push(tabla, page);
+    }
+    // Agrego tabla al diccionario
+    dictionary_put(table_collection, pid, tabla);
+
+    free(temp);
+    free(pid);
+
+}
+
+int verificarCondicionDeMemoria(void* buffer){
+
+    if(check_free_frames(frame_count)){
+        return 1;
+    }
+    else{
+        return -1;
+    }
+
+}
+
+void destroyer_pagination(void *item) {
+
+    page_t * aux = (page_t *) item;
+    // free((aux -> frame) -> time);
+    free(aux -> frame);
+    free(aux);
+}
+
+void table_destroyer_pagination(void *item) {
+
+    queue_destroy_and_destroy_elements(item, destroyer_pagination);
+
+}
+
+void admin_destroyer(void *item) {
+
+    admin_data * aux = (admin_data *) item;
+    free(aux -> tcb);
+    free(aux);
+
+}
+
+int get_page_number(t_dictionary *self, uint32_t frame) {
+
+    t_queue *aux;
+
+    // Recorro el diccionario
+    int table_index;
+
+    int index;
+
+
+	for (table_index = 0; table_index < self->table_max_size; table_index++) {
+		t_hash_element *element = self->elements[table_index];
+		t_hash_element *next_element = NULL;
+
+		while (element != NULL) {
+
+			next_element = element->next;
+
+            aux = element -> data;
+
+            // page_iterate(aux -> elements, save_in_file, memory, file, index, element -> key);
+            // ITERACION DE LISTA
+
+            t_link_element *elementl = (aux -> elements)->head;
+            t_link_element *aux2 = NULL;
+
+            index = 0;
+
+            while (elementl != NULL) {
+                aux2 = elementl->next;
+                page_t *page = elementl -> data;
+                if((page -> frame) -> number == frame && (page -> frame) -> presence) {
+                    global_process = string_new();
+                    string_append(&global_process, element -> key);
+                    global_page = index;
+                    return 1;
+                }
+                elementl = aux2;
+                index++;
+            }
+
+            // END INTERATION
+
+			element = next_element;
+		}
+	}
+
+    return  1;
+
+}
+
+void page_dump(t_dictionary *table) {
+
+    //  Dump_<Timestamp>.dmp
+    char *timestamp = temporal_get_string_time("%d-%m-%y");
+    char *file_name = string_new();
+    string_append(&file_name, "./Dump_");
+    string_append(&file_name, timestamp);
+    string_append(&file_name, ".dmp");
+
+    FILE* file = fopen(file_name, "w");
+
+    if(file == NULL)
+    {
+        perror("Error al abrir archivo Dump");
+    }
+
+    free(timestamp);
+    free(file_name);
+
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+    char *title = string_new();
+    char *date = temporal_get_string_time("%d/%m/%y %H:%M:%S");
+    string_append_with_format(&title, "Dump: %s\n", date);
+    txt_write_in_file(file, title);
+    free(date);
+    free(title);
+    
+    for (int i = 0; i < frames_memory; i++) {
+        char *line = string_new(); 
+        
+        if (bitmap[i]) {
+            if(get_page_number(table, i)) {
+                string_append_with_format(&line, "Marco: %d\t\tEstado: %s\t\tProceso: %s\t\tPagina: %d\n", i, "Ocupado", global_process, global_page);
+                free(global_process); 
+            }
+        } else {
+            string_append_with_format(&line, "Marco: %d\t\tEstado: %s\t\tProceso: %s\t\tPagina: %s\n", i, "Libre", "-", "-");
+        }
+        
+        txt_write_in_file(file, line);
+
+        free(line);
+    }
+
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+
+    txt_close_file(file);
+}
+
+uint8_t frame_is_empty(void *temp, uint32_t start, uint32_t limit) {
+    for (int i = start; i < limit; i++) {
+        // printf("TEMP: %s\n" memcmp(temp + i, "\0", 1));
+        if (memcmp(temp + i, "\0", 1)) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
+    // printf("Obtengo tablas del proceso..\n");
+    t_queue *self = dictionary_get(table_collection, key);
+    admin_data *data_tcb = dictionary_get(admin_collection, key);
+
+    void *temp = malloc(queue_size(self) * page_size);
+
+    page_t *page_aux;
+
+    int original_size = queue_size(self);
+
+    // printf("Obtengo las paginas en memoria..: %d\n", original_size);
+
+    int off = 0;
+    while(queue_size(self) > 0) {
+        // page_aux = queue_pop(self);
+
+        // // if (frame_in_memory(page)) {
+        // //     memcpy(temp, memory + (page -> frame) -> start, page_size);
+        // // } else {
+        // //     swap_page(memory, page);
+        // //     memcpy(temp, memory + (page -> frame) -> start, page_size);
+        // // }
+        // // printf("Frame.. %d\n", page_aux -> frame -> start);
+        // memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+        // unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        // off++;
+        page_aux = queue_pop(self);
+
+        printf("STATUS: %d\n", page_aux -> frame -> presence);
+        if (page_aux -> frame -> presence) {
+            printf("PAGE IN MEMORY\n");
+            memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        } else {
+            printf("SWAP PAGE\n");
+            // TODO: SWAPEAR
+            memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+
+            bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            
+        }
+        
+        off++;
+
+        // free((page_aux -> frame) -> time);
+        free(page_aux -> frame);
+        free(page_aux);
+    }
+
+    // printf("Obtengo tcb a eliminar del buffer: %d\n", data_tcb -> start);
+
+    // --- Getting tcb list from temp
+    uint32_t temp_id;
+    int tcb_left;
+    for (int i = 0; i < data_tcb -> cantidad; i++) {
+        // Leo solo el primer int, que representa el tid
+        memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb)), sizeof(uint32_t));
+        
+        if (temp_id == id_tcb) {
+
+            // printf("Entre al if...\n");
+
+            data_tcb -> tcb[i] = 0;
+            tcb_left = data_tcb -> cantidad - i - 1;
+
+            // Hago la compactacion de los tcb restantes
+            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb)), (temp + data_tcb -> start) + ((i + 1) * sizeof(tcb)), tcb_left * sizeof(tcb));
+            data_tcb -> cantidad -= 1;
+
+            break;
+        }
+    }
+
+
+    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * sizeof(tcb);
+
+    // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
+    // int size_until_task = data_tcb -> start;
+    int posicion_temp = 0;
+    uint32_t n_frame;
+
+    while(size_a_copiar) {
+        if (size_a_copiar >= page_size) {
+            n_frame = get_frame();
+            set_bitmap(bitmap, n_frame);
+
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, page_size);
+
+            queue_push(self, page);
+
+            size_a_copiar -= page_size;
+        } else {
+            n_frame = get_frame();
+            set_bitmap(bitmap, n_frame);
+
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, size_a_copiar);
+
+            queue_push(self, page);
+
+            size_a_copiar -= size_a_copiar;
+        }
+        posicion_temp++;
+    }
+
+    free(temp);
+
+    dictionary_put(table_collection, key, self);
+}
+
+void update_position_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, int posx, int posy) {
+    // printf("Obtengo tablas del proceso..\n");
+    t_queue *self = dictionary_get(table_collection, key);
+    admin_data *data_tcb = dictionary_get(admin_collection, key);
+
+    void *temp = malloc(queue_size(self) * page_size);
+
+    page_t *page_aux;
+
+    int original_size = queue_size(self);
+
+    // printf("Obtengo las paginas en memoria..: %d\n", original_size);
+
+    int off = 0;
+    while(queue_size(self) > 0) {
+        // page_aux = queue_pop(self);
+
+        // // if (frame_in_memory(page)) {
+        // //     memcpy(temp, memory + (page -> frame) -> start, page_size);
+        // // } else {
+        // //     swap_page(memory, page);
+        // //     memcpy(temp, memory + (page -> frame) -> start, page_size);
+        // // }
+        // // printf("Frame.. %d\n", page_aux -> frame -> start);
+        // memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+        // unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        // off++;
+        page_aux = queue_pop(self);
+
+        printf("STATUS: %d\n", page_aux -> frame -> presence);
+        if (page_aux -> frame -> presence) {
+            printf("PAGE IN MEMORY\n");
+            memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        } else {
+            printf("SWAP PAGE\n");
+            // TODO: SWAPEAR
+            memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+
+            bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            
+        }
+        
+        off++;
+
+        // free((page_aux -> frame) -> time);
+        free(page_aux -> frame);
+        free(page_aux);
+    }
+
+    // printf("Obtengo tcb a eliminar del buffer: %d\n", data_tcb -> start);
+
+    // --- Getting tcb list from temp
+    uint32_t temp_id;
+    int tcb_left;
+    for (int i = 0; i < data_tcb -> cantidad; i++) {
+        // Leo solo el primer int, que representa el tid
+        memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb)), sizeof(uint32_t));
+        
+        if (temp_id == id_tcb) {
+
+            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb)) + sizeof(uint32_t) * 2 + sizeof(char), &posx, sizeof(uint32_t));
+            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb)) + sizeof(uint32_t) * 3 + sizeof(char), &posy, sizeof(uint32_t));
+
+        }
+    }
+
+
+    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * sizeof(tcb);
+
+    // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
+    // int size_until_task = data_tcb -> start;
+    int posicion_temp = 0;
+    uint32_t n_frame;
+
+    while(size_a_copiar) {
+        if (size_a_copiar >= page_size) {
+            n_frame = get_frame();
+            set_bitmap(bitmap, n_frame);
+
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, page_size);
+
+            queue_push(self, page);
+
+            size_a_copiar -= page_size;
+        } else {
+            n_frame = get_frame();
+            set_bitmap(bitmap, n_frame);
+
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, size_a_copiar);
+
+            queue_push(self, page);
+
+            size_a_copiar -= size_a_copiar;
+        }
+        posicion_temp++;
+    }
+
+    free(temp);
+
+    dictionary_put(table_collection, key, self);
+}
+
+
+void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, char status) {
+    // printf("Obtengo tablas del proceso..\n");
+    t_queue *self = dictionary_get(table_collection, key);
+    admin_data *data_tcb = dictionary_get(admin_collection, key);
+
+    void *temp = malloc(queue_size(self) * page_size);
+
+    page_t *page_aux;
+
+    int original_size = queue_size(self);
+
+    // printf("Obtengo las paginas en memoria..: %d\n", original_size);
+
+    int off = 0;
+    while(queue_size(self) > 0) {
+        // page_aux = queue_pop(self);
+
+        // // if (frame_in_memory(page)) {
+        // //     memcpy(temp, memory + (page -> frame) -> start, page_size);
+        // // } else {
+        // //     swap_page(memory, page);
+        // //     memcpy(temp, memory + (page -> frame) -> start, page_size);
+        // // }
+        // // printf("Frame.. %d\n", page_aux -> frame -> start);
+        // memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+        // unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        // off++;
+        page_aux = queue_pop(self);
+
+        printf("STATUS: %d\n", page_aux -> frame -> presence);
+        if (page_aux -> frame -> presence) {
+            printf("PAGE IN MEMORY\n");
+            memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        } else {
+            printf("SWAP PAGE\n");
+            // TODO: SWAPEAR
+            memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+
+            bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            
+        }
+        
+        off++;
+
+        // free((page_aux -> frame) -> time);
+        free(page_aux -> frame);
+        free(page_aux);
+    }
+
+    // printf("Obtengo tcb a eliminar del buffer: %d\n", data_tcb -> start);
+
+    // --- Getting tcb list from temp
+    uint32_t temp_id;
+    int tcb_left;
+    for (int i = 0; i < data_tcb -> cantidad; i++) {
+        // Leo solo el primer int, que representa el tid
+        memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb)), sizeof(uint32_t));
+        
+        if (temp_id == id_tcb) {
+
+            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb)) + sizeof(uint32_t) * 2, &status, sizeof(char));
+
+        }
+    }
+
+
+    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * sizeof(tcb);
+
+    // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
+    // int size_until_task = data_tcb -> start;
+    int posicion_temp = 0;
+    uint32_t n_frame;
+
+    while(size_a_copiar) {
+        if (size_a_copiar >= page_size) {
+            n_frame = get_frame();
+            set_bitmap(bitmap, n_frame);
+
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, page_size);
+
+            queue_push(self, page);
+
+            size_a_copiar -= page_size;
+        } else {
+            n_frame = get_frame();
+            set_bitmap(bitmap, n_frame);
+
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, size_a_copiar);
+
+            queue_push(self, page);
+
+            size_a_copiar -= size_a_copiar;
+        }
+        posicion_temp++;
+    }
+
+    free(temp);
+
+    dictionary_put(table_collection, key, self);
+}
+
+
+void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
+    // printf("Obtengo tablas del proceso..\n");
+    t_queue *self = dictionary_get(table_collection, key);
+    admin_data *data_tcb = dictionary_get(admin_collection, key);
+
+    void *temp = malloc(queue_size(self) * page_size);
+
+    page_t *page_aux;
+
+    int original_size = queue_size(self);
+
+    char *nextTask;
+
+    void *recv_task;
+
+    // printf("Obtengo las paginas en memoria..: %d\n", original_size);
+
+    int off = 0;
+    while(queue_size(self) > 0) {
+        page_aux = queue_pop(self);
+
+        printf("STATUS: %d\n", page_aux -> frame -> presence);
+        if (page_aux -> frame -> presence) {
+            printf("PAGE IN MEMORY\n");
+            memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        } else {
+            printf("SWAP PAGE\n");
+            // TODO: SWAPEAR
+            memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+
+            bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            
+        }
+        
+        off++;
+
+        // free((page_aux -> frame) -> time);
+        free(page_aux -> frame);
+        free(page_aux);
+    }
+
+    // printf("Obtengo tcb a eliminar del buffer: %d\n", data_tcb -> start);
+
+    // --- Getting tcb list from temp
+    uint32_t temp_id;
+    int tcb_left;
+    int auxoff = 0;
+    for (int i = 0; i < data_tcb -> cantidad; i++) {
+        // Leo solo el primer int, que representa el tid
+        memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb)), sizeof(uint32_t));
+
+        tcb *prueba = malloc(sizeof(tcb));
+
+        memcpy(&prueba -> tid, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> pid, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> status, temp + data_tcb -> start + auxoff, sizeof(char));
+        auxoff += sizeof(char);
+        memcpy(&prueba -> xpos, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> ypos, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+        memcpy(&prueba -> next, temp + data_tcb -> start + auxoff, sizeof(uint32_t));
+        auxoff += sizeof(uint32_t);
+
+        printf("TCB: %d\n%d\n%c\n%d\n%d\n%d\n", prueba -> tid,
+        prueba -> pid,
+        prueba -> status,
+        prueba -> xpos,
+        prueba -> ypos,
+        prueba -> next);
+
+        free(prueba);
+
+        if (temp_id == id_tcb) {
+
+            printf("\n\n ------ busco la tarea ------- \n\n");
+
+            int task_counter = 0;
+
+            int prevTask;
+
+            memcpy(&prevTask, (temp + data_tcb -> start) + (i * sizeof(tcb)) + sizeof(uint32_t) * 4 + sizeof(char), sizeof(uint32_t));
+
+            printf("Tarea previa: %d\n", prevTask);
+
+            while (memcmp(temp + prevTask + task_counter, ";", 1) && temp + prevTask + task_counter != NULL && task_counter < data_tcb -> start) {
+                // printf("CHAR: %c\n", get_char_value(temp + prevTask, task_counter));
+                task_counter++;
+            }
+            while (!isalpha(get_char_value(temp + prevTask, task_counter)) && temp + prevTask + task_counter != NULL && task_counter < data_tcb -> start){
+                // printf("CHAR: %c\n", get_char_value(temp + prevTask, task_counter));
+                task_counter++;
+            }
+
+            recv_task = malloc(task_counter + 1);
+            memcpy(recv_task, temp + prevTask, task_counter);
+            memset(recv_task + task_counter, '\0', 1);
+
+            int next_addr = prevTask + task_counter;
+
+            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb)) + sizeof(uint32_t) * 4 + sizeof(char), &next_addr, sizeof(uint32_t));
+
+            break;
+        }
+    }
+
+
+    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * sizeof(tcb);
+
+    // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
+    // int size_until_task = data_tcb -> start;
+    int posicion_temp = 0;
+    uint32_t n_frame;
+
+    while(size_a_copiar) {
+        if (size_a_copiar >= page_size) {
+            n_frame = get_frame();
+            set_bitmap(bitmap, n_frame);
+
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, page_size);
+
+            queue_push(self, page);
+
+            size_a_copiar -= page_size;
+        } else {
+            n_frame = get_frame();
+            set_bitmap(bitmap, n_frame);
+
+            // Creo frame
+            frame_t *frame = malloc(sizeof(frame_t));
+            frame -> time = timer++;
+            frame -> number = n_frame;
+            frame -> start = n_frame * page_size;
+            frame -> modified = 1;
+            frame -> presence = 1;
+
+            // Creo pagina
+            page_t *page = malloc(sizeof(page_t));
+            page -> frame = frame;
+
+            memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, size_a_copiar);
+
+            queue_push(self, page);
+
+            size_a_copiar -= size_a_copiar;
+        }
+        posicion_temp++;
+    }
+
+    free(temp);
+
+    dictionary_put(table_collection, key, self);
+
+    return recv_task;
+}
+
+
+void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key) {
+
+    t_queue *self = dictionary_get(table_collection, key);
+    admin_data *data_tcb = dictionary_get(admin_collection, key);
+
+    dictionary_remove_and_destroy(admin_collection, key, admin_destroyer);
+
+    page_t *page_aux;
+
+    while(queue_size(self) > 0) {
+        page_aux = queue_pop(self);
+
+        // if (frame_in_memory(page)) {
+        //     memcpy(temp, memory + (page -> frame) -> start, page_size);
+        // } else {
+        //     swap_page(memory, page);
+        //     memcpy(temp, memory + (page -> frame) -> start, page_size);
+        // }
+        // printf("Frame.. %d\n", page_aux -> frame -> start);
+
+        unset_bitmap(bitmap, (page_aux -> frame) -> number);
+
+        // free((page_aux -> frame) -> time);
+        free(page_aux -> frame);
+        free(page_aux);
+    }
+
+    dictionary_put(table_collection, key, self);
+}
 
 
 // --------------------- END PAGINATION ----------------------- //

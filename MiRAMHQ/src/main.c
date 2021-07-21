@@ -83,7 +83,7 @@ void signal_handler(int sig_number) {
 
       free(memory);
       free(admin);
-      dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
+      dictionary_destroy_and_destroy_elements(table_collection, table_destroyer_pagination);
       dictionary_destroy_and_destroy_elements(admin_collection, admin_destroyer);
 
       // Eliminar Archivo Swap????

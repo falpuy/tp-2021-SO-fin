@@ -20,7 +20,7 @@ void funcionConsola(){
                 	free(parametros[0]); 
                 	free(parametros);
                     
-                    pthread_cond_signal(&semNR); //Le avisa a New->Ready q es su turno
+                    sem_post(&semNR); //Le avisa a New->Ready q es su turno
                     break;
 
                 case C_PAUSAR_PLANIFICACION: 

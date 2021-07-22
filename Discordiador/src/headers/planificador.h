@@ -26,15 +26,18 @@
 
     void funcionCambioExecIO(void* nodo);
     void funcionhExecaBloqIO (t_log* logger);
-    
-    void funcionhBloqIO (t_log* logger);
-    void funcionContadorEnBloqIO(void* nodo);
 
     void funcionCambioExecReady(void* nodo, int posicion);
     void funcionhExecaReady (t_log* logger);
 
     void funcionCambioExecExit(void* nodo, int posicion);
     void funcionhExecaExit (t_log* logger);
+
+    void funcionhBloqIO (t_log* logger);
+    void funcionContadorEnBloqIO(void* nodo);
+
+    void funcionhExecReadyaBloqEmer (t_log* logger);
+    void funcionhBloqEmeraReady (t_log* logger);
 
     void funcionhExit (t_log* logger);
 

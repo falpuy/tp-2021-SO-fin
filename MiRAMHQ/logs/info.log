@@ -1,0 +1,1530 @@
+[INFO] 19:12:18:024 RAM/(31248:31248): Mi RAM HQ ejecutando correctamente.. PID: 31248
+[INFO] 19:12:18:025 RAM/(31248:31248): Esquema utilizado: SEGMENTACION
+[INFO] 19:12:18:025 RAM/(31248:31248): Tamanio de la memoria: 2048
+[ERROR] 19:12:18:027 RAM/(31248:31248): [Shared Library]: Error al obtener info de la conexion
+[ERROR] 19:12:18:028 RAM/(31248:31248): [Shared Library]: Ocurrio un error en el listen 
+ (╯°o°）╯︵ ┻━┻
+[INFO] 16:16:45:557 RAM/(4066:4066): Esquema utilizado: SEGMENTACION
+[INFO] 16:16:45:558 RAM/(4066:4066): Tamanio de la memoria: 2048
+[INFO] 16:16:45:559 RAM/(4066:4066): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:16:45:559 RAM/(4066:4066): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:17:05:973 RAM/(4066:4066): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:17:05:973 RAM/(4066:4108): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:18:48:376 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 500
+[INFO] 16:18:48:376 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:18:48:377 RAM/(4066:4108): Llegó la operación: INICIAR_PATOTA 
+[INFO] 16:18:48:377 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:18:48:377 RAM/(4066:4108): Tareas de la patota: GENERAR_OXIGENO 50;7;2;10BARRER;7;7;4SALUDAR;2;7;1
+[INFO] 16:18:48:377 RAM/(4066:4108): Cantidad de tripulantes: 2
+[INFO] 16:18:48:377 RAM/(4066:4108): Size total a guardar en memoria: 102
+[INFO] 16:18:48:378 RAM/(4066:4108): Se guardaron exitosamente los datos de la patota
+[INFO] 16:18:48:378 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:18:48:379 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:18:48:421 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:18:48:421 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:18:48:421 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:18:48:422 RAM/(4066:4108): ID PCB:1
+[INFO] 16:18:48:422 RAM/(4066:4108): ID TCB:0
+[INFO] 16:18:48:422 RAM/(4066:4108): La tarea a enviar es:GENERAR_OXIGENO 50;7;2;10
+[INFO] 16:18:48:423 RAM/(4066:4108): La tarea a enviar es: GENERAR_OXIGENO 50;7;2;10
+[INFO] 16:18:48:423 RAM/(4066:4108): El tamaño de tarea a enviar es: 26
+[INFO] 16:18:48:423 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:18:48:424 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:18:48:501 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:18:48:501 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:18:48:502 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:18:48:502 RAM/(4066:4108): ID PCB:1
+[INFO] 16:18:48:502 RAM/(4066:4108): ID TCB:1
+[INFO] 16:18:48:502 RAM/(4066:4108): La tarea a enviar es:GENERAR_OXIGENO 50;7;2;10
+[INFO] 16:18:48:503 RAM/(4066:4108): La tarea a enviar es: GENERAR_OXIGENO 50;7;2;10
+[INFO] 16:18:48:503 RAM/(4066:4108): El tamaño de tarea a enviar es: 26
+[INFO] 16:18:48:503 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:18:48:503 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:19:10:497 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 500
+[INFO] 16:19:10:498 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:19:10:498 RAM/(4066:4108): Llegó la operación: INICIAR_PATOTA 
+[INFO] 16:19:10:498 RAM/(4066:4108): ID PCB: 2
+[INFO] 16:19:10:498 RAM/(4066:4108): Tareas de la patota: GENERAR_BASURA 30;2;2;2LIMPIAR_ACUARIOS;4;4;5IRSE;6;6;1
+[INFO] 16:19:10:499 RAM/(4066:4108): Cantidad de tripulantes: 1
+[INFO] 16:19:10:499 RAM/(4066:4108): Size total a guardar en memoria: 86
+[INFO] 16:19:10:499 RAM/(4066:4108): Se guardaron exitosamente los datos de la patota
+[INFO] 16:19:10:499 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:19:10:500 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:19:10:537 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:19:10:537 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:19:10:538 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:19:10:538 RAM/(4066:4108): ID PCB:2
+[INFO] 16:19:10:538 RAM/(4066:4108): ID TCB:2
+[INFO] 16:19:10:539 RAM/(4066:4108): La tarea a enviar es:GENERAR_BASURA 30;2;2;2
+[INFO] 16:19:10:539 RAM/(4066:4108): La tarea a enviar es: GENERAR_BASURA 30;2;2;2
+[INFO] 16:19:10:539 RAM/(4066:4108): El tamaño de tarea a enviar es: 24
+[INFO] 16:19:10:539 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:19:10:540 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:19:34:517 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 500
+[INFO] 16:19:34:517 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:19:34:518 RAM/(4066:4108): Llegó la operación: INICIAR_PATOTA 
+[INFO] 16:19:34:518 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:19:34:518 RAM/(4066:4108): Tareas de la patota: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 16:19:34:518 RAM/(4066:4108): Cantidad de tripulantes: 1
+[INFO] 16:19:34:519 RAM/(4066:4108): Size total a guardar en memoria: 88
+[INFO] 16:19:34:519 RAM/(4066:4108): Se guardaron exitosamente los datos de la patota
+[INFO] 16:19:34:519 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:19:34:519 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:19:34:557 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:19:34:557 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:19:34:558 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:19:34:558 RAM/(4066:4108): ID PCB:3
+[INFO] 16:19:34:558 RAM/(4066:4108): ID TCB:3
+[INFO] 16:19:34:558 RAM/(4066:4108): La tarea a enviar es:ESCANEAR_MUESTRAS;3;3;5
+[INFO] 16:19:34:558 RAM/(4066:4108): La tarea a enviar es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 16:19:34:559 RAM/(4066:4108): El tamaño de tarea a enviar es: 24
+[INFO] 16:19:34:559 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:19:34:559 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:22:749 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:22:749 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:22:750 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:22:750 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:22:750 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:20:22:750 RAM/(4066:4108): Posicion en X: 2
+[INFO] 16:20:22:751 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:22:751 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:22:751 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:22:752 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:22:789 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:22:790 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:22:790 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:22:790 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:22:790 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:22:791 RAM/(4066:4108): Posicion en X: 1
+[INFO] 16:20:22:791 RAM/(4066:4108): Posicion en Y: 0
+[INFO] 16:20:22:791 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:22:791 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:22:792 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:24:885 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:24:886 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:24:886 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:24:886 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:24:886 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:20:24:887 RAM/(4066:4108): Posicion en X: 3
+[INFO] 16:20:24:887 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:24:888 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:24:888 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:24:889 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:24:928 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:24:928 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:24:928 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:24:929 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:24:929 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:24:929 RAM/(4066:4108): Posicion en X: 2
+[INFO] 16:20:24:929 RAM/(4066:4108): Posicion en Y: 0
+[INFO] 16:20:24:929 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:24:930 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:24:930 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:27:025 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:27:025 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:27:025 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:27:026 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:27:026 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:20:27:026 RAM/(4066:4108): Posicion en X: 4
+[INFO] 16:20:27:026 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:27:027 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:27:027 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:27:027 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:27:065 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:27:065 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:27:065 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:27:066 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:27:066 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:27:066 RAM/(4066:4108): Posicion en X: 3
+[INFO] 16:20:27:067 RAM/(4066:4108): Posicion en Y: 0
+[INFO] 16:20:27:067 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:27:067 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:27:068 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:29:161 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:29:162 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:29:162 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:29:162 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:29:162 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:29:162 RAM/(4066:4108): Posicion en X: 4
+[INFO] 16:20:29:163 RAM/(4066:4108): Posicion en Y: 0
+[INFO] 16:20:29:163 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:29:163 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:29:163 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:29:201 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:29:202 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:29:202 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:29:202 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:29:203 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:20:29:203 RAM/(4066:4108): Posicion en X: 5
+[INFO] 16:20:29:203 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:29:203 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:29:204 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:29:204 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:31:297 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:31:298 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:31:298 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:31:298 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:31:299 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:31:299 RAM/(4066:4108): Posicion en X: 5
+[INFO] 16:20:31:299 RAM/(4066:4108): Posicion en Y: 0
+[INFO] 16:20:31:299 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:31:300 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:31:300 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:31:337 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:31:337 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:31:338 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:31:338 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:31:338 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:20:31:338 RAM/(4066:4108): Posicion en X: 6
+[INFO] 16:20:31:338 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:31:339 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:31:339 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:31:339 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:33:433 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:33:433 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:33:433 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:33:434 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:33:434 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:20:33:434 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:20:33:434 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:33:435 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:33:435 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:33:435 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:33:473 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:33:473 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:33:473 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:33:474 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:33:474 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:33:474 RAM/(4066:4108): Posicion en X: 6
+[INFO] 16:20:33:474 RAM/(4066:4108): Posicion en Y: 0
+[INFO] 16:20:33:475 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:33:475 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:33:475 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:35:569 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:35:569 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:35:570 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:35:570 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:35:570 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:20:35:570 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:20:35:571 RAM/(4066:4108): Posicion en Y: 2
+[INFO] 16:20:35:571 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:35:571 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:35:571 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:35:609 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:35:609 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:35:609 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:35:610 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:35:610 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:35:610 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:20:35:610 RAM/(4066:4108): Posicion en Y: 0
+[INFO] 16:20:35:610 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:35:611 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:35:611 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:37:705 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:37:705 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:37:706 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:37:706 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:37:706 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:37:706 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:20:37:707 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:37:707 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:37:707 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:37:707 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:42:725 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:42:725 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:42:726 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:42:726 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:20:42:726 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:20:42:726 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:20:42:727 RAM/(4066:4108): Posicion en Y: 2
+[INFO] 16:20:42:727 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:42:727 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:42:728 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:42:765 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:42:765 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:42:766 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:42:766 RAM/(4066:4108): ID PCB: 2
+[INFO] 16:20:42:766 RAM/(4066:4108): ID TCB: 2
+[INFO] 16:20:42:767 RAM/(4066:4108): Posicion en X: 2
+[INFO] 16:20:42:767 RAM/(4066:4108): Posicion en Y: 0
+[INFO] 16:20:42:767 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:42:767 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:42:768 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:46:861 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:46:861 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:46:862 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:46:862 RAM/(4066:4108): ID PCB: 2
+[INFO] 16:20:46:862 RAM/(4066:4108): ID TCB: 2
+[INFO] 16:20:46:863 RAM/(4066:4108): Posicion en X: 2
+[INFO] 16:20:46:863 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:46:863 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:46:864 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:46:864 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:51:925 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:51:925 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:51:925 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:51:926 RAM/(4066:4108): ID PCB: 2
+[INFO] 16:20:51:926 RAM/(4066:4108): ID TCB: 2
+[INFO] 16:20:51:926 RAM/(4066:4108): Posicion en X: 2
+[INFO] 16:20:51:926 RAM/(4066:4108): Posicion en Y: 2
+[INFO] 16:20:51:926 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:51:927 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:51:927 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:51:965 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:51:965 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:51:966 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:51:966 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:20:51:966 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:20:51:966 RAM/(4066:4108): Posicion en X: 1
+[INFO] 16:20:51:966 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:51:967 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:51:967 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:51:967 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:56:069 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:20:56:069 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:20:56:070 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:20:56:070 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:20:56:070 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:20:56:070 RAM/(4066:4108): Posicion en X: 2
+[INFO] 16:20:56:071 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:20:56:071 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:20:56:071 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:20:56:071 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:01:089 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:01:089 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:01:090 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:01:090 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:21:01:090 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:21:01:091 RAM/(4066:4108): Posicion en X: 3
+[INFO] 16:21:01:091 RAM/(4066:4108): Posicion en Y: 1
+[INFO] 16:21:01:091 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:01:092 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:01:092 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:05:149 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:05:149 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:05:150 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:05:150 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:21:05:150 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:21:05:150 RAM/(4066:4108): Posicion en X: 3
+[INFO] 16:21:05:151 RAM/(4066:4108): Posicion en Y: 2
+[INFO] 16:21:05:151 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:05:152 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:05:152 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:09:209 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:09:209 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:09:210 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:09:210 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:21:09:210 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:21:09:210 RAM/(4066:4108): Posicion en X: 3
+[INFO] 16:21:09:211 RAM/(4066:4108): Posicion en Y: 3
+[INFO] 16:21:09:211 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:09:211 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:09:212 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:23:313 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:21:23:313 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:23:314 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:21:23:314 RAM/(4066:4108): ID PCB:1
+[INFO] 16:21:23:314 RAM/(4066:4108): ID TCB:0
+[INFO] 16:21:23:314 RAM/(4066:4108): La tarea a enviar es:BARRER;7;7;4
+[INFO] 16:21:23:315 RAM/(4066:4108): La tarea a enviar es: BARRER;7;7;4
+[INFO] 16:21:23:315 RAM/(4066:4108): El tamaño de tarea a enviar es: 13
+[INFO] 16:21:23:315 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:23:316 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:25:365 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:25:366 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:25:366 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:25:366 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:21:25:366 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:21:25:366 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:21:25:367 RAM/(4066:4108): Posicion en Y: 3
+[INFO] 16:21:25:367 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:25:367 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:25:367 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:29:425 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:29:425 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:29:426 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:29:426 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:21:29:426 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:21:29:427 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:21:29:427 RAM/(4066:4108): Posicion en Y: 4
+[INFO] 16:21:29:427 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:29:428 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:29:428 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:29:465 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:21:29:466 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:29:466 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:21:29:466 RAM/(4066:4108): ID PCB:3
+[INFO] 16:21:29:466 RAM/(4066:4108): ID TCB:3
+[INFO] 16:21:29:467 RAM/(4066:4108): La tarea a enviar es:DESCARTAR_BASURA 0;5;5;2
+[INFO] 16:21:29:467 RAM/(4066:4108): La tarea a enviar es: DESCARTAR_BASURA 0;5;5;2
+[INFO] 16:21:29:467 RAM/(4066:4108): El tamaño de tarea a enviar es: 25
+[INFO] 16:21:29:468 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:29:468 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:33:569 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:33:569 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:33:570 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:33:570 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:21:33:570 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:21:33:571 RAM/(4066:4108): Posicion en X: 4
+[INFO] 16:21:33:571 RAM/(4066:4108): Posicion en Y: 3
+[INFO] 16:21:33:572 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:33:573 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:33:574 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:33:609 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:33:609 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:33:610 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:33:610 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:21:33:610 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:21:33:611 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:21:33:611 RAM/(4066:4108): Posicion en Y: 5
+[INFO] 16:21:33:611 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:33:612 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:33:612 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:37:709 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:37:710 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:37:710 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:37:710 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:21:37:710 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:21:37:711 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:21:37:711 RAM/(4066:4108): Posicion en Y: 6
+[INFO] 16:21:37:712 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:37:712 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:37:713 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:37:749 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:37:750 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:37:750 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:37:751 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:21:37:751 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:21:37:751 RAM/(4066:4108): Posicion en X: 5
+[INFO] 16:21:37:752 RAM/(4066:4108): Posicion en Y: 3
+[INFO] 16:21:37:752 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:37:753 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:37:753 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:41:849 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:41:849 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:41:849 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:41:850 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:21:41:850 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:21:41:850 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:21:41:850 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:21:41:850 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:41:851 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:41:851 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:41:889 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:41:889 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:41:890 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:41:890 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:21:41:890 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:21:41:890 RAM/(4066:4108): Posicion en X: 5
+[INFO] 16:21:41:890 RAM/(4066:4108): Posicion en Y: 4
+[INFO] 16:21:41:891 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:41:891 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:41:891 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:45:989 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:21:45:989 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:45:990 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:21:45:990 RAM/(4066:4108): ID PCB: 3
+[INFO] 16:21:45:990 RAM/(4066:4108): ID TCB: 3
+[INFO] 16:21:45:990 RAM/(4066:4108): Posicion en X: 5
+[INFO] 16:21:45:991 RAM/(4066:4108): Posicion en Y: 5
+[INFO] 16:21:45:991 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:45:991 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:21:45:992 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:59:093 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:21:59:094 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:21:59:094 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:21:59:094 RAM/(4066:4108): ID PCB:1
+[INFO] 16:21:59:094 RAM/(4066:4108): ID TCB:0
+[INFO] 16:21:59:095 RAM/(4066:4108): La tarea a enviar es:SALUDAR;2;7;1
+[INFO] 16:21:59:095 RAM/(4066:4108): La tarea a enviar es: SALUDAR;2;7;1
+[INFO] 16:21:59:095 RAM/(4066:4108): El tamaño de tarea a enviar es: 13
+[INFO] 16:21:59:096 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:21:59:096 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:03:157 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:03:157 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:03:157 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:03:158 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:03:158 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:22:03:158 RAM/(4066:4108): Posicion en X: 6
+[INFO] 16:22:03:158 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:03:159 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:03:159 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:03:159 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:07:217 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:07:217 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:07:218 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:07:218 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:07:218 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:22:07:218 RAM/(4066:4108): Posicion en X: 5
+[INFO] 16:22:07:219 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:07:219 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:07:220 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:07:220 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:09:269 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:22:09:270 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:09:270 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:22:09:270 RAM/(4066:4108): ID PCB:1
+[INFO] 16:22:09:270 RAM/(4066:4108): ID TCB:1
+[INFO] 16:22:09:270 RAM/(4066:4108): La tarea a enviar es:BARRER;7;7;4
+[INFO] 16:22:09:271 RAM/(4066:4108): La tarea a enviar es: BARRER;7;7;4
+[INFO] 16:22:09:271 RAM/(4066:4108): El tamaño de tarea a enviar es: 13
+[INFO] 16:22:09:272 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:09:272 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:11:321 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:11:321 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:11:322 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:11:322 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:11:322 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:22:11:322 RAM/(4066:4108): Posicion en X: 4
+[INFO] 16:22:11:323 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:11:323 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:11:323 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:11:323 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:11:361 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:11:361 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:11:361 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:11:362 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:11:362 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:11:362 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:22:11:363 RAM/(4066:4108): Posicion en Y: 3
+[INFO] 16:22:11:363 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:11:363 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:11:363 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:15:461 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:15:461 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:15:461 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:15:462 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:15:462 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:22:15:462 RAM/(4066:4108): Posicion en X: 3
+[INFO] 16:22:15:462 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:15:463 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:15:463 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:15:463 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:15:502 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:15:502 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:15:502 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:15:503 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:15:503 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:15:503 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:22:15:503 RAM/(4066:4108): Posicion en Y: 4
+[INFO] 16:22:15:503 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:15:504 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:15:504 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:19:601 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:19:602 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:19:602 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:19:602 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:19:602 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:19:603 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:22:19:603 RAM/(4066:4108): Posicion en Y: 5
+[INFO] 16:22:19:604 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:19:604 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:19:604 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:19:641 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:19:641 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:19:642 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:19:642 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:19:642 RAM/(4066:4108): ID TCB: 0
+[INFO] 16:22:19:642 RAM/(4066:4108): Posicion en X: 2
+[INFO] 16:22:19:642 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:19:643 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:19:643 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:19:644 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:21:729 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:22:21:729 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:21:730 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:22:21:730 RAM/(4066:4108): ID PCB:2
+[INFO] 16:22:21:730 RAM/(4066:4108): ID TCB:2
+[INFO] 16:22:21:730 RAM/(4066:4108): La tarea a enviar es:LIMPIAR_ACUARIOS;4;4;5
+[INFO] 16:22:21:731 RAM/(4066:4108): La tarea a enviar es: LIMPIAR_ACUARIOS;4;4;5
+[INFO] 16:22:21:731 RAM/(4066:4108): El tamaño de tarea a enviar es: 23
+[INFO] 16:22:21:731 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:21:732 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:23:781 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:23:781 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:23:782 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:23:782 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:23:782 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:23:783 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:22:23:783 RAM/(4066:4108): Posicion en Y: 6
+[INFO] 16:22:23:783 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:23:783 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:23:784 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:23:826 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:22:23:826 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:23:826 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:22:23:827 RAM/(4066:4108): ID PCB:1
+[INFO] 16:22:23:827 RAM/(4066:4108): ID TCB:0
+[INFO] 16:22:23:827 RAM/(4066:4108): La tarea a enviar es:(null)
+[INFO] 16:22:23:827 RAM/(4066:4108): No hay mas tareas que mandar
+[INFO] 16:22:23:828 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:23:828 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:25:913 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 530
+[INFO] 16:22:25:914 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:25:914 RAM/(4066:4108): Llegó operación: EXPULSAR_TRIPULANTE
+[INFO] 16:22:25:914 RAM/(4066:4108): ID PCB:1
+[INFO] 16:22:25:915 RAM/(4066:4108): ID TCB:0
+[INFO] 16:22:25:915 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:25:916 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:27:969 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:27:969 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:27:969 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:27:970 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:27:970 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:27:970 RAM/(4066:4108): Posicion en X: 7
+[INFO] 16:22:27:970 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:27:971 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:27:971 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:27:971 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:28:009 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:28:009 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:28:009 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:28:010 RAM/(4066:4108): ID PCB: 2
+[INFO] 16:22:28:010 RAM/(4066:4108): ID TCB: 2
+[INFO] 16:22:28:010 RAM/(4066:4108): Posicion en X: 3
+[INFO] 16:22:28:010 RAM/(4066:4108): Posicion en Y: 2
+[INFO] 16:22:28:011 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:28:011 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:28:011 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:32:110 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:32:110 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:32:110 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:32:110 RAM/(4066:4108): ID PCB: 2
+[INFO] 16:22:32:111 RAM/(4066:4108): ID TCB: 2
+[INFO] 16:22:32:111 RAM/(4066:4108): Posicion en X: 4
+[INFO] 16:22:32:111 RAM/(4066:4108): Posicion en Y: 2
+[INFO] 16:22:32:111 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:32:112 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:32:112 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:34:157 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:22:34:158 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:34:158 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:22:34:159 RAM/(4066:4108): ID PCB:3
+[INFO] 16:22:34:159 RAM/(4066:4108): ID TCB:3
+[INFO] 16:22:34:159 RAM/(4066:4108): La tarea a enviar es:IRSE;8;8;1
+[INFO] 16:22:34:160 RAM/(4066:4108): La tarea a enviar es: IRSE;8;8;1
+[INFO] 16:22:34:160 RAM/(4066:4108): El tamaño de tarea a enviar es: 10
+[INFO] 16:22:34:162 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:34:163 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:36:213 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:36:213 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:36:214 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:36:214 RAM/(4066:4108): ID PCB: 2
+[INFO] 16:22:36:214 RAM/(4066:4108): ID TCB: 2
+[INFO] 16:22:36:215 RAM/(4066:4108): Posicion en X: 4
+[INFO] 16:22:36:215 RAM/(4066:4108): Posicion en Y: 3
+[INFO] 16:22:36:215 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:36:216 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:36:216 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:38:265 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:38:265 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:38:266 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:38:266 RAM/(4066:4108): ID PCB: 2
+[INFO] 16:22:38:266 RAM/(4066:4108): ID TCB: 2
+[INFO] 16:22:38:266 RAM/(4066:4108): Posicion en X: 4
+[INFO] 16:22:38:266 RAM/(4066:4108): Posicion en Y: 4
+[INFO] 16:22:38:267 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:38:267 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:38:267 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:40:317 RAM/(4066:4108): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:22:40:318 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:40:318 RAM/(4066:4108): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:22:40:318 RAM/(4066:4108): ID PCB:1
+[INFO] 16:22:40:318 RAM/(4066:4108): ID TCB:1
+[INFO] 16:22:40:319 RAM/(4066:4108): La tarea a enviar es:SALUDAR;2;7;1
+[INFO] 16:22:40:319 RAM/(4066:4108): La tarea a enviar es: SALUDAR;2;7;1
+[INFO] 16:22:40:319 RAM/(4066:4108): El tamaño de tarea a enviar es: 13
+[INFO] 16:22:40:320 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:40:321 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:42:365 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:42:366 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:42:366 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:42:366 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:42:366 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:42:367 RAM/(4066:4108): Posicion en X: 6
+[INFO] 16:22:42:367 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:42:367 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:42:367 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:42:368 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:44:421 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:44:421 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:44:422 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:44:422 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:44:422 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:44:423 RAM/(4066:4108): Posicion en X: 5
+[INFO] 16:22:44:423 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:44:423 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:44:424 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:44:424 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:46:477 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:46:477 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:46:478 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:46:478 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:46:478 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:46:478 RAM/(4066:4108): Posicion en X: 4
+[INFO] 16:22:46:478 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:46:479 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:46:479 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:46:479 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:48:529 RAM/(4066:4108): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:22:48:530 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:48:530 RAM/(4066:4108): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:22:48:530 RAM/(4066:4108): ID PCB: 1
+[INFO] 16:22:48:530 RAM/(4066:4108): ID TCB: 1
+[INFO] 16:22:48:531 RAM/(4066:4108): Posicion en X: 3
+[INFO] 16:22:48:531 RAM/(4066:4108): Posicion en Y: 7
+[INFO] 16:22:48:532 RAM/(4066:4108): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:22:48:532 RAM/(4066:4108): Se mando con éxito la ubicación del tripulante
+[INFO] 16:22:48:533 RAM/(4066:4108): -----------------------------------------------------
+[INFO] 16:22:49:002 RAM/(4066:4108): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:32:34:996 RAM/(6459:6459): Esquema utilizado: SEGMENTACION
+[INFO] 16:32:34:997 RAM/(6459:6459): Tamanio de la memoria: 2048
+[INFO] 16:32:34:997 RAM/(6459:6459): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:32:34:997 RAM/(6459:6459): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:32:46:451 RAM/(6459:6459): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:32:46:451 RAM/(6459:6498): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:38:01:308 RAM/(6459:6498): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:38:45:364 RAM/(7464:7464): Esquema utilizado: SEGMENTACION
+[INFO] 16:38:45:364 RAM/(7464:7464): Tamanio de la memoria: 2048
+[INFO] 16:38:45:365 RAM/(7464:7464): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 16:38:45:365 RAM/(7464:7464): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 16:38:49:243 RAM/(7464:7464): [Shared Library]: Nueva conexion ID: 5
+[INFO] 16:38:49:243 RAM/(7464:7476): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 16:38:54:829 RAM/(7464:7476): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 16:39:04:834 RAM/(7464:7464): [Shared Library]: Nueva conexion ID: 7
+[INFO] 16:39:04:841 RAM/(7464:7516): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 16:39:33:786 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 500
+[INFO] 16:39:33:786 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:33:787 RAM/(7464:7516): Llegó la operación: INICIAR_PATOTA 
+[INFO] 16:39:33:787 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:39:33:787 RAM/(7464:7516): Tareas de la patota: GENERAR_OXIGENO 50;7;2;10BARRER;7;7;4SALUDAR;2;7;1
+[INFO] 16:39:33:787 RAM/(7464:7516): Cantidad de tripulantes: 2
+[INFO] 16:39:33:787 RAM/(7464:7516): Size total a guardar en memoria: 102
+[INFO] 16:39:33:788 RAM/(7464:7516): Se guardaron exitosamente los datos de la patota
+[INFO] 16:39:33:788 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:39:33:788 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:33:889 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:39:33:889 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:33:889 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:39:33:890 RAM/(7464:7516): ID PCB:1
+[INFO] 16:39:33:890 RAM/(7464:7516): ID TCB:0
+[INFO] 16:39:33:890 RAM/(7464:7516): La tarea a enviar es:GENERAR_OXIGENO 50;7;2;10
+[INFO] 16:39:33:890 RAM/(7464:7516): La tarea a enviar es: GENERAR_OXIGENO 50;7;2;10
+[INFO] 16:39:33:890 RAM/(7464:7516): El tamaño de tarea a enviar es: 26
+[INFO] 16:39:33:891 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:39:33:891 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:34:145 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:39:34:145 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:34:145 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:39:34:146 RAM/(7464:7516): ID PCB:1
+[INFO] 16:39:34:146 RAM/(7464:7516): ID TCB:1
+[INFO] 16:39:34:146 RAM/(7464:7516): La tarea a enviar es:GENERAR_OXIGENO 50;7;2;10
+[INFO] 16:39:34:146 RAM/(7464:7516): La tarea a enviar es: GENERAR_OXIGENO 50;7;2;10
+[INFO] 16:39:34:146 RAM/(7464:7516): El tamaño de tarea a enviar es: 26
+[INFO] 16:39:34:147 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:39:34:148 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:52:633 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 500
+[INFO] 16:39:52:633 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:52:633 RAM/(7464:7516): Llegó la operación: INICIAR_PATOTA 
+[INFO] 16:39:52:634 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:39:52:634 RAM/(7464:7516): Tareas de la patota: GENERAR_BASURA 30;2;2;2LIMPIAR_ACUARIOS;4;4;5IRSE;6;6;1
+[INFO] 16:39:52:634 RAM/(7464:7516): Cantidad de tripulantes: 1
+[INFO] 16:39:52:634 RAM/(7464:7516): Size total a guardar en memoria: 86
+[INFO] 16:39:52:635 RAM/(7464:7516): Se guardaron exitosamente los datos de la patota
+[INFO] 16:39:52:635 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:39:52:635 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:52:685 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:39:52:685 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:39:52:686 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:39:52:686 RAM/(7464:7516): ID PCB:2
+[INFO] 16:39:52:686 RAM/(7464:7516): ID TCB:2
+[INFO] 16:39:52:686 RAM/(7464:7516): La tarea a enviar es:GENERAR_BASURA 30;2;2;2
+[INFO] 16:39:52:687 RAM/(7464:7516): La tarea a enviar es: GENERAR_BASURA 30;2;2;2
+[INFO] 16:39:52:687 RAM/(7464:7516): El tamaño de tarea a enviar es: 24
+[INFO] 16:39:52:687 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:39:52:687 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:10:613 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 500
+[INFO] 16:40:10:613 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:10:613 RAM/(7464:7516): Llegó la operación: INICIAR_PATOTA 
+[INFO] 16:40:10:614 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:40:10:614 RAM/(7464:7516): Tareas de la patota: ESCANEAR_MUESTRAS;3;3;5DESCARTAR_BASURA 0;5;5;2IRSE;8;8;1
+[INFO] 16:40:10:614 RAM/(7464:7516): Cantidad de tripulantes: 1
+[INFO] 16:40:10:615 RAM/(7464:7516): Size total a guardar en memoria: 88
+[INFO] 16:40:10:615 RAM/(7464:7516): Se guardaron exitosamente los datos de la patota
+[INFO] 16:40:10:615 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:10:615 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:10:661 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:40:10:661 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:10:661 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:40:10:662 RAM/(7464:7516): ID PCB:3
+[INFO] 16:40:10:662 RAM/(7464:7516): ID TCB:3
+[INFO] 16:40:10:662 RAM/(7464:7516): La tarea a enviar es:ESCANEAR_MUESTRAS;3;3;5
+[INFO] 16:40:10:662 RAM/(7464:7516): La tarea a enviar es: ESCANEAR_MUESTRAS;3;3;5
+[INFO] 16:40:10:663 RAM/(7464:7516): El tamaño de tarea a enviar es: 24
+[INFO] 16:40:10:663 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:10:663 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:37:913 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:37:913 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:37:913 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:37:914 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:37:914 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:40:37:914 RAM/(7464:7516): Posicion en X: 2
+[INFO] 16:40:37:914 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:40:37:915 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:37:915 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:37:915 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:37:973 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:37:973 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:37:973 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:37:974 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:37:974 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:37:974 RAM/(7464:7516): Posicion en X: 1
+[INFO] 16:40:37:974 RAM/(7464:7516): Posicion en Y: 0
+[INFO] 16:40:37:975 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:37:976 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:37:976 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:40:249 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:40:249 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:40:250 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:40:250 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:40:250 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:40:40:250 RAM/(7464:7516): Posicion en X: 3
+[INFO] 16:40:40:250 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:40:40:251 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:40:251 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:40:252 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:40:305 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:40:306 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:40:306 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:40:306 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:40:306 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:40:306 RAM/(7464:7516): Posicion en X: 2
+[INFO] 16:40:40:307 RAM/(7464:7516): Posicion en Y: 0
+[INFO] 16:40:40:307 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:40:308 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:40:308 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:42:513 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:42:513 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:42:513 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:42:514 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:42:514 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:40:42:514 RAM/(7464:7516): Posicion en X: 4
+[INFO] 16:40:42:514 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:40:42:514 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:42:515 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:42:516 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:42:557 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:42:557 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:42:557 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:42:557 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:42:558 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:42:558 RAM/(7464:7516): Posicion en X: 3
+[INFO] 16:40:42:558 RAM/(7464:7516): Posicion en Y: 0
+[INFO] 16:40:42:558 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:42:559 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:42:560 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:44:750 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:44:750 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:44:750 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:44:750 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:44:751 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:40:44:751 RAM/(7464:7516): Posicion en X: 5
+[INFO] 16:40:44:751 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:40:44:751 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:44:752 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:44:753 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:44:805 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:44:806 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:44:806 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:44:806 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:44:807 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:44:807 RAM/(7464:7516): Posicion en X: 4
+[INFO] 16:40:44:807 RAM/(7464:7516): Posicion en Y: 0
+[INFO] 16:40:44:807 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:44:809 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:44:809 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:47:017 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:47:017 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:47:018 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:47:018 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:47:018 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:47:018 RAM/(7464:7516): Posicion en X: 5
+[INFO] 16:40:47:018 RAM/(7464:7516): Posicion en Y: 0
+[INFO] 16:40:47:019 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:47:020 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:47:020 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:47:065 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:47:065 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:47:066 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:47:066 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:47:066 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:40:47:066 RAM/(7464:7516): Posicion en X: 6
+[INFO] 16:40:47:066 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:40:47:067 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:47:068 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:47:068 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:49:261 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:49:262 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:49:262 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:49:262 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:49:262 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:40:49:262 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:40:49:263 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:40:49:263 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:49:264 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:49:268 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:49:313 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:49:313 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:49:314 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:49:314 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:49:314 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:49:314 RAM/(7464:7516): Posicion en X: 6
+[INFO] 16:40:49:314 RAM/(7464:7516): Posicion en Y: 0
+[INFO] 16:40:49:315 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:49:316 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:49:316 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:51:550 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:51:550 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:51:550 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:51:550 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:51:550 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:51:550 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:40:51:551 RAM/(7464:7516): Posicion en Y: 0
+[INFO] 16:40:51:551 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:51:552 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:51:552 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:51:605 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:51:605 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:51:606 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:51:606 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:51:606 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:40:51:606 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:40:51:607 RAM/(7464:7516): Posicion en Y: 2
+[INFO] 16:40:51:608 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:51:609 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:51:609 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:53:829 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:53:829 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:53:829 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:53:829 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:53:830 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:53:830 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:40:53:830 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:40:53:830 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:53:832 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:53:835 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:59:109 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:59:109 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:59:109 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:59:110 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:40:59:110 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:40:59:110 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:40:59:110 RAM/(7464:7516): Posicion en Y: 2
+[INFO] 16:40:59:111 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:59:112 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:59:112 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:59:157 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:40:59:157 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:40:59:157 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:40:59:158 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:40:59:158 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:40:59:158 RAM/(7464:7516): Posicion en X: 2
+[INFO] 16:40:59:158 RAM/(7464:7516): Posicion en Y: 0
+[INFO] 16:40:59:158 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:40:59:159 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:40:59:160 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:03:397 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:03:397 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:03:398 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:03:398 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:41:03:398 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:41:03:398 RAM/(7464:7516): Posicion en X: 2
+[INFO] 16:41:03:398 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:41:03:399 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:03:401 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:03:402 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:08:565 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:08:565 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:08:565 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:08:566 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:41:08:566 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:41:08:566 RAM/(7464:7516): Posicion en X: 2
+[INFO] 16:41:08:566 RAM/(7464:7516): Posicion en Y: 2
+[INFO] 16:41:08:567 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:08:568 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:08:568 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:08:613 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:08:613 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:08:613 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:08:614 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:41:08:614 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:41:08:614 RAM/(7464:7516): Posicion en X: 1
+[INFO] 16:41:08:614 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:41:08:614 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:08:615 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:08:616 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:12:889 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:12:890 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:12:890 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:12:890 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:41:12:891 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:41:12:891 RAM/(7464:7516): Posicion en X: 2
+[INFO] 16:41:12:891 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:41:12:891 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:12:893 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:12:893 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:18:025 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:18:026 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:18:026 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:18:026 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:41:18:026 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:41:18:027 RAM/(7464:7516): Posicion en X: 3
+[INFO] 16:41:18:027 RAM/(7464:7516): Posicion en Y: 1
+[INFO] 16:41:18:027 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:18:028 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:18:028 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:22:217 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:22:217 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:22:218 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:22:218 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:41:22:218 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:41:22:218 RAM/(7464:7516): Posicion en X: 3
+[INFO] 16:41:22:218 RAM/(7464:7516): Posicion en Y: 2
+[INFO] 16:41:22:219 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:22:220 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:22:220 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:26:405 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:26:405 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:26:405 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:26:406 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:41:26:406 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:41:26:406 RAM/(7464:7516): Posicion en X: 3
+[INFO] 16:41:26:406 RAM/(7464:7516): Posicion en Y: 3
+[INFO] 16:41:26:406 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:26:407 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:26:407 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:40:930 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:41:40:933 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:40:933 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:41:40:934 RAM/(7464:7516): ID PCB:1
+[INFO] 16:41:40:934 RAM/(7464:7516): ID TCB:0
+[INFO] 16:41:40:934 RAM/(7464:7516): La tarea a enviar es:BARRER;7;7;4
+[INFO] 16:41:40:934 RAM/(7464:7516): La tarea a enviar es: BARRER;7;7;4
+[INFO] 16:41:40:934 RAM/(7464:7516): El tamaño de tarea a enviar es: 13
+[INFO] 16:41:40:936 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:40:936 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:43:133 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:43:133 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:43:133 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:43:134 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:41:43:134 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:41:43:134 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:41:43:134 RAM/(7464:7516): Posicion en Y: 3
+[INFO] 16:41:43:134 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:43:135 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:43:135 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:47:309 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:47:309 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:47:310 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:47:310 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:41:47:310 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:41:47:310 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:41:47:310 RAM/(7464:7516): Posicion en Y: 4
+[INFO] 16:41:47:311 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:47:312 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:47:312 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:47:401 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:41:47:402 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:47:402 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:41:47:402 RAM/(7464:7516): ID PCB:3
+[INFO] 16:41:47:402 RAM/(7464:7516): ID TCB:3
+[INFO] 16:41:47:402 RAM/(7464:7516): La tarea a enviar es:DESCARTAR_BASURA 0;5;5;2
+[INFO] 16:41:47:402 RAM/(7464:7516): La tarea a enviar es: DESCARTAR_BASURA 0;5;5;2
+[INFO] 16:41:47:403 RAM/(7464:7516): El tamaño de tarea a enviar es: 25
+[INFO] 16:41:47:403 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:47:403 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:51:613 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:51:613 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:51:614 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:51:614 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:41:51:614 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:41:51:614 RAM/(7464:7516): Posicion en X: 4
+[INFO] 16:41:51:614 RAM/(7464:7516): Posicion en Y: 3
+[INFO] 16:41:51:615 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:51:616 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:51:616 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:51:669 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:51:669 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:51:670 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:51:670 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:41:51:670 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:41:51:670 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:41:51:670 RAM/(7464:7516): Posicion en Y: 5
+[INFO] 16:41:51:671 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:51:672 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:51:672 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:55:937 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:55:937 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:55:937 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:55:938 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:41:55:938 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:41:55:938 RAM/(7464:7516): Posicion en X: 5
+[INFO] 16:41:55:938 RAM/(7464:7516): Posicion en Y: 3
+[INFO] 16:41:55:938 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:55:940 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:55:940 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:55:989 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:41:55:989 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:41:55:989 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:41:55:990 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:41:55:990 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:41:55:990 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:41:55:990 RAM/(7464:7516): Posicion en Y: 6
+[INFO] 16:41:55:991 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:41:55:992 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:41:55:992 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:00:233 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:00:234 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:00:234 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:00:234 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:42:00:234 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:42:00:235 RAM/(7464:7516): Posicion en X: 5
+[INFO] 16:42:00:235 RAM/(7464:7516): Posicion en Y: 4
+[INFO] 16:42:00:235 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:00:236 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:00:236 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:00:281 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:00:281 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:00:281 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:00:282 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:00:282 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:42:00:282 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:42:00:282 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:42:00:283 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:00:284 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:00:284 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:04:501 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:04:502 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:04:502 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:04:502 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:42:04:502 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:42:04:502 RAM/(7464:7516): Posicion en X: 5
+[INFO] 16:42:04:503 RAM/(7464:7516): Posicion en Y: 5
+[INFO] 16:42:04:503 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:04:504 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:04:505 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:17:985 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:42:17:985 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:17:985 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:42:17:986 RAM/(7464:7516): ID PCB:1
+[INFO] 16:42:17:986 RAM/(7464:7516): ID TCB:0
+[INFO] 16:42:17:986 RAM/(7464:7516): La tarea a enviar es:SALUDAR;2;7;1
+[INFO] 16:42:17:986 RAM/(7464:7516): La tarea a enviar es: SALUDAR;2;7;1
+[INFO] 16:42:17:986 RAM/(7464:7516): El tamaño de tarea a enviar es: 13
+[INFO] 16:42:17:986 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:17:988 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:22:154 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:22:154 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:22:154 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:22:154 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:22:155 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:42:22:155 RAM/(7464:7516): Posicion en X: 6
+[INFO] 16:42:22:155 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:42:22:155 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:22:156 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:22:156 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:26:381 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:26:381 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:26:382 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:26:382 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:26:382 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:42:26:382 RAM/(7464:7516): Posicion en X: 5
+[INFO] 16:42:26:383 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:42:26:383 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:26:383 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:26:384 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:28:494 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:42:28:494 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:28:494 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:42:28:494 RAM/(7464:7516): ID PCB:1
+[INFO] 16:42:28:495 RAM/(7464:7516): ID TCB:1
+[INFO] 16:42:28:495 RAM/(7464:7516): La tarea a enviar es:BARRER;7;7;4
+[INFO] 16:42:28:495 RAM/(7464:7516): La tarea a enviar es: BARRER;7;7;4
+[INFO] 16:42:28:495 RAM/(7464:7516): El tamaño de tarea a enviar es: 13
+[INFO] 16:42:28:495 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:28:497 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:30:637 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:30:637 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:30:637 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:30:638 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:30:638 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:42:30:638 RAM/(7464:7516): Posicion en X: 4
+[INFO] 16:42:30:638 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:42:30:639 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:30:640 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:30:640 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:30:685 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:30:686 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:30:686 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:30:686 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:30:687 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:42:30:687 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:42:30:687 RAM/(7464:7516): Posicion en Y: 3
+[INFO] 16:42:30:687 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:30:688 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:30:688 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:34:933 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:34:933 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:34:933 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:34:934 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:34:934 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:42:34:934 RAM/(7464:7516): Posicion en X: 3
+[INFO] 16:42:34:934 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:42:34:934 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:34:935 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:34:935 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:34:989 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:34:989 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:34:990 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:34:990 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:34:990 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:42:34:990 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:42:34:990 RAM/(7464:7516): Posicion en Y: 4
+[INFO] 16:42:34:991 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:34:992 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:34:992 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:39:225 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:39:225 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:39:225 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:39:226 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:39:226 RAM/(7464:7516): ID TCB: 0
+[INFO] 16:42:39:226 RAM/(7464:7516): Posicion en X: 2
+[INFO] 16:42:39:226 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:42:39:227 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:39:227 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:39:227 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:39:281 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:39:282 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:39:282 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:39:283 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:39:283 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:42:39:283 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:42:39:283 RAM/(7464:7516): Posicion en Y: 5
+[INFO] 16:42:39:284 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:39:285 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:39:285 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:41:429 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:42:41:429 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:41:429 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:42:41:430 RAM/(7464:7516): ID PCB:2
+[INFO] 16:42:41:430 RAM/(7464:7516): ID TCB:2
+[INFO] 16:42:41:430 RAM/(7464:7516): La tarea a enviar es:LIMPIAR_ACUARIOS;4;4;5
+[INFO] 16:42:41:431 RAM/(7464:7516): La tarea a enviar es: LIMPIAR_ACUARIOS;4;4;5
+[INFO] 16:42:41:431 RAM/(7464:7516): El tamaño de tarea a enviar es: 23
+[INFO] 16:42:41:431 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:41:432 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:43:585 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:43:586 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:43:586 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:43:586 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:43:587 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:42:43:587 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:42:43:587 RAM/(7464:7516): Posicion en Y: 6
+[INFO] 16:42:43:587 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:43:588 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:43:588 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:43:645 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:42:43:645 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:43:645 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:42:43:646 RAM/(7464:7516): ID PCB:1
+[INFO] 16:42:43:646 RAM/(7464:7516): ID TCB:0
+[INFO] 16:42:43:646 RAM/(7464:7516): La tarea a enviar es:(null)
+[INFO] 16:42:43:646 RAM/(7464:7516): No hay mas tareas que mandar
+[INFO] 16:42:43:647 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:43:648 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:45:793 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 530
+[INFO] 16:42:45:794 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:45:794 RAM/(7464:7516): Llegó operación: EXPULSAR_TRIPULANTE
+[INFO] 16:42:45:794 RAM/(7464:7516): ID PCB:1
+[INFO] 16:42:45:794 RAM/(7464:7516): ID TCB:0
+[INFO] 16:42:45:794 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:45:795 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:47:961 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:47:961 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:47:962 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:47:962 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:42:47:962 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:42:47:962 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:42:47:963 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:42:47:963 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:47:964 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:47:964 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:48:009 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:48:009 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:48:010 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:48:010 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:42:48:010 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:42:48:010 RAM/(7464:7516): Posicion en X: 3
+[INFO] 16:42:48:011 RAM/(7464:7516): Posicion en Y: 2
+[INFO] 16:42:48:011 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:48:012 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:48:012 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:52:253 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:52:253 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:52:253 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:52:254 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:42:52:255 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:42:52:255 RAM/(7464:7516): Posicion en X: 4
+[INFO] 16:42:52:255 RAM/(7464:7516): Posicion en Y: 2
+[INFO] 16:42:52:255 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:52:256 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:52:256 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:54:353 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:42:54:353 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:54:353 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:42:54:354 RAM/(7464:7516): ID PCB:3
+[INFO] 16:42:54:354 RAM/(7464:7516): ID TCB:3
+[INFO] 16:42:54:354 RAM/(7464:7516): La tarea a enviar es:IRSE;8;8;1
+[INFO] 16:42:54:354 RAM/(7464:7516): La tarea a enviar es: IRSE;8;8;1
+[INFO] 16:42:54:355 RAM/(7464:7516): El tamaño de tarea a enviar es: 10
+[INFO] 16:42:54:355 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:54:355 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:56:485 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:56:485 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:56:486 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:56:486 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:42:56:486 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:42:56:486 RAM/(7464:7516): Posicion en X: 4
+[INFO] 16:42:56:487 RAM/(7464:7516): Posicion en Y: 3
+[INFO] 16:42:56:487 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:56:488 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:56:493 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:58:645 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:42:58:645 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:42:58:646 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:42:58:646 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:42:58:647 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:42:58:647 RAM/(7464:7516): Posicion en X: 4
+[INFO] 16:42:58:647 RAM/(7464:7516): Posicion en Y: 4
+[INFO] 16:42:58:647 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:42:58:648 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:42:58:649 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:00:813 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:43:00:814 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:00:814 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:43:00:814 RAM/(7464:7516): ID PCB:1
+[INFO] 16:43:00:814 RAM/(7464:7516): ID TCB:1
+[INFO] 16:43:00:814 RAM/(7464:7516): La tarea a enviar es:SALUDAR;2;7;1
+[INFO] 16:43:00:815 RAM/(7464:7516): La tarea a enviar es: SALUDAR;2;7;1
+[INFO] 16:43:00:815 RAM/(7464:7516): El tamaño de tarea a enviar es: 13
+[INFO] 16:43:00:815 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:00:816 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:02:981 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:02:981 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:02:982 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:02:982 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:43:02:982 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:43:02:982 RAM/(7464:7516): Posicion en X: 6
+[INFO] 16:43:02:983 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:43:02:983 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:02:984 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:02:984 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:05:153 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:05:153 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:05:153 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:05:154 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:43:05:154 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:43:05:154 RAM/(7464:7516): Posicion en X: 5
+[INFO] 16:43:05:154 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:43:05:155 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:05:156 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:05:156 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:07:301 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:07:301 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:07:301 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:07:302 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:43:07:302 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:43:07:302 RAM/(7464:7516): Posicion en X: 4
+[INFO] 16:43:07:302 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:43:07:303 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:07:304 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:07:304 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:09:445 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:09:446 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:09:446 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:09:446 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:43:09:446 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:43:09:446 RAM/(7464:7516): Posicion en X: 3
+[INFO] 16:43:09:447 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:43:09:447 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:09:448 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:09:448 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:09:497 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:43:09:497 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:09:498 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:43:09:498 RAM/(7464:7516): ID PCB:2
+[INFO] 16:43:09:498 RAM/(7464:7516): ID TCB:2
+[INFO] 16:43:09:498 RAM/(7464:7516): La tarea a enviar es:IRSE;6;6;1
+[INFO] 16:43:09:499 RAM/(7464:7516): La tarea a enviar es: IRSE;6;6;1
+[INFO] 16:43:09:499 RAM/(7464:7516): El tamaño de tarea a enviar es: 10
+[INFO] 16:43:09:499 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:09:500 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:11:681 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:11:681 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:11:682 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:11:682 RAM/(7464:7516): ID PCB: 1
+[INFO] 16:43:11:682 RAM/(7464:7516): ID TCB: 1
+[INFO] 16:43:11:682 RAM/(7464:7516): Posicion en X: 2
+[INFO] 16:43:11:682 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:43:11:683 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:11:684 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:11:684 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:11:733 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:11:733 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:11:733 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:11:734 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:43:11:734 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:43:11:734 RAM/(7464:7516): Posicion en X: 5
+[INFO] 16:43:11:734 RAM/(7464:7516): Posicion en Y: 4
+[INFO] 16:43:11:735 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:11:736 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:11:736 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:13:937 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:13:937 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:13:937 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:13:937 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:43:13:938 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:43:13:938 RAM/(7464:7516): Posicion en X: 6
+[INFO] 16:43:13:938 RAM/(7464:7516): Posicion en Y: 4
+[INFO] 16:43:13:938 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:13:939 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:13:940 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:13:987 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:43:13:987 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:13:987 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:43:13:987 RAM/(7464:7516): ID PCB:1
+[INFO] 16:43:13:988 RAM/(7464:7516): ID TCB:1
+[INFO] 16:43:13:988 RAM/(7464:7516): La tarea a enviar es:(null)
+[INFO] 16:43:13:988 RAM/(7464:7516): No hay mas tareas que mandar
+[INFO] 16:43:13:988 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:13:988 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:16:113 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 530
+[INFO] 16:43:16:114 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:16:114 RAM/(7464:7516): Llegó operación: EXPULSAR_TRIPULANTE
+[INFO] 16:43:16:114 RAM/(7464:7516): ID PCB:1
+[INFO] 16:43:16:114 RAM/(7464:7516): ID TCB:1
+[INFO] 16:43:16:115 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:16:115 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:16:249 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:16:250 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:16:250 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:16:250 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:43:16:250 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:43:16:251 RAM/(7464:7516): Posicion en X: 6
+[INFO] 16:43:16:251 RAM/(7464:7516): Posicion en Y: 5
+[INFO] 16:43:16:251 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:16:252 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:16:252 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:16:298 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:16:298 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:16:298 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:16:299 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:43:16:299 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:43:16:299 RAM/(7464:7516): Posicion en X: 6
+[INFO] 16:43:16:299 RAM/(7464:7516): Posicion en Y: 5
+[INFO] 16:43:16:300 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:16:301 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:16:301 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:18:489 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:18:490 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:18:490 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:18:490 RAM/(7464:7516): ID PCB: 2
+[INFO] 16:43:18:493 RAM/(7464:7516): ID TCB: 2
+[INFO] 16:43:18:493 RAM/(7464:7516): Posicion en X: 6
+[INFO] 16:43:18:494 RAM/(7464:7516): Posicion en Y: 6
+[INFO] 16:43:18:494 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:18:495 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:18:495 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:18:541 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:18:542 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:18:542 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:18:542 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:43:18:542 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:43:18:542 RAM/(7464:7516): Posicion en X: 7
+[INFO] 16:43:18:543 RAM/(7464:7516): Posicion en Y: 5
+[INFO] 16:43:18:543 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:18:544 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:18:544 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:20:741 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:20:742 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:20:742 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:20:742 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:43:20:742 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:43:20:743 RAM/(7464:7516): Posicion en X: 8
+[INFO] 16:43:20:743 RAM/(7464:7516): Posicion en Y: 5
+[INFO] 16:43:20:743 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:20:744 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:20:744 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:20:801 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:43:20:801 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:20:801 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:43:20:802 RAM/(7464:7516): ID PCB:2
+[INFO] 16:43:20:802 RAM/(7464:7516): ID TCB:2
+[INFO] 16:43:20:802 RAM/(7464:7516): La tarea a enviar es:(null)
+[INFO] 16:43:20:802 RAM/(7464:7516): No hay mas tareas que mandar
+[INFO] 16:43:20:803 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:20:804 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:22:941 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 530
+[INFO] 16:43:22:942 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:22:942 RAM/(7464:7516): Llegó operación: EXPULSAR_TRIPULANTE
+[INFO] 16:43:22:942 RAM/(7464:7516): ID PCB:2
+[INFO] 16:43:22:942 RAM/(7464:7516): ID TCB:2
+[INFO] 16:43:22:942 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:22:943 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:23:049 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:23:049 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:23:050 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:23:050 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:43:23:050 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:43:23:050 RAM/(7464:7516): Posicion en X: 8
+[INFO] 16:43:23:051 RAM/(7464:7516): Posicion en Y: 6
+[INFO] 16:43:23:051 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:23:051 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:23:052 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:25:186 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:25:186 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:25:186 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:25:186 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:43:25:187 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:43:25:187 RAM/(7464:7516): Posicion en X: 8
+[INFO] 16:43:25:187 RAM/(7464:7516): Posicion en Y: 7
+[INFO] 16:43:25:187 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:25:188 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:25:189 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:27:325 RAM/(7464:7516): Recibi la siguiente operacion de RAM: 502
+[INFO] 16:43:27:325 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:27:326 RAM/(7464:7516): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 16:43:27:326 RAM/(7464:7516): ID PCB: 3
+[INFO] 16:43:27:326 RAM/(7464:7516): ID TCB: 3
+[INFO] 16:43:27:326 RAM/(7464:7516): Posicion en X: 8
+[INFO] 16:43:27:326 RAM/(7464:7516): Posicion en Y: 8
+[INFO] 16:43:27:327 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:27:327 RAM/(7464:7516): Se mando con éxito la ubicación del tripulante
+[INFO] 16:43:27:327 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:29:493 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 520
+[INFO] 16:43:29:493 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:29:493 RAM/(7464:7516): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 16:43:29:494 RAM/(7464:7516): ID PCB:3
+[INFO] 16:43:29:494 RAM/(7464:7516): ID TCB:3
+[INFO] 16:43:29:494 RAM/(7464:7516): La tarea a enviar es:(null)
+[INFO] 16:43:29:495 RAM/(7464:7516): No hay mas tareas que mandar
+[INFO] 16:43:29:495 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:29:496 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:31:589 RAM/(7464:7516): Recibi la siguiente operacion de DIS: 530
+[INFO] 16:43:31:590 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:31:590 RAM/(7464:7516): Llegó operación: EXPULSAR_TRIPULANTE
+[INFO] 16:43:31:590 RAM/(7464:7516): ID PCB:3
+[INFO] 16:43:31:590 RAM/(7464:7516): ID TCB:3
+[INFO] 16:43:31:591 RAM/(7464:7516): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 16:43:31:591 RAM/(7464:7516): -----------------------------------------------------
+[INFO] 16:43:35:796 RAM/(7464:7516): [Shared Library]: El cliente 7 se desconecto.

@@ -35,9 +35,7 @@ void funcionhNewaReady (t_log* logger) {
     pthread_mutex_unlock(&mutexValidador);
 
     while (temp_validador) {
-        pthread_mutex_lock(&semaNR);
-        pthread_cond_wait(&semNR, &semaNR);
-        pthread_mutex_unlock(&semaNR);
+        sem_wait(&semNR);
         
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
@@ -106,7 +104,10 @@ void funcionhReadyaExec (t_log* logger){
 
                 if(!temp_sabotaje_activado){
                     log_info(logger,"Instrucción Actual: %s", aux_TCB->instruccion_actual);
-                }            
+                }
+                else{
+                    log_info(logger,"Instrucción Actual: ATENDER SABOTAJE");
+                }
 
                 aux_TCB->status = 'E';
                 pthread_mutex_lock(&mutexExec);
@@ -132,8 +133,6 @@ void funcionhReadyaExec (t_log* logger){
             sem_post(&semBLOCKIO);
         }else{
             log_info(logger, "HAY tripulantes");
-            //tcb* test = queue_peek(exec);
-            //log_info(logger, "El tripulante que esta en exec es: %d, status: %c",test->tid,test->status);
             list_iterate(exec->elements, signalHilosTripulantes);
         }
     }
@@ -179,112 +178,6 @@ void funcionhExecaBloqIO (t_log* logger){
         log_info(logger,"----------------------------------");
         sem_post(&semER);
     }
-}
-
-/*---------------------------------BlockedIO---------------------*/
-void funcionhBloqIO (t_log* logger){
-    pthread_mutex_lock(&mutexValidador);
-    int temp_validador = validador;
-    pthread_mutex_unlock(&mutexValidador);
-    
-    while (temp_validador){
-        
-        sem_wait(&semBLOCKIO);
-
-        pthread_mutex_lock(&mutexPlanificacionViva);
-        int temp_planificacion_viva = planificacion_viva;
-        pthread_mutex_unlock(&mutexPlanificacionViva);
-
-        pthread_mutex_lock(&mutexSabotajeActivado);
-        int temp_sabotaje_activado = sabotaje_activado;
-        pthread_mutex_unlock(&mutexSabotajeActivado);
-        
-        if(temp_planificacion_viva && temp_sabotaje_activado == 0 && queue_size(bloq_io) > 0){
-            pthread_mutex_lock(&mutexBloqIO);
-            tcb* tcbTripulante = queue_peek(bloq_io);
-            log_info(logger, "Tripulante: %d\t Patota:%d\t Posición:%d-%d\t Tarea:%s\t", tcbTripulante->tid, tcbTripulante->pid, tcbTripulante->posicionX, tcbTripulante->posicionY, tcbTripulante->instruccion_actual);
-            pthread_mutex_unlock(&mutexBloqIO);
-
-            funcionContadorEnBloqIO(tcbTripulante);
-
-            for(int i = 1; i < queue_size(bloq_io); i++){
-                pthread_mutex_lock(&mutexBloqIO);
-                tcb* tcbTripulante = list_get(bloq_io->elements, i);
-                log_info(logger, "El tripulante: %d está esperando su turno en la cola de bloqueados", tcbTripulante->tid);
-                pthread_mutex_unlock(&mutexBloqIO);
-            }
-        }
-        log_info(logger,"Se ejecutó BlockedIO");
-        log_info(logger,"----------------------------------");
-        sem_post(&semEXIT);
-    }
-}
-
-void funcionContadorEnBloqIO(void* nodo){
-
-    tcb* tcbTripulante = (tcb *) nodo;
-    int tamanioTarea;
-    int tamanioBuffer;
-    void* buffer;
-    char** tareaIO;
-    char** parametrosTareaIO;
-
-    tareaIO = string_split(tcbTripulante->instruccion_actual, " ");
-    parametrosTareaIO = string_split(tareaIO[1], ";");
-    int tiempoAPasarEnBloqIO = atoi(parametrosTareaIO[3]);
-
-    if(tcbTripulante->tiempoEnBloqIO == tiempoAPasarEnBloqIO){
-        
-        log_info(logger,"----------------------------------");
-        log_info(logger, "Tripulante:%d pasó el tiempo en bloqueado IO", tcbTripulante->tid);
-        tcbTripulante = queue_pop(bloq_io);
-        
-        tcbTripulante->tiempoEnBloqIO = 0;
-        tamanioTarea = strlen(tareaIO[0]);
-        tamanioBuffer = sizeof(int)*2 + tamanioTarea;
-        
-        pthread_mutex_lock(&mutexBuffer);
-        buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tareaIO[0]);
-        _send_message(conexion_IMS, "IMS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
-        free(buffer);
-        pthread_mutex_unlock(&mutexBuffer);
-
-        log_info(logger, "Se finalizo la tarea:%s. Tripulante:%d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
-        log_info(logger,"----------------------------------");
-
-        pedirProximaTarea(tcbTripulante);
-                
-        tcbTripulante->status = 'R';
-
-        pthread_mutex_lock(&mutexReady);
-        queue_push(ready, (void*) tcbTripulante);
-        pthread_mutex_unlock(&mutexReady);
-        
-        log_info(logger,"----------------------------------");
-        log_info(logger, "Se paso nodo tripulante: %d a Ready con nueva tarea", tcbTripulante->tid);
-        log_info(logger,"----------------------------------");
-
-
-    }
-    else{
-        log_info(logger,"----------------------------------");
-        log_info(logger, "Tripulante: %d tiene que seguir en BlockIO", tcbTripulante->tid);
-        log_info(logger, "Va esperando: %d ciclos", tcbTripulante->tiempoEnBloqIO);
-        log_info(logger, "Son en total: %d", tiempoAPasarEnBloqIO);
-        log_info(logger,"----------------------------------");
-
-        tcbTripulante->tiempoEnBloqIO++;
-    }
-
-    sleep(2); //[BORRARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRr]
-    free(tareaIO[0]);
-    free(tareaIO[1]);
-    free(tareaIO);
-    free(parametrosTareaIO[0]);
-    free(parametrosTareaIO[1]);
-    free(parametrosTareaIO[2]);
-    free(parametrosTareaIO[3]);
-    free(parametrosTareaIO);
 }
 
 /*---------------------------------EXEC->READY-----------------------------*/
@@ -345,18 +238,23 @@ void funcionCambioExecExit(void* nodo, int posicion){
         log_info(logger,"Tripulante: %d encontrado en Exec. Moviéndolo a Exit...", tcbAMover->tid);
         log_info(logger,"----------------------------------");
 
+        pthread_mutex_lock(&mutexExit);
+        queue_push(cola_exit, (void*)tcbAMover);
+        pthread_mutex_unlock(&mutexExit);
+
         pthread_mutex_lock(&mutexBuffer);
-        buffer = _serialize(2*sizeof(int), "%d%d", tcbAMover -> pid, tcbAMover -> tid);
+        buffer = _serialize(2*sizeof(int), "%d%d", tcbAMover->pid, tcbAMover->tid);
         _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, 2*sizeof(int), logger);
         free(buffer);
         t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
         pthread_mutex_unlock(&mutexBuffer);
 
-        if (mensajeRecibido -> command == 200) {
-            pthread_mutex_lock(&mutexExit);
-            queue_push(cola_exit, (void*)tcbAMover);
-            pthread_mutex_unlock(&mutexExit);
+        if (mensajeRecibido->command != SUCCESS) {
+            log_error(logger, "Memoria no expulsó al tripulante %d correctamente", tcbAMover->tid);
         }
+        free(mensajeRecibido->identifier);
+        free(mensajeRecibido->payload);
+        free(mensajeRecibido);
     }
 }
 
@@ -383,6 +281,291 @@ void funcionhExecaExit (t_log* logger){
         sem_post(&semBLOCKIO);
     }
 }
+
+/*---------------------------------BlockedIO---------------------*/
+void funcionContadorEnBloqIO(void* nodo){
+
+    tcb* tcbTripulante = (tcb *) nodo;
+    int tamanioTarea;
+    int tamanioBuffer;
+    void* buffer;
+    char** tareaIO;
+    char** parametrosTareaIO;
+
+    tareaIO = string_split(tcbTripulante->instruccion_actual, " ");
+    parametrosTareaIO = string_split(tareaIO[1], ";");
+    int tiempoAPasarEnBloqIO = atoi(parametrosTareaIO[3]);
+
+    if(tcbTripulante->tiempoEnBloqIO == tiempoAPasarEnBloqIO){
+        
+        log_info(logger,"----------------------------------");
+        log_info(logger, "Tripulante:%d pasó el tiempo en bloqueado IO", tcbTripulante->tid);
+        tcbTripulante = queue_pop(bloq_io);
+        
+        tcbTripulante->tiempoEnBloqIO = 0;
+        tamanioTarea = strlen(tareaIO[0]);
+        tamanioBuffer = sizeof(int)*2 + tamanioTarea;
+        
+        pthread_mutex_lock(&mutexBuffer);
+        buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tareaIO[0]);
+        _send_message(conexion_IMS, "IMS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+        free(buffer);
+        pthread_mutex_unlock(&mutexBuffer);
+
+        log_info(logger, "Se finalizo la tarea:%s. Tripulante:%d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
+        log_info(logger,"----------------------------------");
+
+        pedirProximaTarea(tcbTripulante);
+                
+        tcbTripulante->status = 'R';
+
+        pthread_mutex_lock(&mutexReady);
+        queue_push(ready, (void*) tcbTripulante);
+        pthread_mutex_unlock(&mutexReady);
+        
+        log_info(logger,"----------------------------------");
+        log_info(logger, "Se paso nodo tripulante: %d a Ready con nueva tarea", tcbTripulante->tid);
+        log_info(logger,"----------------------------------");
+
+
+    }
+    else{
+        log_info(logger,"----------------------------------");
+        log_info(logger, "Tripulante: %d tiene que seguir en BlockIO", tcbTripulante->tid);
+        log_info(logger, "Va esperando: %d ciclos", tcbTripulante->tiempoEnBloqIO);
+        log_info(logger, "Son en total: %d", tiempoAPasarEnBloqIO);
+        log_info(logger,"----------------------------------");
+
+        tcbTripulante->tiempoEnBloqIO++;
+    }
+
+    sleep(2); //[BORRARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR]
+    free(tareaIO[0]);
+    free(tareaIO[1]);
+    free(tareaIO);
+    free(parametrosTareaIO[0]);
+    free(parametrosTareaIO[1]);
+    free(parametrosTareaIO[2]);
+    free(parametrosTareaIO[3]);
+    free(parametrosTareaIO);
+}
+
+void funcionhBloqIO (t_log* logger){
+    pthread_mutex_lock(&mutexValidador);
+    int temp_validador = validador;
+    pthread_mutex_unlock(&mutexValidador);
+    
+    while (temp_validador){
+        sem_wait(&semBLOCKIO);
+
+        pthread_mutex_lock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        pthread_mutex_lock(&mutexSabotajeActivado);
+        int temp_sabotaje_activado = sabotaje_activado;
+        pthread_mutex_unlock(&mutexSabotajeActivado);
+        
+        if(temp_planificacion_viva && temp_sabotaje_activado == 0 && queue_size(bloq_io) > 0){
+            pthread_mutex_lock(&mutexBloqIO);
+            tcb* tcbTripulante = queue_peek(bloq_io);
+            log_info(logger, "Tripulante: %d\t Patota:%d\t Posición:%d-%d\t Tarea:%s\t", tcbTripulante->tid, tcbTripulante->pid, tcbTripulante->posicionX, tcbTripulante->posicionY, tcbTripulante->instruccion_actual);
+            pthread_mutex_unlock(&mutexBloqIO);
+
+            funcionContadorEnBloqIO(tcbTripulante);
+
+            for(int i = 1; i < queue_size(bloq_io); i++){
+                pthread_mutex_lock(&mutexBloqIO);
+                tcb* tcbTripulante = list_get(bloq_io->elements, i);
+                log_info(logger, "El tripulante: %d está esperando su turno en la cola de bloqueados", tcbTripulante->tid);
+                pthread_mutex_unlock(&mutexBloqIO);
+            }
+        }
+        log_info(logger,"Se ejecutó BlockedIO");
+        log_info(logger,"----------------------------------");
+        
+        if(sabotaje_activado){
+            log_info(logger, "El sabotaje está activado");
+            sem_post(&semERM);
+        }else{
+            log_info(logger, "El sabotaje está desactivado");
+            sem_post(&semEXIT);
+        }
+    }
+}
+
+
+/*-------------------------------READY Y EXEC A BLOQ POR EMERGENCIA-------------------------------------*/
+void funcionhExecReadyaBloqEmer (t_log* logger) {
+    
+    pthread_mutex_lock(&mutexValidador);
+    int temp_validador = validador;
+    pthread_mutex_unlock(&mutexValidador);
+
+  	while(temp_validador) {
+        sem_wait(&semERM);
+
+        pthread_mutex_lock(&mutexSabotajeActivado);
+        int temp_sabotaje_activado = sabotaje_activado;
+        pthread_mutex_unlock(&mutexSabotajeActivado);
+
+        pthread_mutex_lock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        if(temp_sabotaje_activado && temp_planificacion_viva){
+        
+            pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
+            int temp_ciclos_transcurridos_sabotaje = ciclos_transcurridos_sabotaje;
+            pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
+
+            if(temp_ciclos_transcurridos_sabotaje == duracion_sabotaje) // SI SE COMPLETÓ EL SABOTAJE
+            {
+                //SE SACA AL TRIPULANTE DE LA COLA DE EXEC Y SE LO COLOCA AL FINAL DE LA COLA DE BLOQ_EMER
+                pthread_mutex_lock(&mutexExec);
+                tcb* aux_Fixer_Fin = queue_pop(exec);
+                pthread_mutex_unlock(&mutexExec);
+
+                aux_Fixer_Fin->status = 'M';
+                aux_Fixer_Fin->ciclosCumplidos = ciclos_cumplidos_fixer_pre_sabotaje;
+
+                pthread_mutex_lock(&mutexBloqEmer);
+                queue_push(bloq_emer,(void*) aux_Fixer_Fin);
+                pthread_mutex_unlock(&mutexBloqEmer);
+            }
+
+            else{ // SI NO SE COMPLETÓ EL SABOTAJE
+
+                list_sort(exec->elements, comparadorTid);
+                while (!queue_is_empty(exec))// SE PASAN LOS TRIPULANTES DE EXEC A BLOCK_EMER
+                {
+                    pthread_mutex_lock(&mutexExec);
+                    tcb* aux_TCB = queue_pop(exec);
+                    pthread_mutex_unlock(&mutexExec);
+
+                    aux_TCB->status = 'M';
+
+                    pthread_mutex_lock(&mutexBloqEmer);
+                    queue_push(bloq_emer, (void*) aux_TCB);
+                    pthread_mutex_unlock(&mutexBloqEmer);
+
+                    pthread_mutex_lock(&mutexBloqEmerSorted);
+                    list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
+                    pthread_mutex_unlock(&mutexBloqEmerSorted);
+                }
+
+                list_sort(ready->elements, comparadorTid);
+                while (!queue_is_empty(ready))// SE PASAN LOS TRIPULANTES DE READY A BLOCK_EMER
+                {
+                    pthread_mutex_lock(&mutexReady);
+                    tcb* aux_TCB = queue_pop(ready);
+                    pthread_mutex_unlock(&mutexReady);
+
+                    aux_TCB->status = 'M';
+
+                    pthread_mutex_lock(&mutexBloqEmer);
+                    queue_push(bloq_emer, (void*) aux_TCB);
+                    pthread_mutex_unlock(&mutexBloqEmer);
+
+                    pthread_mutex_lock(&mutexBloqEmerSorted);
+                    list_add_sorted(bloq_emer_sorted->elements,(void*) aux_TCB,ordenarMasCercano);
+                    pthread_mutex_unlock(&mutexBloqEmerSorted);
+                }
+
+                tripulanteFixer = queue_pop(bloq_emer_sorted); // SE ELIGIÓ AL TRIPULANTE QUE VA A ARREGLAR EL SABOTAJE: FIXER
+
+                while (!queue_is_empty(bloq_emer_sorted))// SE VACÍA LA COLA DE BLOQ_EMER_SORTED, YA NO ES NECESARIA
+                    queue_pop(bloq_emer_sorted);
+
+                if(tripulanteFixer->ciclosCumplidos != 0){ // SE GUARDA LA CANTIDAD DE CICLOS CUMPLIDOS DEL FIXER ANTES DE EMPEZAR EL SABOTAJE, Y SE LO COLOCA A 0
+                    ciclos_cumplidos_fixer_pre_sabotaje = tripulanteFixer->ciclosCumplidos;
+                    tripulanteFixer->ciclosCumplidos = 0;
+                }
+
+                //SE AVISA A IMS QUE SE ATENDERÁ EL SABOTAJE
+                int idTripulante = tripulanteFixer->tid;
+
+                pthread_mutex_lock(&mutexBuffer);
+                buffer = _serialize(sizeof(int), "%d", idTripulante);
+                _send_message(conexion_IMS, "DIS", ATIENDE_SABOTAJE, buffer, sizeof(int), logger);
+                free(buffer);
+                pthread_mutex_unlock(&mutexBuffer);
+
+                //SACA AL FIXER DE BLOCK_EMER Y LO COLOCA EN READY
+                pthread_mutex_lock(&mutexBloqEmer);
+                tcb* aux_Fixer = list_remove(bloq_emer->elements,tripulanteFixer->tid);
+                pthread_mutex_unlock(&mutexBloqEmer);
+
+                aux_Fixer->status = 'R';
+
+                pthread_mutex_lock(&mutexReady);
+                queue_push(ready,(void*) aux_Fixer);
+                pthread_mutex_unlock(&mutexReady);
+            }
+        }
+        log_info(logger,"Se ejecutó ReadyExec->BlockedEmer");
+        log_info(logger,"----------------------------------");
+        sem_post(&semMR);
+    }
+}
+
+
+/*-------------------------------BLOQ POR EMERGENCIA A READY-------------------------------------*/
+void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QUE ESTÁN EN BLOQ_EMER, A READY
+    
+    pthread_mutex_lock(&mutexValidador);
+    int temp_validador = validador;
+    pthread_mutex_unlock(&mutexValidador);
+
+  	while(temp_validador){
+        sem_wait(&semMR);
+
+        pthread_mutex_lock(&mutexPlanificacionViva);
+        int temp_planificacion_viva = planificacion_viva;
+        pthread_mutex_unlock(&mutexPlanificacionViva);
+
+        pthread_mutex_lock(&mutexSabotajeActivado);
+        int temp_sabotaje_activado = sabotaje_activado;
+        pthread_mutex_unlock(&mutexSabotajeActivado);
+
+        if (temp_planificacion_viva && temp_sabotaje_activado) {
+
+            while (!queue_is_empty(bloq_emer))
+            {
+                pthread_mutex_lock(&mutexBloqEmer);
+                tcb* aux_TCB = queue_pop(bloq_emer);
+                pthread_mutex_unlock(&mutexBloqEmer);
+
+                aux_TCB->status = 'R';
+
+                pthread_mutex_lock(&mutexReady);
+                queue_push(ready, (void*) aux_TCB);
+                pthread_mutex_unlock(&mutexReady);
+            }
+            
+            pthread_mutex_lock(&mutexSabotajeActivado);
+            sabotaje_activado = 0;
+            pthread_mutex_lock(&mutexSabotajeActivado);
+
+            //SE ENVÍA A IMS QUE SE TERMINÓ EL SABOTAJE
+            char* bufferAEnviar = string_new();
+            string_append(&bufferAEnviar, "Se resolvio el sabotaje");
+           
+            pthread_mutex_lock(&mutexBuffer);
+            buffer = _serialize(sizeof(int) + string_length(bufferAEnviar), "%s", bufferAEnviar);
+            _send_message(conexion_IMS, "DIS", RESOLUCION_SABOTAJE, buffer, sizeof(int) + strlen(bufferAEnviar), logger);
+            free(bufferAEnviar);
+            free(buffer);
+            pthread_mutex_unlock(&mutexBuffer); 
+        }
+
+        log_info(logger,"Se ejecutó BlockedEmer->Ready");
+        log_info(logger,"----------------------------------");
+        sem_post(&semEXIT);
+    }
+}
+
+
 /*-------------------------------EXIT-------------------------------------*/
 void funcionhExit (t_log* logger){
     pthread_mutex_lock(&mutexValidador);
@@ -406,9 +589,7 @@ void funcionhExit (t_log* logger){
         }
         log_info(logger,"Se ejecutó Exit");
         log_info(logger,"----------------------------------");
-        // sem_post(&semNR);
-
-        pthread_cond_signal(&semNR);
+        sem_post(&semNR);
     }    
 }
 

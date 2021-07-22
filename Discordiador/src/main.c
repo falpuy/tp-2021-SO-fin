@@ -30,19 +30,19 @@ void setearConfiguraciones (){
     ciclo_CPU = config_get_int_value (config, "RETARDO_CICLO_CPU");
     puerto_DIS = config_get_string_value(config, "PUERTO_DISCORDIADOR");
 
-    //Log de chequeo:
+    //Logs de chequeo:
     //log_info(logger, "%s, %s, %s, %s, %d, %s, %d, %d, %d", ip_RAM, puerto_RAM, ip_IMS, 
     //puerto_IMS, grado_multitarea, algoritmo, quantum_RR, duracion_sabotaje, ciclo_CPU);
 
     pthread_mutex_lock(&mutex_cantidadVieja);
     cantidadVieja = 0;
     pthread_mutex_unlock(&mutex_cantidadVieja);
-    log_info(logger, "CantidadVieja: %d", cantidadVieja);
+    //log_info(logger, "CantidadVieja: %d", cantidadVieja);
 
     pthread_mutex_lock(&mutex_cantidadActual);
     cantidadActual = 0;
     pthread_mutex_unlock(&mutex_cantidadActual);
-    log_info(logger, "CantidadActual: %d", cantidadActual);
+    //log_info(logger, "CantidadActual: %d", cantidadActual);
 
     contadorPCBs = 0;
     contadorSemGlobal = 0;
@@ -51,17 +51,17 @@ void setearConfiguraciones (){
     pthread_mutex_lock(&mutexValidador);
     validador = 1;
     pthread_mutex_unlock(&mutexValidador);
-    log_info(logger, "Validador: %d", validador);
+    //log_info(logger, "Validador: %d", validador);
 
     pthread_mutex_lock(&mutexPlanificacionViva);
     planificacion_viva = 0;
     pthread_mutex_unlock(&mutexPlanificacionViva);
-    log_info(logger, "PlanificacionViva: %d", planificacion_viva);
+    //log_info(logger, "PlanificacionViva: %d", planificacion_viva);
 
     pthread_mutex_lock(&mutexSabotajeActivado);
     sabotaje_activado = 0;
     pthread_mutex_unlock(&mutexSabotajeActivado);
-    log_info(logger, "SabotajeActivado: %d", sabotaje_activado);
+    //log_info(logger, "SabotajeActivado: %d", sabotaje_activado);
 
     conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
@@ -82,11 +82,8 @@ void setearConfiguraciones (){
     pthread_mutex_init(&mutex_cantidadActual,NULL);
     pthread_mutex_init(&mutexBuffer,NULL);
     pthread_mutex_init(&mutexSemaforosTrip,NULL);
-    pthread_mutex_init(&semaNR,NULL);
-    pthread_cond_init(&semNR,NULL);
     
-
-    // sem_init(&semNR, 0, 0);
+    sem_init(&semNR, 0, 0);
     sem_init(&semRE, 0, 0);
     sem_init(&semER, 0, 0);
     sem_init(&semBLOCKIO, 0, 0);

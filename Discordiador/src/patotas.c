@@ -164,16 +164,19 @@ void funcionTripulante (void* elemento) {
                 if(sabotaje_activado){// SI HAY UN SABOTAJE
                     log_info(logger,"[Tripulante %d] Se está atendiendo sabotaje", param->idSemaforo);
 
-                    log_info(logger, "La posición en X|Y del sabotaje es: %d|%d con duracion:%d", posSabotajeX,posSabotajeY,duracion_sabotaje);   
+                    log_info(logger, "La posición en X|Y del sabotaje es: %d|%d con duracion: %d", posSabotajeX, posSabotajeY, duracion_sabotaje);   
                     llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posSabotajeX, posSabotajeY);
 
                     if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DEL SABOTAJE
-                        pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
-                        if (ciclos_transcurridos_sabotaje == 0) {//SI TODAVÍA NO SE COMENZÓ A REPARAR EL SABOTAJE-ARREGLAR
-                            pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
 
+                        pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
+                        int temp_ciclos_transcurridos_sabotaje = ciclos_transcurridos_sabotaje;
+                        pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
+
+                        if (temp_ciclos_transcurridos_sabotaje == 0) {//SI TODAVÍA NO SE COMENZÓ A REPARAR EL SABOTAJE
                             char* bufferAEnviar = string_new();
                             string_append(&bufferAEnviar, "Se invoco FSCK");
+
                             pthread_mutex_lock(&mutexBuffer);
                             buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s", bufferAEnviar);
                             _send_message(conexion_IMS, "DIS", INVOCAR_FSCK, buffer,sizeof(int) + string_length(bufferAEnviar), logger);
@@ -181,19 +184,16 @@ void funcionTripulante (void* elemento) {
                             free(buffer);
                             pthread_mutex_unlock(&mutexBuffer);
                         }
-                        else {// SI NO SE TERMINÓ DE REPARAR EL SABOTAJE
-                            pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
-                            tcbTripulante->ciclosCumplidos++;
 
-                            pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
-                            ciclos_transcurridos_sabotaje++;
-                            pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
+                        tcbTripulante->ciclosCumplidos++;
 
-                            if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos == quantum_RR) {// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
-                                tcbTripulante->ciclosCumplidos = 0;
-                                tcbTripulante->status='R';
-                            }
+                        pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
+                        ciclos_transcurridos_sabotaje++;
+                        pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
 
+                        if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos == quantum_RR) {// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
+                            tcbTripulante->ciclosCumplidos = 0;
+                            tcbTripulante->status='R';
                         }
                     }
 
@@ -254,6 +254,7 @@ void funcionTripulante (void* elemento) {
 
                             if(tcbTripulante->tiempoEnExec == tiempoTarea){// COMPLETÓ LA TAREA NORMAL
                                 log_info(logger, "[Tripulante %d] Termino la tarea normal el tripulante %d",param->idSemaforo, tcbTripulante->tid);
+                                tamanioTarea = strlen(tarea[0]);
                                 tamanioBuffer = sizeof(int)*2 + tamanioTarea;
                                 
                                 pthread_mutex_lock(&mutexBuffer);

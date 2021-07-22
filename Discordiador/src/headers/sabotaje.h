@@ -135,11 +135,8 @@
     pthread_mutex_t mutex_cantidadActual;
     pthread_mutex_t mutexBuffer;
     pthread_mutex_t mutexSemaforosTrip;
-    
-    pthread_cond_t semNR;
-    pthread_mutex_t semaNR;
 
-    //sem_t semNR;
+    sem_t semNR;
     sem_t semRE;
     sem_t semER;
     sem_t semEaX;
@@ -173,9 +170,6 @@
 
     void handler(int client, char* identificador, int comando, void* payload, t_log* logger);
     bool comparadorTid(void* tripulante1, void* tripulante2);
-    
-    // void funcionhExecReadyaBloqEmer (t_log* logger);
-    // void funcionhBloqEmeraReady (t_log* logger);
     
     bool ordenarMasCercano(void* tripulante1, void* tripulante2);
     bool compDistancias(void* tripulante1, void* tripulante2);

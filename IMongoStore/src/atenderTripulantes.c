@@ -12,17 +12,17 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
     char* tripulante;
 
     switch(comando){
-        case ESPERANDO_SABOTAJE:
-            log_info(logger,"-----------------------------------------------------");
-            log_info(logger, "Se ha conectado por primera vez Discordiador");
-            log_info(logger, "Guardo socket por si llega un sabotaje");
+        // case ESPERANDO_SABOTAJE:
+        //     log_info(logger,"-----------------------------------------------------");
+        //     log_info(logger, "Se ha conectado por primera vez Discordiador");
+        //     log_info(logger, "Guardo socket por si llega un sabotaje");
 
-            pthread_mutex_lock(&discordiador);
-            socketDiscordiador = client;
-            pthread_mutex_unlock(&discordiador);
+        //     pthread_mutex_lock(&discordiador);
+        //     socketDiscordiador = client;
+        //     pthread_mutex_unlock(&discordiador);
 
-            log_info(logger,"-----------------------------------------------------");
-        break;
+        //     log_info(logger,"-----------------------------------------------------");
+        // break;
 
         case ATENDER_SABOTAJE:
             log_info(logger,"-----------------------------------------------------");

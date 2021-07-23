@@ -355,7 +355,6 @@ void liberarMemoria(){
     queue_destroy_and_destroy_elements(bloq_emer_sorted, destruirTCB);
     list_destroy_and_destroy_elements(listaPCB, destruirPCB);
 
-	
   	pthread_mutex_destroy(&mutexNew);
   	pthread_mutex_destroy(&mutexReady);
   	pthread_mutex_destroy(&mutexExec);
@@ -372,7 +371,7 @@ void liberarMemoria(){
     pthread_mutex_destroy(&mutexCiclosTranscurridosSabotaje);
     pthread_mutex_destroy(&mutex_cantidadTCB);
     
-    // sem_destroy(&semNR);
+    sem_destroy(&semNR);
     sem_destroy(&semRE);
     sem_destroy(&semER);
     sem_destroy(&semBLOCKIO);

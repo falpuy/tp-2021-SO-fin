@@ -159,7 +159,6 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
                 memcpy(&parametro,payload + sizeof(int)*2+ tamTarea,sizeof(int));
                 log_info(logger, "Parametro de tarea:%d", parametro);
                 comienzaEjecutarTarea(tamTarea,tarea,parametro,idTripulante);
-
             }
             log_info(logger,"-----------------------------------------------------");
 

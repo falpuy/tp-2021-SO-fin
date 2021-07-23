@@ -142,9 +142,12 @@ void funcionhReadyaExec (t_log* logger){
 /*---------------------------------EXEC -> BLOCKED_IO---------------------*/
 void funcionCambioExecIO(void* nodo){
     tcb* aux = (tcb *) nodo;
+    int posicion;
     if(aux->status == 'I'){
+        
         pthread_mutex_lock(&mutexExec);
-  		tcb *tcbAMover = queue_pop(exec);
+        posicion = list_iterate_obtener_posicion(exec->elements, aux->tid);
+  		tcb *tcbAMover = list_remove(exec->elements, posicion);
         pthread_mutex_unlock(&mutexExec);
 
         log_info(logger,"Tripulante: %d encontrado en Exec. Moviéndolo a BlockIO...", tcbAMover->tid);
@@ -308,7 +311,7 @@ void funcionContadorEnBloqIO(void* nodo){
         
         pthread_mutex_lock(&mutexBuffer);
         buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tareaIO[0]);
-        _send_message(conexion_IMS, "IMS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+        _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
         free(buffer);
         pthread_mutex_unlock(&mutexBuffer);
 
@@ -339,7 +342,7 @@ void funcionContadorEnBloqIO(void* nodo){
         tcbTripulante->tiempoEnBloqIO++;
     }
 
-    sleep(2); //[BORRARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR]
+    sleep(1); //[BORRARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR]
     free(tareaIO[0]);
     free(tareaIO[1]);
     free(tareaIO);
@@ -620,5 +623,22 @@ void list_iterate_position(t_list *self, void(*closure)()){
 		closure(element->data, i);
 		element = aux;
         i++;
+	}
+}
+
+int list_iterate_obtener_posicion(t_list* self, int tid) {
+    int i = 0;
+	t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+
+        tcb* tcbLista->tid = list_get(self, i);
+        if(tid == tcbLista->tid){
+            return i;
+        }
+        i++;
+
+        element = aux;
 	}
 }

@@ -316,7 +316,7 @@ void funcionContadorEnBloqIO(void* nodo){
         _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
         free(buffer);
         pthread_mutex_unlock(&mutexBuffer);
-        mensajeInicialIMS = 0;
+        // mensajeInicialIMS = 0;
 
         log_info(logger, "Se finalizo la tarea:%s. Tripulante:%d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
         log_info(logger,"----------------------------------");
@@ -645,7 +645,7 @@ int list_iterate_obtener_posicion(t_list* self, int tid) {
 	while (element != NULL) {
 		aux = element->next;
 
-        tcb* tcbLista->tid = list_get(self, i);
+        tcb* tcbLista = list_get(self, i);
         if(tid == tcbLista->tid){
             return i;
         }
@@ -653,4 +653,6 @@ int list_iterate_obtener_posicion(t_list* self, int tid) {
 
         element = aux;
 	}
+
+    return -1;
 }

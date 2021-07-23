@@ -219,8 +219,8 @@ void funcionTripulante (void* elemento) {
                         parametroIO = atoi(parametrosTarea[0]);
                     }else{
                         parametrosTarea = string_split(tarea[0], ";");
-                        nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
-                        strcpy(nombreTareaNormal, parametrosTarea[0]);
+                            nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
+                            strcpy(nombreTareaNormal, parametrosTarea[0]);
                     }
                     
                     posicionX = atoi(parametrosTarea[1]);
@@ -234,6 +234,7 @@ void funcionTripulante (void* elemento) {
                         
                         if (mensajeInicialIMS == 0){//MANDA MENSAJE A IMS DE "Comienza Ejecucion Tarea" 
                             if(tarea[1]!=NULL){//SI ES TAREA IO
+                                
                                 tamanioTarea = strlen(tarea[0]);
                                 tamanioBuffer = sizeof(int)*6 + tamanioTarea;
 

@@ -52,6 +52,8 @@
     int contadorSabotajeLeido;
 
     char** posicionesSabotajes;
+    char* ipDiscordiador;
+    char* puertoDiscordiador;
 
     void* copiaBlocks;
     void* copiaSB;

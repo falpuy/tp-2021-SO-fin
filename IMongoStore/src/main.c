@@ -38,6 +38,8 @@ void setearConfiguraciones(){
     datosConfig->puerto = config_get_string_value(config,"PUERTO");
     datosConfig->tiempoSincronizacion = config_get_int_value(config,"TIEMPO_SINCRONIZACION");
     posicionesSabotajes = config_get_array_value(config,"POSICIONES_SABOTAJE");
+    ipDiscordiador = config_get_string_value(config,"IP_DISCORDIADOR");
+    puertoDiscordiador = config_get_string_value(config,"PUERTO_DISCORDIADOR");
 
     for(int i = 0; posicionesSabotajes[contadorListaSabotajes] != NULL; i++){
         contadorListaSabotajes++;

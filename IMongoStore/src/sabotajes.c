@@ -5,14 +5,20 @@
         int posicionX = atoi(strPosiciones[0]);
         int posicionY = atoi(strPosiciones[1]);
 
+        // pthread_mutex_lock(&discordiador);
+        // int idDiscordiador = _connect(ipDiscordiador,puertoDiscordiador,logger);
+        // void* buffer = _serialize(sizeof(int)*2,"%d%d",posicionX,posicionY);
+        // _send_message(idDiscordiador,"IMS",COMIENZA_SABOTAJE,buffer,sizeof(int)*2,logger);
+        // pthread_mutex_unlock(&discordiador);
+
+        protocolo_fsck();
+        contadorSabotajeLeido++;
+        // free(buffer);
         free(strPosiciones[0]);
         free(strPosiciones[1]);
         free(strPosiciones);
 
-        void* buffer = _serialize(sizeof(int)*2,"%d%d",posicionX,posicionY);
-        _send_message(socketDiscordiador,"IMS",COMIENZA_SABOTAJE,buffer,sizeof(int)*2,logger);
-        contadorSabotajeLeido++;
-        free(buffer);
+        // log_info(logger, "Envié mensaje de sabotaje a discordiador");
     
     }
 
@@ -36,7 +42,7 @@
         validacionBlocks();
     }
     void validarCantidadBloques(){
-        int archSB = open("../Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+        int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
         void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
         
         uint32_t cantidadBloquesDisco;

@@ -144,7 +144,7 @@ void funcionCambioExecIO(void* nodo){
     tcb* aux = (tcb *) nodo;
     int posicion;
     if(aux->status == 'I'){
-        
+
         pthread_mutex_lock(&mutexExec);
         posicion = list_iterate_obtener_posicion(exec->elements, aux->tid);
   		tcb *tcbAMover = list_remove(exec->elements, posicion);
@@ -184,16 +184,16 @@ void funcionhExecaBloqIO (t_log* logger){
 }
 
 /*---------------------------------EXEC->READY-----------------------------*/
-void funcionCambioExecReady(void* nodo, int posicion){
+void funcionCambioExecReady(void* nodo){
     tcb* aux = (tcb *) nodo;
-    
+    int posicion;
     if(aux->status == 'R'){
         pthread_mutex_lock(&mutexExec);
-  		tcb *tcbAMover = list_remove(exec->elements, 0);
+        posicion = list_iterate_obtener_posicion(exec->elements, aux->tid);
+  		tcb *tcbAMover = list_remove(exec->elements, posicion);
         pthread_mutex_unlock(&mutexExec);
 
         log_info(logger,"Tripulante: %d encontrado en Exec. Moviéndolo a Ready...", tcbAMover->tid);
-
 
         pthread_mutex_lock(&mutexReady);
         queue_push(ready, (void*)tcbAMover);
@@ -218,7 +218,7 @@ void funcionhExecaReady (t_log* logger) {
                 log_info(logger,"----------------------------------");
                 log_info(logger, "Se ejecuta el hilo de Exec a Ready");
             
-                list_iterate_position(exec->elements, funcionCambioExecReady);
+                list_iterate(exec->elements, funcionCambioExecReady);
             }
         }
         log_info(logger,"Se ejecutó Exec->Ready");
@@ -229,12 +229,14 @@ void funcionhExecaReady (t_log* logger) {
 
 /*---------------------------------EXEC-> EXIT------------------------------*/
 
-void funcionCambioExecExit(void* nodo, int posicion){
+void funcionCambioExecExit(void* nodo){
     tcb* aux = (tcb *) nodo;
+    int posicion;
     if(aux->status == 'X'){
         
         pthread_mutex_lock(&mutexExec);
-  		tcb *tcbAMover = list_remove(exec->elements, 0);
+        posicion = list_iterate_obtener_posicion(exec->elements, aux->tid);
+  		tcb *tcbAMover = list_remove(exec->elements, posicion);
         pthread_mutex_unlock(&mutexExec);
 
         log_info(logger,"----------------------------------");
@@ -275,7 +277,7 @@ void funcionhExecaExit (t_log* logger){
 
         if (temp_planificacion_viva) {
             if(!queue_is_empty(exec)){
-                list_iterate_position(exec->elements, funcionCambioExecExit);
+                list_iterate(exec->elements, funcionCambioExecExit);
             }
         }
 
@@ -314,6 +316,7 @@ void funcionContadorEnBloqIO(void* nodo){
         _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
         free(buffer);
         pthread_mutex_unlock(&mutexBuffer);
+        mensajeInicialIMS = 0;
 
         log_info(logger, "Se finalizo la tarea:%s. Tripulante:%d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
         log_info(logger,"----------------------------------");
@@ -588,7 +591,13 @@ void funcionhExit (t_log* logger){
                 pthread_mutex_lock(&mutexExit);
                 list_iterate(cola_exit->elements, deletearTripulante);
                 pthread_mutex_unlock(&mutexExit);
+
+                /*pthread_mutex_lock(&mutexListaPCB);
+                list_iterate(listaPCB, eliminarPatotaEnRAM);
+                pthread_mutex_unlock(&mutexListaPCB);*/
             }
+
+            
         }
         log_info(logger,"Se ejecutó Exit");
         log_info(logger,"----------------------------------");
@@ -598,6 +607,21 @@ void funcionhExit (t_log* logger){
 
 
 /*--------------------------------ADICIONALES--------------------------------*/
+
+/*void eliminarPatotaEnRAM (){
+    int terminaron;
+
+    terminaron = list_iterate_todos_terminaron();
+
+    if(terminaron == queue_size){
+        pthread_mutex_lock(&mutexBuffer);
+        buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
+        _send_message(conexion_RAM, "DIS", ELIMINAR_PATOTA, buffer, sizeof(int), logger);
+        free(buffer);
+        pthread_mutex_unlock(&mutexBuffer);
+    }
+}*/
+
 
 void deletearTripulante(void* nodo){
     tcb* tcbTripulante = (tcb*) nodo;
@@ -611,19 +635,7 @@ void signalHilosTripulantes(void *nodo) {
     tcb *tcbTripulante = (tcb *) nodo;
     sem_t* semaforo = list_get(listaSemaforos,tcbTripulante->tid);
     sem_post(semaforo);
-    log_info(logger, "se hizo un post al tripulante: %d", tcbTripulante->tid);
-}
-
-void list_iterate_position(t_list *self, void(*closure)()){
-    int i = 0;
-	t_link_element *element = self->head;
-	t_link_element *aux = NULL;
-	while (element != NULL) {
-		aux = element->next;
-		closure(element->data, i);
-		element = aux;
-        i++;
-	}
+    //log_info(logger, "se hizo un post al tripulante: %d", tcbTripulante->tid);
 }
 
 int list_iterate_obtener_posicion(t_list* self, int tid) {

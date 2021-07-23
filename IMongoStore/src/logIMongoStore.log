@@ -475,3 +475,937 @@
 [INFO] 14:32:01:506 IMS/(8428:8498): Ejecutando tarea de no IO...
 [INFO] 14:32:01:562 IMS/(8428:8498): No existe archivo en bitácora...Se crea archivo para este tripulante...
 [INFO] 14:32:01:688 IMS/(8428:8498): Tamanio string a pegar:50
+[INFO] 19:17:26:772 IMS/(4128:4128): Validando Existencia de directorios...
+[INFO] 19:17:26:774 IMS/(4128:4128): Ya existe directorio
+[INFO] 19:17:26:776 IMS/(4128:4128): -----------------------------------------------------
+[INFO] 19:17:26:778 IMS/(4128:4128): Validando existencia de Superbloque.ims....
+[INFO] 19:17:26:779 IMS/(4128:4128): -----------------------------------------------------
+[INFO] 19:17:26:780 IMS/(4128:4128): Se encontró el archivo superBloque.ims
+[INFO] 19:17:26:782 IMS/(4128:4128): Muestro mis valores del bitmap..
+[INFO] 19:17:26:784 IMS/(4128:4128): -----------------------------------------------------
+[INFO] 19:17:26:784 IMS/(4128:4128): Se muestra los datos del superBloque.
+[INFO] 19:17:26:785 IMS/(4128:4128): Tamaño de bloque: 4
+[INFO] 19:17:26:785 IMS/(4128:4128): Cantidad de bloques: 64
+[INFO] 19:17:26:786 IMS/(4128:4128): -----------------------------------------------------
+[INFO] 19:17:26:786 IMS/(4128:4128): Validando existencia de Blocks.ims....
+[INFO] 19:17:26:787 IMS/(4128:4128): -----------------------------------------------------
+[INFO] 19:17:26:787 IMS/(4128:4128): Existe archivo Blocks.ims.
+[INFO] 19:17:26:789 IMS/(4128:4128): -----------------------------------------------------
+[INFO] 19:17:26:790 IMS/(4128:4128): -----------------------------------------------------
+[INFO] 19:17:26:790 IMS/(4128:4128): N° Proceso es:4128
+[INFO] 19:17:26:790 IMS/(4128:4128): -----------------------------------------------------
+[INFO] 19:17:26:791 IMS/(4128:4128): Creando servidor......
+[INFO] 19:17:27:792 IMS/(4128:4128): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:17:27:793 IMS/(4128:4128): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:17:39:794 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:17:39:795 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:17:39:797 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:17:39:800 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:17:39:805 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:17:51:807 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:17:51:808 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:17:51:810 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:17:51:811 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:17:51:813 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:03:814 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:03:814 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:18:03:816 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:18:03:817 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:18:03:819 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:15:820 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:15:821 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:18:15:823 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:18:15:824 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:18:15:826 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:27:827 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:27:827 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:18:27:830 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:18:27:833 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:18:27:837 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:39:838 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:39:839 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:18:39:842 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:18:39:848 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:18:39:862 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:51:863 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:18:51:863 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:18:51:866 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:18:51:868 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:18:51:873 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:03:879 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:03:880 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:19:03:883 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:19:03:885 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:19:03:888 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:15:890 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:15:891 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:19:15:894 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:19:15:898 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:19:15:902 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:27:912 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:27:913 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:19:27:917 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:19:27:921 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:19:27:926 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:39:935 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:39:936 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:19:39:939 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:19:39:941 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:19:39:945 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:51:952 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:19:51:953 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:19:51:957 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:19:51:960 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:19:51:963 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:03:967 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:03:968 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:20:03:973 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:20:03:976 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:20:03:983 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:15:985 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:15:986 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:20:15:992 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:20:16:000 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:20:16:004 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:28:006 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:28:008 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:20:28:011 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:20:28:015 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:20:28:029 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:40:031 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:40:031 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:20:40:033 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:20:40:035 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:20:40:037 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:51:581 IMS/(4128:4128): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:20:51:584 IMS/(4128:4590): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:20:51:599 IMS/(4128:4590): LLegó nuevo comando:770
+[INFO] 19:20:51:600 IMS/(4128:4590): -----------------------------------------------------
+[INFO] 19:20:51:600 IMS/(4128:4590): Se ha conectado por primera vez Discordiador
+[INFO] 19:20:51:601 IMS/(4128:4590): Guardo socket por si llega un sabotaje
+[INFO] 19:20:51:601 IMS/(4128:4590): -----------------------------------------------------
+[INFO] 19:20:52:038 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:20:52:038 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:20:52:040 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:20:52:042 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:20:52:044 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:03:317 IMS/(4128:4590): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:21:04:045 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:04:045 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:21:04:047 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:21:04:048 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:21:04:049 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:16:050 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:16:051 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:21:16:052 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:21:16:053 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:21:16:055 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:22:756 IMS/(4128:4128): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:21:22:763 IMS/(4128:4682): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:21:22:769 IMS/(4128:4682): LLegó nuevo comando:770
+[INFO] 19:21:22:773 IMS/(4128:4682): -----------------------------------------------------
+[INFO] 19:21:22:773 IMS/(4128:4682): Se ha conectado por primera vez Discordiador
+[INFO] 19:21:22:774 IMS/(4128:4682): Guardo socket por si llega un sabotaje
+[INFO] 19:21:22:774 IMS/(4128:4682): -----------------------------------------------------
+[INFO] 19:21:28:056 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:28:056 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:21:28:058 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:21:28:058 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:21:28:060 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:40:060 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:40:061 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:21:40:063 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:21:40:064 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:21:40:066 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:52:066 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:21:52:067 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:21:52:069 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:21:52:071 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:21:52:073 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:04:075 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:04:076 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:22:04:081 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:22:04:083 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:22:04:085 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:16:085 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:16:086 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:22:16:087 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:22:16:088 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:22:16:090 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:28:090 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:28:091 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:22:28:092 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:22:28:093 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:22:28:095 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:40:096 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:40:096 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:22:40:098 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:22:40:099 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:22:40:100 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:52:101 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:22:52:102 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:22:52:103 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:22:52:104 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:22:52:106 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:04:106 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:04:106 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:23:04:108 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:23:04:109 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:23:04:111 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:16:112 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:16:112 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:23:16:114 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:23:16:115 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:23:16:117 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:28:118 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:28:118 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:23:28:120 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:23:28:121 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:23:28:123 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:40:124 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:40:124 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:23:40:126 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:23:40:127 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:23:40:130 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:52:131 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:23:52:133 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:23:52:137 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:23:52:143 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:23:52:154 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:04:156 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:04:157 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:24:04:197 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:24:04:223 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:24:04:228 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:16:230 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:16:231 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:24:16:234 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:24:16:237 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:24:16:241 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:28:255 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:28:255 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:24:28:257 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:24:28:258 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:24:28:260 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:40:261 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:40:262 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:24:40:265 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:24:40:266 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:24:40:269 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:52:270 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:24:52:270 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:24:52:272 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:24:52:274 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:24:52:280 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:04:285 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:04:287 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:25:04:290 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:25:04:291 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:25:04:293 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:15:334 IMS/(4128:4682): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:25:16:294 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:16:295 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:25:16:297 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:25:16:302 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:25:16:304 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:27:921 IMS/(4128:4128): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:25:27:926 IMS/(4128:5296): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:25:27:929 IMS/(4128:5296): LLegó nuevo comando:770
+[INFO] 19:25:27:929 IMS/(4128:5296): -----------------------------------------------------
+[INFO] 19:25:27:931 IMS/(4128:5296): Se ha conectado por primera vez Discordiador
+[INFO] 19:25:27:932 IMS/(4128:5296): Guardo socket por si llega un sabotaje
+[INFO] 19:25:27:932 IMS/(4128:5296): -----------------------------------------------------
+[INFO] 19:25:28:305 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:28:305 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:25:28:307 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:25:28:308 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:25:28:309 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:40:310 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:40:311 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:25:40:312 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:25:40:314 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:25:40:316 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:52:316 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:25:52:317 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:25:52:318 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:25:52:319 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:25:52:321 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:04:321 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:04:322 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:26:04:324 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:26:04:325 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:04:326 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:16:327 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:16:328 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:26:16:332 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:26:16:338 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:16:349 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:28:350 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:28:350 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:26:28:352 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:26:28:353 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:28:354 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:37:324 IMS/(4128:5296): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 19:26:40:355 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:40:356 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:26:40:357 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:26:40:358 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:40:360 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:52:360 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:52:361 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:26:52:363 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:26:52:364 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:26:52:365 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:26:53:593 IMS/(4128:4128): [Shared Library]: Nueva conexion ID: 7
+[INFO] 19:26:53:595 IMS/(4128:5501): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 19:26:53:598 IMS/(4128:5501): LLegó nuevo comando:770
+[INFO] 19:26:53:599 IMS/(4128:5501): -----------------------------------------------------
+[INFO] 19:26:53:599 IMS/(4128:5501): Se ha conectado por primera vez Discordiador
+[INFO] 19:26:53:600 IMS/(4128:5501): Guardo socket por si llega un sabotaje
+[INFO] 19:26:53:600 IMS/(4128:5501): -----------------------------------------------------
+[INFO] 19:27:04:366 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:04:366 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:27:04:368 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:27:04:369 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:04:371 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:16:377 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:16:377 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:27:16:381 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:27:16:383 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:16:385 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:28:386 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:28:386 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:27:28:388 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:27:28:389 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:28:390 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:40:391 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:40:391 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:27:40:393 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:27:40:396 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:40:397 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:52:398 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:27:52:398 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:27:52:400 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:27:52:401 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:27:52:403 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:04:404 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:04:405 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:28:04:409 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:28:04:410 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:28:04:412 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:16:414 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:16:415 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:28:16:418 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:28:16:420 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:28:16:422 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:28:423 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:28:424 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:28:28:425 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:28:28:426 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:28:28:428 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:40:428 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:40:429 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:28:40:431 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:28:40:432 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:28:40:434 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:52:435 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:28:52:436 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:28:52:439 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:28:52:442 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:28:52:446 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:04:451 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:04:454 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:29:04:459 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:29:04:462 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:29:04:478 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:16:479 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:16:481 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:29:16:484 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:29:16:489 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:29:16:498 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:28:499 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:28:500 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:29:28:503 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:29:28:506 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:29:28:509 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:40:514 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:40:515 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:29:40:520 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:29:40:522 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:29:40:525 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:52:532 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:29:52:533 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:29:52:534 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:29:52:536 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:29:52:538 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:04:540 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:04:541 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:30:04:544 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:30:04:548 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:30:04:554 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:16:555 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:16:557 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:30:16:560 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:30:16:564 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:30:16:572 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:28:575 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:28:576 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:30:28:579 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:30:28:583 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:30:28:591 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:40:593 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:40:595 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:30:40:599 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:30:40:602 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:30:40:614 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:52:616 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:30:52:618 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:30:52:622 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:30:52:627 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:30:52:640 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:04:641 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:04:641 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:31:04:645 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:31:04:648 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:31:04:653 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:16:656 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:16:659 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:31:16:662 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:31:16:666 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:31:16:680 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:28:681 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:28:683 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:31:28:686 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:31:28:690 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:31:28:705 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:40:706 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:40:707 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:31:40:710 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:31:40:713 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:31:40:717 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:52:719 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:31:52:721 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:31:52:726 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:31:52:730 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:31:52:747 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:04:748 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:04:749 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:32:04:752 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:32:04:756 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:32:04:770 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:16:772 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:16:773 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:32:16:776 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:32:16:795 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:32:16:811 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:28:943 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:28:948 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:32:28:951 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:32:28:956 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:32:28:960 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:40:939 IMS/(4128:5501): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 19:32:40:960 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:40:961 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:32:40:964 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:32:40:967 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:32:40:979 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:52:991 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:32:52:992 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:32:52:995 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:32:52:997 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:32:53:000 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:05:003 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:05:004 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:33:05:007 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:33:05:010 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:33:05:014 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:17:021 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:17:022 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:33:17:025 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:33:17:027 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:33:17:032 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:29:037 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:29:038 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:33:29:041 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:33:29:062 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:33:29:073 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:41:074 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:41:076 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:33:41:095 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:33:41:098 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:33:41:117 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:53:118 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:33:53:119 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:33:53:123 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:33:53:126 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:33:53:130 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:03:052 IMS/(4128:4128): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:34:03:067 IMS/(4128:6374): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:34:03:068 IMS/(4128:6374): LLegó nuevo comando:770
+[INFO] 19:34:03:069 IMS/(4128:6374): -----------------------------------------------------
+[INFO] 19:34:03:069 IMS/(4128:6374): Se ha conectado por primera vez Discordiador
+[INFO] 19:34:03:069 IMS/(4128:6374): Guardo socket por si llega un sabotaje
+[INFO] 19:34:03:069 IMS/(4128:6374): -----------------------------------------------------
+[INFO] 19:34:05:135 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:05:135 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:34:05:137 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:34:05:138 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:34:05:139 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:17:140 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:17:140 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:34:17:142 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:34:17:148 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:34:17:155 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:29:156 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:29:157 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:34:29:160 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:34:29:162 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:34:29:165 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:41:166 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:41:168 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:34:41:172 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:34:41:177 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:34:41:190 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:53:191 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:34:53:192 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:34:53:193 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:34:53:194 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:34:53:196 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:35:05:196 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:35:05:197 IMS/(4128:4129): Comienza actualización de Blocks.ims...
+[INFO] 19:35:05:198 IMS/(4128:4129): Se actualizo Blocks.ims
+[INFO] 19:35:05:199 IMS/(4128:4129): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:35:05:202 IMS/(4128:4129): -----------------------------------------------------
+[INFO] 19:35:08:659 IMS/(4128:6374): LLegó nuevo comando:762
+[INFO] 19:35:08:659 IMS/(4128:6374): -----------------------------------------------------
+[INFO] 19:35:08:659 IMS/(4128:6374): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:35:08:659 IMS/(4128:6374): Tam tarea:16
+[INFO] 19:35:08:660 IMS/(4128:6374): Tarea:ARREGLAR_REACTOR
+[INFO] 19:35:08:660 IMS/(4128:6374): Ejecutando tarea de no IO...
+[INFO] 19:35:08:661 IMS/(4128:6374): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 19:35:08:661 IMS/(4128:6374): Tamanio string a pegar:42
+[INFO] 19:40:39:363 IMS/(7335:7335): Validando Existencia de directorios...
+[INFO] 19:40:39:380 IMS/(7335:7335): No existe directorio: Filesystem. Se crea.
+[INFO] 19:40:39:404 IMS/(7335:7335): -----------------------------------------------------
+[INFO] 19:40:39:405 IMS/(7335:7335): Validando existencia de Superbloque.ims....
+[INFO] 19:40:39:406 IMS/(7335:7335): -----------------------------------------------------
+[ERROR] 19:40:39:407 IMS/(7335:7335): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 19:40:39:408 IMS/(7335:7335): Ingresar el tamaño de cada bloque
+[INFO] 19:41:01:298 IMS/(7369:7369): Validando Existencia de directorios...
+[INFO] 19:41:02:619 IMS/(7369:7369): Ya existe directorio
+[INFO] 19:41:02:679 IMS/(7369:7369): -----------------------------------------------------
+[INFO] 19:41:02:686 IMS/(7369:7369): Validando existencia de Superbloque.ims....
+[INFO] 19:41:02:694 IMS/(7369:7369): -----------------------------------------------------
+[ERROR] 19:41:02:747 IMS/(7369:7369): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 19:41:02:767 IMS/(7369:7369): Ingresar el tamaño de cada bloque
+[INFO] 19:41:08:341 IMS/(7369:7369): Ingresar la cantidad de bloques
+[INFO] 19:41:28:999 IMS/(7369:7369): Muestro mis valores del bitmap..
+[INFO] 19:41:32:403 IMS/(7369:7369): -----------------------------------------------------
+[INFO] 19:41:32:416 IMS/(7369:7369): Se creó archivo superBloque.ims
+[INFO] 19:41:32:430 IMS/(7369:7369): -----------------------------------------------------
+[INFO] 19:41:32:499 IMS/(7369:7369): Validando existencia de Blocks.ims....
+[ERROR] 19:41:32:583 IMS/(7369:7369): No se encontró archivo Blocks.ims. Se crea archivo
+[INFO] 19:41:33:383 IMS/(7369:7369): -----------------------------------------------------
+[INFO] 19:41:33:390 IMS/(7369:7369): Se creó archivo Blocks.ims
+[INFO] 19:41:33:428 IMS/(7369:7369): -----------------------------------------------------
+[INFO] 19:41:33:449 IMS/(7369:7369): -----------------------------------------------------
+[INFO] 19:41:33:588 IMS/(7369:7369): N° Proceso es:7369
+[INFO] 19:41:33:643 IMS/(7369:7369): -----------------------------------------------------
+[INFO] 19:41:34:025 IMS/(7369:7369): Creando servidor......
+[INFO] 19:41:36:554 IMS/(7369:7369): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:41:36:623 IMS/(7369:7369): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:41:47:981 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:41:47:988 IMS/(7369:7442): Comienza actualización de Blocks.ims...
+[INFO] 19:41:48:167 IMS/(7369:7442): Se actualizo Blocks.ims
+[INFO] 19:41:48:190 IMS/(7369:7442): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:41:48:289 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:41:51:957 IMS/(7369:7369): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:41:52:215 IMS/(7369:7478): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:41:53:563 IMS/(7369:7478): LLegó nuevo comando:770
+[INFO] 19:41:53:566 IMS/(7369:7478): -----------------------------------------------------
+[INFO] 19:41:53:587 IMS/(7369:7478): Se ha conectado por primera vez Discordiador
+[INFO] 19:41:53:596 IMS/(7369:7478): Guardo socket por si llega un sabotaje
+[INFO] 19:41:53:599 IMS/(7369:7478): -----------------------------------------------------
+[INFO] 19:42:00:297 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:00:300 IMS/(7369:7442): Comienza actualización de Blocks.ims...
+[INFO] 19:42:00:358 IMS/(7369:7442): Se actualizo Blocks.ims
+[INFO] 19:42:00:371 IMS/(7369:7442): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:42:00:414 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:12:418 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:12:420 IMS/(7369:7442): Comienza actualización de Blocks.ims...
+[INFO] 19:42:12:476 IMS/(7369:7442): Se actualizo Blocks.ims
+[INFO] 19:42:12:485 IMS/(7369:7442): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:42:12:522 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:24:525 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:24:528 IMS/(7369:7442): Comienza actualización de Blocks.ims...
+[INFO] 19:42:24:587 IMS/(7369:7442): Se actualizo Blocks.ims
+[INFO] 19:42:24:592 IMS/(7369:7442): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:42:24:632 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:36:635 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:36:637 IMS/(7369:7442): Comienza actualización de Blocks.ims...
+[INFO] 19:42:36:685 IMS/(7369:7442): Se actualizo Blocks.ims
+[INFO] 19:42:36:688 IMS/(7369:7442): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:42:36:723 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:48:727 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:42:48:729 IMS/(7369:7442): Comienza actualización de Blocks.ims...
+[INFO] 19:42:48:817 IMS/(7369:7442): Se actualizo Blocks.ims
+[INFO] 19:42:48:831 IMS/(7369:7442): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:42:48:888 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:43:00:894 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:43:00:896 IMS/(7369:7442): Comienza actualización de Blocks.ims...
+[INFO] 19:43:00:941 IMS/(7369:7442): Se actualizo Blocks.ims
+[INFO] 19:43:00:945 IMS/(7369:7442): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:43:00:980 IMS/(7369:7442): -----------------------------------------------------
+[INFO] 19:43:06:975 IMS/(7369:7478): LLegó nuevo comando:762
+[INFO] 19:43:06:978 IMS/(7369:7478): -----------------------------------------------------
+[INFO] 19:43:06:983 IMS/(7369:7478): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:43:07:015 IMS/(7369:7478): Tam tarea:16
+[INFO] 19:43:07:025 IMS/(7369:7478): Tarea:ARREGLAR_REACTOR
+[INFO] 19:43:07:103 IMS/(7369:7478): Ejecutando tarea de no IO...
+[INFO] 19:43:07:155 IMS/(7369:7478): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 19:43:07:275 IMS/(7369:7478): Tamanio string a pegar:42
+[INFO] 19:44:16:262 IMS/(7824:7824): Validando Existencia de directorios...
+[INFO] 19:44:16:268 IMS/(7824:7824): Ya existe directorio
+[INFO] 19:44:16:269 IMS/(7824:7824): -----------------------------------------------------
+[INFO] 19:44:16:271 IMS/(7824:7824): Validando existencia de Superbloque.ims....
+[INFO] 19:44:16:272 IMS/(7824:7824): -----------------------------------------------------
+[INFO] 19:44:16:273 IMS/(7824:7824): Se encontró el archivo superBloque.ims
+[INFO] 19:44:16:274 IMS/(7824:7824): Muestro mis valores del bitmap..
+[INFO] 19:44:16:290 IMS/(7824:7824): -----------------------------------------------------
+[INFO] 19:44:16:291 IMS/(7824:7824): Se muestra los datos del superBloque.
+[INFO] 19:44:16:291 IMS/(7824:7824): Tamaño de bloque: 32
+[INFO] 19:44:16:291 IMS/(7824:7824): Cantidad de bloques: 16384
+[INFO] 19:44:16:291 IMS/(7824:7824): -----------------------------------------------------
+[INFO] 19:44:16:292 IMS/(7824:7824): Validando existencia de Blocks.ims....
+[INFO] 19:44:16:292 IMS/(7824:7824): -----------------------------------------------------
+[INFO] 19:44:16:292 IMS/(7824:7824): Existe archivo Blocks.ims.
+[INFO] 19:44:16:294 IMS/(7824:7824): -----------------------------------------------------
+[INFO] 19:44:16:294 IMS/(7824:7824): -----------------------------------------------------
+[INFO] 19:44:16:294 IMS/(7824:7824): N° Proceso es:7824
+[INFO] 19:44:16:295 IMS/(7824:7824): -----------------------------------------------------
+[INFO] 19:44:16:295 IMS/(7824:7824): Creando servidor......
+[INFO] 19:44:17:297 IMS/(7824:7824): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:44:17:299 IMS/(7824:7824): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:44:29:298 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:44:29:301 IMS/(7824:7825): Comienza actualización de Blocks.ims...
+[INFO] 19:44:29:305 IMS/(7824:7825): Se actualizo Blocks.ims
+[INFO] 19:44:29:307 IMS/(7824:7825): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:44:29:360 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:44:41:362 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:44:41:363 IMS/(7824:7825): Comienza actualización de Blocks.ims...
+[INFO] 19:44:41:371 IMS/(7824:7825): Se actualizo Blocks.ims
+[INFO] 19:44:41:374 IMS/(7824:7825): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:44:41:467 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:44:53:472 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:44:53:473 IMS/(7824:7825): Comienza actualización de Blocks.ims...
+[INFO] 19:44:53:477 IMS/(7824:7825): Se actualizo Blocks.ims
+[INFO] 19:44:53:480 IMS/(7824:7825): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:44:53:559 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:05:560 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:05:561 IMS/(7824:7825): Comienza actualización de Blocks.ims...
+[INFO] 19:45:05:565 IMS/(7824:7825): Se actualizo Blocks.ims
+[INFO] 19:45:05:569 IMS/(7824:7825): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:05:664 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:17:665 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:17:666 IMS/(7824:7825): Comienza actualización de Blocks.ims...
+[INFO] 19:45:17:668 IMS/(7824:7825): Se actualizo Blocks.ims
+[INFO] 19:45:17:670 IMS/(7824:7825): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:17:712 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:29:712 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:29:713 IMS/(7824:7825): Comienza actualización de Blocks.ims...
+[INFO] 19:45:29:717 IMS/(7824:7825): Se actualizo Blocks.ims
+[INFO] 19:45:29:719 IMS/(7824:7825): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:29:756 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:41:757 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:41:757 IMS/(7824:7825): Comienza actualización de Blocks.ims...
+[INFO] 19:45:41:759 IMS/(7824:7825): Se actualizo Blocks.ims
+[INFO] 19:45:41:760 IMS/(7824:7825): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:45:41:797 IMS/(7824:7825): -----------------------------------------------------
+[INFO] 19:45:57:294 IMS/(8085:8085): Validando Existencia de directorios...
+[INFO] 19:45:57:834 IMS/(8085:8085): Ya existe directorio
+[INFO] 19:45:57:856 IMS/(8085:8085): -----------------------------------------------------
+[INFO] 19:45:57:868 IMS/(8085:8085): Validando existencia de Superbloque.ims....
+[INFO] 19:45:57:870 IMS/(8085:8085): -----------------------------------------------------
+[INFO] 19:45:57:876 IMS/(8085:8085): Se encontró el archivo superBloque.ims
+[INFO] 19:45:57:927 IMS/(8085:8085): Muestro mis valores del bitmap..
+[INFO] 19:45:59:165 IMS/(8085:8085): -----------------------------------------------------
+[INFO] 19:45:59:168 IMS/(8085:8085): Se muestra los datos del superBloque.
+[INFO] 19:45:59:172 IMS/(8085:8085): Tamaño de bloque: 32
+[INFO] 19:45:59:175 IMS/(8085:8085): Cantidad de bloques: 16384
+[INFO] 19:45:59:178 IMS/(8085:8085): -----------------------------------------------------
+[INFO] 19:45:59:190 IMS/(8085:8085): Validando existencia de Blocks.ims....
+[INFO] 19:45:59:207 IMS/(8085:8085): -----------------------------------------------------
+[INFO] 19:45:59:210 IMS/(8085:8085): Existe archivo Blocks.ims.
+[INFO] 19:45:59:273 IMS/(8085:8085): -----------------------------------------------------
+[INFO] 19:45:59:277 IMS/(8085:8085): -----------------------------------------------------
+[INFO] 19:45:59:283 IMS/(8085:8085): N° Proceso es:8085
+[INFO] 19:45:59:292 IMS/(8085:8085): -----------------------------------------------------
+[INFO] 19:45:59:327 IMS/(8085:8085): Creando servidor......
+[INFO] 19:48:36:884 IMS/(8085:8085): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:48:36:948 IMS/(8085:8085): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:48:45:406 IMS/(8085:8085): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:48:45:582 IMS/(8085:8234): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:48:45:605 IMS/(8085:8234): LLegó nuevo comando:770
+[INFO] 19:48:45:608 IMS/(8085:8234): -----------------------------------------------------
+[INFO] 19:48:45:620 IMS/(8085:8234): Se ha conectado por primera vez Discordiador
+[INFO] 19:48:45:626 IMS/(8085:8234): Guardo socket por si llega un sabotaje
+[INFO] 19:48:45:633 IMS/(8085:8234): -----------------------------------------------------
+[INFO] 19:48:47:949 IMS/(8085:8106): -----------------------------------------------------
+[INFO] 19:48:47:952 IMS/(8085:8106): Comienza actualización de Blocks.ims...
+[INFO] 19:48:48:022 IMS/(8085:8106): Se actualizo Blocks.ims
+[INFO] 19:48:48:042 IMS/(8085:8106): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:48:48:081 IMS/(8085:8106): -----------------------------------------------------
+[INFO] 19:49:00:084 IMS/(8085:8106): -----------------------------------------------------
+[INFO] 19:49:00:091 IMS/(8085:8106): Comienza actualización de Blocks.ims...
+[INFO] 19:49:00:156 IMS/(8085:8106): Se actualizo Blocks.ims
+[INFO] 19:49:00:161 IMS/(8085:8106): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:49:00:210 IMS/(8085:8106): -----------------------------------------------------
+[INFO] 19:49:11:306 IMS/(8085:8234): LLegó nuevo comando:762
+[INFO] 19:49:11:309 IMS/(8085:8234): -----------------------------------------------------
+[INFO] 19:49:11:312 IMS/(8085:8234): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:49:11:326 IMS/(8085:8234): Tam tarea:21
+[INFO] 19:49:11:348 IMS/(8085:8234): Tarea:ARREGLAR_REACTOR0�
+5
+[INFO] 19:49:11:364 IMS/(8085:8234): Ejecutando tarea de no IO...
+[INFO] 19:49:11:416 IMS/(8085:8234): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 19:49:11:533 IMS/(8085:8234): Tamanio string a pegar:47
+[INFO] 19:52:29:710 IMS/(8684:8684): Validando Existencia de directorios...
+[INFO] 19:52:30:947 IMS/(8684:8684): Ya existe directorio
+[INFO] 19:52:31:020 IMS/(8684:8684): -----------------------------------------------------
+[INFO] 19:52:31:057 IMS/(8684:8684): Validando existencia de Superbloque.ims....
+[INFO] 19:52:31:063 IMS/(8684:8684): -----------------------------------------------------
+[INFO] 19:52:31:090 IMS/(8684:8684): Se encontró el archivo superBloque.ims
+[INFO] 19:52:31:224 IMS/(8684:8684): Muestro mis valores del bitmap..
+[INFO] 19:52:34:593 IMS/(8684:8684): -----------------------------------------------------
+[INFO] 19:52:34:614 IMS/(8684:8684): Se muestra los datos del superBloque.
+[INFO] 19:52:34:630 IMS/(8684:8684): Tamaño de bloque: 32
+[INFO] 19:52:34:663 IMS/(8684:8684): Cantidad de bloques: 16384
+[INFO] 19:52:34:677 IMS/(8684:8684): -----------------------------------------------------
+[INFO] 19:52:34:700 IMS/(8684:8684): Validando existencia de Blocks.ims....
+[INFO] 19:52:34:724 IMS/(8684:8684): -----------------------------------------------------
+[INFO] 19:52:34:733 IMS/(8684:8684): Existe archivo Blocks.ims.
+[INFO] 19:52:34:948 IMS/(8684:8684): -----------------------------------------------------
+[INFO] 19:52:34:962 IMS/(8684:8684): -----------------------------------------------------
+[INFO] 19:52:34:982 IMS/(8684:8684): N° Proceso es:8684
+[INFO] 19:52:34:996 IMS/(8684:8684): -----------------------------------------------------
+[INFO] 19:52:35:101 IMS/(8684:8684): Creando servidor......
+[INFO] 19:52:37:427 IMS/(8684:8684): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:52:37:516 IMS/(8684:8684): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:52:48:776 IMS/(8684:8722): -----------------------------------------------------
+[INFO] 19:52:48:779 IMS/(8684:8722): Comienza actualización de Blocks.ims...
+[INFO] 19:52:48:857 IMS/(8684:8722): Se actualizo Blocks.ims
+[INFO] 19:52:48:866 IMS/(8684:8722): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:52:48:919 IMS/(8684:8722): -----------------------------------------------------
+[INFO] 19:52:51:150 IMS/(8684:8684): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:52:51:344 IMS/(8684:8763): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:52:51:367 IMS/(8684:8763): LLegó nuevo comando:770
+[INFO] 19:52:51:371 IMS/(8684:8763): -----------------------------------------------------
+[INFO] 19:52:51:384 IMS/(8684:8763): Se ha conectado por primera vez Discordiador
+[INFO] 19:52:51:388 IMS/(8684:8763): Guardo socket por si llega un sabotaje
+[INFO] 19:52:51:392 IMS/(8684:8763): -----------------------------------------------------
+[INFO] 19:53:00:924 IMS/(8684:8722): -----------------------------------------------------
+[INFO] 19:53:00:944 IMS/(8684:8722): Comienza actualización de Blocks.ims...
+[INFO] 19:53:00:998 IMS/(8684:8722): Se actualizo Blocks.ims
+[INFO] 19:53:01:005 IMS/(8684:8722): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:53:01:048 IMS/(8684:8722): -----------------------------------------------------
+[INFO] 19:53:13:052 IMS/(8684:8722): -----------------------------------------------------
+[INFO] 19:53:13:055 IMS/(8684:8722): Comienza actualización de Blocks.ims...
+[INFO] 19:53:13:112 IMS/(8684:8722): Se actualizo Blocks.ims
+[INFO] 19:53:13:117 IMS/(8684:8722): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:53:13:155 IMS/(8684:8722): -----------------------------------------------------
+[INFO] 19:53:25:158 IMS/(8684:8722): -----------------------------------------------------
+[INFO] 19:53:25:160 IMS/(8684:8722): Comienza actualización de Blocks.ims...
+[INFO] 19:53:25:222 IMS/(8684:8722): Se actualizo Blocks.ims
+[INFO] 19:53:25:225 IMS/(8684:8722): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:53:25:274 IMS/(8684:8722): -----------------------------------------------------
+[INFO] 19:53:28:616 IMS/(8684:8763): LLegó nuevo comando:762
+[INFO] 19:53:28:619 IMS/(8684:8763): -----------------------------------------------------
+[INFO] 19:53:28:625 IMS/(8684:8763): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:53:28:635 IMS/(8684:8763): Tam tarea:21
+[INFO] 19:53:28:646 IMS/(8684:8763): Tarea:ARREGLAR_REACTOR0�(	5
+[INFO] 19:53:28:677 IMS/(8684:8763): Ejecutando tarea de no IO...
+[INFO] 19:53:28:726 IMS/(8684:8763): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 19:53:28:874 IMS/(8684:8763): Tamanio string a pegar:47
+[INFO] 19:55:21:539 IMS/(9042:9042): Validando Existencia de directorios...
+[INFO] 19:55:22:069 IMS/(9042:9042): Ya existe directorio
+[INFO] 19:55:22:093 IMS/(9042:9042): -----------------------------------------------------
+[INFO] 19:55:22:096 IMS/(9042:9042): Validando existencia de Superbloque.ims....
+[INFO] 19:55:22:106 IMS/(9042:9042): -----------------------------------------------------
+[INFO] 19:55:22:120 IMS/(9042:9042): Se encontró el archivo superBloque.ims
+[INFO] 19:55:22:159 IMS/(9042:9042): Muestro mis valores del bitmap..
+[INFO] 19:55:23:321 IMS/(9042:9042): -----------------------------------------------------
+[INFO] 19:55:23:324 IMS/(9042:9042): Se muestra los datos del superBloque.
+[INFO] 19:55:23:327 IMS/(9042:9042): Tamaño de bloque: 32
+[INFO] 19:55:23:329 IMS/(9042:9042): Cantidad de bloques: 16384
+[INFO] 19:55:23:339 IMS/(9042:9042): -----------------------------------------------------
+[INFO] 19:55:23:342 IMS/(9042:9042): Validando existencia de Blocks.ims....
+[INFO] 19:55:23:349 IMS/(9042:9042): -----------------------------------------------------
+[INFO] 19:55:23:360 IMS/(9042:9042): Existe archivo Blocks.ims.
+[INFO] 19:55:23:421 IMS/(9042:9042): -----------------------------------------------------
+[INFO] 19:55:23:425 IMS/(9042:9042): -----------------------------------------------------
+[INFO] 19:55:23:427 IMS/(9042:9042): N° Proceso es:9042
+[INFO] 19:55:23:430 IMS/(9042:9042): -----------------------------------------------------
+[INFO] 19:55:23:463 IMS/(9042:9042): Creando servidor......
+[INFO] 19:55:25:013 IMS/(9042:9042): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:55:25:025 IMS/(9042:9042): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:55:36:771 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:55:36:777 IMS/(9042:9058): Comienza actualización de Blocks.ims...
+[INFO] 19:55:36:894 IMS/(9042:9058): Se actualizo Blocks.ims
+[INFO] 19:55:36:919 IMS/(9042:9058): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:55:36:959 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:55:41:388 IMS/(9042:9042): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:55:41:661 IMS/(9042:9093): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:55:42:924 IMS/(9042:9093): LLegó nuevo comando:770
+[INFO] 19:55:42:931 IMS/(9042:9093): -----------------------------------------------------
+[INFO] 19:55:42:939 IMS/(9042:9093): Se ha conectado por primera vez Discordiador
+[INFO] 19:55:42:954 IMS/(9042:9093): Guardo socket por si llega un sabotaje
+[INFO] 19:55:42:960 IMS/(9042:9093): -----------------------------------------------------
+[INFO] 19:55:48:981 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:55:48:984 IMS/(9042:9058): Comienza actualización de Blocks.ims...
+[INFO] 19:55:49:065 IMS/(9042:9058): Se actualizo Blocks.ims
+[INFO] 19:55:49:068 IMS/(9042:9058): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:55:49:102 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:56:01:107 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:56:01:114 IMS/(9042:9058): Comienza actualización de Blocks.ims...
+[INFO] 19:56:01:158 IMS/(9042:9058): Se actualizo Blocks.ims
+[INFO] 19:56:01:161 IMS/(9042:9058): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:56:01:196 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:56:13:199 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:56:13:201 IMS/(9042:9058): Comienza actualización de Blocks.ims...
+[INFO] 19:56:13:245 IMS/(9042:9058): Se actualizo Blocks.ims
+[INFO] 19:56:13:256 IMS/(9042:9058): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:56:13:303 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:56:25:305 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:56:25:307 IMS/(9042:9058): Comienza actualización de Blocks.ims...
+[INFO] 19:56:25:353 IMS/(9042:9058): Se actualizo Blocks.ims
+[INFO] 19:56:25:356 IMS/(9042:9058): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:56:25:422 IMS/(9042:9058): -----------------------------------------------------
+[INFO] 19:56:33:713 IMS/(9042:9093): LLegó nuevo comando:762
+[INFO] 19:56:33:725 IMS/(9042:9093): -----------------------------------------------------
+[INFO] 19:56:33:736 IMS/(9042:9093): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 19:56:33:753 IMS/(9042:9093): Tam tarea:16
+[INFO] 19:56:33:769 IMS/(9042:9093): Tarea:ARREGLAR_REACTOR
+[INFO] 19:56:33:849 IMS/(9042:9093): Ejecutando tarea de no IO...
+[INFO] 19:56:33:888 IMS/(9042:9093): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 19:56:34:016 IMS/(9042:9093): Tamanio string a pegar:42
+[INFO] 19:58:54:005 IMS/(9470:9470): Validando Existencia de directorios...
+[INFO] 19:58:54:534 IMS/(9470:9470): Ya existe directorio
+[INFO] 19:58:54:548 IMS/(9470:9470): -----------------------------------------------------
+[INFO] 19:58:54:554 IMS/(9470:9470): Validando existencia de Superbloque.ims....
+[INFO] 19:58:54:557 IMS/(9470:9470): -----------------------------------------------------
+[INFO] 19:58:54:563 IMS/(9470:9470): Se encontró el archivo superBloque.ims
+[INFO] 19:58:54:606 IMS/(9470:9470): Muestro mis valores del bitmap..
+[INFO] 19:58:55:796 IMS/(9470:9470): -----------------------------------------------------
+[INFO] 19:58:55:799 IMS/(9470:9470): Se muestra los datos del superBloque.
+[INFO] 19:58:55:803 IMS/(9470:9470): Tamaño de bloque: 32
+[INFO] 19:58:55:805 IMS/(9470:9470): Cantidad de bloques: 16384
+[INFO] 19:58:55:808 IMS/(9470:9470): -----------------------------------------------------
+[INFO] 19:58:55:816 IMS/(9470:9470): Validando existencia de Blocks.ims....
+[INFO] 19:58:55:835 IMS/(9470:9470): -----------------------------------------------------
+[INFO] 19:58:55:838 IMS/(9470:9470): Existe archivo Blocks.ims.
+[INFO] 19:58:55:903 IMS/(9470:9470): -----------------------------------------------------
+[INFO] 19:58:55:908 IMS/(9470:9470): -----------------------------------------------------
+[INFO] 19:58:55:911 IMS/(9470:9470): N° Proceso es:9470
+[INFO] 19:58:55:913 IMS/(9470:9470): -----------------------------------------------------
+[INFO] 19:58:55:948 IMS/(9470:9470): Creando servidor......
+[INFO] 19:58:57:443 IMS/(9470:9470): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 19:58:57:459 IMS/(9470:9470): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 19:59:09:201 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:09:218 IMS/(9470:9494): Comienza actualización de Blocks.ims...
+[INFO] 19:59:09:342 IMS/(9470:9494): Se actualizo Blocks.ims
+[INFO] 19:59:09:365 IMS/(9470:9494): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:59:09:407 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:21:425 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:21:428 IMS/(9470:9494): Comienza actualización de Blocks.ims...
+[INFO] 19:59:21:510 IMS/(9470:9494): Se actualizo Blocks.ims
+[INFO] 19:59:21:514 IMS/(9470:9494): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:59:21:555 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:23:225 IMS/(9470:9470): [Shared Library]: Nueva conexion ID: 5
+[INFO] 19:59:23:511 IMS/(9470:9560): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 19:59:25:139 IMS/(9470:9560): LLegó nuevo comando:770
+[INFO] 19:59:25:148 IMS/(9470:9560): -----------------------------------------------------
+[INFO] 19:59:25:189 IMS/(9470:9560): Se ha conectado por primera vez Discordiador
+[INFO] 19:59:25:199 IMS/(9470:9560): Guardo socket por si llega un sabotaje
+[INFO] 19:59:25:212 IMS/(9470:9560): -----------------------------------------------------
+[INFO] 19:59:33:558 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:33:564 IMS/(9470:9494): Comienza actualización de Blocks.ims...
+[INFO] 19:59:33:688 IMS/(9470:9494): Se actualizo Blocks.ims
+[INFO] 19:59:33:696 IMS/(9470:9494): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:59:33:771 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:45:778 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:45:791 IMS/(9470:9494): Comienza actualización de Blocks.ims...
+[INFO] 19:59:46:175 IMS/(9470:9494): Se actualizo Blocks.ims
+[INFO] 19:59:46:199 IMS/(9470:9494): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:59:46:329 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:58:351 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 19:59:58:357 IMS/(9470:9494): Comienza actualización de Blocks.ims...
+[INFO] 19:59:58:538 IMS/(9470:9494): Se actualizo Blocks.ims
+[INFO] 19:59:58:553 IMS/(9470:9494): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 19:59:58:669 IMS/(9470:9494): -----------------------------------------------------
+[INFO] 20:00:04:996 IMS/(9470:9560): LLegó nuevo comando:762
+[INFO] 20:00:05:013 IMS/(9470:9560): -----------------------------------------------------
+[INFO] 20:00:05:066 IMS/(9470:9560): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 20:00:05:117 IMS/(9470:9560): Tam tarea:16
+[INFO] 20:00:05:154 IMS/(9470:9560): Tarea:ARREGLAR_REACTOR
+[INFO] 20:00:05:330 IMS/(9470:9560): Ejecutando tarea de no IO...
+[INFO] 20:00:05:481 IMS/(9470:9560): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 20:00:05:842 IMS/(9470:9560): Tamanio string a pegar:42
+[INFO] 20:05:27:461 IMS/(10318:10318): Validando Existencia de directorios...
+[INFO] 20:05:27:470 IMS/(10318:10318): Ya existe directorio
+[INFO] 20:05:27:472 IMS/(10318:10318): -----------------------------------------------------
+[INFO] 20:05:27:475 IMS/(10318:10318): Validando existencia de Superbloque.ims....
+[INFO] 20:05:27:475 IMS/(10318:10318): -----------------------------------------------------
+[INFO] 20:05:27:477 IMS/(10318:10318): Se encontró el archivo superBloque.ims
+[INFO] 20:05:27:480 IMS/(10318:10318): Muestro mis valores del bitmap..
+[INFO] 20:05:27:612 IMS/(10318:10318): -----------------------------------------------------
+[INFO] 20:05:27:612 IMS/(10318:10318): Se muestra los datos del superBloque.
+[INFO] 20:05:27:613 IMS/(10318:10318): Tamaño de bloque: 32
+[INFO] 20:05:27:613 IMS/(10318:10318): Cantidad de bloques: 16384
+[INFO] 20:05:27:614 IMS/(10318:10318): -----------------------------------------------------
+[INFO] 20:05:27:615 IMS/(10318:10318): Validando existencia de Blocks.ims....
+[INFO] 20:05:27:616 IMS/(10318:10318): -----------------------------------------------------
+[INFO] 20:05:27:616 IMS/(10318:10318): Existe archivo Blocks.ims.
+[INFO] 20:05:27:623 IMS/(10318:10318): -----------------------------------------------------
+[INFO] 20:05:27:624 IMS/(10318:10318): -----------------------------------------------------
+[INFO] 20:05:27:624 IMS/(10318:10318): N° Proceso es:10318
+[INFO] 20:05:27:625 IMS/(10318:10318): -----------------------------------------------------
+[INFO] 20:05:27:626 IMS/(10318:10318): Creando servidor......
+[INFO] 20:05:28:629 IMS/(10318:10318): [Shared Library]: Se creo un socket listenner en el puerto: 5002 
+[INFO] 20:05:28:631 IMS/(10318:10318): [Shared Library]: Esperando conexiones en puerto: 5002
+[INFO] 20:05:40:633 IMS/(10318:10321): -----------------------------------------------------
+[INFO] 20:05:40:634 IMS/(10318:10321): Comienza actualización de Blocks.ims...
+[INFO] 20:05:40:636 IMS/(10318:10321): Se actualizo Blocks.ims
+[INFO] 20:05:40:638 IMS/(10318:10321): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 20:05:40:686 IMS/(10318:10321): -----------------------------------------------------
+[INFO] 20:05:52:686 IMS/(10318:10321): -----------------------------------------------------
+[INFO] 20:05:52:687 IMS/(10318:10321): Comienza actualización de Blocks.ims...
+[INFO] 20:05:52:689 IMS/(10318:10321): Se actualizo Blocks.ims
+[INFO] 20:05:52:690 IMS/(10318:10321): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 20:05:52:727 IMS/(10318:10321): -----------------------------------------------------
+[INFO] 20:05:54:017 IMS/(10318:10318): [Shared Library]: Nueva conexion ID: 5
+[INFO] 20:05:54:033 IMS/(10318:10391): [Shared Library]: Starting new thread for connection handling. Client ID: 5
+[INFO] 20:05:55:467 IMS/(10318:10391): LLegó nuevo comando:770
+[INFO] 20:05:55:468 IMS/(10318:10391): -----------------------------------------------------
+[INFO] 20:05:55:468 IMS/(10318:10391): Se ha conectado por primera vez Discordiador
+[INFO] 20:05:55:469 IMS/(10318:10391): Guardo socket por si llega un sabotaje
+[INFO] 20:05:55:469 IMS/(10318:10391): -----------------------------------------------------
+[INFO] 20:06:04:729 IMS/(10318:10321): -----------------------------------------------------
+[INFO] 20:06:04:730 IMS/(10318:10321): Comienza actualización de Blocks.ims...
+[INFO] 20:06:04:732 IMS/(10318:10321): Se actualizo Blocks.ims
+[INFO] 20:06:04:734 IMS/(10318:10321): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 20:06:04:775 IMS/(10318:10321): -----------------------------------------------------
+[INFO] 20:06:16:777 IMS/(10318:10321): -----------------------------------------------------
+[INFO] 20:06:16:777 IMS/(10318:10321): Comienza actualización de Blocks.ims...
+[INFO] 20:06:16:780 IMS/(10318:10321): Se actualizo Blocks.ims
+[INFO] 20:06:16:781 IMS/(10318:10321): Se actualizo Bitmap en SuperBloque.ims
+[INFO] 20:06:16:817 IMS/(10318:10321): -----------------------------------------------------
+[INFO] 20:06:28:174 IMS/(10318:10391): LLegó nuevo comando:762
+[INFO] 20:06:28:174 IMS/(10318:10391): -----------------------------------------------------
+[INFO] 20:06:28:175 IMS/(10318:10391): Llego comando: Comienza ejecucion de tarea.....
+[INFO] 20:06:28:178 IMS/(10318:10391): Id: 0
+[INFO] 20:06:28:179 IMS/(10318:10391): Tam tarea: 16
+[INFO] 20:06:28:179 IMS/(10318:10391): Tarea: ARREGLAR_REACTOR
+[INFO] 20:06:28:179 IMS/(10318:10391): Entró en tarea normal
+[INFO] 20:06:28:180 IMS/(10318:10391): Ejecutando tarea de no IO...
+[INFO] 20:06:28:181 IMS/(10318:10391): No existe archivo en bitácora...Se crea archivo para este tripulante...
+[INFO] 20:06:28:181 IMS/(10318:10391): Tamanio string a pegar:42

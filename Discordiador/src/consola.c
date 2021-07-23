@@ -53,7 +53,7 @@ void funcionConsola(){
                         log_info(logger, "CantidadActual: %d", cantidadActual);
 
                     } else {
-                    	log_error(logger, "No se pudo crear el PCB");
+                    	log_error(logger, "No se pudo crear el PCB por falta de memoria");
                         int cant_tripulantes = atoi(parametros[1]);
                         cantidadActual -= cant_tripulantes;
                     }

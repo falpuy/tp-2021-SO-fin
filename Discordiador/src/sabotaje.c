@@ -38,39 +38,3 @@ bool ordenarMasCercano(void* tripulante1, void* tripulante2){
 
     return modulo1 < modulo2;
 }
-
-/*COMIENZA_SABOTAJE 768
-ATIENDE_SABOTAJE 769
-INVOCAR_FSCK 771
-RESOLUCION_SABOTAJE 772
-ESPERANDO_SABOTAJE 767 (aca es donde le mandamos el Socket a IMS, antes que nada)
-
-"Una vez elegido el tripulante, ahi enviamos el ATIENDE_SABOTAJE"
-================================EN FUNCION TRIPULANTE(exec)
-if(sabotaje_activado == 1){
-sem_wait(&semTripulante[t->tid]);
-if(!llegoAPosicion(t->posicionX,t->posicionY,posSabotajeX,posSabotajeY){
-	moverTripulanteUno(tripulante);
-	sem_post(&semERM);
-	}
-else if(llegoAPosicion(t->posicionX,t->posicionY,posSabotajeX,posSabotajeY){
-	_send_message(IMS,"DIS",INVOCAR_FSCK);
-	ciclos_transcurridos++;
-	sem_post(&semERM);
-	}
-else if(ciclos_transcurridos<duracion_sabotaje){
-	ciclos_transcurridos++;
-	sem_post(&semERM);
-	}
-else{
-	_send_message(IMS,"DIS",RESOLUCION_SABOTAJE);
-	}
-}
-================================
-Es NECESARIO hacer una transicion primero a ready antes de ir para exec durante el sabotaje, entonces a donde va el tripulante.
-
-HAY QUE TENER EN CUENTA RR, si el cuantum llega al maximo, hay que mandarlo de nuevo a ready.
-
-Necesitariamos asegurar que no puedan haber nuevos tripulantes hasta que el sabotaje no haya finalizado, ya sea por un mensaje o guardandolos en un auxiliar hasta que termine.
-
-#En conclusion, exec y ready solo pueden tener un miembro durante el sabotaje, y ese es el fixer. Una opcion seria que si ready recibe un nuevo miembro, si este difiere en su tid con el fixer, entonces se lo mueve a bloq_emer, de lo contrario se lo manda para exec.*/

@@ -63,6 +63,8 @@ void setearConfiguraciones (){
     pthread_mutex_unlock(&mutexSabotajeActivado);
     //log_info(logger, "SabotajeActivado: %d", sabotaje_activado);
 
+    sabotaje_terminado = 0;
+
     conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
 
@@ -101,8 +103,8 @@ void setearConfiguraciones (){
     pthread_create(&hBloqIO, NULL, (void *) funcionhBloqIO, logger);
     pthread_create(&hExit, NULL, (void *) funcionhExit, logger);
 
-    // pthread_create(&hExecReadyaBloqEmer, NULL, (void *) funcionhExecReadyaBloqEmer, logger);
-    // pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
+    pthread_create(&hExecReadyaBloqEmer, NULL, (void *) funcionhExecReadyaBloqEmer, logger);
+    pthread_create(&hBloqEmeraReady, NULL, (void *) funcionhBloqEmeraReady, logger);
 
     pthread_detach(hNewaReady);
     pthread_detach(hReadyaExec);
@@ -111,8 +113,8 @@ void setearConfiguraciones (){
     pthread_detach(hExecaExit);
     pthread_detach(hBloqIO);
     pthread_detach(hExit);
-    // pthread_detach(hExecReadyaBloqEmer);
-    // pthread_detach(hBloqEmeraReady);
+    pthread_detach(hExecReadyaBloqEmer);
+    pthread_detach(hBloqEmeraReady);
 
     char* bufferAEnviar = string_new();
     string_append(&bufferAEnviar, "Comienza Discordiador");

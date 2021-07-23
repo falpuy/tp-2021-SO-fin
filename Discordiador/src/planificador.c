@@ -410,6 +410,9 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
 
   	while(temp_validador) {
         sem_wait(&semERM);
+        tcb* tcbFixerAntesSabotaje = malloc(sizeof(tcb));
+
+        log_info(logger, "Entró a ReadyExec->BlockedEmer");
 
         pthread_mutex_lock(&mutexSabotajeActivado);
         int temp_sabotaje_activado = sabotaje_activado;
@@ -427,16 +430,27 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
 
             if(temp_ciclos_transcurridos_sabotaje == duracion_sabotaje) // SI SE COMPLETÓ EL SABOTAJE
             {
+                sabotaje_terminado=1;
+
                 //SE SACA AL TRIPULANTE DE LA COLA DE EXEC Y SE LO COLOCA AL FINAL DE LA COLA DE BLOQ_EMER
                 pthread_mutex_lock(&mutexExec);
-                tcb* aux_Fixer_Fin = queue_pop(exec);
+                tcb* tripulanteFixer = queue_pop(exec);
                 pthread_mutex_unlock(&mutexExec);
 
-                aux_Fixer_Fin->status = 'M';
-                aux_Fixer_Fin->ciclosCumplidos = ciclos_cumplidos_fixer_pre_sabotaje;
+                tripulanteFixer->status = 'M';
+                
+                tripulanteFixer->tid = tcbFixerAntesSabotaje->tid;
+                tripulanteFixer->pid = tcbFixerAntesSabotaje->pid;
+                tripulanteFixer->posicionX = tcbFixerAntesSabotaje->posicionX;
+                tripulanteFixer->posicionY = tcbFixerAntesSabotaje->posicionY;
+                tripulanteFixer->estaVivoElHilo = tcbFixerAntesSabotaje->estaVivoElHilo;
+                tripulanteFixer->tiempoEnExec = tcbFixerAntesSabotaje->tiempoEnExec;
+                tripulanteFixer->tiempoEnBloqIO = tcbFixerAntesSabotaje->tiempoEnBloqIO;
+                tripulanteFixer->ciclosCumplidos = tcbFixerAntesSabotaje->ciclosCumplidos;
+                memcpy(tripulanteFixer->instruccion_actual, tcbFixerAntesSabotaje->instruccion_actual, strlen(tcbFixerAntesSabotaje->instruccion_actual)+1);
 
                 pthread_mutex_lock(&mutexBloqEmer);
-                queue_push(bloq_emer,(void*) aux_Fixer_Fin);
+                queue_push(bloq_emer,(void*) tripulanteFixer);
                 pthread_mutex_unlock(&mutexBloqEmer);
             }
 
@@ -483,10 +497,19 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 while (!queue_is_empty(bloq_emer_sorted))// SE VACÍA LA COLA DE BLOQ_EMER_SORTED, YA NO ES NECESARIA
                     queue_pop(bloq_emer_sorted);
 
-                if(tripulanteFixer->ciclosCumplidos != 0){ // SE GUARDA LA CANTIDAD DE CICLOS CUMPLIDOS DEL FIXER ANTES DE EMPEZAR EL SABOTAJE, Y SE LO COLOCA A 0
-                    ciclos_cumplidos_fixer_pre_sabotaje = tripulanteFixer->ciclosCumplidos;
-                    tripulanteFixer->ciclosCumplidos = 0;
-                }
+                tcbFixerAntesSabotaje->tid = tripulanteFixer->tid;
+                tcbFixerAntesSabotaje->pid = tripulanteFixer->pid;
+                tcbFixerAntesSabotaje->posicionX = tripulanteFixer->posicionX;
+                tcbFixerAntesSabotaje->posicionY = tripulanteFixer->posicionY;
+                tcbFixerAntesSabotaje->estaVivoElHilo = tripulanteFixer->estaVivoElHilo;
+                tcbFixerAntesSabotaje->tiempoEnExec = tripulanteFixer->tiempoEnExec;
+                tcbFixerAntesSabotaje->tiempoEnBloqIO = tripulanteFixer->tiempoEnBloqIO;
+                tcbFixerAntesSabotaje->ciclosCumplidos = tripulanteFixer->ciclosCumplidos;
+                memcpy(tcbFixerAntesSabotaje->instruccion_actual, tripulanteFixer->instruccion_actual, strlen(tripulanteFixer->instruccion_actual)+1);
+
+                tripulanteFixer->ciclosCumplidos=0;
+                tripulanteFixer->tiempoEnExec=0;
+                tripulanteFixer->tiempoEnBloqIO=0;
 
                 //SE AVISA A IMS QUE SE ATENDERÁ EL SABOTAJE
                 int idTripulante = tripulanteFixer->tid;
@@ -498,8 +521,10 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 pthread_mutex_unlock(&mutexBuffer);
 
                 //SACA AL FIXER DE BLOCK_EMER Y LO COLOCA EN READY
+
                 pthread_mutex_lock(&mutexBloqEmer);
-                tcb* aux_Fixer = list_remove(bloq_emer->elements,tripulanteFixer->tid);
+                int posicion = list_iterate_obtener_posicion(bloq_emer->elements, idTripulante);
+                tcb* aux_Fixer = list_remove(bloq_emer->elements, posicion);
                 pthread_mutex_unlock(&mutexBloqEmer);
 
                 aux_Fixer->status = 'R';
@@ -526,6 +551,8 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
   	while(temp_validador){
         sem_wait(&semMR);
 
+        log_info(logger, "Entró a BlockedEmer->Ready");
+
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
         pthread_mutex_unlock(&mutexPlanificacionViva);
@@ -534,7 +561,7 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
         int temp_sabotaje_activado = sabotaje_activado;
         pthread_mutex_unlock(&mutexSabotajeActivado);
 
-        if (temp_planificacion_viva && temp_sabotaje_activado) {
+        if (temp_planificacion_viva && temp_sabotaje_activado && sabotaje_terminado) {
 
             while (!queue_is_empty(bloq_emer))
             {

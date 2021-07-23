@@ -150,10 +150,12 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             memcpy(tarea,payload+sizeof(int)*2,tamTarea);
             tarea[tamTarea]='\0';
 
-            log_info(logger, "Tam tarea:%d", tamTarea);
-            log_info(logger, "Tarea:%s", tarea);
+            log_info(logger, "Id: %d", idTripulante);
+            log_info(logger, "Tam tarea: %d", tamTarea);
+            log_info(logger, "Tarea: %s", tarea);
 
             if(comandoTarea(tarea) == 7){
+                log_info(logger, "Entró en tarea normal");
                 comienzaEjecutarTarea(tamTarea,tarea,-1,idTripulante);
             }else{
                 memcpy(&parametro,payload + sizeof(int)*2+ tamTarea,sizeof(int));

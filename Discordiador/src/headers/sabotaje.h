@@ -97,7 +97,7 @@
     int planificacion_viva;
     int sabotaje_activado;
     int ciclos_transcurridos_sabotaje;
-    int ciclos_cumplidos_fixer_pre_sabotaje;
+    int sabotaje_terminado;
     int cantidadTCBEnExec;
 
     tcb *tripulanteFixer;

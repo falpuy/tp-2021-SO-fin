@@ -93,14 +93,22 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
     free(buffer_a_enviar);
 
-  	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);    
+  	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+    pthread_mutex_unlock(&mutexBuffer);
+
   	if (mensaje->command == SUCCESS) {
         log_info(logger,"Se guardó en Memoria OK");
+    }
+    else if (mensaje->command == ERROR_POR_FALTA_DE_MEMORIA){
+        free(mensaje->payload);
+        free(mensaje->identifier);
+        free(mensaje);
+        
+        return NULL;
     }
     free(mensaje->payload);
     free(mensaje->identifier);
     free(mensaje);
-    pthread_mutex_unlock(&mutexBuffer);
 
   	return nuevoPCB;
 }
@@ -219,8 +227,8 @@ void funcionTripulante (void* elemento) {
                         parametroIO = atoi(parametrosTarea[0]);
                     }else{
                         parametrosTarea = string_split(tarea[0], ";");
-                            nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
-                            strcpy(nombreTareaNormal, parametrosTarea[0]);
+                        nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
+                        strcpy(nombreTareaNormal, parametrosTarea[0]);
                     }
                     
                     posicionX = atoi(parametrosTarea[1]);
@@ -248,6 +256,10 @@ void funcionTripulante (void* elemento) {
                             else{// SI ES TAREA NORMAL
                                 tamanioNombreTarea = strlen(nombreTareaNormal);
                                 tamanioBuffer = sizeof(int)*5 + tamanioNombreTarea;
+
+                                log_info(logger, "------------> El id a enviar a IMS al comenzar la tarea es: %d", tcbTripulante->tid);
+                                nombreTareaNormal[tamanioNombreTarea] = '\0';
+                                log_info(logger, "------------> La tarea a enviar a IMS al comenzar la tarea es: %s", nombreTareaNormal);
 
                                 pthread_mutex_lock(&mutexBuffer);
                                 buffer = _serialize(tamanioBuffer, "%d%s%d%d%d", tcbTripulante->tid, nombreTareaNormal, posicionX, posicionY, tiempoTarea);

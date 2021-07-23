@@ -237,7 +237,7 @@ char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int 
     string_append(&temporal,"Se mueve de ");
     string_append(&temporal,posicion);
     free(posicion);
-    string_append(&temporal,"|");
+    string_append(&temporal,"-");
     posicion  = string_itoa(posY_v);
     string_append(&temporal,posicion);
     free(posicion);
@@ -245,7 +245,7 @@ char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int 
     posicion  = string_itoa(posX_n);
     string_append(&temporal,posicion);
     free(posicion);
-    string_append(&temporal,"|");
+    string_append(&temporal,"-");
     posicion = string_itoa(posY_n);
     string_append(&temporal,posicion);
     free(posicion);

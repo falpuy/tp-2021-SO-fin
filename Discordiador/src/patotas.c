@@ -146,7 +146,7 @@ void funcionTripulante (void* elemento) {
 
         sem_t* semaforo = list_get(listaSemaforos,param->idSemaforo);
         sem_wait(semaforo);
-        log_info(logger, "se recibió el post del tripulante: %d", param->idSemaforo);
+        //log_info(logger, "se recibió el post del tripulante: %d", param->idSemaforo);
 
         pthread_mutex_lock(&mutexExec);
         tcbTripulante = get_by_id(exec->elements, param->idSemaforo);
@@ -219,8 +219,8 @@ void funcionTripulante (void* elemento) {
                         parametroIO = atoi(parametrosTarea[0]);
                     }else{
                         parametrosTarea = string_split(tarea[0], ";");
-                        nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
-                        strcpy(nombreTareaNormal, parametrosTarea[0]);
+                            nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
+                            strcpy(nombreTareaNormal, parametrosTarea[0]);
                     }
                     
                     posicionX = atoi(parametrosTarea[1]);
@@ -234,6 +234,7 @@ void funcionTripulante (void* elemento) {
                         
                         if (mensajeInicialIMS == 0){//MANDA MENSAJE A IMS DE "Comienza Ejecucion Tarea" 
                             if(tarea[1]!=NULL){//SI ES TAREA IO
+                                
                                 tamanioTarea = strlen(tarea[0]);
                                 tamanioBuffer = sizeof(int)*6 + tamanioTarea;
 
@@ -263,6 +264,7 @@ void funcionTripulante (void* elemento) {
                             log_info(logger, "[Tripulante %d] Se debe realizar una tarea de I/O",param->idSemaforo);
                             sleep(1);
                             free(tarea[1]);
+                            mensajeInicialIMS = 0;
                         }
                         else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
                             log_info(logger, "[Tripulante %d] Se debe realizar una tarea normal",param->idSemaforo);
@@ -284,6 +286,7 @@ void funcionTripulante (void* elemento) {
                                 free(nombreTareaNormal);
                                 pedirProximaTarea(tcbTripulante);
                                 tcbTripulante->tiempoEnExec = 0;
+                                mensajeInicialIMS = 0;
                             } 
 
                             if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR && tcbTripulante->status != 'X'){//ES RR Y COMPLETÓ EL QUANTUM Y NO TERMINÓ TODAS LAS TAREAS

@@ -14,8 +14,6 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             memcpy(&posSabotajeX, payload, sizeof(int));
             memcpy(&posSabotajeY, payload + sizeof(int), sizeof(int));
             log_info(logger, "Llego comando COMIENZA_SABOTAJE con posición en %d-%d",posSabotajeX,posSabotajeY);
-
-            sem_post(&semERM);
         break;
     }
 }

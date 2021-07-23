@@ -185,6 +185,7 @@ void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante){
 
 void consumirOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Files/Oxigeno.ims");
+    log_info(logger, "Path de consumir oxigeno:%s", path_oxigeno);
     
     if(access(path_oxigeno,F_OK)<0){
         log_error(logger, "No existe Oxigeno.ims");
@@ -200,6 +201,7 @@ void consumirOxigeno(int parametroTarea){
 
 void consumirComida(int parametroTarea){
     char* path_comida = pathCompleto("Files/Comida.ims");
+    log_info(logger, "Path de (Consumir)comida:%s", path_comida);
     
     if(access(path_comida,F_OK)<0){
         log_error(logger, "No existe Comida.ims");
@@ -216,6 +218,7 @@ void consumirComida(int parametroTarea){
 
 void descartarBasura(int parametroTarea){
     char* path_basura = pathCompleto("Files/Basura.ims");
+     log_info(logger, "Path de (descartar)basura:%s",path_basura);
     
     if(access(path_basura,F_OK)<0){
         log_error(logger, "No existe Basura.ims");
@@ -278,6 +281,7 @@ void descartarBasura(int parametroTarea){
 
 void generarOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Files/Oxigeno.ims");
+    log_info(logger, "Path de generar oxigeno:%s", path_oxigeno);
 
     if(access(path_oxigeno,F_OK)<0){
         log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
@@ -294,9 +298,10 @@ void generarOxigeno(int parametroTarea){
 
 void generarComida(int parametroTarea){
     char* path_comida = pathCompleto("Files/Comida.ims");
-    
+    log_info(logger, "Path de comida:%s", path_comida);
+
     if(access(path_comida,F_OK)<0){
-        log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
+        log_info(logger, "No existe Comida.ims...Se crea archivo");
         crearMetadataFiles(path_comida,"C");
     }
 
@@ -310,9 +315,10 @@ void generarComida(int parametroTarea){
 
 void generarBasura(int parametroTarea){
     char* path_basura = pathCompleto("Files/Basura.ims");
-    
+    log_info(logger, "Path de basura:%s", path_basura);
+
     if(access(path_basura,F_OK)<0){
-        log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
+        log_info(logger, "No existe Basura.ims...Se crea archivo");
         crearMetadataFiles(path_basura,"B");
     }
 

@@ -27,10 +27,10 @@
     void funcionCambioExecIO(void* nodo);
     void funcionhExecaBloqIO (t_log* logger);
 
-    void funcionCambioExecReady(void* nodo, int posicion);
+    void funcionCambioExecReady(void* nodo);
     void funcionhExecaReady (t_log* logger);
 
-    void funcionCambioExecExit(void* nodo, int posicion);
+    void funcionCambioExecExit(void* nodo);
     void funcionhExecaExit (t_log* logger);
 
     void funcionhBloqIO (t_log* logger);
@@ -44,5 +44,6 @@
     /*------------------ADICIONALES--------------------*/
     void deletearTripulante(void* nodo);
     void signalHilosTripulantes(void *nodo);
-    void list_iterate_position(t_list *self, void(*closure)());
+    int list_iterate_obtener_posicion(t_list* self, int tid);
+    
 #endif

@@ -31,7 +31,7 @@ clean:
 
 # make build : Compila todos los archivos .c y genera un ejecutable
 build:
-	$(CC) -o $(TARGET) $(CFLAGS) ./*.$(SRCEXT) $(LIB)
+	$(CC) -o $(TARGET) ./*.$(SRCEXT) $(LIB)
 
 # make run : Ejecuta la aplicacion
 run:

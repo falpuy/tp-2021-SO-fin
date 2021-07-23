@@ -137,15 +137,15 @@
 
     void unset_bitmap(uint8_t *bitmap, int position);
 
-    void save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictionary* admin_collection, void *buffer);
+    int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictionary* admin_collection, void *buffer);
 
     int verificarCondicionDeMemoria(int frame_count);
 
-    void destroyer_pagination(void *item);
-
     void admin_destroyer(void *item);
 
-    void table_destroyer_pagination(void *item);
+    void page_destroyer(void *item);
+
+    void page_table_destroyer(void *item);
 
     int get_page_number(t_dictionary *self, uint32_t frame);
 

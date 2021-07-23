@@ -10,7 +10,7 @@ int main() {
     hasLRU = 1;
 
     config = config_create(CONFIG_PATH);
-    logger = log_create(ARCHIVO_LOG, PROGRAM, 0, LOG_LEVEL_TRACE);
+    logger = log_create(ARCHIVO_LOG, PROGRAM, 1, LOG_LEVEL_TRACE);
    
     signal(SIGINT, signal_handler);
     signal(SIGUSR1, signal_handler);
@@ -24,6 +24,7 @@ int main() {
     }
 
     printf("PID: %d\n", process_getpid());
+    log_info(logger, "PID: %d\n", process_getpid());
 
     // Creo el mapa
     // create_map(logger);
@@ -45,6 +46,8 @@ int main() {
     timer = atoi(aux_timer);
     free(aux_timer);
 
+    hasLRU = !strcmp(config_get_string_value(config, "ALGORITMO_REEMPLAZO"), "LRU");
+
     if (!strcmp(esquema, "PAGINACION")) {
 
       admin_collection = dictionary_create();
@@ -57,6 +60,9 @@ int main() {
         config_get_int_value(config, "TAMANIO_SWAP"),
         logger
       );
+
+      global_clock_key = 0;
+      global_clock_index = 0;
 
       // Creo el server
       _start_server(config_get_string_value(config, "PUERTO"), pagination_handler, logger);
@@ -77,6 +83,9 @@ void signal_handler(int sig_number) {
   switch(sig_number) {
     case SIGINT:
 
+      free(memory);
+      free(admin);
+
       if (!strcmp(esquema, "PAGINACION")) {
 
         free(bitmap);
@@ -85,15 +94,22 @@ void signal_handler(int sig_number) {
 
         bitarray_destroy(virtual_bitmap);
 
-        // dictionary_destroy_and_destroy_elements(table_collection, table_destroyer_pagination);
         dictionary_destroy_and_destroy_elements(admin_collection, admin_destroyer);
+        dictionary_destroy_and_destroy_elements(table_collection, page_table_destroyer);
+
+        // if (global_clock_page) {
+        //   free(global_clock_page -> frame);
+        //   free(global_clock_page);
+        // }
+
+        // if (global_lru_page) {
+        //   free(global_lru_page -> frame);
+        //   free(global_lru_page);
+        // }
 
       } else {
         dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
       }
-
-      free(memory);
-      free(admin);
 
       // Eliminar Archivo Swap????
 
@@ -115,7 +131,7 @@ void signal_handler(int sig_number) {
     case SIGUSR2:
 
       if (!strcmp(esquema, "PAGINACION")) {
-        // page_dump(table_collection);
+        page_dump(table_collection);
       } else {
         memory_dump(table_collection, memory);
       }
@@ -434,7 +450,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             if(!tarea){
 								log_info(logger, "No hay mas tareas que mandar");
                 char* temp = string_new();
-                string_append(&temp, "answer");
+                string_append(&temp, "sin tareas");
                 char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
 
                 _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
@@ -556,190 +572,215 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
 
     // // log_info(logger, "Recibi la siguiente operacion de %s: %d", id, opcode);
 
-    // char* data_tareas;
-    // int cantTripulantes;
-    // int tamStrTareas;
-    // int idPCB;
-    // int idTCB, posX, posY;
-    // int offset = 0;
-    // char* idPCBkey;  
-    // char *respuesta;
-
-    // // // TODO: COMANDO UPDATE STATUS
+    char* data_tareas;
+    int cantTripulantes;
+    int tamStrTareas;
+    int idPCB;
+    int idTCB, posX, posY;
+    int offset = 0;
+    char* idPCBkey;  
+    char *respuesta;
+    char status;
   
-    // // switch (opcode){
-
-    // //     /*case RECIBIR_ESTADO_TRIPULANTE:
-    // //     break;*/
-
+    switch (opcode){
         
-    // //     case INICIAR_PATOTA: // idPCB - tareas - cantTCB - IDTCB.... (N id)
+        case INICIAR_PATOTA: // idPCB - tareas - cantTCB - IDTCB.... (N id)
 
-    // //     		log_info(logger,"-----------------------------------------------------");
-    // //         log_info(logger,"Llegó la operación: INICIAR_PATOTA ");
-      			
-    // //     	//--------------------------Deserializar -------------------------------              
-    // //     		memcpy(&idPCB, buffer, sizeof(int));
-    // //         offset += sizeof(int);
-        
-    // //     		memcpy(&tamStrTareas, buffer + offset, sizeof(int));
-    // //         offset += sizeof(int);
-    // //         data_tareas = malloc(tamStrTareas + 1);
+          log_info(logger,"-----------------------------------------------------");
+          log_info(logger,"Llegó la operación: INICIAR_PATOTA ");
+          
+          //--------------------------Deserializar -------------------------------    
 
-    // //     		memcpy(data_tareas, buffer + offset, tamStrTareas);
-    // //     		offset += tamStrTareas;
-    // //         data_tareas[tamStrTareas]='\0';
-                    
-    // //     		memcpy(&cantTripulantes, buffer + offset, sizeof(int));
-    // //     		offset += sizeof(int);
-                   
-    // //         log_info(logger,"ID PCB: %d", idPCB);
-		// // 				log_info(logger,"Tareas de la patota: %s", data_tareas);
-    // //       	log_info(logger,"Cantidad de tripulantes: %d", cantTripulantes);
-		// // 				//--------------------------------------------------------------------        
-        		
-    // //       	respuesta = string_new();
-   	// // 				string_append(&respuesta, "Respuesta");
-						
-    //         if(cantTripulantes <= 0){
-    //           	log_error(logger, "Error: La cantidad de tripulantes es nula o no existente");
-    //             _send_message(fd, "RAM", ERROR_CANTIDAD_TRIPULANTES , respuesta, string_length(respuesta), logger);
-    //         } else {
-    //           // guardo en memoria, primero se chequea si hay espacio o no
-    //           int hayEspacio = 0;
-    //           //int temporal_memory_size = sizeof(pcb) + tamStrTareas + cantTripulantes * sizeof(tcb);
+          if (save_data_in_memory(memory, table_collection, admin_collection, buffer) > 0) {
 
-    //           double val = mem_size / page_size;
-    //           int frames_count = ceil(val);
-    //           hayEspacio = verificarCondicionDeMemoria(frames_count);
-
-    //           log_info(logger, "--------------------------------------");
-    //           if(hayEspacio > 0){
-    //             save_data_in_memory(memory, table_collection, admin_collection, buffer);
-    //             log_info(logger, "Se pudo guardar correctamente en memoria, enviando respuesta a Discordiador\n");
-    //             _send_message(fd, "RAM", SUCCESS, respuesta, string_length(respuesta), logger);
-    //           }else{
-    //             if(hayEspacio < 0){
-    //               log_info(logger, "No habia memoria, enviamos mensaje a Discordiador\n");
-    //               _send_message(fd, "RAM", ERROR_POR_FALTA_DE_MEMORIA, respuesta, string_length(respuesta), logger);
-    //             }
-    //             else{
-    //               log_info(logger, "Ocurrio un error inesperado al tratar de chequear el estado de memoria\n");
-    //               _send_message(fd, "RAM", ERROR_POR_FALTA_DE_MEMORIA, respuesta, string_length(respuesta), logger);
-    //             }
-    //           }
-      
-    // //         }
-    // //         log_info(logger,"-----------------------------------------------------");
-    // //         free(data_tareas);     
-    // //         free(respuesta); 
+            log_info(logger, "Se guardaron exitosamente los datos de la patota");
+            respuesta = string_new();
+            string_append(&respuesta, "Respuesta");
+            _send_message(fd, "RAM", SUCCESS ,respuesta, string_length(respuesta), logger);
+            free(respuesta); 
               
-    // //     break;
-                
-        
+          } else {
+            log_error(logger, "No hay mas espacio en memoria");
+            respuesta = string_new();
+            string_append(&respuesta, "Respuesta");
+            _send_message(fd, "RAM", ERROR_POR_FALTA_DE_MEMORIA ,respuesta, string_length(respuesta), logger);
+            free(respuesta); 
+          }
+          log_info(logger,"-----------------------------------------------------");    
+        break;
 
-    // //     case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y 
-    // //       	log_info(logger,"-----------------------------------------------------");
-    // //         log_info(logger,"Llegó la operación: RECIBIR_UBICACION_TRIPULANTE");
-    // //         //------------Deserializo parámetros-------------------
-    // //         memcpy(&idPCB, buffer,sizeof(int));
-    // //         offset += sizeof(int);
-            
-    // //         memcpy(&idTCB, buffer + offset, sizeof(int));
-    // //         offset += sizeof(int);
-            
-		// // 				memcpy(&posX, buffer + offset, sizeof(int));
-    // //         offset += sizeof(int);
-              
-		// // 				memcpy(&posY, buffer + offset, sizeof(int));
-              
-    //         log_info(logger,"ID PCB: %d", idPCB);
-		// 				log_info(logger,"ID TCB: %d", idTCB);
-    //       	log_info(logger,"Posicion en X: %d", posX);
-    //         log_info(logger,"Posicion en Y: %d", posY);
-    //         //----------------------------------------------------
-    //         idPCBkey = string_itoa(idPCB);
-    //         update_position_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB, posX, posY);
-					
-    // //         respuesta = string_new();
-    // //         string_append(&respuesta, "Respuesta");
-            
-            
-    // //         _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
-		// // 				log_info(logger, "Se mando con éxito la ubicación del tripulante");
-            
+        case ENVIAR_TAREA://idpcb, idtcb
 						
-		// 				//TO DO: actualizar_mapa(nuestroTCB);
-    //         log_info(logger,"-----------------------------------------------------");
-    //         free(respuesta);					
-    //         break;
+          log_info(logger,"-----------------------------------------------------");
+          log_info(logger,"Llegó operación: ENVIAR_PROXIMA_TAREA");
 
-    //     case ENVIAR_TAREA://idpcb, idtcb
+          //-----------------------Deserializacion---------------------
+          memcpy(&idPCB, buffer, sizeof(int));
+          memcpy(&idTCB, buffer + sizeof(int), sizeof(int));
+          log_info(logger,"ID PCB:%d", idPCB);
+          log_info(logger,"ID TCB:%d", idTCB);
+      //     //-----------------------------------------------------------
+          
+          idPCBkey = string_itoa(idPCB);
+
+          char *tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
+
+          free(idPCBkey);
+
+          if(!tarea){
+            log_info(logger, "No hay mas tareas que mandar");
+            char* temp = string_new();
+            string_append(&temp, "Sin tareas");
+            char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
+
+            _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
+
+            free(temp);
+            free(mandamos);
+          }else{
+            
+            log_info(logger, "La tarea a enviar es: %s",tarea);
+            log_info(logger, "El tamaño de tarea a enviar es: %d",strlen(tarea));
+
+            char* buffer_a_enviar =  _serialize(sizeof(int)+strlen(tarea),"%s",tarea);
+            _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+strlen(tarea), logger);
+            
+            free(buffer_a_enviar);
+            free(tarea);
+
+          }
+
+          log_info(logger,"-----------------------------------------------------");
+        break;
+        case ELIMINAR_PATOTA:
+
+            log_info(logger,"-----------------------------------------------------");
+            log_info(logger,"Llegó la operación: ELIMINAR_PATOTA");         
+
+            //------------Deserializo parámetros-------------------
+            memcpy(&idPCB, buffer,sizeof(int));
+            offset += sizeof(int);
+
+            idPCBkey = string_itoa(idPCB);
+            log_info(logger,"ID PCB: %s", idPCBkey);
+
+            remove_pcb_from_page(memory, admin_collection, table_collection, idPCBkey);
+
+            free(idPCBkey); 
+              
+            //----------------------------------------------------
+
+            respuesta = string_new();
+            string_append(&respuesta, "Respuesta");
+            _send_message(fd, "RAM", SUCCESS,respuesta,string_length(respuesta),logger);
+            free(respuesta);
+
+            log_info(logger,"-----------------------------------------------------");
+
+        break;
+
+        case EXPULSAR_TRIPULANTE:	
+                   
+          log_info(logger,"-----------------------------------------------------");
+          log_info(logger,"Llegó operación: EXPULSAR_TRIPULANTE");
+                  
+          //-----------------------Deserializo------------------
+          memcpy(&idPCB, buffer , sizeof(int));
+          memcpy(&idTCB, buffer + sizeof(int), sizeof(int));
+          log_info(logger,"ID PCB:%d", idPCB);
+          log_info(logger,"ID TCB:%d", idTCB);     
+          
+          //---------------------------------------------------
+          idPCBkey = string_itoa(idPCB);
+          
+          remove_tcb_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
+
+          free(idPCBkey);
+
+          respuesta = string_new();
+          string_append(&respuesta, "Respuesta");
+          _send_message(fd, "RAM", SUCCESS,respuesta,string_length(respuesta),logger);
+          free(respuesta);
+          log_info(logger,"-----------------------------------------------------");
+
+        break;
+
+        case RECIBIR_ESTADO_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y
+          	log_info(logger,"-----------------------------------------------------");
+            log_info(logger,"Llegó la operación: RECIBIR_ESTADO_TRIPULANTE");
+            //------------Deserializo parámetros-------------------
+            memcpy(&idPCB, buffer,sizeof(int));
+            offset += sizeof(int);
+            
+            memcpy(&idTCB, buffer + offset, sizeof(int));
+            offset += sizeof(int);
+            
+						memcpy(&status, buffer + offset, sizeof(char));
+            offset += sizeof(char);
+              
+            log_info(logger,"ID PCB: %d", idPCB);
+						log_info(logger,"ID TCB: %d", idTCB);
+          	log_info(logger,"Estado: %c", status);
+            //----------------------------------------------------
+            idPCBkey = string_itoa(idPCB);
+            
+            update_status_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB, status);
+
+            free(idPCBkey);
+            
+            respuesta = string_new();
+            string_append(&respuesta, "Respuesta");
+            _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
+            log_info(logger, "Se mando con éxito el estado del tripulante");
+            free(respuesta);
 						
-    //         log_info(logger,"-----------------------------------------------------");
-		// 				log_info(logger,"Llegó operación: ENVIAR_PROXIMA_TAREA");
+						//TO DO: actualizar_mapa(nuestroTCB);
+            log_info(logger,"-----------------------------------------------------");
+        break;
 
-    //         //-----------------------Deserializacion---------------------
-    //         memcpy(&idPCB, buffer, sizeof(int));
-		// 				memcpy(&idTCB, buffer + sizeof(int), sizeof(int));
-    //         log_info(logger,"ID PCB:%d", idPCB);
-		// 				log_info(logger,"ID TCB:%d", idTCB);
-    //         //-----------------------------------------------------------
+        case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y
+          	log_info(logger,"-----------------------------------------------------");
+            log_info(logger,"Llegó la operación: RECIBIR_UBICACION_TRIPULANTE");
+            //------------Deserializo parámetros-------------------
+            memcpy(&idPCB, buffer,sizeof(int));
+            offset += sizeof(int);
             
-    //         idPCBkey = string_itoa(idPCB);
-    //         char* tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
-
-		// // 				respuesta = string_new();
-    // //         string_append(&respuesta, "Respuesta");
-
-    // //         int tamTarea = string_length(tarea);  
-    // //         char* buffer_a_enviar =  _serialize(sizeof(int) + tamTarea, tarea);
-
-    // //         _send_message(fd, "RAM", ENVIAR_TAREA , buffer_a_enviar, sizeof(sizeof(int) + tamTarea), logger);
-              	
-    //         free(buffer_a_enviar);
-    //         free(tarea);
-    //         free(respuesta);
-		// 				log_info(logger,"-----------------------------------------------------");
-    //         break;
-
-    // //     case EXPULSAR_TRIPULANTE:	
-                   
-		// // 				log_info(logger,"-----------------------------------------------------");
-		// // 				log_info(logger,"Llegó operación: EXPULSAR_TRIPULANTE");
-                   
-    // //         //-----------------------Deserializo------------------
-    // //         memcpy(&idPCB, buffer , sizeof(int));
-    // //         memcpy(&idTCB, buffer + sizeof(int), sizeof(int));
-    // //         log_info(logger,"ID PCB:%d", idPCB);
-		// // 				log_info(logger,"ID TCB:%d", idTCB);     
-    // //         //"-----------------------------------------------------"
-    // //         //// Elimino el tcb del mapa
-
-    // //         //eliminar_tripulante_mapa();
-
-    //         idPCBkey = string_itoa(idPCB);
-
-    // //         respuesta = string_new();
-    // //         string_append(&respuesta, "Respuesta");
-
-    // //         remove_tcb_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
-    // //         _send_message(fd, "RAM", SUCCESS,respuesta, string_length(respuesta), logger);
+            memcpy(&idTCB, buffer + offset, sizeof(int));
+            offset += sizeof(int);
             
-    // //         free(respuesta);
+						memcpy(&posX, buffer + offset, sizeof(int));
+            offset += sizeof(int);
+              
+						memcpy(&posY, buffer + offset, sizeof(int));
+              
+            log_info(logger,"ID PCB: %d", idPCB);
+						log_info(logger,"ID TCB: %d", idTCB);
+          	log_info(logger,"Posicion en X: %d", posX);
+            log_info(logger,"Posicion en Y: %d", posY);
+            //----------------------------------------------------
+            idPCBkey = string_itoa(idPCB);
             
-    // //         log_info(logger,"-----------------------------------------------------");
+            update_position_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB, posX, posY);
 
+            free(idPCBkey);
 
-    // //     break;
+            respuesta = string_new();
+            string_append(&respuesta, "Respuesta");
+            _send_message(fd, "RAM", SUCCESS , respuesta, string_length(respuesta), logger);
+            log_info(logger, "Se mando con éxito la ubicación del tripulante");
+            free(respuesta);
+						
+						//TO DO: actualizar_mapa(nuestroTCB);
+            log_info(logger,"-----------------------------------------------------");
+        break;
 
-    // //     default:
-    // //       log_info(logger,"-----------------------------------------------------");
-    // //       log_info(logger, "No existe la operación:%d", opcode);
-    // //       log_info(logger,"-----------------------------------------------------");
-    // //     break;
+        default:
+          log_info(logger,"-----------------------------------------------------");
+          log_info(logger, "No existe la operación:%d", opcode);
+          log_info(logger,"-----------------------------------------------------");
+        break;
 
-    // // }
+    }
 
 }
 
@@ -784,6 +825,11 @@ void setup_pagination(void *memory, char *path, int tam_pag, int real_size, int 
     posix_fallocate(arch_bitmap, 0, virtual_size + frames_virtual / 8);
 
     virtual_memory = mmap(NULL, virtual_size + frames_virtual / 8, PROT_READ | PROT_WRITE, MAP_SHARED, arch_bitmap, 0);
+
+    if (virtual_memory == MAP_FAILED) {
+      perror("No se pudo abrir el archivo de SWAP");
+      exit(EXIT_FAILURE);
+    }
 
     // Creo el bitmap seguido del espacio de memoria para disco
     virtual_bitmap = bitarray_create_with_mode((char *) virtual_memory + virtual_size, frames_virtual / 8, MSB_FIRST);

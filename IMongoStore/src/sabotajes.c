@@ -445,15 +445,17 @@
             md5Temporal[32] = '\0';
             fclose(archivo2);
 
-            int err = remove("temporal.txt");
-            if (err < 0){
-                log_error(logger, "Error al remover archivo temporal.txt");
-            }
+            // int err = remove("temporal.txt");
+            // if (err < 0){
+            //     log_error(logger, "Error al remover archivo temporal.txt");
+            // }
             
-            err = remove("resultado.txt");
-            if(err < 0 ){
-                log_error(logger, "Error al remover archivo resultado.txt");
-            }
+            // err = remove("resultado.txt");
+            // if(err < 0 ){
+            //     log_error(logger, "Error al remover archivo resultado.txt");
+            // }
+
+            log_info(logger, "Comparando MD5: %s - %s", md5, md5Temporal);
 
             if(!strcmp(md5, md5Temporal)){
                 log_info(logger, "Validacion Blocks...OK [MD5 iguales]");
@@ -475,7 +477,7 @@
                 }
 
                 // config_set_value(metadata,"MD5",md5Temporal);
-                log_info(logger, "Se Restauró el archivo Blocks.ims");
+                log_info(logger, "Se Restauró Blocks de la metadata.");
 
             }
 

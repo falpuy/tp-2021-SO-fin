@@ -221,9 +221,12 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
     memcpy(&task_size, buffer + offset, sizeof(int));
     offset += sizeof(int);
 
-    void *tasks = malloc(task_size);
+    void *tasks = malloc(task_size + 1);
     memcpy(tasks, buffer + offset, task_size);
+    memset(tasks + task_size, '\0', 1);
     offset += task_size;
+
+    printf("ME LLEGO LA TAREA: %s\n", tasks);
 
     memcpy(&tcb_count, buffer + offset, sizeof(int));
     offset += sizeof(int);
@@ -421,7 +424,7 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
             printf("Tarea previa: %d - %d\n", prevTask, prevTask + task_counter);
 
-            if (prevTask + task_counter < data_tcb -> start) {
+            if (prevTask < data_tcb -> start && prevTask + task_counter <= data_tcb -> start) {
                 recv_task = malloc(task_counter + 1);
                 memcpy(recv_task, temp + prevTask, task_counter);
                 memset(recv_task + task_counter, '\0', 1);

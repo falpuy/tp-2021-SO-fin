@@ -66,10 +66,9 @@ void funcionhNewaReady (t_log* logger) {
 
                 log_info(logger,"----------------------------------");
             }
+            log_info(logger,"Se ejecutó NEW->READY");
+            log_info(logger,"----------------------------------");
         }
-
-        log_info(logger,"Se ejecutó NEW->READY");
-        log_info(logger,"----------------------------------");
 
         sem_post(&semRE);
     }
@@ -118,21 +117,21 @@ void funcionhReadyaExec (t_log* logger){
                 log_info(logger, "Hay %d nodos en Exec", queue_size(exec));
 
             }
+            log_info(logger,"Se ejecutó Ready->Exec");
+            log_info(logger,"----------------------------------");
 
         }
         pthread_mutex_lock(&mutex_cantidadTCB);
         cantidadTCBEnExec = queue_size(exec);
         pthread_mutex_unlock(&mutex_cantidadTCB);
 
-        log_info(logger,"Cantidad tcb en exec: %d", cantidadTCBEnExec);
-        log_info(logger,"Se ejecutó Ready->Exec");
-        log_info(logger,"----------------------------------");
+        // log_info(logger,"Cantidad tcb en exec: %d", cantidadTCBEnExec);
 
         if(cantidadTCBEnExec <= 0){
-            log_info(logger, "NO hay tripulantes");
+            // log_info(logger, "NO hay tripulantes");
             sem_post(&semBLOCKIO);
         }else{
-            log_info(logger, "HAY tripulantes");
+            // log_info(logger, "HAY tripulantes");
             list_iterate(exec->elements, signalHilosTripulantes);
         }
     }
@@ -175,10 +174,10 @@ void funcionhExecaBloqIO (t_log* logger){
             if(queue_size(exec) > 0){ 
                 list_iterate(exec->elements, funcionCambioExecIO);
             }
+            log_info(logger,"Se ejecutó Exec->BlockedIO");
+            log_info(logger,"----------------------------------");
         }
 
-        log_info(logger,"Se ejecutó Exec->BlockedIO");
-        log_info(logger,"----------------------------------");
         sem_post(&semER);
     }
 }
@@ -220,9 +219,10 @@ void funcionhExecaReady (t_log* logger) {
             
                 list_iterate(exec->elements, funcionCambioExecReady);
             }
+            log_info(logger,"Se ejecutó Exec->Ready");
+            log_info(logger,"----------------------------------");
         }
-        log_info(logger,"Se ejecutó Exec->Ready");
-        log_info(logger,"----------------------------------");
+        
         sem_post(&semEaX);     
     }
 }
@@ -279,10 +279,11 @@ void funcionhExecaExit (t_log* logger){
             if(!queue_is_empty(exec)){
                 list_iterate(exec->elements, funcionCambioExecExit);
             }
+
+            log_info(logger,"Se ejecutó Exec->Exit");
+            log_info(logger,"----------------------------------");
         }
 
-        log_info(logger,"Se ejecutó Exec->Exit");
-        log_info(logger,"----------------------------------");
         sem_post(&semBLOCKIO);
     }
 }
@@ -322,16 +323,22 @@ void funcionContadorEnBloqIO(void* nodo){
         log_info(logger,"----------------------------------");
 
         pedirProximaTarea(tcbTripulante);
-                
-        tcbTripulante->status = 'R';
 
-        pthread_mutex_lock(&mutexReady);
-        queue_push(ready, (void*) tcbTripulante);
-        pthread_mutex_unlock(&mutexReady);
-        
-        log_info(logger,"----------------------------------");
-        log_info(logger, "Se paso nodo tripulante: %d a Ready con nueva tarea", tcbTripulante->tid);
-        log_info(logger,"----------------------------------");
+        if (tcbTripulante -> status != 'X') {
+            tcbTripulante->status = 'R';
+
+            pthread_mutex_lock(&mutexReady);
+            queue_push(ready, (void*) tcbTripulante);
+            pthread_mutex_unlock(&mutexReady);
+            
+            log_info(logger,"----------------------------------");
+            log_info(logger, "Se paso nodo tripulante: %d a Ready con nueva tarea", tcbTripulante->tid);
+            log_info(logger,"----------------------------------");
+        } else {
+            log_info(logger,"----------------------------------");
+            log_info(logger, "Se cambia estado de Tripulante: %d a Exit", tcbTripulante->tid);
+            log_info(logger,"----------------------------------");
+        }
 
 
     }
@@ -386,15 +393,15 @@ void funcionhBloqIO (t_log* logger){
                 log_info(logger, "El tripulante: %d está esperando su turno en la cola de bloqueados", tcbTripulante->tid);
                 pthread_mutex_unlock(&mutexBloqIO);
             }
+            log_info(logger,"Se ejecutó BlockedIO");
+            log_info(logger,"----------------------------------");
         }
-        log_info(logger,"Se ejecutó BlockedIO");
-        log_info(logger,"----------------------------------");
         
         if(sabotaje_activado){
-            log_info(logger, "El sabotaje está activado");
+            // log_info(logger, "El sabotaje está activado");
             sem_post(&semERM);
         }else{
-            log_info(logger, "El sabotaje está desactivado");
+            // log_info(logger, "El sabotaje está desactivado");
             sem_post(&semEXIT);
         }
     }
@@ -533,9 +540,11 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 queue_push(ready,(void*) aux_Fixer);
                 pthread_mutex_unlock(&mutexReady);
             }
+
+            log_info(logger,"Se ejecutó ReadyExec->BlockedEmer");
+            log_info(logger,"----------------------------------");
         }
-        log_info(logger,"Se ejecutó ReadyExec->BlockedEmer");
-        log_info(logger,"----------------------------------");
+        
         sem_post(&semMR);
     }
 }
@@ -590,10 +599,10 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
             free(bufferAEnviar);
             free(buffer);
             pthread_mutex_unlock(&mutexBuffer); 
-        }
 
-        log_info(logger,"Se ejecutó BlockedEmer->Ready");
-        log_info(logger,"----------------------------------");
+            log_info(logger,"Se ejecutó BlockedEmer->Ready");
+            log_info(logger,"----------------------------------");
+        }
         sem_post(&semEXIT);
     }
 }
@@ -624,10 +633,10 @@ void funcionhExit (t_log* logger){
                 pthread_mutex_unlock(&mutexListaPCB);*/
             }
 
-            
+            log_info(logger,"Se ejecutó Exit");
+            log_info(logger,"----------------------------------");
         }
-        log_info(logger,"Se ejecutó Exit");
-        log_info(logger,"----------------------------------");
+        
         sem_post(&semNR);
     }    
 }

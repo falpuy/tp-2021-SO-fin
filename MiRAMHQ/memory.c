@@ -211,6 +211,7 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
     int task_size;
     int tcb_count;
     int offset = 0;
+    int tid, xpos, ypos;
 
     int task_start = 8;
 
@@ -246,6 +247,10 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
     val = (double) memory_size / page_size;
     int frames_count = ceil(val);
 
+    if (!check_free_frames(frames_count)) {
+        return -1;
+    }
+
     temp = malloc(memory_size);
     int temp_off = 0;
 
@@ -271,6 +276,7 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
 
     for( int i = 0; i < tcb_count; i++) {
         memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
+        memcpy(&tid, buffer + offset, sizeof(uint32_t));
         temp_off += sizeof(uint32_t);
         offset += sizeof(uint32_t);
         
@@ -283,10 +289,12 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
         offset += sizeof(char);
         
         memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
+        memcpy(&xpos, buffer + offset, sizeof(uint32_t));
         temp_off += sizeof(uint32_t);
         offset += sizeof(uint32_t);
         
         memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
+        memcpy(&ypos, buffer + offset, sizeof(uint32_t));
         temp_off += sizeof(uint32_t);
         offset += sizeof(uint32_t);
         
@@ -294,6 +302,9 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
         memcpy(temp + temp_off, &task_start, sizeof(uint32_t));
         temp_off += sizeof(uint32_t);
         offset += sizeof(uint32_t);
+
+        personaje_crear(nivel, tid, xpos, ypos);
+        nivel_gui_dibujar(nivel);
     }
 
     // ---------------- GUARDO FRAMES ---------------- //

@@ -150,7 +150,7 @@ void funcionTripulante (void* elemento) {
     pthread_mutex_unlock(&mutexValidador);
 
     while(temp_validador){// MIENTRAS ESTÉ EN FUNCIONAMIENTO EL PROCESO
-        log_info(logger, "Tripulante: %d esta esperando el signal",param->idSemaforo);
+        //log_info(logger, "Tripulante: %d esta esperando el signal",param->idSemaforo);
 
         sem_t* semaforo = list_get(listaSemaforos,param->idSemaforo);
         sem_wait(semaforo);

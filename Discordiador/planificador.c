@@ -627,9 +627,9 @@ void funcionhExit (t_log* logger){
                 list_iterate(cola_exit->elements, deletearTripulante);
                 pthread_mutex_unlock(&mutexExit);
 
-                /*pthread_mutex_lock(&mutexListaPCB);
+                pthread_mutex_lock(&mutexListaPCB);
                 list_iterate(listaPCB, eliminarPatotaEnRAM);
-                pthread_mutex_unlock(&mutexListaPCB);*/
+                pthread_mutex_unlock(&mutexListaPCB);
             }
 
             log_info(logger,"Se ejecutó Exit");
@@ -643,19 +643,20 @@ void funcionhExit (t_log* logger){
 
 /*--------------------------------ADICIONALES--------------------------------*/
 
-/*void eliminarPatotaEnRAM (){
-    int terminaron;
+void eliminarPatotaEnRAM(void* item){
+    pcb* pcbEliminado = (pcb*) item;
+    int todosTerminaron;
 
-    terminaron = list_iterate_todos_terminaron();
+    todosTerminaron = list_iterate_todos_terminaron(pcbEliminado->listaTCB);
 
-    if(terminaron == queue_size){
+    if(todosTerminaron){
         pthread_mutex_lock(&mutexBuffer);
         buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
         _send_message(conexion_RAM, "DIS", ELIMINAR_PATOTA, buffer, sizeof(int), logger);
         free(buffer);
         pthread_mutex_unlock(&mutexBuffer);
     }
-}*/
+}
 
 
 void deletearTripulante(void* nodo){
@@ -689,5 +690,30 @@ int list_iterate_obtener_posicion(t_list* self, int tid) {
         element = aux;
 	}
 
+    return -1;
+}
+
+int list_iterate_todos_terminaron(t_list* self) {
+    //int i = 0;
+    int cantTerminados = 0;
+	t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+
+	while (element != NULL) {
+		aux = element->next;
+
+        tcb* tcbLista = (tcb*) element->data;
+
+        //tcbLista = list_get(self, i);
+        if(tcbLista->status == 'X'){
+            cantTerminados++;
+        }
+        //i++;
+		element = aux;
+	}
+
+    if (cantTerminados == list_size(self)){
+        return 1;
+    }
     return -1;
 }

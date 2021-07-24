@@ -45,5 +45,6 @@
     void deletearTripulante(void* nodo);
     void signalHilosTripulantes(void *nodo);
     int list_iterate_obtener_posicion(t_list* self, int tid);
+    int list_iterate_todos_terminaron(t_list* self);
     
 #endif

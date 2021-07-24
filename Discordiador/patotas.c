@@ -150,7 +150,7 @@ void funcionTripulante (void* elemento) {
     pthread_mutex_unlock(&mutexValidador);
 
     while(temp_validador){// MIENTRAS ESTÉ EN FUNCIONAMIENTO EL PROCESO
-        log_info(logger, "Tripulante: %d esta esperando el signal",param->idSemaforo);
+        //log_info(logger, "Tripulante: %d esta esperando el signal",param->idSemaforo);
 
         sem_t* semaforo = list_get(listaSemaforos,param->idSemaforo);
         sem_wait(semaforo);
@@ -166,7 +166,6 @@ void funcionTripulante (void* elemento) {
             pthread_mutex_unlock(&mutexExit);
         }
         
-        log_info(logger, "ID Tripulante: %d, ID Semáforo Tripulante: %d", tcbTripulante->tid, param->idSemaforo);
 
         if(tcbTripulante->estaVivoElHilo && planificacion_viva){// SI ESTÁ VIVO EL TRIPULANTE (HILO)
             log_info(logger, "[Tripulante %d] esta en ejecución", param->idSemaforo);
@@ -333,7 +332,7 @@ void funcionTripulante (void* elemento) {
                 free(tarea);
             }
 
-        log_info(logger, "Manda signal a EBIO el tripulante: %d", param->idSemaforo);
+        //log_info(logger, "Manda signal a EBIO el tripulante: %d", param->idSemaforo);
         _signal(1,cantidadTCBEnExec,&semEBIO);
     }
     

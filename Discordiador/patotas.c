@@ -194,6 +194,7 @@ void funcionTripulante (void* elemento) {
                     }
 
                     tcbTripulante->ciclosCumplidos++;
+                    log_info(logger, "Ciclos transcurridos del sabotaje: %d", tcbTripulante->ciclosCumplidos);
 
                     pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
                     ciclos_transcurridos_sabotaje++;
@@ -332,17 +333,16 @@ void funcionTripulante (void* elemento) {
                     log_error(logger, "[Tripulante %d] La tarea ingresada no posee un formato de tarea correcto",param->idSemaforo);
                 }
 
+                free(parametrosTarea[0]);
+                free(parametrosTarea[1]);
+                free(parametrosTarea[2]);
+                free(parametrosTarea[3]);
+                free(parametrosTarea);
+                free(tarea[0]);
+                free(tarea);
             }
 
             sleep(ciclo_CPU);
-
-            free(parametrosTarea[0]);
-            free(parametrosTarea[1]);
-            free(parametrosTarea[2]);
-            free(parametrosTarea[3]);
-            free(parametrosTarea);
-            free(tarea[0]);
-            free(tarea);
         }
         _signal(1,cantidadTCBEnExec,&semEBIO);
     }

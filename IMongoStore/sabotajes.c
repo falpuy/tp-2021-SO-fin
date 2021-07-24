@@ -25,20 +25,18 @@ void sabotaje(){
 void protocolo_fsck(){
     log_info(logger,"-------------------------------------------------");
     log_info(logger, "Comenzando Protocolo:FSCK...");
-    pthread_mutex_lock(&blocks_bitmap);
-    // validacionSuperBloque();
+    validacionSuperBloque();
     validacionFiles();
-    pthread_mutex_unlock(&blocks_bitmap);
     log_info(logger, "Finalizando Protocolo:FSCK..");
     log_info(logger,"-------------------------------------------------");
 }
 void validacionSuperBloque(){
     validarCantidadBloques();
-    validarBitmapSabotaje();
+    //validarBitmapSabotaje();
 }
 void validacionFiles(){
-    // validarSizeFile();
-    // validarBlocksBlockCount();
+    validarSizeFile();
+    validarBlocksBlockCount();
     validacionBlocks();
 }
 

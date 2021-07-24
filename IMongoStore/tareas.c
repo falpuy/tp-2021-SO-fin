@@ -218,26 +218,22 @@ void consumirComida(int parametroTarea){
 
 void descartarBasura(int parametroTarea){
     char* path_basura = pathCompleto("Files/Basura.ims");
-     log_info(logger, "Path de (descartar)basura:%s",path_basura);
     
     if(access(path_basura,F_OK)<0){
         log_error(logger, "No existe Basura.ims");
     }else{
-
         t_config* metadata = config_create(path_basura);
         char** listaBloques = config_get_array_value(metadata,"BLOCKS");
         int contador = 0;
         int bloque;
         char* string_temp = string_new();
 
-        
         while(listaBloques[contador]){ 
             contador++;
         }
 
         int bloquesHastaAhora = 0;
         for(int i = 0; i <= contador; i++){
-            
             if((contador - bloquesHastaAhora) > 1){
                 bloque = atoi(listaBloques[bloquesHastaAhora]);
 
@@ -261,7 +257,6 @@ void descartarBasura(int parametroTarea){
                 string_append(&string_temp,temporalBloque);
                 free(temporalBloque);
             }
-            
         }
 
         config_destroy(metadata);

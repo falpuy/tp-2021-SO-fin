@@ -5,13 +5,13 @@ void sabotaje(){
     int posicionX = atoi(strPosiciones[0]);
     int posicionY = atoi(strPosiciones[1]);
 
-    pthread_mutex_lock(&discordiador);
-    int idDiscordiador = _connect(ipDiscordiador,puertoDiscordiador,logger);
-    void* buffer = _serialize(sizeof(int)*2,"%d%d",posicionX,posicionY);
-    _send_message(idDiscordiador,"IMS",COMIENZA_SABOTAJE,buffer,sizeof(int)*2,logger);
-    pthread_mutex_unlock(&discordiador);
+    // pthread_mutex_lock(&discordiador);
+    // int idDiscordiador = _connect(ipDiscordiador,puertoDiscordiador,logger);
+    // void* buffer = _serialize(sizeof(int)*2,"%d%d",posicionX,posicionY);
+    // _send_message(idDiscordiador,"IMS",COMIENZA_SABOTAJE,buffer,sizeof(int)*2,logger);
+    // pthread_mutex_unlock(&discordiador);
 
-    // protocolo_fsck();
+    protocolo_fsck();
     contadorSabotajeLeido++;
     // free(buffer);
     free(strPosiciones[0]);
@@ -301,7 +301,7 @@ void validarSizeRecurso(char* path){
                 }
 
                 sizeTemp += cont_charLlenos;
-                log_info(logger, "Size final:%d", sizeTemp);
+                // log_info(logger, "Size final:%d", sizeTemp);
                 free(_stringTemp);
 
                 if(sizeTemp != size){
@@ -390,13 +390,16 @@ void validacionBlocks(){
 
 void validarBlocksRecursos(char* path){
     log_info(logger, "El path que esta testeando Blocks.ims:%s",path);
+    int archBloques = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
+    void* blocks_memory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
+        
     if(access(path,F_OK) >= 0){
 
         t_config* metadata = config_create(path);
         char** listaBloques = config_get_array_value(metadata,"BLOCKS");
         char* md5 = config_get_string_value(metadata,"MD5");
         int size = config_get_int_value(metadata,"SIZE");
-        // char* caracterLlenado = config_get_string_value(metadata,"CARACTER_LLENADO");
+        char* caracterLlenado = config_get_string_value(metadata,"CARACTER_LLENADO");
         int contador = 0;
         int bloquesHastaAhora = 0;
         int bloque;
@@ -407,27 +410,6 @@ void validarBlocksRecursos(char* path){
         }
 
         char* md5Temporal = malloc(32 + 1); //32 + \0  
-        //pseudocodigo
-
-        // se agarra el primer bloque y se lo pasa a atoi
-        // mientras el i < contadorBloques:
-        //     mientras el contadorTamanio != tamanio:
-        //         saco un char 
-
-        //         lo transformo en string 
-        //         appendeo
-        //         contadorTamanio ++
-            
-        
-        // if string_append == al size:
-        //     todo ok
-        // else:
-                // checkeo md5 
-        //     if(size > string_append):
-        //         completar blocks ims 
-        //     else string_append  > size:
-        //         calcular lo que me pase 
-        //         memcpy con " "
 
         for(int i = 0; i < contador; i++){
             int contadorTamanio = 0;
@@ -436,7 +418,7 @@ void validarBlocksRecursos(char* path){
             
             while(contadorTamanio != tamanioBloque){
                 temporal = malloc(2);
-                memcpy(temporal, copiaBlocks + bloque * tamanioBloque + contadorTamanio, 1);
+                memcpy(temporal, blocks_memory + bloque * tamanioBloque + contadorTamanio, 1);
                 temporal[1] = '\0';
 
                 log_info(logger, "String temporal:%s", temporal);
@@ -447,7 +429,7 @@ void validarBlocksRecursos(char* path){
             bloquesHastaAhora++;
         }
         int tamanioStringTemporal = string_length(string_temp);
-        log_info(logger, "El string que levante: %s y su tamaño es:%d", string_temp, tamanioStringTemporal);
+        // log_info(logger, "El string que levante: %s y su tamaño es:%d", string_temp, tamanioStringTemporal);
         
 
         //Borro los ultimos espacios
@@ -457,7 +439,7 @@ void validarBlocksRecursos(char* path){
         }
         string_temp[tamanioStringTemporal] = '\0';
 
-        log_info(logger, "El string que levante: %s y su tamaño es:%d", string_temp, tamanioStringTemporal);
+        // log_info(logger, "El string que levante: %s y su tamaño es:%d", string_temp, tamanioStringTemporal);
 
 
         FILE* archivo = fopen("temporal.txt","w");
@@ -474,15 +456,15 @@ void validarBlocksRecursos(char* path){
         md5Temporal[32] = '\0';
         fclose(archivo2);
 
-        // int err = remove("temporal.txt");
-        // if (err < 0){
-        //     log_error(logger, "Error al remover archivo temporal.txt");
-        // }
+        int err = remove("temporal.txt");
+        if (err < 0){
+            log_error(logger, "Error al remover archivo temporal.txt");
+        }
         
-        // err = remove("resultado.txt");
-        // if(err < 0 ){
-        //     log_error(logger, "Error al remover archivo resultado.txt");
-        // }
+        err = remove("resultado.txt");
+        if(err < 0 ){
+            log_error(logger, "Error al remover archivo resultado.txt");
+        }
 
         log_info(logger, "Comparando MD5: %s - %s", md5, md5Temporal);
         if(tamanioStringTemporal == size && !strcmp(md5, md5Temporal)){
@@ -498,12 +480,12 @@ void validarBlocksRecursos(char* path){
                 bloque = atoi(listaBloques[i]);
                 if((contador - bloquesHastaAhora) > 1){ //no es el ultimo bloque-->no hay frag. interna
                     
-                    memset(copiaBlocks + bloque * tamanioBloque ,charPegar,tamanioBloque);
+                    memset(blocks_memory + bloque * tamanioBloque ,charPegar,tamanioBloque);
                     sizeTemporal -= tamanioBloque;
                     bloquesHastaAhora++;
                 }else{
-                    memset(copiaBlocks + bloque * tamanioBloque ,' ',tamanioBloque);
-                    memset(copiaBlocks + bloque * tamanioBloque,charPegar,sizeTemporal);
+                    memset(blocks_memory + bloque * tamanioBloque ,' ',tamanioBloque);
+                    memset(blocks_memory + bloque * tamanioBloque,charPegar,sizeTemporal);
                     bloquesHastaAhora++;
                 }
             }
@@ -521,6 +503,10 @@ void validarBlocksRecursos(char* path){
     
         
     }
+
+    munmap(blocks_memory,tamanioBloque*cantidadBloques);
+    close(archBloques);
+    
 }
 
 

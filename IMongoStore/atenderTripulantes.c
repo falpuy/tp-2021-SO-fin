@@ -51,8 +51,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             }
             guardarEnBlocks(strGuardar,path_fileTripulante,0);
             pthread_mutex_unlock(&blocks_bitmap);
-
-            free(tripulante);
+            
             free(path_fileTripulante);
             free(strGuardar);
             log_info(logger,"-----------------------------------------------------");

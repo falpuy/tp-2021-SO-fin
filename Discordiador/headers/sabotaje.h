@@ -71,6 +71,7 @@
 
     typedef struct{
         int pid; //Identificador de la Patota
+        int todosLosTCBsTerminaron;
         char* rutaTareas; //Ruta del archivo de tareas
         t_list* listaTCB;
     }pcb;

@@ -232,7 +232,7 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
     memcpy(&tcb_count, buffer + offset, sizeof(int));
     offset += sizeof(int);
 
-    int memory_size = sizeof(pcb_t) + task_size + tcb_count * sizeof(tcb_t);
+    int memory_size = sizeof(pcb_t) + task_size + tcb_count * 21;
 
     admin_data *tcb_data = malloc(sizeof(admin_data));
     tcb_data -> cantidad = tcb_count;
@@ -412,7 +412,7 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
     int auxoff = 0;
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
-        memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb_t)), sizeof(uint32_t));
+        memcpy(&temp_id, (temp + data_tcb -> start) + (i * 21), sizeof(uint32_t));
 
         if (temp_id == id_tcb) {
 
@@ -422,7 +422,7 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
             int prevTask;
 
-            memcpy(&prevTask, (temp + data_tcb -> start) + (i * sizeof(tcb_t)) + sizeof(uint32_t) * 4 + sizeof(char), sizeof(uint32_t));
+            memcpy(&prevTask, (temp + data_tcb -> start) + (i * 21) + sizeof(uint32_t) * 4 + sizeof(char), sizeof(uint32_t));
 
             while (memcmp(temp + prevTask + task_counter, ";", 1) && temp + prevTask + task_counter != NULL && prevTask + task_counter < data_tcb -> start) {
                 // // printf("CHAR: %c\n", get_char_value(temp + prevTask, task_counter));
@@ -445,14 +445,14 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
             int next_addr = prevTask + task_counter;
 
-            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb_t)) + sizeof(uint32_t) * 4 + sizeof(char), &next_addr, sizeof(uint32_t));
+            memcpy((temp + data_tcb -> start) + (i * 21) + sizeof(uint32_t) * 4 + sizeof(char), &next_addr, sizeof(uint32_t));
 
             break;
         }
     }
 
 
-    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * sizeof(tcb_t);
+    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * 21;
 
     // // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
     // int size_until_task = data_tcb -> start;
@@ -559,7 +559,7 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
     int tcb_left;
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
-        memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb_t)), sizeof(uint32_t));
+        memcpy(&temp_id, (temp + data_tcb -> start) + (i * 21), sizeof(uint32_t));
         
         if (temp_id == id_tcb) {
 
@@ -569,7 +569,7 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
             tcb_left = data_tcb -> cantidad - i - 1;
 
             // Hago la compactacion de los tcb restantes
-            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb_t)), (temp + data_tcb -> start) + ((i + 1) * sizeof(tcb_t)), tcb_left * sizeof(tcb_t));
+            memcpy((temp + data_tcb -> start) + (i * 21), (temp + data_tcb -> start) + ((i + 1) * 21), tcb_left * 21);
             data_tcb -> cantidad -= 1;
 
             break;
@@ -577,7 +577,7 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
     }
 
 
-    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * sizeof(tcb_t);
+    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * 21;
 
     // // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
     // int size_until_task = data_tcb -> start;
@@ -714,18 +714,18 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
     int tcb_left;
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
-        memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb_t)), sizeof(uint32_t));
+        memcpy(&temp_id, (temp + data_tcb -> start) + (i * 21), sizeof(uint32_t));
         
         if (temp_id == id_tcb) {
 
-            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb_t)) + sizeof(uint32_t) * 2 + sizeof(char), &posx, sizeof(uint32_t));
-            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb_t)) + sizeof(uint32_t) * 3 + sizeof(char), &posy, sizeof(uint32_t));
+            memcpy((temp + data_tcb -> start) + (i * 21) + sizeof(uint32_t) * 2 + sizeof(char), &posx, sizeof(uint32_t));
+            memcpy((temp + data_tcb -> start) + (i * 21) + sizeof(uint32_t) * 3 + sizeof(char), &posy, sizeof(uint32_t));
 
         }
     }
 
 
-    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * sizeof(tcb_t);
+    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * 21;
 
     // // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
     // int size_until_task = data_tcb -> start;
@@ -842,17 +842,17 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
     int tcb_left;
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
-        memcpy(&temp_id, (temp + data_tcb -> start) + (i * sizeof(tcb_t)), sizeof(uint32_t));
+        memcpy(&temp_id, (temp + data_tcb -> start) + (i * 21), sizeof(uint32_t));
         
         if (temp_id == id_tcb) {
 
-            memcpy((temp + data_tcb -> start) + (i * sizeof(tcb_t)) + sizeof(uint32_t) * 2, &status, sizeof(char));
+            memcpy((temp + data_tcb -> start) + (i * 21) + sizeof(uint32_t) * 2, &status, sizeof(char));
 
         }
     }
 
 
-    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * sizeof(tcb_t);
+    int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * 21;
 
     // // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
     // int size_until_task = data_tcb -> start;

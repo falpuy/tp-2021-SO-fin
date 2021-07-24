@@ -453,8 +453,13 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 tripulanteFixer->tiempoEnExec = tcbFixerAntesSabotaje->tiempoEnExec;
                 tripulanteFixer->tiempoEnBloqIO = tcbFixerAntesSabotaje->tiempoEnBloqIO;
                 tripulanteFixer->ciclosCumplidos = tcbFixerAntesSabotaje->ciclosCumplidos;
-                memcpy(tripulanteFixer->instruccion_actual, tcbFixerAntesSabotaje->instruccion_actual, strlen(tcbFixerAntesSabotaje->instruccion_actual)+1);
 
+                free(tripulanteFixer->instruccion_actual);
+                tripulanteFixer->instruccion_actual = malloc(strlen(tcbFixerAntesSabotaje->instruccion_actual) + 1);
+                strcpy(tripulanteFixer->instruccion_actual, tcbFixerAntesSabotaje->instruccion_actual);
+
+                free(tcbFixerAntesSabotaje->instruccion_actual);
+                free(tcbFixerAntesSabotaje);
                 pthread_mutex_lock(&mutexBloqEmer);
                 queue_push(bloq_emer,(void*) tripulanteFixer);
                 pthread_mutex_unlock(&mutexBloqEmer);
@@ -511,7 +516,9 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 tcbFixerAntesSabotaje->tiempoEnExec = tripulanteFixer->tiempoEnExec;
                 tcbFixerAntesSabotaje->tiempoEnBloqIO = tripulanteFixer->tiempoEnBloqIO;
                 tcbFixerAntesSabotaje->ciclosCumplidos = tripulanteFixer->ciclosCumplidos;
-                memcpy(tcbFixerAntesSabotaje->instruccion_actual, tripulanteFixer->instruccion_actual, strlen(tripulanteFixer->instruccion_actual)+1);
+                log_info(logger, "Intrucción actual del tripulante fixer: %s", tripulanteFixer->instruccion_actual);
+                tcbFixerAntesSabotaje->instruccion_actual = malloc(strlen(tripulanteFixer->instruccion_actual) + 1);
+                strcpy(tcbFixerAntesSabotaje->instruccion_actual, tripulanteFixer->instruccion_actual);
 
                 tripulanteFixer->ciclosCumplidos=0;
                 tripulanteFixer->tiempoEnExec=0;
@@ -559,8 +566,6 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
   	while(temp_validador){
         sem_wait(&semMR);
 
-        log_info(logger, "Entró a BlockedEmer->Ready");
-
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
         pthread_mutex_unlock(&mutexPlanificacionViva);
@@ -570,6 +575,8 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
         pthread_mutex_unlock(&mutexSabotajeActivado);
 
         if (temp_planificacion_viva && temp_sabotaje_activado && sabotaje_terminado) {
+
+            log_info(logger, "Entró a BlockedEmer->Ready");
 
             while (!queue_is_empty(bloq_emer))
             {

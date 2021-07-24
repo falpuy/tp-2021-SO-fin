@@ -10396,3 +10396,451 @@
 [INFO] 14:12:41:081 RAM/(18160:18186): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
 [INFO] 14:12:41:082 RAM/(18160:18186): -----------------------------------------------------
 [INFO] 14:13:02:318 RAM/(18160:18186): [Shared Library]: El cliente 5 se desconecto.
+[INFO] 14:43:10:082 RAM/(18965:18965): PID: 18965
+
+[INFO] 14:43:10:084 RAM/(18965:18965): Esquema utilizado: PAGINACION
+[INFO] 14:43:10:084 RAM/(18965:18965): Tamanio de la memoria: 256
+[ERROR] 14:43:10:087 RAM/(18965:18965): [Shared Library]: Error al obtener info de la conexion
+[ERROR] 14:43:10:088 RAM/(18965:18965): [Shared Library]: Ocurrio un error en el listen 
+ (╯°o°）╯︵ ┻━┻
+[INFO] 14:43:29:532 RAM/(18992:18992): PID: 18992
+
+[INFO] 14:43:29:533 RAM/(18992:18992): Esquema utilizado: PAGINACION
+[INFO] 14:43:29:533 RAM/(18992:18992): Tamanio de la memoria: 256
+[INFO] 14:43:29:533 RAM/(18992:18992): Muestro valores del bitmap para REAL..
+[INFO] 14:43:29:533 RAM/(18992:18992): Bit 0: 0
+[INFO] 14:43:29:535 RAM/(18992:18992): Bit 1: 0
+[INFO] 14:43:29:535 RAM/(18992:18992): Bit 2: 0
+[INFO] 14:43:29:535 RAM/(18992:18992): Bit 3: 0
+[INFO] 14:43:29:540 RAM/(18992:18992): Bit 4: 0
+[INFO] 14:43:29:541 RAM/(18992:18992): Bit 5: 0
+[INFO] 14:43:29:546 RAM/(18992:18992): Bit 6: 0
+[INFO] 14:43:29:547 RAM/(18992:18992): Bit 7: 0
+[INFO] 14:43:29:552 RAM/(18992:18992): Muestro valores INICIALES del bitmap para VIRTUAL..
+[INFO] 14:43:29:552 RAM/(18992:18992): Bit 0: 0
+[INFO] 14:43:29:552 RAM/(18992:18992): Bit 1: 0
+[INFO] 14:43:29:552 RAM/(18992:18992): Bit 2: 0
+[INFO] 14:43:29:553 RAM/(18992:18992): Bit 3: 0
+[INFO] 14:43:29:553 RAM/(18992:18992): Bit 4: 0
+[INFO] 14:43:29:553 RAM/(18992:18992): Bit 5: 0
+[INFO] 14:43:29:553 RAM/(18992:18992): Bit 6: 0
+[INFO] 14:43:29:554 RAM/(18992:18992): Bit 7: 0
+[INFO] 14:43:29:554 RAM/(18992:18992): Bit 8: 0
+[INFO] 14:43:29:554 RAM/(18992:18992): Bit 9: 0
+[INFO] 14:43:29:554 RAM/(18992:18992): Bit 10: 0
+[INFO] 14:43:29:555 RAM/(18992:18992): Bit 11: 0
+[INFO] 14:43:29:555 RAM/(18992:18992): Bit 12: 0
+[INFO] 14:43:29:555 RAM/(18992:18992): Bit 13: 0
+[INFO] 14:43:29:555 RAM/(18992:18992): Bit 14: 0
+[INFO] 14:43:29:555 RAM/(18992:18992): Bit 15: 0
+[INFO] 14:43:29:556 RAM/(18992:18992): Bit 16: 0
+[INFO] 14:43:29:556 RAM/(18992:18992): Bit 17: 0
+[INFO] 14:43:29:556 RAM/(18992:18992): Bit 18: 0
+[INFO] 14:43:29:556 RAM/(18992:18992): Bit 19: 0
+[INFO] 14:43:29:556 RAM/(18992:18992): Bit 20: 0
+[INFO] 14:43:29:556 RAM/(18992:18992): Bit 21: 0
+[INFO] 14:43:29:557 RAM/(18992:18992): Bit 22: 0
+[INFO] 14:43:29:557 RAM/(18992:18992): Bit 23: 0
+[INFO] 14:43:29:557 RAM/(18992:18992): Bit 24: 0
+[INFO] 14:43:29:557 RAM/(18992:18992): Bit 25: 0
+[INFO] 14:43:29:557 RAM/(18992:18992): Bit 26: 0
+[INFO] 14:43:29:558 RAM/(18992:18992): Bit 27: 0
+[INFO] 14:43:29:558 RAM/(18992:18992): Bit 28: 0
+[INFO] 14:43:29:558 RAM/(18992:18992): Bit 29: 0
+[INFO] 14:43:29:558 RAM/(18992:18992): Bit 30: 0
+[INFO] 14:43:29:558 RAM/(18992:18992): Bit 31: 0
+[INFO] 14:43:29:559 RAM/(18992:18992): Bit 32: 0
+[INFO] 14:43:29:559 RAM/(18992:18992): Bit 33: 0
+[INFO] 14:43:29:559 RAM/(18992:18992): Bit 34: 0
+[INFO] 14:43:29:559 RAM/(18992:18992): Bit 35: 0
+[INFO] 14:43:29:560 RAM/(18992:18992): Bit 36: 0
+[INFO] 14:43:29:560 RAM/(18992:18992): Bit 37: 0
+[INFO] 14:43:29:560 RAM/(18992:18992): Bit 38: 0
+[INFO] 14:43:29:560 RAM/(18992:18992): Bit 39: 0
+[INFO] 14:43:29:561 RAM/(18992:18992): Bit 40: 0
+[INFO] 14:43:29:561 RAM/(18992:18992): Bit 41: 0
+[INFO] 14:43:29:561 RAM/(18992:18992): Bit 42: 0
+[INFO] 14:43:29:561 RAM/(18992:18992): Bit 43: 0
+[INFO] 14:43:29:562 RAM/(18992:18992): Bit 44: 0
+[INFO] 14:43:29:562 RAM/(18992:18992): Bit 45: 0
+[INFO] 14:43:29:562 RAM/(18992:18992): Bit 46: 0
+[INFO] 14:43:29:562 RAM/(18992:18992): Bit 47: 0
+[INFO] 14:43:29:562 RAM/(18992:18992): Bit 48: 0
+[INFO] 14:43:29:562 RAM/(18992:18992): Bit 49: 0
+[INFO] 14:43:29:563 RAM/(18992:18992): Bit 50: 0
+[INFO] 14:43:29:563 RAM/(18992:18992): Bit 51: 0
+[INFO] 14:43:29:563 RAM/(18992:18992): Bit 52: 0
+[INFO] 14:43:29:563 RAM/(18992:18992): Bit 53: 0
+[INFO] 14:43:29:563 RAM/(18992:18992): Bit 54: 0
+[INFO] 14:43:29:564 RAM/(18992:18992): Bit 55: 0
+[INFO] 14:43:29:564 RAM/(18992:18992): Bit 56: 0
+[INFO] 14:43:29:564 RAM/(18992:18992): Bit 57: 0
+[INFO] 14:43:29:564 RAM/(18992:18992): Bit 58: 0
+[INFO] 14:43:29:564 RAM/(18992:18992): Bit 59: 0
+[INFO] 14:43:29:565 RAM/(18992:18992): Bit 60: 0
+[INFO] 14:43:29:565 RAM/(18992:18992): Bit 61: 0
+[INFO] 14:43:29:565 RAM/(18992:18992): Bit 62: 0
+[INFO] 14:43:29:565 RAM/(18992:18992): Bit 63: 0
+[INFO] 14:43:29:566 RAM/(18992:18992): Bit 64: 0
+[INFO] 14:43:29:566 RAM/(18992:18992): Bit 65: 0
+[INFO] 14:43:29:566 RAM/(18992:18992): Bit 66: 0
+[INFO] 14:43:29:566 RAM/(18992:18992): Bit 67: 0
+[INFO] 14:43:29:566 RAM/(18992:18992): Bit 68: 0
+[INFO] 14:43:29:567 RAM/(18992:18992): Bit 69: 0
+[INFO] 14:43:29:567 RAM/(18992:18992): Bit 70: 0
+[INFO] 14:43:29:567 RAM/(18992:18992): Bit 71: 0
+[INFO] 14:43:29:567 RAM/(18992:18992): Bit 72: 0
+[INFO] 14:43:29:567 RAM/(18992:18992): Bit 73: 0
+[INFO] 14:43:29:568 RAM/(18992:18992): Bit 74: 0
+[INFO] 14:43:29:568 RAM/(18992:18992): Bit 75: 0
+[INFO] 14:43:29:568 RAM/(18992:18992): Bit 76: 0
+[INFO] 14:43:29:568 RAM/(18992:18992): Bit 77: 0
+[INFO] 14:43:29:569 RAM/(18992:18992): Bit 78: 0
+[INFO] 14:43:29:569 RAM/(18992:18992): Bit 79: 0
+[INFO] 14:43:29:569 RAM/(18992:18992): Bit 80: 0
+[INFO] 14:43:29:569 RAM/(18992:18992): Bit 81: 0
+[INFO] 14:43:29:569 RAM/(18992:18992): Bit 82: 0
+[INFO] 14:43:29:570 RAM/(18992:18992): Bit 83: 0
+[INFO] 14:43:29:570 RAM/(18992:18992): Bit 84: 0
+[INFO] 14:43:29:570 RAM/(18992:18992): Bit 85: 0
+[INFO] 14:43:29:570 RAM/(18992:18992): Bit 86: 0
+[INFO] 14:43:29:570 RAM/(18992:18992): Bit 87: 0
+[INFO] 14:43:29:571 RAM/(18992:18992): Bit 88: 0
+[INFO] 14:43:29:571 RAM/(18992:18992): Bit 89: 0
+[INFO] 14:43:29:571 RAM/(18992:18992): Bit 90: 0
+[INFO] 14:43:29:571 RAM/(18992:18992): Bit 91: 0
+[INFO] 14:43:29:571 RAM/(18992:18992): Bit 92: 0
+[INFO] 14:43:29:572 RAM/(18992:18992): Bit 93: 0
+[INFO] 14:43:29:572 RAM/(18992:18992): Bit 94: 0
+[INFO] 14:43:29:572 RAM/(18992:18992): Bit 95: 0
+[INFO] 14:43:29:572 RAM/(18992:18992): Bit 96: 0
+[INFO] 14:43:29:572 RAM/(18992:18992): Bit 97: 0
+[INFO] 14:43:29:573 RAM/(18992:18992): Bit 98: 0
+[INFO] 14:43:29:573 RAM/(18992:18992): Bit 99: 0
+[INFO] 14:43:29:573 RAM/(18992:18992): Bit 100: 0
+[INFO] 14:43:29:573 RAM/(18992:18992): Bit 101: 0
+[INFO] 14:43:29:573 RAM/(18992:18992): Bit 102: 0
+[INFO] 14:43:29:574 RAM/(18992:18992): Bit 103: 0
+[INFO] 14:43:29:574 RAM/(18992:18992): Bit 104: 0
+[INFO] 14:43:29:574 RAM/(18992:18992): Bit 105: 0
+[INFO] 14:43:29:574 RAM/(18992:18992): Bit 106: 0
+[INFO] 14:43:29:575 RAM/(18992:18992): Bit 107: 0
+[INFO] 14:43:29:575 RAM/(18992:18992): Bit 108: 0
+[INFO] 14:43:29:575 RAM/(18992:18992): Bit 109: 0
+[INFO] 14:43:29:575 RAM/(18992:18992): Bit 110: 0
+[INFO] 14:43:29:576 RAM/(18992:18992): Bit 111: 0
+[INFO] 14:43:29:576 RAM/(18992:18992): Bit 112: 0
+[INFO] 14:43:29:576 RAM/(18992:18992): Bit 113: 0
+[INFO] 14:43:29:577 RAM/(18992:18992): Bit 114: 0
+[INFO] 14:43:29:578 RAM/(18992:18992): Bit 115: 0
+[INFO] 14:43:29:578 RAM/(18992:18992): Bit 116: 0
+[INFO] 14:43:29:579 RAM/(18992:18992): Bit 117: 0
+[INFO] 14:43:29:579 RAM/(18992:18992): Bit 118: 0
+[INFO] 14:43:29:579 RAM/(18992:18992): Bit 119: 0
+[INFO] 14:43:29:580 RAM/(18992:18992): Bit 120: 0
+[INFO] 14:43:29:580 RAM/(18992:18992): Bit 121: 0
+[INFO] 14:43:29:580 RAM/(18992:18992): Bit 122: 0
+[INFO] 14:43:29:580 RAM/(18992:18992): Bit 123: 0
+[INFO] 14:43:29:581 RAM/(18992:18992): Bit 124: 0
+[INFO] 14:43:29:581 RAM/(18992:18992): Bit 125: 0
+[INFO] 14:43:29:581 RAM/(18992:18992): Bit 126: 0
+[INFO] 14:43:29:581 RAM/(18992:18992): Bit 127: 0
+[INFO] 14:43:29:582 RAM/(18992:18992): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 14:43:29:582 RAM/(18992:18992): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 15:03:26:856 RAM/(18992:18992): [Shared Library]: Nueva conexion ID: 7
+[INFO] 15:03:26:863 RAM/(18992:20935): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 15:04:01:142 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:01:143 RAM/(18992:20935): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:04:01:144 RAM/(18992:20935): Se guardaron exitosamente los datos de la patota
+[INFO] 15:04:01:145 RAM/(18992:20935): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:04:01:147 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:01:339 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:01:340 RAM/(18992:20935): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:04:01:340 RAM/(18992:20935): ID PCB:1
+[INFO] 15:04:01:341 RAM/(18992:20935): ID TCB:0
+[INFO] 15:04:01:341 RAM/(18992:20935): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 15:04:01:341 RAM/(18992:20935): El tamaño de tarea a enviar es: 24
+[INFO] 15:04:01:344 RAM/(18992:20935): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:04:01:353 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:25:815 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:25:816 RAM/(18992:20935): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:04:25:817 RAM/(18992:20935): Se guardaron exitosamente los datos de la patota
+[INFO] 15:04:25:817 RAM/(18992:20935): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:04:25:818 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:26:220 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:26:221 RAM/(18992:20935): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:04:26:222 RAM/(18992:20935): ID PCB:2
+[INFO] 15:04:26:227 RAM/(18992:20935): ID TCB:1
+[INFO] 15:04:26:227 RAM/(18992:20935): La tarea a enviar es: EMPALMANDO_CABLES;8;0;600
+[INFO] 15:04:26:227 RAM/(18992:20935): El tamaño de tarea a enviar es: 25
+[INFO] 15:04:26:228 RAM/(18992:20935): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:04:26:229 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:47:111 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:47:111 RAM/(18992:20935): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:04:47:112 RAM/(18992:20935): Se guardaron exitosamente los datos de la patota
+[INFO] 15:04:47:112 RAM/(18992:20935): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:04:47:113 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:47:209 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:04:47:210 RAM/(18992:20935): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:04:47:210 RAM/(18992:20935): ID PCB:3
+[INFO] 15:04:47:210 RAM/(18992:20935): ID TCB:2
+[INFO] 15:04:47:211 RAM/(18992:20935): La tarea a enviar es: ROMPIENDO_ASTEROIDES;8;8;600
+[INFO] 15:04:47:211 RAM/(18992:20935): El tamaño de tarea a enviar es: 28
+[INFO] 15:04:47:212 RAM/(18992:20935): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:04:47:212 RAM/(18992:20935): -----------------------------------------------------
+[INFO] 15:06:10:899 RAM/(18992:20935): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 15:09:10:090 RAM/(18992:18992): [Shared Library]: Nueva conexion ID: 8
+[INFO] 15:09:10:104 RAM/(18992:21553): [Shared Library]: Starting new thread for connection handling. Client ID: 8
+[INFO] 15:09:38:619 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:09:38:620 RAM/(18992:21553): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:09:38:620 RAM/(18992:21553): Se guardaron exitosamente los datos de la patota
+[INFO] 15:09:38:621 RAM/(18992:21553): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:09:38:622 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:09:38:787 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:09:38:790 RAM/(18992:21553): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:09:38:793 RAM/(18992:21553): ID PCB:1
+[INFO] 15:09:38:794 RAM/(18992:21553): ID TCB:0
+[INFO] 15:09:38:794 RAM/(18992:21553): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 15:09:38:794 RAM/(18992:21553): El tamaño de tarea a enviar es: 24
+[INFO] 15:09:38:807 RAM/(18992:21553): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:09:38:809 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:09:55:724 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:09:55:725 RAM/(18992:21553): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:09:55:727 RAM/(18992:21553): Se guardaron exitosamente los datos de la patota
+[INFO] 15:09:55:728 RAM/(18992:21553): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:09:55:731 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:09:55:879 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:09:55:880 RAM/(18992:21553): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:09:55:880 RAM/(18992:21553): ID PCB:2
+[INFO] 15:09:55:884 RAM/(18992:21553): ID TCB:1
+[INFO] 15:09:55:884 RAM/(18992:21553): La tarea a enviar es: EMPALMANDO_CABLES;8;0;600
+[INFO] 15:09:55:885 RAM/(18992:21553): El tamaño de tarea a enviar es: 25
+[INFO] 15:09:55:885 RAM/(18992:21553): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:09:55:886 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:10:11:988 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:10:11:989 RAM/(18992:21553): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:10:11:990 RAM/(18992:21553): Se guardaron exitosamente los datos de la patota
+[INFO] 15:10:11:991 RAM/(18992:21553): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:10:11:991 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:10:12:139 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:10:12:140 RAM/(18992:21553): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:10:12:140 RAM/(18992:21553): ID PCB:3
+[INFO] 15:10:12:141 RAM/(18992:21553): ID TCB:2
+[INFO] 15:10:12:141 RAM/(18992:21553): La tarea a enviar es: ROMPIENDO_ASTEROIDES;8;8;600
+[INFO] 15:10:12:142 RAM/(18992:21553): El tamaño de tarea a enviar es: 28
+[INFO] 15:10:12:150 RAM/(18992:21553): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:10:12:152 RAM/(18992:21553): -----------------------------------------------------
+[INFO] 15:11:13:772 RAM/(18992:21553): [Shared Library]: El cliente 8 se desconecto.
+[INFO] 15:15:49:760 RAM/(18992:18992): [Shared Library]: Nueva conexion ID: 7
+[INFO] 15:15:49:767 RAM/(18992:22229): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 15:16:24:441 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:24:441 RAM/(18992:22229): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:16:24:442 RAM/(18992:22229): Se guardaron exitosamente los datos de la patota
+[INFO] 15:16:24:443 RAM/(18992:22229): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:16:24:443 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:24:719 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:24:720 RAM/(18992:22229): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:16:24:720 RAM/(18992:22229): ID PCB:1
+[INFO] 15:16:24:721 RAM/(18992:22229): ID TCB:0
+[INFO] 15:16:24:721 RAM/(18992:22229): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 15:16:24:727 RAM/(18992:22229): El tamaño de tarea a enviar es: 24
+[INFO] 15:16:24:728 RAM/(18992:22229): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:16:24:730 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:40:139 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:40:140 RAM/(18992:22229): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:16:40:140 RAM/(18992:22229): Se guardaron exitosamente los datos de la patota
+[INFO] 15:16:40:141 RAM/(18992:22229): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:16:40:141 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:40:283 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:40:284 RAM/(18992:22229): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:16:40:284 RAM/(18992:22229): ID PCB:2
+[INFO] 15:16:40:285 RAM/(18992:22229): ID TCB:1
+[INFO] 15:16:40:285 RAM/(18992:22229): La tarea a enviar es: EMPALMANDO_CABLES;8;0;600
+[INFO] 15:16:40:286 RAM/(18992:22229): El tamaño de tarea a enviar es: 25
+[INFO] 15:16:40:287 RAM/(18992:22229): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:16:40:287 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:59:087 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:59:088 RAM/(18992:22229): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:16:59:088 RAM/(18992:22229): Se guardaron exitosamente los datos de la patota
+[INFO] 15:16:59:088 RAM/(18992:22229): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:16:59:089 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:59:171 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:16:59:172 RAM/(18992:22229): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:16:59:172 RAM/(18992:22229): ID PCB:3
+[INFO] 15:16:59:173 RAM/(18992:22229): ID TCB:2
+[INFO] 15:16:59:174 RAM/(18992:22229): La tarea a enviar es: ROMPIENDO_ASTEROIDES;8;8;600
+[INFO] 15:16:59:183 RAM/(18992:22229): El tamaño de tarea a enviar es: 28
+[INFO] 15:16:59:189 RAM/(18992:22229): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:16:59:191 RAM/(18992:22229): -----------------------------------------------------
+[INFO] 15:17:40:822 RAM/(18992:22229): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 15:20:22:843 RAM/(18992:18992): [Shared Library]: Nueva conexion ID: 8
+[INFO] 15:20:22:847 RAM/(18992:22569): [Shared Library]: Starting new thread for connection handling. Client ID: 8
+[INFO] 15:21:01:252 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:01:253 RAM/(18992:22569): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:21:01:255 RAM/(18992:22569): Se guardaron exitosamente los datos de la patota
+[INFO] 15:21:01:261 RAM/(18992:22569): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:21:01:261 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:01:584 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:01:584 RAM/(18992:22569): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:21:01:585 RAM/(18992:22569): ID PCB:1
+[INFO] 15:21:01:586 RAM/(18992:22569): ID TCB:0
+[INFO] 15:21:01:586 RAM/(18992:22569): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 15:21:01:587 RAM/(18992:22569): El tamaño de tarea a enviar es: 24
+[INFO] 15:21:01:597 RAM/(18992:22569): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:21:01:598 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:20:272 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:20:273 RAM/(18992:22569): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:21:20:274 RAM/(18992:22569): Se guardaron exitosamente los datos de la patota
+[INFO] 15:21:20:297 RAM/(18992:22569): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:21:20:300 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:20:427 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:20:428 RAM/(18992:22569): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:21:20:429 RAM/(18992:22569): ID PCB:2
+[INFO] 15:21:20:429 RAM/(18992:22569): ID TCB:1
+[INFO] 15:21:20:429 RAM/(18992:22569): La tarea a enviar es: EMPALMANDO_CABLES;8;0;600
+[INFO] 15:21:20:430 RAM/(18992:22569): El tamaño de tarea a enviar es: 25
+[INFO] 15:21:20:433 RAM/(18992:22569): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:21:20:440 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:43:756 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:43:756 RAM/(18992:22569): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:21:43:757 RAM/(18992:22569): Se guardaron exitosamente los datos de la patota
+[INFO] 15:21:43:757 RAM/(18992:22569): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:21:43:758 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:43:831 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:21:43:832 RAM/(18992:22569): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:21:43:832 RAM/(18992:22569): ID PCB:3
+[INFO] 15:21:43:833 RAM/(18992:22569): ID TCB:2
+[INFO] 15:21:43:834 RAM/(18992:22569): La tarea a enviar es: ROMPIENDO_ASTEROIDES;8;8;600
+[INFO] 15:21:43:834 RAM/(18992:22569): El tamaño de tarea a enviar es: 28
+[INFO] 15:21:43:835 RAM/(18992:22569): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:21:43:835 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:22:23:043 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:22:23:044 RAM/(18992:22569): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 15:22:23:045 RAM/(18992:22569): ID PCB: 3
+[INFO] 15:22:23:045 RAM/(18992:22569): ID TCB: 2
+[INFO] 15:22:23:046 RAM/(18992:22569): Posicion en X: 7
+[INFO] 15:22:23:046 RAM/(18992:22569): Posicion en Y: 8
+[INFO] 15:22:23:047 RAM/(18992:22569): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:22:23:075 RAM/(18992:22569): Se mando con éxito la ubicación del tripulante
+[INFO] 15:22:23:076 RAM/(18992:22569): -----------------------------------------------------
+[INFO] 15:22:37:700 RAM/(18992:22569): [Shared Library]: El cliente 8 se desconecto.
+[INFO] 15:30:42:112 RAM/(18992:18992): [Shared Library]: Nueva conexion ID: 7
+[INFO] 15:30:42:116 RAM/(18992:23244): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 15:31:02:147 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:02:147 RAM/(18992:23244): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:31:02:147 RAM/(18992:23244): Se guardaron exitosamente los datos de la patota
+[INFO] 15:31:02:148 RAM/(18992:23244): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:31:02:148 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:02:291 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:02:291 RAM/(18992:23244): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:31:02:292 RAM/(18992:23244): ID PCB:1
+[INFO] 15:31:02:292 RAM/(18992:23244): ID TCB:0
+[INFO] 15:31:02:292 RAM/(18992:23244): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 15:31:02:292 RAM/(18992:23244): El tamaño de tarea a enviar es: 24
+[INFO] 15:31:02:292 RAM/(18992:23244): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:31:02:294 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:17:803 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:17:803 RAM/(18992:23244): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:31:17:804 RAM/(18992:23244): Se guardaron exitosamente los datos de la patota
+[INFO] 15:31:17:804 RAM/(18992:23244): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:31:17:804 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:17:871 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:17:871 RAM/(18992:23244): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:31:17:871 RAM/(18992:23244): ID PCB:2
+[INFO] 15:31:17:872 RAM/(18992:23244): ID TCB:1
+[INFO] 15:31:17:872 RAM/(18992:23244): La tarea a enviar es: EMPALMANDO_CABLES;8;0;600
+[INFO] 15:31:17:872 RAM/(18992:23244): El tamaño de tarea a enviar es: 25
+[INFO] 15:31:17:873 RAM/(18992:23244): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:31:17:875 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:36:067 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:36:067 RAM/(18992:23244): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:31:36:067 RAM/(18992:23244): Se guardaron exitosamente los datos de la patota
+[INFO] 15:31:36:068 RAM/(18992:23244): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:31:36:069 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:36:119 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:31:36:120 RAM/(18992:23244): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:31:36:120 RAM/(18992:23244): ID PCB:3
+[INFO] 15:31:36:120 RAM/(18992:23244): ID TCB:2
+[INFO] 15:31:36:120 RAM/(18992:23244): La tarea a enviar es: ROMPIENDO_ASTEROIDES;8;8;600
+[INFO] 15:31:36:121 RAM/(18992:23244): El tamaño de tarea a enviar es: 28
+[INFO] 15:31:36:121 RAM/(18992:23244): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:31:36:121 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:32:28:563 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:32:28:563 RAM/(18992:23244): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 15:32:28:563 RAM/(18992:23244): ID PCB: 1
+[INFO] 15:32:28:564 RAM/(18992:23244): ID TCB: 0
+[INFO] 15:32:28:564 RAM/(18992:23244): Posicion en X: 1
+[INFO] 15:32:28:564 RAM/(18992:23244): Posicion en Y: 0
+[INFO] 15:32:28:564 RAM/(18992:23244): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:32:28:566 RAM/(18992:23244): Se mando con éxito la ubicación del tripulante
+[INFO] 15:32:28:566 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:32:29:875 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:32:29:876 RAM/(18992:23244): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 15:32:29:877 RAM/(18992:23244): ID PCB: 1
+[INFO] 15:32:29:877 RAM/(18992:23244): ID TCB: 0
+[INFO] 15:32:29:877 RAM/(18992:23244): Posicion en X: 1
+[INFO] 15:32:29:878 RAM/(18992:23244): Posicion en Y: 1
+[INFO] 15:32:29:878 RAM/(18992:23244): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:32:29:880 RAM/(18992:23244): Se mando con éxito la ubicación del tripulante
+[INFO] 15:32:29:880 RAM/(18992:23244): -----------------------------------------------------
+[INFO] 15:32:55:188 RAM/(18992:23244): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 15:44:11:794 RAM/(18992:18992): [Shared Library]: Nueva conexion ID: 8
+[INFO] 15:44:11:804 RAM/(18992:24036): [Shared Library]: Starting new thread for connection handling. Client ID: 8
+[INFO] 15:44:36:909 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:44:36:910 RAM/(18992:24036): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:44:36:911 RAM/(18992:24036): Se guardaron exitosamente los datos de la patota
+[INFO] 15:44:36:912 RAM/(18992:24036): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:44:36:915 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:44:37:223 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:44:37:224 RAM/(18992:24036): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:44:37:224 RAM/(18992:24036): ID PCB:1
+[INFO] 15:44:37:225 RAM/(18992:24036): ID TCB:0
+[INFO] 15:44:37:225 RAM/(18992:24036): La tarea a enviar es: ARREGLAR_REACTOR;0;0;600
+[INFO] 15:44:37:226 RAM/(18992:24036): El tamaño de tarea a enviar es: 24
+[INFO] 15:44:37:227 RAM/(18992:24036): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:44:37:227 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:44:53:495 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:44:53:496 RAM/(18992:24036): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:44:53:504 RAM/(18992:24036): Se guardaron exitosamente los datos de la patota
+[INFO] 15:44:53:506 RAM/(18992:24036): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:44:53:511 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:44:53:695 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:44:53:696 RAM/(18992:24036): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:44:53:696 RAM/(18992:24036): ID PCB:2
+[INFO] 15:44:53:696 RAM/(18992:24036): ID TCB:1
+[INFO] 15:44:53:700 RAM/(18992:24036): La tarea a enviar es: EMPALMANDO_CABLES;8;0;600
+[INFO] 15:44:53:704 RAM/(18992:24036): El tamaño de tarea a enviar es: 25
+[INFO] 15:44:53:707 RAM/(18992:24036): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:44:53:708 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:45:14:887 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:45:14:888 RAM/(18992:24036): Llegó la operación: INICIAR_PATOTA 
+[INFO] 15:45:14:888 RAM/(18992:24036): Se guardaron exitosamente los datos de la patota
+[INFO] 15:45:14:889 RAM/(18992:24036): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:45:14:889 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:45:14:975 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:45:14:976 RAM/(18992:24036): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 15:45:14:976 RAM/(18992:24036): ID PCB:3
+[INFO] 15:45:14:976 RAM/(18992:24036): ID TCB:2
+[INFO] 15:45:14:977 RAM/(18992:24036): La tarea a enviar es: ROMPIENDO_ASTEROIDES;8;8;600
+[INFO] 15:45:14:977 RAM/(18992:24036): El tamaño de tarea a enviar es: 28
+[INFO] 15:45:14:982 RAM/(18992:24036): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:45:14:983 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:45:58:107 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:45:58:108 RAM/(18992:24036): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 15:45:58:108 RAM/(18992:24036): ID PCB: 1
+[INFO] 15:45:58:108 RAM/(18992:24036): ID TCB: 0
+[INFO] 15:45:58:108 RAM/(18992:24036): Posicion en X: 1
+[INFO] 15:45:58:108 RAM/(18992:24036): Posicion en Y: 0
+[INFO] 15:45:58:109 RAM/(18992:24036): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:45:58:110 RAM/(18992:24036): Se mando con éxito la ubicación del tripulante
+[INFO] 15:45:58:111 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:45:59:483 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:45:59:483 RAM/(18992:24036): Llegó la operación: RECIBIR_UBICACION_TRIPULANTE
+[INFO] 15:45:59:484 RAM/(18992:24036): ID PCB: 1
+[INFO] 15:45:59:484 RAM/(18992:24036): ID TCB: 0
+[INFO] 15:45:59:484 RAM/(18992:24036): Posicion en X: 1
+[INFO] 15:45:59:484 RAM/(18992:24036): Posicion en Y: 1
+[INFO] 15:45:59:484 RAM/(18992:24036): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 15:45:59:491 RAM/(18992:24036): Se mando con éxito la ubicación del tripulante
+[INFO] 15:45:59:492 RAM/(18992:24036): -----------------------------------------------------
+[INFO] 15:47:03:412 RAM/(18992:24036): [Shared Library]: El cliente 8 se desconecto.

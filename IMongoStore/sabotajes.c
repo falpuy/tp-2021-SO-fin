@@ -25,20 +25,18 @@ void sabotaje(){
 void protocolo_fsck(){
     log_info(logger,"-------------------------------------------------");
     log_info(logger, "Comenzando Protocolo:FSCK...");
-    pthread_mutex_lock(&blocks_bitmap);
-    // validacionSuperBloque();
+    validacionSuperBloque();
     validacionFiles();
-    pthread_mutex_unlock(&blocks_bitmap);
     log_info(logger, "Finalizando Protocolo:FSCK..");
     log_info(logger,"-------------------------------------------------");
 }
 void validacionSuperBloque(){
     validarCantidadBloques();
-    validarBitmapSabotaje();
+    //validarBitmapSabotaje();
 }
 void validacionFiles(){
-    // validarSizeFile();
-    // validarBlocksBlockCount();
+    validarSizeFile();
+    validarBlocksBlockCount();
     validacionBlocks();
 }
 
@@ -396,7 +394,7 @@ void validarBlocksRecursos(char* path){
         char** listaBloques = config_get_array_value(metadata,"BLOCKS");
         char* md5 = config_get_string_value(metadata,"MD5");
         int size = config_get_int_value(metadata,"SIZE");
-        // char* caracterLlenado = config_get_string_value(metadata,"CARACTER_LLENADO");
+        char* caracterLlenado = config_get_string_value(metadata,"CARACTER_LLENADO");
         int contador = 0;
         int bloquesHastaAhora = 0;
         int bloque;

@@ -27,6 +27,7 @@
     #include <dirent.h>
     #include <unnamed/socket.h>
     #include <commons/config.h>
+    #include "level.h"
 
     typedef struct {
         uint32_t pid;
@@ -57,6 +58,7 @@
     int isBestFit;
 
     t_log *logger;
+    t_log *loggerMap;
     t_config * config;
 
     void *admin;

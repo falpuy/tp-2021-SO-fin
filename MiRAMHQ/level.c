@@ -31,15 +31,13 @@
 // 	*/
 // 	int nivel_gui_dibujar(NIVEL* nivel);
 
-/*void create_map(t_log *logger) {
+void create_map(void *item) {
+    t_log *logger = (t_log*) item;
     log_info(logger, "Iniciando la creacion del mapa..");
     nivel_gui_inicializar();
 
     // Drawing test
-    NIVEL* nivel = nivel_crear("Fake Minecraft");
+    nivel = nivel_crear("Among OS");
     nivel_gui_dibujar(nivel);
 
-    nivel_destruir(nivel);
-    nivel_gui_terminar();
-
-}*/
+}

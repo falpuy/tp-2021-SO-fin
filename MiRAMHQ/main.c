@@ -11,6 +11,7 @@ int main() {
 
     config = config_create(CONFIG_PATH);
     logger = log_create(ARCHIVO_LOG, PROGRAM, 0, LOG_LEVEL_TRACE);
+    loggerMap = log_create(ARCHIVO_LOG_MAP, PROGRAM, 1, LOG_LEVEL_TRACE);
    
     signal(SIGINT, signal_handler);
     signal(SIGUSR1, signal_handler);
@@ -25,9 +26,6 @@ int main() {
 
     printf("PID: %d\n", process_getpid());
     log_info(logger, "PID: %d\n", process_getpid());
-
-    // Creo el mapa
-    // create_map(logger);
     
     // Valido esquema de memoria
     esquema = config_get_string_value(config, "ESQUEMA_MEMORIA");
@@ -47,6 +45,11 @@ int main() {
     free(aux_timer);
 
     hasLRU = !strcmp(config_get_string_value(config, "ALGORITMO_REEMPLAZO"), "LRU");
+
+    // Creo el mapa
+    pthread_t map_thread;
+    pthread_create(&map_thread, NULL,(void*) create_map, loggerMap);
+    pthread_detach(map_thread);
 
     if (!strcmp(esquema, "PAGINACION")) {
 
@@ -113,8 +116,12 @@ void signal_handler(int sig_number) {
 
       // Eliminar Archivo Swap????
 
+      nivel_destruir(nivel);
+      nivel_gui_terminar();
+      log_destroy(loggerMap);
+
       log_destroy(logger);
-      config_destroy(config); 
+      config_destroy(config);
 
       exit(EXIT_SUCCESS);
 
@@ -295,6 +302,9 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     segmento_aux -> nroSegmento = get_last_index (segmentTable) + 1;
                     segmento_aux -> baseAddr = found_segment;
                     segmento_aux -> limit = found_segment + 21;
+
+                    personaje_crear(nivel, aux -> tid, aux -> xpos, aux -> ypos);
+                    nivel_gui_dibujar(nivel);
                     
                     save_tcb_in_memory(admin, memory, mem_size, segmento_aux, aux);
                     free(aux);
@@ -413,6 +423,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                 _send_message(fd, "RAM", ERROR_GUARDAR_TCB, respuesta3, string_length(respuesta3) , logger);
             }
             else{
+
+                item_desplazar(nivel, idTCB, posX, posY);
+                nivel_gui_dibujar(nivel);
+
                 _send_message(fd, "RAM", SUCCESS , respuesta3, string_length(respuesta3), logger);
 								log_info(logger, "Se mando con éxito la ubicación del tripulante");
 
@@ -542,9 +556,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
               _send_message(fd, "RAM", ERROR_GUARDAR_TCB,respuesta,string_length(respuesta),logger);
               free(respuesta);
 						} else {
-            //// Elimino el tcb del mapa
-
-            //eliminar_tripulante_mapa();
+            
+              // Elimino el tcb del mapa
+              item_borrar(nivel, idTCB);
+              nivel_gui_dibujar(nivel);
 
               char* respuesta5 = string_new();
               string_append(&respuesta5, "Respuesta");
@@ -697,6 +712,10 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
 
           free(idPCBkey);
 
+          // Elimino el tcb del mapa
+          item_borrar(nivel, idTCB);
+          nivel_gui_dibujar(nivel);
+
           respuesta = string_new();
           string_append(&respuesta, "Respuesta");
           _send_message(fd, "RAM", SUCCESS,respuesta,string_length(respuesta),logger);
@@ -761,6 +780,9 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             idPCBkey = string_itoa(idPCB);
             
             update_position_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB, posX, posY);
+
+            item_desplazar(nivel, idTCB, posX, posY);
+            nivel_gui_dibujar(nivel);
 
             free(idPCBkey);
 

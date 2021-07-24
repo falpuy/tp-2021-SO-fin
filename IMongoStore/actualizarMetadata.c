@@ -97,8 +97,9 @@ void setearMD5(char* pathMetadata){
             bloque = atoi(listaBloques[bloquesHastaAhora]);
 
             int sizeVieja = config_get_int_value(metadata, "SIZE");
-            int fragmentacion = contador*tamanioBloque - sizeVieja;
+            int fragmentacion =sizeVieja-  bloquesHastaAhora*tamanioBloque;
 
+            log_info(logger, "fragm interna:%d, sizeViejo:%d, Contador:%d",fragmentacion,sizeVieja,contador);
             char* temporalBloque = malloc(fragmentacion+1);
             memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, fragmentacion);
             temporalBloque[fragmentacion] = '\0';

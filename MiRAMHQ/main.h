@@ -10,10 +10,10 @@
 #include <unnamed/server.h>
 #include <unnamed/validation.h>
 #include "memory.h"
-//#include "./include/level.h"
 
 #define CONFIG_PATH "settings.config"
 #define ARCHIVO_LOG "info.log"
+#define ARCHIVO_LOG_MAP "map.log"
 #define PROGRAM "RAM" // Se utiliza para el protocolo
 
 char *KEYS[] = {

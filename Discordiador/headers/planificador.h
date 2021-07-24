@@ -42,6 +42,7 @@
     void funcionhExit (t_log* logger);
 
     /*------------------ADICIONALES--------------------*/
+    void eliminarPatotaEnRAM(void* item);
     void deletearTripulante(void* nodo);
     void signalHilosTripulantes(void *nodo);
     int list_iterate_obtener_posicion(t_list* self, int tid);

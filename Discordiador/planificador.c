@@ -644,17 +644,33 @@ void funcionhExit (t_log* logger){
 /*--------------------------------ADICIONALES--------------------------------*/
 
 void eliminarPatotaEnRAM(void* item){
+    log_info(logger, "Entró a eliminarPatotaEnRAM");
     pcb* pcbEliminado = (pcb*) item;
-    int todosTerminaron;
+    int todosTerminaron = 0;
 
-    todosTerminaron = list_iterate_todos_terminaron(pcbEliminado->listaTCB);
+    if(pcbEliminado->todosLosTCBsTerminaron == 0){
+        todosTerminaron = list_iterate_todos_terminaron(pcbEliminado->listaTCB);
+        log_info(logger, "todosTerminaron = %d", todosTerminaron);
 
-    if(todosTerminaron){
-        pthread_mutex_lock(&mutexBuffer);
-        buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
-        _send_message(conexion_RAM, "DIS", ELIMINAR_PATOTA, buffer, sizeof(int), logger);
-        free(buffer);
-        pthread_mutex_unlock(&mutexBuffer);
+        if(todosTerminaron > 0){
+            log_info(logger, "Entra al if de todosTerminaron");
+            
+            pthread_mutex_lock(&mutexBuffer);
+            buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
+            _send_message(conexion_RAM, "DIS", ELIMINAR_PATOTA, buffer, sizeof(int), logger);
+            free(buffer);
+            t_mensaje *mensajeRecibido = _receive_message(conexion_RAM, logger);
+            pthread_mutex_unlock(&mutexBuffer);
+
+            if (mensajeRecibido->command == SUCCESS) {
+                log_info(logger, "Se eliminaron todos los tcb de la patota: %d en RAM", pcbEliminado->pid);
+                pcbEliminado->todosLosTCBsTerminaron = 1;
+            }
+
+            free(mensajeRecibido->identifier);
+            free(mensajeRecibido->payload);
+            free(mensajeRecibido);
+        }
     }
 }
 
@@ -694,23 +710,26 @@ int list_iterate_obtener_posicion(t_list* self, int tid) {
 }
 
 int list_iterate_todos_terminaron(t_list* self) {
-    //int i = 0;
+    int i = 0;
     int cantTerminados = 0;
 	t_link_element *element = self->head;
 	t_link_element *aux = NULL;
 
 	while (element != NULL) {
-		aux = element->next;
+        //tcb* tcbLista = (tcb*) element->data;
 
-        tcb* tcbLista = (tcb*) element->data;
-
-        //tcbLista = list_get(self, i);
+        tcb* tcbLista = list_get(self, i);
         if(tcbLista->status == 'X'){
             cantTerminados++;
         }
-        //i++;
+
+        i++;
+        aux = element->next;
 		element = aux;
 	}
+
+    log_info(logger, "cantTerminados = %d", cantTerminados);
+    log_info(logger, "cantidad de TCB en la patota = %d", list_size(self));
 
     if (cantTerminados == list_size(self)){
         return 1;

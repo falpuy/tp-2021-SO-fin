@@ -408,20 +408,20 @@
             for(int i = 0; i < contador; i++){
                 if((contador - bloquesHastaAhora) > 1){ //no es el ultimo bloque-->no hay frag. interna
                 
-                bloque = atoi(listaBloques[bloquesHastaAhora]);
-                char* temporalBloque = malloc(tamanioBloque+1);
-                memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, tamanioBloque);
-                temporalBloque[tamanioBloque] = '\0';
-                    
-                string_append(&string_temp,temporalBloque);
-                bloquesHastaAhora++;
-                free(temporalBloque);
+                    bloque = atoi(listaBloques[bloquesHastaAhora]);
+                    char* temporalBloque = malloc(tamanioBloque+1);
+                    memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, tamanioBloque);
+                    temporalBloque[tamanioBloque] = '\0';
+                        
+                    string_append(&string_temp,temporalBloque);
+                    bloquesHastaAhora++;
+                    free(temporalBloque);
                 }else{
                     bloque = atoi(listaBloques[bloquesHastaAhora]);
                     int fragmentacion = contador*tamanioBloque - size;
 
                     char* temporalBloque = malloc(fragmentacion+1);
-                    memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, fragmentacion);
+                    memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, fragmentacion);
                     temporalBloque[fragmentacion] = '\0';
                         
                     string_append(&string_temp,temporalBloque);

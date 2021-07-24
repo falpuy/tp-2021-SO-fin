@@ -10,7 +10,7 @@ int main() {
     hasLRU = 1;
 
     config = config_create(CONFIG_PATH);
-    logger = log_create(ARCHIVO_LOG, PROGRAM, 1, LOG_LEVEL_TRACE);
+    logger = log_create(ARCHIVO_LOG, PROGRAM, 0, LOG_LEVEL_TRACE);
    
     signal(SIGINT, signal_handler);
     signal(SIGUSR1, signal_handler);
@@ -122,7 +122,7 @@ void signal_handler(int sig_number) {
 
     case SIGUSR1:
       if (!strcmp(esquema, "PAGINACION")) {
-        printf("Solo se puede compactar en Paginacion.\n");
+        printf("Solo se puede compactar en Segmentacion.\n");
       } else {
         memory_compaction(admin, memory, mem_size, table_collection);
       }

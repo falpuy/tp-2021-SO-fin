@@ -83,7 +83,7 @@ void setearMD5(char* pathMetadata){
     }
 
     for(int i = 0; i < contador; i++){
-        if((contador - bloquesHastaAhora) != 0){ //no es el ultimo bloque-->no hay frag. interna
+        if((contador - bloquesHastaAhora) > 1){ //no es el ultimo bloque-->no hay frag. interna
             
             bloque = atoi(listaBloques[bloquesHastaAhora]);
             char* temporalBloque = malloc(tamanioBloque+1);
@@ -100,7 +100,7 @@ void setearMD5(char* pathMetadata){
             int fragmentacion = contador*tamanioBloque - sizeVieja;
 
             char* temporalBloque = malloc(fragmentacion+1);
-            memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, fragmentacion);
+            memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, fragmentacion);
             temporalBloque[fragmentacion] = '\0';
                 
             string_append(&string_temp,temporalBloque);

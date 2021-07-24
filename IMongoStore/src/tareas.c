@@ -238,11 +238,11 @@ void descartarBasura(int parametroTarea){
         int bloquesHastaAhora = 0;
         for(int i = 0; i <= contador; i++){
             
-            if((contador - bloquesHastaAhora) != 1){
+            if((contador - bloquesHastaAhora) > 1){
                 bloque = atoi(listaBloques[bloquesHastaAhora]);
 
                 char* temporalBloque = malloc(tamanioBloque+1);
-                memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, tamanioBloque);
+                memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, tamanioBloque);
                 temporalBloque[tamanioBloque] = '\0';
                 
                 string_append(&string_temp,temporalBloque);
@@ -255,7 +255,7 @@ void descartarBasura(int parametroTarea){
                 int fragmentacion = contador*tamanioBloque - sizeVieja;
 
                 char* temporalBloque = malloc(fragmentacion+1);
-                memcpy(copiaBlocks + bloque*tamanioBloque, temporalBloque, fragmentacion);
+                memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, fragmentacion);
                 temporalBloque[fragmentacion] = '\0';
                 
                 string_append(&string_temp,temporalBloque);

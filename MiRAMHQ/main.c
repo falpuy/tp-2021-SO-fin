@@ -11,7 +11,6 @@ int main() {
 
     config = config_create(CONFIG_PATH);
     logger = log_create(ARCHIVO_LOG, PROGRAM, 0, LOG_LEVEL_TRACE);
-    loggerMap = log_create(ARCHIVO_LOG_MAP, PROGRAM, 1, LOG_LEVEL_TRACE);
    
     signal(SIGINT, signal_handler);
     signal(SIGUSR1, signal_handler);
@@ -47,9 +46,10 @@ int main() {
     hasLRU = !strcmp(config_get_string_value(config, "ALGORITMO_REEMPLAZO"), "LRU");
 
     // Creo el mapa
-    pthread_t map_thread;
-    pthread_create(&map_thread, NULL,(void*) create_map, loggerMap);
-    pthread_detach(map_thread);
+    // pthread_t map_thread;
+    // pthread_create(&map_thread, NULL,(void*) create_map, NULL);
+    // pthread_detach(map_thread);
+    // create_map();
 
     if (!strcmp(esquema, "PAGINACION")) {
 
@@ -72,6 +72,16 @@ int main() {
 
     } else {
       // Segmentacion
+      segmentosLibres = queue_create();
+
+      segment *first = malloc(sizeof(segment));
+      first -> id = -1;
+      first -> type = -1;
+      first -> nroSegmento = -1;
+      first -> baseAddr = 0;
+      first -> limit = mem_size;
+
+      queue_push(segmentosLibres, first);
 
       // Creo el server
       _start_server(config_get_string_value(config, "PUERTO"), segmentation_handler, logger);
@@ -111,14 +121,14 @@ void signal_handler(int sig_number) {
         // }
 
       } else {
+        queue_destroy_and_destroy_elements(segmentosLibres, destroyer);
         dictionary_destroy_and_destroy_elements(table_collection, table_destroyer);
       }
 
       // Eliminar Archivo Swap????
 
-      nivel_destruir(nivel);
-      nivel_gui_terminar();
-      log_destroy(loggerMap);
+      // nivel_destruir(nivel);
+      // nivel_gui_terminar();
 
       log_destroy(logger);
       config_destroy(config);
@@ -303,8 +313,8 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     segmento_aux -> baseAddr = found_segment;
                     segmento_aux -> limit = found_segment + 21;
 
-                    personaje_crear(nivel, aux -> tid, aux -> xpos, aux -> ypos);
-                    nivel_gui_dibujar(nivel);
+                    // personaje_crear(nivel, aux -> tid, aux -> xpos, aux -> ypos);
+                    // nivel_gui_dibujar(nivel);
                     
                     save_tcb_in_memory(admin, memory, mem_size, segmento_aux, aux);
                     free(aux);
@@ -424,8 +434,8 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             }
             else{
 
-                item_desplazar(nivel, idTCB, posX, posY);
-                nivel_gui_dibujar(nivel);
+                // item_desplazar(nivel, idTCB, posX, posY);
+                // nivel_gui_dibujar(nivel);
 
                 _send_message(fd, "RAM", SUCCESS , respuesta3, string_length(respuesta3), logger);
 								log_info(logger, "Se mando con éxito la ubicación del tripulante");
@@ -558,8 +568,8 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 						} else {
             
               // Elimino el tcb del mapa
-              item_borrar(nivel, idTCB);
-              nivel_gui_dibujar(nivel);
+              // item_borrar(nivel, idTCB);
+              // nivel_gui_dibujar(nivel);
 
               char* respuesta5 = string_new();
               string_append(&respuesta5, "Respuesta");
@@ -713,8 +723,8 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           free(idPCBkey);
 
           // Elimino el tcb del mapa
-          item_borrar(nivel, idTCB);
-          nivel_gui_dibujar(nivel);
+          // item_borrar(nivel, idTCB);
+          // nivel_gui_dibujar(nivel);
 
           respuesta = string_new();
           string_append(&respuesta, "Respuesta");
@@ -781,8 +791,8 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             
             update_position_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB, posX, posY);
 
-            item_desplazar(nivel, idTCB, posX, posY);
-            nivel_gui_dibujar(nivel);
+            // item_desplazar(nivel, idTCB, posX, posY);
+            // nivel_gui_dibujar(nivel);
 
             free(idPCBkey);
 

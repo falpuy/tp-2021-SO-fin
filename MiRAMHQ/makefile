@@ -27,7 +27,7 @@ all: build run
 
 # make clean : Elimina el ejecutable y los archivos de log
 clean:
-	rm ./main ../logs/*.log
+	rm ./main ./*.log swapFile.bin *.dmp
 
 # make build : Compila todos los archivos .c y genera un ejecutable
 build:
@@ -39,4 +39,4 @@ run:
 
 # make test : Ejecuta la aplicacion utilizando Valgrind
 test:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./main
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file="valgrind.log" --verbose ./main

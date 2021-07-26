@@ -8,6 +8,6 @@
 
 NIVEL* nivel;
 
-void create_map(void *item);
+void create_map();
 
 #endif

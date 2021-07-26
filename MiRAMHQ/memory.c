@@ -1067,6 +1067,77 @@ void page_table_destroyer(void *item) {
 
 }
 
+// void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* self) {
+//     void *aux_memory = malloc(mem_size);
+//     memset(admin, 0, mem_size);
+
+//     segment *temp;
+
+//     t_queue *aux;
+
+//     int data_size;
+
+//     int offset = 0;
+
+//     int new_base;
+//     int new_limit;
+
+//     int table_index;
+
+// 	for (table_index = 0; table_index < self->table_max_size; table_index++) {
+// 		t_hash_element *element = self->elements[table_index];
+// 		t_hash_element *next_element = NULL;
+
+// 		while (element != NULL) {
+
+// 			next_element = element->next;
+
+//             aux = element -> data;
+
+//             if ((aux -> elements -> elements_count > 0) && (mem_size >= 0)) {
+
+//                 t_link_element *element = aux -> elements -> head;
+//                 temp = element -> data;
+
+//                 while (element != NULL) {
+
+//                     data_size = temp -> limit - temp ->baseAddr;
+
+//                     // printf("Copiando elementos.. %d - %d - %d\n", temp -> nroSegmento, temp -> baseAddr, temp -> limit);
+                    
+//                     // Copio los datos del segmento en la memoria auxiliar
+//                     memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+//                     memset(admin + offset, 1, data_size);
+
+//                     new_base = offset;
+//                     new_limit = offset + data_size;
+
+//                     // printf("Creando nuevo Segmento.. %d - %d - %d\n", temp -> nroSegmento, new_base, new_limit);
+
+//                     offset += data_size;
+
+//                     temp -> baseAddr = new_base;
+//                     temp -> limit = new_limit;
+
+//                     element = element->next;
+//                     if (element != NULL)
+//                         temp = element -> data;
+                    
+//                 }
+//             }
+//             element = next_element;
+//         }
+
+// 	}
+
+//     if (!dictionary_is_empty(self)) {
+//         memset(memory, 0, mem_size);
+//         memcpy(memory, aux_memory, mem_size);
+//     }
+
+//     free(aux_memory);
+// }
+
 void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* self) {
     void *aux_memory = malloc(mem_size);
     memset(admin, 0, mem_size);
@@ -1138,26 +1209,53 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
     free(aux_memory);
 }
 
+// int check_space_memory(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
+
+//     if (total_size > mem_size) {
+//         return 0;
+//     }
+
+//     // Contador de bytes libres en la memoria
+//     int segment_counter = 0;
+
+//     for(int i = 0; i < mem_size; i ++) {
+//         if (!memcmp(admin + i, "\0", 1)) {
+
+//             // // printf("Direccion vacia: %d\n", i);
+//             segment_counter ++;
+//             if (segment_counter == total_size) {
+//                 // // printf("Hay espacio disponible en memoria..\n");
+//                 return 1;
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
 int check_space_memory(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
 
     if (total_size > mem_size) {
         return 0;
     }
 
-    // Contador de bytes libres en la memoria
-    int segment_counter = 0;
+    segment *temp;
 
-    for(int i = 0; i < mem_size; i ++) {
-        if (!memcmp(admin + i, "\0", 1)) {
+    t_list *self = segmentosLibres -> elements;
 
-            // // printf("Direccion vacia: %d\n", i);
-            segment_counter ++;
-            if (segment_counter == total_size) {
-                // // printf("Hay espacio disponible en memoria..\n");
-                return 1;
-            }
+    t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+
+        temp = (segment *) element -> data;
+        
+        if (temp -> limit - temp -> baseAddr >= total_size) {
+            return 1;
         }
-    }
+
+		element = aux;
+	}
+
     return 0;
 }
 
@@ -1182,87 +1280,166 @@ void best_fit_destroyer(void *data) {
     free(temp);
 }
 
+bool list_sorter(void *a, void *b) {
+    segment *aux = (segment *) a;
+    segment *temp = (segment *) b;
+
+    return aux -> baseAddr < temp -> baseAddr;
+}
+
 int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int total_size) {
 
-    t_list *temp = list_create();
+    segment *temp;
 
-    int result;
+    int index = 0;
 
-    int start = 0;
+    int start;
 
-    int j;
+    t_list *self = segmentosLibres -> elements;
 
-    // Contador de bytes libres en la memoria
-    int segment_counter = 0;
+    list_sort(self, list_sorter);
 
-    // Busco espacio libre en la memoria
-    for(int i = 0; i < mem_size; i ++) {
-        if (!memcmp(admin + i, "\0", 1)) {
-            // // printf("Segmento Libre en: %d\n", i);
-            start = i;
-            j = i;
-            while(j < mem_size && !memcmp(admin + j, "\0", 1)) {
-                // // printf("siguiente en: %d\n", j);
-                segment_counter ++;
-                j++;
+    t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+		
+        temp = (segment *) element -> data;
+
+        if (temp -> limit - temp -> baseAddr >= total_size) {
+            if (temp -> limit - temp -> baseAddr == total_size) {
+                start = temp -> baseAddr;
+                list_remove_and_destroy_element(segmentosLibres -> elements, index, destroyer);
+                return start;
+            } else {
+                start = temp -> baseAddr;
+                temp -> baseAddr += total_size;
+                return start;
             }
-            i = j;
-            // // printf("Data: %d - %d - %d\n", i, segment_counter, mem_size);
-            if (i <= mem_size) {
-                if (segment_counter >= total_size) {
-                    best_fit_data *data = malloc(sizeof(best_fit_data));
-                    data -> addr = start;
-                    data -> counter = segment_counter;
-                    list_add_sorted(temp, data, segment_cmp);
-                }
-
-                segment_counter = 0;
-            }
-
         }
 
-    }
-
-    if (list_size(temp) > 0) {
-        best_fit_data *aux = list_get(temp, 0);
-        result = aux -> addr;
-        list_destroy_and_destroy_elements(temp, best_fit_destroyer);
-        // // printf("Direccion a devolver: %d\n", result);
-        return result;
-    }
-
+		element = aux;
+        i++;
+	}
     return -1;
 }
 
+// int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int total_size) {
+
+//     t_list *temp = list_create();
+
+//     int result;
+
+//     int start = 0;
+
+//     int j;
+
+//     // Contador de bytes libres en la memoria
+//     int segment_counter = 0;
+
+//     // Busco espacio libre en la memoria
+//     for(int i = 0; i < mem_size; i ++) {
+//         if (!memcmp(admin + i, "\0", 1)) {
+//             // // printf("Segmento Libre en: %d\n", i);
+//             start = i;
+//             j = i;
+//             while(j < mem_size && !memcmp(admin + j, "\0", 1)) {
+//                 // // printf("siguiente en: %d\n", j);
+//                 segment_counter ++;
+//                 j++;
+//             }
+//             i = j;
+//             // // printf("Data: %d - %d - %d\n", i, segment_counter, mem_size);
+//             if (i <= mem_size) {
+//                 if (segment_counter >= total_size) {
+//                     best_fit_data *data = malloc(sizeof(best_fit_data));
+//                     data -> addr = start;
+//                     data -> counter = segment_counter;
+//                     list_add_sorted(temp, data, segment_cmp);
+//                 }
+
+//                 segment_counter = 0;
+//             }
+
+//         }
+
+//     }
+
+//     if (list_size(temp) > 0) {
+//         best_fit_data *aux = list_get(temp, 0);
+//         result = aux -> addr;
+//         list_destroy_and_destroy_elements(temp, best_fit_destroyer);
+//         // // printf("Direccion a devolver: %d\n", result);
+//         return result;
+//     }
+
+//     return -1;
+// }
+
+
+// int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
+
+//     // Contador de bytes libres en la memoria
+//     int segment_counter = 0;
+
+//     int start;
+//     int j;
+
+//     // Busco espacio libre en la memoria
+//     for(int i = 0; i < mem_size; i ++) {
+//         if (!memcmp(admin + i, "\0", 1)) {
+//             // // printf("Segmento Libre en: %d\n", i);
+//             start = i;
+//             j = i;
+//             while(!memcmp(admin + j, "\0", 1) && j < mem_size) {
+//                 // // printf("siguiente en: %d\n", j);
+//                 segment_counter ++;
+//                 j++;
+
+//                 if (segment_counter >= total_size) {
+//                     // // printf("Direccion a devolver: %d\n", start);
+//                     return start;
+//                 }
+//             }
+//             i = j;
+
+//         }
+//     }
+//     return -1;
+// }
 
 int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
 
-    // Contador de bytes libres en la memoria
-    int segment_counter = 0;
+    segment *temp;
+
+    int index = 0;
 
     int start;
-    int j;
 
-    // Busco espacio libre en la memoria
-    for(int i = 0; i < mem_size; i ++) {
-        if (!memcmp(admin + i, "\0", 1)) {
-            // // printf("Segmento Libre en: %d\n", i);
-            start = i;
-            j = i;
-            while(!memcmp(admin + j, "\0", 1) && j < mem_size) {
-                // // printf("siguiente en: %d\n", j);
-                segment_counter ++;
-                j++;
+    t_list *self = segmentosLibres -> elements;
 
-                if (segment_counter >= total_size) {
-                    // // printf("Direccion a devolver: %d\n", start);
-                    return start;
-                }
+    t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+		
+        temp = (segment *) element -> data;
+
+        if (temp -> limit - temp -> baseAddr >= total_size) {
+            if (temp -> limit - temp -> baseAddr == total_size) {
+                start = temp -> baseAddr;
+                list_remove_and_destroy_element(segmentosLibres -> elements, index, destroyer);
+                return start;
+            } else {
+                start = temp -> baseAddr;
+                temp -> baseAddr += total_size;
+                return start;
             }
-            i = j;
-
         }
-    }
+
+		element = aux;
+        i++;
+	}
     return -1;
 }
 

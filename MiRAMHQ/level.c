@@ -31,9 +31,7 @@
 // 	*/
 // 	int nivel_gui_dibujar(NIVEL* nivel);
 
-void create_map(void *item) {
-    t_log *logger = (t_log*) item;
-    log_info(logger, "Iniciando la creacion del mapa..");
+void create_map() {
     nivel_gui_inicializar();
 
     // Drawing test

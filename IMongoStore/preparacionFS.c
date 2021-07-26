@@ -28,8 +28,9 @@ void validarSuperBloque(){
     log_info(logger, "Validando existencia de Superbloque.ims....");
     log_info(logger, "-----------------------------------------------------");
 
+    char* pathSuperBloque = pathCompleto("SuperBloque.ims");
 
-    if(access("./Filesystem/SuperBloque.ims",F_OK) < 0){
+    if(access(pathSuperBloque,F_OK) < 0){
         log_error(logger, "No se encontró archivo SuperBloque.ims. Se crea archivo");
            
         log_info(logger, "Ingresar el tamaño de cada bloque");
@@ -43,7 +44,7 @@ void validarSuperBloque(){
             scanf("%d", &cantidadBloques);
         }
 
-        int superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR,0664);
+        int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR,0664);
         
         if(superBloque<0){
             log_error(logger, "Error al abrir/crear Superbloque");
@@ -53,7 +54,7 @@ void validarSuperBloque(){
         
         copiaSB = malloc(tamanioBloque*cantidadBloques + cantidadBloques/8);
         
-        void* sb_memoria = (char*) mmap(NULL, sizeof(uint32_t) * 2, PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
+        void* sb_memoria = (char*) mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques / 8, PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
         memBitmap = malloc(cantidadBloques/8);
         bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
         
@@ -66,7 +67,7 @@ void validarSuperBloque(){
             printf("%d",bitarray_test_bit(bitmap,i));
 
         }   
-
+            
         memcpy(copiaSB, &tamanioBloque, sizeof(uint32_t));
         memcpy(copiaSB + sizeof(uint32_t), &cantidadBloques, sizeof(uint32_t));
         memcpy(copiaSB + sizeof(uint32_t)*2,bitmap->bitarray, cantidadBloques/8);
@@ -79,12 +80,13 @@ void validarSuperBloque(){
         }
 
         close(superBloque);
-        err = munmap(sb_memoria, sizeof(uint32_t)*2);
+        err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques / 8);
         if (err == -1){
             log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada de tamañoBloque y cantidadBloque");
         }
 
         close(superBloque);
+        
 
         log_info(logger, "-----------------------------------------------------");
         log_info(logger, "Se creó archivo superBloque.ims");
@@ -94,7 +96,8 @@ void validarSuperBloque(){
 
         log_info(logger, "Se encontró el archivo superBloque.ims");
 
-        int superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+        pathSuperBloque = pathCompleto("SuperBloque.ims");
+        int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
         
         //Mapeo para sacar el tamaño y cantidad solo
         void* sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
@@ -130,17 +133,19 @@ void validarSuperBloque(){
         log_info(logger, "Cantidad de bloques: %d", cantidadBloques);
         log_info(logger, "-----------------------------------------------------");
     }
+    free(pathSuperBloque);
 }
 
 
 void validarBlocks(){
     log_info(logger, "Validando existencia de Blocks.ims....");
     
+    char* pathBlocks = pathCompleto("Blocks.ims");
 
-    if(access("./Filesystem/Blocks.ims",F_OK) < 0){
+    if(access(pathBlocks,F_OK) < 0){
         log_error(logger, "No se encontró archivo Blocks.ims. Se crea archivo");
         
-        int blocks = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
+        int blocks = open(pathBlocks, O_CREAT | O_RDWR, 0664);
         
         int tamanioAGuardar = (tamanioBloque * cantidadBloques);
         copiaBlocks = malloc(tamanioBloque* cantidadBloques);
@@ -158,7 +163,7 @@ void validarBlocks(){
         log_info(logger, "-----------------------------------------------------");
         log_info(logger,"Existe archivo Blocks.ims.");
         
-        int blocks = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
+        int blocks = open(pathBlocks, O_CREAT | O_RDWR, 0664);
         copiaBlocks = malloc(tamanioBloque*cantidadBloques);
 
         void* blocks_memory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, blocks, 0);
@@ -169,6 +174,7 @@ void validarBlocks(){
         log_info(logger, "-----------------------------------------------------");
 
     }
+    free(pathBlocks);
 }
 
 

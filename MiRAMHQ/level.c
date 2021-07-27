@@ -31,11 +31,11 @@
 // 	*/
 // 	int nivel_gui_dibujar(NIVEL* nivel);
 
-void create_map() {
-    nivel_gui_inicializar();
+// void create_map() {
+    // nivel_gui_inicializar();
 
-    // Drawing test
-    nivel = nivel_crear("Among OS");
-    nivel_gui_dibujar(nivel);
+    // // Drawing test
+    // nivel = nivel_crear("Among OS");
+    // nivel_gui_dibujar(nivel);
 
-}
+// }

@@ -27,7 +27,7 @@ all: build run
 
 # make clean : Elimina el ejecutable y los archivos de log
 clean:
-	rm ./main ./logs/*.log
+	rm main logIMongoStore.log
 
 # make build : Compila todos los archivos .c y genera un ejecutable
 build:

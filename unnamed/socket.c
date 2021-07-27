@@ -170,21 +170,21 @@ t_mensaje *_receive_message(int socket, t_log *logger) {
 	recv(socket, temp -> identifier, 3, 0);
 	temp -> identifier[3] = '\0';
 
-	log_info(logger, "Proceso: %s", temp -> identifier);
+	//log_info(logger, "Proceso: %s", temp -> identifier);
 
 	recv(socket, &(temp -> command), sizeof(int), 0);
 
-	log_info(logger, "Comando: %d", temp -> command);
+	//log_info(logger, "Comando: %d", temp -> command);
 
 	recv(socket, &(temp -> pay_len), sizeof(int), 0);
 
-	log_info(logger, "Tamanio: %d", temp -> pay_len);
+	//log_info(logger, "Tamanio: %d", temp -> pay_len);
 
 	temp -> payload = malloc(temp -> command == 999 ? temp -> pay_len + 1 : temp -> pay_len);
 	recv(socket, temp -> payload, temp -> pay_len, 0);
 	if (temp -> command == 999) {
 		memset(temp -> payload + temp -> pay_len, '\0', 1);
-		log_info(logger, "String: %s", temp -> payload);
+		log_info(logger, "Recibi: String: %s", temp -> payload);
 	}
 
 	return temp;

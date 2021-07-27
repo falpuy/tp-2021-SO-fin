@@ -367,13 +367,15 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             //----------------------------------------------------
             temp_id = string_itoa(idPCB);
             segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
-            free(temp_id); 
+            free(temp_id);
 
-            nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
+            memcpy(memory + segmento_tcb -> baseAddr + (sizeof(int) * 2), &status, sizeof(char));
 
-            nuestroTCB -> status = status;
+            // nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
 
-            error = save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
+            // nuestroTCB -> status = status;
+
+            // error = save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
 					
             char* respuesta2 = string_new();
             string_append(&respuesta2, "Respuesta");
@@ -391,7 +393,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 						//TO DO: actualizar_mapa(nuestroTCB);
             log_info(logger,"-----------------------------------------------------");
             free(respuesta2);					
-            free(nuestroTCB);
+            // free(nuestroTCB);
         break;
 
         case RECIBIR_UBICACION_TRIPULANTE: //ID_PATOTA, ID_TCB, POS_X, POS_Y
@@ -416,14 +418,18 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             //----------------------------------------------------
             temp_id = string_itoa(idPCB);
             segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
-            free(temp_id); 
+            free(temp_id);
 
-            nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
+            memcpy(memory + segmento_tcb -> baseAddr + (sizeof(int) * 2) + sizeof(char), &posX, sizeof(int));
 
-            nuestroTCB -> xpos = posX;
-            nuestroTCB -> ypos = posY;
+            memcpy(memory + segmento_tcb -> baseAddr + (sizeof(int) * 2) + sizeof(char) + sizeof(int), &posY, sizeof(int));
 
-            error = save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
+            // nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
+
+            // nuestroTCB -> xpos = posX;
+            // nuestroTCB -> ypos = posY;
+
+            // error = save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
 					
             char* respuesta3 = string_new();
             string_append(&respuesta3, "Respuesta");
@@ -445,7 +451,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 						//TO DO: actualizar_mapa(nuestroTCB);
             log_info(logger,"-----------------------------------------------------");
             free(respuesta3);					
-            free(nuestroTCB);
+            // free(nuestroTCB);
         break;
 
         case ENVIAR_TAREA://idpcb, idtcb
@@ -518,13 +524,22 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
             while (segmento_aux != NULL) {
               if(remove_segment_from_memory(admin, mem_size, segmento_aux)) {
+
+                  segment *aux = malloc(sizeof(segment));
+                  aux -> id = -1;
+                  aux -> type = -1;
+                  aux -> nroSegmento = -1;
+                  aux -> baseAddr = segmento_aux -> baseAddr;
+                  aux -> limit = segmento_aux -> limit;
+                  queue_push(segmentosLibres, aux);
+
                   remove_segment_from_table(table_collection, temp_id, segmento_aux);
               }
 
               segmento_aux = get_next_segment(table_collection, temp_id);
             }
 
-            free(temp_id); 
+            free(temp_id);
               
             //----------------------------------------------------
 
@@ -552,24 +567,32 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             temp_id = string_itoa(idPCB);
             segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
 
-            error =  remove_segment_from_memory (admin, mem_size, segmento_tcb);
+            segment *aux = malloc(sizeof(segment));
+            aux -> id = -1;
+            aux -> type = -1;
+            aux -> nroSegmento = -1;
+            aux -> baseAddr = segmento_tcb -> baseAddr;
+            aux -> limit = segmento_tcb -> limit;
+            queue_push(segmentosLibres, aux);
+
+            // error =  remove_segment_from_memory (admin, mem_size, segmento_tcb);
 
             // TODO: BORRAR SEGMENTO DE LA TABLA DE SEGMENTOS
             remove_segment_from_table(table_collection, temp_id, segmento_tcb);
 
-            free(temp_id); 
+            free(temp_id);
 						
-          	if(error < 0){
-              log_error(logger, "Error al eliminar el segmento asociado");
-              respuesta = string_new();
-              string_append(&respuesta, "Respuesta");
-              _send_message(fd, "RAM", ERROR_GUARDAR_TCB,respuesta,string_length(respuesta),logger);
-              free(respuesta);
-						} else {
+          	// if(error < 0){
+              // log_error(logger, "Error al eliminar el segmento asociado");
+              // respuesta = string_new();
+              // string_append(&respuesta, "Respuesta");
+              // _send_message(fd, "RAM", ERROR_GUARDAR_TCB,respuesta,string_length(respuesta),logger);
+              // free(respuesta);
+						// } else {
             
-              // Elimino el tcb del mapa
-              // item_borrar(nivel, idTCB);
-              // nivel_gui_dibujar(nivel);
+            //   // Elimino el tcb del mapa
+            //   // item_borrar(nivel, idTCB);
+            //   // nivel_gui_dibujar(nivel);
 
               char* respuesta5 = string_new();
               string_append(&respuesta5, "Respuesta");
@@ -577,7 +600,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
               free(respuesta5);
               log_info(logger,"-----------------------------------------------------");
 
-            }
+            // }
 
         break;
 

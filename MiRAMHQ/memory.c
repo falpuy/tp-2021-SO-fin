@@ -1140,7 +1140,7 @@ void page_table_destroyer(void *item) {
 
 void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* self) {
     void *aux_memory = malloc(mem_size);
-    memset(admin, 0, mem_size);
+    // memset(admin, 0, mem_size);
 
     segment *temp;
 
@@ -1178,7 +1178,7 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
                     
                     // Copio los datos del segmento en la memoria auxiliar
                     memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
-                    memset(admin + offset, 1, data_size);
+                    // memset(admin + offset, 1, data_size);
 
                     new_base = offset;
                     new_limit = offset + data_size;
@@ -1201,8 +1201,19 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
 
 	}
 
+    queue_destroy_and_destroy_elements(segmentosLibres, destroyer);
+    segmentosLibres = queue_create();
+    segment *first = malloc(sizeof(segment));
+    first -> id = -1;
+    first -> type = -1;
+    first -> nroSegmento = -1;
+    first -> baseAddr = offset;
+    first -> limit = mem_size;
+
+    queue_push(segmentosLibres, first);
+
     if (!dictionary_is_empty(self)) {
-        memset(memory, 0, mem_size);
+        // memset(memory, 0, mem_size);
         memcpy(memory, aux_memory, mem_size);
     }
 
@@ -1319,7 +1330,6 @@ int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int tot
         }
 
 		element = aux;
-        i++;
 	}
     return -1;
 }
@@ -1438,7 +1448,6 @@ int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_c
         }
 
 		element = aux;
-        i++;
 	}
     return -1;
 }
@@ -2020,8 +2029,35 @@ void memory_dump(t_dictionary *self, void *memory) {
 
     txt_write_in_file(file, "--------------------------------------------------------------------------\n");
 
+    txt_write_in_file(file, "Segmentos Libres:\n");
+
+    t_link_element *freeHead = segmentosLibres->elements->head;
+	t_link_element *freeTemp = NULL;
+	while (freeHead != NULL) {
+		freeTemp = freeHead->next;
+		segment *freeAux = (segment *) freeHead->data;
+
+        char *line = string_new();
+        string_append_with_format(&line, "Proceso: %s\t\tInicio: 0x%d\t\tTam: %db\n", "N/A", freeAux -> baseAddr, freeAux -> limit - freeAux -> baseAddr);
+        txt_write_in_file(file, line);
+        free(line);
+
+		freeHead = freeTemp;
+	}
+
+    txt_write_in_file(file, "--------------------------------------------------------------------------\n");
+
     txt_close_file(file);
 }
 
 
 // --------------------- END DUMP ----------------------- //
+
+void create_map() {
+    nivel_gui_inicializar();
+
+    // Drawing test
+    nivel = nivel_crear("Among OS");
+    nivel_gui_dibujar(nivel);
+
+}

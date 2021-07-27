@@ -54,7 +54,7 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
     }
 }
 
-void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){ 
+void    guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){ 
     int tamStr = string_length(stringGuardar);
     int flagEsGuardar = 1;
     int posEnString = 0;

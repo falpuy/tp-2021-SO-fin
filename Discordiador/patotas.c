@@ -247,7 +247,7 @@ void funcionTripulante (void* elemento) {
                         tcbTripulante->status = 'I';
                         tcbTripulante->ciclosCumplidos = 0;
                         log_info(logger, "[Tripulante %d] Se debe realizar una tarea de I/O",param->idSemaforo);
-                        sleep(1);
+                        sleep(ciclo_CPU);
                         free(tarea[1]);
                     }
 

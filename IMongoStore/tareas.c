@@ -218,62 +218,18 @@ void consumirComida(int parametroTarea){
 
 void descartarBasura(int parametroTarea){
     char* path_basura = pathCompleto("Files/Basura.ims");
-     log_info(logger, "Path de (descartar)basura:%s",path_basura);
     
     if(access(path_basura,F_OK)<0){
         log_error(logger, "No existe Basura.ims");
     }else{
-
         t_config* metadata = config_create(path_basura);
-        char** listaBloques = config_get_array_value(metadata,"BLOCKS");
-        int contador = 0;
-        int bloque;
-        char* string_temp = string_new();
-
-        
-        while(listaBloques[contador]){ 
-            contador++;
-        }
-
-        int bloquesHastaAhora = 0;
-        for(int i = 0; i <= contador; i++){
-            
-            if((contador - bloquesHastaAhora) > 1){
-                bloque = atoi(listaBloques[bloquesHastaAhora]);
-
-                char* temporalBloque = malloc(tamanioBloque+1);
-                memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, tamanioBloque);
-                temporalBloque[tamanioBloque] = '\0';
-                
-                string_append(&string_temp,temporalBloque);
-                bloquesHastaAhora++;
-                free(temporalBloque);
-            }else{
-                bloque = atoi(listaBloques[bloquesHastaAhora]);
-
-                int sizeVieja = config_get_int_value(metadata, "SIZE");
-                int fragmentacion = contador*tamanioBloque - sizeVieja;
-
-                char* temporalBloque = malloc(fragmentacion+1);
-                memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, fragmentacion);
-                temporalBloque[fragmentacion] = '\0';
-                
-                string_append(&string_temp,temporalBloque);
-                free(temporalBloque);
-            }
-            
-        }
-
+        int size = config_get_int_value(metadata,"SIZE");
+        char* string_temp= string_repeat('B',size);
         config_destroy(metadata);
-        for(int i = 0; i < contador; i++){
-            free(listaBloques[i]);
-        }
-        free(listaBloques);
 
-        borrarEnBlocks(string_temp,path_basura,1);
+        borrarEnBlocks(string_temp, path_basura, 1);
         free(string_temp);
         remove(path_basura);
-
     }
     free(path_basura);
 }

@@ -6,8 +6,4 @@
 #include <nivel-gui/tad_nivel.h>
 #include <commons/log.h>
 
-NIVEL* nivel;
-
-void create_map();
-
 #endif

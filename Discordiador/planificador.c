@@ -350,8 +350,6 @@ void funcionContadorEnBloqIO(void* nodo){
 
         tcbTripulante->tiempoEnBloqIO++;
     }
-
-    sleep(1); //[BORRARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR]
     free(tareaIO[0]);
     free(tareaIO[1]);
     free(tareaIO);

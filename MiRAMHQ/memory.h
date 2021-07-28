@@ -55,6 +55,7 @@
 
     typedef struct {
         uint32_t start;
+        uint32_t page_number;
         uint32_t cantidad;
         uint8_t *tcb;
     } admin_data;
@@ -79,6 +80,8 @@
 
     // Asigna espacio a memoria y setea el global 'mem_size' con el tamanio de memoria asignado
     void *memory_init(int size);
+
+    void create_map();
 
     // Libera la memoria y los segmentos asociados
     // void memory_destroy(void *memory, t_list *segmentTable);

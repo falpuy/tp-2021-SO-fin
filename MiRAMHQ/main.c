@@ -672,6 +672,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           idPCBkey = string_itoa(idPCB);
 
           char *tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
+          // printf("La tarea a enviar es:%s\n",tarea);
 
           free(idPCBkey);
 

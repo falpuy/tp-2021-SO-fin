@@ -57,7 +57,7 @@ void validarSuperBloque(){
         void* sb_memoria = (char*) mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques / 8, PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
         memBitmap = malloc(cantidadBloques/8);
         bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
-        
+
         for(int i=0; i<cantidadBloques; i++){
             bitarray_clean_bit(bitmap,i);    
         }

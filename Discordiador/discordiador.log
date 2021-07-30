@@ -1,0 +1,7 @@
+[INFO] 23:45:04:868 discordiador/(14062:14062): Intentando conexion a IP: 127.0.0.1 y PORT: 5001 ..
+[INFO] 23:45:05:097 discordiador/(14062:14062): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:45:05:118 discordiador/(14062:14062): Intentando conexion a IP: 127.0.0.1 y PORT: 5002 ..
+[INFO] 23:45:05:119 discordiador/(14062:14062): [Shared Library]: Conexion exitosa. (╯°o°)ᕗ
+[INFO] 23:45:09:275 discordiador/(14062:14062): N° proceso: 14062
+[INFO] 23:45:10:736 discordiador/(14062:14086): [Shared Library]: Se creo un socket listenner en el puerto: 5000 
+[INFO] 23:45:10:762 discordiador/(14062:14086): [Shared Library]: Esperando conexiones en puerto: 5000

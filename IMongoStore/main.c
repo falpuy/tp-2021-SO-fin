@@ -14,9 +14,9 @@ int main() {
     signal(SIGUSR1, sabotaje);
 
     log_info(logger, "Creando servidor......");
-    sleep(1);
     
     pthread_create(&sync_blocks,NULL,(void*) actualizarArchivoBlocks, logger);
+    // pthread_detach(sync_blocks);
     _start_server(datosConfig->puerto,handler,logger);
 
     return 0;
@@ -61,6 +61,7 @@ void finalizarProceso(){
     pthread_mutex_lock(&validador);
     flagEnd = 0;
     pthread_mutex_unlock(&validador);
+
     pthread_join(sync_blocks,NULL);
     int contador_temp = 0;
 

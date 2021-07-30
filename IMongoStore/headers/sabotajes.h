@@ -19,6 +19,7 @@
     #include <unnamed/socket.h>
     #include <string.h>
     #include <commons/bitarray.h>
+    #include <sys/stat.h>
     
     enum COMANDOS{
         OBTENER_BITACORA = 760 ,
@@ -76,9 +77,9 @@
     void validacionFiles();
     void validarCantidadBloques();
     void validarBitmapSabotaje();
-    void corregirBitmap(int encontroVacio);
-    void corregirBitmapTripulantes(int encontroVacio);
-    void corregirBitmapRecursos(int encontroVacio);
+    void corregirBitmap(int encontroVacio,t_bitarray* bitmapTemp);
+    void corregirBitmapTripulantes(int encontroVacio,t_bitarray* bitmapTemp);
+    void corregirBitmapRecursos(int encontroVacio,t_bitarray* bitmapTemp);
     void validarSizeFile();
     void validarSizeRecurso(char* path);
     void validarBlocksBlockCount();
@@ -90,6 +91,6 @@
 
     char* pathCompleto(char* strConcatenar);
     char* crearStrTripulante(int idTripulante);
-
+    char* queRecurso(char* path);
     
 #endif

@@ -115,19 +115,20 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
 }
 
 void destruirTCB(void* nodo){
-    // tcb* tcbADestruir = (tcb*) nodo;
-    // if(tcbADestruir){
-    //     if(tcbADestruir->instruccion_actual){
-    //         //free(tcbADestruir->instruccion_actual);
-    //     }
-    // }
+     tcb* tcbADestruir = (tcb*) nodo;
+     if(tcbADestruir){
+         if(tcbADestruir->instruccion_actual){
+             free(tcbADestruir->instruccion_actual);
+        }
+     }
+     free(tcbADestruir);
 }
 
 void destruirPCB(void* nodo){
     pcb* pcbADestruir = (pcb*) nodo;
-    //free(pcbADestruir->rutaTareas);
+    free(pcbADestruir->rutaTareas);
     list_destroy_and_destroy_elements(pcbADestruir->listaTCB, destruirTCB);
-    //free(pcbADestruir);
+    free(pcbADestruir);
 }
 
 

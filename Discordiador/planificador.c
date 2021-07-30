@@ -635,10 +635,11 @@ void funcionhExit (t_log* logger){
                 pthread_mutex_lock(&mutexListaPCB);
                 list_iterate(listaPCB, eliminarPatotaEnRAM);
                 pthread_mutex_unlock(&mutexListaPCB);
-                log_info(logger,"Se ejecutó Exit");
-                log_info(logger,"----------------------------------");
+                if(!queue_is_empty(cola_new) || !queue_is_empty(ready) ||  !queue_is_empty(exec) || !queue_is_empty(bloq_io) || !queue_is_empty(bloq_emer)){
+                    log_info(logger,"Se ejecutó Exit");
+                    log_info(logger,"----------------------------------");
+                }
             }
-
         }
         
         sem_post(&semNR);

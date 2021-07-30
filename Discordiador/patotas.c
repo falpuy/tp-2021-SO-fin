@@ -115,17 +115,17 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
 }
 
 void destruirTCB(void* nodo){
-    tcb* tcbADestruir = (tcb*) nodo;
-    if(tcbADestruir){
-        if(tcbADestruir->instruccion_actual){
-            free(tcbADestruir->instruccion_actual);
-        }
-    }
+    // tcb* tcbADestruir = (tcb*) nodo;
+    // if(tcbADestruir){
+    //     if(tcbADestruir->instruccion_actual){
+    //         //free(tcbADestruir->instruccion_actual);
+    //     }
+    // }
 }
 
 void destruirPCB(void* nodo){
     pcb* pcbADestruir = (pcb*) nodo;
-    free(pcbADestruir->rutaTareas);
+    //free(pcbADestruir->rutaTareas);
     list_destroy_and_destroy_elements(pcbADestruir->listaTCB, destruirTCB);
     //free(pcbADestruir);
 }
@@ -169,10 +169,10 @@ void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param, int mensajeInicialIM
     parametrosThread* parametros = (parametrosThread*) param;
     if(tripulante->estaVivoElHilo && planificacion_viva){// SI ESTÁ VIVO EL TRIPULANTE (HILO)
         if(sabotaje_activado){
-            resolviendoSabotaje((void*) &tripulante, (void*) &parametros);
+            resolviendoSabotaje((void*) tripulante, (void*) parametros);
         }
         else{
-            operandoSinSabotaje((void*) &tripulante, (void*) &parametros, mensajeInicialIMS);
+            operandoSinSabotaje((void*) tripulante, (void*) parametros, mensajeInicialIMS);
         }
     }
     else{
@@ -236,12 +236,15 @@ void operandoSinSabotaje(void* tcbTrip, void* param, int mensajeInicialIMS){
     tcb* tripulante = (tcb*) tcbTrip;
     parametrosThread* parametros = (parametrosThread*) param;
     char** tarea = string_split(tripulante->instruccion_actual, " ");
+    for(int i=0; tarea[i]!=NULL; i++){
+        log_info(logger, "parametro: %s", tarea[i]);
+    }
 
     if (esTareaIO(tarea[0])) {// ES TAREA DE I/O
-        operandoSinSabotajeTareaIO((void*) &tripulante, (void*) &parametros, tarea);
+        operandoSinSabotajeTareaIO((void*) tripulante, (void*) parametros, tarea);
     }
     else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
-        operandoSinSabotajeTareaNormal((void*) &tripulante, (void*) &parametros, tarea, mensajeInicialIMS);    
+        operandoSinSabotajeTareaNormal((void*) tripulante, (void*) parametros, tarea, mensajeInicialIMS);    
     }   
 }
 
@@ -252,8 +255,12 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea, in
     log_info(logger, "[Tripulante %d] Se debe realizar una tarea normal",parametros->idSemaforo);
 
     char** parametrosTarea = string_split(tarea[0], ";");
+    for(int i=0; parametrosTarea[i]!=NULL; i++){
+        log_info(logger, "parametro: %s", parametrosTarea[i]);
+    }
     char* nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
     strcpy(nombreTareaNormal, parametrosTarea[0]);
+    log_info(logger, "nombre de tarea (tarea normal): %s", nombreTareaNormal);
     int posicionX = atoi(parametrosTarea[1]);
     int posicionY = atoi(parametrosTarea[2]);
     int tiempoTarea = atoi(parametrosTarea[3]);
@@ -313,14 +320,15 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea, in
         }
     }
     free(nombreTareaNormal);
-    free(parametrosTarea[0]);
-    free(parametrosTarea[1]);
-    free(parametrosTarea[2]);
-    free(parametrosTarea[3]);
+    for(int i =0; parametrosTarea[i]!=NULL; i++){
+        free(parametrosTarea[i]);
+    }
     free(parametrosTarea);
-    free(tarea[0]);
-    free(tarea[1]);
+    for(int i =0; tarea[i]!=NULL; i++){
+        free(tarea[i]);
+    }
     free(tarea);
+
 }
 
 void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
@@ -329,6 +337,9 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
     parametrosThread* parametros = (parametrosThread*) param;
     
     char** parametrosTarea = string_split(tarea[1], ";");
+    for(int i=0; parametrosTarea[i]!=NULL; i++){
+        log_info(logger, "parametro: %s", parametrosTarea[i]);
+    }
     int parametroIO = atoi(parametrosTarea[0]);
     int posicionX = atoi(parametrosTarea[1]);
     int posicionY = atoi(parametrosTarea[2]);
@@ -352,8 +363,6 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
         tripulante->status = 'I';
         tripulante->ciclosCumplidos = 0;
         log_info(logger, "[Tripulante %d] Se debe realizar una tarea de I/O",parametros->idSemaforo);
-        sleep(ciclo_CPU);
-        free(tarea[1]); //chequear esto
     }
     else{// NO LLEGÓ A LA POSICIÓN DE LA TAREA
         moverTripulanteUno(tripulante, posicionX, posicionY);
@@ -365,12 +374,13 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
             log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
         }
     }
-    free(parametrosTarea[0]);
-    free(parametrosTarea[1]);
-    free(parametrosTarea[2]);
-    free(parametrosTarea[3]);
+    for(int i =0; parametrosTarea[i]!=NULL; i++){
+        free(parametrosTarea[i]);
+    }
     free(parametrosTarea);
-    free(tarea[0]);
+    for(int i =0; tarea[i]!=NULL; i++){
+        free(tarea[i]);
+    }
     free(tarea);
 }
 

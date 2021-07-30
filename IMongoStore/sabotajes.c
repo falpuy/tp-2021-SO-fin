@@ -23,16 +23,16 @@ void sabotaje(){
 }
 
 void protocolo_fsck(){
-    log_info(logger,"-------------------------------------------------");
+    log_info(logger,"////////////////////////////////////////");
     log_info(logger, "Comenzando Protocolo:FSCK...");
     validacionSuperBloque();
     validacionFiles();
     log_info(logger, "Finalizando Protocolo:FSCK..");
-    log_info(logger,"-------------------------------------------------");
+    log_info(logger,"///////////////////////////////////////");
 }
 void validacionSuperBloque(){
     validarCantidadBloques();
-    //validarBitmapSabotaje();
+    validarBitmapSabotaje();
 }
 void validacionFiles(){
     validarSizeFile();
@@ -48,54 +48,83 @@ void validarCantidadBloques(){
     memcpy(&cantidadBloquesDisco, superBloqueTemp + sizeof(uint32_t), sizeof(uint32_t));
     munmap(superBloqueTemp,sizeof(uint32_t)*2);
 
+    uint32_t cantidadTemporal;
+    int sizeBlocks;
+    
+    struct stat st;
+    stat("./Filesystem/Blocks.ims", &st);
+    sizeBlocks= st.st_size;
+
+    cantidadTemporal = (uint32_t) sizeBlocks / tamanioBloque;
+
     if(cantidadBloques == cantidadBloquesDisco){
         log_info(logger,"Cantidad de bloques... OK");
     }else{
-        log_info(logger, "Cantidad de Bloques... NOT OK");
-        log_info(logger,"Reparación: Se sobreescribe la cantidadBloques en sistema con la del disco");
+        log_info(logger, "Cantidad de Bloques... NOT OK.");
+        log_info(logger,"Reparación: Se sobreescribe la cantidadBloques");
 
-        cantidadBloques = cantidadBloquesDisco;
+        cantidadBloques = cantidadTemporal;
         log_info(logger, "Finalizó reparación de cantidadBloques");
     }
     close(archSB);
 }
 
 void validarBitmapSabotaje(){
+    char* strTestear;
+    char* strVacio;
 
-    for(int i = 0; i< cantidadBloques; i++){
+    int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+    void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
     
-        int testBitmap = bitarray_test_bit(bitmap,i);
-        char* strTestear = malloc(3);
+    void* memBitmapTemp = malloc(cantidadBloques/8);
+    memcpy(memBitmapTemp, superBloqueTemp + sizeof(uint32_t)*2, cantidadBloques/8);
+    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
 
+    t_bitarray* bitmapLevantado = bitarray_create_with_mode((char*) memBitmapTemp,cantidadBloques/8,MSB_FIRST);
+    
+    for(int i = 0; i<cantidadBloques; i++){
+        int testBitmap = bitarray_test_bit(bitmapLevantado,i);
+        strTestear = malloc(tamanioBloque + 1);
+        strVacio = malloc(tamanioBloque + 1);
+        memset(strVacio,' ',tamanioBloque);
+        strVacio[tamanioBloque] = '\0';
+
+        int value;
         if(testBitmap){//Hay algo en bitmap
-            memcpy(strTestear, copiaBlocks + i* tamanioBloque,2);
-            strTestear[2] ='\0';
+            memcpy(strTestear, copiaBlocks + i * tamanioBloque,tamanioBloque);
+            strTestear[tamanioBloque] = '\0';
 
-            if(!strcmp(strTestear,"  ")){
+            value = strcmp(strTestear,strVacio);
+            if(value == 0){ //si es vacio lo que levante
                 log_info(logger,"Error en el bloque:%d. Bloque realmente vacio. Se cambia en bitmap",i);
-                corregirBitmap(1);
+                corregirBitmap(1,bitmapLevantado);
             }
-            free(strTestear);
-
+            
         }else if(testBitmap == 0){ 
-            memcpy(strTestear, copiaBlocks + i* tamanioBloque,2);   
-            strTestear[2] ='\0';
+            memcpy(strTestear, copiaBlocks + i*tamanioBloque,tamanioBloque);   
+            strTestear[tamanioBloque] ='\0';
 
-            if(strcmp(strTestear,"  ")){
+            value = strcmp(strTestear,strVacio);
+            if(value != 0){ 
                 log_info(logger, "Error en el bloque:%d. Bloque no esta vacio. Se cambia en bitmap",i);
-                corregirBitmap(0);
+                corregirBitmap(0,bitmapLevantado);
             }
-            free(strTestear);
-
         }
+        free(strTestear);
+        free(strVacio);
     }
     log_info(logger,"Validacion Bitmap... OK");
+    
+    bitarray_destroy(bitmapLevantado);
+    free(memBitmapTemp);
+
+
 }
-void corregirBitmap(int encontroVacio){
-    corregirBitmapTripulantes(encontroVacio);
-    corregirBitmapRecursos(encontroVacio);
+void corregirBitmap(int encontroVacio, t_bitarray* bitmapTemp){
+    corregirBitmapTripulantes(encontroVacio, bitmapTemp);
+    corregirBitmapRecursos(encontroVacio, bitmapTemp);
 }
-void corregirBitmapTripulantes(int encontroVacio){
+void corregirBitmapTripulantes(int encontroVacio, t_bitarray* bitmapTemp){
     log_info(logger,"-----------------------------------------------------");
     log_info(logger, "Correccion Bitmap: Tripulantes");
     
@@ -111,7 +140,7 @@ void corregirBitmapTripulantes(int encontroVacio){
 
 
     while(access(path_tripulante,F_OK) >= 0){
-        t_config* metadata = config_create(pathCompleto(path_tripulante));
+        t_config* metadata = config_create(path_tripulante);
         char** listaBloques = config_get_array_value(metadata,"BLOCKS");
         int contador = 0;
 
@@ -119,14 +148,14 @@ void corregirBitmapTripulantes(int encontroVacio){
             contador++;
         }
 
-        for(int i = 0; i <= contador; i++){
+        for(int i = 0; i < contador; i++){
             int posicion = atoi(listaBloques[i]);
             if(encontroVacio){
-                bitarray_clean_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_clean_bit(bitmapTemp,posicion);
+                memcpy(copiaSB+sizeof(int)*2,bitmapTemp->bitarray,cantidadBloques/8);
             }else{
-                bitarray_set_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_set_bit(bitmapTemp,posicion);
+                memcpy(copiaSB+sizeof(int)*2,bitmapTemp->bitarray,cantidadBloques/8);
             }
         }
 
@@ -150,7 +179,7 @@ void corregirBitmapTripulantes(int encontroVacio){
     }
 
 }
-void corregirBitmapRecursos(int encontroVacio){
+void corregirBitmapRecursos(int encontroVacio, t_bitarray* bitmapTemp){
     log_info(logger,"-----------------------------------------------------");
     log_info(logger, "Correccion Bitmap: Recursos");
     
@@ -172,11 +201,11 @@ void corregirBitmapRecursos(int encontroVacio){
         for(int i = 0; i < contador; i++){
             int posicion = atoi(bloquesOxigeno[i]);
             if(encontroVacio){
-                bitarray_clean_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_clean_bit(bitmapTemp,posicion);
+                memcpy(copiaSB+sizeof(int)*2,bitmapTemp->bitarray,cantidadBloques/8);
             }else{
-                bitarray_set_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_set_bit(bitmapTemp,posicion);
+                memcpy(copiaSB+sizeof(int)*2,bitmapTemp->bitarray,cantidadBloques/8);
             }
         }
 
@@ -199,11 +228,11 @@ void corregirBitmapRecursos(int encontroVacio){
         for(int i = 0; i < contador; i++){
             int posicion = atoi(listaBloques2[i]);
             if(encontroVacio){
-                bitarray_clean_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_clean_bit(bitmapTemp,posicion);
+                memcpy(copiaSB+sizeof(int)*2,bitmapTemp->bitarray,cantidadBloques/8);
             }else{
-                bitarray_set_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_set_bit(bitmapTemp,posicion);
+                memcpy(copiaSB+sizeof(int)*2,bitmapTemp->bitarray,cantidadBloques/8);
             }
         }
 
@@ -225,11 +254,11 @@ void corregirBitmapRecursos(int encontroVacio){
         for(int i = 0; i < contador; i++){
             int posicion = atoi(listaBloques3[i]);
             if(encontroVacio){
-                bitarray_clean_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_clean_bit(bitmapTemp,posicion);
+                memcpy(copiaSB+sizeof(int)*2,bitmapTemp->bitarray,cantidadBloques/8);
             }else{
-                bitarray_set_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_set_bit(bitmapTemp,posicion);
+                memcpy(copiaSB+sizeof(int)*2,bitmapTemp->bitarray,cantidadBloques/8);
             }
         }
 
@@ -251,9 +280,14 @@ void validarSizeFile(){
     char* path_comida = pathCompleto("Files/Comida.ims");
     char* path_basura = pathCompleto("Files/Basura.ims");
     
+    log_info(logger,"---------------------------------------------");
+    log_info(logger,"Validando los Sizes de los Files");
+
     validarSizeRecurso(path_oxigeno);
     validarSizeRecurso(path_comida);
     validarSizeRecurso(path_basura);
+    log_info(logger,"---------------------------------------------");
+
 
     free(path_basura);
     free(path_comida);
@@ -263,7 +297,7 @@ void validarSizeFile(){
 void validarSizeRecurso(char* path){
     
     if(access(path,F_OK) >= 0){
-
+        log_info(logger,"Validando el size del Recurso:%s",path);
         t_config* metadata = config_create(path);
         int size = config_get_int_value(metadata,"SIZE");
         char** listaBloques = config_get_array_value(metadata,"BLOCKS");
@@ -330,10 +364,13 @@ void validarBlocksBlockCount(){
     char* path_comida = pathCompleto("Files/Comida.ims");
     char* path_basura = pathCompleto("Files/Basura.ims");
 
+    log_info(logger,"---------------------------------------------");
+    log_info(logger,"Validando los Blocks+BlockCount de los Files");
 
     validarBlockCountRecurso(path_oxigeno);
     validarBlockCountRecurso(path_comida);
     validarBlockCountRecurso(path_basura);
+    log_info(logger,"---------------------------------------------");
 
     free(path_comida);
     free(path_basura);
@@ -377,9 +414,12 @@ void validacionBlocks(){
     char* path_comida = pathCompleto("Files/Comida.ims");
     char* path_basura = pathCompleto("Files/Basura.ims");
 
+    log_info(logger,"---------------------------------------------");
+    log_info(logger,"Validando los Blocks de los Files");
     validarBlocksRecursos(path_oxigeno);
     validarBlocksRecursos(path_comida);
     validarBlocksRecursos(path_basura);
+    log_info(logger,"---------------------------------------------");
 
     free(path_oxigeno);
     free(path_comida);
@@ -387,12 +427,19 @@ void validacionBlocks(){
 }
 
 void validarBlocksRecursos(char* path){
-    log_info(logger, "El path que esta testeando Blocks.ims:%s",path);
+    char* recurso = queRecurso(path);
+    log_info(logger, "Validando Blocks del Recurso:  %s",recurso);
+    free(recurso);
+    
     int archBloques = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
-    void* blocks_memory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
-        
-    if(access(path,F_OK) >= 0){
+    void* falsoMemory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
+    
+    void* copiaSB2 = malloc(tamanioBloque*cantidadBloques);
+    memcpy(copiaSB2,falsoMemory,tamanioBloque * cantidadBloques);
+    munmap(falsoMemory, tamanioBloque * cantidadBloques);
 
+    if(access(path,F_OK) == 0){
+        log_info(logger, "Holi");
         t_config* metadata = config_create(path);
         char** listaBloques = config_get_array_value(metadata,"BLOCKS");
         char* md5 = config_get_string_value(metadata,"MD5");
@@ -408,7 +455,6 @@ void validarBlocksRecursos(char* path){
         }
 
         char* md5Temporal = malloc(32 + 1); //32 + \0  
-
         for(int i = 0; i < contador; i++){
             int contadorTamanio = 0;
             char* temporal;
@@ -416,10 +462,9 @@ void validarBlocksRecursos(char* path){
             
             while(contadorTamanio != tamanioBloque){
                 temporal = malloc(2);
-                memcpy(temporal, blocks_memory + bloque * tamanioBloque + contadorTamanio, 1);
+                memcpy(temporal, copiaSB2 + bloque * tamanioBloque + contadorTamanio, 1);
                 temporal[1] = '\0';
 
-                log_info(logger, "String temporal:%s", temporal);
                 string_append(&string_temp,temporal);
                 free(temporal);
                 contadorTamanio++;  
@@ -427,19 +472,14 @@ void validarBlocksRecursos(char* path){
             bloquesHastaAhora++;
         }
         int tamanioStringTemporal = string_length(string_temp);
-        // log_info(logger, "El string que levante: %s y su tamaño es:%d", string_temp, tamanioStringTemporal);
-        
-
+    
         //Borro los ultimos espacios
-
         while(string_temp[tamanioStringTemporal - 1] == ' '){
             tamanioStringTemporal--;
         }
         string_temp[tamanioStringTemporal] = '\0';
 
-        // log_info(logger, "El string que levante: %s y su tamaño es:%d", string_temp, tamanioStringTemporal);
-
-
+        //creo el nuevo MD5 
         FILE* archivo = fopen("temporal.txt","w");
         fprintf(archivo,"%s",string_temp);
         fclose(archivo);
@@ -477,20 +517,17 @@ void validarBlocksRecursos(char* path){
             for(int i = 0; i < contador; i++){
                 bloque = atoi(listaBloques[i]);
                 if((contador - bloquesHastaAhora) > 1){ //no es el ultimo bloque-->no hay frag. interna
-                    
-                    memset(blocks_memory + bloque * tamanioBloque ,charPegar,tamanioBloque);
+                    memset(falsoMemory + bloque * tamanioBloque ,charPegar,tamanioBloque);
                     sizeTemporal -= tamanioBloque;
                     bloquesHastaAhora++;
                 }else{
-                    memset(blocks_memory + bloque * tamanioBloque ,' ',tamanioBloque);
-                    memset(blocks_memory + bloque * tamanioBloque,charPegar,sizeTemporal);
+                    memset(falsoMemory + bloque * tamanioBloque ,' ',tamanioBloque);
+                    memset(falsoMemory + bloque * tamanioBloque,charPegar,sizeTemporal);
                     bloquesHastaAhora++;
                 }
             }
             log_info(logger, "Se Restauró Blocks de la metadata.");
-
         }
-
         config_destroy(metadata);
         free(string_temp);
         for(int i = 0; i <= contador; i++){
@@ -498,13 +535,10 @@ void validarBlocksRecursos(char* path){
         }
         free(listaBloques);
         free(md5Temporal);
-    
-        
-    }
 
-    munmap(blocks_memory,tamanioBloque*cantidadBloques);
-    close(archBloques);
-    
+    }
+    // munmap(blocks_memory,tamanioBloque*cantidadBloques);
+    close(archBloques);   
 }
 
 
@@ -519,4 +553,28 @@ char* crearStrTripulante(int idTripulante){
     free(posicion);
     string_append(&tripulante,".ims");
     return tripulante;
+}
+
+char* queRecurso(char* path){
+    char* pathTemp = pathCompleto("Files/Oxigeno.ims");
+    char* recurso = string_new();
+    if(!strcmp(path,pathTemp)){
+        string_append(&recurso,"Oxigeno");
+        return recurso;
+    }
+    free(pathTemp);
+    pathTemp = pathCompleto("Files/Comida.ims");
+    
+    if(!strcmp(path,pathTemp)){
+        string_append(&recurso,"Comida");
+        return recurso;
+    }
+    free(pathTemp);
+    pathTemp = pathCompleto("Files/Basura.ims");
+    if(!strcmp(path,pathTemp)){
+        string_append(&recurso,"Basura");
+        free(pathTemp);
+        return recurso;
+    }
+    return "NoName";
 }

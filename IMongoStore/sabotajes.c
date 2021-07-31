@@ -41,6 +41,7 @@ void validacionFiles(){
 }
 
 void validarCantidadBloques(){
+    log_info(logger,"---------------------------------------------------------");
     int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
     void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
     
@@ -48,14 +49,12 @@ void validarCantidadBloques(){
     memcpy(&cantidadBloquesDisco, superBloqueTemp + sizeof(uint32_t), sizeof(uint32_t));
     munmap(superBloqueTemp,sizeof(uint32_t)*2);
 
-    uint32_t cantidadTemporal;
-    int sizeBlocks;
-    
+    int sizeBlocks;    
     struct stat st;
     stat("./Filesystem/Blocks.ims", &st);
     sizeBlocks= st.st_size;
 
-    cantidadTemporal = (uint32_t) sizeBlocks / tamanioBloque;
+    uint32_t cantidadTemporal = (uint32_t) sizeBlocks / tamanioBloque;
 
     if(cantidadBloques == cantidadBloquesDisco){
         log_info(logger,"Cantidad de bloques... OK");
@@ -67,27 +66,40 @@ void validarCantidadBloques(){
         superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
         memcpy(superBloqueTemp + sizeof(uint32_t), &cantidadBloques, sizeof(uint32_t));
         msync(superBloqueTemp, sizeof(uint32_t)*2 + cantidadBloques/8, MS_SYNC);
+        munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
 
         log_info(logger, "Finalizó reparación de cantidadBloques");
     }
     close(archSB);
+    log_info(logger,"---------------------------------------------------------");
+    
 }
 
 void validarBitmapSabotaje(){
     char* strTestear;
     char* strVacio;
 
-    int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
-    void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
-
-    memcpy(copiaSB, superBloqueTemp, sizeof(uint32_t)*2 + cantidadBloques/8);
-    void* memBitmapTemp = malloc(cantidadBloques/8);
-    memcpy(memBitmapTemp, copiaSB + sizeof(uint32_t)*2, cantidadBloques/8);
-    bitmap = bitarray_create_with_mode((char*) memBitmapTemp,cantidadBloques/8,MSB_FIRST);
-    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+    int _superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+    void* superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
     
+    void* copiaSuperBloque = malloc(sizeof(uint32_t ) * 2 + cantidadBloques/8);
+    void* memoriaBitmap = malloc(cantidadBloques/8);
+
+    memcpy(copiaSuperBloque, superBloqueTemp, sizeof(uint32_t ) * 2 + cantidadBloques/8);
+    memcpy(memoriaBitmap, superBloqueTemp + sizeof(uint32_t) *2, cantidadBloques/8);
+    t_bitarray* bitmapFalso = bitarray_create_with_mode((char*) memoriaBitmap,cantidadBloques/8,MSB_FIRST);
+
+    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+
+    
+    // log_info(logger, "Lo levantado bitmap:\n");
+    // for(int i=0; i < cantidadBloques; i++){
+    //     printf("%d", bitarray_test_bit(bitmapFalso,i));
+    // }
+   
     for(int i = 0; i<cantidadBloques; i++){
-        int testBitmap = bitarray_test_bit(bitmap,i);
+        int testBitmap = bitarray_test_bit(bitmapFalso,i);
+        
         strTestear = malloc(tamanioBloque + 1);
         strVacio = malloc(tamanioBloque + 1);
         memset(strVacio,' ',tamanioBloque);
@@ -98,36 +110,54 @@ void validarBitmapSabotaje(){
             memcpy(strTestear, copiaBlocks + i * tamanioBloque,tamanioBloque);
             strTestear[tamanioBloque] = '\0';
             value = strcmp(strTestear,strVacio);
+            // log_info(logger, "Lo levantado es:%s del bloque:%d,", strTestear,i);
+        
             if(value == 0){ //si es vacio lo que levante
                 log_info(logger,"Error en el bloque:%d. Bloque realmente vacio. Se cambia en bitmap",i);
-                corregirBitmap(1);
+                bitarray_clean_bit(bitmapFalso,i);
+                memcpy(copiaSuperBloque + sizeof(uint32_t) * 2, bitmapFalso->bitarray, cantidadBloques/8);
+                // corregirBitmap(1,bitmapFalso, copiaSuperBloque);
             }
         }else if(testBitmap == 0){ 
             memcpy(strTestear, copiaBlocks + i*tamanioBloque,tamanioBloque);   
             strTestear[tamanioBloque] ='\0';
-
             value = strcmp(strTestear,strVacio);
+
+            // log_info(logger, "Lo levantado es:%s, del bloque:%d,", strTestear,i);
             if(value != 0){ 
                 log_info(logger, "Error en el bloque:%d. Bloque no esta vacio. Se cambia en bitmap",i);
-                corregirBitmap(0);
+                bitarray_set_bit(bitmapFalso,i);
+                memcpy(copiaSuperBloque + sizeof(uint32_t) * 2, bitmapFalso->bitarray, cantidadBloques/8);
+                // corregirBitmap(0,bitmapFalso, copiaSuperBloque);
             }
         }
         free(strTestear);
         free(strVacio);
     }
-    log_info(logger,"Validacion Bitmap... OK");
-    
-    msync(copiaSB, sizeof(uint32_t) * 2 + cantidadBloques/8, 0);
-    free(memBitmapTemp);
-    close(archSB);
+    // log_info(logger,"Validacion Bitmap... OK");
+
+    // for(int i=0; i < cantidadBloques; i++){
+    //     printf("%d", bitarray_test_bit(bitmapFalso,i));
+    // }
+
+    superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
+    memcpy(superBloqueTemp, copiaSuperBloque, sizeof(uint32_t) * 2 + cantidadBloques/8);
+    msync(superBloqueTemp, sizeof(uint32_t) * 2 + cantidadBloques/8, 0);
+    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+
+
+    free(copiaSuperBloque);
+    bitarray_destroy(bitmapFalso);
+    free(memoriaBitmap);
+    close(_superBloque);
 
 
 }
-void corregirBitmap(int encontroVacio){
-    corregirBitmapTripulantes(encontroVacio);
-    corregirBitmapRecursos(encontroVacio);
+void corregirBitmap(int encontroVacio, t_bitarray* bitmapFalso, void* copiaSuperBloque){
+    corregirBitmapTripulantes(encontroVacio,bitmapFalso, copiaSuperBloque);
+    corregirBitmapRecursos(encontroVacio,bitmapFalso, copiaSuperBloque);
 }
-void corregirBitmapTripulantes(int encontroVacio){
+void corregirBitmapTripulantes(int encontroVacio,t_bitarray* bitmapFalso, void* copiaSuperBloque){
     log_info(logger,"-----------------------------------------------------");
     log_info(logger, "Correccion Bitmap: Tripulantes");
     
@@ -153,11 +183,11 @@ void corregirBitmapTripulantes(int encontroVacio){
         for(int i = 0; i < contador; i++){
             int posicion = atoi(listaBloques[i]);
             if(encontroVacio){
-                bitarray_clean_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_clean_bit(bitmapFalso,posicion);
+                memcpy(copiaSuperBloque+sizeof(int)*2,bitmapFalso->bitarray,cantidadBloques/8);
             }else{
-                bitarray_set_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_set_bit(bitmapFalso,posicion);
+                memcpy(copiaSuperBloque+sizeof(int)*2,bitmapFalso->bitarray,cantidadBloques/8);
             }
         }
         for(int i = 0; i < contador; i++){
@@ -181,7 +211,7 @@ void corregirBitmapTripulantes(int encontroVacio){
     free(path_tripulante);
 
 }
-void corregirBitmapRecursos(int encontroVacio){
+void corregirBitmapRecursos(int encontroVacio,t_bitarray* bitmapFalso, void* copiaSuperBloque){
     log_info(logger,"-----------------------------------------------------");
     log_info(logger, "Correccion Bitmap: Recursos");
     
@@ -203,11 +233,11 @@ void corregirBitmapRecursos(int encontroVacio){
         for(int i = 0; i < contador; i++){
             int posicion = atoi(bloquesOxigeno[i]);
             if(encontroVacio){
-                bitarray_clean_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_clean_bit(bitmapFalso,posicion);
+                memcpy(copiaSuperBloque+sizeof(int)*2,bitmapFalso->bitarray,cantidadBloques/8);
             }else{
-                bitarray_set_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_set_bit(bitmapFalso,posicion);
+                memcpy(copiaSuperBloque+sizeof(int)*2,bitmapFalso->bitarray,cantidadBloques/8);
             }
         }
 
@@ -218,7 +248,7 @@ void corregirBitmapRecursos(int encontroVacio){
         config_destroy(metadata);
 
     }else if(access(path_comida,F_OK) >= 0){
-        log_info(logger, "Correccion Bitmap: Comida");
+        log_info(logger, "Correccion _Bitmap: Comida");
         t_config* metadata1 = config_create(path_comida);
         char** listaBloques2 = config_get_array_value(metadata1,"BLOCKS");
         int contador = 0;
@@ -230,11 +260,11 @@ void corregirBitmapRecursos(int encontroVacio){
         for(int i = 0; i < contador; i++){
             int posicion = atoi(listaBloques2[i]);
             if(encontroVacio){
-                bitarray_clean_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_clean_bit(bitmapFalso,posicion);
+                memcpy(copiaSuperBloque+sizeof(int)*2,bitmapFalso->bitarray,cantidadBloques/8);
             }else{
-                bitarray_set_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_set_bit(bitmapFalso,posicion);
+                memcpy(copiaSuperBloque+sizeof(int)*2,bitmapFalso->bitarray,cantidadBloques/8);
             }
         }
 
@@ -245,7 +275,7 @@ void corregirBitmapRecursos(int encontroVacio){
         config_destroy(metadata1);
 
     }else if(access(path_basura,F_OK) >= 0){
-        log_info(logger, "Correccion Bitmap: Basura");
+        log_info(logger, "Correccion _Bitmap: Basura");
         t_config* metadata2 = config_create(path_basura);
         char** listaBloques3 = config_get_array_value(metadata2,"BLOCKS");
         int contador = 0;
@@ -256,11 +286,11 @@ void corregirBitmapRecursos(int encontroVacio){
         for(int i = 0; i < contador; i++){
             int posicion = atoi(listaBloques3[i]);
             if(encontroVacio){
-                bitarray_clean_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_clean_bit(bitmapFalso,posicion);
+                memcpy(copiaSuperBloque+sizeof(int)*2,bitmapFalso->bitarray,cantidadBloques/8);
             }else{
-                bitarray_set_bit(bitmap,posicion);
-                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+                bitarray_set_bit(bitmapFalso,posicion);
+                memcpy(copiaSuperBloque+sizeof(int)*2,bitmapFalso->bitarray,cantidadBloques/8);
             }
         }
 

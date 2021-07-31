@@ -48,7 +48,7 @@ void validarSuperBloque(){
         
         if(superBloque<0){
             log_error(logger, "Error al abrir/crear Superbloque");
-            perror("///////////////////////////////////////////////////////////////////////////Es:");
+            perror("El error al abrir:");
         }
         
         posix_fallocate(superBloque, 0, sizeof(uint32_t) * 2 + cantidadBloques / 8);
@@ -57,7 +57,7 @@ void validarSuperBloque(){
         
         void* sb_memoria = (char*) mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques / 8, PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
         if(sb_memoria == MAP_FAILED){
-            perror("///////////////////////////////////////////////////////////////////////////Es:");
+            perror("El error al abrir:");
         }
         memBitmap = malloc(cantidadBloques/8);
         bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
@@ -157,8 +157,6 @@ void validarBlocks(){
         posix_fallocate(blocks, 0, tamanioAGuardar);        
         close(blocks);
         free(pathBlocks);
-
-    
 
         log_info(logger, "-----------------------------------------------------");
         log_info(logger, "Se creó archivo Blocks.ims");

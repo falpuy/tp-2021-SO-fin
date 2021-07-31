@@ -48,6 +48,7 @@ void validarSuperBloque(){
         
         if(superBloque<0){
             log_error(logger, "Error al abrir/crear Superbloque");
+            perror("///////////////////////////////////////////////////////////////////////////Es:");
         }
         
         posix_fallocate(superBloque, 0, sizeof(uint32_t) * 2 + cantidadBloques / 8);
@@ -55,6 +56,9 @@ void validarSuperBloque(){
         copiaSB = malloc(tamanioBloque*cantidadBloques + cantidadBloques/8);
         
         void* sb_memoria = (char*) mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques / 8, PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
+        if(sb_memoria == MAP_FAILED){
+            perror("///////////////////////////////////////////////////////////////////////////Es:");
+        }
         memBitmap = malloc(cantidadBloques/8);
         bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
 
@@ -79,7 +83,6 @@ void validarSuperBloque(){
             log_error(logger, "[SuperBloque] Error de sincronizar a disco SuperBloque");
         }
 
-        close(superBloque);
         err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques / 8);
         if (err == -1){
             log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada de tamañoBloque y cantidadBloque");

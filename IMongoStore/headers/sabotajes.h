@@ -77,9 +77,10 @@
     void validacionFiles();
     void validarCantidadBloques();
     void validarBitmapSabotaje();
-    void corregirBitmap(int encontroVacio,t_bitarray* bitmapTemp);
-    void corregirBitmapTripulantes(int encontroVacio,t_bitarray* bitmapTemp);
-    void corregirBitmapRecursos(int encontroVacio,t_bitarray* bitmapTemp);
+
+    void corregirBitmap(int encontroVacio);
+    void corregirBitmapTripulantes(int encontroVacio);
+    void corregirBitmapRecursos(int encontroVacio);
     void validarSizeFile();
     void validarSizeRecurso(char* path);
     void validarBlocksBlockCount();

@@ -45,6 +45,15 @@ int main() {
 
     hasLRU = !strcmp(config_get_string_value(config, "ALGORITMO_REEMPLAZO"), "LRU");
 
+    pthread_mutex_init(&m_memoria, NULL);
+    pthread_mutex_init(&m_virtual, NULL);
+    pthread_mutex_init(&mbitmap, NULL);
+    pthread_mutex_init(&mbitmapv, NULL);
+    pthread_mutex_init(&mtablasegmentos, NULL);
+    pthread_mutex_init(&mtablapaginas, NULL);
+    pthread_mutex_init(&mdictionary, NULL);
+    pthread_mutex_init(&madmin, NULL);
+
     // Creo el mapa
     // pthread_t map_thread;
     // pthread_create(&map_thread, NULL,(void*) create_map, NULL);
@@ -129,6 +138,15 @@ void signal_handler(int sig_number) {
 
       // nivel_destruir(nivel);
       // nivel_gui_terminar();
+
+      pthread_mutex_destroy(&m_memoria);
+      pthread_mutex_destroy(&m_virtual);
+      pthread_mutex_destroy(&mbitmap);
+      pthread_mutex_destroy(&mbitmapv);
+      pthread_mutex_destroy(&mtablasegmentos);
+      pthread_mutex_destroy(&mtablapaginas);
+      pthread_mutex_destroy(&mdictionary);
+      pthread_mutex_destroy(&madmin);
 
       log_destroy(logger);
       config_destroy(config);

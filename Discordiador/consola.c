@@ -16,9 +16,6 @@ void funcionConsola(){
                     log_info(logger, "Entró comando: INICIAR_PLANIFICACION");
                     planificacion_viva = 1;  //activa flag para que se ejecuten los hilos
                     log_info(logger, "Se inició la planificación. Estado de la flag: %d", planificacion_viva);
-
-                	free(parametros[0]); 
-                	free(parametros);
                     
                     sem_post(&semNR); //Le avisa a New->Ready q es su turno
                     break;
@@ -28,8 +25,6 @@ void funcionConsola(){
                 	planificacion_viva = 0;
                 	log_info(logger, "Se pausó la planificación.");
 
-                	free(parametros[0]); 
-                	free(parametros);
                     break;
 
                 case C_INICIAR_PATOTA: 
@@ -57,15 +52,7 @@ void funcionConsola(){
                         int cant_tripulantes = atoi(parametros[1]);
                         cantidadActual -= cant_tripulantes;
                     }
-
-                	free(parametros[0]); //iniciarPatota
-                	free(parametros[1]);//5 (en formato de char*)
-                	free(parametros[2]);//listaTareas
                 
-                	for(int i = 3 ; parametros[i] != NULL ; i++){
-                    	free(parametros[i]);
-                    }
-                	free(parametros);
                     break;
 
                 case C_LISTAR_TRIPULANTES:
@@ -88,8 +75,6 @@ void funcionConsola(){
                     }
                     log_info(logger, "--------------------------------------------------------------------");
                 	
-                	free(parametros[0]);
-                	free(parametros);
 
                     break;
 
@@ -148,9 +133,6 @@ void funcionConsola(){
                         log_error(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
                     }
                     
-                    free(parametros[0]);
-                	free(parametros[1]);
-                	free(parametros);
                     break;
 
                 case C_OBTENER_BITACORA: 
@@ -191,16 +173,10 @@ void funcionConsola(){
                     free(mensajeRecibido->identifier);
                     free(mensajeRecibido);
                 
-                    free(parametros[0]);
-                    free(parametros[1]);
-                    free(parametros);
                     break;
                 
                 case C_SALIR: 
                     log_info(logger, "Salimos de la consola");
-                
-                    free(parametros[0]);
-                	free(parametros);
                     
                     liberarMemoria();
                     
@@ -208,10 +184,17 @@ void funcionConsola(){
 
                 default:
                     log_info(logger, "El mensaje ingresado no corresponde a una acción propia del Discordiador");
-                    free(parametros[0]);
-                	free(parametros);
+                    for(int i =0; parametros[i]!=NULL; i++){
+                        free(parametros[i]);
+                    }
+                    free(parametros);
                     break;
             }
+            for(int i =0; parametros[i]!=NULL; i++){
+                free(parametros[i]);
+            }
+            free(parametros);
+
             if (!validador) {
                 break;
             }
@@ -345,14 +328,21 @@ void liberarMemoria(){
     pthread_mutex_lock(&mutexValidador);
     validador = 0;
     pthread_mutex_unlock(&mutexValidador);
-
-    queue_destroy_and_destroy_elements(cola_new, destruirTCB);
-    queue_destroy_and_destroy_elements(ready, destruirTCB);
-    queue_destroy_and_destroy_elements(exec, destruirTCB);        
-    queue_destroy_and_destroy_elements(bloq_io, destruirTCB);
-    queue_destroy_and_destroy_elements(bloq_emer, destruirTCB);
-    queue_destroy_and_destroy_elements(cola_exit, destruirTCB);
-    queue_destroy_and_destroy_elements(bloq_emer_sorted, destruirTCB);
+    
+    queue_clean(cola_new);
+    queue_clean(ready);
+    queue_clean(exec);
+    queue_clean(bloq_io);
+    queue_clean(bloq_emer);
+    queue_clean(cola_exit);
+    queue_clean(bloq_emer_sorted);
+    queue_destroy(cola_new);
+    queue_destroy(ready);
+    queue_destroy(exec);
+    queue_destroy(bloq_io);
+    queue_destroy(bloq_emer);
+    queue_destroy(cola_exit);
+    queue_destroy(bloq_emer_sorted);
     list_destroy_and_destroy_elements(listaPCB, destruirPCB);
 
   	pthread_mutex_destroy(&mutexNew);

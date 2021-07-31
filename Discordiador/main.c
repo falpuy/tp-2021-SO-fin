@@ -115,17 +115,6 @@ void setearConfiguraciones (){
     pthread_detach(hExit);
     pthread_detach(hExecReadyaBloqEmer);
     pthread_detach(hBloqEmeraReady);
-
-    char* bufferAEnviar = string_new();
-    string_append(&bufferAEnviar, "Comienza Discordiador");
-
-    pthread_mutex_lock(&mutexBuffer);
-    buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s",bufferAEnviar);
-    _send_message(conexion_IMS, "DIS", INICIO_DISCORDIADOR, buffer,sizeof(int) + string_length(bufferAEnviar) , logger);
-    
-    free(bufferAEnviar);
-    free(buffer);
-    pthread_mutex_unlock(&mutexBuffer);
 }
 
 void servidor(){

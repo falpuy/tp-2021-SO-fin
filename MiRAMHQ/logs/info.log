@@ -1,0 +1,82 @@
+[INFO] 18:12:28:818 RAM/(12798:12798): PID: 12798
+
+[INFO] 18:12:28:824 RAM/(12798:12798): Esquema utilizado: PAGINACION
+[INFO] 18:12:28:824 RAM/(12798:12798): Tamanio de la memoria: 80
+[INFO] 18:12:28:824 RAM/(12798:12798): Muestro valores del bitmap para REAL..
+[INFO] 18:12:28:825 RAM/(12798:12798): Bit 0: 0
+[INFO] 18:12:28:825 RAM/(12798:12798): Bit 1: 0
+[INFO] 18:12:28:825 RAM/(12798:12798): Bit 2: 0
+[INFO] 18:12:28:826 RAM/(12798:12798): Bit 3: 0
+[INFO] 18:12:28:826 RAM/(12798:12798): Bit 4: 0
+[INFO] 18:12:28:826 RAM/(12798:12798): Bit 5: 0
+[INFO] 18:12:28:826 RAM/(12798:12798): Bit 6: 0
+[INFO] 18:12:28:826 RAM/(12798:12798): Bit 7: 0
+[INFO] 18:12:28:828 RAM/(12798:12798): Muestro valores INICIALES del bitmap para VIRTUAL..
+[INFO] 18:12:28:828 RAM/(12798:12798): Bit 0: 0
+[INFO] 18:12:28:828 RAM/(12798:12798): Bit 1: 0
+[INFO] 18:12:28:829 RAM/(12798:12798): Bit 2: 0
+[INFO] 18:12:28:829 RAM/(12798:12798): Bit 3: 0
+[INFO] 18:12:28:829 RAM/(12798:12798): Bit 4: 0
+[INFO] 18:12:28:829 RAM/(12798:12798): Bit 5: 0
+[INFO] 18:12:28:829 RAM/(12798:12798): Bit 6: 0
+[INFO] 18:12:28:830 RAM/(12798:12798): Bit 7: 0
+[INFO] 18:12:28:830 RAM/(12798:12798): Bit 8: 0
+[INFO] 18:12:28:830 RAM/(12798:12798): Bit 9: 0
+[INFO] 18:12:28:830 RAM/(12798:12798): Bit 10: 0
+[INFO] 18:12:28:830 RAM/(12798:12798): Bit 11: 0
+[INFO] 18:12:28:831 RAM/(12798:12798): Bit 12: 0
+[INFO] 18:12:28:831 RAM/(12798:12798): Bit 13: 0
+[INFO] 18:12:28:831 RAM/(12798:12798): Bit 14: 0
+[INFO] 18:12:28:831 RAM/(12798:12798): Bit 15: 0
+[INFO] 18:12:28:831 RAM/(12798:12798): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 18:12:28:832 RAM/(12798:12798): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 18:12:52:663 RAM/(12798:12798): [Shared Library]: Nueva conexion ID: 7
+[INFO] 18:12:52:675 RAM/(12798:12880): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 20:10:50:075 RAM/(12798:12880): [Shared Library]: El cliente 7 se desconecto.
+[INFO] 20:13:04:984 RAM/(17288:17288): PID: 17288
+
+[INFO] 20:13:04:984 RAM/(17288:17288): Esquema utilizado: PAGINACION
+[INFO] 20:13:04:985 RAM/(17288:17288): Tamanio de la memoria: 80
+[INFO] 20:13:04:985 RAM/(17288:17288): Muestro valores del bitmap para REAL..
+[INFO] 20:13:04:985 RAM/(17288:17288): Bit 0: 0
+[INFO] 20:13:04:985 RAM/(17288:17288): Bit 1: 0
+[INFO] 20:13:04:985 RAM/(17288:17288): Bit 2: 0
+[INFO] 20:13:04:985 RAM/(17288:17288): Bit 3: 0
+[INFO] 20:13:04:985 RAM/(17288:17288): Bit 4: 0
+[INFO] 20:13:04:985 RAM/(17288:17288): Bit 5: 0
+[INFO] 20:13:04:986 RAM/(17288:17288): Bit 6: 0
+[INFO] 20:13:04:986 RAM/(17288:17288): Bit 7: 0
+[INFO] 20:13:04:988 RAM/(17288:17288): Muestro valores INICIALES del bitmap para VIRTUAL..
+[INFO] 20:13:04:988 RAM/(17288:17288): Bit 0: 0
+[INFO] 20:13:04:988 RAM/(17288:17288): Bit 1: 0
+[INFO] 20:13:04:988 RAM/(17288:17288): Bit 2: 0
+[INFO] 20:13:04:988 RAM/(17288:17288): Bit 3: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 4: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 5: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 6: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 7: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 8: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 9: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 10: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 11: 0
+[INFO] 20:13:04:989 RAM/(17288:17288): Bit 12: 0
+[INFO] 20:13:04:990 RAM/(17288:17288): Bit 13: 0
+[INFO] 20:13:04:990 RAM/(17288:17288): Bit 14: 0
+[INFO] 20:13:04:990 RAM/(17288:17288): Bit 15: 0
+[INFO] 20:13:04:990 RAM/(17288:17288): [Shared Library]: Se creo un socket listenner en el puerto: 5001 
+[INFO] 20:13:04:990 RAM/(17288:17288): [Shared Library]: Esperando conexiones en puerto: 5001
+[INFO] 20:13:19:698 RAM/(17288:17288): [Shared Library]: Nueva conexion ID: 7
+[INFO] 20:13:19:709 RAM/(17288:17322): [Shared Library]: Starting new thread for connection handling. Client ID: 7
+[INFO] 20:15:26:805 RAM/(17288:17322): -----------------------------------------------------
+[INFO] 20:15:26:805 RAM/(17288:17322): Llegó la operación: INICIAR_PATOTA 
+[INFO] 20:15:26:806 RAM/(17288:17322): Se guardaron exitosamente los datos de la patota
+[INFO] 20:15:26:806 RAM/(17288:17322): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:15:26:806 RAM/(17288:17322): -----------------------------------------------------
+[INFO] 20:15:26:937 RAM/(17288:17322): -----------------------------------------------------
+[INFO] 20:15:26:937 RAM/(17288:17322): Llegó operación: ENVIAR_PROXIMA_TAREA
+[INFO] 20:15:26:938 RAM/(17288:17322): ID PCB:1
+[INFO] 20:15:26:938 RAM/(17288:17322): ID TCB:0
+[INFO] 20:15:26:938 RAM/(17288:17322): No hay mas tareas que mandar
+[INFO] 20:15:26:938 RAM/(17288:17322): [Shared Library]: ╰( ⁰ ਊ ⁰ )━☆ﾟ.*･｡ﾟ Mensaje enviado correctamente.
+[INFO] 20:15:26:939 RAM/(17288:17322): -----------------------------------------------------
+[INFO] 20:17:33:682 RAM/(17288:17322): [Shared Library]: El cliente 7 se desconecto.

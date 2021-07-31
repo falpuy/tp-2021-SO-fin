@@ -115,35 +115,27 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
 }
 
 void destruirTCB(void* nodo){
-    tcb* tcbADestruir = (tcb*) nodo;
-    if(tcbADestruir && tcbADestruir->instruccion_actual){
-        free(tcbADestruir->instruccion_actual);
-    }
+     tcb* tcbADestruir = (tcb*) nodo;
+     if(tcbADestruir){
+         if(tcbADestruir->instruccion_actual){
+             free(tcbADestruir->instruccion_actual);
+        }
+     }
+     free(tcbADestruir);
 }
 
 void destruirPCB(void* nodo){
     pcb* pcbADestruir = (pcb*) nodo;
     free(pcbADestruir->rutaTareas);
     list_destroy_and_destroy_elements(pcbADestruir->listaTCB, destruirTCB);
+    free(pcbADestruir);
 }
 
 
 /*---------------------------FUNCION TRIPULANTE (EXEC)----------------------*/
 void funcionTripulante (void* elemento) {
     parametrosThread* param = (parametrosThread*) elemento;
-    int tamanioBuffer;
-    int tamanioTarea;
-    int tamanioNombreTarea;
-    char* nombreTareaNormal;
-    int parametroIO;
-    void* buffer;
-    char** parametrosTarea;
-    char** tarea;
     int mensajeInicialIMS=0;
-    bool llegoALaPosicion = false;
-    int posicionX;
-    int posicionY;
-    int tiempoTarea;
     tcb *tcbTripulante;
 
     pthread_mutex_lock(&mutexValidador);
@@ -163,194 +155,237 @@ void funcionTripulante (void* elemento) {
             pthread_mutex_lock(&mutexExit);
             tcbTripulante = get_by_id(cola_exit->elements, param->idSemaforo);
             pthread_mutex_unlock(&mutexExit);
-        }
+        }       
+
+        hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param, mensajeInicialIMS);
         
-        if(tcbTripulante->estaVivoElHilo && planificacion_viva){// SI ESTÁ VIVO EL TRIPULANTE (HILO)
-            log_info(logger, "[Tripulante %d] esta en ejecución", param->idSemaforo);
-
-            // SI HAY UN SABOTAJE:
-            if(sabotaje_activado){
-                log_info(logger,"[Tripulante %d] Se está atendiendo sabotaje", param->idSemaforo);
-
-                log_info(logger, "La posición en X|Y del sabotaje es: %d|%d con duración: %d", posSabotajeX, posSabotajeY, duracion_sabotaje);   
-                llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posSabotajeX, posSabotajeY);
-
-                if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DEL SABOTAJE
-
-                    pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
-                    int temp_ciclos_transcurridos_sabotaje = ciclos_transcurridos_sabotaje;
-                    pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
-
-                    if (temp_ciclos_transcurridos_sabotaje == 0) {//SI TODAVÍA NO SE COMENZÓ A REPARAR EL SABOTAJE
-                        char* bufferAEnviar = string_new();
-                        string_append(&bufferAEnviar, "Se invoco FSCK");
-
-                        pthread_mutex_lock(&mutexBuffer);
-                        buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s", bufferAEnviar);
-                        _send_message(conexion_IMS, "DIS", INVOCAR_FSCK, buffer,sizeof(int) + string_length(bufferAEnviar), logger);
-                        free(bufferAEnviar);
-                        free(buffer);
-                        pthread_mutex_unlock(&mutexBuffer);
-                    }
-
-                    tcbTripulante->ciclosCumplidos++;
-                    log_info(logger, "Ciclos transcurridos del sabotaje: %d", tcbTripulante->ciclosCumplidos);
-
-                    pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
-                    ciclos_transcurridos_sabotaje++;
-                    pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
-
-                    if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos == quantum_RR) {// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
-                        tcbTripulante->ciclosCumplidos = 0;
-                        tcbTripulante->status='R';
-                    }
-                }
-
-                else {// NO LLEGÓ A LA POSICIÓN DEL SABOTAJE
-                    moverTripulanteUno(tcbTripulante, posSabotajeX, posSabotajeY);
-                    tcbTripulante->ciclosCumplidos++;
-
-                    if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
-                        tcbTripulante->status = 'R';
-                        tcbTripulante->ciclosCumplidos = 0;
-                    }
-                }
-            }
-
-            // SI NO HAY UN SABOTAJE:
-            else {
-
-                tarea = string_split(tcbTripulante->instruccion_actual, " ");
-
-                if (esTareaIO(tarea[0])) {// ES TAREA DE I/O
-
-                    parametrosTarea = string_split(tarea[1], ";");
-                    parametroIO = atoi(parametrosTarea[0]);
-                    posicionX = atoi(parametrosTarea[1]);
-                    posicionY = atoi(parametrosTarea[2]);
-                    tiempoTarea = atoi(parametrosTarea[3]);
-
-                    llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posicionX, posicionY);
-
-                    if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DE LA TAREA
-                        log_info(logger, "[Tripulante %d] Llegó a la posición, la tarea es %s, es tarea IO",param->idSemaforo, tarea[0]);
-                
-                        tamanioTarea = strlen(tarea[0]);
-                        tamanioBuffer = sizeof(int)*6 + tamanioTarea;
-
-                        pthread_mutex_lock(&mutexBuffer);
-                        buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tcbTripulante->tid, tarea[0], parametroIO, posicionX, posicionY, tiempoTarea);
-                        _send_message(conexion_IMS, "DIS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
-                        free(buffer);
-                        pthread_mutex_unlock(&mutexBuffer);
-
-                        tcbTripulante->status = 'I';
-                        tcbTripulante->ciclosCumplidos = 0;
-                        log_info(logger, "[Tripulante %d] Se debe realizar una tarea de I/O",param->idSemaforo);
-                        sleep(ciclo_CPU);
-                        free(tarea[1]);
-                    }
-
-                    else{// NO LLEGÓ A LA POSICIÓN DE LA TAREA
-                        moverTripulanteUno(tcbTripulante, posicionX, posicionY);
-                        tcbTripulante->ciclosCumplidos++;
-
-                        if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){//ES RR Y COMPLETÓ EL QUANTUM
-                            tcbTripulante->status = 'R';
-                            tcbTripulante->ciclosCumplidos = 0;
-                            log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tcbTripulante->tid);
-                        }
-                    }
-                }
-
-                else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
-                    log_info(logger, "[Tripulante %d] Se debe realizar una tarea normal",param->idSemaforo);
-
-                    parametrosTarea = string_split(tarea[0], ";");
-                    nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
-                    strcpy(nombreTareaNormal, parametrosTarea[0]);
-                    posicionX = atoi(parametrosTarea[1]);
-                    posicionY = atoi(parametrosTarea[2]);
-                    tiempoTarea = atoi(parametrosTarea[3]);
-
-                    llegoALaPosicion = llegoAPosicion(tcbTripulante->posicionX, tcbTripulante->posicionY, posicionX, posicionY);
-
-                    if(llegoALaPosicion){
-
-                        if(mensajeInicialIMS==0){// NO SE MANDÓ TODAVÍA EL MENSAJE A IMS DE INICIO DE TAREA
-                            tamanioNombreTarea = strlen(nombreTareaNormal);
-                            tamanioBuffer = sizeof(int)*5 + tamanioNombreTarea;
-
-                            pthread_mutex_lock(&mutexBuffer);
-                            buffer = _serialize(tamanioBuffer, "%d%s%d%d%d", tcbTripulante->tid, nombreTareaNormal, posicionX, posicionY, tiempoTarea);
-                            _send_message(conexion_IMS, "DIS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
-                            free(buffer);
-                            pthread_mutex_unlock(&mutexBuffer);
-                            mensajeInicialIMS = 1;
-                        }
-
-                        tcbTripulante->tiempoEnExec++;
-                        tcbTripulante->ciclosCumplidos++;
-                        log_info(logger, "El tiempo en exec del tripulante %d es: %d", tcbTripulante->tid, tcbTripulante->tiempoEnExec);
-
-                        if(tcbTripulante->tiempoEnExec == tiempoTarea){// COMPLETÓ LA TAREA NORMAL
-                            log_info(logger, "[Tripulante %d] Termino la tarea normal el tripulante", tcbTripulante->tid);
-                            tamanioNombreTarea = strlen(nombreTareaNormal);
-                            tamanioBuffer = sizeof(int)*2 + tamanioNombreTarea;
-                            
-                            pthread_mutex_lock(&mutexBuffer);
-                            buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, nombreTareaNormal);
-                            _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
-                            free(buffer);
-                            pthread_mutex_unlock(&mutexBuffer);
-
-                            pedirProximaTarea(tcbTripulante);
-                            tcbTripulante->tiempoEnExec = 0;
-                            mensajeInicialIMS = 0;
-                        } 
-
-                        if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR && tcbTripulante->status != 'X'){//ES RR Y COMPLETÓ EL QUANTUM Y NO TERMINÓ TODAS LAS TAREAS
-                            tcbTripulante->status = 'R';
-                            tcbTripulante->ciclosCumplidos = 0;
-                            log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tcbTripulante->tid);
-                        }
-                        
-                    }
-                    else{// NO LLEGÓ A LA POSICIÓN DE LA TAREA
-                        moverTripulanteUno(tcbTripulante, posicionX, posicionY);
-                        tcbTripulante->ciclosCumplidos++;
-
-                        if(!strcmp(algoritmo,"RR") && tcbTripulante->ciclosCumplidos==quantum_RR){//ES RR Y COMPLETÓ EL QUANTUM
-                            tcbTripulante->status = 'R';
-                            tcbTripulante->ciclosCumplidos = 0;
-                            log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tcbTripulante->tid);
-                        }
-                    }
-                    free(nombreTareaNormal);
-                }
-
-                else{
-                    log_error(logger, "[Tripulante %d] La tarea ingresada no posee un formato de tarea correcto",param->idSemaforo);
-                }
-
-                free(parametrosTarea[0]);
-                free(parametrosTarea[1]);
-                free(parametrosTarea[2]);
-                free(parametrosTarea[3]);
-                free(parametrosTarea);
-                free(tarea[0]);
-                free(tarea);
-            }
-
-            sleep(ciclo_CPU);
-        }
         _signal(1,cantidadTCBEnExec,&semEBIO);
     }
 }
 
 /*-------------------------------ADICIONALES------------------------------*/
 
-bool llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY  ){
+void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param, int mensajeInicialIMS){
+    tcb* tripulante = (tcb*) tcbTrip;
+    parametrosThread* parametros = (parametrosThread*) param;
+    if(tripulante->estaVivoElHilo && planificacion_viva){// SI ESTÁ VIVO EL TRIPULANTE (HILO)
+        if(sabotaje_activado){
+            resolviendoSabotaje((void*) tripulante, (void*) parametros);
+        }
+        else{
+            operandoSinSabotaje((void*) tripulante, (void*) parametros, mensajeInicialIMS);
+        }
+    }
+    else{
+            log_error(logger, "[Tripulante %d] La tarea ingresada no posee un formato de tarea correcto", parametros->idSemaforo);
+    }
+    sleep(ciclo_CPU);
+}
+
+void resolviendoSabotaje(void* tcbTrip, void* param){
+    tcb* tripulante = (tcb*) tcbTrip;
+    parametrosThread* parametros = (parametrosThread*) param;
+    
+    log_info(logger,"[Tripulante %d] Se está atendiendo sabotaje", parametros->idSemaforo);
+    log_info(logger, "La posición en X|Y del sabotaje es: %d|%d con duración: %d", posSabotajeX, posSabotajeY, duracion_sabotaje);   
+    int llegoALaPosicion = llegoAPosicion(tripulante->posicionX, tripulante->posicionY, posSabotajeX, posSabotajeY);
+
+    if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DEL SABOTAJE
+
+        pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
+        int temp_ciclos_transcurridos_sabotaje = ciclos_transcurridos_sabotaje;
+        pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
+
+        if (temp_ciclos_transcurridos_sabotaje == 0) {//SI TODAVÍA NO SE COMENZÓ A REPARAR EL SABOTAJE
+            void* buffer;
+            char* bufferAEnviar = string_new();
+            string_append(&bufferAEnviar, "Se invoco FSCK");
+
+            pthread_mutex_lock(&mutexBuffer);
+            buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s", bufferAEnviar);
+            _send_message(conexion_IMS, "DIS", INVOCAR_FSCK, buffer,sizeof(int) + string_length(bufferAEnviar), logger);
+            free(bufferAEnviar);
+            free(buffer);
+            pthread_mutex_unlock(&mutexBuffer);
+        }
+
+        tripulante->ciclosCumplidos++;
+        log_info(logger, "Ciclos transcurridos del sabotaje: %d", tripulante->ciclosCumplidos);
+
+        pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
+        ciclos_transcurridos_sabotaje++;
+        pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
+
+        if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos == quantum_RR) {// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
+            tripulante->ciclosCumplidos = 0;
+            tripulante->status='R';
+        }
+    }
+    else {// NO LLEGÓ A LA POSICIÓN DEL SABOTAJE
+        moverTripulanteUno(tripulante, posSabotajeX, posSabotajeY);
+        tripulante->ciclosCumplidos++;
+
+        if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR){// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
+            tripulante->status = 'R';
+            tripulante->ciclosCumplidos = 0;
+        }
+    }
+
+}
+
+void operandoSinSabotaje(void* tcbTrip, void* param, int mensajeInicialIMS){
+    tcb* tripulante = (tcb*) tcbTrip;
+    parametrosThread* parametros = (parametrosThread*) param;
+    char** tarea = string_split(tripulante->instruccion_actual, " ");
+    for(int i=0; tarea[i]!=NULL; i++){
+        log_info(logger, "parametro: %s", tarea[i]);
+    }
+
+    if (esTareaIO(tarea[0])) {// ES TAREA DE I/O
+        operandoSinSabotajeTareaIO((void*) tripulante, (void*) parametros, tarea);
+    }
+    else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
+        operandoSinSabotajeTareaNormal((void*) tripulante, (void*) parametros, tarea, mensajeInicialIMS);    
+    }   
+}
+
+void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea, int mensajeInicialIMS){
+
+    tcb* tripulante = (tcb*) tcbTrip;
+    parametrosThread* parametros = (parametrosThread*) param;
+    log_info(logger, "[Tripulante %d] Se debe realizar una tarea normal",parametros->idSemaforo);
+
+    char** parametrosTarea = string_split(tarea[0], ";");
+    for(int i=0; parametrosTarea[i]!=NULL; i++){
+        log_info(logger, "parametro: %s", parametrosTarea[i]);
+    }
+    char* nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
+    strcpy(nombreTareaNormal, parametrosTarea[0]);
+    log_info(logger, "nombre de tarea (tarea normal): %s", nombreTareaNormal);
+    int posicionX = atoi(parametrosTarea[1]);
+    int posicionY = atoi(parametrosTarea[2]);
+    int tiempoTarea = atoi(parametrosTarea[3]);
+
+    int llegoALaPosicion = llegoAPosicion(tripulante->posicionX, tripulante->posicionY, posicionX, posicionY);
+
+    if(llegoALaPosicion){
+
+        if(mensajeInicialIMS==0){// NO SE MANDÓ TODAVÍA EL MENSAJE A IMS DE INICIO DE TAREA
+            int tamanioNombreTarea = strlen(nombreTareaNormal);
+            int tamanioBuffer = sizeof(int)*5 + tamanioNombreTarea;
+                    
+            void* buffer;
+            pthread_mutex_lock(&mutexBuffer);
+            buffer = _serialize(tamanioBuffer, "%d%s%d%d%d", tripulante->tid, nombreTareaNormal, posicionX, posicionY, tiempoTarea);
+            _send_message(conexion_IMS, "DIS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+            free(buffer);
+            pthread_mutex_unlock(&mutexBuffer);
+            mensajeInicialIMS = 1;
+        }
+
+            tripulante->tiempoEnExec++;
+            tripulante->ciclosCumplidos++;
+            log_info(logger, "El tiempo en exec del tripulante %d es: %d", tripulante->tid, tripulante->tiempoEnExec);
+
+            if(tripulante->tiempoEnExec == tiempoTarea){// COMPLETÓ LA TAREA NORMAL
+                log_info(logger, "[Tripulante %d] Termino la tarea normal el tripulante", tripulante->tid);
+                int tamanioNombreTarea = strlen(nombreTareaNormal);
+                int tamanioBuffer = sizeof(int)*2 + tamanioNombreTarea;
+                            
+                void* buffer;        
+                pthread_mutex_lock(&mutexBuffer);
+                buffer = _serialize(tamanioBuffer, "%d%s", tripulante->tid, nombreTareaNormal);
+                _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+                free(buffer);
+                pthread_mutex_unlock(&mutexBuffer);
+
+                pedirProximaTarea(tripulante);
+                tripulante->tiempoEnExec = 0;
+                mensajeInicialIMS = 0;
+            } 
+
+            if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR && tripulante->status != 'X'){//ES RR Y COMPLETÓ EL QUANTUM Y NO TERMINÓ TODAS LAS TAREAS
+                tripulante->status = 'R';
+                tripulante->ciclosCumplidos = 0;
+                log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
+            }                 
+    }
+    else{// NO LLEGÓ A LA POSICIÓN DE LA TAREA
+        moverTripulanteUno(tripulante, posicionX, posicionY);
+        tripulante->ciclosCumplidos++;
+
+        if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR){//ES RR Y COMPLETÓ EL QUANTUM
+            tripulante->status = 'R';
+            tripulante->ciclosCumplidos = 0;
+            log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
+        }
+    }
+    free(nombreTareaNormal);
+    for(int i =0; parametrosTarea[i]!=NULL; i++){
+        free(parametrosTarea[i]);
+    }
+    free(parametrosTarea);
+    for(int i =0; tarea[i]!=NULL; i++){
+        free(tarea[i]);
+    }
+    free(tarea);
+
+}
+
+void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
+    
+    tcb* tripulante = (tcb*) tcbTrip;
+    parametrosThread* parametros = (parametrosThread*) param;
+    
+    char** parametrosTarea = string_split(tarea[1], ";");
+    for(int i=0; parametrosTarea[i]!=NULL; i++){
+        log_info(logger, "parametro: %s", parametrosTarea[i]);
+    }
+    int parametroIO = atoi(parametrosTarea[0]);
+    int posicionX = atoi(parametrosTarea[1]);
+    int posicionY = atoi(parametrosTarea[2]);
+    int tiempoTarea = atoi(parametrosTarea[3]);
+
+    int llegoALaPosicion = llegoAPosicion(tripulante->posicionX, tripulante->posicionY, posicionX, posicionY);
+
+    if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DE LA TAREA
+        log_info(logger, "[Tripulante %d] Llegó a la posición, la tarea es %s, es tarea IO",parametros->idSemaforo, tarea[0]);
+                
+        int tamanioTarea = strlen(tarea[0]);
+        int tamanioBuffer = sizeof(int)*6 + tamanioTarea;
+
+        void* buffer;
+        pthread_mutex_lock(&mutexBuffer);
+        buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tripulante->tid, tarea[0], parametroIO, posicionX, posicionY, tiempoTarea);
+        _send_message(conexion_IMS, "DIS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+        free(buffer);
+        pthread_mutex_unlock(&mutexBuffer);
+
+        tripulante->status = 'I';
+        tripulante->ciclosCumplidos = 0;
+        log_info(logger, "[Tripulante %d] Se debe realizar una tarea de I/O",parametros->idSemaforo);
+    }
+    else{// NO LLEGÓ A LA POSICIÓN DE LA TAREA
+        moverTripulanteUno(tripulante, posicionX, posicionY);
+        tripulante->ciclosCumplidos++;
+
+        if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR){//ES RR Y COMPLETÓ EL QUANTUM
+            tripulante->status = 'R';
+            tripulante->ciclosCumplidos = 0;
+            log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
+        }
+    }
+    for(int i =0; parametrosTarea[i]!=NULL; i++){
+        free(parametrosTarea[i]);
+    }
+    free(parametrosTarea);
+    for(int i =0; tarea[i]!=NULL; i++){
+        free(tarea[i]);
+    }
+    free(tarea);
+}
+
+int llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY  ){
     return tripulante_posX== posX && tripulante_posY == posY;
 }
 
@@ -629,6 +664,7 @@ void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_lo
 
 	tcb *aux = (tcb *) elemento;
   	int tamanioBuffer = sizeof(int) * 2;
+    void* buffer;
     
     pthread_mutex_lock(&mutexBuffer);
   	buffer = _serialize(tamanioBuffer, "%d%d", aux->pid, aux->tid);
@@ -663,6 +699,7 @@ void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_lo
 
         pthread_create(&hiloTripulante[parametrosHilo->idSemaforo], NULL, (void *) funcionTripulante, parametrosHilo);
         pthread_detach(hiloTripulante[parametrosHilo->idSemaforo]);
+        //free(parametrosHilo); ???
        
     } else {
     	log_error(logger, "No hay tareas disponibles");
@@ -700,5 +737,7 @@ void _signal(int incremento, int valorMax, sem_t* semaforo) {
         contadorSemGlobal = 0;
     }
 }
+
+
 
 

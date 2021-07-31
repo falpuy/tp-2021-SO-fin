@@ -57,7 +57,7 @@ void validarSuperBloque(){
         void* sb_memoria = (char*) mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques / 8, PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
         memBitmap = malloc(cantidadBloques/8);
         bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
-        
+
         for(int i=0; i<cantidadBloques; i++){
             bitarray_clean_bit(bitmap,i);    
         }
@@ -85,6 +85,7 @@ void validarSuperBloque(){
             log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada de tamañoBloque y cantidadBloque");
         }
 
+        free(pathSuperBloque);
         close(superBloque);
         
 
@@ -96,7 +97,6 @@ void validarSuperBloque(){
 
         log_info(logger, "Se encontró el archivo superBloque.ims");
 
-        pathSuperBloque = pathCompleto("SuperBloque.ims");
         int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
         
         //Mapeo para sacar el tamaño y cantidad solo
@@ -126,6 +126,7 @@ void validarSuperBloque(){
         }
 
         close(superBloque);
+        free(pathSuperBloque);
 
         log_info(logger, "-----------------------------------------------------");
         log_info(logger, "Se muestra los datos del superBloque.");
@@ -133,7 +134,6 @@ void validarSuperBloque(){
         log_info(logger, "Cantidad de bloques: %d", cantidadBloques);
         log_info(logger, "-----------------------------------------------------");
     }
-    free(pathSuperBloque);
 }
 
 
@@ -153,6 +153,8 @@ void validarBlocks(){
         
         posix_fallocate(blocks, 0, tamanioAGuardar);        
         close(blocks);
+        free(pathBlocks);
+
     
 
         log_info(logger, "-----------------------------------------------------");
@@ -170,11 +172,11 @@ void validarBlocks(){
         memcpy(copiaBlocks, blocks_memory, tamanioBloque*cantidadBloques);
         munmap(blocks_memory,tamanioBloque*cantidadBloques);
         close(blocks);
+        free(pathBlocks);
 
         log_info(logger, "-----------------------------------------------------");
 
     }
-    free(pathBlocks);
 }
 
 

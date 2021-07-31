@@ -114,11 +114,15 @@ frame_t *get_next_clock_frame() {
 }
 
 void set_bitmap(uint8_t *bitmap, int position) {
+    pthread_mutex_lock(&mbitmap);
     bitmap[position] = 1;
+    pthread_mutex_unlock(&mbitmap);
 }
 
 void unset_bitmap(uint8_t *bitmap, int position) {
+    pthread_mutex_lock(&mbitmap);
     bitmap[position] = 0;
+    pthread_mutex_unlock(&mbitmap);
 }
 
 uint32_t get_frame() {
@@ -145,14 +149,20 @@ uint32_t get_frame() {
             if (!bitarray_test_bit(virtual_bitmap, i)) {
                 // // printf("Guardo en virtual %d\n", i);
                 // pego la data desde memoria
+                pthread_mutex_lock(&m_memoria);
+                pthread_mutex_lock(&m_virtual);
                 memcpy(virtual_memory + i * page_size, memory + replacing_frame -> number * page_size, page_size);
+                pthread_mutex_unlock(&m_virtual);
+                pthread_mutex_unlock(&m_memoria);
                 // err = msync(virtual_memory, virtual_size + frames_virtual / 8, MS_ASYNC);
                 // if (err == -1){
                 //     perror("Error de sincronizar a disco memoria");
                 //     return -1;
                 // }
                 // seteo el bit de virtual
+                pthread_mutex_lock(&mbitmapv);
                 bitarray_set_bit(virtual_bitmap, i);
+                pthread_mutex_lock(&mbitmapv);
                 // unseteo el bit
                 bitmap[replacing_frame -> number] = 0;
                 // Actualizo el valor a devolver
@@ -348,16 +358,22 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
 
             if (bytes_left < page_size) {
                 // copio bytes_left
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
+                pthread_mutex_unlock(&m_memoria);
             } else {
                 // copio page_size
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
+                pthread_mutex_unlock(&m_memoria);
                 bytes_left -= page_size;
             }
 
             queue_push(tabla, page);
             // Agrego tabla al diccionario
+            pthread_mutex_lock(&mdictionary);
             dictionary_put(table_collection, pid, tabla);
+            pthread_mutex_unlock(&mdictionary);
         }
         free(temp);
         free(pid);
@@ -525,7 +541,9 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
 
 void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
     // // printf("Obtengo tablas del proceso..\n");
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
 
     page_t *page_aux;
@@ -549,18 +567,28 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
         page_aux = list_get(self -> elements, i);
 
         if (page_aux -> frame -> presence) {
+            pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
             
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
+            pthread_mutex_lock(&m_virtual);
             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
 
             page_aux -> frame -> presence = 1;
 
             int new_frame = get_frame();
 
+            pthread_mutex_lock(&m_memoria);
+            pthread_mutex_lock(&m_virtual);
             memcpy(memory + (new_frame * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_unlock(&m_memoria);
             set_bitmap(bitmap, new_frame);
 
             // Creo frame
@@ -609,21 +637,28 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
             page2 = list_get(self -> elements, pnumber);
 
             if (page2 -> frame -> presence) {
+                pthread_mutex_lock(&m_memoria);
                 memcpy(tareas, memory + (page2 -> frame) -> start, page_size);
+                pthread_mutex_unlock(&m_memoria);
                 // printf("No reemplazo %s\n", tareas);
                 
                 // unset_bitmap(bitmap, (page2 -> frame) -> number);
             } else {
+                pthread_mutex_lock(&m_virtual);
                 memcpy(tareas, virtual_memory + (page2 -> frame) -> start, page_size);
+                pthread_mutex_unlock(&m_virtual);
                 // printf("Reemplazo %s\n", tareas);
-
+                pthread_mutex_lock(&mbitmapv);
                 bitarray_clean_bit(virtual_bitmap, (page2 -> frame) -> number);
+                pthread_mutex_unlock(&mbitmapv);
 
                 page2 -> frame -> presence = 1;
 
                 int new_frame = get_frame();
 
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + (new_frame * page_size), tareas, page_size);
+                pthread_mutex_unlock(&m_memoria);
                 set_bitmap(bitmap, new_frame);
 
                 // Creo frame
@@ -653,19 +688,28 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
                 page2 = list_get(self -> elements, pnumber + 1);
 
                 if (page2 -> frame -> presence) {
+                    pthread_mutex_lock(&m_memoria);
                     memcpy(tareas + page_size, memory + (page2 -> frame) -> start, page_size);
+                    pthread_mutex_unlock(&m_memoria);
                     
                     // unset_bitmap(bitmap, (page2 -> frame) -> number);
                 } else {
+                    pthread_mutex_lock(&m_virtual);
                     memcpy(tareas + page_size, virtual_memory + (page2 -> frame) -> start, page_size);
-
+                    pthread_mutex_unlock(&m_virtual);
+                    pthread_mutex_lock(&mbitmapv);
                     bitarray_clean_bit(virtual_bitmap, (page2 -> frame) -> number);
+                    pthread_mutex_unlock(&mbitmapv);
 
                     page2 -> frame -> presence = 1;
 
                     int new_frame = get_frame();
-
+                    
+                    pthread_mutex_lock(&m_memoria);
+                    pthread_mutex_lock(&m_virtual);
                     memcpy(memory + (new_frame * page_size), virtual_memory + (page2 -> frame) -> start, page_size);
+                    pthread_mutex_unlock(&m_virtual);
+                    pthread_mutex_unlock(&m_memoria);
                     set_bitmap(bitmap, new_frame);
 
                     // Creo frame
@@ -699,19 +743,27 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
                 int sizes = falta_pagina ? page_size * 2 : page_size;
 
                 if (page2 -> frame -> presence) {
+                    pthread_mutex_lock(&m_memoria);
                     memcpy(tareas + sizes, memory + (page2 -> frame) -> start, page_size);
+                    pthread_mutex_unlock(&m_memoria);
                     
                     // unset_bitmap(bitmap, (page2 -> frame) -> number);
                 } else {
+                    pthread_mutex_lock(&m_virtual);
                     memcpy(tareas + sizes, virtual_memory + (page2 -> frame) -> start, page_size);
-
+                    pthread_mutex_unlock(&m_virtual);
+                    pthread_mutex_lock(&mbitmapv);
                     bitarray_clean_bit(virtual_bitmap, (page2 -> frame) -> number);
+                    pthread_mutex_unlock(&mbitmapv);
 
                     page2 -> frame -> presence = 1;
 
                     int new_frame = get_frame();
-
+                    pthread_mutex_lock(&m_memoria);
+                    pthread_mutex_lock(&m_virtual);
                     memcpy(memory + (new_frame * page_size), virtual_memory + (page2 -> frame) -> start, page_size);
+                    pthread_mutex_unlock(&m_virtual);
+                    pthread_mutex_unlock(&m_memoria);
                     set_bitmap(bitmap, new_frame);
 
                     // Creo frame
@@ -747,7 +799,9 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
             page_t *tcb_page;
             for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
                 tcb_page = list_get(self -> elements, i);
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + tcb_page -> frame -> number * page_size, temp + ofset, page_size);
+                pthread_mutex_unlock(&m_memoria);
                 ofset += page_size;
             }
 
@@ -763,7 +817,9 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
 void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
     // // printf("Obtengo tablas del proceso..\n");
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
 
     void *temp = malloc(queue_size(self) * page_size);
@@ -782,14 +838,19 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
         // printf("STATUS: %d\n", page_aux -> frame -> presence);
         if (page_aux -> frame -> presence) {
             // printf("PAGE IN MEMORY\n");
+            pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
             unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
             // printf("SWAP PAGE\n");
             // TODO: SWAPEAR
+            pthread_mutex_lock(&m_virtual);
             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
-
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
             
         }
         
@@ -848,8 +909,9 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
             // Creo pagina
             page_t *page = malloc(sizeof(page_t));
             page -> frame = frame;
-
+            pthread_mutex_lock(&m_memoria);
             memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, page_size);
+            pthread_mutex_unlock(&m_memoria);
 
             queue_push(self, page);
 
@@ -870,7 +932,9 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
             page_t *page = malloc(sizeof(page_t));
             page -> frame = frame;
 
+            pthread_mutex_lock(&m_memoria);
             memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, size_a_copiar);
+            pthread_mutex_unlock(&m_memoria);
 
             queue_push(self, page);
 
@@ -880,13 +944,15 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
     }
 
     free(temp);
-
+    pthread_mutex_lock(&mdictionary);
     dictionary_put(table_collection, key, self);
+    pthread_mutex_unlock(&mdictionary);
 }
 
 void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key) {
-
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
 
     dictionary_remove_and_destroy(admin_collection, key, admin_destroyer);
@@ -901,13 +967,16 @@ void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
         free(page_aux -> frame);
         free(page_aux);
     }
-
+    pthread_mutex_lock(&mdictionary);
     dictionary_put(table_collection, key, self);
+    pthread_mutex_unlock(&mdictionary);
 }
 
 void update_position_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, int posx, int posy) {
     // // printf("Obtengo tablas del proceso..\n");
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
 
     page_t *page_aux;
@@ -926,18 +995,27 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
         page_aux = list_get(self -> elements, i);
 
         if (page_aux -> frame -> presence) {
+            pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
             
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
+            pthread_mutex_lock(&m_virtual);
             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
 
             page_aux -> frame -> presence = 1;
 
             int new_frame = get_frame();
-
+            pthread_mutex_lock(&m_memoria);
+            pthread_mutex_lock(&m_virtual);
             memcpy(memory + (new_frame * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&m_memoria);
             set_bitmap(bitmap, new_frame);
 
             // Creo frame
@@ -976,7 +1054,9 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
             page_t *tcb_page;
             for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
                 tcb_page = list_get(self -> elements, i);
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + tcb_page -> frame -> number * page_size, temp + ofset, page_size);
+                pthread_mutex_unlock(&m_memoria);
                 ofset += page_size;
             }
 
@@ -990,7 +1070,9 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
 
 void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, char status) {
     // // printf("Obtengo tablas del proceso..\n");
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
 
     page_t *page_aux;
@@ -1009,18 +1091,27 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
         page_aux = list_get(self -> elements, i);
 
         if (page_aux -> frame -> presence) {
+            pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
             
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
+            pthread_mutex_lock(&m_virtual);
             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
 
             page_aux -> frame -> presence = 1;
 
             int new_frame = get_frame();
-
+            pthread_mutex_lock(&m_memoria);
+            pthread_mutex_lock(&m_virtual);
             memcpy(memory + (new_frame * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_unlock(&m_memoria);
             set_bitmap(bitmap, new_frame);
 
             // Creo frame
@@ -1058,7 +1149,9 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
             page_t *tcb_page;
             for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
                 tcb_page = list_get(self -> elements, i);
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + tcb_page -> frame -> number * page_size, temp + ofset, page_size);
+                pthread_mutex_unlock(&m_memoria);
                 ofset += page_size;
             }
 
@@ -1335,7 +1428,9 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
                     // printf("Copiando elementos.. %d - %d - %d\n", temp -> nroSegmento, temp -> baseAddr, temp -> limit);
                     
                     // Copio los datos del segmento en la memoria auxiliar
+                    pthread_mutex_lock(&m_memoria);
                     memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+                    pthread_mutex_unlock(&m_memoria);
                     // memset(admin + offset, 1, data_size);
 
                     new_base = offset;
@@ -1368,11 +1463,15 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
     first -> baseAddr = offset;
     first -> limit = mem_size;
 
+    pthread_mutex_lock(&mtablasegmentos);
     queue_push(segmentosLibres, first);
+    pthread_mutex_unlock(&mtablasegmentos);
 
     if (!dictionary_is_empty(self)) {
         // memset(memory, 0, mem_size);
+        pthread_mutex_lock(&m_memoria);
         memcpy(memory, aux_memory, mem_size);
+        pthread_mutex_unlock(&m_memoria);
     }
 
     free(aux_memory);
@@ -1478,7 +1577,9 @@ int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int tot
         if (temp -> limit - temp -> baseAddr >= total_size) {
             if (temp -> limit - temp -> baseAddr == total_size) {
                 start = temp -> baseAddr;
+                pthread_mutex_lock(&mtablasegmentos);
                 list_remove_and_destroy_element(segmentosLibres -> elements, index, destroyer);
+                pthread_mutex_lock(&mtablasegmentos);
                 return start;
             } else {
                 start = temp -> baseAddr;
@@ -1596,7 +1697,9 @@ int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_c
         if (temp -> limit - temp -> baseAddr >= total_size) {
             if (temp -> limit - temp -> baseAddr == total_size) {
                 start = temp -> baseAddr;
+                pthread_mutex_lock(&mtablasegmentos);
                 list_remove_and_destroy_element(segmentosLibres -> elements, index, destroyer);
+                pthread_mutex_lock(&mtablasegmentos);
                 return start;
             } else {
                 start = temp -> baseAddr;
@@ -1719,7 +1822,9 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     // log_info(logger, "Limit address:%d", limit_address);
 
     void *tareas = malloc(limit_address - start_address + 1);
+    pthread_mutex_lock(&m_memoria);
     memcpy(tareas, memory + start_address, limit_address - start_address);
+    pthread_mutex_unlock(&m_memoria);
     memset(tareas + (limit_address-start_address), '\0', 1);
 
     // // printf("Lista: %s\n",(char*) tareas);
@@ -1786,6 +1891,7 @@ int remove_segment_from_memory(void *memory, int mem_size, segment *segmento) {
 int save_tcb_in_memory(void *admin, void *memory, int mem_size, segment *segmento, tcb_t *data) {
     int offset = 0;
     if (segmento -> limit < mem_size) {
+        pthread_mutex_lock(&m_memoria);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> tid), sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> pid), sizeof(uint32_t));
@@ -1798,6 +1904,7 @@ int save_tcb_in_memory(void *admin, void *memory, int mem_size, segment *segment
         offset = sizeof(uint32_t);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> next), sizeof(uint32_t));
         offset = sizeof(uint32_t);
+        pthread_mutex_unlock(&m_memoria);
 
         memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
 
@@ -1814,6 +1921,7 @@ tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
 
     if (segmento -> limit < mem_size) {
         temp = malloc(sizeof(tcb_t));
+        pthread_mutex_lock(&m_memoria);
         memcpy(&(temp -> tid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(&(temp -> pid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
@@ -1825,6 +1933,7 @@ tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
         memcpy(&(temp -> ypos), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(&(temp -> next), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        pthread_mutex_unlock(&m_memoria);
         offset = sizeof(uint32_t);
 
         return temp;
@@ -1836,10 +1945,12 @@ tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
 int save_pcb_in_memory(void *admin, void *memory, int mem_size, segment *segmento, pcb_t *data) {
     int offset = 0;
     if (segmento -> limit < mem_size) {
+        pthread_mutex_lock(&m_memoria);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> pid), sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> tasks), sizeof(uint32_t));
         offset = sizeof(uint32_t);
+        pthread_mutex_unlock(&m_memoria);
 
         memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
 
@@ -1854,9 +1965,11 @@ pcb_t *get_pcb_from_memory(void *memory, int mem_size, segment *segmento) {
 
     pcb_t *temp = malloc(sizeof(pcb_t));
     if (segmento -> limit < mem_size) {
+        pthread_mutex_lock(&m_memoria);
         memcpy(&(temp -> pid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(&(temp -> tasks), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        pthread_mutex_unlock(&m_memoria);
         offset = sizeof(uint32_t);
 
         return temp;
@@ -1869,7 +1982,9 @@ pcb_t *get_pcb_from_memory(void *memory, int mem_size, segment *segmento) {
 int save_task_in_memory(void *admin, void *memory, int mem_size, segment *segmento, void *data) {
 
     if (segmento -> limit < mem_size) {
+        pthread_mutex_lock(&m_memoria);
         memcpy(memory + segmento -> baseAddr, data, segmento -> limit - segmento -> baseAddr);
+        pthread_mutex_unlock(&m_memoria);
         memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
         return 1;
     }
@@ -1933,8 +2048,9 @@ void remove_segment_from_table(t_dictionary* table_collection, char *key, segmen
     segment *temp;
 
     int index = 0;
-
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
 
 	if (self -> elements -> elements_count > 0) {
 
@@ -1963,8 +2079,9 @@ void remove_segment_from_table(t_dictionary* table_collection, char *key, segmen
 
 segment *get_next_segment(t_dictionary *table_collection, char* key) {
     segment *temp;
-
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
 
 	if (self -> elements -> elements_count > 0) {
 
@@ -1984,8 +2101,9 @@ void remove_pcb_from_memory(void *memory, int mem_size, t_dictionary *table_coll
     segment *temp;
 
     int index = 0;
-
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
 
     // printf("CANTIDAD ELEMENTOS: %d\n", self -> elements -> elements_count);
 
@@ -2133,6 +2251,7 @@ void process_iterate(t_list *self, void(*closure)(), void *memory, FILE *file, c
 	while (element != NULL) {
 		aux = element->next;
 		closure(element->data, memory, file, key);
+
 		element = aux;
 	}
 }

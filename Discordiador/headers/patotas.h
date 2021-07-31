@@ -23,7 +23,13 @@
 
     void funcionTripulante (void* elemento);
 
-    bool llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY);
+    void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param, int mensajeInicialIMS);
+    void resolviendoSabotaje(void* tcbTrip, void* param);
+    void operandoSinSabotaje(void* tcbTrip, void* param, int mensajeInicialIMS);
+    void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea);
+    void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea, int mensajeInicialIMS);
+
+    int llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY);
     void pedirProximaTarea(tcb* tcbTripulante);
     int esTareaIO(char *tarea);
     void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal);

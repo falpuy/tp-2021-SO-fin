@@ -19,7 +19,8 @@
 
     enum comandos {
         SUCCESS=200,
-        RECIBIR_UBICACION_TRIPULANTE=502,
+        ENVIAR_CAMBIO_DE_ESTADO=501,
+        ENVIAR_UBICACION_TRIPULANTE=502,
         ENVIAR_TAREA=520,
         EXPULSAR_TRIPULANTE=530,
         ERROR_CANTIDAD_TRIPULANTES=554,
@@ -66,6 +67,7 @@
         int tiempoEnExec;
         int tiempoEnBloqIO;
         int ciclosCumplidos;
+        int mensajeInicialIMS;
     }tcb;
 
     typedef struct{
@@ -136,6 +138,8 @@
     pthread_mutex_t mutex_cantidadActual;
     pthread_mutex_t mutexBuffer;
     pthread_mutex_t mutexSemaforosTrip;
+    pthread_mutex_t mutexValidacionPos;
+    pthread_mutex_t mutex_contadorSemGlobal;
 
     sem_t semNR;
     sem_t semRE;

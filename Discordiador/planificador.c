@@ -107,7 +107,8 @@ void funcionhReadyaExec (t_log* logger){
                 else{
                     log_info(logger,"Instrucción Actual: ATENDER SABOTAJE");
                 }
-
+                
+                
                 aux_TCB->status = 'E';
                 pthread_mutex_lock(&mutexExec);
                 queue_push(exec, (void*) aux_TCB);
@@ -626,18 +627,24 @@ void funcionhExit (t_log* logger){
         pthread_mutex_unlock(&mutexPlanificacionViva);
 
         if(temp_planificacion_viva) {
-            if(!queue_is_empty(cola_exit)){  
+            if(!queue_is_empty(cola_exit)){
 
-                pthread_mutex_lock(&mutexExit);
-                list_iterate(cola_exit->elements, deletearTripulante);
-                pthread_mutex_unlock(&mutexExit);
+                pthread_mutex_lock(&mutexValidador);
+                temp_validador = validador;
+                pthread_mutex_unlock(&mutexValidador); 
+                if(temp_validador){
 
-                pthread_mutex_lock(&mutexListaPCB);
-                list_iterate(listaPCB, eliminarPatotaEnRAM);
-                pthread_mutex_unlock(&mutexListaPCB);
-                if(!queue_is_empty(cola_new) || !queue_is_empty(ready) ||  !queue_is_empty(exec) || !queue_is_empty(bloq_io) || !queue_is_empty(bloq_emer)){
-                    log_info(logger,"Se ejecutó Exit");
-                    log_info(logger,"----------------------------------");
+                    pthread_mutex_lock(&mutexExit);
+                    list_iterate(cola_exit->elements, deletearTripulante);
+                    pthread_mutex_unlock(&mutexExit);
+
+                    pthread_mutex_lock(&mutexListaPCB);
+                    list_iterate(listaPCB, eliminarPatotaEnRAM);
+                    pthread_mutex_unlock(&mutexListaPCB);
+                    if(!queue_is_empty(cola_new) || !queue_is_empty(ready) ||  !queue_is_empty(exec) || !queue_is_empty(bloq_io) || !queue_is_empty(bloq_emer)){
+                        log_info(logger,"Se ejecutó Exit");
+                        log_info(logger,"----------------------------------");
+                    }
                 }
             }
         }

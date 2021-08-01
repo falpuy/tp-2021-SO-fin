@@ -38,6 +38,17 @@
     pthread_mutex_t mtablapaginas;
     pthread_mutex_t mdictionary;
     pthread_mutex_t madmin;
+    
+    pthread_mutex_t m_global_page;
+    pthread_mutex_t m_global_process;
+    pthread_mutex_t m_global_lru_page;
+    pthread_mutex_t m_global_clock_page;
+    pthread_mutex_t m_global_clock_key;
+    pthread_mutex_t m_global_clock_index;
+    pthread_mutex_t m_global_index;
+    pthread_mutex_t m_global_segment;
+    pthread_mutex_t m_global_type;
+
     // pthread_mutex_t madmin;
     // pthread_mutex_t madmin;
 
@@ -108,6 +119,7 @@
     } frame_t;
 
     typedef struct {
+        int number;
         frame_t *frame;
     } page_t;
 
@@ -139,6 +151,8 @@
     int check_free_frames(int frames_count);
 
     bool lru_sorter(void *uno, void *dos);
+
+    bool sort_by_addr(void *i1, void *i2);
 
     void lru_replacer(void *item);
 
@@ -178,7 +192,7 @@
 
     void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, char status);
 
-    void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb);
+    char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb);
 
     void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key);
 
@@ -225,6 +239,8 @@
 
     int check_space_memory(void *admin, int mem_size, int total_size, t_dictionary *table_collection);
 
+    int mem_space(void *admin, int mem_size, int total_size, t_dictionary *table_collection);
+
     int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int total_size);
 
     int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_collection);
@@ -239,7 +255,7 @@
 
     char get_char_value(void *buffer, int index);
 
-    void *get_next_task(void *memory, int start_address, int limit_address,t_log* logger);
+    void *get_next_task(void *memory, int start_address, int limit_address, t_log* logger);
 
     int remove_segment_from_memory(void *admin, int mem_size, segment *segmento);
 

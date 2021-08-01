@@ -10,7 +10,7 @@ int main() {
     hasLRU = 1;
 
     config = config_create(CONFIG_PATH);
-    logger = log_create(ARCHIVO_LOG, PROGRAM, 0, LOG_LEVEL_TRACE);
+    logger = log_create(ARCHIVO_LOG, PROGRAM, 1, LOG_LEVEL_TRACE);
    
     signal(SIGINT, signal_handler);
     signal(SIGUSR1, signal_handler);
@@ -53,6 +53,15 @@ int main() {
     pthread_mutex_init(&mtablapaginas, NULL);
     pthread_mutex_init(&mdictionary, NULL);
     pthread_mutex_init(&madmin, NULL);
+    pthread_mutex_init(&m_global_page, NULL);
+    pthread_mutex_init(&m_global_process, NULL);
+    pthread_mutex_init(&m_global_lru_page, NULL);
+    pthread_mutex_init(&m_global_clock_page, NULL);
+    pthread_mutex_init(&m_global_clock_key, NULL);
+    pthread_mutex_init(&m_global_clock_index, NULL);
+    pthread_mutex_init(&m_global_index, NULL);
+    pthread_mutex_init(&m_global_segment, NULL);
+    pthread_mutex_init(&m_global_type, NULL);
 
     // Creo el mapa
     // pthread_t map_thread;
@@ -147,6 +156,15 @@ void signal_handler(int sig_number) {
       pthread_mutex_destroy(&mtablapaginas);
       pthread_mutex_destroy(&mdictionary);
       pthread_mutex_destroy(&madmin);
+      pthread_mutex_destroy(&m_global_page);
+      pthread_mutex_destroy(&m_global_process);
+      pthread_mutex_destroy(&m_global_lru_page);
+      pthread_mutex_destroy(&m_global_clock_page);
+      pthread_mutex_destroy(&m_global_clock_key);
+      pthread_mutex_destroy(&m_global_clock_index);
+      pthread_mutex_destroy(&m_global_index);
+      pthread_mutex_destroy(&m_global_segment);
+      pthread_mutex_destroy(&m_global_type);
 
       log_destroy(logger);
       config_destroy(config);
@@ -209,6 +227,8 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
     int size_a_guardar;
 
+    int not_space = 0;
+
     // TODO: COMANDO UPDATE STATUS
   
     switch (opcode){
@@ -243,39 +263,23 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                 _send_message(fd, "RAM", ERROR_CANTIDAD_TRIPULANTES , respuesta, string_length(respuesta), logger);
             } else {
 
-             		size_a_guardar = sizeof(pcb_t) + tamStrTareas + cantTripulantes * 21;
-                log_info(logger,"Size total a guardar en memoria: %d", size_a_guardar);
-            
-                if (check_space_memory(admin, mem_size, size_a_guardar, table_collection)) {
+              size_a_guardar = sizeof(pcb_t) + tamStrTareas + cantTripulantes * 21;
+              log_info(logger,"Size total a guardar en memoria: %d", size_a_guardar);
+          
+              // if (!check_space_memory(admin, mem_size, size_a_guardar, table_collection)) {
+              //   memory_compaction(admin, memory, mem_size, table_collection);
+              //   if (!check_space_memory(admin, mem_size, size_a_guardar, table_collection)) {
+              //     not_space = 1;
+              //   }
+              // }
+
+              if (!mem_space(admin, mem_size, size_a_guardar, table_collection)) {
+                not_space = 1;
+              }
+
+              if (!not_space) {
                   // creo tabla de segmentos
                   t_queue *segmentTable = queue_create();
-                  // crear segmento para tareas
-                  segment_size = tamStrTareas;
-                  found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
-                  
-                  if(found_segment < 0) {
-                      memory_compaction(admin, memory, mem_size, table_collection);
-                      found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
-                  }
-              
-                  pcb_t *temp = malloc(sizeof(pcb_t));
-                  temp -> pid = idPCB;
-                  temp -> tasks = found_segment;
-                  
-                  // guardo tareas
-                  segment *tareas = malloc(sizeof(segment));
-                
-                  tareas -> nroSegmento = get_last_index (segmentTable) + 1;
-                  tareas -> baseAddr = found_segment;
-                  tareas -> limit = found_segment + tamStrTareas;
-                  tareas -> id = idPCB;
-                  tareas -> type = TASK;
-                  
-                  save_task_in_memory(admin, memory, mem_size, tareas, data_tareas);
-                  queue_push(segmentTable, tareas);
-                  temp_id = string_itoa(idPCB);
-                  dictionary_put(table_collection, temp_id, segmentTable);
-
                   // creo segmento pcb
                   segment *segmento_pcb = malloc(sizeof(segment));
                 
@@ -292,10 +296,16 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   segmento_pcb -> limit = found_segment + sizeof(pcb_t);
                   segmento_pcb -> id = idPCB;
                   segmento_pcb -> type = PCB;
+
+                  // Guardo pcb con segmento de tareas
+                  pcb_t *temp = malloc(sizeof(pcb_t));
+                  temp -> pid = idPCB;
+                  temp -> tasks = found_segment + sizeof(pcb_t) + (cantTripulantes * 21);
                   
                   // save_task_in_memory(memory, mem_size, tareas, data_tareas);
                   save_pcb_in_memory(admin, memory, mem_size, segmento_pcb, temp);
                   queue_push(segmentTable, segmento_pcb);
+                  temp_id = string_itoa(idPCB);
                   dictionary_put(table_collection, temp_id, segmentTable);
 
                   // guardo los tcbs
@@ -339,6 +349,30 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     queue_push(segmentTable, segmento_aux);
                     dictionary_put(table_collection, temp_id, segmentTable);
                   }
+
+                  memory_dump(table_collection, memory);
+
+                  // crear segmento para tareas
+                  segment_size = tamStrTareas;
+                  found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
+                  
+                  if(found_segment < 0) {
+                      memory_compaction(admin, memory, mem_size, table_collection);
+                      found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
+                  }
+                  
+                  // guardo tareas
+                  segment *tareas = malloc(sizeof(segment));
+                
+                  tareas -> nroSegmento = get_last_index (segmentTable) + 1;
+                  tareas -> baseAddr = found_segment;
+                  tareas -> limit = found_segment + tamStrTareas;
+                  tareas -> id = idPCB;
+                  tareas -> type = TASK;
+                  
+                  save_task_in_memory(admin, memory, mem_size, tareas, data_tareas);
+                  queue_push(segmentTable, tareas);
+                  dictionary_put(table_collection, temp_id, segmentTable);
 
                   free(temp);
                   free(temp_id);
@@ -491,9 +525,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             free(temp_id); 
 
             nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
-
-            char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit,logger);
-            log_info(logger, "La tarea a enviar es:%s",tarea);
+            printf("ID TCB %d \n", nuestroTCB -> tid);
+            log_info(logger, "La tarea empieza esta entre: %d - %d", nuestroTCB->next, segmento_tareas->limit);
+            char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit, logger);
+            log_info(logger, "La tarea a enviar es: %s",tarea);
             
             if(!tarea){
 								log_info(logger, "No hay mas tareas que mandar");
@@ -507,11 +542,9 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                 free(mandamos);
             }else{
 								
-              	nuestroTCB->next += strlen(tarea);
+              	nuestroTCB->next += strlen(tarea) + 1;
 
                 save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
-                log_info(logger, "La tarea a enviar es: %s",tarea);
-                log_info(logger, "El tamaño de tarea a enviar es: %d",strlen(tarea));
 
                 char* buffer_a_enviar =  _serialize(sizeof(int)+strlen(tarea),"%s",tarea);
                 _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+string_length(tarea), logger);
@@ -549,7 +582,9 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                   aux -> nroSegmento = -1;
                   aux -> baseAddr = segmento_aux -> baseAddr;
                   aux -> limit = segmento_aux -> limit;
-                  queue_push(segmentosLibres, aux);
+
+                  list_add_sorted(segmentosLibres -> elements, aux, sort_by_addr);
+                  // queue_push(segmentosLibres, aux);
 
                   remove_segment_from_table(table_collection, temp_id, segmento_aux);
               }
@@ -591,7 +626,7 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             aux -> nroSegmento = -1;
             aux -> baseAddr = segmento_tcb -> baseAddr;
             aux -> limit = segmento_tcb -> limit;
-            queue_push(segmentosLibres, aux);
+            list_add_sorted(segmentosLibres -> elements, aux, sort_by_addr);
 
             // error =  remove_segment_from_memory (admin, mem_size, segmento_tcb);
 
@@ -660,6 +695,14 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           if (save_data_in_memory(memory, table_collection, admin_collection, buffer) > 0) {
 
             log_info(logger, "Se guardaron exitosamente los datos de la patota");
+            log_info(logger, "Muestro valores del bitmap para REAL..");
+              for(int i = 0; i < frames_memory; i++){
+                  log_info(logger, "Bit %d: %d", i, bitmap[i]);
+              }
+              log_info(logger, "Muestro valores INICIALES del bitmap para VIRTUAL..");
+              for(int i = 0; i < frames_virtual; i++){
+                  log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
+              }
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
             _send_message(fd, "RAM", SUCCESS ,respuesta, string_length(respuesta), logger);
@@ -690,9 +733,17 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           idPCBkey = string_itoa(idPCB);
 
           char *tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
-          printf("La tarea a enviar es:%s\n",tarea);
 
           free(idPCBkey);
+
+          // log_info(logger, "Muestro valores del bitmap para REAL..");
+          // for(int i = 0; i < frames_memory; i++){
+          //     log_info(logger, "Bit %d: %d", i, bitmap[i]);
+          // }
+          // log_info(logger, "Muestro valores INICIALES del bitmap para VIRTUAL..");
+          // for(int i = 0; i < frames_virtual; i++){
+          //     log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
+          // }
 
           if(!tarea){
             log_info(logger, "No hay mas tareas que mandar");
@@ -868,8 +919,6 @@ void setup_pagination(void *memory, char *path, int tam_pag, int real_size, int 
     
     frames_memory = real_size / page_size;
 
-    // printf("Cant: %d", frames_memory);
-
     bitmap = malloc(frames_memory * sizeof(uint8_t));
 
     for(int i = 0; i < frames_memory; i++) {
@@ -896,9 +945,20 @@ void setup_pagination(void *memory, char *path, int tam_pag, int real_size, int 
     }
 
     arch_bitmap = open(path, O_CREAT | O_RDWR, 0664);
+    if (arch_bitmap < 0) {
+      perror("No se pudo abrir el archivo de SWAP");
+      exit(EXIT_FAILURE);
+    }
     posix_fallocate(arch_bitmap, 0, virtual_size + frames_virtual / 8);
+    close (arch_bitmap);
 
+    arch_bitmap = open(path, O_CREAT | O_RDWR, 0664);
+    if (arch_bitmap < 0) {
+      perror("No se pudo abrir el archivo de SWAP");
+      exit(EXIT_FAILURE);
+    }
     virtual_memory = mmap(NULL, virtual_size + frames_virtual / 8, PROT_READ | PROT_WRITE, MAP_SHARED, arch_bitmap, 0);
+    close (arch_bitmap);
 
     if (virtual_memory == MAP_FAILED) {
       perror("No se pudo abrir el archivo de SWAP");

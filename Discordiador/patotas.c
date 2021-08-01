@@ -123,8 +123,9 @@ void destruirTCB(void* nodo){
          if(tcbADestruir->instruccion_actual){
              free(tcbADestruir->instruccion_actual);
         }
+        free(tcbADestruir);
      }
-     free(tcbADestruir);
+     
 }
 
 void destruirPCB(void* nodo){

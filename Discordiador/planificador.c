@@ -738,8 +738,8 @@ int list_iterate_todos_terminaron(t_list* self) {
 		element = aux;
 	}
 
-    log_info(logger, "cantTerminados = %d", cantTerminados);
-    log_info(logger, "cantidad de TCB en la patota = %d", list_size(self));
+    //log_info(logger, "cantTerminados = %d", cantTerminados);
+    //log_info(logger, "cantidad de TCB en la patota = %d", list_size(self));
 
     if (cantTerminados == list_size(self)){
         return 1;

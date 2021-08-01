@@ -8,28 +8,32 @@ void *memory_init(int size) {
 
 // // ----------------------- PAGINATION ------------------------- //
 
-bool lru_sorter(void *uno, void *dos) {
-    page_t *page1 = uno;
-    page_t *page2 = dos;
+// bool lru_sorter(void *uno, void *dos) {
+//     page_t *page1 = uno;
+//     page_t *page2 = dos;
 
-    return page1 -> frame -> time < page2 -> frame -> time;
-}
+//     return page1 -> frame -> time < page2 -> frame -> time;
+// }
 
 void lru_replacer(void *item) {
-    page_t *page = item;
+    page_t *page = (page_t *) item;
 
     if (global_lru_page == NULL && page -> frame -> presence) {
+        pthread_mutex_lock(&m_global_lru_page);
         global_lru_page = page;
+        pthread_mutex_unlock(&m_global_lru_page);
     } else {
         if (page -> frame -> presence && global_lru_page -> frame -> time > page -> frame -> time) {
+            pthread_mutex_lock(&m_global_lru_page);
             global_lru_page = page;
+            pthread_mutex_unlock(&m_global_lru_page);
         }
     }
     
 }
 
 void lru_iterator(char *key, void *item) {
-    t_queue *pages = item;
+    t_queue *pages = (t_queue *) item;
 
     // list_sort(pages -> elements, lru_sorter);
     list_iterate(pages -> elements, lru_replacer);
@@ -37,7 +41,9 @@ void lru_iterator(char *key, void *item) {
 
 frame_t *get_next_lru_frame() {
     // // printf("Checkeando LRU %d\n", dictionary_is_empty(table_collection));
+    pthread_mutex_lock(&m_global_lru_page);
     global_lru_page = NULL;
+    pthread_mutex_unlock(&m_global_lru_page);
 
     dictionary_iterator(table_collection, lru_iterator);
 
@@ -50,10 +56,16 @@ void clock_replacer(void *item, int key_index, int frame_index) {
 
     if (page -> frame -> presence && page -> frame -> modified == 0) {
         page -> frame -> modified = 1;
+        pthread_mutex_lock(&m_global_clock_page);
         global_clock_page = page;
+        pthread_mutex_unlock(&m_global_clock_page);
         clock_flag = 1;
+        pthread_mutex_lock(&m_global_clock_key);
         global_clock_key = key_index;
+        pthread_mutex_unlock(&m_global_clock_key);
+        pthread_mutex_lock(&m_global_clock_index);
         global_clock_index = frame_index;
+        pthread_mutex_unlock(&m_global_clock_index);
     } else {
         if (page -> frame -> presence && page -> frame -> modified) {
             page -> frame -> modified = 0;
@@ -76,13 +88,17 @@ void clock_iterator(char *key, void *item, int key_index, int frame_index) {
 		element = aux;
 	}
     if (frame_index >= global_clock_index) {
+        pthread_mutex_lock(&m_global_clock_index);
         global_clock_index = 0;
+        pthread_mutex_unlock(&m_global_clock_index);
     }
 }
 
 frame_t *get_next_clock_frame() {
     // // printf("Checkeando CLOCK %d\n", dictionary_is_empty(table_collection));
+    pthread_mutex_lock(&m_global_clock_page);
     global_clock_page = NULL;
+    pthread_mutex_unlock(&m_global_clock_page);
 
     clock_flag = false;
 
@@ -104,8 +120,12 @@ frame_t *get_next_clock_frame() {
             }
         }
         if (!clock_flag) {
+            pthread_mutex_lock(&m_global_clock_key);
             global_clock_key = 0;
+            pthread_mutex_unlock(&m_global_clock_key);
+            pthread_mutex_lock(&m_global_clock_index);
             global_clock_index = 0;
+            pthread_mutex_unlock(&m_global_clock_index);
         }
     }
 
@@ -114,17 +134,22 @@ frame_t *get_next_clock_frame() {
 }
 
 void set_bitmap(uint8_t *bitmap, int position) {
+    pthread_mutex_lock(&mbitmap);
     bitmap[position] = 1;
+    pthread_mutex_unlock(&mbitmap);
 }
 
 void unset_bitmap(uint8_t *bitmap, int position) {
+    pthread_mutex_lock(&mbitmap);
     bitmap[position] = 0;
+    pthread_mutex_unlock(&mbitmap);
 }
 
 uint32_t get_frame() {
+    // int pr = 100;
     int value;
     int err;
-
+    // printf("get %d\n", pr++);
     for (int i = 0; i < frames_memory; i++) {
         // // printf("GET FRAME Bit %d: %d\n", i, bitarray_test_bit(bitmap, i));
         if (!bitmap[i]) {
@@ -135,7 +160,7 @@ uint32_t get_frame() {
     // Checkeo timestamp
     // frame_t *replacing_frame = get_next_lru_frame();
     frame_t *replacing_frame = hasLRU ? get_next_lru_frame() : get_next_clock_frame();
-
+    // printf("get %d\n", pr++);
     // // printf("Reemplazo este frame: %d\n", replacing_frame -> number);
 
     if (replacing_frame != NULL) {
@@ -145,16 +170,24 @@ uint32_t get_frame() {
             if (!bitarray_test_bit(virtual_bitmap, i)) {
                 // // printf("Guardo en virtual %d\n", i);
                 // pego la data desde memoria
+                // printf("get v %d\n", pr++);
+                pthread_mutex_lock(&m_memoria);
+                pthread_mutex_lock(&m_virtual);
                 memcpy(virtual_memory + i * page_size, memory + replacing_frame -> number * page_size, page_size);
+                pthread_mutex_unlock(&m_virtual);
+                pthread_mutex_unlock(&m_memoria);
+                // printf("get m %d\n", pr++);
                 // err = msync(virtual_memory, virtual_size + frames_virtual / 8, MS_ASYNC);
                 // if (err == -1){
                 //     perror("Error de sincronizar a disco memoria");
                 //     return -1;
                 // }
                 // seteo el bit de virtual
+                pthread_mutex_lock(&mbitmapv);
                 bitarray_set_bit(virtual_bitmap, i);
+                pthread_mutex_unlock(&mbitmapv);
                 // unseteo el bit
-                bitmap[replacing_frame -> number] = 0;
+                unset_bitmap(bitmap, replacing_frame -> number);
                 // Actualizo el valor a devolver
                 value = replacing_frame -> number;
 
@@ -201,19 +234,18 @@ int check_free_frames(int frames_count) {
 }
 
 int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictionary* admin_collection, void *buffer) {
-
+    
     double val;
-
+    int pnumber = 0;
     void *temp;
     pcb_t *p_aux = malloc(sizeof(pcb_t));
     int task_size;
     int tcb_count;
     int offset = 0;
     int tid, xpos, ypos;
+    int task_start = 0;
 
-    int task_start = 8;
-
-    p_aux -> tasks = 8; // Al leer un frame, las tareas siempre comienzan en la posicion 8 del frame leido (paginacion)
+    p_aux -> tasks = 0; // Al leer un frame, las tareas siempre comienzan en la posicion 8 del frame leido (paginacion)
     memcpy(&p_aux -> pid, buffer + offset, sizeof(uint32_t));
     offset += sizeof(int);
     
@@ -225,29 +257,16 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
     memset(tasks + task_size, '\0', 1);
     offset += task_size;
 
-    // char *test = malloc(task_size + 1);
-    // memcpy(test, tasks, task_size);
-    // test[task_size] = '\0';
-
-    // printf("ME LLEGO LA TAREA: %s\n", test);
-
-    // free(test);
-
     memcpy(&tcb_count, buffer + offset, sizeof(int));
     offset += sizeof(int);
 
     int memory_size = sizeof(pcb_t) + task_size + tcb_count * 21;
-
-    // val = (double) (sizeof(pcb_t) + task_size) / page_size;
-    // int tcb_page_start = ceil(val);
 
     admin_data *tcb_data = malloc(sizeof(admin_data));
     tcb_data -> cantidad = tcb_count;
     tcb_data -> start = sizeof(pcb_t) + task_size;
     tcb_data -> page_number = (sizeof(pcb_t) + task_size) / page_size;
     tcb_data -> tcb = malloc(sizeof(uint8_t) * tcb_count);
-
-    // printf("tcb page: %d - %d\n", tcb_data -> page_number, tcb_data -> start % page_size);
 
     // Inicializo el bitmap de tcbs en 1 ya que son los que se crean al principio
     for(int i = 0; i < tcb_count; i++) {
@@ -264,25 +283,27 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
     temp = malloc(frames_count * page_size);
     int temp_off = 0;
 
-    memcpy(temp + temp_off, &p_aux -> pid, sizeof(uint32_t));
-    temp_off += sizeof(uint32_t);
-
-    memcpy(temp + temp_off, &p_aux -> tasks, sizeof(uint32_t));
-    temp_off += sizeof(uint32_t);
-
     // Me guardo el ID del pcb como string para el diccionario
     char *pid = string_itoa(p_aux -> pid);
     int p_id = p_aux -> pid;
-    free(p_aux);
-
-    dictionary_put(admin_collection, pid, tcb_data);
-
+    
+    // GUARDO TAREAS
     memcpy(temp + temp_off, tasks, task_size);
     temp_off += task_size;
 
     free(tasks);
 
-    // // printf("Size until tcbs.. %d - %d\n", temp_off, offset);
+    // GUARDO PCB
+    memcpy(temp + temp_off, &p_aux -> pid, sizeof(uint32_t));
+    temp_off += sizeof(uint32_t);
+
+    memcpy(temp + temp_off, &p_aux -> tasks, sizeof(uint32_t));
+    temp_off += sizeof(uint32_t);
+    free(p_aux);
+
+    pthread_mutex_lock(&madmin);
+    dictionary_put(admin_collection, pid, tcb_data);
+    pthread_mutex_unlock(&madmin);
 
     for( int i = 0; i < tcb_count; i++) {
         memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
@@ -297,7 +318,7 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
         memcpy(temp + temp_off, buffer + offset, sizeof(char));
         temp_off += sizeof(char);
         offset += sizeof(char);
-        
+        // printf("tcb %d\n", pr++);
         memcpy(temp + temp_off, buffer + offset, sizeof(uint32_t));
         memcpy(&xpos, buffer + offset, sizeof(uint32_t));
         temp_off += sizeof(uint32_t);
@@ -340,227 +361,115 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
             frame -> modified = 1;
             frame -> presence = 1;
 
-            // // printf("%d TIME: %d\n", frame -> number, frame -> time);
-
             // Creo pagina
             page_t *page = malloc(sizeof(page_t));
+            page -> number = pnumber++;
             page -> frame = frame;
 
             if (bytes_left < page_size) {
                 // copio bytes_left
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
+                pthread_mutex_unlock(&m_memoria);
             } else {
                 // copio page_size
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
+                pthread_mutex_unlock(&m_memoria);
                 bytes_left -= page_size;
             }
 
             queue_push(tabla, page);
             // Agrego tabla al diccionario
+            pthread_mutex_lock(&mdictionary);
             dictionary_put(table_collection, pid, tabla);
+            pthread_mutex_unlock(&mdictionary);
         }
         free(temp);
         free(pid);
+        
         return 1;
 
     } else {
         free(temp);
         free(pid);
+        
         return -1;
     }
 
 }
 
+page_t * _list_find(t_list *self, int id) {
+    t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+		
+        page_t *page = (page_t *) element -> data;
 
-// void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
-//     // // printf("Obtengo tablas del proceso..\n");
-//     t_queue *self = dictionary_get(table_collection, key);
-//     admin_data *data_tcb = dictionary_get(admin_collection, key);
+        if (page -> number == id) {
+            return page;
+        }
 
-//     void *temp = malloc(queue_size(self) * page_size);
+		element = aux;
+	}
 
-//     page_t *page_aux;
+    return NULL;
+}
 
-//     int original_size = queue_size(self);
+bool sort_by_id(void *item1, void *item2) {
+    page_t *page_aux = (page_t *)item1;
+    page_t *page_aux2 = (page_t *)item2;
 
-//     char *nextTask;
+    return page_aux -> number < page_aux2 -> number;
+}
 
-//     void *recv_task;
-
-//     // // printf("Obtengo las paginas en memoria..: %d\n", original_size);
-
-//     int off = 0;
-//     while(queue_size(self) > 0) {
-//         page_aux = queue_pop(self);
-
-//         // // printf("STATUS: %d\n", page_aux -> frame -> presence);
-//         if (page_aux -> frame -> presence) {
-//             // // printf("PAGE IN MEMORY\n");
-//             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
-//             unset_bitmap(bitmap, (page_aux -> frame) -> number);
-//         } else {
-//             // // printf("SWAP PAGE\n");
-//             // TODO: SWAPEAR
-//             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
-
-//             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
-            
-//         }
-        
-//         off++;
-
-//         // free((page_aux -> frame) -> time);
-//         free(page_aux -> frame);
-//         free(page_aux);
-//     }
-
-//     // // printf("Obtengo tcb a eliminar del buffer: %d\n", data_tcb -> start);
-
-//     // --- Getting tcb list from temp
-//     uint32_t temp_id;
-//     int tcb_left;
-//     int auxoff = 0;
-//     for (int i = 0; i < data_tcb -> cantidad; i++) {
-//         // Leo solo el primer int, que representa el tid
-//         memcpy(&temp_id, (temp + data_tcb -> start) + (i * 21), sizeof(uint32_t));
-
-//         if (temp_id == id_tcb) {
-
-//             // // printf("\n\n ------ busco la tarea ------- \n\n");
-
-//             int task_counter = 0;
-
-//             int prevTask;
-
-//             memcpy(&prevTask, (temp + data_tcb -> start) + (i * 21) + sizeof(uint32_t) * 4 + sizeof(char), sizeof(uint32_t));
-
-//             while (memcmp(temp + prevTask + task_counter, ";", 1) && temp + prevTask + task_counter != NULL && prevTask + task_counter < data_tcb -> start) {
-//                 // // printf("CHAR: %c\n", get_char_value(temp + prevTask, task_counter));
-//                 task_counter++;
-//             }
-//             while (!isalpha(get_char_value(temp + prevTask, task_counter)) && temp + prevTask + task_counter != NULL && prevTask + task_counter < data_tcb -> start){
-//                 // // printf("CHAR: %c\n", get_char_value(temp + prevTask, task_counter));
-//                 task_counter++;
-//             }
-
-//             // printf("Tarea previa: %d - %d\n", prevTask, prevTask + task_counter);
-
-//             if (prevTask < data_tcb -> start && prevTask + task_counter <= data_tcb -> start) {
-//                 recv_task = malloc(task_counter + 1);
-//                 memcpy(recv_task, temp + prevTask, task_counter);
-//                 memset(recv_task + task_counter, '\0', 1);
-//             } else {
-//                 recv_task = NULL;
-//             }
-
-//             int next_addr = prevTask + task_counter;
-
-//             memcpy((temp + data_tcb -> start) + (i * 21) + sizeof(uint32_t) * 4 + sizeof(char), &next_addr, sizeof(uint32_t));
-
-//             break;
-//         }
-//     }
-
-
-//     int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * 21;
-
-//     // // printf("Actualizo frames en memoria: %d - %d\n", data_tcb -> cantidad, size_a_copiar);
-//     // int size_until_task = data_tcb -> start;
-//     int posicion_temp = 0;
-//     uint32_t n_frame;
-
-//     while(size_a_copiar) {
-//         if (size_a_copiar >= page_size) {
-//             n_frame = get_frame();
-//             set_bitmap(bitmap, n_frame);
-
-//             // Creo frame
-//             frame_t *frame = malloc(sizeof(frame_t));
-//             frame -> time = timer++;
-//             frame -> number = n_frame;
-//             frame -> start = n_frame * page_size;
-//             frame -> modified = 1;
-//             frame -> presence = 1;
-
-//             // Creo pagina
-//             page_t *page = malloc(sizeof(page_t));
-//             page -> frame = frame;
-
-//             memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, page_size);
-
-//             queue_push(self, page);
-
-//             size_a_copiar -= page_size;
-//         } else {
-//             n_frame = get_frame();
-//             set_bitmap(bitmap, n_frame);
-
-//             // Creo frame
-//             frame_t *frame = malloc(sizeof(frame_t));
-//             frame -> time = timer++;
-//             frame -> number = n_frame;
-//             frame -> start = n_frame * page_size;
-//             frame -> modified = 1;
-//             frame -> presence = 1;
-
-//             // Creo pagina
-//             page_t *page = malloc(sizeof(page_t));
-//             page -> frame = frame;
-
-//             memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, size_a_copiar);
-
-//             queue_push(self, page);
-
-//             size_a_copiar -= size_a_copiar;
-//         }
-//         posicion_temp++;
-//     }
-
-//     free(temp);
-
-//     dictionary_put(table_collection, key, self);
-
-//     return recv_task;
-// }
-
-void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
+void update_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, int next) {
     // // printf("Obtengo tablas del proceso..\n");
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
+    pthread_mutex_lock(&madmin);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
+    pthread_mutex_unlock(&madmin);
 
     page_t *page_aux;
 
     int original_size = queue_size(self);
 
-    char *nextTask;
-
-    void *recv_task;
-
     // // printf("Obtengo las paginas en memoria..: %d\n", original_size);
 
     int off = 0;
-
     int tcb_page_count = (queue_size(self) - data_tcb -> page_number);
 
     void *temp = malloc(tcb_page_count * page_size);
 
     // Traigo paginas de tcb
     for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
-        page_aux = list_get(self -> elements, i);
+        page_aux = list_remove(self -> elements, i);
 
         if (page_aux -> frame -> presence) {
+            pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
             
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
+            pthread_mutex_lock(&m_virtual);
             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
 
             page_aux -> frame -> presence = 1;
 
             int new_frame = get_frame();
-
-            memcpy(memory + (new_frame * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_lock(&m_memoria);
+            pthread_mutex_lock(&m_virtual);
+            memcpy(memory + (new_frame * page_size), temp + (off * page_size), page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_unlock(&m_memoria);
             set_bitmap(bitmap, new_frame);
 
             // Creo frame
@@ -570,6 +479,8 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
             page_aux -> frame -> modified = 1;
             page_aux -> frame -> presence = 1;
         }
+
+        list_add_sorted(self -> elements, page_aux, sort_by_id);
 
         off++;
 
@@ -583,7 +494,6 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
     int falta_pagina = 0;
     int falta_pagina2 = 0;
     page_t *page2;
-    char *tareas = malloc(page_size);
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
         memcpy(&temp_id, temp + (data_tcb -> start % page_size) + (i * 21), sizeof(uint32_t));
@@ -592,38 +502,142 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
             pos_tcb = (data_tcb -> start % page_size) + (i * 21) + sizeof(uint32_t) * 4 + sizeof(char);
 
-            // // printf("\n\n ------ busco la tarea ------- \n\n");
+            // updateo el tcb
+
+            memcpy(temp + pos_tcb, &next, sizeof(uint32_t));
+            int ofset= 0;
+            page_t *tcb_page;
+            for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
+                tcb_page = _list_find(self -> elements, i);
+                pthread_mutex_lock(&m_memoria);
+                memcpy(memory + tcb_page -> frame -> number * page_size, temp + ofset, page_size);
+                pthread_mutex_unlock(&m_memoria);
+                ofset += page_size;
+            }
+
+            break;
+        }
+    }
+
+    free(temp);
+}
+
+char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
+    // // printf("Obtengo tablas del proceso..\n");
+    int pagecount = 1;
+    pthread_mutex_lock(&mdictionary);
+    t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
+    pthread_mutex_lock(&madmin);
+    admin_data *data_tcb = dictionary_get(admin_collection, key);
+    pthread_mutex_unlock(&madmin);
+
+    page_t *page_aux;
+
+    int original_size = queue_size(self);
+
+    char *nextTask;
+
+    char *recv_task;
+
+    int off = 0;
+
+    int tcb_page_count = (queue_size(self) - data_tcb -> page_number);
+
+    void *temp = malloc(tcb_page_count * page_size);
+
+    // Traigo paginas de tcb
+    for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
+        page_aux = list_remove(self -> elements, i);
+
+        if (page_aux -> frame -> presence) {
+            pthread_mutex_lock(&m_memoria);
+            memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
+            
+            // unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        } else {
+            pthread_mutex_lock(&m_virtual);
+            memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
+            bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
+
+            page_aux -> frame -> presence = 1;
+
+            int new_frame = get_frame();
+
+            pthread_mutex_lock(&m_memoria);
+            pthread_mutex_lock(&m_virtual);
+            memcpy(memory + (new_frame * page_size), temp + (off * page_size), page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_unlock(&m_memoria);
+            set_bitmap(bitmap, new_frame);
+
+            // Creo frame
+            page_aux -> frame -> time = timer++;
+            page_aux -> frame -> number = new_frame;
+            page_aux -> frame -> start = new_frame * page_size;
+            page_aux -> frame -> modified = 1;
+            page_aux -> frame -> presence = 1;
+        }
+
+        off++;
+
+        list_add_sorted(self -> elements, page_aux, sort_by_id);
+
+    }
+
+    // --- Getting tcb list from temp
+    uint32_t temp_id;
+    int tcb_left;
+    int pos_tcb;
+    int auxoff = 0;
+    int falta_pagina = 0;
+    int falta_pagina2 = 0;
+    page_t *page2;
+    char *tareas = malloc(page_size * 2);
+    for (int i = 0; i < data_tcb -> cantidad; i++) {
+        // Leo solo el primer int, que representa el tid
+        memcpy(&temp_id, temp + (data_tcb -> start % page_size) + (i * 21), sizeof(uint32_t));
+
+        if (temp_id == id_tcb) {
+
+            pos_tcb = (data_tcb -> start % page_size) + (i * 21) + (sizeof(uint32_t) * 4) + sizeof(char);
 
             int task_counter = 0;
 
             int prevTask;
 
-            memcpy(&prevTask, (temp + (data_tcb -> start % page_size)) + (i * 21) + sizeof(uint32_t) * 4 + sizeof(char), sizeof(uint32_t));
+            memcpy(&prevTask, temp + pos_tcb, sizeof(uint32_t));
 
             // busco la pagina de tareas
 
             int pnumber = prevTask / page_size;
 
-            // printf("PAGINA: %d\n", pnumber);
-
-            page2 = list_get(self -> elements, pnumber);
+            page2 = list_remove(self -> elements, pnumber);
 
             if (page2 -> frame -> presence) {
+                pthread_mutex_lock(&m_memoria);
                 memcpy(tareas, memory + (page2 -> frame) -> start, page_size);
-                // printf("No reemplazo %s\n", tareas);
+                pthread_mutex_unlock(&m_memoria);
                 
-                // unset_bitmap(bitmap, (page2 -> frame) -> number);
             } else {
+                pthread_mutex_lock(&m_virtual);
                 memcpy(tareas, virtual_memory + (page2 -> frame) -> start, page_size);
-                // printf("Reemplazo %s\n", tareas);
-
+                pthread_mutex_unlock(&m_virtual);
+                pthread_mutex_lock(&mbitmapv);
                 bitarray_clean_bit(virtual_bitmap, (page2 -> frame) -> number);
+                pthread_mutex_unlock(&mbitmapv);
 
                 page2 -> frame -> presence = 1;
 
                 int new_frame = get_frame();
 
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + (new_frame * page_size), tareas, page_size);
+                pthread_mutex_unlock(&m_memoria);
                 set_bitmap(bitmap, new_frame);
 
                 // Creo frame
@@ -634,84 +648,47 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
             }
 
+            list_add_sorted(self -> elements, page2, sort_by_id);
+
             // printf("Empiezo en pos %d\n", (prevTask % page_size != 0 ? prevTask % page_size : prevTask));
             // printf("PAGINA: %d - %d - %d - %d\n", pnumber, prevTask + task_counter, prevTask, memcmp(tareas + (prevTask % page_size) + task_counter, ";", 1));
 
             // busco la tarea
-            while (!falta_pagina && memcmp(tareas + (prevTask % page_size) + task_counter, ";", 1) && prevTask + task_counter < data_tcb -> start) {
+            while (!falta_pagina && prevTask + task_counter < (data_tcb -> start - 8) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
+
                 task_counter++;
-                // printf("CHAR: %c\n", get_char_value(tareas + (prevTask % page_size), task_counter));
-                // printf("Searching 1.. %d\n", prevTask + task_counter);
                 if ((prevTask + task_counter) % page_size == 0) {
                     falta_pagina = 1;
-                    // printf("Entre...\n");
                 }
             }
 
             if (falta_pagina) {
-                tareas = realloc(tareas, page_size * 2);
-                page2 = list_get(self -> elements, pnumber + 1);
+                // tareas = realloc(tareas, page_size * 2);
+                page2 = list_remove(self -> elements, pnumber + pagecount++);
 
                 if (page2 -> frame -> presence) {
+                    pthread_mutex_lock(&m_memoria);
                     memcpy(tareas + page_size, memory + (page2 -> frame) -> start, page_size);
+                    pthread_mutex_unlock(&m_memoria);
                     
                     // unset_bitmap(bitmap, (page2 -> frame) -> number);
                 } else {
+                    pthread_mutex_lock(&m_virtual);
                     memcpy(tareas + page_size, virtual_memory + (page2 -> frame) -> start, page_size);
-
+                    pthread_mutex_unlock(&m_virtual);
+                    pthread_mutex_lock(&mbitmapv);
                     bitarray_clean_bit(virtual_bitmap, (page2 -> frame) -> number);
+                    pthread_mutex_unlock(&mbitmapv);
 
                     page2 -> frame -> presence = 1;
 
                     int new_frame = get_frame();
-
-                    memcpy(memory + (new_frame * page_size), virtual_memory + (page2 -> frame) -> start, page_size);
-                    set_bitmap(bitmap, new_frame);
-
-                    // Creo frame
-                    page2 -> frame -> time = timer++;
-                    page2 -> frame -> number = new_frame;
-                    page2 -> frame -> start = new_frame * page_size;
-                    page2 -> frame -> modified = 1;
-
-                }
-
-                while (memcmp(tareas + (prevTask % page_size) + task_counter, ";", 1) && prevTask + task_counter < data_tcb -> start) {
-                    task_counter++;
-                }
-            }
-
-            while (!falta_pagina2 && !isalpha(get_char_value(tareas + (prevTask % page_size), task_counter)) && prevTask + task_counter < data_tcb -> start){
-                // printf("CHAR: %c\n", get_char_value(tareas + (prevTask % page_size), task_counter));
-                task_counter++;
-                // printf("Searching 2.. %d - %d\n", prevTask + task_counter, data_tcb -> start);
-                if ((prevTask + task_counter) % page_size == 0) {
-                    // printf("Entre aca...\n");
-                    falta_pagina2 = 1;
-                    break;
-                }
-            }
-
-            if (falta_pagina2) {
-                tareas = realloc(tareas, falta_pagina ? page_size * 2 : page_size * 3);
-                page2 = list_get(self -> elements, falta_pagina ? pnumber + 2 : pnumber + 1);
-
-                int sizes = falta_pagina ? page_size * 2 : page_size;
-
-                if (page2 -> frame -> presence) {
-                    memcpy(tareas + sizes, memory + (page2 -> frame) -> start, page_size);
                     
-                    // unset_bitmap(bitmap, (page2 -> frame) -> number);
-                } else {
-                    memcpy(tareas + sizes, virtual_memory + (page2 -> frame) -> start, page_size);
-
-                    bitarray_clean_bit(virtual_bitmap, (page2 -> frame) -> number);
-
-                    page2 -> frame -> presence = 1;
-
-                    int new_frame = get_frame();
-
-                    memcpy(memory + (new_frame * page_size), virtual_memory + (page2 -> frame) -> start, page_size);
+                    pthread_mutex_lock(&m_memoria);
+                    pthread_mutex_lock(&m_virtual);
+                    memcpy(memory + (new_frame * page_size), tareas + page_size, page_size);
+                    pthread_mutex_unlock(&m_virtual);
+                    pthread_mutex_unlock(&m_memoria);
                     set_bitmap(bitmap, new_frame);
 
                     // Creo frame
@@ -722,34 +699,29 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
                 }
 
-                while (!isalpha(get_char_value(tareas + (prevTask % page_size), task_counter)) && prevTask + task_counter < data_tcb -> start){
-                    // printf("CHAR: %c\n", get_char_value(tareas + (prevTask % page_size), task_counter));
+                list_add_sorted(self -> elements, page2, sort_by_id);
+
+                while (prevTask + task_counter < (data_tcb -> start - 8) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
+                    
                     task_counter++;
                 }
             }
 
-            // printf("Tarea previa: %d - %d\n", prevTask, prevTask + task_counter);
-
-            if (prevTask < data_tcb -> start && prevTask + task_counter <= data_tcb -> start) {
+            if (prevTask < (data_tcb -> start - 8) && prevTask + task_counter <= (data_tcb -> start - 8)) {
                 recv_task = malloc(task_counter + 1);
                 memcpy(recv_task, tareas + (prevTask % page_size), task_counter);
-                memset(recv_task + task_counter, '\0', 1);
+                recv_task[task_counter] = '\0';
             } else {
                 recv_task = NULL;
             }
 
             // updateo el tcb
+            int next_addr = prevTask + task_counter + 1;
 
-            int next_addr = prevTask + task_counter;
-
-            memcpy(temp + pos_tcb, &next_addr, sizeof(uint32_t));
             int ofset= 0;
             page_t *tcb_page;
-            for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
-                tcb_page = list_get(self -> elements, i);
-                memcpy(memory + tcb_page -> frame -> number * page_size, temp + ofset, page_size);
-                ofset += page_size;
-            }
+
+            update_task_from_page(memory, admin_collection, table_collection, key, id_tcb, next_addr);
 
             break;
         }
@@ -763,8 +735,12 @@ void *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
 void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
     // // printf("Obtengo tablas del proceso..\n");
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
+    pthread_mutex_lock(&madmin);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
+    pthread_mutex_unlock(&madmin);
 
     void *temp = malloc(queue_size(self) * page_size);
 
@@ -782,14 +758,19 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
         // printf("STATUS: %d\n", page_aux -> frame -> presence);
         if (page_aux -> frame -> presence) {
             // printf("PAGE IN MEMORY\n");
+            pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
             unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
             // printf("SWAP PAGE\n");
             // TODO: SWAPEAR
+            pthread_mutex_lock(&m_virtual);
             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
-
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
             
         }
         
@@ -847,9 +828,11 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
 
             // Creo pagina
             page_t *page = malloc(sizeof(page_t));
+            page -> number = queue_size(self);
             page -> frame = frame;
-
+            pthread_mutex_lock(&m_memoria);
             memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, page_size);
+            pthread_mutex_unlock(&m_memoria);
 
             queue_push(self, page);
 
@@ -869,8 +852,10 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
             // Creo pagina
             page_t *page = malloc(sizeof(page_t));
             page -> frame = frame;
-
+            page -> number = queue_size(self);
+            pthread_mutex_lock(&m_memoria);
             memcpy(memory + (n_frame * page_size), temp + posicion_temp * page_size, size_a_copiar);
+            pthread_mutex_unlock(&m_memoria);
 
             queue_push(self, page);
 
@@ -880,16 +865,19 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
     }
 
     free(temp);
-
+    pthread_mutex_lock(&mdictionary);
     dictionary_put(table_collection, key, self);
+    pthread_mutex_unlock(&mdictionary);
 }
 
 void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key) {
-
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
+    pthread_mutex_lock(&madmin);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
-
     dictionary_remove_and_destroy(admin_collection, key, admin_destroyer);
+    pthread_mutex_unlock(&madmin);
 
     page_t *page_aux;
 
@@ -901,14 +889,19 @@ void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
         free(page_aux -> frame);
         free(page_aux);
     }
-
+    pthread_mutex_lock(&mdictionary);
     dictionary_put(table_collection, key, self);
+    pthread_mutex_unlock(&mdictionary);
 }
 
 void update_position_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, int posx, int posy) {
     // // printf("Obtengo tablas del proceso..\n");
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
+    pthread_mutex_lock(&madmin);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
+    pthread_mutex_unlock(&madmin);
 
     page_t *page_aux;
 
@@ -923,21 +916,30 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
 
     // Traigo paginas de tcb
     for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
-        page_aux = list_get(self -> elements, i);
+        page_aux = list_remove(self -> elements, i);
 
         if (page_aux -> frame -> presence) {
+            pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
             
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
+            pthread_mutex_lock(&m_virtual);
             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
 
             page_aux -> frame -> presence = 1;
 
             int new_frame = get_frame();
-
-            memcpy(memory + (new_frame * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_lock(&m_memoria);
+            pthread_mutex_lock(&m_virtual);
+            memcpy(memory + (new_frame * page_size), temp + (off * page_size), page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_unlock(&m_memoria);
             set_bitmap(bitmap, new_frame);
 
             // Creo frame
@@ -947,6 +949,7 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
             page_aux -> frame -> modified = 1;
             page_aux -> frame -> presence = 1;
         }
+        list_add_sorted(self -> elements, page_aux, sort_by_id);
 
         off++;
 
@@ -975,8 +978,10 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
             int ofset= 0;
             page_t *tcb_page;
             for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
-                tcb_page = list_get(self -> elements, i);
+                tcb_page = _list_find(self -> elements, i);
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + tcb_page -> frame -> number * page_size, temp + ofset, page_size);
+                pthread_mutex_unlock(&m_memoria);
                 ofset += page_size;
             }
 
@@ -990,8 +995,12 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
 
 void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, char status) {
     // // printf("Obtengo tablas del proceso..\n");
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
+    pthread_mutex_lock(&madmin);
     admin_data *data_tcb = dictionary_get(admin_collection, key);
+    pthread_mutex_unlock(&madmin);
 
     page_t *page_aux;
 
@@ -1006,21 +1015,30 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
 
     // Traigo paginas de tcb
     for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
-        page_aux = list_get(self -> elements, i);
+        page_aux = list_remove(self -> elements, i);
 
         if (page_aux -> frame -> presence) {
+            pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_memoria);
             
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
+            pthread_mutex_lock(&m_virtual);
             memcpy(temp + (off * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_lock(&mbitmapv);
             bitarray_clean_bit(virtual_bitmap, (page_aux -> frame) -> number);
+            pthread_mutex_unlock(&mbitmapv);
 
             page_aux -> frame -> presence = 1;
 
             int new_frame = get_frame();
-
-            memcpy(memory + (new_frame * page_size), virtual_memory + (page_aux -> frame) -> start, page_size);
+            pthread_mutex_lock(&m_memoria);
+            pthread_mutex_lock(&m_virtual);
+            memcpy(memory + (new_frame * page_size), temp + (off * page_size), page_size);
+            pthread_mutex_unlock(&m_virtual);
+            pthread_mutex_unlock(&m_memoria);
             set_bitmap(bitmap, new_frame);
 
             // Creo frame
@@ -1030,7 +1048,7 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
             page_aux -> frame -> modified = 1;
             page_aux -> frame -> presence = 1;
         }
-
+        list_add_sorted(self -> elements, page_aux, sort_by_id);
         off++;
 
     }
@@ -1057,8 +1075,10 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
             int ofset= 0;
             page_t *tcb_page;
             for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
-                tcb_page = list_get(self -> elements, i);
+                tcb_page = _list_find(self -> elements, i);
+                pthread_mutex_lock(&m_memoria);
                 memcpy(memory + tcb_page -> frame -> number * page_size, temp + ofset, page_size);
+                pthread_mutex_unlock(&m_memoria);
                 ofset += page_size;
             }
 
@@ -1335,7 +1355,9 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
                     // printf("Copiando elementos.. %d - %d - %d\n", temp -> nroSegmento, temp -> baseAddr, temp -> limit);
                     
                     // Copio los datos del segmento en la memoria auxiliar
+                    pthread_mutex_lock(&m_memoria);
                     memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+                    pthread_mutex_unlock(&m_memoria);
                     // memset(admin + offset, 1, data_size);
 
                     new_base = offset;
@@ -1368,11 +1390,15 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
     first -> baseAddr = offset;
     first -> limit = mem_size;
 
+    pthread_mutex_lock(&mtablasegmentos);
     queue_push(segmentosLibres, first);
+    pthread_mutex_unlock(&mtablasegmentos);
 
     if (!dictionary_is_empty(self)) {
         // memset(memory, 0, mem_size);
+        pthread_mutex_lock(&m_memoria);
         memcpy(memory, aux_memory, mem_size);
+        pthread_mutex_unlock(&m_memoria);
     }
 
     free(aux_memory);
@@ -1400,6 +1426,37 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
 //     }
 //     return 0;
 // }
+
+int mem_space(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
+
+    if (total_size > mem_size) {
+        return 0;
+    }
+
+    int sum = 0;
+
+    segment *temp;
+
+    t_list *self = segmentosLibres -> elements;
+
+    t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+
+        temp = (segment *) element -> data;
+        
+        sum += temp -> limit - temp -> baseAddr;
+
+		element = aux;
+	}
+
+     if (sum >= total_size) {
+        return 1;
+    }
+
+    return 0;
+}
 
 int check_space_memory(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
 
@@ -1478,7 +1535,9 @@ int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int tot
         if (temp -> limit - temp -> baseAddr >= total_size) {
             if (temp -> limit - temp -> baseAddr == total_size) {
                 start = temp -> baseAddr;
+                pthread_mutex_lock(&mtablasegmentos);
                 list_remove_and_destroy_element(segmentosLibres -> elements, index, destroyer);
+                pthread_mutex_unlock(&mtablasegmentos);
                 return start;
             } else {
                 start = temp -> baseAddr;
@@ -1488,6 +1547,7 @@ int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int tot
         }
 
 		element = aux;
+        index++;
 	}
     return -1;
 }
@@ -1575,6 +1635,12 @@ int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int tot
 //     }
 //     return -1;
 // }
+bool sort_by_addr(void *i1, void *i2) {
+  segment *uno = (segment *) i1;
+  segment *dos = (segment *) i2;
+
+  return uno -> baseAddr < dos -> baseAddr;
+}
 
 int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {
 
@@ -1583,6 +1649,8 @@ int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_c
     int index = 0;
 
     int start;
+
+    list_sort(segmentosLibres -> elements, sort_by_addr);
 
     t_list *self = segmentosLibres -> elements;
 
@@ -1596,7 +1664,9 @@ int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_c
         if (temp -> limit - temp -> baseAddr >= total_size) {
             if (temp -> limit - temp -> baseAddr == total_size) {
                 start = temp -> baseAddr;
+                pthread_mutex_lock(&mtablasegmentos);
                 list_remove_and_destroy_element(segmentosLibres -> elements, index, destroyer);
+                pthread_mutex_unlock(&mtablasegmentos);
                 return start;
             } else {
                 start = temp -> baseAddr;
@@ -1604,7 +1674,7 @@ int memory_seek(void *admin, int mem_size, int total_size, t_dictionary *table_c
                 return start;
             }
         }
-
+        index ++;
 		element = aux;
 	}
     return -1;
@@ -1710,7 +1780,7 @@ char get_char_value(void *buffer, int index) {
     return temp;
 }
 
-void *get_next_task(void *memory, int start_address, int limit_address,t_log* logger) {
+void *get_next_task(void *memory, int start_address, int limit_address, t_log* logger) {
 
     // // printf("Values - Start: %d - End: %d\n", start_address, limit_address);
     if (start_address >= limit_address) {
@@ -1719,10 +1789,12 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     // log_info(logger, "Limit address:%d", limit_address);
 
     void *tareas = malloc(limit_address - start_address + 1);
+    pthread_mutex_lock(&m_memoria);
     memcpy(tareas, memory + start_address, limit_address - start_address);
+    pthread_mutex_unlock(&m_memoria);
     memset(tareas + (limit_address-start_address), '\0', 1);
 
-    // // printf("Lista: %s\n",(char*) tareas);
+    printf("Lista: %s\n",(char*) tareas);
 
     int cantidadLetrasLeidas = 0;
     
@@ -1731,7 +1803,7 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     // Get one byte of the memory as a CHAR
     // char test_c = get_char_value(tareas, counter);
     int offset = 0;
-    while (memcmp(tareas + offset, ";", 1) && tareas + offset != NULL && cantidadLetrasLeidas + start_address < limit_address ) {
+    while (cantidadLetrasLeidas + start_address < limit_address && memcmp(tareas + offset, "|", 1) && tareas + offset != NULL ) {
         // // printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
         
         if(get_char_value(tareas,offset) != '\n'){
@@ -1742,11 +1814,11 @@ void *get_next_task(void *memory, int start_address, int limit_address,t_log* lo
     }
     // log_info(logger, "Cantidad letras hasta primer ;%d",cantidadLetrasLeidas);
 
-    while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) && cantidadLetrasLeidas + start_address < limit_address){
-        // // printf("CHAR: %c - %d | %d\n", get_char_value(tareas, cantidadLetrasLeidas), cantidadLetrasLeidas + start_address, limit_address);
+    // while (!isalpha(get_char_value(tareas, cantidadLetrasLeidas)) && cantidadLetrasLeidas + start_address < limit_address){
+    //     // // printf("CHAR: %c - %d | %d\n", get_char_value(tareas, cantidadLetrasLeidas), cantidadLetrasLeidas + start_address, limit_address);
 
-        cantidadLetrasLeidas++;
-    }
+    //     cantidadLetrasLeidas++;
+    // }
     // log_info(logger, "Cantidad letras despues de segundo while: %d",cantidadLetrasLeidas);
 
     void *recv_task = malloc(cantidadLetrasLeidas + 1);
@@ -1786,6 +1858,7 @@ int remove_segment_from_memory(void *memory, int mem_size, segment *segmento) {
 int save_tcb_in_memory(void *admin, void *memory, int mem_size, segment *segmento, tcb_t *data) {
     int offset = 0;
     if (segmento -> limit < mem_size) {
+        pthread_mutex_lock(&m_memoria);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> tid), sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> pid), sizeof(uint32_t));
@@ -1798,8 +1871,9 @@ int save_tcb_in_memory(void *admin, void *memory, int mem_size, segment *segment
         offset = sizeof(uint32_t);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> next), sizeof(uint32_t));
         offset = sizeof(uint32_t);
+        pthread_mutex_unlock(&m_memoria);
 
-        memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
+        // memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
 
         return 1;
     }
@@ -1814,6 +1888,7 @@ tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
 
     if (segmento -> limit < mem_size) {
         temp = malloc(sizeof(tcb_t));
+        pthread_mutex_lock(&m_memoria);
         memcpy(&(temp -> tid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(&(temp -> pid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
@@ -1825,6 +1900,7 @@ tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
         memcpy(&(temp -> ypos), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(&(temp -> next), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        pthread_mutex_unlock(&m_memoria);
         offset = sizeof(uint32_t);
 
         return temp;
@@ -1836,12 +1912,14 @@ tcb_t *get_tcb_from_memory(void *memory, int mem_size, segment *segmento) {
 int save_pcb_in_memory(void *admin, void *memory, int mem_size, segment *segmento, pcb_t *data) {
     int offset = 0;
     if (segmento -> limit < mem_size) {
+        pthread_mutex_lock(&m_memoria);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> pid), sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(memory + segmento -> baseAddr + offset, &(data -> tasks), sizeof(uint32_t));
         offset = sizeof(uint32_t);
+        pthread_mutex_unlock(&m_memoria);
 
-        memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
+        // memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
 
         return 1;
     }
@@ -1854,9 +1932,11 @@ pcb_t *get_pcb_from_memory(void *memory, int mem_size, segment *segmento) {
 
     pcb_t *temp = malloc(sizeof(pcb_t));
     if (segmento -> limit < mem_size) {
+        pthread_mutex_lock(&m_memoria);
         memcpy(&(temp -> pid), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
         offset = sizeof(uint32_t);
         memcpy(&(temp -> tasks), memory + segmento -> baseAddr + offset, sizeof(uint32_t));
+        pthread_mutex_unlock(&m_memoria);
         offset = sizeof(uint32_t);
 
         return temp;
@@ -1869,8 +1949,10 @@ pcb_t *get_pcb_from_memory(void *memory, int mem_size, segment *segmento) {
 int save_task_in_memory(void *admin, void *memory, int mem_size, segment *segmento, void *data) {
 
     if (segmento -> limit < mem_size) {
+        pthread_mutex_lock(&m_memoria);
         memcpy(memory + segmento -> baseAddr, data, segmento -> limit - segmento -> baseAddr);
-        memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
+        pthread_mutex_unlock(&m_memoria);
+        // memset(admin + segmento -> baseAddr, 1, segmento -> limit - segmento -> baseAddr);
         return 1;
     }
 
@@ -1933,8 +2015,9 @@ void remove_segment_from_table(t_dictionary* table_collection, char *key, segmen
     segment *temp;
 
     int index = 0;
-
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
 
 	if (self -> elements -> elements_count > 0) {
 
@@ -1963,8 +2046,9 @@ void remove_segment_from_table(t_dictionary* table_collection, char *key, segmen
 
 segment *get_next_segment(t_dictionary *table_collection, char* key) {
     segment *temp;
-
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
 
 	if (self -> elements -> elements_count > 0) {
 
@@ -1984,8 +2068,9 @@ void remove_pcb_from_memory(void *memory, int mem_size, t_dictionary *table_coll
     segment *temp;
 
     int index = 0;
-
+    pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
+    pthread_mutex_unlock(&mdictionary);
 
     // printf("CANTIDAD ELEMENTOS: %d\n", self -> elements -> elements_count);
 
@@ -2047,9 +2132,13 @@ int get_page_number(t_dictionary *self, uint32_t frame) {
                 aux2 = elementl->next;
                 page_t *page = elementl -> data;
                 if((page -> frame) -> number == frame && (page -> frame) -> presence) {
+                    pthread_mutex_lock(&m_global_process);
                     global_process = string_new();
                     string_append(&global_process, element -> key);
+                    pthread_mutex_unlock(&m_global_process);
+                    pthread_mutex_lock(&m_global_page);
                     global_page = index;
+                    pthread_mutex_unlock(&m_global_page);
                     return 1;
                 }
                 elementl = aux2;
@@ -2133,6 +2222,7 @@ void process_iterate(t_list *self, void(*closure)(), void *memory, FILE *file, c
 	while (element != NULL) {
 		aux = element->next;
 		closure(element->data, memory, file, key);
+
 		element = aux;
 	}
 }

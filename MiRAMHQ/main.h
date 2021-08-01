@@ -52,7 +52,6 @@ void segmentation_handler (int fd, char *id, int opcode, void *buffer, t_log *lo
 // --------------------- END HANDLERS ----------------------- //
 
 void admin_destroyer(void *item);
-
 void setup_pagination(void *memory, char *path, int page_size, int real_size, int v_size, t_log *logger);
 
 #endif

@@ -11,6 +11,7 @@ tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger){
     nuevoTCB->tiempoEnExec = 0;
     nuevoTCB->tiempoEnBloqIO = 0;
     nuevoTCB->ciclosCumplidos = 0;
+    nuevoTCB->mensajeInicialIMS = 0;
 
     return nuevoTCB;
 }
@@ -87,7 +88,9 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
         offset += sizeof(int);  
 
     }
+    pthread_mutex_lock(&mutex_cantidadActual);
     cantidadActual += cant_tripulantes;
+    pthread_mutex_unlock(&mutex_cantidadActual);
     log_info(logger, "CantidadActual: %d", cantidadActual);
     
     pthread_mutex_lock(&mutexBuffer);
@@ -135,7 +138,6 @@ void destruirPCB(void* nodo){
 /*---------------------------FUNCION TRIPULANTE (EXEC)----------------------*/
 void funcionTripulante (void* elemento) {
     parametrosThread* param = (parametrosThread*) elemento;
-    int mensajeInicialIMS=0;
     tcb *tcbTripulante;
 
     pthread_mutex_lock(&mutexValidador);
@@ -155,17 +157,20 @@ void funcionTripulante (void* elemento) {
             pthread_mutex_lock(&mutexExit);
             tcbTripulante = get_by_id(cola_exit->elements, param->idSemaforo);
             pthread_mutex_unlock(&mutexExit);
+            log_info(logger, "El tripulante es: %d",tcbTripulante->tid);
         }       
-
-        hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param, mensajeInicialIMS);
         
+        hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param);
+
+        //pthread_mutex_lock(&mutex_cantidadTCB); 
         _signal(1,cantidadTCBEnExec,&semEBIO);
+        //pthread_mutex_unlock(&mutex_cantidadTCB);
     }
 }
 
 /*-------------------------------ADICIONALES------------------------------*/
 
-void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param, int mensajeInicialIMS){
+void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param){
     tcb* tripulante = (tcb*) tcbTrip;
     parametrosThread* parametros = (parametrosThread*) param;
     if(tripulante->estaVivoElHilo && planificacion_viva){// SI ESTÁ VIVO EL TRIPULANTE (HILO)
@@ -173,13 +178,10 @@ void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param, int mensajeInicialIM
             resolviendoSabotaje((void*) tripulante, (void*) parametros);
         }
         else{
-            operandoSinSabotaje((void*) tripulante, (void*) parametros, mensajeInicialIMS);
+            operandoSinSabotaje((void*) tripulante, (void*) parametros);
         }
+        sleep(ciclo_CPU);
     }
-    else{
-            log_error(logger, "[Tripulante %d] La tarea ingresada no posee un formato de tarea correcto", parametros->idSemaforo);
-    }
-    sleep(ciclo_CPU);
 }
 
 void resolviendoSabotaje(void* tcbTrip, void* param){
@@ -233,7 +235,7 @@ void resolviendoSabotaje(void* tcbTrip, void* param){
 
 }
 
-void operandoSinSabotaje(void* tcbTrip, void* param, int mensajeInicialIMS){
+void operandoSinSabotaje(void* tcbTrip, void* param){
     tcb* tripulante = (tcb*) tcbTrip;
     parametrosThread* parametros = (parametrosThread*) param;
     char** tarea = string_split(tripulante->instruccion_actual, " ");
@@ -245,20 +247,20 @@ void operandoSinSabotaje(void* tcbTrip, void* param, int mensajeInicialIMS){
         operandoSinSabotajeTareaIO((void*) tripulante, (void*) parametros, tarea);
     }
     else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
-        operandoSinSabotajeTareaNormal((void*) tripulante, (void*) parametros, tarea, mensajeInicialIMS);    
+        operandoSinSabotajeTareaNormal((void*) tripulante, (void*) parametros, tarea);    
     }   
 }
 
-void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea, int mensajeInicialIMS){
+void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
 
     tcb* tripulante = (tcb*) tcbTrip;
     parametrosThread* parametros = (parametrosThread*) param;
     log_info(logger, "[Tripulante %d] Se debe realizar una tarea normal",parametros->idSemaforo);
 
     char** parametrosTarea = string_split(tarea[0], ";");
-    for(int i=0; parametrosTarea[i]!=NULL; i++){
-        log_info(logger, "parametro: %s", parametrosTarea[i]);
-    }
+    // for(int i=0; parametrosTarea[i]!=NULL; i++){
+    //     log_info(logger, "parametro: %s", parametrosTarea[i]);
+    // }
     char* nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
     strcpy(nombreTareaNormal, parametrosTarea[0]);
     log_info(logger, "nombre de tarea (tarea normal): %s", nombreTareaNormal);
@@ -270,7 +272,7 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea, in
 
     if(llegoALaPosicion){
 
-        if(mensajeInicialIMS==0){// NO SE MANDÓ TODAVÍA EL MENSAJE A IMS DE INICIO DE TAREA
+        if(tripulante->mensajeInicialIMS==0){// NO SE MANDÓ TODAVÍA EL MENSAJE A IMS DE INICIO DE TAREA
             int tamanioNombreTarea = strlen(nombreTareaNormal);
             int tamanioBuffer = sizeof(int)*5 + tamanioNombreTarea;
                     
@@ -279,36 +281,38 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea, in
             buffer = _serialize(tamanioBuffer, "%d%s%d%d%d", tripulante->tid, nombreTareaNormal, posicionX, posicionY, tiempoTarea);
             _send_message(conexion_IMS, "DIS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
             free(buffer);
+            tripulante->mensajeInicialIMS = 1;
             pthread_mutex_unlock(&mutexBuffer);
-            mensajeInicialIMS = 1;
         }
 
-            tripulante->tiempoEnExec++;
-            tripulante->ciclosCumplidos++;
-            log_info(logger, "El tiempo en exec del tripulante %d es: %d", tripulante->tid, tripulante->tiempoEnExec);
+        tripulante->tiempoEnExec++;
+        tripulante->ciclosCumplidos++;
+        log_info(logger, "El tiempo en exec del tripulante %d es: %d", tripulante->tid, tripulante->tiempoEnExec);
 
-            if(tripulante->tiempoEnExec == tiempoTarea){// COMPLETÓ LA TAREA NORMAL
-                log_info(logger, "[Tripulante %d] Termino la tarea normal el tripulante", tripulante->tid);
-                int tamanioNombreTarea = strlen(nombreTareaNormal);
-                int tamanioBuffer = sizeof(int)*2 + tamanioNombreTarea;
-                            
-                void* buffer;        
-                pthread_mutex_lock(&mutexBuffer);
-                buffer = _serialize(tamanioBuffer, "%d%s", tripulante->tid, nombreTareaNormal);
-                _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
-                free(buffer);
-                pthread_mutex_unlock(&mutexBuffer);
+        if(tripulante->tiempoEnExec == tiempoTarea){// COMPLETÓ LA TAREA NORMAL
+            log_info(logger, "[Tripulante %d] Termino la tarea normal el tripulante", tripulante->tid);
+            int tamanioNombreTarea = strlen(nombreTareaNormal);
+            int tamanioBuffer = sizeof(int)*2 + tamanioNombreTarea;
+                        
+            void* buffer;        
+            pthread_mutex_lock(&mutexBuffer);
+            buffer = _serialize(tamanioBuffer, "%d%s", tripulante->tid, nombreTareaNormal);
+            _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+            free(buffer);
+            pthread_mutex_unlock(&mutexBuffer);
 
-                pedirProximaTarea(tripulante);
-                tripulante->tiempoEnExec = 0;
-                mensajeInicialIMS = 0;
-            } 
+            pthread_mutex_lock(&mutexListaPCB);
+            pedirProximaTarea(tripulante);
+            pthread_mutex_unlock(&mutexListaPCB);
+            tripulante->tiempoEnExec = 0;
+            tripulante->mensajeInicialIMS = 0;
+        } 
 
-            if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR && tripulante->status != 'X'){//ES RR Y COMPLETÓ EL QUANTUM Y NO TERMINÓ TODAS LAS TAREAS
-                tripulante->status = 'R';
-                tripulante->ciclosCumplidos = 0;
-                log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
-            }                 
+        if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR && tripulante->status != 'X'){//ES RR Y COMPLETÓ EL QUANTUM Y NO TERMINÓ TODAS LAS TAREAS
+            tripulante->status = 'R';
+            tripulante->ciclosCumplidos = 0;
+            log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
+        }                 
     }
     else{// NO LLEGÓ A LA POSICIÓN DE LA TAREA
         moverTripulanteUno(tripulante, posicionX, posicionY);
@@ -461,6 +465,14 @@ int esTareaIO(char *tarea) {
     return -1;//si el formato de la tarea es incorrecto
 }
 
+int validacionPosMenor(int posTrip, int posFinal){
+    return posTrip<posFinal;
+}
+
+int validacionPosMayor(int posTrip, int posFinal){
+    return posTrip>posFinal;
+}
+
 void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
     int tamanioBufferARAM;
     int tamanioBufferAIMS;
@@ -471,23 +483,28 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
 
     t_mensaje *mensajito;
 
+    pthread_mutex_lock(&mutexValidacionPos);
+    int validacion = validacionPosMenor(tcbTrip->posicionX, posXfinal);
+    pthread_mutex_unlock(&mutexValidacionPos);
     log_info(logger, "Moviendo al tripulante %d de %d|%d a %d|%d", tcbTrip->tid,tcbTrip->posicionX,tcbTrip->posicionY,posXfinal,posYfinal);
-    if (tcbTrip->posicionX < posXfinal){
+    if (validacion){
+        pthread_mutex_lock(&mutexListaPCB);
         tcbTrip->posicionX++;
+        pthread_mutex_unlock(&mutexListaPCB);
         //Notificar desplazamiento a RAM
         tamanioBufferARAM = sizeof(int)*4;
 
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
         
         pthread_mutex_lock(&mutexBuffer);
-        _send_message(conexion_RAM, "DIS", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
+        _send_message(conexion_RAM, "DIS", ENVIAR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
         free(bufferARAM);
 
         mensajito = _receive_message(conexion_RAM, logger);
         pthread_mutex_unlock(&mutexBuffer);
 
         if (mensajito->command != SUCCESS) {
-            perror("Comando RECIBIR_UBICACION_TRIPULANTE\n");
+            perror("Comando ENVIAR_UBICACION_TRIPULANTE\n");
         }
         free(mensajito -> identifier);
         free(mensajito -> payload);
@@ -504,108 +521,133 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         free(bufferAIMS);
         log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
     }
-    else if (tcbTrip->posicionX > posXfinal){
-        tcbTrip->posicionX--;
-        
-        //Notificar desplazamiento a RAM
-        tamanioBufferARAM = sizeof(int)*4;
-        bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
-        
-        pthread_mutex_lock(&mutexBuffer);
-        _send_message(conexion_RAM, "DIS", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
-        free(bufferARAM);
-
-        mensajito = _receive_message(conexion_RAM, logger);
-        pthread_mutex_unlock(&mutexBuffer);
-        
-        if (mensajito->command != SUCCESS) {
-            perror("Comando RECIBIR_UBICACION_TRIPULANTE\n");
-        }
-        free(mensajito -> identifier);
-        free(mensajito -> payload);
-        free(mensajito);
-        
-        //Notificar desplazamiento a IMS
-        posXVieja = tcbTrip->posicionX + 1;
-        tamanioBufferAIMS = sizeof(int)*5;
-        bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
-       
-        pthread_mutex_lock(&mutexBuffer);
-        _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-        pthread_mutex_unlock(&mutexBuffer);
-        
-        free(bufferAIMS);
-        log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
-    }
-    else if (tcbTrip->posicionY < posYfinal){
-        tcbTrip->posicionY++;
-        
-        //Notificar desplazamiento a RAM
-        tamanioBufferARAM = sizeof(int)*4;
-        bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
-        
-        pthread_mutex_lock(&mutexBuffer);
-        _send_message(conexion_RAM, "DIS", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
-        free(bufferARAM);
-
-        mensajito = _receive_message(conexion_RAM, logger);
-        pthread_mutex_unlock(&mutexBuffer);
-        if (mensajito->command != SUCCESS) {
-            perror("Comando RECIBIR_UBICACION_TRIPULANTE\n");
-        }
-        free(mensajito -> identifier);
-        free(mensajito -> payload);
-        free(mensajito);
-
-        //Notificar desplazamiento a IMS
-        posYVieja = tcbTrip->posicionY - 1;
-        tamanioBufferAIMS = sizeof(int)*5;
-        bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
-        
-        pthread_mutex_lock(&mutexBuffer);
-        _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-        pthread_mutex_unlock(&mutexBuffer);
-        free(bufferAIMS);
-        log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
-
-    }
-    else if (tcbTrip->posicionY > posYfinal){
-        tcbTrip->posicionY--;
-        
-        //Notificar desplazamiento a RAM
-        tamanioBufferARAM = sizeof(int)*4;
-        bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
-        
-        pthread_mutex_lock(&mutexBuffer);
-        _send_message(conexion_RAM, "DIS", RECIBIR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
-        free(bufferARAM);
-
-        mensajito = _receive_message(conexion_RAM, logger);
-        pthread_mutex_unlock(&mutexBuffer);
-        
-        if (mensajito->command != SUCCESS) {
-            perror("Comando RECIBIR_UBICACION_TRIPULANTE\n");
-        }
-        free(mensajito -> identifier);
-        free(mensajito -> payload);
-        free(mensajito);
-
-        //Notificar desplazamiento a IMS
-        posYVieja = tcbTrip->posicionY + 1;
-        tamanioBufferAIMS = sizeof(int)*5;
-        bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
-        
-        pthread_mutex_lock(&mutexBuffer);
-        _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-        pthread_mutex_unlock(&mutexBuffer);
-        
-        free(bufferAIMS);
-        log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
-    }
     else{
-        log_info(logger, "El tripulante ya llegó a la posición de la tarea");
-    }
+        pthread_mutex_lock(&mutexValidacionPos);
+        validacion = validacionPosMayor(tcbTrip->posicionX, posXfinal);
+        pthread_mutex_unlock(&mutexValidacionPos);
 
+        if (validacion){
+            pthread_mutex_lock(&mutexListaPCB);
+            tcbTrip->posicionX--;
+            pthread_mutex_unlock(&mutexListaPCB);
+        
+            //Notificar desplazamiento a RAM
+            tamanioBufferARAM = sizeof(int)*4;
+            bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
+            
+            pthread_mutex_lock(&mutexBuffer);
+            _send_message(conexion_RAM, "DIS", ENVIAR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
+            free(bufferARAM);
+
+            mensajito = _receive_message(conexion_RAM, logger);
+            pthread_mutex_unlock(&mutexBuffer);
+            
+            if (mensajito->command != SUCCESS) {
+                perror("Comando ENVIAR_UBICACION_TRIPULANTE\n");
+            }
+            free(mensajito -> identifier);
+            free(mensajito -> payload);
+            free(mensajito);
+            
+            //Notificar desplazamiento a IMS
+            posXVieja = tcbTrip->posicionX + 1;
+            tamanioBufferAIMS = sizeof(int)*5;
+            bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
+        
+            pthread_mutex_lock(&mutexBuffer);
+            _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
+            pthread_mutex_unlock(&mutexBuffer);
+            
+            free(bufferAIMS);
+            log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
+        }
+    
+        else{
+
+            pthread_mutex_lock(&mutexValidacionPos);
+            validacion = validacionPosMenor(tcbTrip->posicionY, posYfinal);
+            pthread_mutex_unlock(&mutexValidacionPos);
+            if (tcbTrip->posicionY < posYfinal){
+                pthread_mutex_lock(&mutexListaPCB);
+                tcbTrip->posicionY++;
+                pthread_mutex_unlock(&mutexListaPCB);
+                
+                //Notificar desplazamiento a RAM
+                tamanioBufferARAM = sizeof(int)*4;
+                bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
+                
+                pthread_mutex_lock(&mutexBuffer);
+                _send_message(conexion_RAM, "DIS", ENVIAR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
+                free(bufferARAM);
+
+                mensajito = _receive_message(conexion_RAM, logger);
+                pthread_mutex_unlock(&mutexBuffer);
+                if (mensajito->command != SUCCESS) {
+                    perror("Comando ENVIAR_UBICACION_TRIPULANTE\n");
+                }
+                free(mensajito -> identifier);
+                free(mensajito -> payload);
+                free(mensajito);
+
+                //Notificar desplazamiento a IMS
+                posYVieja = tcbTrip->posicionY - 1;
+                tamanioBufferAIMS = sizeof(int)*5;
+                bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
+                
+                pthread_mutex_lock(&mutexBuffer);
+                _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
+                pthread_mutex_unlock(&mutexBuffer);
+                free(bufferAIMS);
+                log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
+            }
+        
+            else{
+
+                pthread_mutex_lock(&mutexValidacionPos);
+                validacion = validacionPosMayor(tcbTrip->posicionY, posYfinal);
+                pthread_mutex_unlock(&mutexValidacionPos);
+                if (tcbTrip->posicionY > posYfinal){
+                    pthread_mutex_lock(&mutexListaPCB);
+                    tcbTrip->posicionY--;
+                    pthread_mutex_unlock(&mutexListaPCB);
+                    
+                    //Notificar desplazamiento a RAM
+                    tamanioBufferARAM = sizeof(int)*4;
+                    bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
+                    
+                    pthread_mutex_lock(&mutexBuffer);
+                    _send_message(conexion_RAM, "DIS", ENVIAR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
+                    free(bufferARAM);
+
+                    mensajito = _receive_message(conexion_RAM, logger);
+                    pthread_mutex_unlock(&mutexBuffer);
+                    
+                    if (mensajito->command != SUCCESS) {
+                        perror("Comando ENVIAR_UBICACION_TRIPULANTE\n");
+                    }
+                    free(mensajito -> identifier);
+                    free(mensajito -> payload);
+                    free(mensajito);
+
+                    //Notificar desplazamiento a IMS
+                    posYVieja = tcbTrip->posicionY + 1;
+                    tamanioBufferAIMS = sizeof(int)*5;
+                    bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
+                    
+                    pthread_mutex_lock(&mutexBuffer);
+                    _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
+                    pthread_mutex_unlock(&mutexBuffer);
+                    
+                    free(bufferAIMS);
+                    log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
+                }
+            
+                else{
+                    log_info(logger, "El tripulante ya llegó a la posición de la tarea");
+                }
+            }
+        }
+    }
 }
 
 char *get_tareas(char *ruta_archivo, t_log* logger) {
@@ -727,13 +769,15 @@ void * get_by_id(t_list * self, int id) {
 void _signal(int incremento, int valorMax, sem_t* semaforo) {
 
     contadorSemGlobal += incremento;
+    int validacion = contadorSemGlobal==valorMax;
 
-    if (contadorSemGlobal == valorMax) {
+    if (validacion) {
         pthread_mutex_lock(&mutex_cantidadTCB);
         cantidadTCBEnExec = queue_size(exec);
         pthread_mutex_unlock(&mutex_cantidadTCB);
 
-        sem_post(semaforo);
+        sem_post(semaforo); 
+
         contadorSemGlobal = 0;
     }
 }

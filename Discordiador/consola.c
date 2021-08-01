@@ -22,7 +22,9 @@ void funcionConsola(){
 
                 case C_PAUSAR_PLANIFICACION: 
                 	log_info(logger, "Entró comando: PAUSAR_PLANIFICACION");
-                	planificacion_viva = 0;
+                	pthread_mutex_lock(&mutexPlanificacionViva);
+                    planificacion_viva = 0;
+                    pthread_mutex_unlock(&mutexPlanificacionViva);
                 	log_info(logger, "Se pausó la planificación.");
 
                     break;
@@ -32,7 +34,9 @@ void funcionConsola(){
                     pcb* nuevoPCB = crear_PCB (parametros, conexion_RAM, logger);
 
                 	if (nuevoPCB) {
+                        pthread_mutex_lock(&mutexListaPCB);
                         list_add(listaPCB, nuevoPCB);
+                        pthread_mutex_unlock(&mutexListaPCB);
                         if(cantidadVieja == 0){
                             hiloTripulante = malloc(sizeof(pthread_t) * cantidadActual); 
                         }else{
@@ -328,7 +332,7 @@ void liberarMemoria(){
     pthread_mutex_lock(&mutexValidador);
     validador = 0;
     pthread_mutex_unlock(&mutexValidador);
-    
+
     queue_clean(cola_new);
     queue_clean(ready);
     queue_clean(exec);
@@ -360,6 +364,8 @@ void liberarMemoria(){
     pthread_mutex_destroy(&mutexSabotajeActivado);
     pthread_mutex_destroy(&mutexCiclosTranscurridosSabotaje);
     pthread_mutex_destroy(&mutex_cantidadTCB);
+    pthread_mutex_destroy(&mutex_contadorSemGlobal);
+    pthread_mutex_destroy(&mutexValidacionPos);
     
     sem_destroy(&semNR);
     sem_destroy(&semRE);

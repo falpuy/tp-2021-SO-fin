@@ -34,6 +34,15 @@ void setearConfiguraciones (){
     //log_info(logger, "%s, %s, %s, %s, %d, %s, %d, %d, %d", ip_RAM, puerto_RAM, ip_IMS, 
     //puerto_IMS, grado_multitarea, algoritmo, quantum_RR, duracion_sabotaje, ciclo_CPU);
 
+    pthread_mutex_init(&mutex_cantidadVieja, NULL);
+    pthread_mutex_init(&mutex_cantidadActual, NULL);
+    pthread_mutex_init(&mutexValidador, NULL);
+    pthread_mutex_init(&mutexPlanificacionViva, NULL);
+    pthread_mutex_init(&mutexSabotajeActivado, NULL);
+    pthread_mutex_init(&mutex_cantidadTCB, NULL);
+    pthread_mutex_init(&mutex_contadorSemGlobal, NULL);
+    pthread_mutex_init(&mutexValidacionPos, NULL);
+
     pthread_mutex_lock(&mutex_cantidadVieja);
     cantidadVieja = 0;
     pthread_mutex_unlock(&mutex_cantidadVieja);
@@ -45,7 +54,9 @@ void setearConfiguraciones (){
     //log_info(logger, "CantidadActual: %d", cantidadActual);
 
     contadorPCBs = 0;
+    pthread_mutex_lock(&mutex_contadorSemGlobal);
     contadorSemGlobal = 0;
+    pthread_mutex_unlock(&mutex_contadorSemGlobal);
     cantidadTCBTotales = 0;
     
     pthread_mutex_lock(&mutexValidador);
@@ -75,13 +86,8 @@ void setearConfiguraciones (){
     pthread_mutex_init(&mutexBloqEmer, NULL);
     pthread_mutex_init(&mutexBloqEmerSorted, NULL);
     pthread_mutex_init(&mutexExit, NULL);
-    pthread_mutex_init(&mutexValidador, NULL);
-    pthread_mutex_init(&mutexPlanificacionViva, NULL);
-    pthread_mutex_init(&mutexSabotajeActivado, NULL);
     pthread_mutex_init(&mutexCiclosTranscurridosSabotaje, NULL);
     pthread_mutex_init(&mutexListaPCB, NULL);
-    pthread_mutex_init(&mutex_cantidadVieja,NULL);
-    pthread_mutex_init(&mutex_cantidadActual,NULL);
     pthread_mutex_init(&mutexBuffer,NULL);
     pthread_mutex_init(&mutexSemaforosTrip,NULL);
     

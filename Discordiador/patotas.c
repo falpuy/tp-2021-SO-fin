@@ -636,11 +636,13 @@ char *get_tareas(char *ruta_archivo, t_log* logger) {
         contador--;
         memset(line+posicionFinal,'\0',1);
         string_append(&stringTemporal, line);
+        string_append(&stringTemporal, "|");
     }
     fclose(archivo);
     if (line)
         free(line);
 
+    stringTemporal[strlen(stringTemporal) - 1] = '\0';
     log_info(logger, "Las tareas a mandar son: %s", stringTemporal);
     return stringTemporal;
 

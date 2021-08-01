@@ -181,25 +181,20 @@ void funcionConsola(){
                 
                 case C_SALIR: 
                     log_info(logger, "Salimos de la consola");
-                    
-                    liberarMemoria();
-                    
+                                       liberarMemoria();        
                     break;
 
                 default:
                     log_info(logger, "El mensaje ingresado no corresponde a una acción propia del Discordiador");
-                    for(int i =0; parametros[i]!=NULL; i++){
-                        free(parametros[i]);
-                    }
-                    free(parametros);
                     break;
             }
+            
             for(int i =0; parametros[i]!=NULL; i++){
                 free(parametros[i]);
             }
             free(parametros);
 
-            if (!validador) {
+            if(!validador) {
                 break;
             }
         }

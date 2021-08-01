@@ -12,18 +12,6 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
     char* tripulante;
 
     switch(comando){
-        // case ESPERANDO_SABOTAJE:
-        //     log_info(logger,"-----------------------------------------------------");
-        //     log_info(logger, "Se ha conectado por primera vez Discordiador");
-        //     log_info(logger, "Guardo socket por si llega un sabotaje");
-
-        //     pthread_mutex_lock(&discordiador);
-        //     socketDiscordiador = client;
-        //     pthread_mutex_unlock(&discordiador);
-
-        //     log_info(logger,"-----------------------------------------------------");
-        // break;
-
         case ATENDER_SABOTAJE:
             log_info(logger,"-----------------------------------------------------");
             log_info(logger, "Llego comando: Atiende sabotaje");
@@ -183,18 +171,6 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             free(tarea);
             log_info(logger,"-----------------------------------------------------");
 
-            break;
-        case RESUELTO_SABOTAJE:
-            log_info(logger,"-----------------------------------------------------");
-            log_info(logger, "Llego comando:Se resolvio Sabotaje.....");
-
-            memcpy(&idTripulante,payload,sizeof(int));
-            log_info(logger, "ID Tripulante:%d", idTripulante);
-            log_info(logger,"-----------------------------------------------------");
-
-            pthread_mutex_lock(&blocks_bitmap);
-            // sabotajeResuelto(idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
             break;
         default:
             log_error(logger, "No se encontró comando");

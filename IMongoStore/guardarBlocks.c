@@ -249,17 +249,17 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso){
             path = pathCompleto("Files/Oxigeno.ims");
             remove(path);
             free(path);
-            crearMetadataFiles(path,'O');
+            crearMetadataFiles(path,"O");
         }else if(recurso == 'C'){
             path = pathCompleto("Files/Comida.ims");
             remove(path);
             free(path);
-            crearMetadataFiles(path,'C');
+            crearMetadataFiles(path,"C");
         }else if(recurso == 'B'){
             path = pathCompleto("Files/Basura.ims");
             remove(path);
             free(path);
-            crearMetadataFiles(path,'B');
+            crearMetadataFiles(path,"B");
         }
     }else{
         while(tamStrBorrar) {

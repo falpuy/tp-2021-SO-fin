@@ -16,7 +16,9 @@
     #include "sabotaje.h"
     
     tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger);
-    pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger);
+    pcb* crear_PCB(char** parametros, t_log* logger);
+
+    // pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger);
 
     void destruirTCB(void* nodo);
     void destruirPCB(void* nodo);
@@ -39,8 +41,11 @@
 
     char *get_tareas(char *ruta_archivo, t_log* logger);
 
-    void create_tcb_by_list(t_list* self, void(*closure)(void*, int, int, t_log*), int conexion_RAM, int cantidad_inicial, t_log *logger);
-    void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_log *logger);
+    // void create_tcb_by_list(t_list* self, void(*closure)(void*, int, int, t_log*), int conexion_RAM, int cantidad_inicial, t_log *logger);
+    
+    void create_tcb_by_list(t_list* self, void(*closure)(void*,int, t_log*), int cantidad_inicial, t_log *logger);
+    void iniciar_tcb(void *elemento, int indice_tcb_temporal, t_log *logger);
+    // void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_log *logger);
 
     void * get_by_id(t_list * self, int id);
     void _signal(int incremento, int valorMax, sem_t* semaforo);

@@ -31,7 +31,7 @@ void funcionConsola(){
 
                 case C_INICIAR_PATOTA: 
                     log_info(logger, "Entró comando: INICIAR_PATOTA" );
-                    pcb* nuevoPCB = crear_PCB (parametros, conexion_RAM, logger);
+                    pcb* nuevoPCB = crear_PCB (parametros, logger);
 
                 	if (nuevoPCB) {
                         pthread_mutex_lock(&mutexListaPCB);
@@ -42,7 +42,7 @@ void funcionConsola(){
                         }else{
                             hiloTripulante = realloc(hiloTripulante , sizeof(pthread_t) * cantidadActual);
                         } 
-                        create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, conexion_RAM, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
+                        create_tcb_by_list(nuevoPCB->listaTCB, iniciar_tcb, cantidadVieja, logger);//recorre la lista de TCBs, los agrega a new y crea el hilo de cada tripulante
                         
                         pthread_mutex_lock(&mutex_cantidadVieja);
                         cantidadVieja = cantidadActual;
@@ -91,12 +91,14 @@ void funcionConsola(){
                         tcb* tcbTripulante = obtener_tcb_en_listaPCB(listaPCB);
                         pthread_mutex_unlock(&mutexListaPCB);
                         
-                        pthread_mutex_lock(&mutexBuffer);
-                        buffer = _serialize(2*sizeof(int), "%d%d", tcbTripulante->pid, idTripulante);
+                        //pthread_mutex_lock(&mutexBuffer);
+                        void* buffer = _serialize(2*sizeof(int), "%d%d", tcbTripulante->pid, idTripulante);
+                        int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
                         _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, 2*sizeof(int), logger);
                         free(buffer);
                       	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
-                        pthread_mutex_unlock(&mutexBuffer);
+                        close(conexion_RAM);
+                        //pthread_mutex_unlock(&mutexBuffer);
                         
                        	if(mensajeRecibido->command == SUCCESS) {
                             log_info(logger, "Se expulsó correctamente el tripulante en memoria");
@@ -143,13 +145,15 @@ void funcionConsola(){
                     log_info(logger, "Entró comando: OBTENER_BITACORA");
                 	int idTripulante = atoi(parametros[1]);
                     
-                    pthread_mutex_lock(&mutexBuffer);
-                    buffer = _serialize(sizeof(int), "%d", idTripulante);
+                    //pthread_mutex_lock(&mutexBuffer);
+                    void* buffer = _serialize(sizeof(int), "%d", idTripulante);
+                    int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
                     _send_message(conexion_IMS, "DIS", ENVIAR_OBTENER_BITACORA, buffer, sizeof(int), logger); //ENVIAR_OBTENER_BITACORA: 760
                     free(buffer);
                     
                     t_mensaje* mensajeRecibido = _receive_message(conexion_IMS, logger);
-                    pthread_mutex_unlock(&mutexBuffer);
+                    close(conexion_IMS);
+                    //pthread_mutex_unlock(&mutexBuffer);
                    
                     if(mensajeRecibido->command == RESPUESTA_OBTENER_BITACORA){ //RESPUESTA_OBTENER_BITACORA: 766
                         log_info(logger,"Bitácora del tripulante: %d", idTripulante);

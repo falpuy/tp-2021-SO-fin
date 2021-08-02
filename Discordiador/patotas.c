@@ -16,7 +16,7 @@ tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger){
     return nuevoTCB;
 }
 
-pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){     
+pcb* crear_PCB(char** parametros, t_log* logger){     
   	int offset = 0;
     int cant_tripulantes = atoi(parametros[1]);
     contadorPCBs++;
@@ -93,12 +93,14 @@ pcb* crear_PCB(char** parametros, int conexion_RAM, t_log* logger){
     pthread_mutex_unlock(&mutex_cantidadActual);
     log_info(logger, "CantidadActual: %d", cantidadActual);
     
-    pthread_mutex_lock(&mutexBuffer);
+    //pthread_mutex_lock(&mutexBuffer);
+    int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
     free(buffer_a_enviar);
 
   	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-    pthread_mutex_unlock(&mutexBuffer);
+    close(conexion_RAM);
+    //pthread_mutex_unlock(&mutexBuffer);
 
   	if (mensaje->command == SUCCESS) {
         log_info(logger,"Se guardó en Memoria OK");
@@ -202,16 +204,17 @@ void resolviendoSabotaje(void* tcbTrip, void* param){
         pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
 
         if (temp_ciclos_transcurridos_sabotaje == 0) {//SI TODAVÍA NO SE COMENZÓ A REPARAR EL SABOTAJE
-            void* buffer;
             char* bufferAEnviar = string_new();
             string_append(&bufferAEnviar, "Se invoco FSCK");
 
-            pthread_mutex_lock(&mutexBuffer);
-            buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s", bufferAEnviar);
+            //pthread_mutex_lock(&mutexBuffer);
+            void* buffer = _serialize(sizeof(int) + string_length(bufferAEnviar),"%s", bufferAEnviar);
+            int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
             _send_message(conexion_IMS, "DIS", INVOCAR_FSCK, buffer,sizeof(int) + string_length(bufferAEnviar), logger);
+            close(conexion_IMS);
             free(bufferAEnviar);
             free(buffer);
-            pthread_mutex_unlock(&mutexBuffer);
+            //pthread_mutex_unlock(&mutexBuffer);
         }
 
         tripulante->ciclosCumplidos++;
@@ -279,13 +282,15 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             int tamanioNombreTarea = strlen(nombreTareaNormal);
             int tamanioBuffer = sizeof(int)*5 + tamanioNombreTarea;
                     
-            void* buffer;
-            pthread_mutex_lock(&mutexBuffer);
-            buffer = _serialize(tamanioBuffer, "%d%s%d%d%d", tripulante->tid, nombreTareaNormal, posicionX, posicionY, tiempoTarea);
+            
+            //pthread_mutex_lock(&mutexBuffer);
+            void* buffer = _serialize(tamanioBuffer, "%d%s%d%d%d", tripulante->tid, nombreTareaNormal, posicionX, posicionY, tiempoTarea);
+            int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
             _send_message(conexion_IMS, "DIS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+            close(conexion_IMS);
             free(buffer);
             tripulante->mensajeInicialIMS = 1;
-            pthread_mutex_unlock(&mutexBuffer);
+            //pthread_mutex_unlock(&mutexBuffer);
         }
 
         tripulante->tiempoEnExec++;
@@ -297,12 +302,14 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             int tamanioNombreTarea = strlen(nombreTareaNormal);
             int tamanioBuffer = sizeof(int)*2 + tamanioNombreTarea;
                         
-            void* buffer;        
-            pthread_mutex_lock(&mutexBuffer);
-            buffer = _serialize(tamanioBuffer, "%d%s", tripulante->tid, nombreTareaNormal);
+                    
+            //pthread_mutex_lock(&mutexBuffer);
+            void* buffer = _serialize(tamanioBuffer, "%d%s", tripulante->tid, nombreTareaNormal);
+            int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
             _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+            close(conexion_IMS);
             free(buffer);
-            pthread_mutex_unlock(&mutexBuffer);
+            //pthread_mutex_unlock(&mutexBuffer);
 
             pthread_mutex_lock(&mutexListaPCB);
             pedirProximaTarea(tripulante);
@@ -361,12 +368,14 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
         int tamanioTarea = strlen(tarea[0]);
         int tamanioBuffer = sizeof(int)*6 + tamanioTarea;
 
-        void* buffer;
-        pthread_mutex_lock(&mutexBuffer);
-        buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tripulante->tid, tarea[0], parametroIO, posicionX, posicionY, tiempoTarea);
+        
+        //pthread_mutex_lock(&mutexBuffer);
+        void* buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tripulante->tid, tarea[0], parametroIO, posicionX, posicionY, tiempoTarea);
+        int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
         _send_message(conexion_IMS, "DIS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
+        close(conexion_IMS);
         free(buffer);
-        pthread_mutex_unlock(&mutexBuffer);
+        //pthread_mutex_unlock(&mutexBuffer);
 
         tripulante->status = 'I';
         tripulante->ciclosCumplidos = 0;
@@ -398,16 +407,17 @@ int llegoAPosicion(int tripulante_posX,int tripulante_posY,int posX, int posY  )
 
 void pedirProximaTarea(tcb* tcbTripulante){
     int tamanioBuffer;
-    void* buffer;
     tamanioBuffer = sizeof(int) * 2;
 
-    pthread_mutex_lock(&mutexBuffer);
-    buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante->pid, tcbTripulante->tid);
+    //pthread_mutex_lock(&mutexBuffer);
+    void* buffer = _serialize(tamanioBuffer, "%d%d", tcbTripulante->pid, tcbTripulante->tid);
+    int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     _send_message(conexion_RAM, "DIS",ENVIAR_TAREA, buffer, tamanioBuffer, logger);
     free(buffer);
 
     t_mensaje *mensajito = _receive_message(conexion_RAM, logger);
-    pthread_mutex_unlock(&mutexBuffer);
+    close(conexion_RAM);
+    //pthread_mutex_unlock(&mutexBuffer);
 
     if (mensajito->command == SUCCESS) {
         int tamanioTareaRecibida;
@@ -499,12 +509,14 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
 
         bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
         
-        pthread_mutex_lock(&mutexBuffer);
+        //pthread_mutex_lock(&mutexBuffer);
+        int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
         _send_message(conexion_RAM, "DIS", ENVIAR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
         free(bufferARAM);
 
         mensajito = _receive_message(conexion_RAM, logger);
-        pthread_mutex_unlock(&mutexBuffer);
+        close(conexion_RAM);
+        //pthread_mutex_unlock(&mutexBuffer);
 
         if (mensajito->command != SUCCESS) {
             perror("Comando ENVIAR_UBICACION_TRIPULANTE\n");
@@ -518,9 +530,11 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
         tamanioBufferAIMS = sizeof(int)*5;
         bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
         
-        pthread_mutex_lock(&mutexBuffer);
+        //pthread_mutex_lock(&mutexBuffer);
+        int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
         _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-        pthread_mutex_unlock(&mutexBuffer);
+        close(conexion_IMS);
+        //pthread_mutex_unlock(&mutexBuffer);
         free(bufferAIMS);
         log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
     }
@@ -538,12 +552,14 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
             tamanioBufferARAM = sizeof(int)*4;
             bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
             
-            pthread_mutex_lock(&mutexBuffer);
+            //pthread_mutex_lock(&mutexBuffer);
+            int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
             _send_message(conexion_RAM, "DIS", ENVIAR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
             free(bufferARAM);
 
             mensajito = _receive_message(conexion_RAM, logger);
-            pthread_mutex_unlock(&mutexBuffer);
+            close(conexion_RAM);
+            //pthread_mutex_unlock(&mutexBuffer);
             
             if (mensajito->command != SUCCESS) {
                 perror("Comando ENVIAR_UBICACION_TRIPULANTE\n");
@@ -557,9 +573,11 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
             tamanioBufferAIMS = sizeof(int)*5;
             bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
         
-            pthread_mutex_lock(&mutexBuffer);
+            //pthread_mutex_lock(&mutexBuffer);
+            int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
             _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-            pthread_mutex_unlock(&mutexBuffer);
+            close(conexion_IMS);
+            //pthread_mutex_unlock(&mutexBuffer);
             
             free(bufferAIMS);
             log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, posXVieja, tcbTrip->posicionY, tcbTrip->posicionX, tcbTrip->posicionY);
@@ -579,12 +597,14 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
                 tamanioBufferARAM = sizeof(int)*4;
                 bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
                 
-                pthread_mutex_lock(&mutexBuffer);
+                //pthread_mutex_lock(&mutexBuffer);
+                int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
                 _send_message(conexion_RAM, "DIS", ENVIAR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
                 free(bufferARAM);
 
                 mensajito = _receive_message(conexion_RAM, logger);
-                pthread_mutex_unlock(&mutexBuffer);
+                close(conexion_RAM);
+                //pthread_mutex_unlock(&mutexBuffer);
                 if (mensajito->command != SUCCESS) {
                     perror("Comando ENVIAR_UBICACION_TRIPULANTE\n");
                 }
@@ -597,9 +617,11 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
                 tamanioBufferAIMS = sizeof(int)*5;
                 bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
                 
-                pthread_mutex_lock(&mutexBuffer);
+                //pthread_mutex_lock(&mutexBuffer);
+                int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
                 _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-                pthread_mutex_unlock(&mutexBuffer);
+                //pthread_mutex_unlock(&mutexBuffer);
+                close(conexion_IMS);
                 free(bufferAIMS);
                 log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
             }
@@ -618,12 +640,14 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
                     tamanioBufferARAM = sizeof(int)*4;
                     bufferARAM = _serialize(tamanioBufferARAM, "%d%d%d%d", tcbTrip->pid, tcbTrip->tid, tcbTrip->posicionX, tcbTrip->posicionY);
                     
-                    pthread_mutex_lock(&mutexBuffer);
+                    //pthread_mutex_lock(&mutexBuffer);
+                    int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
                     _send_message(conexion_RAM, "DIS", ENVIAR_UBICACION_TRIPULANTE, bufferARAM, tamanioBufferARAM, logger);
                     free(bufferARAM);
 
                     mensajito = _receive_message(conexion_RAM, logger);
-                    pthread_mutex_unlock(&mutexBuffer);
+                    close(conexion_RAM);
+                    //pthread_mutex_unlock(&mutexBuffer);
                     
                     if (mensajito->command != SUCCESS) {
                         perror("Comando ENVIAR_UBICACION_TRIPULANTE\n");
@@ -637,9 +661,11 @@ void moverTripulanteUno(tcb* tcbTrip, int posXfinal, int posYfinal){
                     tamanioBufferAIMS = sizeof(int)*5;
                     bufferAIMS = _serialize(tamanioBufferAIMS, "%d%d%d%d%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
                     
-                    pthread_mutex_lock(&mutexBuffer);
+                    //pthread_mutex_lock(&mutexBuffer);
+                    int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
                     _send_message(conexion_IMS, "DIS", MOVER_TRIPULANTE, bufferAIMS, tamanioBufferAIMS, logger);
-                    pthread_mutex_unlock(&mutexBuffer);
+                    close(conexion_IMS);
+                    //pthread_mutex_unlock(&mutexBuffer);
                     
                     free(bufferAIMS);
                     log_info(logger, "El tripulante %d fue movido de %d|%d a %d|%d", tcbTrip->tid, tcbTrip->posicionX, posYVieja, tcbTrip->posicionX, tcbTrip->posicionY);
@@ -694,32 +720,34 @@ char *get_tareas(char *ruta_archivo, t_log* logger) {
 }
 
 
-void create_tcb_by_list(t_list* self, void(*closure)(void*, int, int, t_log*), int conexion_RAM, int cantidad_inicial, t_log *logger) {
+void create_tcb_by_list(t_list* self, void(*closure)(void*, int, t_log*), int cantidad_inicial, t_log *logger) {
     int indice_tcb_temporal = cantidad_inicial;
 	t_link_element *element = self->head;
 	t_link_element *aux = NULL;
 	
     while (element != NULL) {
 		aux = element->next;
-		closure(element->data, conexion_RAM, indice_tcb_temporal, logger);
+		closure(element->data, indice_tcb_temporal, logger);
         indice_tcb_temporal++;
 		element = aux;
 	}
 }
 
-void iniciar_tcb(void *elemento, int conexion_RAM, int indice_tcb_temporal, t_log *logger) {
+void iniciar_tcb(void *elemento, int indice_tcb_temporal, t_log *logger) {
 
 	tcb *aux = (tcb *) elemento;
   	int tamanioBuffer = sizeof(int) * 2;
-    void* buffer;
+
     
-    pthread_mutex_lock(&mutexBuffer);
-  	buffer = _serialize(tamanioBuffer, "%d%d", aux->pid, aux->tid);
+    //pthread_mutex_lock(&mutexBuffer);
+  	void* buffer = _serialize(tamanioBuffer, "%d%d", aux->pid, aux->tid);
+    int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
   	_send_message(conexion_RAM, "DIS", ENVIAR_TAREA, buffer, tamanioBuffer, logger);
     free(buffer);
 
   	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-    pthread_mutex_unlock(&mutexBuffer);
+    close(conexion_RAM);
+    //pthread_mutex_unlock(&mutexBuffer);
   	
     if (mensaje->command == SUCCESS) { // Recibi la primer tarea
         int tamanioTarea;

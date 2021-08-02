@@ -248,12 +248,14 @@ void funcionCambioExecExit(void* nodo){
         queue_push(cola_exit, (void*)tcbAMover);
         pthread_mutex_unlock(&mutexExit);
 
-        pthread_mutex_lock(&mutexBuffer);
-        buffer = _serialize(2*sizeof(int), "%d%d", tcbAMover->pid, tcbAMover->tid);
+        //pthread_mutex_lock(&mutexBuffer);
+        void* buffer = _serialize(2*sizeof(int), "%d%d", tcbAMover->pid, tcbAMover->tid);
+        int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
         _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, 2*sizeof(int), logger);
         free(buffer);
         t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
-        pthread_mutex_unlock(&mutexBuffer);
+        close(conexion_RAM);
+        //pthread_mutex_unlock(&mutexBuffer);
 
         if (mensajeRecibido->command != SUCCESS) {
             log_error(logger, "Memoria no expulsó al tripulante %d correctamente", tcbAMover->tid);
@@ -294,7 +296,6 @@ void funcionContadorEnBloqIO(void* nodo){
     tcb* tcbTripulante = (tcb *) nodo;
     int tamanioTarea;
     int tamanioBuffer;
-    void* buffer;
     char** tareaIO;
     char** parametrosTareaIO;
 
@@ -312,11 +313,13 @@ void funcionContadorEnBloqIO(void* nodo){
         tamanioTarea = strlen(tareaIO[0]);
         tamanioBuffer = sizeof(int)*2 + tamanioTarea;
         
-        pthread_mutex_lock(&mutexBuffer);
-        buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tareaIO[0]);
+        //pthread_mutex_lock(&mutexBuffer);
+        void* buffer = _serialize(tamanioBuffer, "%d%s", tcbTripulante->tid, tareaIO[0]);
+        int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
         _send_message(conexion_IMS, "DIS", FINALIZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
         free(buffer);
-        pthread_mutex_unlock(&mutexBuffer);
+        close(conexion_IMS);
+        //pthread_mutex_unlock(&mutexBuffer);
 
         log_info(logger, "Se finalizo la tarea:%s. Tripulante:%d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
         log_info(logger,"----------------------------------");
@@ -526,11 +529,14 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 //SE AVISA A IMS QUE SE ATENDERÁ EL SABOTAJE
                 int idTripulante = tripulanteFixer->tid;
 
-                pthread_mutex_lock(&mutexBuffer);
-                buffer = _serialize(sizeof(int), "%d", idTripulante);
+                //pthread_mutex_lock(&mutexBuffer);
+                void* buffer = _serialize(sizeof(int), "%d", idTripulante);
+                int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
                 _send_message(conexion_IMS, "DIS", ATIENDE_SABOTAJE, buffer, sizeof(int), logger);
                 free(buffer);
-                pthread_mutex_unlock(&mutexBuffer);
+                close(conexion_IMS);
+
+                //pthread_mutex_unlock(&mutexBuffer);
 
                 //SACA AL FIXER DE BLOCK_EMER Y LO COLOCA EN READY
 
@@ -598,12 +604,14 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
             char* bufferAEnviar = string_new();
             string_append(&bufferAEnviar, "Se resolvio el sabotaje");
            
-            pthread_mutex_lock(&mutexBuffer);
-            buffer = _serialize(sizeof(int) + string_length(bufferAEnviar), "%s", bufferAEnviar);
+            //pthread_mutex_lock(&mutexBuffer);
+            void* buffer = _serialize(sizeof(int) + string_length(bufferAEnviar), "%s", bufferAEnviar);
+            int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
             _send_message(conexion_IMS, "DIS", RESOLUCION_SABOTAJE, buffer, sizeof(int) + strlen(bufferAEnviar), logger);
             free(bufferAEnviar);
             free(buffer);
-            pthread_mutex_unlock(&mutexBuffer); 
+            close(conexion_IMS);
+            //pthread_mutex_unlock(&mutexBuffer); 
             //same que ready/exec a blockemer
             log_info(logger,"Se ejecutó BlockedEmer->Ready");
             log_info(logger,"----------------------------------");
@@ -667,12 +675,14 @@ void eliminarPatotaEnRAM(void* item){
 
         if(todosTerminaron > 0){
             
-            pthread_mutex_lock(&mutexBuffer);
-            buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
+            //pthread_mutex_lock(&mutexBuffer);
+            void* buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
+            int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
             _send_message(conexion_RAM, "DIS", ELIMINAR_PATOTA, buffer, sizeof(int), logger);
             free(buffer);
             t_mensaje *mensajeRecibido = _receive_message(conexion_RAM, logger);
-            pthread_mutex_unlock(&mutexBuffer);
+            close(conexion_RAM);
+            //pthread_mutex_unlock(&mutexBuffer);
 
             if (mensajeRecibido->command == SUCCESS) {
                 log_info(logger, "Se eliminaron todos los tcb de la patota: %d en RAM", pcbEliminado->pid);

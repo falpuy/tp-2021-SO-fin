@@ -76,8 +76,8 @@ void setearConfiguraciones (){
 
     sabotaje_terminado = 0;
 
-    conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-    conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
+    // conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+    // conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
 
     pthread_mutex_init(&mutexNew, NULL);
     pthread_mutex_init(&mutexReady, NULL);

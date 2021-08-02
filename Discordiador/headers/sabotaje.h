@@ -81,8 +81,8 @@
     t_log* logger;
     t_config* config;
 
-    int conexion_RAM;
-    int conexion_IMS;
+    // int conexion_RAM;
+    // int conexion_IMS;
     char* ip_RAM;
     char* puerto_RAM;
     char* ip_IMS;

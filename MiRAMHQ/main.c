@@ -621,18 +621,21 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             temp_id = string_itoa(idPCB);
             segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
 
-            segment *aux = malloc(sizeof(segment));
-            aux -> id = -1;
-            aux -> type = -1;
-            aux -> nroSegmento = -1;
-            aux -> baseAddr = segmento_tcb -> baseAddr;
-            aux -> limit = segmento_tcb -> limit;
-            list_add_sorted(segmentosLibres -> elements, aux, sort_by_addr);
+            // TODO: Agregar validacion de segmento NULL 
+            if (segmento_tcb != NULL) {
+              segment *aux = malloc(sizeof(segment));
+              aux -> id = -1;
+              aux -> type = -1;
+              aux -> nroSegmento = -1;
+              aux -> baseAddr = segmento_tcb -> baseAddr;
+              aux -> limit = segmento_tcb -> limit;
+              list_add_sorted(segmentosLibres -> elements, aux, sort_by_addr);
 
-            // error =  remove_segment_from_memory (admin, mem_size, segmento_tcb);
+              // error =  remove_segment_from_memory (admin, mem_size, segmento_tcb);
 
-            // TODO: BORRAR SEGMENTO DE LA TABLA DE SEGMENTOS
-            remove_segment_from_table(table_collection, temp_id, segmento_tcb);
+              // TODO: BORRAR SEGMENTO DE LA TABLA DE SEGMENTOS
+              remove_segment_from_table(table_collection, temp_id, segmento_tcb);
+            }
 
             free(temp_id);
 						

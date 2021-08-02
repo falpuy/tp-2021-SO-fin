@@ -186,7 +186,7 @@
 
     uint8_t frame_is_empty(void *temp, uint32_t start, uint32_t limit);  
 
-    void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb);
+    int remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb);
 
     void update_position_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, int posx, int posy);
 

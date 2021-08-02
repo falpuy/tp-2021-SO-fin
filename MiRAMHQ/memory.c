@@ -733,7 +733,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
     return recv_task;
 }
 
-void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
+int remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb) {
     // // printf("Obtengo tablas del proceso..\n");
     pthread_mutex_lock(&mdictionary);
     t_queue *self = dictionary_get(table_collection, key);
@@ -805,6 +805,9 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
         }
     }
 
+    if (temp_id != id_tcb) {
+        return 0;
+    }
 
     int size_a_copiar = data_tcb -> start + data_tcb -> cantidad * 21;
 
@@ -868,6 +871,8 @@ void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
     pthread_mutex_lock(&mdictionary);
     dictionary_put(table_collection, key, self);
     pthread_mutex_unlock(&mdictionary);
+
+    return 1;
 }
 
 void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key) {

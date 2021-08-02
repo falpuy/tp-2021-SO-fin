@@ -324,7 +324,8 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     memcpy(&aux -> ypos, buffer + offset, sizeof(int));
                     offset += sizeof(int);
                     
-                    aux -> next = temp -> tasks;
+                    // aux -> next = temp -> tasks;
+                    aux -> next = 0;
                     
                     segment_size = 21;
                     found_segment = isBestFit ? memory_best_fit(admin, mem_size, table_collection, segment_size) : memory_seek(admin, mem_size, segment_size, table_collection);
@@ -526,8 +527,8 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 
             nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
             printf("ID TCB %d \n", nuestroTCB -> tid);
-            log_info(logger, "La tarea empieza esta entre: %d - %d", nuestroTCB->next, segmento_tareas->limit);
-            char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit, logger);
+            log_info(logger, "La tarea %d empieza esta entre: %d - %d", nuestroTCB->next, segmento_tareas->baseAddr, segmento_tareas->limit);
+            char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit, segmento_tareas->baseAddr, logger);
             log_info(logger, "La tarea a enviar es: %s",tarea);
             
             if(!tarea){

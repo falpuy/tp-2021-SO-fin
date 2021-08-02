@@ -1780,21 +1780,19 @@ char get_char_value(void *buffer, int index) {
     return temp;
 }
 
-void *get_next_task(void *memory, int start_address, int limit_address, t_log* logger) {
+void *get_next_task(void *memory, int start_address, int limit_address, int task_start, t_log* logger) {
 
     // // printf("Values - Start: %d - End: %d\n", start_address, limit_address);
-    if (start_address >= limit_address) {
+    if (start_address + task_start >= limit_address) {
         return NULL;
     }
     // log_info(logger, "Limit address:%d", limit_address);
 
-    void *tareas = malloc(limit_address - start_address + 1);
+    void *tareas = malloc(limit_address - task_start + 1);
     pthread_mutex_lock(&m_memoria);
-    memcpy(tareas, memory + start_address, limit_address - start_address);
+    memcpy(tareas, memory + task_start, limit_address - task_start);
     pthread_mutex_unlock(&m_memoria);
-    memset(tareas + (limit_address-start_address), '\0', 1);
-
-    printf("Lista: %s\n",(char*) tareas);
+    memset(tareas + (limit_address-task_start), '\0', 1);
 
     int cantidadLetrasLeidas = 0;
     
@@ -1802,8 +1800,8 @@ void *get_next_task(void *memory, int start_address, int limit_address, t_log* l
 
     // Get one byte of the memory as a CHAR
     // char test_c = get_char_value(tareas, counter);
-    int offset = 0;
-    while (cantidadLetrasLeidas + start_address < limit_address && memcmp(tareas + offset, "|", 1) && tareas + offset != NULL ) {
+    int offset = start_address;
+    while (cantidadLetrasLeidas + task_start + start_address < limit_address && memcmp(tareas + offset, "|", 1) && tareas + offset != NULL ) {
         // // printf("CHAR: %c\n", get_char_value(tareas, cantidadLetrasLeidas));
         
         if(get_char_value(tareas,offset) != '\n'){
@@ -1822,7 +1820,7 @@ void *get_next_task(void *memory, int start_address, int limit_address, t_log* l
     // log_info(logger, "Cantidad letras despues de segundo while: %d",cantidadLetrasLeidas);
 
     void *recv_task = malloc(cantidadLetrasLeidas + 1);
-    memcpy(recv_task, tareas, cantidadLetrasLeidas);
+    memcpy(recv_task, tareas + start_address, cantidadLetrasLeidas);
     memset(recv_task + cantidadLetrasLeidas, '\0', 1);
 
     free(tareas);

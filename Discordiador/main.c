@@ -16,7 +16,7 @@ int main () {
 
 void setearConfiguraciones (){
 
-    logger = log_create("discordiador.log", "discordiador", 1, LOG_LEVEL_INFO);
+    logger = log_create("discordiadorPruebaEstabilidadGeneral.log", "discordiador", 1, LOG_LEVEL_INFO);
     config = config_create("archivo.config");
     
     ip_RAM = config_get_string_value(config, "IP_MI_RAM_HQ");

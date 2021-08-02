@@ -58,6 +58,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
         case OBTENER_BITACORA:    
             log_info(logger,"-----------------------------------------------------");
             log_info(logger, "Llego comando: Obtener bitácora de.....");
+            void* buffer;
 
             memcpy(&idTripulante,payload,sizeof(int));
             log_info(logger, "ID Tripulante:%d", idTripulante);
@@ -66,19 +67,25 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             pthread_mutex_unlock(&blocks_bitmap);
 
             int tamBitacora = string_length(bitacora);
-            char* tempBitacora = malloc(tamBitacora);
-            
-            memcpy(tempBitacora, bitacora, tamBitacora - 1);
-            tempBitacora[tamBitacora-1] = '\0';
 
-            //Falta enviar que no existe bitacora
+            if(tamBitacora == 0){
+                char* respuesta = string_new();
+                string_append(&respuesta,"Nothing");
+                buffer = _serialize(sizeof(int)+ string_length(respuesta),"%s",respuesta);
+                _send_message(client, "IMS",ERROR_NO_EXISTE_BITACORA, buffer,sizeof(int)+ tamBitacora, logger);
+                free(respuesta);
+            }else{
+                char* tempBitacora = malloc(tamBitacora);
+                
+                memcpy(tempBitacora, bitacora, tamBitacora - 1);
+                tempBitacora[tamBitacora-1] = '\0';
 
-            void* buffer = _serialize(sizeof(int)+ (tamBitacora),"%s",tempBitacora);
-            _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, buffer,sizeof(int)+ tamBitacora, logger);
-
+                buffer = _serialize(sizeof(int)+ (tamBitacora),"%s",tempBitacora);
+                _send_message(client, "IMS",RESPUESTA_OBTENER_BITACORA, buffer,sizeof(int)+ tamBitacora, logger);
+                free(tempBitacora);
+            }
             log_info(logger,"-----------------------------------------------------");
             free(buffer);
-            free(tempBitacora);
             free(bitacora);
             break;  
 

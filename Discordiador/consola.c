@@ -375,6 +375,6 @@ void liberarMemoria(){
     log_destroy(logger);
   	config_destroy(config);
 
-    exit(1);
+    exit(EXIT_SUCCESS);
   	
 }

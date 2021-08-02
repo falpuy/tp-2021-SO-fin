@@ -39,5 +39,5 @@ run:
 
 # make test : Ejecuta la aplicacion utilizando Valgrind
 test:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./main
-# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file="valgrind.log" --verbose ./main
+	# valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./main
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file="valgrind.log" --verbose ./main

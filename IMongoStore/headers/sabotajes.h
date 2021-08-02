@@ -31,7 +31,8 @@
         RESPUESTA_OBTENER_BITACORA,
         COMIENZA_SABOTAJE,
         ESPERANDO_SABOTAJE = 770,
-        INVOCAR_FSK = 771
+        INVOCAR_FSK = 771,
+        ERROR_NO_EXISTE_BITACORA = 773
     };
 
     typedef struct{

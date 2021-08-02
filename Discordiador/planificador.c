@@ -592,7 +592,7 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
             
             pthread_mutex_lock(&mutexSabotajeActivado);
             sabotaje_activado = 0;
-            pthread_mutex_lock(&mutexSabotajeActivado);
+            pthread_mutex_unlock(&mutexSabotajeActivado);
 
             //SE ENVÍA A IMS QUE SE TERMINÓ EL SABOTAJE
             char* bufferAEnviar = string_new();

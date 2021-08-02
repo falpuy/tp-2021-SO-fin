@@ -186,7 +186,7 @@
 
     uint8_t frame_is_empty(void *temp, uint32_t start, uint32_t limit);  
 
-    void remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb);
+    int remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb);
 
     void update_position_from_page(void *memory, t_dictionary *admin_collection, t_dictionary *table_collection, char *key, int id_tcb, int posx, int posy);
 
@@ -255,7 +255,7 @@
 
     char get_char_value(void *buffer, int index);
 
-    void *get_next_task(void *memory, int start_address, int limit_address, t_log* logger);
+    void *get_next_task(void *memory, int start_address, int limit_address, int task_start, t_log* logger);
 
     int remove_segment_from_memory(void *admin, int mem_size, segment *segmento);
 

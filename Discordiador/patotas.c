@@ -154,14 +154,16 @@ void funcionTripulante (void* elemento) {
         tcbTripulante = get_by_id(exec->elements, param->idSemaforo);
         pthread_mutex_unlock(&mutexExec);
 
-        if(!tcbTripulante){
-            pthread_mutex_lock(&mutexExit);
-            tcbTripulante = get_by_id(cola_exit->elements, param->idSemaforo);
-            pthread_mutex_unlock(&mutexExit);
-            log_info(logger, "El tripulante es: %d",tcbTripulante->tid);
-        }       
+        if(tcbTripulante){
+            hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param);
+        }
+        // if(!tcbTripulante){
+        //     pthread_mutex_lock(&mutexExit);
+        //     tcbTripulante = get_by_id(cola_exit->elements, param->idSemaforo);
+        //     pthread_mutex_unlock(&mutexExit);
+        //     log_info(logger, "El tripulante es: %d",tcbTripulante->tid);
+        // }       
         
-        hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param);
 
         pthread_mutex_lock(&mutex_cantidadTCB); 
         _signal(1,cantidadTCBEnExec,&semEBIO);

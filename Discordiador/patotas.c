@@ -163,9 +163,9 @@ void funcionTripulante (void* elemento) {
         
         hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param);
 
-        //pthread_mutex_lock(&mutex_cantidadTCB); 
+        pthread_mutex_lock(&mutex_cantidadTCB); 
         _signal(1,cantidadTCBEnExec,&semEBIO);
-        //pthread_mutex_unlock(&mutex_cantidadTCB);
+        pthread_mutex_unlock(&mutex_cantidadTCB);
     }
 }
 
@@ -174,7 +174,7 @@ void funcionTripulante (void* elemento) {
 void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param){
     tcb* tripulante = (tcb*) tcbTrip;
     parametrosThread* parametros = (parametrosThread*) param;
-    if(tripulante->estaVivoElHilo && planificacion_viva){// SI ESTÁ VIVO EL TRIPULANTE (HILO)
+    if(tripulante->estaVivoElHilo && planificacion_viva && tripulante->status == 'E') {// SI ESTÁ VIVO EL TRIPULANTE (HILO)
         if(sabotaje_activado){
             resolviendoSabotaje((void*) tripulante, (void*) parametros);
         }
@@ -771,18 +771,19 @@ void * get_by_id(t_list * self, int id) {
 
 void _signal(int incremento, int valorMax, sem_t* semaforo) {
 
+    pthread_mutex_lock(&mutex_contadorSemGlobal);
     contadorSemGlobal += incremento;
     int validacion = contadorSemGlobal==valorMax;
 
     if (validacion) {
-        pthread_mutex_lock(&mutex_cantidadTCB);
+        //pthread_mutex_lock(&mutex_cantidadTCB);
         cantidadTCBEnExec = queue_size(exec);
-        pthread_mutex_unlock(&mutex_cantidadTCB);
-
-        sem_post(semaforo); 
+        //pthread_mutex_unlock(&mutex_cantidadTCB);
 
         contadorSemGlobal = 0;
+        sem_post(semaforo); 
     }
+    pthread_mutex_unlock(&mutex_contadorSemGlobal);
 }
 
 

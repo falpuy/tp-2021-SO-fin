@@ -1,0 +1,115 @@
+==31015== Memcheck, a memory error detector
+==31015== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==31015== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==31015== Command: ./main
+==31015== Parent PID: 31014
+==31015== 
+--31015-- 
+--31015-- Valgrind options:
+--31015--    --leak-check=full
+--31015--    --show-leak-kinds=all
+--31015--    --track-origins=yes
+--31015--    --log-file=valgrind-out.txt
+--31015--    --verbose
+--31015-- Contents of /proc/version:
+--31015--   Linux version 4.4.0-116-generic (buildd@lgw01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #140-Ubuntu SMP Mon Feb 12 21:22:43 UTC 2018
+--31015-- 
+--31015-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3
+--31015-- Page sizes: currently 4096, max supported 4096
+--31015-- Valgrind library directory: /usr/lib/valgrind
+--31015-- Reading syms from /lib/i386-linux-gnu/ld-2.23.so
+--31015--   Considering /lib/i386-linux-gnu/ld-2.23.so ..
+--31015--   .. CRC mismatch (computed 596cb2b8 wanted 417b32cc)
+--31015--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.23.so ..
+--31015--   .. CRC is valid
+--31015-- Reading syms from /home/utnso/shared/tp-2021-1c-Unnamed-Group/IMongoStore/main
+--31015-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
+--31015--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
+--31015--   .. CRC mismatch (computed 6036da3f wanted 652e483f)
+--31015--    object doesn't have a symbol table
+--31015--    object doesn't have a dynamic symbol table
+--31015-- Scheduler: using generic scheduler lock implementation.
+--31015-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==31015== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-31015-by-utnso-on-???
+==31015== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-31015-by-utnso-on-???
+==31015== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-31015-by-utnso-on-???
+==31015== 
+==31015== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==31015== don't want to do, unless you know exactly what you're doing,
+==31015== or are doing some strange experiment):
+==31015==   /usr/lib/valgrind/../../bin/vgdb --pid=31015 ...command...
+==31015== 
+==31015== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==31015==   /path/to/gdb ./main
+==31015== and then give GDB the following command
+==31015==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=31015
+==31015== --pid is optional if only one valgrind process is running
+==31015== 
+--31015-- REDIR: 0x4018eb0 (ld-linux.so.2:strlen) redirected to 0x380490f2 (???)
+--31015-- REDIR: 0x4018c70 (ld-linux.so.2:index) redirected to 0x380490cd (???)
+--31015-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
+--31015--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
+--31015--   .. CRC mismatch (computed 5b95c0c4 wanted 39e79efa)
+--31015--    object doesn't have a symbol table
+--31015-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
+--31015--   Considering /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so ..
+--31015--   .. CRC mismatch (computed 4d5a1526 wanted 33571d5b)
+--31015--    object doesn't have a symbol table
+==31015== WARNING: new redirection conflicts with existing -- ignoring it
+--31015--     old: 0x04018eb0 (strlen              ) R-> (0000.0) 0x380490f2 ???
+--31015--     new: 0x04018eb0 (strlen              ) R-> (2007.0) 0x0402f410 strlen
+--31015-- Reading syms from /usr/lib/libcommons.so
+--31015-- Reading syms from /usr/lib/libunnamed.so
+--31015-- Reading syms from /lib/i386-linux-gnu/libm-2.23.so
+--31015--   Considering /lib/i386-linux-gnu/libm-2.23.so ..
+--31015--   .. CRC mismatch (computed 9ba663e0 wanted 0c56bc99)
+--31015--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.23.so ..
+--31015--   .. CRC is valid
+--31015-- Reading syms from /lib/i386-linux-gnu/libpthread-2.23.so
+--31015--   Considering /usr/lib/debug/.build-id/12/78da59ecc0791dce5c44d8b8756a0480be3a5b.debug ..
+--31015--   .. build-id is valid
+--31015-- Reading syms from /lib/i386-linux-gnu/libc-2.23.so
+--31015--   Considering /lib/i386-linux-gnu/libc-2.23.so ..
+--31015--   .. CRC mismatch (computed af9c0474 wanted a5de3f2a)
+--31015--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.23.so ..
+--31015--   .. CRC is valid
+--31015-- REDIR: 0x414c4b0 (libc.so.6:strncasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x4153140 (libc.so.6:memrchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x4165b20 (libc.so.6:wcslen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x414b350 (libc.so.6:strstr) redirected to 0x4033700 (strstr)
+--31015-- REDIR: 0x414a7e0 (libc.so.6:__GI_strrchr) redirected to 0x402ee00 (__GI_strrchr)
+--31015-- REDIR: 0x4145f00 (libc.so.6:malloc) redirected to 0x402c110 (malloc)
+--31015-- REDIR: 0x414a5c0 (libc.so.6:__GI_strlen) redirected to 0x402f390 (__GI_strlen)
+--31015-- REDIR: 0x414c680 (libc.so.6:__GI_memcpy) redirected to 0x4030fb0 (__GI_memcpy)
+--31015-- REDIR: 0x4146810 (libc.so.6:calloc) redirected to 0x402e010 (calloc)
+--31015-- REDIR: 0x4149d20 (libc.so.6:__GI_strchr) redirected to 0x402ef30 (__GI_strchr)
+--31015-- REDIR: 0x4146520 (libc.so.6:realloc) redirected to 0x402e250 (realloc)
+--31015-- REDIR: 0x4146470 (libc.so.6:free) redirected to 0x402d2f0 (free)
+--31015-- REDIR: 0x414a580 (libc.so.6:strlen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x4153440 (libc.so.6:__strlen_sse2_bsf) redirected to 0x402f370 (strlen)
+--31015-- REDIR: 0x414a700 (libc.so.6:strncmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x420a5c0 (libc.so.6:__strncmp_ssse3) redirected to 0x402fab0 (strncmp)
+--31015-- REDIR: 0x414a750 (libc.so.6:strncpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x4154dc0 (libc.so.6:__strncpy_ssse3) redirected to 0x402f5f0 (strncpy)
+--31015-- REDIR: 0x414e280 (libc.so.6:strchrnul) redirected to 0x40330b0 (strchrnul)
+--31015-- REDIR: 0x414c0d0 (libc.so.6:__GI_mempcpy) redirected to 0x40332c0 (__GI_mempcpy)
+--31015-- REDIR: 0x4149ae0 (libc.so.6:strcat) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x415eb30 (libc.so.6:__strcat_ssse3) redirected to 0x402f030 (strcat)
+--31015-- REDIR: 0x414c610 (libc.so.6:memcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x41fcb70 (libc.so.6:__memcpy_ssse3) redirected to 0x4030cc0 (memcpy)
+--31015-- REDIR: 0x414bc10 (libc.so.6:__GI_memcmp) redirected to 0x4031ef0 (__GI_memcmp)
+--31015-- REDIR: 0x414e1b0 (libc.so.6:__GI___rawmemchr) redirected to 0x4033110 (__GI___rawmemchr)
+--31015-- REDIR: 0x414bfc0 (libc.so.6:memset) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x41fa4d0 (libc.so.6:__memset_sse2) redirected to 0x40327d0 (memset)
+--31015-- REDIR: 0x414ba30 (libc.so.6:__GI_memchr) redirected to 0x40306d0 (__GI_memchr)
+--31015-- REDIR: 0x4149ee0 (libc.so.6:strcmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--31015-- REDIR: 0x4209150 (libc.so.6:__strcmp_ssse3) redirected to 0x4030450 (strcmp)
+==31015== 
+==31015== HEAP SUMMARY:
+==31015==     in use at exit: 0 bytes in 0 blocks
+==31015==   total heap usage: 53,504 allocs, 53,504 frees, 82,637,547 bytes allocated
+==31015== 
+==31015== All heap blocks were freed -- no leaks are possible
+==31015== 
+==31015== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==31015== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

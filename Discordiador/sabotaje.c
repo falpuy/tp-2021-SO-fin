@@ -5,14 +5,14 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
 
     switch (comando) {
         case COMIENZA_SABOTAJE:
-        
-        hayTripulantesEnLaNave = hayTripulantesNave();
-        //hayTripulantesEnLaNave = 1;
+
+        hayTripulantesEnLaNave = 1;
 
         if(hayTripulantesEnLaNave){
             pthread_mutex_lock(&mutexSabotajeActivado);
             sabotaje_activado=1;
             pthread_mutex_unlock(&mutexSabotajeActivado);
+            sabotaje_terminado=0;
 
             pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
             ciclos_transcurridos_sabotaje = 0;

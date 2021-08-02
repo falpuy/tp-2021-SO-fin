@@ -3,7 +3,7 @@
 
 int main () {
     setearConfiguraciones();
-    
+
     unsigned int pid = process_getpid();
     log_info(logger, "N° proceso: %d", pid);
 
@@ -70,6 +70,7 @@ void setearConfiguraciones (){
     pthread_mutex_unlock(&mutexSabotajeActivado);
 
     sabotaje_terminado = 0;
+    contadorCicloCPU = 1;
 
     // conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     // conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);

@@ -270,7 +270,7 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
 
     char* nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
     strcpy(nombreTareaNormal, parametrosTarea[0]);
-    log_info(logger, "nombre de tarea (tarea normal): %s", nombreTareaNormal);
+    log_info(logger, "nombre de tarea normal: %s", nombreTareaNormal);
     int posicionX = atoi(parametrosTarea[1]);
     int posicionY = atoi(parametrosTarea[2]);
     int tiempoTarea = atoi(parametrosTarea[3]);
@@ -353,9 +353,9 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
     int llegoALaPosicion;
     
     char** parametrosTarea = string_split(tarea[1], ";");
-    for(int i=0; parametrosTarea[i]!=NULL; i++){
+    /*for(int i=0; parametrosTarea[i]!=NULL; i++){
         log_info(logger, "parametro: %s", parametrosTarea[i]);
-    }
+    }*/
     int parametroIO = atoi(parametrosTarea[0]);
     int posicionX = atoi(parametrosTarea[1]);
     int posicionY = atoi(parametrosTarea[2]);

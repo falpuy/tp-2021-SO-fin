@@ -164,6 +164,8 @@
     int posSabotajeX;
     int posSabotajeY;
 
+    int contadorCicloCPU;
+
     t_queue* cola_new;
     t_queue* ready;
     t_queue* exec;

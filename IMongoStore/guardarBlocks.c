@@ -225,7 +225,7 @@ void    guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
 
 
 
-void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
+void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso){
 
   	t_config* metadata;
   	int sizeAnterior;
@@ -238,74 +238,95 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
     log_info(logger, "--------------------------------------------");
     log_info(logger, "Tamaño del string a borrar:%d",tamStrBorrar);
 
-    while(tamStrBorrar ) {
-        metadata = config_create(path);
-        sizeAnterior = config_get_int_value(metadata, "SIZE");
-        listaBloques = config_get_array_value(metadata,"BLOCKS");
-        config_destroy(metadata);
+    metadata = config_create(path);
+    sizeAnterior = config_get_int_value(metadata, "SIZE");
+    config_destroy(metadata);
 
-        contador = 0;
-
-        while(listaBloques[contador]){ 
-            contador++;
+    if(sizeAnterior < tamStrBorrar){
+        log_error(logger, "Se quiere intentar eliminar mas de lo que está guardado en FS");
+        char* path;
+        if(recurso == 'O'){
+            path = pathCompleto("Files/Oxigeno.ims");
+            remove(path);
+            free(path);
+            crearMetadataFiles(path,'O');
+        }else if(recurso == 'C'){
+            path = pathCompleto("Files/Comida.ims");
+            remove(path);
+            free(path);
+            crearMetadataFiles(path,'C');
+        }else if(recurso == 'B'){
+            path = pathCompleto("Files/Basura.ims");
+            remove(path);
+            free(path);
+            crearMetadataFiles(path,'B');
         }
-
-        bloqueABorrar = atoi(listaBloques[contador-1]);
-        log_info(logger, "Ultimo bloque es:%d",bloqueABorrar);
-
-        fragmentacion = contador*tamanioBloque - sizeAnterior;
-        log_info(logger, "Fragmentacion es:%d",fragmentacion);
-
-  		posicion = tamanioBloque - fragmentacion;
-        log_info(logger, "Posicion a borrar es:%d",posicion);
-
-
-     	if (posicion == tamStrBorrar) {
-            log_info(logger, "El tamanio que hay en el bloque es igual a lo que yo quiero borrar");
-
-            memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', tamanioBloque);
-
-            bitarray_clean_bit(bitmap,bloqueABorrar);
-            memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
-
+    }else{
+        while(tamStrBorrar) {
             metadata = config_create(path);
-            actualizarSize(metadata, posicion, 0);
-            actualizarBlockCount(metadata,0);
+            sizeAnterior = config_get_int_value(metadata, "SIZE");
+            listaBloques = config_get_array_value(metadata,"BLOCKS");
             config_destroy(metadata);
-            actualizarBlocks(bloqueABorrar, 0,path);
-            tamStrBorrar -= posicion;
-            log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
 
-        }else if(posicion < tamStrBorrar){ 
-            log_info(logger, "El tamanio que hay en el bloque es menor a lo que yo quiero borrar");
+            contador = 0;
 
-            memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', posicion); //borro esos 5 limpio todo
-            tamStrBorrar -= posicion; //nuevo tamanio--> 1
+            while(listaBloques[contador]){ 
+                contador++;
+            }
 
-            bitarray_clean_bit(bitmap,bloqueABorrar);
-            memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+            bloqueABorrar = atoi(listaBloques[contador-1]);
+            fragmentacion = contador*tamanioBloque - sizeAnterior;
+            posicion = tamanioBloque - fragmentacion;
 
-            metadata = config_create(path);
-            actualizarSize(metadata, posicion, 0);
-            actualizarBlockCount(metadata,0);
-            config_destroy(metadata);
-            actualizarBlocks(bloqueABorrar, 0,path);
-            log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
 
-        }else{
-            // princio + el bloque + la posicion a borrar los recursos
-            memset(copiaBlocks + (bloqueABorrar*tamanioBloque) + (tamanioBloque - tamStrBorrar),' ', tamStrBorrar);
-            t_config* metadata2 = config_create(path);
-            actualizarSize(metadata2, tamStrBorrar, 0);     
-            config_destroy(metadata2);
-            tamStrBorrar = 0;
-        }
+            if (posicion == tamStrBorrar) {
+                // log_info(logger, "El tamanio que hay en el bloque es igual a lo que yo quiero borrar");
 
-        for(int i = 0; i <= contador; i++){
-            free(listaBloques[i]);
-        }
-        free(listaBloques);
-    } 
+                memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', tamanioBloque);
+
+                bitarray_clean_bit(bitmap,bloqueABorrar);
+                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+
+                metadata = config_create(path);
+                actualizarSize(metadata, posicion, 0);
+                actualizarBlockCount(metadata,0);
+                config_destroy(metadata);
+                actualizarBlocks(bloqueABorrar, 0,path);
+                tamStrBorrar -= posicion;
+                // log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
+
+            }else if(posicion < tamStrBorrar){ 
+                // log_info(logger, "El tamanio que hay en el bloque es menor a lo que yo quiero borrar");
+
+                memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', posicion); //borro esos 5 limpio todo
+                tamStrBorrar -= posicion; //nuevo tamanio--> 1
+
+                bitarray_clean_bit(bitmap,bloqueABorrar);
+                memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+
+                metadata = config_create(path);
+                actualizarSize(metadata, posicion, 0);
+                actualizarBlockCount(metadata,0);
+                config_destroy(metadata);
+                actualizarBlocks(bloqueABorrar, 0,path);
+                // log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
+
+            }else{
+                // princio + el bloque + la posicion a borrar los recursos
+                memset(copiaBlocks + (bloqueABorrar*tamanioBloque) + (tamanioBloque - tamStrBorrar),' ', tamStrBorrar);
+                t_config* metadata2 = config_create(path);
+                actualizarSize(metadata2, tamStrBorrar, 0);     
+                config_destroy(metadata2);
+                tamStrBorrar = 0;
+            }
+
+            for(int i = 0; i <= contador; i++){
+                free(listaBloques[i]);
+            }
+            free(listaBloques);
+        } 
+    }
+
 
     setearMD5(path);
 

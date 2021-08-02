@@ -185,34 +185,29 @@ void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante){
 
 void consumirOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Files/Oxigeno.ims");
-    log_info(logger, "Path de consumir oxigeno:%s", path_oxigeno);
+    // log_info(logger, "Path de consumir oxigeno:%s", path_oxigeno);
     
     if(access(path_oxigeno,F_OK)<0){
         log_error(logger, "No existe Oxigeno.ims");
-        log_error(logger, "Finalizando Tarea..");
+    }else{
+        char* strABorrar = string_repeat('O',parametroTarea);
+        borrarEnBlocks(strABorrar,path_oxigeno,1,'O');
+        free(strABorrar);
     }
-    char* strABorrar = string_repeat('O',parametroTarea);
-    
-    borrarEnBlocks(strABorrar,path_oxigeno,1);
-
-    free(strABorrar);
     free(path_oxigeno);
 }
 
 void consumirComida(int parametroTarea){
     char* path_comida = pathCompleto("Files/Comida.ims");
-    log_info(logger, "Path de (Consumir)comida:%s", path_comida);
+    // log_info(logger, "Path de (Consumir)comida:%s", path_comida);
     
     if(access(path_comida,F_OK)<0){
         log_error(logger, "No existe Comida.ims");
-        log_error(logger, "Finalizando Tarea..");
+    }else{
+        char* strABorrar = string_repeat('C',parametroTarea);
+        borrarEnBlocks(strABorrar,path_comida,1,'C');
+        free(strABorrar);
     }
-
-    char* strABorrar = string_repeat('C',parametroTarea);
-    
-    borrarEnBlocks(strABorrar,path_comida,1);
-    
-    free(strABorrar);
     free(path_comida);
 }
 
@@ -227,7 +222,7 @@ void descartarBasura(int parametroTarea){
         char* string_temp= string_repeat('B',size);
         config_destroy(metadata);
 
-        borrarEnBlocks(string_temp, path_basura, 1);
+        borrarEnBlocks(string_temp, path_basura, 1,'B');
         free(string_temp);
         remove(path_basura);
     }

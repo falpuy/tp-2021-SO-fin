@@ -1,18 +1,4 @@
 #include"headers/planificador.h"
-/*ACLARACIONES DE TAREAS:
-E/S: TAREA PARAMETROS;POS X;POS Y;TIEMPO
-    tarea[0]=TAREA
-    tarea[1]=PARAMETROS;POS X;POS Y;TIEMPO
-    parametros[0] = PARAMETROS
-    parametros[1] = POSX
-    parametros[2] = POSY
-    parametros[3] = TIEMPO
-Normal: TAREA;POS X;POS Y;TIEMPO
-    tarea[0]=TAREA;POS X;POS Y;TIEMPO
-    parametros[0] = TAREA
-    parametros[1] = POSX
-    parametros[2] = POSY
-    parametros[3] = TIEMPO*/
 
 /*------------------------FUNCIONES DE PLANIFICACION--------------------*/
 void funcionPlanificador(t_log* logger) {
@@ -126,13 +112,9 @@ void funcionhReadyaExec (t_log* logger){
         cantidadTCBEnExec = queue_size(exec);
         pthread_mutex_unlock(&mutex_cantidadTCB);
 
-        // log_info(logger,"Cantidad tcb en exec: %d", cantidadTCBEnExec);
-
         if(cantidadTCBEnExec <= 0){
-            // log_info(logger, "NO hay tripulantes");
             sem_post(&semBLOCKIO);
         }else{
-            // log_info(logger, "HAY tripulantes");
             list_iterate(exec->elements, signalHilosTripulantes);
         }
     }
@@ -303,6 +285,17 @@ void funcionContadorEnBloqIO(void* nodo){
     parametrosTareaIO = string_split(tareaIO[1], ";");
     int tiempoAPasarEnBloqIO = atoi(parametrosTareaIO[3]);
 
+    if(tcbTripulante->tiempoEnBloqIO != tiempoAPasarEnBloqIO){
+
+        tcbTripulante->tiempoEnBloqIO++;
+
+        log_info(logger,"----------------------------------");
+        log_info(logger, "Tripulante: %d tiene que seguir en BlockIO", tcbTripulante->tid);
+        log_info(logger, "Va esperando: %d ciclos", tcbTripulante->tiempoEnBloqIO);
+        log_info(logger, "Son en total: %d", tiempoAPasarEnBloqIO);
+        log_info(logger,"----------------------------------");
+    }
+
     if(tcbTripulante->tiempoEnBloqIO == tiempoAPasarEnBloqIO){
         
         log_info(logger,"----------------------------------");
@@ -321,7 +314,7 @@ void funcionContadorEnBloqIO(void* nodo){
         close(conexion_IMS);
         //pthread_mutex_unlock(&mutexBuffer);
 
-        log_info(logger, "Se finalizo la tarea:%s. Tripulante:%d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
+        log_info(logger, "Se finalizo la tarea: %s. Tripulante: %d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
         log_info(logger,"----------------------------------");
 
         pedirProximaTarea(tcbTripulante);
@@ -341,18 +334,8 @@ void funcionContadorEnBloqIO(void* nodo){
             log_info(logger, "Se cambia estado de Tripulante: %d a Exit", tcbTripulante->tid);
             log_info(logger,"----------------------------------");
         }
-
-
     }
-    else{
-        log_info(logger,"----------------------------------");
-        log_info(logger, "Tripulante: %d tiene que seguir en BlockIO", tcbTripulante->tid);
-        log_info(logger, "Va esperando: %d ciclos", tcbTripulante->tiempoEnBloqIO);
-        log_info(logger, "Son en total: %d", tiempoAPasarEnBloqIO);
-        log_info(logger,"----------------------------------");
 
-        tcbTripulante->tiempoEnBloqIO++;
-    }
     free(tareaIO[0]);
     free(tareaIO[1]);
     free(tareaIO);
@@ -398,10 +381,8 @@ void funcionhBloqIO (t_log* logger){
         }
         
         if(sabotaje_activado){
-            // log_info(logger, "El sabotaje está activado");
             sem_post(&semERM);
         }else{
-            // log_info(logger, "El sabotaje está desactivado");
             sem_post(&semEXIT);
         }
     }
@@ -417,7 +398,6 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
 
   	while(temp_validador) {
         sem_wait(&semERM);
-        tcb* tcbFixerAntesSabotaje = malloc(sizeof(tcb));
 
         log_info(logger, "Entró a ReadyExec->BlockedEmer");
 
@@ -446,14 +426,19 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
 
                 tripulanteFixer->status = 'M';
                 
+                pthread_mutex_lock(&mutexContextoSabotaje);
+                tcb* tcbFixerAntesSabotaje = queue_pop(colaContSab);
+                pthread_mutex_unlock(&mutexContextoSabotaje);
+
                 tripulanteFixer->tid = tcbFixerAntesSabotaje->tid;
                 tripulanteFixer->pid = tcbFixerAntesSabotaje->pid;
-                tripulanteFixer->posicionX = tcbFixerAntesSabotaje->posicionX;
-                tripulanteFixer->posicionY = tcbFixerAntesSabotaje->posicionY;
+                //tripulanteFixer->posicionX = tcbFixerAntesSabotaje->posicionX; --> las posiciones del fixer deben ser las del sabotaje!
+                //tripulanteFixer->posicionY = tcbFixerAntesSabotaje->posicionY;
                 tripulanteFixer->estaVivoElHilo = tcbFixerAntesSabotaje->estaVivoElHilo;
                 tripulanteFixer->tiempoEnExec = tcbFixerAntesSabotaje->tiempoEnExec;
                 tripulanteFixer->tiempoEnBloqIO = tcbFixerAntesSabotaje->tiempoEnBloqIO;
                 tripulanteFixer->ciclosCumplidos = tcbFixerAntesSabotaje->ciclosCumplidos;
+                tripulanteFixer->mensajeAtiSabIMS = 0;
 
                 free(tripulanteFixer->instruccion_actual);
                 tripulanteFixer->instruccion_actual = malloc(strlen(tcbFixerAntesSabotaje->instruccion_actual) + 1);
@@ -461,6 +446,7 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
 
                 free(tcbFixerAntesSabotaje->instruccion_actual);
                 free(tcbFixerAntesSabotaje);
+
                 pthread_mutex_lock(&mutexBloqEmer);
                 queue_push(bloq_emer,(void*) tripulanteFixer);
                 pthread_mutex_unlock(&mutexBloqEmer);
@@ -510,6 +496,8 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                     queue_pop(bloq_emer_sorted);
                 }    
 
+                tcb* tcbFixerAntesSabotaje = malloc(sizeof(tcb));
+
                 tcbFixerAntesSabotaje->tid = tripulanteFixer->tid;
                 tcbFixerAntesSabotaje->pid = tripulanteFixer->pid;
                 tcbFixerAntesSabotaje->posicionX = tripulanteFixer->posicionX;
@@ -522,6 +510,10 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 tcbFixerAntesSabotaje->instruccion_actual = malloc(strlen(tripulanteFixer->instruccion_actual) + 1);
                 strcpy(tcbFixerAntesSabotaje->instruccion_actual, tripulanteFixer->instruccion_actual);
 
+                pthread_mutex_lock(&mutexContextoSabotaje);
+                queue_push(colaContSab, (void*) tcbFixerAntesSabotaje);
+                pthread_mutex_unlock(&mutexContextoSabotaje);
+
                 tripulanteFixer->ciclosCumplidos=0;
                 tripulanteFixer->tiempoEnExec=0;
                 tripulanteFixer->tiempoEnBloqIO=0;
@@ -529,17 +521,18 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 //SE AVISA A IMS QUE SE ATENDERÁ EL SABOTAJE
                 int idTripulante = tripulanteFixer->tid;
 
+                if(tripulanteFixer->mensajeAtiSabIMS == 0){
                 //pthread_mutex_lock(&mutexBuffer);
                 void* buffer = _serialize(sizeof(int), "%d", idTripulante);
                 int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
                 _send_message(conexion_IMS, "DIS", ATIENDE_SABOTAJE, buffer, sizeof(int), logger);
                 free(buffer);
                 close(conexion_IMS);
-
                 //pthread_mutex_unlock(&mutexBuffer);
+                tripulanteFixer->mensajeAtiSabIMS = 1;
+                }
 
                 //SACA AL FIXER DE BLOCK_EMER Y LO COLOCA EN READY
-
                 pthread_mutex_lock(&mutexBloqEmer);
                 int posicion = list_iterate_obtener_posicion(bloq_emer->elements, idTripulante);
                 tcb* aux_Fixer = list_remove(bloq_emer->elements, posicion);
@@ -551,7 +544,7 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 queue_push(ready,(void*) aux_Fixer);
                 pthread_mutex_unlock(&mutexReady);
             }
-            //checkear si me quieren meter sabotaje despues de que todos los tripulantes terminen
+
             log_info(logger,"Se ejecutó ReadyExec->BlockedEmer");
             log_info(logger,"----------------------------------");
         }
@@ -611,7 +604,8 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
             free(bufferAEnviar);
             free(buffer);
             close(conexion_IMS);
-            //pthread_mutex_unlock(&mutexBuffer); 
+            //pthread_mutex_unlock(&mutexBuffer);
+
             //same que ready/exec a blockemer
             log_info(logger,"Se ejecutó BlockedEmer->Ready");
             log_info(logger,"----------------------------------");
@@ -709,7 +703,6 @@ void signalHilosTripulantes(void *nodo) {
     tcb *tcbTripulante = (tcb *) nodo;
     sem_t* semaforo = list_get(listaSemaforos,tcbTripulante->tid);
     sem_post(semaforo);
-    //log_info(logger, "se hizo un post al tripulante: %d", tcbTripulante->tid);
 }
 
 int list_iterate_obtener_posicion(t_list* self, int tid) {
@@ -738,7 +731,6 @@ int list_iterate_todos_terminaron(t_list* self) {
 	t_link_element *aux = NULL;
 
 	while (element != NULL) {
-        //tcb* tcbLista = (tcb*) element->data;
 
         tcb* tcbLista = list_get(self, i);
         if(tcbLista->status == 'X'){
@@ -749,9 +741,6 @@ int list_iterate_todos_terminaron(t_list* self) {
         aux = element->next;
 		element = aux;
 	}
-
-    //log_info(logger, "cantTerminados = %d", cantTerminados);
-    //log_info(logger, "cantidad de TCB en la patota = %d", list_size(self));
 
     if (cantTerminados == list_size(self)){
         return 1;

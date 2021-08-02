@@ -68,6 +68,7 @@
         int tiempoEnBloqIO;
         int ciclosCumplidos;
         int mensajeInicialIMS;
+        int mensajeAtiSabIMS;
     }tcb;
 
     typedef struct{
@@ -140,6 +141,7 @@
     pthread_mutex_t mutexSemaforosTrip;
     pthread_mutex_t mutexValidacionPos;
     pthread_mutex_t mutex_contadorSemGlobal;
+    pthread_mutex_t mutexContextoSabotaje;
 
     sem_t semNR;
     sem_t semRE;
@@ -169,6 +171,7 @@
     t_queue* bloq_emer;
     t_queue* bloq_emer_sorted;
     t_queue* cola_exit;
+    t_queue* colaContSab;
 
     t_list* listaPCB;
     t_list* listaSemaforos;

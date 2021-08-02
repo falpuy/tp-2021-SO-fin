@@ -1,0 +1,16 @@
+--------------------------------------------------------------------------
+Dump: 02/08/21 13:32:57
+Proceso: 1		Segmento: 0		Inicio: 0x192		Tam: 8b
+Proceso: 1		Segmento: 1		Inicio: 0x200		Tam: 21b
+Proceso: 1		Segmento: 2		Inicio: 0x221		Tam: 21b
+Proceso: 1		Segmento: 3		Inicio: 0x242		Tam: 54b
+Proceso: 2		Segmento: 0		Inicio: 0x296		Tam: 8b
+Proceso: 2		Segmento: 1		Inicio: 0x309		Tam: 21b
+Proceso: 2		Segmento: 2		Inicio: 0x330		Tam: 59b
+Proceso: 3		Segmento: 0		Inicio: 0x389		Tam: 8b
+Proceso: 3		Segmento: 1		Inicio: 0x397		Tam: 21b
+--------------------------------------------------------------------------
+Segmentos Libres:
+Proceso: N/A		Inicio: 0x304		Tam: 5b
+Proceso: N/A		Inicio: 0x418		Tam: 15966b
+--------------------------------------------------------------------------

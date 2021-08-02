@@ -12,6 +12,7 @@ tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger){
     nuevoTCB->tiempoEnBloqIO = 0;
     nuevoTCB->ciclosCumplidos = 0;
     nuevoTCB->mensajeInicialIMS = 0;
+    nuevoTCB->mensajeAtiSabIMS = 0;
 
     return nuevoTCB;
 }
@@ -238,7 +239,6 @@ void resolviendoSabotaje(void* tcbTrip, void* param){
             tripulante->ciclosCumplidos = 0;
         }
     }
-
 }
 
 void operandoSinSabotaje(void* tcbTrip, void* param){
@@ -249,12 +249,15 @@ void operandoSinSabotaje(void* tcbTrip, void* param){
         log_info(logger, "parametro: %s", tarea[i]);
     }
 
-    if (esTareaIO(tarea[0])) {// ES TAREA DE I/O
+    if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
+        operandoSinSabotajeTareaNormal((void*) tripulante, (void*) parametros, tarea);    
+    }
+    else if (esTareaIO(tarea[0])) {// ES TAREA DE I/O
         operandoSinSabotajeTareaIO((void*) tripulante, (void*) parametros, tarea);
     }
-    else if (esTareaIO(tarea[0]) == 0) {// ES TAREA NORMAL
-        operandoSinSabotajeTareaNormal((void*) tripulante, (void*) parametros, tarea);    
-    }   
+    else{
+        log_error(logger, "La tarea recibida no posee un formato correcto");
+    }
 }
 
 void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
@@ -264,9 +267,7 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
     log_info(logger, "[Tripulante %d] Se debe realizar una tarea normal",parametros->idSemaforo);
 
     char** parametrosTarea = string_split(tarea[0], ";");
-    // for(int i=0; parametrosTarea[i]!=NULL; i++){
-    //     log_info(logger, "parametro: %s", parametrosTarea[i]);
-    // }
+
     char* nombreTareaNormal = malloc(strlen(parametrosTarea[0]) + 1);
     strcpy(nombreTareaNormal, parametrosTarea[0]);
     log_info(logger, "nombre de tarea (tarea normal): %s", nombreTareaNormal);
@@ -282,7 +283,6 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             int tamanioNombreTarea = strlen(nombreTareaNormal);
             int tamanioBuffer = sizeof(int)*5 + tamanioNombreTarea;
                     
-            
             //pthread_mutex_lock(&mutexBuffer);
             void* buffer = _serialize(tamanioBuffer, "%d%s%d%d%d", tripulante->tid, nombreTareaNormal, posicionX, posicionY, tiempoTarea);
             int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
@@ -301,7 +301,6 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             log_info(logger, "[Tripulante %d] Termino la tarea normal el tripulante", tripulante->tid);
             int tamanioNombreTarea = strlen(nombreTareaNormal);
             int tamanioBuffer = sizeof(int)*2 + tamanioNombreTarea;
-                        
                     
             //pthread_mutex_lock(&mutexBuffer);
             void* buffer = _serialize(tamanioBuffer, "%d%s", tripulante->tid, nombreTareaNormal);
@@ -318,12 +317,13 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             tripulante->mensajeInicialIMS = 0;
         } 
 
-        if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR && tripulante->status != 'X'){//ES RR Y COMPLETÓ EL QUANTUM Y NO TERMINÓ TODAS LAS TAREAS
+        if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR && tripulante->status != 'X'){//ES RR, COMPLETÓ EL QUANTUM Y NO TERMINÓ TODAS LAS TAREAS
             tripulante->status = 'R';
             tripulante->ciclosCumplidos = 0;
             log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
         }                 
     }
+
     else{// NO LLEGÓ A LA POSICIÓN DE LA TAREA
         moverTripulanteUno(tripulante, posicionX, posicionY);
         tripulante->ciclosCumplidos++;
@@ -334,6 +334,7 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
         }
     }
+
     free(nombreTareaNormal);
     for(int i =0; parametrosTarea[i]!=NULL; i++){
         free(parametrosTarea[i]);
@@ -343,7 +344,6 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
         free(tarea[i]);
     }
     free(tarea);
-
 }
 
 void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
@@ -362,13 +362,17 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
 
     int llegoALaPosicion = llegoAPosicion(tripulante->posicionX, tripulante->posicionY, posicionX, posicionY);
 
+    if (!llegoALaPosicion){// NO LLEGÓ A LA POSICIÓN DE LA TAREA
+        moverTripulanteUno(tripulante, posicionX, posicionY);
+        tripulante->ciclosCumplidos++;
+    }
+
     if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DE LA TAREA
         log_info(logger, "[Tripulante %d] Llegó a la posición, la tarea es %s, es tarea IO",parametros->idSemaforo, tarea[0]);
                 
         int tamanioTarea = strlen(tarea[0]);
         int tamanioBuffer = sizeof(int)*6 + tamanioTarea;
 
-        
         //pthread_mutex_lock(&mutexBuffer);
         void* buffer = _serialize(tamanioBuffer, "%d%s%d%d%d%d", tripulante->tid, tarea[0], parametroIO, posicionX, posicionY, tiempoTarea);
         int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
@@ -377,20 +381,17 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
         free(buffer);
         //pthread_mutex_unlock(&mutexBuffer);
 
+        sleep(ciclo_CPU);
         tripulante->status = 'I';
         tripulante->ciclosCumplidos = 0;
-        log_info(logger, "[Tripulante %d] Se debe realizar una tarea de I/O",parametros->idSemaforo);
     }
-    else{// NO LLEGÓ A LA POSICIÓN DE LA TAREA
-        moverTripulanteUno(tripulante, posicionX, posicionY);
-        tripulante->ciclosCumplidos++;
 
-        if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR){//ES RR Y COMPLETÓ EL QUANTUM
-            tripulante->status = 'R';
-            tripulante->ciclosCumplidos = 0;
-            log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
-        }
+    else if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos==quantum_RR){//ES RR, COMPLETÓ EL QUANTUM Y NO LLEGÓ A LA POSICIÓN DE LA TAREA
+        tripulante->status = 'R';
+        tripulante->ciclosCumplidos = 0;
+        log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
     }
+
     for(int i =0; parametrosTarea[i]!=NULL; i++){
         free(parametrosTarea[i]);
     }

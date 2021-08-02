@@ -1,0 +1,20 @@
+[INFO] 11:53:03:048 IMS/(5951:5951): Validando Existencia de directorios...
+[INFO] 11:53:03:049 IMS/(5951:5951): No existe directorio: Filesystem. Se crea.
+[INFO] 11:53:03:054 IMS/(5951:5951): -----------------------------------------------------
+[INFO] 11:53:03:054 IMS/(5951:5951): Validando existencia de Superbloque.ims....
+[INFO] 11:53:03:055 IMS/(5951:5951): -----------------------------------------------------
+[ERROR] 11:53:03:056 IMS/(5951:5951): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 11:53:03:059 IMS/(5951:5951): Ingresar el tamaño de cada bloque
+[INFO] 11:53:43:533 IMS/(5951:5951): Ingresar la cantidad de bloques
+[ERROR] 11:54:11:517 IMS/(5951:5951): Error al abrir/crear Superbloque
+[INFO] 11:54:11:520 IMS/(5951:5951): Muestro mis valores del bitmap..
+[INFO] 11:54:58:157 IMS/(6200:6200): Validando Existencia de directorios...
+[INFO] 11:54:58:158 IMS/(6200:6200): No existe directorio: Filesystem. Se crea.
+[INFO] 11:54:58:162 IMS/(6200:6200): -----------------------------------------------------
+[INFO] 11:54:58:163 IMS/(6200:6200): Validando existencia de Superbloque.ims....
+[INFO] 11:54:58:163 IMS/(6200:6200): -----------------------------------------------------
+[ERROR] 11:54:58:164 IMS/(6200:6200): No se encontró archivo SuperBloque.ims. Se crea archivo
+[INFO] 11:54:58:165 IMS/(6200:6200): Ingresar el tamaño de cada bloque
+[INFO] 11:55:15:981 IMS/(6200:6200): Ingresar la cantidad de bloques
+[ERROR] 11:56:20:305 IMS/(6200:6200): Error al abrir/crear Superbloque
+[INFO] 11:56:20:308 IMS/(6200:6200): Muestro mis valores del bitmap..

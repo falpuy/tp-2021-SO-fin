@@ -47,9 +47,6 @@ void funcionConsola(){
                         pthread_mutex_lock(&mutex_cantidadVieja);
                         cantidadVieja = cantidadActual;
                         pthread_mutex_unlock(&mutex_cantidadVieja);
-                        
-                        log_info(logger, "CantidadVieja: %d", cantidadVieja);
-                        log_info(logger, "CantidadActual: %d", cantidadActual);
 
                     } else {
                     	log_error(logger, "No se pudo crear el PCB por falta de memoria");
@@ -77,13 +74,12 @@ void funcionConsola(){
                     else{
                         log_info(logger, "No hay tripulantes en la nave, no podemos listar");
                     }
-                    log_info(logger, "--------------------------------------------------------------------");
                 	
-
                     break;
 
                 case C_EXPULSAR_TRIPULANTE:
-                    log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");                    
+                    log_info(logger, "Entró comando: EXPULSAR_TRIPULANTE");
+
                     if (planificacion_viva) {
 					  	int idTripulante = atoi(parametros[1]);
                        
@@ -91,54 +87,62 @@ void funcionConsola(){
                         tcb* tcbTripulante = obtener_tcb_en_listaPCB(listaPCB);
                         pthread_mutex_unlock(&mutexListaPCB);
                         
-                        //pthread_mutex_lock(&mutexBuffer);
-                        void* buffer = _serialize(2*sizeof(int), "%d%d", tcbTripulante->pid, idTripulante);
-                        int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-                        _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, 2*sizeof(int), logger);
-                        free(buffer);
-                      	t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
-                        close(conexion_RAM);
-                        //pthread_mutex_unlock(&mutexBuffer);
-                        
-                       	if(mensajeRecibido->command == SUCCESS) {
-                            log_info(logger, "Se expulsó correctamente el tripulante en memoria");
+                        if(tcbTripulante){
+                            //pthread_mutex_lock(&mutexBuffer);
+                            void* buffer = _serialize(2*sizeof(int), "%d%d", tcbTripulante->pid, idTripulante);
+                            int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+                            _send_message(conexion_RAM, "DIS", EXPULSAR_TRIPULANTE, buffer, 2*sizeof(int), logger);
+                            free(buffer);
+                            t_mensaje* mensajeRecibido = _receive_message(conexion_RAM, logger);
+                            close(conexion_RAM);
+                            //pthread_mutex_unlock(&mutexBuffer);
                             
-                            switch(tcbTripulante->status){
-                                case 'N':
-                                    log_info(logger, "Se expulsa al tripulante de la cola NEW");
-                                    expulsarNodo(cola_new, "New", mutexNew);
-                                    break;
-                                case 'R':
-                                    log_info(logger, "Se expulsa al tripulante de la cola READY");
-                                    expulsarNodo(ready, "Ready", mutexReady);
-                                    break;
-                                case 'E':
-                                    log_info(logger, "Se expulsa al tripulante de la cola EXEC");
-                                    expulsarNodo(exec, "Exec", mutexExec);
-                                    break;
-                                case 'I':
-                                    log_info(logger, "Se expulsa al tripulante de la cola BLOQ IO");
-                                    expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
-                                    break;
-                                case 'M':
-                                    log_info(logger, "Se expulsa al tripulante de la cola BLOQ EMERGENCIA");
-                                    expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
-                                    break;
-                                case 'X':
-                                    log_info(logger, "El tripulante ya se encuentra en la cola EXIT");
-                                    break;
+                            if(mensajeRecibido->command == SUCCESS) {
+                                log_info(logger, "Se expulsó correctamente el tripulante en memoria");
+                                
+                                switch(tcbTripulante->status){
+                                    case 'N':
+                                        log_info(logger, "Se expulsa al tripulante de la cola NEW");
+                                        expulsarNodo(cola_new, "New", mutexNew);
+                                        break;
+                                    case 'R':
+                                        log_info(logger, "Se expulsa al tripulante de la cola READY");
+                                        expulsarNodo(ready, "Ready", mutexReady);
+                                        break;
+                                    case 'E':
+                                        log_info(logger, "Se expulsa al tripulante de la cola EXEC");
+                                        expulsarNodo(exec, "Exec", mutexExec);
+                                        break;
+                                    case 'I':
+                                        log_info(logger, "Se expulsa al tripulante de la cola BLOQ IO");
+                                        expulsarNodo(bloq_io, "Bloqueado por IO", mutexBloqIO);
+                                        break;
+                                    case 'M':
+                                        log_info(logger, "Se expulsa al tripulante de la cola BLOQ EMERGENCIA");
+                                        expulsarNodo(bloq_emer, "Bloqueado por emergencia", mutexBloqEmer);
+                                        break;
+                                    case 'X':
+                                        log_info(logger, "El tripulante ya se encuentra en la cola EXIT");
+                                        break;
+                                }
+
                             }
-                        }else{
-                            log_info(logger, "No se pudo expulsar el tripulante en memoria");
+                            else{
+                                log_error(logger, "No se pudo expulsar el tripulante en memoria");
+                            }
+                            free(mensajeRecibido->identifier);
+                            free(mensajeRecibido->payload);
+                            free(mensajeRecibido);
                         }
 
-                        free(mensajeRecibido->identifier);
-                        free(mensajeRecibido->payload);
-                        free(mensajeRecibido);
-                    }else{
-                        log_error(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
+                        else{
+                            log_error(logger, "El ID ingresado no corresponde a un tripulante de la nave");
+                        }
                     }
                     
+                    else{
+                        log_error(logger, "La planificación está pausada, no se puede expulsar a un tripulante");
+                    }
                     break;
 
                 case C_OBTENER_BITACORA: 
@@ -259,6 +263,7 @@ void mostrarTripulante(void* elemento){
             log_info(logger, "Status: EXIT\n");
             break;
     }
+    log_info(logger, "-------------------------------------");
 }
 
 void mostrarListaTripulantes(void* elemento){
@@ -339,6 +344,7 @@ void liberarMemoria(){
     queue_clean(bloq_emer);
     queue_clean(cola_exit);
     queue_clean(bloq_emer_sorted);
+    queue_clean(colaContSab);
     queue_destroy(cola_new);
     queue_destroy(ready);
     queue_destroy(exec);
@@ -346,6 +352,7 @@ void liberarMemoria(){
     queue_destroy(bloq_emer);
     queue_destroy(cola_exit);
     queue_destroy(bloq_emer_sorted);
+    queue_destroy(colaContSab);
     list_destroy_and_destroy_elements(listaPCB, destruirPCB);
 
   	pthread_mutex_destroy(&mutexNew);
@@ -365,6 +372,7 @@ void liberarMemoria(){
     pthread_mutex_destroy(&mutex_cantidadTCB);
     pthread_mutex_destroy(&mutex_contadorSemGlobal);
     pthread_mutex_destroy(&mutexValidacionPos);
+    pthread_mutex_destroy(&mutexContextoSabotaje);
     
     sem_destroy(&semNR);
     sem_destroy(&semRE);

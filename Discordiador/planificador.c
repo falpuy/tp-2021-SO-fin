@@ -9,6 +9,7 @@ void funcionPlanificador(t_log* logger) {
     bloq_emer = queue_create();
     bloq_emer_sorted = queue_create();
     cola_exit = queue_create();
+    colaContSab = queue_create();
     listaSemaforos = list_create();
 
     listaPCB = list_create();
@@ -314,7 +315,7 @@ void funcionContadorEnBloqIO(void* nodo){
         close(conexion_IMS);
         //pthread_mutex_unlock(&mutexBuffer);
 
-        log_info(logger, "Se finalizo la tarea: %s. Tripulante: %d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
+        log_info(logger, "Se finalizó la tarea: %s. Tripulante: %d pide la próxima tarea",tcbTripulante->instruccion_actual, tcbTripulante->tid);
         log_info(logger,"----------------------------------");
 
         pedirProximaTarea(tcbTripulante);
@@ -548,7 +549,7 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
             log_info(logger,"Se ejecutó ReadyExec->BlockedEmer");
             log_info(logger,"----------------------------------");
         }
-        
+        sleep(1); //BORRAR
         sem_post(&semMR);
     }
 }
@@ -610,6 +611,7 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
             log_info(logger,"Se ejecutó BlockedEmer->Ready");
             log_info(logger,"----------------------------------");
         }
+        sleep(1); //BORRAR
         sem_post(&semEXIT);
     }
 }

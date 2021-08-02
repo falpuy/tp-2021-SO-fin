@@ -219,10 +219,10 @@ void resolviendoSabotaje(void* tcbTrip, void* param){
         }
 
         tripulante->ciclosCumplidos++;
-        log_info(logger, "Ciclos transcurridos del sabotaje: %d", tripulante->ciclosCumplidos);
 
         pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
         ciclos_transcurridos_sabotaje++;
+        log_info(logger, "Ciclos transcurridos del sabotaje: %d", ciclos_transcurridos_sabotaje);
         pthread_mutex_unlock(&mutexCiclosTranscurridosSabotaje);
 
         if(!strcmp(algoritmo,"RR") && tripulante->ciclosCumplidos == quantum_RR) {// SI EL ALGORITMO ES RR Y SE COMPLETÓ EL QUANTUM
@@ -350,6 +350,7 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
     
     tcb* tripulante = (tcb*) tcbTrip;
     parametrosThread* parametros = (parametrosThread*) param;
+    int llegoALaPosicion;
     
     char** parametrosTarea = string_split(tarea[1], ";");
     for(int i=0; parametrosTarea[i]!=NULL; i++){
@@ -360,12 +361,14 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
     int posicionY = atoi(parametrosTarea[2]);
     int tiempoTarea = atoi(parametrosTarea[3]);
 
-    int llegoALaPosicion = llegoAPosicion(tripulante->posicionX, tripulante->posicionY, posicionX, posicionY);
+    llegoALaPosicion = llegoAPosicion(tripulante->posicionX, tripulante->posicionY, posicionX, posicionY);
 
     if (!llegoALaPosicion){// NO LLEGÓ A LA POSICIÓN DE LA TAREA
         moverTripulanteUno(tripulante, posicionX, posicionY);
         tripulante->ciclosCumplidos++;
     }
+
+    llegoALaPosicion = llegoAPosicion(tripulante->posicionX, tripulante->posicionY, posicionX, posicionY);
 
     if (llegoALaPosicion){// LLEGÓ A LA POSICIÓN DE LA TAREA
         log_info(logger, "[Tripulante %d] Llegó a la posición, la tarea es %s, es tarea IO",parametros->idSemaforo, tarea[0]);

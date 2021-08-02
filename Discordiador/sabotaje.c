@@ -5,9 +5,9 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
 
     switch (comando) {
         case COMIENZA_SABOTAJE:
-        log_info(logger, "Llego comando COMIENZA_SABOTAJE con posición en %d-%d",posSabotajeX,posSabotajeY);
-        //hayTripulantesEnLaNave = hayTripulantesNave();
-        hayTripulantesEnLaNave = 1;
+        
+        hayTripulantesEnLaNave = hayTripulantesNave();
+        //hayTripulantesEnLaNave = 1;
 
         if(hayTripulantesEnLaNave){
             pthread_mutex_lock(&mutexSabotajeActivado);
@@ -20,6 +20,8 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
 
             memcpy(&posSabotajeX, payload, sizeof(int));
             memcpy(&posSabotajeY, payload + sizeof(int), sizeof(int));
+
+            log_info(logger, "Llego comando COMIENZA_SABOTAJE con posición en %d-%d",posSabotajeX,posSabotajeY);
         }
 
         else{

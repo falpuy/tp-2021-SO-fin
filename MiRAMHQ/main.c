@@ -686,9 +686,11 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
     char* idPCBkey;  
     char *respuesta;
     char status;
+
+    printf("CODIGO: %d\n", opcode);
   
     switch (opcode){
-        
+
         case INICIAR_PATOTA: // idPCB - tareas - cantTCB - IDTCB.... (N id)
 
           log_info(logger,"-----------------------------------------------------");

@@ -185,34 +185,59 @@ void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante){
 
 void consumirOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Files/Oxigeno.ims");
-    log_info(logger, "Path de consumir oxigeno:%s", path_oxigeno);
+    // log_info(logger, "Path de consumir oxigeno:%s", path_oxigeno);
     
     if(access(path_oxigeno,F_OK)<0){
         log_error(logger, "No existe Oxigeno.ims");
-        log_error(logger, "Finalizando Tarea..");
-    }
-    char* strABorrar = string_repeat('O',parametroTarea);
-    
-    borrarEnBlocks(strABorrar,path_oxigeno,1);
+    }else{
+        char* strABorrar = string_repeat('O',parametroTarea);
 
-    free(strABorrar);
+        t_config* metadata = config_create(path_oxigeno);
+        int sizeAnterior = config_get_int_value(metadata, "SIZE");
+        int tamStrBorrar = string_length(strABorrar);
+        config_destroy(metadata);
+        if(sizeAnterior == 0){
+            log_error(logger, "No hay oxigeno guardad en el filesystem");
+        }else{
+            if(sizeAnterior < tamStrBorrar){
+                log_error(logger, "Se quiere intentar eliminar mas de lo que está guardado en FS");
+                free(strABorrar);
+                strABorrar = string_repeat('O',sizeAnterior);
+                tamStrBorrar = string_length(strABorrar);
+            }
+        }
+        borrarEnBlocks(strABorrar,path_oxigeno,1,'O');
+        free(strABorrar);
+    }
     free(path_oxigeno);
 }
 
 void consumirComida(int parametroTarea){
     char* path_comida = pathCompleto("Files/Comida.ims");
-    log_info(logger, "Path de (Consumir)comida:%s", path_comida);
+    // log_info(logger, "Path de (Consumir)comida:%s", path_comida);
     
     if(access(path_comida,F_OK)<0){
         log_error(logger, "No existe Comida.ims");
-        log_error(logger, "Finalizando Tarea..");
-    }
+    }else{
+        char* strABorrar = string_repeat('C',parametroTarea);
 
-    char* strABorrar = string_repeat('C',parametroTarea);
-    
-    borrarEnBlocks(strABorrar,path_comida,1);
-    
-    free(strABorrar);
+        t_config* metadata = config_create(path_comida);
+        int sizeAnterior = config_get_int_value(metadata, "SIZE");
+        int tamStrBorrar = string_length(strABorrar);
+        config_destroy(metadata);
+        if(sizeAnterior == 0){
+            log_error(logger, "No hay comida guardada en el filesystem");
+        }else{
+            if(sizeAnterior < tamStrBorrar){
+                log_error(logger, "Se quiere intentar eliminar mas de lo que está guardado en FS");
+                free(strABorrar);
+                strABorrar = string_repeat('C',sizeAnterior);
+                tamStrBorrar = string_length(strABorrar);
+            }
+        }
+        borrarEnBlocks(strABorrar,path_comida,1,'C');
+        free(strABorrar);
+    }
     free(path_comida);
 }
 
@@ -227,7 +252,7 @@ void descartarBasura(int parametroTarea){
         char* string_temp= string_repeat('B',size);
         config_destroy(metadata);
 
-        borrarEnBlocks(string_temp, path_basura, 1);
+        borrarEnBlocks(string_temp, path_basura, 1,'B');
         free(string_temp);
         remove(path_basura);
     }

@@ -1,25 +1,24 @@
     #include "./headers/sabotajes.h"
 
 void sabotaje(){
-    // char** strPosiciones = string_split(posicionesSabotajes[contadorSabotajeLeido],"|");
-    // int posicionX = atoi(strPosiciones[0]);
-    // int posicionY = atoi(strPosiciones[1]); 
+    char** strPosiciones = string_split(posicionesSabotajes[contadorSabotajeLeido],"|");
+    int posicionX = atoi(strPosiciones[0]);
+    int posicionY = atoi(strPosiciones[1]); 
 
-    // pthread_mutex_lock(&discordiador);
-    // int idDiscordiador = _connect(ipDiscordiador,puertoDiscordiador,logger);
-    // void* buffer = _serialize(sizeof(int)*2,"%d%d",posicionX,posicionY);
-    // _send_message(idDiscordiador,"IMS",COMIENZA_SABOTAJE,buffer,sizeof(int)*2,logger);
-    // pthread_mutex_unlock(&discordiador);
+    pthread_mutex_lock(&discordiador);
+    int idDiscordiador = _connect(ipDiscordiador,puertoDiscordiador,logger);
+    void* buffer = _serialize(sizeof(int)*2,"%d%d",posicionX,posicionY);
+    _send_message(idDiscordiador,"IMS",COMIENZA_SABOTAJE,buffer,sizeof(int)*2,logger);
+    pthread_mutex_unlock(&discordiador);
 
-    // contadorSabotajeLeido++; 
-    // free(buffer);
-    // free(strPosiciones[0]);
-    // free(strPosiciones[1]);
-    // free(strPosiciones);
+    contadorSabotajeLeido++; 
+    free(buffer);
+    free(strPosiciones[0]);
+    free(strPosiciones[1]);
+    free(strPosiciones);
  
-    // log_info(logger, "Envié mensaje de sabotaje a discordiador");
-    protocolo_fsck();
-
+    log_info(logger, "Envié mensaje de sabotaje a discordiador");
+    //protocolo_fsck();
 }
 
 void protocolo_fsck(){

@@ -1,11 +1,18 @@
 #include"headers/sabotaje.h"
 
 void handler(int client, char* identificador, int comando, void* payload, t_log* logger){
+    int hayTripulantesEnLaNave;
+
     switch (comando) {
         case COMIENZA_SABOTAJE:
+
+        hayTripulantesEnLaNave = 1;
+
+        if(hayTripulantesEnLaNave){
             pthread_mutex_lock(&mutexSabotajeActivado);
             sabotaje_activado=1;
             pthread_mutex_unlock(&mutexSabotajeActivado);
+            sabotaje_terminado=0;
 
             pthread_mutex_lock(&mutexCiclosTranscurridosSabotaje);
             ciclos_transcurridos_sabotaje = 0;
@@ -13,7 +20,14 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
 
             memcpy(&posSabotajeX, payload, sizeof(int));
             memcpy(&posSabotajeY, payload + sizeof(int), sizeof(int));
+
             log_info(logger, "Llego comando COMIENZA_SABOTAJE con posición en %d-%d",posSabotajeX,posSabotajeY);
+        }
+
+        else{
+            log_error(logger, "No se puede resolver el sabotaje porque no hay ningún tripulante en la nave");
+        }
+
         break;
     }
 }

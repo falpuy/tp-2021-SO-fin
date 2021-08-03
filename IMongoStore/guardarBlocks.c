@@ -225,7 +225,7 @@ void    guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){
 
 
 
-void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
+void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso){
 
   	t_config* metadata;
   	int sizeAnterior;
@@ -238,7 +238,8 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
     log_info(logger, "--------------------------------------------");
     log_info(logger, "Tamaño del string a borrar:%d",tamStrBorrar);
 
-    while(tamStrBorrar ) {
+    
+    while(tamStrBorrar) {
         metadata = config_create(path);
         sizeAnterior = config_get_int_value(metadata, "SIZE");
         listaBloques = config_get_array_value(metadata,"BLOCKS");
@@ -251,17 +252,12 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
         }
 
         bloqueABorrar = atoi(listaBloques[contador-1]);
-        log_info(logger, "Ultimo bloque es:%d",bloqueABorrar);
-
         fragmentacion = contador*tamanioBloque - sizeAnterior;
-        log_info(logger, "Fragmentacion es:%d",fragmentacion);
-
-  		posicion = tamanioBloque - fragmentacion;
-        log_info(logger, "Posicion a borrar es:%d",posicion);
+        posicion = tamanioBloque - fragmentacion;
 
 
-     	if (posicion == tamStrBorrar) {
-            log_info(logger, "El tamanio que hay en el bloque es igual a lo que yo quiero borrar");
+        if (posicion == tamStrBorrar) {
+            // log_info(logger, "El tamanio que hay en el bloque es igual a lo que yo quiero borrar");
 
             memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', tamanioBloque);
 
@@ -274,10 +270,10 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
             config_destroy(metadata);
             actualizarBlocks(bloqueABorrar, 0,path);
             tamStrBorrar -= posicion;
-            log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
+            // log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
 
         }else if(posicion < tamStrBorrar){ 
-            log_info(logger, "El tamanio que hay en el bloque es menor a lo que yo quiero borrar");
+            // log_info(logger, "El tamanio que hay en el bloque es menor a lo que yo quiero borrar");
 
             memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', posicion); //borro esos 5 limpio todo
             tamStrBorrar -= posicion; //nuevo tamanio--> 1
@@ -290,7 +286,7 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
             actualizarBlockCount(metadata,0);
             config_destroy(metadata);
             actualizarBlocks(bloqueABorrar, 0,path);
-            log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
+            // log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
 
         }else{
             // princio + el bloque + la posicion a borrar los recursos
@@ -305,7 +301,9 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso){
             free(listaBloques[i]);
         }
         free(listaBloques);
-    } 
+    
+    }
+
 
     setearMD5(path);
 

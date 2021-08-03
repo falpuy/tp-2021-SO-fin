@@ -68,6 +68,7 @@
         int tiempoEnBloqIO;
         int ciclosCumplidos;
         int mensajeInicialIMS;
+        int mensajeAtiSabIMS;
     }tcb;
 
     typedef struct{
@@ -81,8 +82,8 @@
     t_log* logger;
     t_config* config;
 
-    int conexion_RAM;
-    int conexion_IMS;
+    // int conexion_RAM;
+    // int conexion_IMS;
     char* ip_RAM;
     char* puerto_RAM;
     char* ip_IMS;
@@ -140,6 +141,7 @@
     pthread_mutex_t mutexSemaforosTrip;
     pthread_mutex_t mutexValidacionPos;
     pthread_mutex_t mutex_contadorSemGlobal;
+    pthread_mutex_t mutexContextoSabotaje;
 
     sem_t semNR;
     sem_t semRE;
@@ -162,6 +164,8 @@
     int posSabotajeX;
     int posSabotajeY;
 
+    int contadorCicloCPU;
+
     t_queue* cola_new;
     t_queue* ready;
     t_queue* exec;
@@ -169,6 +173,7 @@
     t_queue* bloq_emer;
     t_queue* bloq_emer_sorted;
     t_queue* cola_exit;
+    t_queue* colaContSab;
 
     t_list* listaPCB;
     t_list* listaSemaforos;

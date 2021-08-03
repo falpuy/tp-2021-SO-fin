@@ -42,6 +42,7 @@
     void funcionhExit (t_log* logger);
 
     /*------------------ADICIONALES--------------------*/
+    void terminaUnCiclo(void* item);
     void eliminarPatotaEnRAM(void* item);
     void deletearTripulante(void* nodo);
     void eliminarPatotaEnRAM(void* item);

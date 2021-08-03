@@ -17,7 +17,9 @@ void funcionConsola(){
                     planificacion_viva = 1;  //activa flag para que se ejecuten los hilos
                     log_info(logger, "Se inició la planificación. Estado de la flag: %d", planificacion_viva);
                     
-                    sem_post(&semNR); //Le avisa a New->Ready q es su turno
+                    if (queue_is_empty(ready) && queue_is_empty(exec) && queue_is_empty(bloq_io) && queue_is_empty(bloq_emer) && queue_is_empty(cola_exit)){
+                        sem_post(&semNR); //Le avisa a New->Ready q es su turno sólo la primera vez
+                    }
                     break;
 
                 case C_PAUSAR_PLANIFICACION: 
@@ -308,6 +310,7 @@ void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola){
 
     if (tripulanteAExpulsar!=NULL) {
         tripulanteAExpulsar->status = 'X';
+
         iterar_en_lista(cola->elements, extraerTripulante, mutexCola);
         log_info(logger, "El tripulante ya fue expulsado de la cola %s", nombre_cola);
     }

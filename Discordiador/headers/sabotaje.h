@@ -69,6 +69,7 @@
         int ciclosCumplidos;
         int mensajeInicialIMS;
         int mensajeAtiSabIMS;
+        int cicloCPUCumplido;
     }tcb;
 
     typedef struct{

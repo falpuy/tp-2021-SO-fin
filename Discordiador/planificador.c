@@ -33,8 +33,7 @@ void funcionhNewaReady (t_log* logger) {
         pthread_mutex_unlock(&mutexSabotajeActivado);
 
         if(temp_planificacion_viva && temp_sabotaje_activado == 0){
-            // log_info(logger, "CICLO CPU NRO: %d", contadorCicloCPU);
-            contadorCicloCPU++;
+            log_info(logger, "CICLO CPU NRO: %d", contadorCicloCPU);
 
             while(!queue_is_empty(cola_new)){   
                 
@@ -66,7 +65,6 @@ void funcionhNewaReady (t_log* logger) {
                 log_info(logger,"----------------------------------");
             }
         }
-
         sem_post(&semEBIO);
     }
 }
@@ -96,7 +94,6 @@ void funcionhReadyaExec (t_log* logger){
 
                 pthread_mutex_lock(&mutexSabotajeActivado);
                 int temp_sabotaje_activado = sabotaje_activado;
-                log_info(logger, "sabotaje_activado: %d", sabotaje_activado);
                 pthread_mutex_unlock(&mutexSabotajeActivado);
 
                 if(!temp_sabotaje_activado){
@@ -121,11 +118,11 @@ void funcionhReadyaExec (t_log* logger){
                 log_info(logger, "Se paso Tripulante a Exec");
                 log_info(logger, "Hay %d nodos en Exec", queue_size(exec));
 
-            log_info(logger,"Se ejecutó Ready->Exec");
-            log_info(logger,"----------------------------------");
+                log_info(logger,"Se ejecutó Ready->Exec");
+                log_info(logger,"----------------------------------");
             }
-
         }
+
         pthread_mutex_lock(&mutex_cantidadTCB);
         cantidadTCBEnExec = queue_size(exec);
         pthread_mutex_unlock(&mutex_cantidadTCB);
@@ -176,10 +173,9 @@ void funcionhExecaBloqIO (t_log* logger){
                 list_iterate(exec->elements, funcionCambioExecIO);
                 log_info(logger,"Se ejecutó Exec->BlockedIO");
                 log_info(logger,"----------------------------------");
-            }
-        }
-
-        sem_post(&semRE);        
+            } 
+        }  
+        sem_post(&semRE);  
     }
 }
 
@@ -208,6 +204,7 @@ void funcionhExecaReady (t_log* logger) {
 
     while (temp_validador) {
         sem_wait(&semER);// Espera el _signal de los N tripulantes
+        //log_info(logger, "Llegan los _signal de todos los tripulantes");
 
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
@@ -223,7 +220,6 @@ void funcionhExecaReady (t_log* logger) {
                 log_info(logger,"----------------------------------");
             }
         }
-        
         sem_post(&semEaX);     
     }
 }
@@ -279,13 +275,13 @@ void funcionhExecaExit (t_log* logger){
         pthread_mutex_unlock(&mutexPlanificacionViva);
 
         if (temp_planificacion_viva) {
+
             if(!queue_is_empty(exec)){
                 list_iterate(exec->elements, funcionCambioExecExit);
                 log_info(logger,"Se ejecutó Exec->Exit");
                 log_info(logger,"----------------------------------");
             }
-        }
-
+        }    
         sem_post(&semBLOCKIO);
     }
 }
@@ -403,7 +399,6 @@ void funcionhBloqIO (t_log* logger){
             log_info(logger,"Se ejecutó BlockedIO");
             log_info(logger,"----------------------------------");
         }
-        
         if(sabotaje_activado){
             sem_post(&semERM);
         }else{
@@ -710,14 +705,35 @@ void funcionhExit (t_log* logger){
                     }
                 }
             }
+
+            pthread_mutex_lock(&mutexReady);
+            list_iterate(ready->elements, terminaUnCiclo);
+            pthread_mutex_unlock(&mutexReady);
+
+            pthread_mutex_lock(&mutexExec);
+            list_iterate(exec->elements, terminaUnCiclo);
+            pthread_mutex_unlock(&mutexExec);
+
+            pthread_mutex_lock(&mutexBloqIO);
+            list_iterate(bloq_io->elements, terminaUnCiclo);
+            pthread_mutex_unlock(&mutexBloqIO);
+            
+            pthread_mutex_lock(&mutexBloqEmer);
+            list_iterate(bloq_emer->elements, terminaUnCiclo);
+            pthread_mutex_unlock(&mutexBloqEmer);
+            contadorCicloCPU++;
         }
-        
         sem_post(&semNR);
     }    
 }
 
 
 /*--------------------------------ADICIONALES--------------------------------*/
+
+void terminaUnCiclo(void* item){
+    tcb* tcbAModificar = (tcb*) item;
+    tcbAModificar->cicloCPUCumplido=0;
+}
 
 void eliminarPatotaEnRAM(void* item){
     pcb* pcbEliminado = (pcb*) item;

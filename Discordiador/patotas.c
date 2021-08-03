@@ -13,6 +13,7 @@ tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger){
     nuevoTCB->ciclosCumplidos = 0;
     nuevoTCB->mensajeInicialIMS = 0;
     nuevoTCB->mensajeAtiSabIMS = 0;
+    nuevoTCB->cicloCPUCumplido = 0;
 
     return nuevoTCB;
 }
@@ -33,7 +34,6 @@ pcb* crear_PCB(char** parametros, t_log* logger){
       
   	char *tareas = get_tareas(nuevoPCB->rutaTareas, logger);
 		
-  	// buffer->[idpcb, largo_tareas, lista_tareas, cant_tripulantes, n_tcbs ()....]
   	int tamanioBuffer = sizeof(int) * 3 + strlen(tareas) + cant_tripulantes * (sizeof(int)*4 + sizeof(char));
   	void *buffer_a_enviar = malloc(tamanioBuffer);	
   
@@ -92,7 +92,6 @@ pcb* crear_PCB(char** parametros, t_log* logger){
     pthread_mutex_lock(&mutex_cantidadActual);
     cantidadActual += cant_tripulantes;
     pthread_mutex_unlock(&mutex_cantidadActual);
-    log_info(logger, "CantidadActual: %d", cantidadActual);
     
     //pthread_mutex_lock(&mutexBuffer);
     int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
@@ -157,18 +156,14 @@ void funcionTripulante (void* elemento) {
         tcbTripulante = get_by_id(exec->elements, param->idSemaforo);
         pthread_mutex_unlock(&mutexExec);
 
-        if(tcbTripulante){
+        if(tcbTripulante && tcbTripulante->estaVivoElHilo && planificacion_viva && tcbTripulante->cicloCPUCumplido==0){
             hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param);
+            tcbTripulante->cicloCPUCumplido=1;
         }
-        // if(!tcbTripulante){
-        //     pthread_mutex_lock(&mutexExit);
-        //     tcbTripulante = get_by_id(cola_exit->elements, param->idSemaforo);
-        //     pthread_mutex_unlock(&mutexExit);
-        //     log_info(logger, "El tripulante es: %d",tcbTripulante->tid);
-        // }       
         
+        sleep(ciclo_CPU);
 
-        pthread_mutex_lock(&mutex_cantidadTCB); 
+        pthread_mutex_lock(&mutex_cantidadTCB);
         _signal(1,cantidadTCBEnExec,&semER);
         pthread_mutex_unlock(&mutex_cantidadTCB);
     }
@@ -179,14 +174,13 @@ void funcionTripulante (void* elemento) {
 void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param){
     tcb* tripulante = (tcb*) tcbTrip;
     parametrosThread* parametros = (parametrosThread*) param;
-    if(tripulante->estaVivoElHilo && planificacion_viva && tripulante->status == 'E') {// SI ESTÁ VIVO EL TRIPULANTE (HILO)
+    if(tripulante->status == 'E') {// SI ESTÁ EN EXEC
         if(sabotaje_activado){
             resolviendoSabotaje((void*) tripulante, (void*) parametros);
         }
         else{
             operandoSinSabotaje((void*) tripulante, (void*) parametros);
         }
-        sleep(ciclo_CPU);
     }
 }
 

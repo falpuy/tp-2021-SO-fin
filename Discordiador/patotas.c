@@ -169,7 +169,7 @@ void funcionTripulante (void* elemento) {
         
 
         pthread_mutex_lock(&mutex_cantidadTCB); 
-        _signal(1,cantidadTCBEnExec,&semEBIO);
+        _signal(1,cantidadTCBEnExec,&semER);
         pthread_mutex_unlock(&mutex_cantidadTCB);
     }
 }

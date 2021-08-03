@@ -60,7 +60,7 @@ void funcionhNewaReady (t_log* logger) {
             }
         }
 
-        sem_post(&semRE);
+        sem_post(&semEBIO);
     }
 }
 
@@ -152,7 +152,7 @@ void funcionhExecaBloqIO (t_log* logger){
     pthread_mutex_unlock(&mutexValidador);
     
     while (temp_validador) {
-        sem_wait(&semEBIO); //espera los N hilos de tripulantes
+        sem_wait(&semEBIO);
 
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
@@ -166,7 +166,7 @@ void funcionhExecaBloqIO (t_log* logger){
             }
         }
 
-        sem_post(&semER);
+        sem_post(&semRE);        
     }
 }
 
@@ -194,7 +194,7 @@ void funcionhExecaReady (t_log* logger) {
     pthread_mutex_unlock(&mutexValidador);
 
     while (temp_validador) {
-        sem_wait(&semER);
+        sem_wait(&semER);// Espera el _signal de los N tripulantes
 
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
@@ -428,9 +428,9 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 tcb* tripulanteFixer = queue_pop(exec);
                 pthread_mutex_unlock(&mutexExec);
 
-                if(tripulanteFixer == NULL){ // RR, FIXER ESTABA EN READY CUANDO TERMINÓ EL SABOTAJE
+                if(!tripulanteFixer){ // RR, FIXER ESTABA EN READY CUANDO TERMINÓ EL SABOTAJE
                     pthread_mutex_lock(&mutexReady);
-                    tcb* tripulanteFixer = queue_pop(ready);
+                    tripulanteFixer = queue_pop(ready);
                     pthread_mutex_unlock(&mutexReady);
                 }
 

@@ -452,7 +452,8 @@ void update_task_from_page(void *memory, t_dictionary *admin_collection, t_dicti
             pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
-            
+            page_aux -> frame -> time = timer++;
+
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
             pthread_mutex_lock(&m_virtual);
@@ -547,15 +548,16 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
     void *temp = malloc(tcb_page_count * page_size);
     // Traigo paginas de tcb
     for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
-        printf("NUMBERS: %d - %d\n", i, queue_size(self));
+        // printf("NUMBERS: %d - %d\n", i, queue_size(self));
         page_aux = list_remove(self -> elements, i);
-        printf("Page: %d\n", page_aux -> number);
+        // printf("Page: %d\n", page_aux -> number);
 
         if (page_aux -> frame -> presence) {
             pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
-            
+            page_aux -> frame -> time = timer++;
+
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
             pthread_mutex_lock(&m_virtual);
@@ -601,12 +603,12 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
     char *tareas = malloc(page_size * 2);
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
-        printf("Searching.. %d - %d\n", data_tcb -> start , (data_tcb -> start % page_size));
+        // printf("Searching.. %d - %d\n", data_tcb -> start , (data_tcb -> start % page_size));
         memcpy(&temp_id, temp + (data_tcb -> start % page_size) + (i * 21), sizeof(uint32_t));
 
         if (temp_id == id_tcb) {
 
-            printf("Encontre el id..\n");
+            // printf("Encontre el id..\n");
 
             pos_tcb = (data_tcb -> start % page_size) + (i * 21) + (sizeof(uint32_t) * 4) + sizeof(char);
 
@@ -626,6 +628,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
                 pthread_mutex_lock(&m_memoria);
                 memcpy(tareas, memory + (page2 -> frame) -> start, page_size);
                 pthread_mutex_unlock(&m_memoria);
+                page2 -> frame -> time = timer++;
                 
             } else {
                 pthread_mutex_lock(&m_virtual);
@@ -674,6 +677,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
                     pthread_mutex_lock(&m_memoria);
                     memcpy(tareas + page_size, memory + (page2 -> frame) -> start, page_size);
                     pthread_mutex_unlock(&m_memoria);
+                    page2 -> frame -> time = timer++;
                     
                     // unset_bitmap(bitmap, (page2 -> frame) -> number);
                 } else {
@@ -765,6 +769,7 @@ int remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_diction
             pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
+            page_aux -> frame -> time = timer++;
             unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
             // printf("SWAP PAGE\n");
@@ -931,7 +936,8 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
             pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
-            
+            page_aux -> frame -> time = timer++;
+
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
             pthread_mutex_lock(&m_virtual);
@@ -1030,7 +1036,8 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
             pthread_mutex_lock(&m_memoria);
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
-            
+            page_aux -> frame -> time = timer++;
+
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
             pthread_mutex_lock(&m_virtual);

@@ -12,6 +12,7 @@ void actualizarArchivoBlocks(){
         log_info(logger, "Comienza actualización de Blocks.ims...");
         
         pthread_mutex_lock(&blocks_bitmap);
+        log_info(logger, "HOLA");
 
         int archBloques = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
         void* blocks_memory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);

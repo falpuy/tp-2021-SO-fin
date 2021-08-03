@@ -15,8 +15,8 @@
     #include "actualizarMetadata.h"
 
 
-    void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso);
-    void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso);
-    void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar);
+    void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso,pthread_mutex_t mutex);
+    void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso,pthread_mutex_t mutex);
+    void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar,pthread_mutex_t mutex);
     
 #endif

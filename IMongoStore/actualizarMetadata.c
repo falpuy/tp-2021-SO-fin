@@ -1,7 +1,7 @@
 #include "./headers/actualizarMetadata.h"
 
 
-char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGuardar,char* path){
+char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGuardar,char* path,pthread_mutex_t mutex){
     int tamListaVieja = string_length(listaVieja);
     char *bloque = string_itoa(bloqueAModificar);
     char* listaNueva  = malloc(tamListaVieja);
@@ -19,9 +19,11 @@ char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGu
     }else{ //Es para borrar
         if (tamListaVieja > 2) { //[2,44
             int tamListaNueva = string_length(listaNueva);
+            pthread_mutex_lock(&mutex);
             t_config* metadata = config_create(path);
             int bloques = config_get_int_value(metadata,"BLOCK_COUNT");
             config_destroy(metadata);
+            pthread_mutex_unlock(&mutex);
 
             if(bloques == 0){
                 char* temporal = string_new();
@@ -56,23 +58,33 @@ char* crearNuevaListaBloques(char* listaVieja,int bloqueAModificar, int flagEsGu
     return listaNueva;
 }
 
-void actualizarBlocks(int bloque,int flagEsGuardar,char* path){
+void actualizarBlocks(int bloque,int flagEsGuardar,char* path,pthread_mutex_t mutex){
+    pthread_mutex_lock(&mutex);
     t_config* metadataBitacora = config_create(path);
     char* lista = config_get_string_value(metadataBitacora,"BLOCKS"); 
-    char* bloquesNuevos = crearNuevaListaBloques(lista,bloque,flagEsGuardar,path);
+    config_destroy(metadataBitacora);
+    pthread_mutex_unlock(&mutex);
 
+    char* bloquesNuevos = crearNuevaListaBloques(lista,bloque,flagEsGuardar,path,mutex);
+
+    pthread_mutex_lock(&mutex);
+    metadataBitacora = config_create(path);
     config_set_value(metadataBitacora,"BLOCKS",bloquesNuevos);
     config_save(metadataBitacora);
     config_destroy(metadataBitacora);
+    pthread_mutex_unlock(&mutex);
 
     free(bloquesNuevos);
 }
 
-void setearMD5(char* pathMetadata){
+void setearMD5(char* pathMetadata,pthread_mutex_t mutex){
     char *comando = string_new();
 
+    pthread_mutex_lock(&mutex);
     t_config* metadata = config_create(pathMetadata);
     char** listaBloques = config_get_array_value(metadata,"BLOCKS");
+    config_destroy(metadata);
+    pthread_mutex_unlock(&mutex);
     int contador = 0;
     char* string_temp = string_new();
     int bloquesHastaAhora = 0;
@@ -96,10 +108,15 @@ void setearMD5(char* pathMetadata){
         }else{
             bloque = atoi(listaBloques[bloquesHastaAhora]);
 
+            pthread_mutex_lock(&mutex);
+            metadata = config_create(pathMetadata);
             int sizeVieja = config_get_int_value(metadata, "SIZE");
+            config_destroy(metadata);
+            pthread_mutex_unlock(&mutex);
+
             int fragmentacion =sizeVieja-  bloquesHastaAhora*tamanioBloque;
 
-            log_info(logger, "fragm interna:%d, sizeViejo:%d, Contador:%d",fragmentacion,sizeVieja,contador);
+            // log_info(logger, "fragm interna:%d, sizeViejo:%d, Contador:%d",fragmentacion,sizeVieja,contador);
             char* temporalBloque = malloc(fragmentacion+1);
             memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, fragmentacion);
             temporalBloque[fragmentacion] = '\0';
@@ -109,7 +126,7 @@ void setearMD5(char* pathMetadata){
         }
             
     }
-    log_info(logger, "String total para el MD5:%s", string_temp);
+    // log_info(logger, "String total para el MD5:%s", string_temp);
     
     FILE* archivo = fopen("temporal.txt","w");
     fprintf(archivo,"%s",string_temp);
@@ -135,8 +152,12 @@ void setearMD5(char* pathMetadata){
         log_error(logger, "Error al remover archivo resultado.txt");
     }
 
+    pthread_mutex_lock(&mutex);
+    metadata = config_create(pathMetadata);
     config_set_value(metadata,"MD5",md5);
     config_save(metadata);
+    config_destroy(metadata);
+    pthread_mutex_unlock(&mutex);
     
     for(int i = 0; i < contador; i++){
         free(listaBloques[i]);
@@ -145,7 +166,6 @@ void setearMD5(char* pathMetadata){
     free(md5);
     free(string_temp);
     free(comando);
-    config_destroy(metadata);
 }
 
 void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar){
@@ -189,33 +209,65 @@ void crearMetadataFiles(char* path,char* charLlenado){
         perror("Error:");
     }else{
         close(fd);
-        t_config* file = config_create(path);
-        
-        config_set_value(file, "SIZE", "0");
-        config_set_value(file, "BLOCK_COUNT", "0");
-        config_set_value(file, "BLOCKS", "[]");
-        config_set_value(file, "CARACTER_LLENADO", charLlenado);
-        config_set_value(file, "MD5", "0");
+        if(charLlenado[0] == 'O'){
+            pthread_mutex_lock(&mutexOxigeno);
+            t_config* file = config_create(path);
+            config_set_value(file, "SIZE", "0");
+            config_set_value(file, "BLOCK_COUNT", "0");
+            config_set_value(file, "BLOCKS", "[]");
+            config_set_value(file, "CARACTER_LLENADO", charLlenado);
+            config_set_value(file, "MD5", "0");
 
-        config_save_in_file(file,path);
-        config_destroy(file);
+            config_save_in_file(file,path);
+            config_destroy(file);
+            pthread_mutex_unlock(&mutexOxigeno);
+        }else if(charLlenado[0] == 'C'){
+            pthread_mutex_lock(&mutexComida);
+            t_config* file = config_create(path);
+            config_set_value(file, "SIZE", "0");
+            config_set_value(file, "BLOCK_COUNT", "0");
+            config_set_value(file, "BLOCKS", "[]");
+            config_set_value(file, "CARACTER_LLENADO", charLlenado);
+            config_set_value(file, "MD5", "0");
+
+            config_save_in_file(file,path);
+            config_destroy(file);
+            pthread_mutex_unlock(&mutexComida);
+        }else if(charLlenado[0] == 'B'){
+            pthread_mutex_lock(&mutexBasura);
+            t_config* file = config_create(path);
+            config_set_value(file, "SIZE", "0");
+            config_set_value(file, "BLOCK_COUNT", "0");
+            config_set_value(file, "BLOCKS", "[]");
+            config_set_value(file, "CARACTER_LLENADO", charLlenado);
+            config_set_value(file, "MD5", "0");
+
+            config_save_in_file(file,path);
+            config_destroy(file);
+            pthread_mutex_unlock(&mutexBasura);
+        }
 
     }
 }
 
-void crearMetadataBitacora(char* path){
+void crearMetadataBitacora(char* path, int idTripulante){
     int fd = creat(path,0666);
     if(fd < 0){
         perror("Error:");
     }else{
         close(fd);
-        t_config* bitacoraTripulante = config_create(path);
         
+        t_config* bitacoraTripulante = config_create(path);
         config_set_value(bitacoraTripulante, "SIZE", "0");
         config_set_value(bitacoraTripulante, "BLOCKS", "[]");
 
         config_save_in_file(bitacoraTripulante,path);
         config_destroy(bitacoraTripulante);
+
+        mutex* temporal = malloc(sizeof(mutex));
+        temporal->idTripulante = idTripulante;
+        pthread_mutex_init(&temporal ->idBitacora,NULL);
+        list_add(bitacoras,(void*) temporal);
 
     }
 }
@@ -285,9 +337,11 @@ char* obtenerBitacora(int tripulante){
     free(strPath);
 
     if(access(path,F_OK) >= 0){
+        pthread_mutex_lock(&blocks_bitmap);
         t_config* metadata = config_create(path);
         char** listaBloques = config_get_array_value(metadata,"BLOCKS");
         int tamanioTotal = config_get_int_value(metadata,"SIZE");
+        pthread_mutex_unlock(&blocks_bitmap);
         int contadorBloques = 0;
         int posicionBloque = 0;
 

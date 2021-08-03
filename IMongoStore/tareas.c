@@ -16,48 +16,31 @@ void finalizaEjecutarTarea(int lenTarea,char* tarea,int idTripulante){ //pregunt
     switch(comando){
         case GENERAR_OXIGENO:
             log_info(logger,"Finaliza tarea:Generando oxigeno...");
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraFinalizaTarea(tarea,idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case CONSUMIR_OXIGENO:
             log_info(logger,"Finaliza tarea:Consumiendo oxigeno...");
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraFinalizaTarea(tarea,idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case GENERAR_COMIDA:
             log_info(logger,"Finaliza tarea:Generando comida...");
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraFinalizaTarea(tarea,idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case CONSUMIR_COMIDA:
             log_info(logger,"Finaliza tarea:Consumiendo comida...");
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraFinalizaTarea(tarea,idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case GENERAR_BASURA:
             log_info(logger,"Finaliza tarea:Generando basura...");
-
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraFinalizaTarea(tarea,idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case DESCARTAR_BASURA:
             log_info(logger,"Finaliza tarea:Descartando basura...");
-
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraFinalizaTarea(tarea,idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case TAREA_NO_IO:
             log_info(logger,"Finaliza tarea de no IO...");
-
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraFinalizaTarea(tarea,idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         default:
             log_error(logger,"[ComienzaEjecutarTarea] No existe comando");
@@ -72,54 +55,40 @@ void comienzaEjecutarTarea(int lenTarea,char* tarea,int parametro,int idTripulan
     switch(comando){
         case GENERAR_OXIGENO:
             log_info(logger,"Generando oxigeno...");
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraComienzaTarea(tarea,idTripulante);
             generarOxigeno(parametro);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case CONSUMIR_OXIGENO:
             log_info(logger,"Consumiendo oxigeno...");
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraComienzaTarea(tarea,idTripulante);
             consumirOxigeno(parametro);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case GENERAR_COMIDA:
             log_info(logger,"Generando comida...");
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraComienzaTarea(tarea,idTripulante);
             generarComida(parametro);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case CONSUMIR_COMIDA:
             log_info(logger,"Consumiendo comida...");
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraComienzaTarea(tarea,idTripulante);
             consumirComida(parametro);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case GENERAR_BASURA:
             log_info(logger,"Generando basura...");
 
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraComienzaTarea(tarea,idTripulante);
             generarBasura(parametro);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case DESCARTAR_BASURA:
             log_info(logger,"Descartando basura...");
 
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraComienzaTarea(tarea,idTripulante);
             descartarBasura(parametro);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         case TAREA_NO_IO:
             log_info(logger,"Ejecutando tarea de no IO...");
 
-            pthread_mutex_lock(&blocks_bitmap);
             escribirEnBitacoraComienzaTarea(tarea,idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
         break;
         default:
             log_error(logger,"[ComienzaEjecutarTarea] No existe comando");
@@ -148,12 +117,15 @@ void escribirEnBitacoraFinalizaTarea(char* tarea, int idTripulante){
     free(bitacora);
     free(tripulante);
 
+    void* nodo = findByID(bitacoras,idTripulante);
+    mutex* temporal = (mutex*) nodo;
+
     if(access(path_fileTripulante,F_OK) < 0){
         log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
-        crearMetadataBitacora(path_fileTripulante);
+        crearMetadataBitacora(path_fileTripulante,idTripulante);
     }
 
-    guardarEnBlocks(stringTemporal,path_fileTripulante,0);
+    guardarEnBlocks(stringTemporal,path_fileTripulante,0,temporal->idBitacora);
     free(stringTemporal);
     free(path_fileTripulante);
 }
@@ -173,12 +145,17 @@ void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante){
     char* path_fileTripulante = pathCompleto(bitacora);
     free(bitacora);
     free(tripulante);
+    
+    void* nodo = findByID(bitacoras,idTripulante);
+    mutex* temporal = (mutex*) nodo;
 
     if(access(path_fileTripulante,F_OK) < 0){
         log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
-        crearMetadataBitacora(path_fileTripulante);
+        pthread_mutex_lock(&temporal->idBitacora);
+        crearMetadataBitacora(path_fileTripulante,idTripulante);
+        pthread_mutex_unlock(&temporal->idBitacora);
     }
-    guardarEnBlocks(stringTemporal,path_fileTripulante,0);
+    guardarEnBlocks(stringTemporal,path_fileTripulante,0,temporal->idBitacora);
     free(stringTemporal);
     free(path_fileTripulante);
 }
@@ -186,16 +163,18 @@ void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante){
 void consumirOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Files/Oxigeno.ims");
     // log_info(logger, "Path de consumir oxigeno:%s", path_oxigeno);
-    
+
     if(access(path_oxigeno,F_OK)<0){
         log_error(logger, "No existe Oxigeno.ims");
     }else{
         char* strABorrar = string_repeat('O',parametroTarea);
 
+        pthread_mutex_lock(&mutexOxigeno);
         t_config* metadata = config_create(path_oxigeno);
         int sizeAnterior = config_get_int_value(metadata, "SIZE");
         int tamStrBorrar = string_length(strABorrar);
         config_destroy(metadata);
+        pthread_mutex_unlock(&mutexOxigeno);
         if(sizeAnterior == 0){
             log_error(logger, "No hay oxigeno guardad en el filesystem");
         }else{
@@ -206,7 +185,7 @@ void consumirOxigeno(int parametroTarea){
                 tamStrBorrar = string_length(strABorrar);
             }
         }
-        borrarEnBlocks(strABorrar,path_oxigeno,1,'O');
+        borrarEnBlocks(strABorrar,path_oxigeno,1,'O',mutexOxigeno);
         free(strABorrar);
     }
     free(path_oxigeno);
@@ -215,16 +194,17 @@ void consumirOxigeno(int parametroTarea){
 void consumirComida(int parametroTarea){
     char* path_comida = pathCompleto("Files/Comida.ims");
     // log_info(logger, "Path de (Consumir)comida:%s", path_comida);
-    
+
     if(access(path_comida,F_OK)<0){
         log_error(logger, "No existe Comida.ims");
     }else{
         char* strABorrar = string_repeat('C',parametroTarea);
-
+        pthread_mutex_lock(&mutexComida);
         t_config* metadata = config_create(path_comida);
         int sizeAnterior = config_get_int_value(metadata, "SIZE");
         int tamStrBorrar = string_length(strABorrar);
         config_destroy(metadata);
+        pthread_mutex_unlock(&mutexComida);
         if(sizeAnterior == 0){
             log_error(logger, "No hay comida guardada en el filesystem");
         }else{
@@ -235,7 +215,7 @@ void consumirComida(int parametroTarea){
                 tamStrBorrar = string_length(strABorrar);
             }
         }
-        borrarEnBlocks(strABorrar,path_comida,1,'C');
+        borrarEnBlocks(strABorrar,path_comida,1,'C',mutexComida);
         free(strABorrar);
     }
     free(path_comida);
@@ -247,12 +227,14 @@ void descartarBasura(int parametroTarea){
     if(access(path_basura,F_OK)<0){
         log_error(logger, "No existe Basura.ims");
     }else{
+        pthread_mutex_lock(&mutexBasura);
         t_config* metadata = config_create(path_basura);
         int size = config_get_int_value(metadata,"SIZE");
         char* string_temp= string_repeat('B',size);
         config_destroy(metadata);
+        pthread_mutex_unlock(&mutexBasura);
 
-        borrarEnBlocks(string_temp, path_basura, 1,'B');
+        borrarEnBlocks(string_temp, path_basura, 1,'B',mutexBasura);
         free(string_temp);
         remove(path_basura);
     }
@@ -271,7 +253,7 @@ void generarOxigeno(int parametroTarea){
 
     char* strGuardar = string_repeat('O',parametroTarea);
     
-    guardarEnBlocks(strGuardar,path_oxigeno,1);
+    guardarEnBlocks(strGuardar,path_oxigeno,1,mutexOxigeno);
 
     free(strGuardar);
     free(path_oxigeno);
@@ -288,7 +270,7 @@ void generarComida(int parametroTarea){
 
     char* strGuardar = string_repeat('C',parametroTarea);
     
-    guardarEnBlocks(strGuardar,path_comida,1);
+    guardarEnBlocks(strGuardar,path_comida,1,mutexComida);
 
     free(strGuardar);
     free(path_comida);
@@ -296,7 +278,6 @@ void generarComida(int parametroTarea){
 
 void generarBasura(int parametroTarea){
     char* path_basura = pathCompleto("Files/Basura.ims");
-    log_info(logger, "Path de basura:%s", path_basura);
 
     if(access(path_basura,F_OK)<0){
         log_info(logger, "No existe Basura.ims...Se crea archivo");
@@ -305,7 +286,7 @@ void generarBasura(int parametroTarea){
 
     char* strGuardar = string_repeat('B',parametroTarea);
     
-    guardarEnBlocks(strGuardar,path_basura,1);
+    guardarEnBlocks(strGuardar,path_basura,1,mutexBasura);
 
     free(strGuardar);
     free(path_basura);

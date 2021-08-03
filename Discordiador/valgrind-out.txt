@@ -1,0 +1,1018 @@
+==8679== Memcheck, a memory error detector
+==8679== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==8679== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==8679== Command: ./main
+==8679== Parent PID: 8678
+==8679== 
+--8679-- 
+--8679-- Valgrind options:
+--8679--    --leak-check=full
+--8679--    --show-leak-kinds=all
+--8679--    --track-origins=yes
+--8679--    --log-file=valgrind-out.txt
+--8679--    --verbose
+--8679-- Contents of /proc/version:
+--8679--   Linux version 4.4.0-116-generic (buildd@lgw01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #140-Ubuntu SMP Mon Feb 12 21:22:43 UTC 2018
+--8679-- 
+--8679-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3-lzcnt
+--8679-- Page sizes: currently 4096, max supported 4096
+--8679-- Valgrind library directory: /usr/lib/valgrind
+--8679-- Reading syms from /lib/i386-linux-gnu/ld-2.23.so
+--8679--   Considering /lib/i386-linux-gnu/ld-2.23.so ..
+--8679--   .. CRC mismatch (computed 596cb2b8 wanted 417b32cc)
+--8679--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.23.so ..
+--8679--   .. CRC is valid
+--8679-- Reading syms from /home/utnso/Escritorio/TP/tp-2021-1c-Unnamed-Group/Discordiador/main
+--8679-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
+--8679--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
+--8679--   .. CRC mismatch (computed 6036da3f wanted 652e483f)
+--8679--    object doesn't have a symbol table
+--8679--    object doesn't have a dynamic symbol table
+--8679-- Scheduler: using generic scheduler lock implementation.
+--8679-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==8679== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-8679-by-utnso-on-???
+==8679== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-8679-by-utnso-on-???
+==8679== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-8679-by-utnso-on-???
+==8679== 
+==8679== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==8679== don't want to do, unless you know exactly what you're doing,
+==8679== or are doing some strange experiment):
+==8679==   /usr/lib/valgrind/../../bin/vgdb --pid=8679 ...command...
+==8679== 
+==8679== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==8679==   /path/to/gdb ./main
+==8679== and then give GDB the following command
+==8679==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=8679
+==8679== --pid is optional if only one valgrind process is running
+==8679== 
+--8679-- REDIR: 0x4018eb0 (ld-linux.so.2:strlen) redirected to 0x380490f2 (???)
+--8679-- REDIR: 0x4018c70 (ld-linux.so.2:index) redirected to 0x380490cd (???)
+--8679-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
+--8679--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
+--8679--   .. CRC mismatch (computed 5b95c0c4 wanted 39e79efa)
+--8679--    object doesn't have a symbol table
+--8679-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
+--8679--   Considering /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so ..
+--8679--   .. CRC mismatch (computed 4d5a1526 wanted 33571d5b)
+--8679--    object doesn't have a symbol table
+==8679== WARNING: new redirection conflicts with existing -- ignoring it
+--8679--     old: 0x04018eb0 (strlen              ) R-> (0000.0) 0x380490f2 ???
+--8679--     new: 0x04018eb0 (strlen              ) R-> (2007.0) 0x0402f410 strlen
+--8679-- Reading syms from /usr/lib/libcommons.so
+--8679-- Reading syms from /lib/i386-linux-gnu/libreadline.so.6.3
+--8679--   Considering /lib/i386-linux-gnu/libreadline.so.6.3 ..
+--8679--   .. CRC mismatch (computed ae23cd8f wanted 3f613fc8)
+--8679--    object doesn't have a symbol table
+--8679-- Reading syms from /usr/lib/libunnamed.so
+--8679-- Reading syms from /lib/i386-linux-gnu/libm-2.23.so
+--8679--   Considering /lib/i386-linux-gnu/libm-2.23.so ..
+--8679--   .. CRC mismatch (computed 9ba663e0 wanted 0c56bc99)
+--8679--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.23.so ..
+--8679--   .. CRC is valid
+--8679-- Reading syms from /lib/i386-linux-gnu/libpthread-2.23.so
+--8679--   Considering /usr/lib/debug/.build-id/12/78da59ecc0791dce5c44d8b8756a0480be3a5b.debug ..
+--8679--   .. build-id is valid
+--8679-- Reading syms from /lib/i386-linux-gnu/libc-2.23.so
+--8679--   Considering /lib/i386-linux-gnu/libc-2.23.so ..
+--8679--   .. CRC mismatch (computed af9c0474 wanted a5de3f2a)
+--8679--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.23.so ..
+--8679--   .. CRC is valid
+--8679-- Reading syms from /lib/i386-linux-gnu/libtinfo.so.5.9
+--8679--    object doesn't have a symbol table
+--8679-- REDIR: 0x418f4b0 (libc.so.6:strncasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x4196140 (libc.so.6:memrchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x41a8b20 (libc.so.6:wcslen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x418e350 (libc.so.6:strstr) redirected to 0x4033700 (strstr)
+--8679-- REDIR: 0x418d7e0 (libc.so.6:__GI_strrchr) redirected to 0x402ee00 (__GI_strrchr)
+--8679-- REDIR: 0x4188f00 (libc.so.6:malloc) redirected to 0x402c110 (malloc)
+--8679-- REDIR: 0x418d5c0 (libc.so.6:__GI_strlen) redirected to 0x402f390 (__GI_strlen)
+--8679-- REDIR: 0x418f680 (libc.so.6:__GI_memcpy) redirected to 0x4030fb0 (__GI_memcpy)
+--8679-- REDIR: 0x4189810 (libc.so.6:calloc) redirected to 0x402e010 (calloc)
+--8679-- REDIR: 0x418cd20 (libc.so.6:__GI_strchr) redirected to 0x402ef30 (__GI_strchr)
+--8679-- REDIR: 0x4189520 (libc.so.6:realloc) redirected to 0x402e250 (realloc)
+--8679-- REDIR: 0x4189470 (libc.so.6:free) redirected to 0x402d2f0 (free)
+--8679-- REDIR: 0x418d580 (libc.so.6:strlen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x4196440 (libc.so.6:__strlen_sse2_bsf) redirected to 0x402f370 (strlen)
+--8679-- REDIR: 0x418d700 (libc.so.6:strncmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x424d5c0 (libc.so.6:__strncmp_ssse3) redirected to 0x402fab0 (strncmp)
+--8679-- REDIR: 0x4191280 (libc.so.6:strchrnul) redirected to 0x40330b0 (strchrnul)
+--8679-- REDIR: 0x418cae0 (libc.so.6:strcat) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x41a1b30 (libc.so.6:__strcat_ssse3) redirected to 0x402f030 (strcat)
+--8679-- REDIR: 0x418f610 (libc.so.6:memcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x423fb70 (libc.so.6:__memcpy_ssse3) redirected to 0x4030cc0 (memcpy)
+--8679-- REDIR: 0x418ec10 (libc.so.6:__GI_memcmp) redirected to 0x4031ef0 (__GI_memcmp)
+--8679-- REDIR: 0x41911b0 (libc.so.6:__GI___rawmemchr) redirected to 0x4033110 (__GI___rawmemchr)
+--8679-- REDIR: 0x418f0d0 (libc.so.6:__GI_mempcpy) redirected to 0x40332c0 (__GI_mempcpy)
+--8679-- REDIR: 0x418cf90 (libc.so.6:strcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x4196570 (libc.so.6:__strcpy_ssse3) redirected to 0x402f450 (strcpy)
+--8679-- REDIR: 0x418d7a0 (libc.so.6:rindex) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x41a7530 (libc.so.6:__strrchr_sse2_bsf) redirected to 0x402edd0 (rindex)
+--8679-- REDIR: 0x418cce0 (libc.so.6:index) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x41a7420 (libc.so.6:__strchr_sse2_bsf) redirected to 0x402eff0 (index)
+--8679-- REDIR: 0x4196380 (libc.so.6:__GI_strncmp) redirected to 0x402fb40 (__GI_strncmp)
+--8679-- REDIR: 0x418efc0 (libc.so.6:memset) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x423d4d0 (libc.so.6:__memset_sse2) redirected to 0x40327d0 (memset)
+--8679-- REDIR: 0x418ea30 (libc.so.6:__GI_memchr) redirected to 0x40306d0 (__GI_memchr)
+--8679-- REDIR: 0x41a8100 (libc.so.6:__GI_strnlen) redirected to 0x402f330 (__GI_strnlen)
+--8679-- REDIR: 0x418cee0 (libc.so.6:strcmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x424c150 (libc.so.6:__strcmp_ssse3) redirected to 0x4030450 (strcmp)
+--8679-- REDIR: 0x420cc90 (libc.so.6:__memcpy_chk) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x423fb60 (libc.so.6:__memcpy_chk_ssse3) redirected to 0x4033600 (__memcpy_chk)
+--8679-- REDIR: 0x418d750 (libc.so.6:strncpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x4197dc0 (libc.so.6:__strncpy_ssse3) redirected to 0x402f5f0 (strncpy)
+--8679-- REDIR: 0x4146650 (libc.so.6:setenv) redirected to 0x4033d60 (setenv)
+--8679-- REDIR: 0x418cf30 (libc.so.6:__GI_strcmp) redirected to 0x40304b0 (__GI_strcmp)
+--8679-- REDIR: 0x418f2e0 (libc.so.6:__GI_stpcpy) redirected to 0x4032290 (__GI_stpcpy)
+--8679-- REDIR: 0x418f460 (libc.so.6:strcasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x424efb0 (libc.so.6:__strcasecmp_ssse3) redirected to 0x402fcf0 (strcasecmp)
+--8679-- REDIR: 0x42514c0 (libc.so.6:__strncasecmp_ssse3) redirected to 0x402fe10 (strncasecmp)
+--8679-- REDIR: 0x418ebd0 (libc.so.6:bcmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x42563d0 (libc.so.6:__memcmp_ssse3) redirected to 0x40320a0 (bcmp)
+--8679-- REDIR: 0x418eef0 (libc.so.6:memmove) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8679-- REDIR: 0x4243b50 (libc.so.6:__memmove_ssse3) redirected to 0x4032860 (memmove)
+==8679== Warning: invalid file descriptor -1 in syscall close()
+==8679==    at 0x410A0E3: ??? (syscall-template.S:84)
+==8679==    by 0x804E522: funcionContadorEnBloqIO (planificador.c:328)
+==8679==    by 0x804E8B1: funcionhBloqIO (planificador.c:391)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== Warning: invalid file descriptor -1 in syscall close()
+==8679==    at 0x410A0E3: ??? (syscall-template.S:84)
+==8679==    by 0x804CA65: moverTripulanteUno (patotas.c:576)
+==8679==    by 0x804C07D: operandoSinSabotajeTareaIO (patotas.c:385)
+==8679==    by 0x804B9B6: operandoSinSabotaje (patotas.c:262)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== Warning: invalid file descriptor -1 in syscall close()
+==8679==    at 0x410A0E3: ??? (syscall-template.S:84)
+==8679==    by 0x804CA65: moverTripulanteUno (patotas.c:576)
+==8679==    by 0x804BE00: operandoSinSabotajeTareaNormal (patotas.c:340)
+==8679==    by 0x804B98B: operandoSinSabotaje (patotas.c:259)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== Warning: invalid file descriptor -1 in syscall close()
+==8679==    at 0x410A0E3: ??? (syscall-template.S:84)
+==8679==    by 0x804CF0E: moverTripulanteUno (patotas.c:664)
+==8679==    by 0x804C07D: operandoSinSabotajeTareaIO (patotas.c:385)
+==8679==    by 0x804B9B6: operandoSinSabotaje (patotas.c:262)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== Warning: invalid file descriptor -1 in syscall close()
+==8679==    at 0x410A0E3: ??? (syscall-template.S:84)
+==8679==    by 0x804CA65: moverTripulanteUno (patotas.c:576)
+==8679==    by 0x804BE00: operandoSinSabotajeTareaNormal (patotas.c:340)
+==8679==    by 0x804B98B: operandoSinSabotaje (patotas.c:259)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== HEAP SUMMARY:
+==8679==     in use at exit: 68,573 bytes in 453 blocks
+==8679==   total heap usage: 44,359 allocs, 43,906 frees, 1,534,481 bytes allocated
+==8679== 
+==8679== Searching for pointers to 453 not-freed blocks
+==8679== Checked 109,158,728 bytes
+==8679== 
+==8679== 3 bytes in 1 blocks are still reachable in loss record 1 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067A71: rl_set_prompt (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5A: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 3 bytes in 3 blocks are definitely lost in loss record 2 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067D05: readline_internal_teardown (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068EAB: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 4 bytes in 1 blocks are still reachable in loss record 3 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4077A93: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407800B: rl_expand_prompt (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067A96: rl_set_prompt (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5A: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 4 bytes in 1 blocks are still reachable in loss record 4 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804D92E: funcionhNewaReady (planificador.c:56)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 4 bytes in 1 blocks are still reachable in loss record 5 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804DB97: funcionhReadyaExec (planificador.c:112)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 6 bytes in 1 blocks are still reachable in loss record 6 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x418D2C5: strdup (strdup.c:42)
+==8679==    by 0x42D9010: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 8 bytes in 1 blocks are still reachable in loss record 7 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4054FEA: list_create (in /usr/lib/libcommons.so)
+==8679==    by 0x804D73C: funcionPlanificador (planificador.c:13)
+==8679==    by 0x804A6F1: main (main.c:12)
+==8679== 
+==8679== 8 bytes in 1 blocks are still reachable in loss record 8 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x418D2C5: strdup (strdup.c:42)
+==8679==    by 0x42DED6E: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DF059: _nc_trim_sgr0 (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D94D3: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 8 bytes in 2 blocks are indirectly lost in loss record 9 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804D92E: funcionhNewaReady (planificador.c:56)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 8 bytes in 2 blocks are indirectly lost in loss record 10 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804E610: funcionContadorEnBloqIO (planificador.c:342)
+==8679==    by 0x804E8B1: funcionhBloqIO (planificador.c:391)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 9 bytes in 1 blocks are still reachable in loss record 11 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804D92E: funcionhNewaReady (planificador.c:56)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 9 bytes in 1 blocks are still reachable in loss record 12 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804DB97: funcionhReadyaExec (planificador.c:112)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 12 bytes in 1 blocks are still reachable in loss record 13 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x418D2C5: strdup (strdup.c:42)
+==8679==    by 0x42D5D9F: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D60B4: _nc_first_db (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE909: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 12 bytes in 1 blocks are still reachable in loss record 14 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x8049678: funcionConsola (consola.c:43)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 12 bytes in 3 blocks are still reachable in loss record 15 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x804D570: iniciar_tcb (patotas.c:812)
+==8679==    by 0x804D3A3: create_tcb_by_list (patotas.c:770)
+==8679==    by 0x80496C4: funcionConsola (consola.c:47)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 12 bytes in 3 blocks are indirectly lost in loss record 16 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804C22A: operandoSinSabotajeTareaIO (patotas.c:411)
+==8679==    by 0x804B9B6: operandoSinSabotaje (patotas.c:262)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 13 bytes in 1 blocks are still reachable in loss record 17 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4075491: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C82: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 14 bytes in 1 blocks are still reachable in loss record 18 of 83
+==8679==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D6572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DA506: tparm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DED5A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DF04B: _nc_trim_sgr0 (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D94D3: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 16 bytes in 1 blocks are still reachable in loss record 19 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4068D00: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 16 bytes in 1 blocks are still reachable in loss record 20 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804D92E: funcionhNewaReady (planificador.c:56)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 16 bytes in 1 blocks are still reachable in loss record 21 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804DB97: funcionhReadyaExec (planificador.c:112)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 18 bytes in 2 blocks are indirectly lost in loss record 22 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804D92E: funcionhNewaReady (planificador.c:56)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 18 bytes in 2 blocks are indirectly lost in loss record 23 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804E610: funcionContadorEnBloqIO (planificador.c:342)
+==8679==    by 0x804E8B1: funcionhBloqIO (planificador.c:391)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 20 bytes in 1 blocks are still reachable in loss record 24 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4072F33: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4074F83: rl_parse_and_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4075416: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C82: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 24 bytes in 1 blocks are still reachable in loss record 25 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D6923: _nc_home_terminfo (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D60A0: _nc_first_db (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE909: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 24 bytes in 1 blocks are still reachable in loss record 26 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D61DB: _nc_first_db (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE909: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 24 bytes in 3 blocks are still reachable in loss record 27 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x405614D: list_create_element (in /usr/lib/libcommons.so)
+==8679==    by 0x405507A: list_add (in /usr/lib/libcommons.so)
+==8679==    by 0x804D563: iniciar_tcb (patotas.c:811)
+==8679==    by 0x804D3A3: create_tcb_by_list (patotas.c:770)
+==8679==    by 0x80496C4: funcionConsola (consola.c:47)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 27 bytes in 3 blocks are indirectly lost in loss record 28 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804C22A: operandoSinSabotajeTareaIO (patotas.c:411)
+==8679==    by 0x804B9B6: operandoSinSabotaje (patotas.c:262)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 32 bytes in 8 blocks are indirectly lost in loss record 29 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804BDB0: operandoSinSabotajeTareaNormal (patotas.c:332)
+==8679==    by 0x804B98B: operandoSinSabotaje (patotas.c:259)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 46 bytes in 1 blocks are still reachable in loss record 30 of 83
+==8679==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D6572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE3C5: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 48 bytes in 3 blocks are still reachable in loss record 31 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x804D53A: iniciar_tcb (patotas.c:808)
+==8679==    by 0x804D3A3: create_tcb_by_list (patotas.c:770)
+==8679==    by 0x80496C4: funcionConsola (consola.c:47)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 52 bytes in 13 blocks are indirectly lost in loss record 32 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804BEDB: operandoSinSabotajeTareaNormal (patotas.c:349)
+==8679==    by 0x804B98B: operandoSinSabotaje (patotas.c:259)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 52 bytes in 13 blocks are indirectly lost in loss record 33 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804C316: operandoSinSabotajeTareaIO (patotas.c:422)
+==8679==    by 0x804B9B6: operandoSinSabotaje (patotas.c:262)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 58 (32 direct, 26 indirect) bytes in 2 blocks are definitely lost in loss record 34 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804D92E: funcionhNewaReady (planificador.c:56)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 58 (32 direct, 26 indirect) bytes in 2 blocks are definitely lost in loss record 35 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804E610: funcionContadorEnBloqIO (planificador.c:342)
+==8679==    by 0x804E8B1: funcionhBloqIO (planificador.c:391)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 72 bytes in 8 blocks are indirectly lost in loss record 36 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804BDB0: operandoSinSabotajeTareaNormal (patotas.c:332)
+==8679==    by 0x804B98B: operandoSinSabotaje (patotas.c:259)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 78 bytes in 1 blocks are still reachable in loss record 37 of 83
+==8679==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D6572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE3E4: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 87 (48 direct, 39 indirect) bytes in 3 blocks are definitely lost in loss record 38 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804C22A: operandoSinSabotajeTareaIO (patotas.c:411)
+==8679==    by 0x804B9B6: operandoSinSabotaje (patotas.c:262)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 93 bytes in 1 blocks are still reachable in loss record 39 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D612A: _nc_first_db (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE909: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 94 bytes in 1 blocks are still reachable in loss record 40 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D6593: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DA13E: _nc_tparm_analyze (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DA302: tparm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DED5A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DF04B: _nc_trim_sgr0 (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D94D3: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 117 bytes in 13 blocks are indirectly lost in loss record 41 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804BEDB: operandoSinSabotajeTareaNormal (patotas.c:349)
+==8679==    by 0x804B98B: operandoSinSabotaje (patotas.c:259)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 117 bytes in 13 blocks are indirectly lost in loss record 42 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804C316: operandoSinSabotajeTareaIO (patotas.c:422)
+==8679==    by 0x804B9B6: operandoSinSabotaje (patotas.c:262)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 43 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804ABCC: setearConfiguraciones (main.c:101)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 44 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804ABE6: setearConfiguraciones (main.c:102)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 45 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804AC00: setearConfiguraciones (main.c:103)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 46 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804AC1A: setearConfiguraciones (main.c:104)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 47 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804AC34: setearConfiguraciones (main.c:105)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 48 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804AC4E: setearConfiguraciones (main.c:106)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 49 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804AC68: setearConfiguraciones (main.c:107)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 50 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804AC82: setearConfiguraciones (main.c:109)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 51 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804AC9C: setearConfiguraciones (main.c:110)
+==8679==    by 0x804A6B0: main (main.c:5)
+==8679== 
+==8679== 136 bytes in 1 blocks are possibly lost in loss record 52 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804A70B: main (main.c:14)
+==8679== 
+==8679== 152 bytes in 38 blocks are indirectly lost in loss record 53 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20ED: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804DB97: funcionhReadyaExec (planificador.c:112)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 172 bytes in 1 blocks are still reachable in loss record 54 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D8FA0: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 232 (128 direct, 104 indirect) bytes in 8 blocks are definitely lost in loss record 55 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804BDB0: operandoSinSabotajeTareaNormal (patotas.c:332)
+==8679==    by 0x804B98B: operandoSinSabotaje (patotas.c:259)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 256 bytes in 1 blocks are still reachable in loss record 56 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E18: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 256 bytes in 1 blocks are still reachable in loss record 57 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42DE523: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 342 bytes in 38 blocks are indirectly lost in loss record 58 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A216A: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804DB97: funcionhReadyaExec (planificador.c:112)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 377 (208 direct, 169 indirect) bytes in 13 blocks are definitely lost in loss record 59 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804BEDB: operandoSinSabotajeTareaNormal (patotas.c:349)
+==8679==    by 0x804B98B: operandoSinSabotaje (patotas.c:259)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 377 (208 direct, 169 indirect) bytes in 13 blocks are definitely lost in loss record 60 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804C316: operandoSinSabotajeTareaIO (patotas.c:422)
+==8679==    by 0x804B9B6: operandoSinSabotaje (patotas.c:262)
+==8679==    by 0x804B4E0: hiloTripulanteYPlaniVivos (patotas.c:182)
+==8679==    by 0x804B436: funcionTripulante (patotas.c:160)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 408 bytes in 3 blocks are possibly lost in loss record 61 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8679==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8679==    by 0x4101CC3: allocate_stack (allocatestack.c:588)
+==8679==    by 0x4101CC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8679==    by 0x804D59E: iniciar_tcb (patotas.c:815)
+==8679==    by 0x804D3A3: create_tcb_by_list (patotas.c:770)
+==8679==    by 0x80496C4: funcionConsola (consola.c:47)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 751 bytes in 1 blocks are still reachable in loss record 62 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42DE5EB: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 768 bytes in 1 blocks are still reachable in loss record 63 of 83
+==8679==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A953: xrealloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C71C: rl_add_funmap_entry (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C788: rl_initialize_funmap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C73: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,024 bytes in 1 blocks are still reachable in loss record 64 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4077690: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407BC2F: rl_redisplay (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067B5E: readline_internal_setup (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E88: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,024 bytes in 1 blocks are still reachable in loss record 65 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x40776A4: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407BC2F: rl_redisplay (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067B5E: readline_internal_setup (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E88: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,024 bytes in 1 blocks are still reachable in loss record 66 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x40776DA: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407BC2F: rl_redisplay (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067B5E: readline_internal_setup (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E88: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,024 bytes in 1 blocks are still reachable in loss record 67 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x40776F4: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407BC2F: rl_redisplay (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067B5E: readline_internal_setup (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E88: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,024 bytes in 1 blocks are still reachable in loss record 68 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407770B: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407BC2F: rl_redisplay (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067B5E: readline_internal_setup (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E88: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,024 bytes in 1 blocks are still reachable in loss record 69 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4077722: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407BC2F: rl_redisplay (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4067B5E: readline_internal_setup (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E88: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,064 bytes in 133 blocks are still reachable in loss record 70 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C6B9: rl_add_funmap_entry (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C788: rl_initialize_funmap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C73: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,102 (608 direct, 494 indirect) bytes in 38 blocks are definitely lost in loss record 71 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x40A20DD: _receive_message (in /usr/lib/libunnamed.so)
+==8679==    by 0x804DB97: funcionhReadyaExec (planificador.c:112)
+==8679==    by 0x4101294: start_thread (pthread_create.c:333)
+==8679==    by 0x41FF0AD: clone (clone.S:114)
+==8679== 
+==8679== 1,439 bytes in 1 blocks are still reachable in loss record 72 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42DDE3B: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 1,904 bytes in 1 blocks are still reachable in loss record 73 of 83
+==8679==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D6572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE404: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42DE993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D8FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D939E: tgetent (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D4B: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 2,032 bytes in 1 blocks are still reachable in loss record 74 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4080FF8: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 2,056 bytes in 1 blocks are still reachable in loss record 75 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C868: rl_make_bare_keymap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073949: rl_generic_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073B01: rl_set_key (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407462D: rl_bind_keyseq_if_unbound_in_map (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4074723: rl_bind_keyseq_if_unbound (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x40805BB: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4080E8E: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 4,080 bytes in 1 blocks are still reachable in loss record 76 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4080FD4: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 4,112 bytes in 2 blocks are still reachable in loss record 77 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C868: rl_make_bare_keymap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073949: rl_generic_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073B01: rl_set_key (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407462D: rl_bind_keyseq_if_unbound_in_map (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4074723: rl_bind_keyseq_if_unbound (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x408062D: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4080E8E: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 4,112 bytes in 2 blocks are still reachable in loss record 78 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C868: rl_make_bare_keymap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073949: rl_generic_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073B01: rl_set_key (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407462D: rl_bind_keyseq_if_unbound_in_map (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4074723: rl_bind_keyseq_if_unbound (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x40805BB: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4080E99: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 4,112 bytes in 2 blocks are still reachable in loss record 79 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C868: rl_make_bare_keymap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073949: rl_generic_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073B01: rl_set_key (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407462D: rl_bind_keyseq_if_unbound_in_map (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4074723: rl_bind_keyseq_if_unbound (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x408062D: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4080E99: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 4,112 bytes in 2 blocks are still reachable in loss record 80 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C868: rl_make_bare_keymap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073949: rl_generic_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073B01: rl_set_key (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407462D: rl_bind_keyseq_if_unbound_in_map (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4074723: rl_bind_keyseq_if_unbound (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x40805BB: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4080EA4: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 4,112 bytes in 2 blocks are still reachable in loss record 81 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C868: rl_make_bare_keymap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073949: rl_generic_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073B01: rl_set_key (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407462D: rl_bind_keyseq_if_unbound_in_map (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4074723: rl_bind_keyseq_if_unbound (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x408062D: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4080EA4: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679== 
+==8679== 5,964 bytes in 1 blocks are still reachable in loss record 82 of 83
+==8679==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x42D56B2: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D5CBB: _nc_find_type_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x42D9AAA: tgetstr (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==8679==    by 0x4080D91: _rl_init_terminal_io (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C5B: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== 16,448 bytes in 8 blocks are still reachable in loss record 83 of 83
+==8679==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8679==    by 0x408A917: xmalloc (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x406C868: rl_make_bare_keymap (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073949: rl_generic_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4073AD5: rl_bind_keyseq (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x407522E: rl_parse_and_bind (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4075416: ??? (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068C82: rl_initialize (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x4068E5F: readline (in /lib/i386-linux-gnu/libreadline.so.6.3)
+==8679==    by 0x8049E5B: funcionConsola (consola.c:8)
+==8679==    by 0x804A724: main (main.c:17)
+==8679== 
+==8679== LEAK SUMMARY:
+==8679==    definitely lost: 1,267 bytes in 82 blocks
+==8679==    indirectly lost: 1,027 bytes in 158 blocks
+==8679==      possibly lost: 1,768 bytes in 13 blocks
+==8679==    still reachable: 64,511 bytes in 200 blocks
+==8679==         suppressed: 0 bytes in 0 blocks
+==8679== 
+==8679== ERROR SUMMARY: 19 errors from 19 contexts (suppressed: 0 from 0)
+==8679== ERROR SUMMARY: 19 errors from 19 contexts (suppressed: 0 from 0)

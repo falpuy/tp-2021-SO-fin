@@ -703,3 +703,21 @@ char* queRecurso(char* path){
 
     
 }
+
+mutex* findByID(t_list *self, int id) {
+    t_link_element *element = self->head;
+    t_link_element *aux = NULL;
+    while (element != NULL) {
+        aux = element->next;
+        
+                mutex *nodo= (mutex *) element -> data;
+
+                if (nodo -> idTripulante == id) {
+                        return nodo;
+                }
+
+        element = aux;
+    }
+
+    return NULL;
+}

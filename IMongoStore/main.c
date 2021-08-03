@@ -33,6 +33,8 @@ void setearConfiguraciones(){
     config = config_create(CONFIG_PATH);
     logger = log_create(LOG_PATH,"IMS",1,LOG_LEVEL_INFO);
 
+    bitacoras = list_create();
+
     datosConfig = malloc(sizeof(configIMS));
     datosConfig->puntoMontaje = config_get_string_value(config,"PUNTO_MONTAJE");
     datosConfig->puerto = config_get_string_value(config,"PUERTO");
@@ -51,12 +53,20 @@ void setearConfiguraciones(){
     pthread_mutex_init(&discordiador, NULL); 
     pthread_mutex_init(&validador, NULL); 
 
+    pthread_mutex_init(&mutexOxigeno, NULL); 
+    pthread_mutex_init(&mutexBasura, NULL); 
+    pthread_mutex_init(&mutexComida, NULL); 
+
     pthread_mutex_lock(&validador);
     flagEnd = 1;
     pthread_mutex_unlock(&validador);
 
 }
 
+void destruirBitacoras(void* nodo){
+    mutex* temporal = (mutex*) nodo;
+    pthread_mutex_destroy(&temporal->idBitacora);
+}
 void finalizarProceso(){
     pthread_mutex_lock(&validador);
     flagEnd = 0;
@@ -79,11 +89,18 @@ void finalizarProceso(){
     free(memBitmap);
     free(datosConfig);
 
+    list_destroy_and_destroy_elements(bitacoras,destruirBitacoras);
+
     pthread_mutex_destroy(&blocks_bitmap); 
     pthread_mutex_destroy(&m_superBloque); 
     pthread_mutex_destroy(&m_metadata);
     pthread_mutex_destroy(&discordiador);
     pthread_mutex_destroy(&validador);
+
+    pthread_mutex_destroy(&mutexOxigeno); 
+    pthread_mutex_destroy(&mutexBasura); 
+    pthread_mutex_destroy(&mutexComida); 
+    
 
     exit(EXIT_SUCCESS);
 }

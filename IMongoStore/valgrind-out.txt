@@ -1,0 +1,1497 @@
+==8656== Memcheck, a memory error detector
+==8656== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==8656== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==8656== Command: ./main
+==8656== Parent PID: 8655
+==8656== 
+--8656-- 
+--8656-- Valgrind options:
+--8656--    --leak-check=full
+--8656--    --show-leak-kinds=all
+--8656--    --track-origins=yes
+--8656--    --log-file=valgrind-out.txt
+--8656--    --verbose
+--8656-- Contents of /proc/version:
+--8656--   Linux version 4.4.0-116-generic (buildd@lgw01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #140-Ubuntu SMP Mon Feb 12 21:22:43 UTC 2018
+--8656-- 
+--8656-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3-lzcnt
+--8656-- Page sizes: currently 4096, max supported 4096
+--8656-- Valgrind library directory: /usr/lib/valgrind
+--8656-- Reading syms from /lib/i386-linux-gnu/ld-2.23.so
+--8656--   Considering /lib/i386-linux-gnu/ld-2.23.so ..
+--8656--   .. CRC mismatch (computed 596cb2b8 wanted 417b32cc)
+--8656--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.23.so ..
+--8656--   .. CRC is valid
+--8656-- Reading syms from /home/utnso/Escritorio/TP/tp-2021-1c-Unnamed-Group/IMongoStore/main
+--8656-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
+--8656--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
+--8656--   .. CRC mismatch (computed 6036da3f wanted 652e483f)
+--8656--    object doesn't have a symbol table
+--8656--    object doesn't have a dynamic symbol table
+--8656-- Scheduler: using generic scheduler lock implementation.
+--8656-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==8656== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-8656-by-utnso-on-???
+==8656== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-8656-by-utnso-on-???
+==8656== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-8656-by-utnso-on-???
+==8656== 
+==8656== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==8656== don't want to do, unless you know exactly what you're doing,
+==8656== or are doing some strange experiment):
+==8656==   /usr/lib/valgrind/../../bin/vgdb --pid=8656 ...command...
+==8656== 
+==8656== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==8656==   /path/to/gdb ./main
+==8656== and then give GDB the following command
+==8656==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=8656
+==8656== --pid is optional if only one valgrind process is running
+==8656== 
+--8656-- REDIR: 0x4018eb0 (ld-linux.so.2:strlen) redirected to 0x380490f2 (???)
+--8656-- REDIR: 0x4018c70 (ld-linux.so.2:index) redirected to 0x380490cd (???)
+--8656-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
+--8656--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
+--8656--   .. CRC mismatch (computed 5b95c0c4 wanted 39e79efa)
+--8656--    object doesn't have a symbol table
+--8656-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
+--8656--   Considering /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so ..
+--8656--   .. CRC mismatch (computed 4d5a1526 wanted 33571d5b)
+--8656--    object doesn't have a symbol table
+==8656== WARNING: new redirection conflicts with existing -- ignoring it
+--8656--     old: 0x04018eb0 (strlen              ) R-> (0000.0) 0x380490f2 ???
+--8656--     new: 0x04018eb0 (strlen              ) R-> (2007.0) 0x0402f410 strlen
+--8656-- Reading syms from /usr/lib/libcommons.so
+--8656-- Reading syms from /usr/lib/libunnamed.so
+--8656-- Reading syms from /lib/i386-linux-gnu/libm-2.23.so
+--8656--   Considering /lib/i386-linux-gnu/libm-2.23.so ..
+--8656--   .. CRC mismatch (computed 9ba663e0 wanted 0c56bc99)
+--8656--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.23.so ..
+--8656--   .. CRC is valid
+--8656-- Reading syms from /lib/i386-linux-gnu/libpthread-2.23.so
+--8656--   Considering /usr/lib/debug/.build-id/12/78da59ecc0791dce5c44d8b8756a0480be3a5b.debug ..
+--8656--   .. build-id is valid
+--8656-- Reading syms from /lib/i386-linux-gnu/libc-2.23.so
+--8656--   Considering /lib/i386-linux-gnu/libc-2.23.so ..
+--8656--   .. CRC mismatch (computed af9c0474 wanted a5de3f2a)
+--8656--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.23.so ..
+--8656--   .. CRC is valid
+--8656-- REDIR: 0x414b4b0 (libc.so.6:strncasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x4152140 (libc.so.6:memrchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x4164b20 (libc.so.6:wcslen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x414a350 (libc.so.6:strstr) redirected to 0x4033700 (strstr)
+--8656-- REDIR: 0x41497e0 (libc.so.6:__GI_strrchr) redirected to 0x402ee00 (__GI_strrchr)
+--8656-- REDIR: 0x4144f00 (libc.so.6:malloc) redirected to 0x402c110 (malloc)
+--8656-- REDIR: 0x41495c0 (libc.so.6:__GI_strlen) redirected to 0x402f390 (__GI_strlen)
+--8656-- REDIR: 0x414b680 (libc.so.6:__GI_memcpy) redirected to 0x4030fb0 (__GI_memcpy)
+--8656-- REDIR: 0x4145810 (libc.so.6:calloc) redirected to 0x402e010 (calloc)
+--8656-- REDIR: 0x4148d20 (libc.so.6:__GI_strchr) redirected to 0x402ef30 (__GI_strchr)
+--8656-- REDIR: 0x4145520 (libc.so.6:realloc) redirected to 0x402e250 (realloc)
+--8656-- REDIR: 0x4145470 (libc.so.6:free) redirected to 0x402d2f0 (free)
+--8656-- REDIR: 0x4149580 (libc.so.6:strlen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x4152440 (libc.so.6:__strlen_sse2_bsf) redirected to 0x402f370 (strlen)
+--8656-- REDIR: 0x4149700 (libc.so.6:strncmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x42095c0 (libc.so.6:__strncmp_ssse3) redirected to 0x402fab0 (strncmp)
+--8656-- REDIR: 0x4149750 (libc.so.6:strncpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x4153dc0 (libc.so.6:__strncpy_ssse3) redirected to 0x402f5f0 (strncpy)
+--8656-- REDIR: 0x414d280 (libc.so.6:strchrnul) redirected to 0x40330b0 (strchrnul)
+--8656-- REDIR: 0x414b0d0 (libc.so.6:__GI_mempcpy) redirected to 0x40332c0 (__GI_mempcpy)
+--8656-- REDIR: 0x4148ae0 (libc.so.6:strcat) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x415db30 (libc.so.6:__strcat_ssse3) redirected to 0x402f030 (strcat)
+--8656-- REDIR: 0x414b610 (libc.so.6:memcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x41fbb70 (libc.so.6:__memcpy_ssse3) redirected to 0x4030cc0 (memcpy)
+--8656-- REDIR: 0x414ac10 (libc.so.6:__GI_memcmp) redirected to 0x4031ef0 (__GI_memcmp)
+--8656-- REDIR: 0x414d1b0 (libc.so.6:__GI___rawmemchr) redirected to 0x4033110 (__GI___rawmemchr)
+--8656-- REDIR: 0x414afc0 (libc.so.6:memset) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x41f94d0 (libc.so.6:__memset_sse2) redirected to 0x40327d0 (memset)
+--8656-- REDIR: 0x414aa30 (libc.so.6:__GI_memchr) redirected to 0x40306d0 (__GI_memchr)
+==8656== Thread 4:
+==8656== Invalid read of size 1
+==8656==    at 0x402F378: strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4054A73: string_length (in /usr/lib/libcommons.so)
+==8656==    by 0x80495B2: crearNuevaListaBloques (actualizarMetadata.c:5)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43b3ab0 is 0 bytes inside a block of size 3 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== Invalid read of size 1
+==8656==    at 0x402F383: strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4054A73: string_length (in /usr/lib/libcommons.so)
+==8656==    by 0x80495B2: crearNuevaListaBloques (actualizarMetadata.c:5)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43b3ab1 is 1 bytes inside a block of size 3 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== Invalid read of size 1
+==8656==    at 0x4030F40: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43b3ab0 is 0 bytes inside a block of size 3 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== Invalid read of size 2
+==8656==    at 0x4030F10: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43dabd0 is 0 bytes inside a block of size 4 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== Thread 3:
+==8656== Invalid read of size 4
+==8656==    at 0x4030ED0: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43f4ad8 is 0 bytes inside a block of size 6 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+--8656-- REDIR: 0x4148ee0 (libc.so.6:strcmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--8656-- REDIR: 0x4208150 (libc.so.6:__strcmp_ssse3) redirected to 0x4030450 (strcmp)
+==8656== Invalid read of size 4
+==8656==    at 0x4030EDA: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x45059d8 is 8 bytes inside a block of size 14 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== Invalid read of size 4
+==8656==    at 0x4030ED0: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x4565b40 is 0 bytes inside a block of size 15 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656== 
+==8656== Invalid read of size 4
+==8656==    at 0x4030EDA: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x4565b48 is 8 bytes inside a block of size 15 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656== 
+==8656== Invalid read of size 1
+==8656==    at 0x4030F40: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x4565b4c is 12 bytes inside a block of size 15 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656== 
+==8656== Thread 4:
+==8656== Invalid read of size 2
+==8656==    at 0x4030F10: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F20A: comienzaEjecutarTarea (tareas.c:58)
+==8656==    by 0x804AF41: handler (atenderTripulantes.c:156)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x6259fc8 is 64 bytes inside a block of size 69 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F20A: comienzaEjecutarTarea (tareas.c:58)
+==8656==    by 0x804AF41: handler (atenderTripulantes.c:156)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656== 
+==8656== Invalid read of size 1
+==8656==    at 0x410411B: ____strtol_l_internal (strtol_l.c:293)
+==8656==    by 0x4103F1F: strtol (strtol.c:106)
+==8656==    by 0x410125F: atoi (atoi.c:27)
+==8656==    by 0x4056F17: config_get_int_value (in /usr/lib/libcommons.so)
+==8656==    by 0x804B8A8: guardarEnBlocks (guardarBlocks.c:168)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==8656== 
+==8656== 
+==8656== Process terminating with default action of signal 11 (SIGSEGV)
+==8656==  Access not within mapped region at address 0x0
+==8656==    at 0x410411B: ____strtol_l_internal (strtol_l.c:293)
+==8656==    by 0x4103F1F: strtol (strtol.c:106)
+==8656==    by 0x410125F: atoi (atoi.c:27)
+==8656==    by 0x4056F17: config_get_int_value (in /usr/lib/libcommons.so)
+==8656==    by 0x804B8A8: guardarEnBlocks (guardarBlocks.c:168)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  If you believe this happened as a result of a stack
+==8656==  overflow in your program's main thread (unlikely but
+==8656==  possible), you can try to increase the size of the
+==8656==  main thread stack using the --main-stacksize= flag.
+==8656==  The main thread stack size used in this run was 8388608.
+==8656== 
+==8656== HEAP SUMMARY:
+==8656==     in use at exit: 1,059,768 bytes in 109 blocks
+==8656==   total heap usage: 55,093 allocs, 54,984 frees, 6,364,149 bytes allocated
+==8656== 
+==8656== Searching for pointers to 109 not-freed blocks
+==8656== Checked 17,378,932 bytes
+==8656== 
+==8656== Thread 1:
+==8656== 4 bytes in 1 blocks are still reachable in loss record 1 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4053E29: log_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C23C: setearConfiguraciones (main.c:34)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 4 bytes in 1 blocks are still reachable in loss record 2 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x405DA42: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 4 bytes in 1 blocks are still reachable in loss record 3 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4057072: config_set_value (in /usr/lib/libcommons.so)
+==8656==    by 0x8049E74: actualizarSize (actualizarMetadata.c:200)
+==8656==    by 0x804B19F: guardarPorBloque (guardarBlocks.c:26)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656== 
+==8656== 4 bytes in 1 blocks are definitely lost in loss record 4 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x405DA42: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 5 bytes in 1 blocks are still reachable in loss record 5 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4056505: dictionary_put (in /usr/lib/libcommons.so)
+==8656==    by 0x405708D: config_set_value (in /usr/lib/libcommons.so)
+==8656==    by 0x8049E74: actualizarSize (actualizarMetadata.c:200)
+==8656==    by 0x804B19F: guardarPorBloque (guardarBlocks.c:26)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656== 
+==8656== 7 bytes in 1 blocks are still reachable in loss record 6 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4056505: dictionary_put (in /usr/lib/libcommons.so)
+==8656==    by 0x4056CC0: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B173: guardarPorBloque (guardarBlocks.c:25)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656== 
+==8656== 8 bytes in 1 blocks are still reachable in loss record 7 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056D80: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C221: setearConfiguraciones (main.c:33)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 8 bytes in 1 blocks are still reachable in loss record 8 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4054FEA: list_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C249: setearConfiguraciones (main.c:36)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 8 bytes in 1 blocks are still reachable in loss record 9 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x804AE57: handler (atenderTripulantes.c:142)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 8 bytes in 1 blocks are still reachable in loss record 10 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056D80: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B173: guardarPorBloque (guardarBlocks.c:25)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 8 bytes in 1 blocks are definitely lost in loss record 11 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x804AFB2: handler (atenderTripulantes.c:170)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 11 bytes in 1 blocks are still reachable in loss record 12 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4056D94: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C221: setearConfiguraciones (main.c:33)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 12 bytes in 1 blocks are still reachable in loss record 13 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x804C258: setearConfiguraciones (main.c:38)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 12 bytes in 1 blocks are still reachable in loss record 14 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4057464: bitarray_create_with_mode (in /usr/lib/libcommons.so)
+==8656==    by 0x804C8CC: validarSuperBloque (preparacionFS.c:63)
+==8656==    by 0x804C5D6: inicializacionFS (preparacionFS.c:6)
+==8656==    by 0x804C114: main (main.c:6)
+==8656== 
+==8656== 15 bytes in 1 blocks are definitely lost in loss record 15 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x405DB1C: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 16 bytes in 1 blocks are still reachable in loss record 16 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40563CF: dictionary_create (in /usr/lib/libcommons.so)
+==8656==    by 0x4056DA3: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C221: setearConfiguraciones (main.c:33)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 16 bytes in 1 blocks are still reachable in loss record 17 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40563CF: dictionary_create (in /usr/lib/libcommons.so)
+==8656==    by 0x4056DA3: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B173: guardarPorBloque (guardarBlocks.c:25)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 16 bytes in 1 blocks are still reachable in loss record 18 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40569DC: dictionary_create_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056517: dictionary_put (in /usr/lib/libcommons.so)
+==8656==    by 0x4056CC0: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B173: guardarPorBloque (guardarBlocks.c:25)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656== 
+==8656== 16 bytes in 1 blocks are still reachable in loss record 19 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40569DC: dictionary_create_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056517: dictionary_put (in /usr/lib/libcommons.so)
+==8656==    by 0x405708D: config_set_value (in /usr/lib/libcommons.so)
+==8656==    by 0x8049E74: actualizarSize (actualizarMetadata.c:200)
+==8656==    by 0x804B19F: guardarPorBloque (guardarBlocks.c:26)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656== 
+==8656== 16 bytes in 1 blocks are indirectly lost in loss record 20 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40563CF: dictionary_create (in /usr/lib/libcommons.so)
+==8656==    by 0x4056DA3: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B892: guardarEnBlocks (guardarBlocks.c:167)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 17 bytes in 1 blocks are still reachable in loss record 21 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x804BB0E: guardarEnBlocks (guardarBlocks.c:227)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 20 bytes in 1 blocks are still reachable in loss record 22 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4053D83: log_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C23C: setearConfiguraciones (main.c:34)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 24 bytes in 2 blocks are still reachable in loss record 23 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x405D9C1: _create_metadata (in /usr/lib/libunnamed.so)
+==8656==    by 0x405D950: _start_server (in /usr/lib/libunnamed.so)
+==8656==    by 0x804C1D5: main (main.c:20)
+==8656== 
+==8656== 24 bytes in 3 blocks are still reachable in loss record 24 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x405614D: list_create_element (in /usr/lib/libcommons.so)
+==8656==    by 0x405507A: list_add (in /usr/lib/libcommons.so)
+==8656==    by 0x804A258: crearMetadataBitacora (actualizarMetadata.c:270)
+==8656==    by 0x804AD82: handler (atenderTripulantes.c:123)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 27 bytes in 1 blocks are still reachable in loss record 25 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x405DB1C: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 34 bytes in 1 blocks are still reachable in loss record 26 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40542D4: string_append (in /usr/lib/libcommons.so)
+==8656==    by 0x804F54E: escribirEnBitacoraComienzaTarea (tareas.c:137)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 34 bytes in 1 blocks are definitely lost in loss record 27 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40542D4: string_append (in /usr/lib/libcommons.so)
+==8656==    by 0x804F3D5: escribirEnBitacoraFinalizaTarea (tareas.c:107)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 43 bytes in 10 blocks are still reachable in loss record 28 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x405464B: string_trim_right (in /usr/lib/libcommons.so)
+==8656==    by 0x4054541: string_trim (in /usr/lib/libcommons.so)
+==8656==    by 0x4054939: string_get_string_as_array (in /usr/lib/libcommons.so)
+==8656==    by 0x4056FC2: config_get_array_value (in /usr/lib/libcommons.so)
+==8656==    by 0x804C2CF: setearConfiguraciones (main.c:42)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 44 bytes in 1 blocks are still reachable in loss record 29 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4054DAD: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x40547DC: string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054912: string_get_string_as_array (in /usr/lib/libcommons.so)
+==8656==    by 0x4056FC2: config_get_array_value (in /usr/lib/libcommons.so)
+==8656==    by 0x804C2CF: setearConfiguraciones (main.c:42)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 79 bytes in 27 blocks are still reachable in loss record 30 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x405464B: string_trim_right (in /usr/lib/libcommons.so)
+==8656==    by 0x4054541: string_trim (in /usr/lib/libcommons.so)
+==8656==    by 0x4054939: string_get_string_as_array (in /usr/lib/libcommons.so)
+==8656==    by 0x4056FC2: config_get_array_value (in /usr/lib/libcommons.so)
+==8656==    by 0x804B9D7: guardarEnBlocks (guardarBlocks.c:194)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 80 bytes in 1 blocks are still reachable in loss record 31 of 54
+==8656==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40563F0: dictionary_create (in /usr/lib/libcommons.so)
+==8656==    by 0x4056DA3: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C221: setearConfiguraciones (main.c:33)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 80 bytes in 1 blocks are still reachable in loss record 32 of 54
+==8656==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40563F0: dictionary_create (in /usr/lib/libcommons.so)
+==8656==    by 0x4056DA3: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B173: guardarPorBloque (guardarBlocks.c:25)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 80 bytes in 1 blocks are indirectly lost in loss record 33 of 54
+==8656==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40563F0: dictionary_create (in /usr/lib/libcommons.so)
+==8656==    by 0x4056DA3: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B892: guardarEnBlocks (guardarBlocks.c:167)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 81 bytes in 1 blocks are still reachable in loss record 34 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B173: guardarPorBloque (guardarBlocks.c:25)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656== 
+==8656== 84 bytes in 3 blocks are still reachable in loss record 35 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x804A225: crearMetadataBitacora (actualizarMetadata.c:267)
+==8656==    by 0x804AD82: handler (atenderTripulantes.c:123)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 96 bytes in 6 blocks are still reachable in loss record 36 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40569DC: dictionary_create_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056517: dictionary_put (in /usr/lib/libcommons.so)
+==8656==    by 0x4056CC0: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C221: setearConfiguraciones (main.c:33)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 98 bytes in 1 blocks are still reachable in loss record 37 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40542D4: string_append (in /usr/lib/libcommons.so)
+==8656==    by 0x4054C5A: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==8656==    by 0x405444C: string_append_with_format (in /usr/lib/libcommons.so)
+==8656==    by 0x4057155: add_line.2968 (in /usr/lib/libcommons.so)
+==8656==    by 0x40566B2: dictionary_iterator (in /usr/lib/libcommons.so)
+==8656==    by 0x40571FE: config_save_in_file (in /usr/lib/libcommons.so)
+==8656==    by 0x4057108: config_save (in /usr/lib/libcommons.so)
+==8656==    by 0x8049E91: actualizarSize (actualizarMetadata.c:202)
+==8656==    by 0x804B19F: guardarPorBloque (guardarBlocks.c:26)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656== 
+==8656== 99 bytes in 6 blocks are still reachable in loss record 38 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4056505: dictionary_put (in /usr/lib/libcommons.so)
+==8656==    by 0x4056CC0: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C221: setearConfiguraciones (main.c:33)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 100 bytes in 1 blocks are still reachable in loss record 39 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40542D4: string_append (in /usr/lib/libcommons.so)
+==8656==    by 0x4054C5A: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==8656==    by 0x40543C0: string_from_vformat (in /usr/lib/libcommons.so)
+==8656==    by 0x405435E: string_from_format (in /usr/lib/libcommons.so)
+==8656==    by 0x804EAE3: pathCompleto (sabotajes.c:663)
+==8656==    by 0x804F59C: escribirEnBitacoraComienzaTarea (tareas.c:145)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 100 bytes in 1 blocks are still reachable in loss record 40 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4056D94: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B173: guardarPorBloque (guardarBlocks.c:25)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 100 bytes in 1 blocks are indirectly lost in loss record 41 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4056D94: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B892: guardarEnBlocks (guardarBlocks.c:167)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 100 bytes in 1 blocks are definitely lost in loss record 42 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x40542D4: string_append (in /usr/lib/libcommons.so)
+==8656==    by 0x4054C5A: _string_append_with_format_list (in /usr/lib/libcommons.so)
+==8656==    by 0x40543C0: string_from_vformat (in /usr/lib/libcommons.so)
+==8656==    by 0x405435E: string_from_format (in /usr/lib/libcommons.so)
+==8656==    by 0x804EAE3: pathCompleto (sabotajes.c:663)
+==8656==    by 0x804F423: escribirEnBitacoraFinalizaTarea (tareas.c:116)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 112 bytes in 1 blocks are still reachable in loss record 43 of 54
+==8656==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4054DAD: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x40547DC: string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054912: string_get_string_as_array (in /usr/lib/libcommons.so)
+==8656==    by 0x4056FC2: config_get_array_value (in /usr/lib/libcommons.so)
+==8656==    by 0x804B9D7: guardarEnBlocks (guardarBlocks.c:194)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 136 bytes in 1 blocks are possibly lost in loss record 44 of 54
+==8656==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8656==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8656==    by 0x40BCCC3: allocate_stack (allocatestack.c:588)
+==8656==    by 0x40BCCC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8656==    by 0x804C1B5: main (main.c:18)
+==8656== 
+==8656== 136 bytes in 1 blocks are possibly lost in loss record 45 of 54
+==8656==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8656==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8656==    by 0x40BCCC3: allocate_stack (allocatestack.c:588)
+==8656==    by 0x40BCCC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8656==    by 0x40BD28F: pthread_create@GLIBC_2.0 (pthread_create.c:765)
+==8656==    by 0x405D96B: _start_server (in /usr/lib/libunnamed.so)
+==8656==    by 0x804C1D5: main (main.c:20)
+==8656== 
+==8656== 136 bytes in 1 blocks are definitely lost in loss record 46 of 54
+==8656==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4011726: allocate_dtv (dl-tls.c:322)
+==8656==    by 0x401214B: _dl_allocate_tls (dl-tls.c:539)
+==8656==    by 0x40BCCC3: allocate_stack (allocatestack.c:588)
+==8656==    by 0x40BCCC3: pthread_create@@GLIBC_2.1 (pthread_create.c:539)
+==8656==    by 0x40BD28F: pthread_create@GLIBC_2.0 (pthread_create.c:765)
+==8656==    by 0x405D96B: _start_server (in /usr/lib/libunnamed.so)
+==8656==    by 0x804C1D5: main (main.c:20)
+==8656== 
+==8656== 142 bytes in 6 blocks are still reachable in loss record 47 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C221: setearConfiguraciones (main.c:33)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 204 (8 direct, 196 indirect) bytes in 1 blocks are definitely lost in loss record 48 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056D80: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804B892: guardarEnBlocks (guardarBlocks.c:167)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656== 
+==8656== 344 bytes in 1 blocks are still reachable in loss record 49 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4132359: __fopen_internal (iofopen.c:69)
+==8656==    by 0x413241D: fopen@@GLIBC_2.1 (iofopen.c:97)
+==8656==    by 0x4053CBA: txt_open_for_append (in /usr/lib/libcommons.so)
+==8656==    by 0x4053DC3: log_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804C23C: setearConfiguraciones (main.c:34)
+==8656==    by 0x804C106: main (main.c:5)
+==8656== 
+==8656== 344 bytes in 1 blocks are still reachable in loss record 50 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4132359: __fopen_internal (iofopen.c:69)
+==8656==    by 0x413241D: fopen@@GLIBC_2.1 (iofopen.c:97)
+==8656==    by 0x40571CD: config_save_in_file (in /usr/lib/libcommons.so)
+==8656==    by 0x4057108: config_save (in /usr/lib/libcommons.so)
+==8656==    by 0x8049E91: actualizarSize (actualizarMetadata.c:202)
+==8656==    by 0x804B19F: guardarPorBloque (guardarBlocks.c:26)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F360: comienzaEjecutarTarea (tareas.c:91)
+==8656==    by 0x804AF01: handler (atenderTripulantes.c:152)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656== 
+==8656== 2,048 bytes in 1 blocks are still reachable in loss record 51 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x804C8A9: validarSuperBloque (preparacionFS.c:62)
+==8656==    by 0x804C5D6: inicializacionFS (preparacionFS.c:6)
+==8656==    by 0x804C114: main (main.c:6)
+==8656== 
+==8656== 4,096 bytes in 1 blocks are still reachable in loss record 52 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x413192D: _IO_file_doallocate (filedoalloc.c:127)
+==8656==    by 0x413F1C6: _IO_doallocbuf (genops.c:398)
+==8656==    by 0x413E560: _IO_file_overflow@@GLIBC_2.1 (fileops.c:820)
+==8656==    by 0x413D683: _IO_file_xsputn@@GLIBC_2.1 (fileops.c:1331)
+==8656==    by 0x4132DFB: fwrite (iofwrite.c:39)
+==8656==    by 0x4057221: config_save_in_file (in /usr/lib/libcommons.so)
+==8656==    by 0x4057108: config_save (in /usr/lib/libcommons.so)
+==8656==    by 0x8049E91: actualizarSize (actualizarMetadata.c:202)
+==8656==    by 0x804B19F: guardarPorBloque (guardarBlocks.c:26)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656== 
+==8656== 524,288 bytes in 1 blocks are still reachable in loss record 53 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x804CD8E: validarBlocks (preparacionFS.c:154)
+==8656==    by 0x804C5DB: inicializacionFS (preparacionFS.c:7)
+==8656==    by 0x804C114: main (main.c:6)
+==8656== 
+==8656== 526,336 bytes in 1 blocks are still reachable in loss record 54 of 54
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x804C855: validarSuperBloque (preparacionFS.c:56)
+==8656==    by 0x804C5D6: inicializacionFS (preparacionFS.c:6)
+==8656==    by 0x804C114: main (main.c:6)
+==8656== 
+==8656== LEAK SUMMARY:
+==8656==    definitely lost: 305 bytes in 7 blocks
+==8656==    indirectly lost: 196 bytes in 3 blocks
+==8656==      possibly lost: 272 bytes in 2 blocks
+==8656==    still reachable: 1,058,995 bytes in 97 blocks
+==8656==         suppressed: 0 bytes in 0 blocks
+==8656== 
+==8656== ERROR SUMMARY: 3685 errors from 20 contexts (suppressed: 0 from 0)
+==8656== 
+==8656== 1 errors in context 1 of 20:
+==8656== Thread 4:
+==8656== Invalid read of size 1
+==8656==    at 0x410411B: ____strtol_l_internal (strtol_l.c:293)
+==8656==    by 0x4103F1F: strtol (strtol.c:106)
+==8656==    by 0x410125F: atoi (atoi.c:27)
+==8656==    by 0x4056F17: config_get_int_value (in /usr/lib/libcommons.so)
+==8656==    by 0x804B8A8: guardarEnBlocks (guardarBlocks.c:168)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==8656== 
+==8656== 
+==8656== 1 errors in context 2 of 20:
+==8656== Invalid read of size 2
+==8656==    at 0x4030F10: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F20A: comienzaEjecutarTarea (tareas.c:58)
+==8656==    by 0x804AF41: handler (atenderTripulantes.c:156)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x6259fc8 is 64 bytes inside a block of size 69 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656==    by 0x804F20A: comienzaEjecutarTarea (tareas.c:58)
+==8656==    by 0x804AF41: handler (atenderTripulantes.c:156)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F661: escribirEnBitacoraComienzaTarea (tareas.c:158)
+==8656== 
+==8656== 
+==8656== 3 errors in context 3 of 20:
+==8656== Thread 3:
+==8656== Invalid read of size 1
+==8656==    at 0x4030F40: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x4565b4c is 12 bytes inside a block of size 15 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656== 
+==8656== 
+==8656== 12 errors in context 4 of 20:
+==8656== Invalid read of size 4
+==8656==    at 0x4030ED0: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x4565b40 is 0 bytes inside a block of size 15 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656== 
+==8656== 
+==8656== 24 errors in context 5 of 20:
+==8656== Invalid read of size 4
+==8656==    at 0x4030EDA: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x4565b48 is 8 bytes inside a block of size 15 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656==    by 0x804F197: finalizaEjecutarTarea (tareas.c:43)
+==8656==    by 0x804B009: handler (atenderTripulantes.c:176)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B2F5: guardarPorBloque (guardarBlocks.c:54)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804F4C4: escribirEnBitacoraFinalizaTarea (tareas.c:128)
+==8656== 
+==8656== 
+==8656== 35 errors in context 6 of 20:
+==8656== Thread 4:
+==8656== Invalid read of size 1
+==8656==    at 0x4030F40: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43b3ab0 is 0 bytes inside a block of size 3 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== 
+==8656== 38 errors in context 7 of 20:
+==8656== Invalid read of size 2
+==8656==    at 0x4030F10: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43dabd0 is 0 bytes inside a block of size 4 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== 
+==8656== 81 errors in context 8 of 20:
+==8656== Invalid read of size 1
+==8656==    at 0x402F378: strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4054A73: string_length (in /usr/lib/libcommons.so)
+==8656==    by 0x80495B2: crearNuevaListaBloques (actualizarMetadata.c:5)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43b3ab0 is 0 bytes inside a block of size 3 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== 
+==8656== 235 errors in context 9 of 20:
+==8656== Thread 3:
+==8656== Invalid read of size 4
+==8656==    at 0x4030ED0: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43f4ad8 is 0 bytes inside a block of size 6 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== 
+==8656== 393 errors in context 10 of 20:
+==8656== Invalid read of size 4
+==8656==    at 0x4030EDA: memcpy (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x80495F3: crearNuevaListaBloques (actualizarMetadata.c:9)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x45059d8 is 8 bytes inside a block of size 14 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804BC53: guardarEnBlocks (guardarBlocks.c:246)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== 
+==8656== 2853 errors in context 11 of 20:
+==8656== Thread 4:
+==8656== Invalid read of size 1
+==8656==    at 0x402F383: strlen (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4054A73: string_length (in /usr/lib/libcommons.so)
+==8656==    by 0x80495B2: crearNuevaListaBloques (actualizarMetadata.c:5)
+==8656==    by 0x8049869: actualizarBlocks (actualizarMetadata.c:68)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==    by 0x41BB0AD: clone (clone.S:114)
+==8656==  Address 0x43b3ab1 is 1 bytes inside a block of size 3 free'd
+==8656==    at 0x402D358: free (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x4056C18: dictionary_destroy_element (in /usr/lib/libcommons.so)
+==8656==    by 0x4056977: internal_dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x4056717: dictionary_clean_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x40567D9: dictionary_destroy_and_destroy_elements (in /usr/lib/libcommons.so)
+==8656==    by 0x405701C: config_destroy (in /usr/lib/libcommons.so)
+==8656==    by 0x8049831: actualizarBlocks (actualizarMetadata.c:65)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==8656==    by 0x40BC294: start_thread (pthread_create.c:333)
+==8656==  Block was alloc'd at
+==8656==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==8656==    by 0x41492C5: strdup (strdup.c:42)
+==8656==    by 0x4054287: string_duplicate (in /usr/lib/libcommons.so)
+==8656==    by 0x4054D92: _string_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4054894: string_n_split (in /usr/lib/libcommons.so)
+==8656==    by 0x4056C9D: add_cofiguration.2909 (in /usr/lib/libcommons.so)
+==8656==    by 0x4054A42: string_iterate_lines (in /usr/lib/libcommons.so)
+==8656==    by 0x4056E31: config_create (in /usr/lib/libcommons.so)
+==8656==    by 0x804980A: actualizarBlocks (actualizarMetadata.c:63)
+==8656==    by 0x804B1E2: guardarPorBloque (guardarBlocks.c:31)
+==8656==    by 0x804B98A: guardarEnBlocks (guardarBlocks.c:187)
+==8656==    by 0x804ADDC: handler (atenderTripulantes.c:128)
+==8656== 
+==8656== ERROR SUMMARY: 3685 errors from 20 contexts (suppressed: 0 from 0)

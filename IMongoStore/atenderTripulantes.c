@@ -32,13 +32,13 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             free(tripulante);
             free(bitacora);
 
-            pthread_mutex_lock(&blocks_bitmap);
             if(access(path_fileTripulante,F_OK) < 0){
                 log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
-                crearMetadataBitacora(path_fileTripulante);
+                crearMetadataBitacora(path_fileTripulante, idTripulante);
             }
-            guardarEnBlocks(strGuardar,path_fileTripulante,0);
-            pthread_mutex_unlock(&blocks_bitmap);
+            mutex* nodo = findByID(bitacoras, idTripulante);
+            log_info(logger, "ID TRIPULANTE DE LISTA:%d",nodo->idTripulante);
+            guardarEnBlocks(strGuardar,path_fileTripulante,0,nodo->idBitacora);
             
             free(path_fileTripulante);
             free(strGuardar);
@@ -62,9 +62,8 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
 
             memcpy(&idTripulante,payload,sizeof(int));
             log_info(logger, "ID Tripulante:%d", idTripulante);
-            pthread_mutex_lock(&blocks_bitmap);
+            
             bitacora = obtenerBitacora(idTripulante);
-            pthread_mutex_unlock(&blocks_bitmap);
 
             int tamBitacora = string_length(bitacora);
 
@@ -119,14 +118,14 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             path_fileTripulante = pathCompleto(bitacora);
             free(bitacora);
 
-
-            pthread_mutex_lock(&blocks_bitmap);
             if(access(path_fileTripulante,F_OK) < 0){
                 log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
-                crearMetadataBitacora(path_fileTripulante);
+                crearMetadataBitacora(path_fileTripulante,idTripulante);
             }
-            guardarEnBlocks(strGuardar,path_fileTripulante,0);
-            pthread_mutex_unlock(&blocks_bitmap);
+            
+            mutex* nodo2 = findByID(bitacoras, idTripulante);
+            log_info(logger, "ID TRIPULANTE DE LISTA:%d",nodo2->idTripulante);
+            guardarEnBlocks(strGuardar,path_fileTripulante,0,nodo2->idBitacora);
 
             free(tripulante);
             free(path_fileTripulante);

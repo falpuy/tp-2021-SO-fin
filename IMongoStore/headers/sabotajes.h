@@ -20,6 +20,7 @@
     #include <string.h>
     #include <commons/bitarray.h>
     #include <sys/stat.h>
+    #include <commons/collections/list.h>
     
     enum COMANDOS{
         OBTENER_BITACORA = 760 ,
@@ -36,6 +37,11 @@
     };
 
     typedef struct{
+        int idTripulante;
+        pthread_mutex_t idBitacora;
+    }mutex;
+
+    typedef struct{
         char* puntoMontaje;
         char* puerto;
         int tiempoSincronizacion;  
@@ -43,6 +49,7 @@
     configIMS* datosConfig;
 
     pthread_t sync_blocks;
+    
 
     uint32_t tamanioBloque;
     uint32_t cantidadBloques;
@@ -65,13 +72,18 @@
     t_config* config;
     t_log* logger;
 
+    t_list* bitacoras;
+
     pthread_mutex_t blocks_bitmap;
     pthread_mutex_t logMutex;
     pthread_mutex_t m_superBloque;
     pthread_mutex_t m_metadata;
     pthread_mutex_t discordiador;
     pthread_mutex_t validador;
-
+    pthread_mutex_t mutexOxigeno;
+    pthread_mutex_t mutexComida;
+    pthread_mutex_t mutexBasura;
+    
     void sabotaje();
     void protocolo_fsck();
     void validacionSuperBloque();
@@ -94,5 +106,6 @@
     char* pathCompleto(char* strConcatenar);
     char* crearStrTripulante(int idTripulante);
     char* queRecurso(char* path);
+    mutex* findByID(t_list *self, int id);
     
 #endif

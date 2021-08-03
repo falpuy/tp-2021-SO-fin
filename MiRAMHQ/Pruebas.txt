@@ -15,10 +15,7 @@ LISTAR_TRIPULANTES
 
 PAGINACION
 
-
 INICIAR_PATOTA 1 /home/utnso/Escritorio/code/tp/tp-2021-1c-Unnamed-Group/Discordiador/Scripts/PAG_PatotaA.txt 1|1
 INICIAR_PATOTA 1 /home/utnso/Escritorio/code/tp/tp-2021-1c-Unnamed-Group/Discordiador/Scripts/PAG_PatotaB.txt 3|3
 INICIAR_PATOTA 1 /home/utnso/Escritorio/code/tp/tp-2021-1c-Unnamed-Group/Discordiador/Scripts/PAG_PatotaC.txt 5|5
 INICIAR_PLANIFICACION
-
-// TODO: FIXEAR DIRECCION DE TAREAS CUANDO COMPACTO.

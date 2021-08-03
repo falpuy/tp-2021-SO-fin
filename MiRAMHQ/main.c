@@ -699,14 +699,7 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           if (save_data_in_memory(memory, table_collection, admin_collection, buffer) > 0) {
 
             log_info(logger, "Se guardaron exitosamente los datos de la patota");
-            log_info(logger, "Muestro valores del bitmap para REAL..");
-              for(int i = 0; i < frames_memory; i++){
-                  log_info(logger, "Bit %d: %d", i, bitmap[i]);
-              }
-              log_info(logger, "Muestro valores INICIALES del bitmap para VIRTUAL..");
-              for(int i = 0; i < frames_virtual; i++){
-                  log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
-              }
+            
             respuesta = string_new();
             string_append(&respuesta, "Respuesta");
             _send_message(fd, "RAM", SUCCESS ,respuesta, string_length(respuesta), logger);

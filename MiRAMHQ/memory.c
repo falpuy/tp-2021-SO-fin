@@ -332,7 +332,7 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
         // Compio inicio de tareas en temp buffer
         memcpy(temp + temp_off, &task_start, sizeof(uint32_t));
         temp_off += sizeof(uint32_t);
-        offset += sizeof(uint32_t);
+        // offset += sizeof(uint32_t);
 
         // personaje_crear(nivel, tid, xpos, ypos);
         // nivel_gui_dibujar(nivel);
@@ -496,7 +496,7 @@ void update_task_from_page(void *memory, t_dictionary *admin_collection, t_dicti
     page_t *page2;
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
-        memcpy(&temp_id, temp + (data_tcb -> start % page_size) + (i * 21), sizeof(uint32_t));
+        memcpy(&temp_id, temp + (data_tcb -> start % page_size)  + (i * 21), sizeof(uint32_t));
 
         if (temp_id == id_tcb) {
 
@@ -545,10 +545,11 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
     int tcb_page_count = (queue_size(self) - data_tcb -> page_number);
 
     void *temp = malloc(tcb_page_count * page_size);
-
     // Traigo paginas de tcb
     for(int i = data_tcb -> page_number; i < queue_size(self); i++) {
+        printf("NUMBERS: %d - %d\n", i, queue_size(self));
         page_aux = list_remove(self -> elements, i);
+        printf("Page: %d\n", page_aux -> number);
 
         if (page_aux -> frame -> presence) {
             pthread_mutex_lock(&m_memoria);
@@ -600,9 +601,12 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
     char *tareas = malloc(page_size * 2);
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
+        printf("Searching.. %d - %d\n", data_tcb -> start , (data_tcb -> start % page_size));
         memcpy(&temp_id, temp + (data_tcb -> start % page_size) + (i * 21), sizeof(uint32_t));
 
         if (temp_id == id_tcb) {
+
+            printf("Encontre el id..\n");
 
             pos_tcb = (data_tcb -> start % page_size) + (i * 21) + (sizeof(uint32_t) * 4) + sizeof(char);
 
@@ -654,7 +658,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
             // printf("PAGINA: %d - %d - %d - %d\n", pnumber, prevTask + task_counter, prevTask, memcmp(tareas + (prevTask % page_size) + task_counter, ";", 1));
 
             // busco la tarea
-            while (!falta_pagina && prevTask + task_counter < (data_tcb -> start - 8) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
+            while (!falta_pagina && prevTask + task_counter < (data_tcb -> start ) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
 
                 task_counter++;
                 if ((prevTask + task_counter) % page_size == 0) {
@@ -701,13 +705,13 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
                 list_add_sorted(self -> elements, page2, sort_by_id);
 
-                while (prevTask + task_counter < (data_tcb -> start - 8) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
+                while (prevTask + task_counter < (data_tcb -> start ) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
                     
                     task_counter++;
                 }
             }
 
-            if (prevTask < (data_tcb -> start - 8) && prevTask + task_counter <= (data_tcb -> start - 8)) {
+            if (prevTask < (data_tcb -> start ) && prevTask + task_counter <= (data_tcb -> start )) {
                 recv_task = malloc(task_counter + 1);
                 memcpy(recv_task, tareas + (prevTask % page_size), task_counter);
                 recv_task[task_counter] = '\0';
@@ -970,7 +974,7 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
     page_t *page2;
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
-        memcpy(&temp_id, temp + (data_tcb -> start % page_size) + (i * 21), sizeof(uint32_t));
+        memcpy(&temp_id, temp + (data_tcb -> start % page_size)  + (i * 21), sizeof(uint32_t));
 
         if (temp_id == id_tcb) {
 
@@ -1068,7 +1072,7 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
     page_t *page2;
     for (int i = 0; i < data_tcb -> cantidad; i++) {
         // Leo solo el primer int, que representa el tid
-        memcpy(&temp_id, temp + (data_tcb -> start % page_size) + (i * 21), sizeof(uint32_t));
+        memcpy(&temp_id, temp + (data_tcb -> start % page_size)  + (i * 21), sizeof(uint32_t));
 
         if (temp_id == id_tcb) {
 
@@ -1336,6 +1340,8 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
     int new_base;
     int new_limit;
 
+    t_queue *temp_list = queue_create();
+
     int table_index;
 
 	for (table_index = 0; table_index < self->table_max_size; table_index++) {
@@ -1355,25 +1361,22 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
 
                 while (element != NULL) {
 
-                    data_size = temp -> limit - temp ->baseAddr;
+                    // data_size = temp -> limit - temp ->baseAddr;
 
-                    // printf("Copiando elementos.. %d - %d - %d\n", temp -> nroSegmento, temp -> baseAddr, temp -> limit);
-                    
-                    // Copio los datos del segmento en la memoria auxiliar
-                    pthread_mutex_lock(&m_memoria);
-                    memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
-                    pthread_mutex_unlock(&m_memoria);
-                    // memset(admin + offset, 1, data_size);
+                    // // Copio los datos del segmento en la memoria auxiliar
+                    // pthread_mutex_lock(&m_memoria);
+                    // memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+                    // pthread_mutex_unlock(&m_memoria);
 
-                    new_base = offset;
-                    new_limit = offset + data_size;
+                    list_add_sorted(temp_list -> elements, temp, sort_by_addr);
 
-                    // printf("Creando nuevo Segmento.. %d - %d - %d\n", temp -> nroSegmento, new_base, new_limit);
+                    // new_base = offset;
+                    // new_limit = offset + data_size;
 
-                    offset += data_size;
+                    // offset += data_size;
 
-                    temp -> baseAddr = new_base;
-                    temp -> limit = new_limit;
+                    // temp -> baseAddr = new_base;
+                    // temp -> limit = new_limit;
 
                     element = element->next;
                     if (element != NULL)
@@ -1384,6 +1387,33 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
             element = next_element;
         }
 
+	}
+
+    // REACOMODO LOS SEGMENTOS AL PRINCIPIO, EN EL ORDEN QE ESTABAN
+    t_link_element *_element = (temp_list -> elements) -> head;
+	t_link_element *_aux = NULL;
+	while (_element != NULL) {
+		_aux = _element->next;
+
+        temp = _element->data;
+
+        data_size = temp -> limit - temp ->baseAddr;
+
+        // Copio los datos del segmento en la memoria auxiliar
+        pthread_mutex_lock(&m_memoria);
+        memcpy(aux_memory + offset, memory + temp -> baseAddr, data_size);
+        pthread_mutex_unlock(&m_memoria);
+
+        new_base = offset;
+        new_limit = offset + data_size;
+
+        offset += data_size;
+
+        temp -> baseAddr = new_base;
+        temp -> limit = new_limit;
+
+		// closure(_element->data);
+		_element = _aux;
 	}
 
     queue_destroy_and_destroy_elements(segmentosLibres, destroyer);
@@ -1407,6 +1437,9 @@ void memory_compaction(void *admin, void *memory, int mem_size, t_dictionary* se
     }
 
     free(aux_memory);
+
+    queue_clean(temp_list);
+    queue_destroy(temp_list);
 }
 
 // int check_space_memory(void *admin, int mem_size, int total_size, t_dictionary *table_collection) {

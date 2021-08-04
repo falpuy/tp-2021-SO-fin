@@ -12,7 +12,7 @@ tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger){
     nuevoTCB->tiempoEnBloqIO = 0;
     nuevoTCB->ciclosCumplidos = 0;
     nuevoTCB->mensajeInicialIMS = 0;
-    nuevoTCB->mensajeAtiSabIMS = 0;
+    nuevoTCB->primerCicloSabotaje = 0;
     nuevoTCB->cicloCPUCumplido = 0;
 
     return nuevoTCB;

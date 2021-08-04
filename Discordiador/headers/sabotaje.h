@@ -68,7 +68,7 @@
         int tiempoEnBloqIO;
         int ciclosCumplidos;
         int mensajeInicialIMS;
-        int mensajeAtiSabIMS;
+        int primerCicloSabotaje;
         int cicloCPUCumplido;
     }tcb;
 

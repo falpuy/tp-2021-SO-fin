@@ -227,6 +227,10 @@ void resolviendoSabotaje(void* tcbTrip, void* param){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
         }
     }
     else {// NO LLEGÓ A LA POSICIÓN DEL SABOTAJE
@@ -241,6 +245,10 @@ void resolviendoSabotaje(void* tcbTrip, void* param){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
             tripulante->ciclosCumplidos = 0;
         }
     }
@@ -330,6 +338,10 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
             tripulante->ciclosCumplidos = 0;
             log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
         }                 
@@ -347,6 +359,10 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
             tripulante->ciclosCumplidos = 0;
             log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
         }
@@ -409,6 +425,10 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
         free(msg);
         t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
         close(conexion_RAM);
+
+        free(mensaje->identifier);
+        free(mensaje->payload);
+        free(mensaje);
         tripulante->ciclosCumplidos = 0;
     }
 
@@ -420,6 +440,10 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
         free(msg);
         t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
         close(conexion_RAM);
+
+        free(mensaje->identifier);
+        free(mensaje->payload);
+        free(mensaje);
         tripulante->ciclosCumplidos = 0;
         log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
     }
@@ -482,6 +506,11 @@ void pedirProximaTarea(tcb* tcbTripulante){
         free(msg);
         t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
         close(conexion_RAM);
+
+        free(mensaje->identifier);
+        free(mensaje->payload);
+        free(mensaje);
+
         free(mensajito->payload);
         free(mensajito->identifier);
         free(mensajito);

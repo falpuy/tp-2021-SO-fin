@@ -55,6 +55,9 @@ void funcionhNewaReady (t_log* logger) {
                 free(msg);
                 t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
                 close(conexion_RAM);
+                free(mensaje->identifier);
+                free(mensaje->payload);
+                free(mensaje);
 
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready, (void*) aux_TCB);
@@ -111,6 +114,10 @@ void funcionhReadyaExec (t_log* logger){
                 free(msg);
                 t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
                 close(conexion_RAM);
+                free(mensaje->identifier);
+                free(mensaje->payload);
+                free(mensaje);
+
                 pthread_mutex_lock(&mutexExec);
                 queue_push(exec, (void*) aux_TCB);
                 pthread_mutex_unlock(&mutexExec);
@@ -341,6 +348,9 @@ void funcionContadorEnBloqIO(void* nodo){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
 
             pthread_mutex_lock(&mutexReady);
             queue_push(ready, (void*) tcbTripulante);
@@ -459,6 +469,10 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 free(msg);
                 t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
                 close(conexion_RAM);
+                free(mensaje->identifier);
+                free(mensaje->payload);
+                free(mensaje);
+
                 log_info(logger, "El tripulante %d resolvió el sabotaje", tripulanteFixer->tid);
                 
                 pthread_mutex_lock(&mutexContextoSabotaje);
@@ -501,6 +515,9 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                     free(msg);
                     t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
                     close(conexion_RAM);
+                    free(mensaje->identifier);
+                    free(mensaje->payload);
+                    free(mensaje);
 
                     pthread_mutex_lock(&mutexBloqEmer);
                     queue_push(bloq_emer, (void*) aux_TCB);
@@ -525,6 +542,9 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                     free(msg);
                     t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
                     close(conexion_RAM);
+                    free(mensaje->identifier);
+                    free(mensaje->payload);
+                    free(mensaje);
 
                     pthread_mutex_lock(&mutexBloqEmer);
                     queue_push(bloq_emer, (void*) aux_TCB);
@@ -587,6 +607,9 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 free(msg);
                 t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
                 close(conexion_RAM);
+                free(mensaje->identifier);
+                free(mensaje->payload);
+                free(mensaje);
 
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready,(void*) aux_Fixer);
@@ -638,6 +661,9 @@ void funcionhBloqEmeraReady (t_log* logger){// SE PASAN TODOS LOS TRIPULANTES QU
                 free(msg);
                 t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
                 close(conexion_RAM);
+                free(mensaje->identifier);
+                free(mensaje->payload);
+                free(mensaje);
 
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready, (void*) aux_TCB);

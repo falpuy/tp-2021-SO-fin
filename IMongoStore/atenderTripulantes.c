@@ -10,6 +10,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
     char* strGuardar;
     char* path_fileTripulante;
     char* tripulante;
+    mutex* nodo;
 
     switch(comando){
         case ATENDER_SABOTAJE:
@@ -36,9 +37,13 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
                 log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
                 crearMetadataBitacora(path_fileTripulante, idTripulante);
             }
-            mutex* nodo = findByID(bitacoras, idTripulante);
-            log_info(logger, "ID TRIPULANTE DE LISTA:%d",nodo->idTripulante);
-            guardarEnBlocks(strGuardar,path_fileTripulante,0,nodo->idBitacora);
+            nodo = findByID(bitacoras, idTripulante);
+            if(!nodo){
+                log_error(logger, "No se encontró el mutex asociado a esa bitacora");
+            }else{
+                log_info(logger, "ID TRIPULANTE DE LISTA:%d",nodo->idTripulante);
+                guardarEnBlocks(strGuardar,path_fileTripulante,0,nodo->idBitacora);
+            }
             
             free(path_fileTripulante);
             free(strGuardar);
@@ -54,7 +59,6 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             protocolo_fsck();
             pthread_mutex_unlock(&blocks_bitmap);
         break;
-
         case OBTENER_BITACORA:    
             log_info(logger,"-----------------------------------------------------");
             log_info(logger, "Llego comando: Obtener bitácora de.....");
@@ -63,7 +67,9 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             memcpy(&idTripulante,payload,sizeof(int));
             log_info(logger, "ID Tripulante:%d", idTripulante);
             
+            pthread_mutex_lock(&blocks_bitmap);
             bitacora = obtenerBitacora(idTripulante);
+            pthread_mutex_unlock(&blocks_bitmap);
 
             int tamBitacora = string_length(bitacora);
 
@@ -86,7 +92,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             log_info(logger,"-----------------------------------------------------");
             free(buffer);
             free(bitacora);
-            break;  
+        break;  
 
         case MOVER_TRIPULANTE:
             log_info(logger,"-----------------------------------------------------");
@@ -122,10 +128,13 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
                 log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
                 crearMetadataBitacora(path_fileTripulante,idTripulante);
             }
-            
-            mutex* nodo2 = findByID(bitacoras, idTripulante);
-            log_info(logger, "ID TRIPULANTE DE LISTA:%d",nodo2->idTripulante);
-            guardarEnBlocks(strGuardar,path_fileTripulante,0,nodo2->idBitacora);
+            nodo = findByID(bitacoras, idTripulante);
+            if(!nodo){
+                log_error(logger, "No se encontró el mutex asociado a esa bitacora");
+            }else{
+                log_info(logger, "ID TRIPULANTE DE LISTA:%d",nodo->idTripulante);
+                guardarEnBlocks(strGuardar,path_fileTripulante,0,nodo->idBitacora);
+            }
 
             free(tripulante);
             free(path_fileTripulante);

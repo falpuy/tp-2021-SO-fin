@@ -117,15 +117,18 @@ void escribirEnBitacoraFinalizaTarea(char* tarea, int idTripulante){
     free(bitacora);
     free(tripulante);
 
-    void* nodo = findByID(bitacoras,idTripulante);
-    mutex* temporal = (mutex*) nodo;
 
     if(access(path_fileTripulante,F_OK) < 0){
         log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
         crearMetadataBitacora(path_fileTripulante,idTripulante);
     }
 
-    guardarEnBlocks(stringTemporal,path_fileTripulante,0,temporal->idBitacora);
+    mutex* nodo = findByID(bitacoras,idTripulante);
+    if(!nodo){
+        log_error(logger, "No existe mutex para esa bitacora");
+    }else{
+        guardarEnBlocks(stringTemporal,path_fileTripulante,0,nodo->idBitacora);
+    }
     free(stringTemporal);
     free(path_fileTripulante);
 }
@@ -146,16 +149,18 @@ void escribirEnBitacoraComienzaTarea(char* tarea, int idTripulante){
     free(bitacora);
     free(tripulante);
     
-    void* nodo = findByID(bitacoras,idTripulante);
-    mutex* temporal = (mutex*) nodo;
 
     if(access(path_fileTripulante,F_OK) < 0){
         log_info(logger,"No existe archivo en bitácora...Se crea archivo para este tripulante...");
-        pthread_mutex_lock(&temporal->idBitacora);
         crearMetadataBitacora(path_fileTripulante,idTripulante);
-        pthread_mutex_unlock(&temporal->idBitacora);
     }
-    guardarEnBlocks(stringTemporal,path_fileTripulante,0,temporal->idBitacora);
+    mutex* nodo = findByID(bitacoras,idTripulante);
+    
+    if(!nodo){
+        log_error(logger, "No existe mutex para esa bitacora");
+    }else{
+        guardarEnBlocks(stringTemporal,path_fileTripulante,0,nodo->idBitacora);
+    }
     free(stringTemporal);
     free(path_fileTripulante);
 }
@@ -244,7 +249,7 @@ void descartarBasura(int parametroTarea){
 
 void generarOxigeno(int parametroTarea){
     char* path_oxigeno = pathCompleto("Files/Oxigeno.ims");
-    log_info(logger, "Path de generar oxigeno:%s", path_oxigeno);
+    // log_info(logger, "Path de generar oxigeno:%s", path_oxigeno);
 
     if(access(path_oxigeno,F_OK)<0){
         log_info(logger, "No existe Oxigeno.ims...Se crea archivo");
@@ -261,7 +266,7 @@ void generarOxigeno(int parametroTarea){
 
 void generarComida(int parametroTarea){
     char* path_comida = pathCompleto("Files/Comida.ims");
-    log_info(logger, "Path de comida:%s", path_comida);
+    // log_info(logger, "Path de comida:%s", path_comida);
 
     if(access(path_comida,F_OK)<0){
         log_info(logger, "No existe Comida.ims...Se crea archivo");

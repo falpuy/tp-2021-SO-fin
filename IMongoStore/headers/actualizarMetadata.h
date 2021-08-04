@@ -22,7 +22,7 @@
     void actualizarSize(t_config* metadataBitacora,int tamanio, int flagEsGuardar);
     void crearMetadataBitacora(char* path_tripulante, int idTripulante);
     void crearMetadataFiles(char* path,char* charLlenado);
-    
+    void mostrarBitacoras(void* nodo);
     int cantidad_bloques(char* string);
     char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int posY_n);
     int validarBitsLibre(int cantidadBloquesAUsar);

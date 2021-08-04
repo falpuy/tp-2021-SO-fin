@@ -268,10 +268,19 @@ void crearMetadataBitacora(char* path, int idTripulante){
         temporal->idTripulante = idTripulante;
         pthread_mutex_init(&temporal ->idBitacora,NULL);
         list_add(bitacoras,(void*) temporal);
+        
+        printf("----------------------------");
+        printf("IDs hasta ahora:");
+        list_iterate(bitacoras,mostrarBitacoras);
+        printf("----------------------------");
 
     }
 }
 
+void mostrarBitacoras(void* nodo){
+    mutex* temporal = (mutex*) nodo;
+    printf("ID Tripulante:%d",temporal->idTripulante);
+}
 
 int cantidad_bloques(char* string){
     double cantidad;
@@ -311,7 +320,10 @@ int validarBitsLibre(int cantidadBloquesAUsar){
     int contador = 0;
 
     for(int i=0; i < bitarray_get_max_bit(bitmap); i++){
-        if(bitarray_test_bit(bitmap,i) == 0){
+        pthread_mutex_lock(&mutexBasura);
+        int bit = bitarray_test_bit(bitmap,i);
+        pthread_mutex_unlock(&mutexBasura);
+        if(bit == 0){
             contador++;
             if(contador == cantidadBloquesAUsar){
                 return 1;
@@ -336,52 +348,61 @@ char* obtenerBitacora(int tripulante){
     free(strTripulante);
     free(strPath);
 
-    if(access(path,F_OK) >= 0){
-        pthread_mutex_lock(&blocks_bitmap);
-        t_config* metadata = config_create(path);
-        char** listaBloques = config_get_array_value(metadata,"BLOCKS");
-        int tamanioTotal = config_get_int_value(metadata,"SIZE");
-        pthread_mutex_unlock(&blocks_bitmap);
-        int contadorBloques = 0;
-        int posicionBloque = 0;
+    mutex* nodo = findByID(bitacoras, tripulante);
 
-        while(listaBloques[contadorBloques]){
-            contadorBloques++;
-        }
-
-        for(int i = 0; i < contadorBloques; i++){
-            int bloque = atoi(listaBloques[posicionBloque]);
-
-            if((contadorBloques - posicionBloque) != 1){//no es ultimo bloque
-                char* temporal = malloc(tamanioBloque + 1);
-                memcpy(temporal,copiaBlocks+bloque*tamanioBloque,tamanioBloque);
-                temporal[tamanioBloque] = '\0';
-                string_append(&buffer,temporal);
-                free(temporal);
-                
-            }else{
-                int sizeStr = string_length(buffer); //Size hasta ahora
-                int faltaCopiar = tamanioTotal - sizeStr; 
-                char* temporal = malloc(faltaCopiar + 1);
-                memcpy(temporal,copiaBlocks+bloque*tamanioBloque,faltaCopiar);
-                temporal[faltaCopiar] = '\0';
-                string_append(&buffer,temporal);
-                free(temporal);
-            }
-            posicionBloque++;
-        }
-        config_destroy(metadata);
-        for(int i = 0; i <= contadorBloques; i++){
-            free(listaBloques[i]);
-        }
-        free(listaBloques);
-
+    if(!nodo){
+        log_error(logger,"No existe mutex para ese tripulante");
+        return buffer;
     }else{
-        log_error(logger, "No existe bitácora para ese tripulante.");
-        return buffer; //size 0
+        if(access(path,F_OK) >= 0){
+            pthread_mutex_lock(&blocks_bitmap);
+            t_config* metadata = config_create(path);
+            char** listaBloques = config_get_array_value(metadata,"BLOCKS");
+            int tamanioTotal = config_get_int_value(metadata,"SIZE");
+            pthread_mutex_unlock(&blocks_bitmap);
+            int contadorBloques = 0;
+            int posicionBloque = 0;
+
+            while(listaBloques[contadorBloques]){
+                contadorBloques++;
+            }
+
+            for(int i = 0; i < contadorBloques; i++){
+                int bloque = atoi(listaBloques[posicionBloque]);
+
+                if((contadorBloques - posicionBloque) != 1){//no es ultimo bloque
+                    char* temporal = malloc(tamanioBloque + 1);
+                    memcpy(temporal,copiaBlocks+bloque*tamanioBloque,tamanioBloque);
+                    temporal[tamanioBloque] = '\0';
+                    string_append(&buffer,temporal);
+                    free(temporal);
+                    
+                }else{
+                    int sizeStr = string_length(buffer); //Size hasta ahora
+                    int faltaCopiar = tamanioTotal - sizeStr; 
+                    char* temporal = malloc(faltaCopiar + 1);
+                    memcpy(temporal,copiaBlocks+bloque*tamanioBloque,faltaCopiar);
+                    temporal[faltaCopiar] = '\0';
+                    string_append(&buffer,temporal);
+                    free(temporal);
+                }
+                posicionBloque++;
+            }
+            config_destroy(metadata);
+            for(int i = 0; i <= contadorBloques; i++){
+                free(listaBloques[i]);
+            }
+            free(listaBloques);
+        }else{
+            log_error(logger, "No existe bitácora para ese tripulante.");
+            return buffer; //size 0
+        }
+
+        free(path);
+        return buffer;
     }
-    free(path);
-    return buffer;
+
+
 }
 
 

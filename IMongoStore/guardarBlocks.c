@@ -6,7 +6,12 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
     int tamanioString = string_length(stringGuardar);
 
     for(int i=0; i < bitarray_get_max_bit(bitmap) && cantidadBloquesUsados != cantidadBloquesAUsar; i++){
-        if(bitarray_test_bit(bitmap,i) == 0){
+        
+        pthread_mutex_lock(&blocks_bitmap);  
+        int estadoBit = bitarray_test_bit(bitmap,i);
+        pthread_mutex_unlock(&blocks_bitmap);  
+        
+        if(estadoBit == 0){
             
             pthread_mutex_lock(&blocks_bitmap);            
             bitarray_set_bit(bitmap,i);
@@ -15,10 +20,6 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
             
 
             if((cantidadBloquesAUsar-cantidadBloquesUsados)==1){//ultimo bloque a escribir - posible fragmentación interna 
-
-                //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego lo que me queda del string--> tamañoTotalStr - posicionAntEnStr*tamanioBloque
-                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioString-posEnString*tamanioBloque);                
-                posEnString ++;    
 
                 //--------------------------ACTUALIZO METADATA---------------------------
                 pthread_mutex_lock(&mutex);
@@ -38,12 +39,15 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
                 config_destroy(metadata);
                 pthread_mutex_unlock(&mutex);
                 
+                //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego lo que me queda del string--> tamañoTotalStr - posicionAntEnStr*tamanioBloque
+                pthread_mutex_lock(&blocks_bitmap);
+                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioString-posEnString*tamanioBloque);                
+                pthread_mutex_unlock(&blocks_bitmap);
+                posEnString ++;    
+
                 cantidadBloquesUsados ++;
             }else{
                 //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego todo el tamaño del bloque
-                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioBloque);
-                posEnString ++;
-
                 //--------------------------ACTUALIZO METADATA---------------------------
                 pthread_mutex_lock(&mutex);
                 t_config* metadata = config_create(path);
@@ -60,6 +64,12 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
                 }
                 config_destroy(metadata); 
                 pthread_mutex_unlock(&mutex);
+                
+                pthread_mutex_lock(&blocks_bitmap);
+                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioBloque);
+                pthread_mutex_unlock(&blocks_bitmap);
+                posEnString ++;
+
 
                 cantidadBloquesUsados ++;
             }
@@ -216,7 +226,9 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso, pthread_mutex
             //Comienzo a pegar nuestro string
             //checkeo si alcanza pegarlo en mi fragmentacion
             if(faltante >= tamStr){
+                pthread_mutex_lock(&blocks_bitmap);
                 memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, tamStr);
+                pthread_mutex_unlock(&blocks_bitmap);
                 pthread_mutex_lock(&mutex);
                 metadata = config_create(path);
                 // log_info(logger, "Se puede guardar dentro de una fragmentacion");
@@ -235,8 +247,9 @@ void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso, pthread_mutex
                     log_error(logger,"Finalizando programa...");
                     exit(-1);
                 }
-
+                pthread_mutex_lock(&blocks_bitmap);
                 memcpy(copiaBlocks + (ultimoBloque * tamanioBloque) + posicion, stringGuardar, faltante);
+                pthread_mutex_unlock(&blocks_bitmap);
                 pthread_mutex_lock(&mutex);
                 metadata = config_create(path);
                 actualizarSize(metadata,faltante,flagEsGuardar);
@@ -296,10 +309,8 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso,pt
 
         if (posicion == tamStrBorrar) {
             // log_info(logger, "El tamanio que hay en el bloque es igual a lo que yo quiero borrar");
-
-            memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', tamanioBloque);
-
-            pthread_mutex_lock(&blocks_bitmap);            
+            pthread_mutex_lock(&blocks_bitmap);
+            memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', tamanioBloque);          
             bitarray_clean_bit(bitmap,bloqueABorrar);
             memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
             pthread_mutex_unlock(&blocks_bitmap);
@@ -319,10 +330,10 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso,pt
         }else if(posicion < tamStrBorrar){ 
             // log_info(logger, "El tamanio que hay en el bloque es menor a lo que yo quiero borrar");
 
+            pthread_mutex_lock(&blocks_bitmap);            
             memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', posicion); //borro esos 5 limpio todo
             tamStrBorrar -= posicion; //nuevo tamanio--> 1
 
-            pthread_mutex_lock(&blocks_bitmap);            
             bitarray_clean_bit(bitmap,bloqueABorrar);
             memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
             pthread_mutex_unlock(&blocks_bitmap);
@@ -339,7 +350,9 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso,pt
 
         }else{
             // princio + el bloque + la posicion a borrar los recursos
+            pthread_mutex_lock(&blocks_bitmap);
             memset(copiaBlocks + (bloqueABorrar*tamanioBloque) + (tamanioBloque - tamStrBorrar),' ', tamStrBorrar);
+            pthread_mutex_unlock(&blocks_bitmap);
             pthread_mutex_lock(&mutex);
             t_config* metadata2 = config_create(path);
             actualizarSize(metadata2, tamStrBorrar, 0);     

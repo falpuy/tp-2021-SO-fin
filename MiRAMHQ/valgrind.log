@@ -1,0 +1,160 @@
+==28328== Memcheck, a memory error detector
+==28328== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==28328== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==28328== Command: ./main
+==28328== Parent PID: 28327
+==28328== 
+--28328-- 
+--28328-- Valgrind options:
+--28328--    --leak-check=full
+--28328--    --show-leak-kinds=all
+--28328--    --track-origins=yes
+--28328--    --log-file=valgrind.log
+--28328--    --verbose
+--28328-- Contents of /proc/version:
+--28328--   Linux version 4.4.0-116-generic (buildd@lgw01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #140-Ubuntu SMP Mon Feb 12 21:22:43 UTC 2018
+--28328-- 
+--28328-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3-lzcnt
+--28328-- Page sizes: currently 4096, max supported 4096
+--28328-- Valgrind library directory: /usr/lib/valgrind
+--28328-- Reading syms from /lib/i386-linux-gnu/ld-2.23.so
+--28328--   Considering /lib/i386-linux-gnu/ld-2.23.so ..
+--28328--   .. CRC mismatch (computed 596cb2b8 wanted 417b32cc)
+--28328--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.23.so ..
+--28328--   .. CRC is valid
+--28328-- Reading syms from /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main
+--28328-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
+--28328--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
+--28328--   .. CRC mismatch (computed 6036da3f wanted 652e483f)
+--28328--    object doesn't have a symbol table
+--28328--    object doesn't have a dynamic symbol table
+--28328-- Scheduler: using generic scheduler lock implementation.
+--28328-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==28328== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-28328-by-utnso-on-???
+==28328== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-28328-by-utnso-on-???
+==28328== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-28328-by-utnso-on-???
+==28328== 
+==28328== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==28328== don't want to do, unless you know exactly what you're doing,
+==28328== or are doing some strange experiment):
+==28328==   /usr/lib/valgrind/../../bin/vgdb --pid=28328 ...command...
+==28328== 
+==28328== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==28328==   /path/to/gdb ./main
+==28328== and then give GDB the following command
+==28328==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=28328
+==28328== --pid is optional if only one valgrind process is running
+==28328== 
+--28328-- REDIR: 0x4018eb0 (ld-linux.so.2:strlen) redirected to 0x380490f2 (???)
+--28328-- REDIR: 0x4018c70 (ld-linux.so.2:index) redirected to 0x380490cd (???)
+--28328-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
+--28328--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
+--28328--   .. CRC mismatch (computed 5b95c0c4 wanted 39e79efa)
+--28328--    object doesn't have a symbol table
+--28328-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
+--28328--   Considering /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so ..
+--28328--   .. CRC mismatch (computed 4d5a1526 wanted 33571d5b)
+--28328--    object doesn't have a symbol table
+==28328== WARNING: new redirection conflicts with existing -- ignoring it
+--28328--     old: 0x04018eb0 (strlen              ) R-> (0000.0) 0x380490f2 ???
+--28328--     new: 0x04018eb0 (strlen              ) R-> (2007.0) 0x0402f410 strlen
+--28328-- Reading syms from /usr/lib/libcommons.so
+--28328-- Reading syms from /usr/lib/libunnamed.so
+--28328-- Reading syms from /usr/lib/libnivel-gui.so
+--28328-- Reading syms from /lib/i386-linux-gnu/libncurses.so.5.9
+--28328--    object doesn't have a symbol table
+--28328-- Reading syms from /lib/i386-linux-gnu/libm-2.23.so
+--28328--   Considering /lib/i386-linux-gnu/libm-2.23.so ..
+--28328--   .. CRC mismatch (computed 9ba663e0 wanted 0c56bc99)
+--28328--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.23.so ..
+--28328--   .. CRC is valid
+--28328-- Reading syms from /lib/i386-linux-gnu/libpthread-2.23.so
+--28328--   Considering /usr/lib/debug/.build-id/12/78da59ecc0791dce5c44d8b8756a0480be3a5b.debug ..
+--28328--   .. build-id is valid
+--28328-- Reading syms from /lib/i386-linux-gnu/libc-2.23.so
+--28328--   Considering /lib/i386-linux-gnu/libc-2.23.so ..
+--28328--   .. CRC mismatch (computed af9c0474 wanted a5de3f2a)
+--28328--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.23.so ..
+--28328--   .. CRC is valid
+--28328-- Reading syms from /lib/i386-linux-gnu/libdl-2.23.so
+--28328--   Considering /lib/i386-linux-gnu/libdl-2.23.so ..
+--28328--   .. CRC mismatch (computed a82b1ac7 wanted 804ba9a9)
+--28328--   Considering /usr/lib/debug/lib/i386-linux-gnu/libdl-2.23.so ..
+--28328--   .. CRC is valid
+--28328-- Reading syms from /lib/i386-linux-gnu/libtinfo.so.5.9
+--28328--    object doesn't have a symbol table
+--28328-- REDIR: 0x41764b0 (libc.so.6:strncasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x417d140 (libc.so.6:memrchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x418fb20 (libc.so.6:wcslen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x4175350 (libc.so.6:strstr) redirected to 0x4033700 (strstr)
+--28328-- REDIR: 0x41747e0 (libc.so.6:__GI_strrchr) redirected to 0x402ee00 (__GI_strrchr)
+--28328-- REDIR: 0x416ff00 (libc.so.6:malloc) redirected to 0x402c110 (malloc)
+--28328-- REDIR: 0x41745c0 (libc.so.6:__GI_strlen) redirected to 0x402f390 (__GI_strlen)
+--28328-- REDIR: 0x4176680 (libc.so.6:__GI_memcpy) redirected to 0x4030fb0 (__GI_memcpy)
+--28328-- REDIR: 0x4170810 (libc.so.6:calloc) redirected to 0x402e010 (calloc)
+--28328-- REDIR: 0x4173d20 (libc.so.6:__GI_strchr) redirected to 0x402ef30 (__GI_strchr)
+--28328-- REDIR: 0x4170520 (libc.so.6:realloc) redirected to 0x402e250 (realloc)
+--28328-- REDIR: 0x4170470 (libc.so.6:free) redirected to 0x402d2f0 (free)
+--28328-- REDIR: 0x4174580 (libc.so.6:strlen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x417d440 (libc.so.6:__strlen_sse2_bsf) redirected to 0x402f370 (strlen)
+--28328-- REDIR: 0x4174700 (libc.so.6:strncmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x42345c0 (libc.so.6:__strncmp_ssse3) redirected to 0x402fab0 (strncmp)
+--28328-- REDIR: 0x4178280 (libc.so.6:strchrnul) redirected to 0x40330b0 (strchrnul)
+--28328-- REDIR: 0x41760d0 (libc.so.6:__GI_mempcpy) redirected to 0x40332c0 (__GI_mempcpy)
+--28328-- REDIR: 0x4173ae0 (libc.so.6:strcat) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x4188b30 (libc.so.6:__strcat_ssse3) redirected to 0x402f030 (strcat)
+--28328-- REDIR: 0x4176610 (libc.so.6:memcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x4226b70 (libc.so.6:__memcpy_ssse3) redirected to 0x4030cc0 (memcpy)
+--28328-- REDIR: 0x4175c10 (libc.so.6:__GI_memcmp) redirected to 0x4031ef0 (__GI_memcmp)
+--28328-- REDIR: 0x41781b0 (libc.so.6:__GI___rawmemchr) redirected to 0x4033110 (__GI___rawmemchr)
+--28328-- REDIR: 0x4175fc0 (libc.so.6:memset) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x42244d0 (libc.so.6:__memset_sse2) redirected to 0x40327d0 (memset)
+--28328-- REDIR: 0x4173ee0 (libc.so.6:strcmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--28328-- REDIR: 0x4233150 (libc.so.6:__strcmp_ssse3) redirected to 0x4030450 (strcmp)
+--28328-- REDIR: 0x4175a30 (libc.so.6:__GI_memchr) redirected to 0x40306d0 (__GI_memchr)
+==28328== Thread 2:
+==28328== Conditional jump or move depends on uninitialised value(s)
+==28328==    at 0x804A872: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==28328==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==28328==    by 0x40E8294: start_thread (pthread_create.c:333)
+==28328==    by 0x41E60AD: clone (clone.S:114)
+==28328==  Uninitialised value was created by a stack allocation
+==28328==    at 0x8049E1E: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==28328== 
+==28328== Conditional jump or move depends on uninitialised value(s)
+==28328==    at 0x804AAAA: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==28328==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==28328==    by 0x40E8294: start_thread (pthread_create.c:333)
+==28328==    by 0x41E60AD: clone (clone.S:114)
+==28328==  Uninitialised value was created by a stack allocation
+==28328==    at 0x8049E1E: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==28328== 
+==28328== 
+==28328== HEAP SUMMARY:
+==28328==     in use at exit: 0 bytes in 0 blocks
+==28328==   total heap usage: 21,213 allocs, 21,213 frees, 6,992,406 bytes allocated
+==28328== 
+==28328== All heap blocks were freed -- no leaks are possible
+==28328== 
+==28328== ERROR SUMMARY: 101 errors from 2 contexts (suppressed: 0 from 0)
+==28328== 
+==28328== 6 errors in context 1 of 2:
+==28328== Conditional jump or move depends on uninitialised value(s)
+==28328==    at 0x804AAAA: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==28328==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==28328==    by 0x40E8294: start_thread (pthread_create.c:333)
+==28328==    by 0x41E60AD: clone (clone.S:114)
+==28328==  Uninitialised value was created by a stack allocation
+==28328==    at 0x8049E1E: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==28328== 
+==28328== 
+==28328== 95 errors in context 2 of 2:
+==28328== Conditional jump or move depends on uninitialised value(s)
+==28328==    at 0x804A872: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==28328==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==28328==    by 0x40E8294: start_thread (pthread_create.c:333)
+==28328==    by 0x41E60AD: clone (clone.S:114)
+==28328==  Uninitialised value was created by a stack allocation
+==28328==    at 0x8049E1E: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==28328== 
+==28328== ERROR SUMMARY: 101 errors from 2 contexts (suppressed: 0 from 0)

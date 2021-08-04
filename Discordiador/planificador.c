@@ -450,7 +450,7 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                     pthread_mutex_unlock(&mutexReady);
                 }
 
-                tripulanteFixer->primerCicloSabotaje = 0;
+                primerCicloSabotaje = 0;
 
                 tripulanteFixer->status = 'M';
                 int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
@@ -484,7 +484,7 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 pthread_mutex_unlock(&mutexBloqEmer);
             }
 
-            else if(tripulanteFixer->primerCicloSabotaje == 0){// SI NO SE COMPLETÓ EL SABOTAJE Y ES EL PRIMER CICLO
+            else if(primerCicloSabotaje == 0){// SI NO SE COMPLETÓ EL SABOTAJE Y ES EL PRIMER CICLO
 
                 log_info(logger, "Se ejecuta ReadyExec->BlockedEmer");
                 list_sort(exec->elements, comparadorTid);
@@ -592,7 +592,7 @@ void funcionhExecReadyaBloqEmer (t_log* logger) {
                 queue_push(ready,(void*) aux_Fixer);
                 pthread_mutex_unlock(&mutexReady);
 
-                tripulanteFixer->primerCicloSabotaje = 1;
+                primerCicloSabotaje = 1;
             }
 
             log_info(logger,"Se ejecutó ReadyExec->BlockedEmer");

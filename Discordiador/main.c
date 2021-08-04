@@ -71,6 +71,7 @@ void setearConfiguraciones (){
 
     sabotaje_terminado = 0;
     contadorCicloCPU = 1;
+    primerCicloSabotaje = 0;
 
     // conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
     // conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);

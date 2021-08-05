@@ -22,7 +22,7 @@
 
     void destruirTCB(void* nodo);
     void destruirPCB(void* nodo);
-
+    void *get_pcb_by_id(t_list * self, int id);
     void funcionTripulante (void* elemento);
 
     void hiloTripulanteYPlaniVivos (void* tcbTrip, void* param);

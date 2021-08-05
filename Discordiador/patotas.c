@@ -839,6 +839,20 @@ void * get_by_id(t_list * self, int id) {
     return NULL;
 }
 
+void *get_pcb_by_id(t_list * self, int id) {
+    t_link_element *element = self->head;
+	t_link_element *aux = NULL;
+	while (element != NULL) {
+		aux = element->next;
+		pcb *nodo = (pcb *) (element->data);
+        if (nodo -> pid == id) {
+            return nodo;
+        }
+		element = aux;
+	}
+    return NULL;
+}
+
 void _signal(int incremento, int valorMax, sem_t* semaforo) {
 
     pthread_mutex_lock(&mutex_contadorSemGlobal);

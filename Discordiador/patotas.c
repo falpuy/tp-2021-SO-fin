@@ -136,6 +136,11 @@ void destruirPCB(void* nodo){
     free(pcbADestruir);
 }
 
+void destruirParametros(void* parametrosDeHilo){
+    parametrosThread* parametrosADestruir = (parametrosThread*) parametrosDeHilo;
+    free(parametrosADestruir);
+}
+
 
 /*---------------------------FUNCION TRIPULANTE (EXEC)----------------------*/
 void funcionTripulante (void* elemento) {
@@ -844,6 +849,8 @@ void iniciar_tcb(void *elemento, int indice_tcb_temporal, t_log *logger) {
         list_add(listaSemaforos, semTripulante);
         parametrosThread* parametrosHilo = malloc (sizeof(parametrosThread));
         parametrosHilo->idSemaforo=indice_tcb_temporal;
+
+        list_add(lista_parametros,parametrosHilo);
 
         pthread_create(&hiloTripulante[parametrosHilo->idSemaforo], NULL, (void *) funcionTripulante, parametrosHilo);
         pthread_detach(hiloTripulante[parametrosHilo->idSemaforo]);

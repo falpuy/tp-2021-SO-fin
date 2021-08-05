@@ -365,9 +365,6 @@ void liberarMemoria(){
     validador = 0;
     pthread_mutex_unlock(&mutexValidador);
 	
-	
-		free(hiloTripulante);
-	
     queue_clean(cola_new);
     queue_clean(ready);
     queue_clean(exec);
@@ -385,6 +382,7 @@ void liberarMemoria(){
     queue_destroy(bloq_emer_sorted);
     queue_destroy(colaContSab);
     list_destroy_and_destroy_elements(listaPCB, destruirPCB);
+    list_destroy_and_destroy_elements(lista_parametros,destruirParametros);
 
   	pthread_mutex_destroy(&mutexNew);
   	pthread_mutex_destroy(&mutexReady);
@@ -417,6 +415,9 @@ void liberarMemoria(){
 
     log_destroy(logger);
   	config_destroy(config);
+    
+    	
+	free(hiloTripulante);
 
     exit(EXIT_SUCCESS);
   	

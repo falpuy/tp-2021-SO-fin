@@ -1,162 +1,581 @@
-==22380== Memcheck, a memory error detector
-==22380== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==22380== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==22380== Command: ./main
-==22380== Parent PID: 22379
-==22380== 
---22380-- 
---22380-- Valgrind options:
---22380--    --leak-check=full
---22380--    --show-leak-kinds=all
---22380--    --track-origins=yes
---22380--    --log-file=valgrind.log
---22380--    --verbose
---22380-- Contents of /proc/version:
---22380--   Linux version 4.4.0-116-generic (buildd@lgw01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #140-Ubuntu SMP Mon Feb 12 21:22:43 UTC 2018
---22380-- 
---22380-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3-lzcnt
---22380-- Page sizes: currently 4096, max supported 4096
---22380-- Valgrind library directory: /usr/lib/valgrind
---22380-- Reading syms from /lib/i386-linux-gnu/ld-2.23.so
---22380--   Considering /lib/i386-linux-gnu/ld-2.23.so ..
---22380--   .. CRC mismatch (computed 596cb2b8 wanted 417b32cc)
---22380--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.23.so ..
---22380--   .. CRC is valid
---22380-- Reading syms from /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main
---22380-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
---22380--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
---22380--   .. CRC mismatch (computed 6036da3f wanted 652e483f)
---22380--    object doesn't have a symbol table
---22380--    object doesn't have a dynamic symbol table
---22380-- Scheduler: using generic scheduler lock implementation.
---22380-- Reading suppressions file: /usr/lib/valgrind/default.supp
-==22380== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-22380-by-utnso-on-???
-==22380== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-22380-by-utnso-on-???
-==22380== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-22380-by-utnso-on-???
-==22380== 
-==22380== TO CONTROL THIS PROCESS USING vgdb (which you probably
-==22380== don't want to do, unless you know exactly what you're doing,
-==22380== or are doing some strange experiment):
-==22380==   /usr/lib/valgrind/../../bin/vgdb --pid=22380 ...command...
-==22380== 
-==22380== TO DEBUG THIS PROCESS USING GDB: start GDB like this
-==22380==   /path/to/gdb ./main
-==22380== and then give GDB the following command
-==22380==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=22380
-==22380== --pid is optional if only one valgrind process is running
-==22380== 
---22380-- REDIR: 0x4018eb0 (ld-linux.so.2:strlen) redirected to 0x380490f2 (???)
---22380-- REDIR: 0x4018c70 (ld-linux.so.2:index) redirected to 0x380490cd (???)
---22380-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
---22380--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
---22380--   .. CRC mismatch (computed 5b95c0c4 wanted 39e79efa)
---22380--    object doesn't have a symbol table
---22380-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
---22380--   Considering /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so ..
---22380--   .. CRC mismatch (computed 4d5a1526 wanted 33571d5b)
---22380--    object doesn't have a symbol table
-==22380== WARNING: new redirection conflicts with existing -- ignoring it
---22380--     old: 0x04018eb0 (strlen              ) R-> (0000.0) 0x380490f2 ???
---22380--     new: 0x04018eb0 (strlen              ) R-> (2007.0) 0x0402f410 strlen
---22380-- Reading syms from /usr/lib/libcommons.so
---22380-- Reading syms from /usr/lib/libunnamed.so
---22380-- Reading syms from /usr/lib/libnivel-gui.so
---22380-- Reading syms from /lib/i386-linux-gnu/libncurses.so.5.9
---22380--    object doesn't have a symbol table
---22380-- Reading syms from /lib/i386-linux-gnu/libm-2.23.so
---22380--   Considering /lib/i386-linux-gnu/libm-2.23.so ..
---22380--   .. CRC mismatch (computed 9ba663e0 wanted 0c56bc99)
---22380--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.23.so ..
---22380--   .. CRC is valid
---22380-- Reading syms from /lib/i386-linux-gnu/libpthread-2.23.so
---22380--   Considering /usr/lib/debug/.build-id/12/78da59ecc0791dce5c44d8b8756a0480be3a5b.debug ..
---22380--   .. build-id is valid
---22380-- Reading syms from /lib/i386-linux-gnu/libc-2.23.so
---22380--   Considering /lib/i386-linux-gnu/libc-2.23.so ..
---22380--   .. CRC mismatch (computed af9c0474 wanted a5de3f2a)
---22380--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.23.so ..
---22380--   .. CRC is valid
---22380-- Reading syms from /lib/i386-linux-gnu/libdl-2.23.so
---22380--   Considering /lib/i386-linux-gnu/libdl-2.23.so ..
---22380--   .. CRC mismatch (computed a82b1ac7 wanted 804ba9a9)
---22380--   Considering /usr/lib/debug/lib/i386-linux-gnu/libdl-2.23.so ..
---22380--   .. CRC is valid
---22380-- Reading syms from /lib/i386-linux-gnu/libtinfo.so.5.9
---22380--    object doesn't have a symbol table
---22380-- REDIR: 0x41764b0 (libc.so.6:strncasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x417d140 (libc.so.6:memrchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x418fb20 (libc.so.6:wcslen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x4175350 (libc.so.6:strstr) redirected to 0x4033700 (strstr)
---22380-- REDIR: 0x41747e0 (libc.so.6:__GI_strrchr) redirected to 0x402ee00 (__GI_strrchr)
---22380-- REDIR: 0x416ff00 (libc.so.6:malloc) redirected to 0x402c110 (malloc)
---22380-- REDIR: 0x41745c0 (libc.so.6:__GI_strlen) redirected to 0x402f390 (__GI_strlen)
---22380-- REDIR: 0x4176680 (libc.so.6:__GI_memcpy) redirected to 0x4030fb0 (__GI_memcpy)
---22380-- REDIR: 0x4170810 (libc.so.6:calloc) redirected to 0x402e010 (calloc)
---22380-- REDIR: 0x4173d20 (libc.so.6:__GI_strchr) redirected to 0x402ef30 (__GI_strchr)
---22380-- REDIR: 0x4170520 (libc.so.6:realloc) redirected to 0x402e250 (realloc)
---22380-- REDIR: 0x4170470 (libc.so.6:free) redirected to 0x402d2f0 (free)
---22380-- REDIR: 0x4174580 (libc.so.6:strlen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x417d440 (libc.so.6:__strlen_sse2_bsf) redirected to 0x402f370 (strlen)
---22380-- REDIR: 0x4174700 (libc.so.6:strncmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x42345c0 (libc.so.6:__strncmp_ssse3) redirected to 0x402fab0 (strncmp)
---22380-- REDIR: 0x4178280 (libc.so.6:strchrnul) redirected to 0x40330b0 (strchrnul)
---22380-- REDIR: 0x41760d0 (libc.so.6:__GI_mempcpy) redirected to 0x40332c0 (__GI_mempcpy)
---22380-- REDIR: 0x4173ae0 (libc.so.6:strcat) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x4188b30 (libc.so.6:__strcat_ssse3) redirected to 0x402f030 (strcat)
---22380-- REDIR: 0x4176610 (libc.so.6:memcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x4226b70 (libc.so.6:__memcpy_ssse3) redirected to 0x4030cc0 (memcpy)
---22380-- REDIR: 0x4175c10 (libc.so.6:__GI_memcmp) redirected to 0x4031ef0 (__GI_memcmp)
---22380-- REDIR: 0x41781b0 (libc.so.6:__GI___rawmemchr) redirected to 0x4033110 (__GI___rawmemchr)
---22380-- REDIR: 0x4175fc0 (libc.so.6:memset) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x42244d0 (libc.so.6:__memset_sse2) redirected to 0x40327d0 (memset)
---22380-- REDIR: 0x4173ee0 (libc.so.6:strcmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
---22380-- REDIR: 0x4233150 (libc.so.6:__strcmp_ssse3) redirected to 0x4030450 (strcmp)
---22380-- REDIR: 0x4175a30 (libc.so.6:__GI_memchr) redirected to 0x40306d0 (__GI_memchr)
-==22380== Thread 2:
-==22380== Conditional jump or move depends on uninitialised value(s)
-==22380==    at 0x804A872: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
-==22380==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
-==22380==    by 0x40E8294: start_thread (pthread_create.c:333)
-==22380==    by 0x41E60AD: clone (clone.S:114)
-==22380==  Uninitialised value was created by a stack allocation
-==22380==    at 0x8049E1E: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
-==22380== 
-==22380== Thread 3:
-==22380== Conditional jump or move depends on uninitialised value(s)
-==22380==    at 0x804AAAA: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
-==22380==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
-==22380==    by 0x40E8294: start_thread (pthread_create.c:333)
-==22380==    by 0x41E60AD: clone (clone.S:114)
-==22380==  Uninitialised value was created by a stack allocation
-==22380==    at 0x8049E1E: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
-==22380== 
-==22380== 
-==22380== HEAP SUMMARY:
-==22380==     in use at exit: 0 bytes in 0 blocks
-==22380==   total heap usage: 30,784 allocs, 30,784 frees, 6,280,047 bytes allocated
-==22380== 
-==22380== All heap blocks were freed -- no leaks are possible
-==22380== 
-==22380== ERROR SUMMARY: 130 errors from 2 contexts (suppressed: 0 from 0)
-==22380== 
-==22380== 62 errors in context 1 of 2:
-==22380== Conditional jump or move depends on uninitialised value(s)
-==22380==    at 0x804AAAA: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
-==22380==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
-==22380==    by 0x40E8294: start_thread (pthread_create.c:333)
-==22380==    by 0x41E60AD: clone (clone.S:114)
-==22380==  Uninitialised value was created by a stack allocation
-==22380==    at 0x8049E1E: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
-==22380== 
-==22380== 
-==22380== 68 errors in context 2 of 2:
-==22380== Thread 2:
-==22380== Conditional jump or move depends on uninitialised value(s)
-==22380==    at 0x804A872: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
-==22380==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
-==22380==    by 0x40E8294: start_thread (pthread_create.c:333)
-==22380==    by 0x41E60AD: clone (clone.S:114)
-==22380==  Uninitialised value was created by a stack allocation
-==22380==    at 0x8049E1E: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
-==22380== 
-==22380== ERROR SUMMARY: 130 errors from 2 contexts (suppressed: 0 from 0)
+==25497== Memcheck, a memory error detector
+==25497== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==25497== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==25497== Command: ./main
+==25497== Parent PID: 25496
+==25497== 
+--25497-- 
+--25497-- Valgrind options:
+--25497--    --leak-check=full
+--25497--    --show-leak-kinds=all
+--25497--    --track-origins=yes
+--25497--    --log-file=valgrind.log
+--25497--    --verbose
+--25497-- Contents of /proc/version:
+--25497--   Linux version 4.4.0-116-generic (buildd@lgw01-amd64-023) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #140-Ubuntu SMP Mon Feb 12 21:22:43 UTC 2018
+--25497-- 
+--25497-- Arch and hwcaps: X86, LittleEndian, x86-mmxext-sse1-sse2-sse3-lzcnt
+--25497-- Page sizes: currently 4096, max supported 4096
+--25497-- Valgrind library directory: /usr/lib/valgrind
+--25497-- Reading syms from /lib/i386-linux-gnu/ld-2.23.so
+--25497--   Considering /lib/i386-linux-gnu/ld-2.23.so ..
+--25497--   .. CRC mismatch (computed 596cb2b8 wanted 417b32cc)
+--25497--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.23.so ..
+--25497--   .. CRC is valid
+--25497-- Reading syms from /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main
+--25497-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux
+--25497--   Considering /usr/lib/valgrind/memcheck-x86-linux ..
+--25497--   .. CRC mismatch (computed 6036da3f wanted 652e483f)
+--25497--    object doesn't have a symbol table
+--25497--    object doesn't have a dynamic symbol table
+--25497-- Scheduler: using generic scheduler lock implementation.
+--25497-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==25497== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-25497-by-utnso-on-???
+==25497== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-25497-by-utnso-on-???
+==25497== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-25497-by-utnso-on-???
+==25497== 
+==25497== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==25497== don't want to do, unless you know exactly what you're doing,
+==25497== or are doing some strange experiment):
+==25497==   /usr/lib/valgrind/../../bin/vgdb --pid=25497 ...command...
+==25497== 
+==25497== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==25497==   /path/to/gdb ./main
+==25497== and then give GDB the following command
+==25497==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=25497
+==25497== --pid is optional if only one valgrind process is running
+==25497== 
+--25497-- REDIR: 0x4018eb0 (ld-linux.so.2:strlen) redirected to 0x380490f2 (???)
+--25497-- REDIR: 0x4018c70 (ld-linux.so.2:index) redirected to 0x380490cd (???)
+--25497-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so
+--25497--   Considering /usr/lib/valgrind/vgpreload_core-x86-linux.so ..
+--25497--   .. CRC mismatch (computed 5b95c0c4 wanted 39e79efa)
+--25497--    object doesn't have a symbol table
+--25497-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so
+--25497--   Considering /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so ..
+--25497--   .. CRC mismatch (computed 4d5a1526 wanted 33571d5b)
+--25497--    object doesn't have a symbol table
+==25497== WARNING: new redirection conflicts with existing -- ignoring it
+--25497--     old: 0x04018eb0 (strlen              ) R-> (0000.0) 0x380490f2 ???
+--25497--     new: 0x04018eb0 (strlen              ) R-> (2007.0) 0x0402f410 strlen
+--25497-- Reading syms from /usr/lib/libcommons.so
+--25497-- Reading syms from /usr/lib/libunnamed.so
+--25497-- Reading syms from /usr/lib/libnivel-gui.so
+--25497-- Reading syms from /lib/i386-linux-gnu/libncurses.so.5.9
+--25497--    object doesn't have a symbol table
+--25497-- Reading syms from /lib/i386-linux-gnu/libm-2.23.so
+--25497--   Considering /lib/i386-linux-gnu/libm-2.23.so ..
+--25497--   .. CRC mismatch (computed 9ba663e0 wanted 0c56bc99)
+--25497--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.23.so ..
+--25497--   .. CRC is valid
+--25497-- Reading syms from /lib/i386-linux-gnu/libpthread-2.23.so
+--25497--   Considering /usr/lib/debug/.build-id/12/78da59ecc0791dce5c44d8b8756a0480be3a5b.debug ..
+--25497--   .. build-id is valid
+--25497-- Reading syms from /lib/i386-linux-gnu/libc-2.23.so
+--25497--   Considering /lib/i386-linux-gnu/libc-2.23.so ..
+--25497--   .. CRC mismatch (computed af9c0474 wanted a5de3f2a)
+--25497--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.23.so ..
+--25497--   .. CRC is valid
+--25497-- Reading syms from /lib/i386-linux-gnu/libdl-2.23.so
+--25497--   Considering /lib/i386-linux-gnu/libdl-2.23.so ..
+--25497--   .. CRC mismatch (computed a82b1ac7 wanted 804ba9a9)
+--25497--   Considering /usr/lib/debug/lib/i386-linux-gnu/libdl-2.23.so ..
+--25497--   .. CRC is valid
+--25497-- Reading syms from /lib/i386-linux-gnu/libtinfo.so.5.9
+--25497--    object doesn't have a symbol table
+--25497-- REDIR: 0x41764b0 (libc.so.6:strncasecmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x417d140 (libc.so.6:memrchr) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x418fb20 (libc.so.6:wcslen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x4175350 (libc.so.6:strstr) redirected to 0x4033700 (strstr)
+--25497-- REDIR: 0x41747e0 (libc.so.6:__GI_strrchr) redirected to 0x402ee00 (__GI_strrchr)
+--25497-- REDIR: 0x416ff00 (libc.so.6:malloc) redirected to 0x402c110 (malloc)
+--25497-- REDIR: 0x41745c0 (libc.so.6:__GI_strlen) redirected to 0x402f390 (__GI_strlen)
+--25497-- REDIR: 0x4176680 (libc.so.6:__GI_memcpy) redirected to 0x4030fb0 (__GI_memcpy)
+--25497-- REDIR: 0x4170810 (libc.so.6:calloc) redirected to 0x402e010 (calloc)
+--25497-- REDIR: 0x4173d20 (libc.so.6:__GI_strchr) redirected to 0x402ef30 (__GI_strchr)
+--25497-- REDIR: 0x4170520 (libc.so.6:realloc) redirected to 0x402e250 (realloc)
+--25497-- REDIR: 0x4170470 (libc.so.6:free) redirected to 0x402d2f0 (free)
+--25497-- REDIR: 0x4174580 (libc.so.6:strlen) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x417d440 (libc.so.6:__strlen_sse2_bsf) redirected to 0x402f370 (strlen)
+--25497-- REDIR: 0x4174700 (libc.so.6:strncmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x42345c0 (libc.so.6:__strncmp_ssse3) redirected to 0x402fab0 (strncmp)
+--25497-- REDIR: 0x4178280 (libc.so.6:strchrnul) redirected to 0x40330b0 (strchrnul)
+--25497-- REDIR: 0x41760d0 (libc.so.6:__GI_mempcpy) redirected to 0x40332c0 (__GI_mempcpy)
+--25497-- REDIR: 0x4173ae0 (libc.so.6:strcat) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x4188b30 (libc.so.6:__strcat_ssse3) redirected to 0x402f030 (strcat)
+--25497-- REDIR: 0x4176610 (libc.so.6:memcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x4226b70 (libc.so.6:__memcpy_ssse3) redirected to 0x4030cc0 (memcpy)
+--25497-- REDIR: 0x4175c10 (libc.so.6:__GI_memcmp) redirected to 0x4031ef0 (__GI_memcmp)
+--25497-- REDIR: 0x41781b0 (libc.so.6:__GI___rawmemchr) redirected to 0x4033110 (__GI___rawmemchr)
+--25497-- REDIR: 0x4175fc0 (libc.so.6:memset) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x42244d0 (libc.so.6:__memset_sse2) redirected to 0x40327d0 (memset)
+--25497-- REDIR: 0x4173ee0 (libc.so.6:strcmp) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x4233150 (libc.so.6:__strcmp_ssse3) redirected to 0x4030450 (strcmp)
+--25497-- REDIR: 0x417d380 (libc.so.6:__GI_strncmp) redirected to 0x402fb40 (__GI_strncmp)
+--25497-- REDIR: 0x418f100 (libc.so.6:__GI_strnlen) redirected to 0x402f330 (__GI_strnlen)
+--25497-- REDIR: 0x41747a0 (libc.so.6:rindex) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x418e530 (libc.so.6:__strrchr_sse2_bsf) redirected to 0x402edd0 (rindex)
+--25497-- REDIR: 0x4173ce0 (libc.so.6:index) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x418e420 (libc.so.6:__strchr_sse2_bsf) redirected to 0x402eff0 (index)
+--25497-- REDIR: 0x4173f90 (libc.so.6:strcpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x417d570 (libc.so.6:__strcpy_ssse3) redirected to 0x402f450 (strcpy)
+--25497-- REDIR: 0x41f3c90 (libc.so.6:__memcpy_chk) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x4226b60 (libc.so.6:__memcpy_chk_ssse3) redirected to 0x4033600 (__memcpy_chk)
+--25497-- REDIR: 0x4174750 (libc.so.6:strncpy) redirected to 0x4026560 (_vgnU_ifunc_wrapper)
+--25497-- REDIR: 0x417edc0 (libc.so.6:__strncpy_ssse3) redirected to 0x402f5f0 (strncpy)
+--25497-- REDIR: 0x4175a30 (libc.so.6:__GI_memchr) redirected to 0x40306d0 (__GI_memchr)
+==25497== Thread 2:
+==25497== Conditional jump or move depends on uninitialised value(s)
+==25497==    at 0x804A98D: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==25497==    by 0x40E8294: start_thread (pthread_create.c:333)
+==25497==    by 0x41E60AD: clone (clone.S:114)
+==25497==  Uninitialised value was created by a stack allocation
+==25497==    at 0x8049EFF: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== Conditional jump or move depends on uninitialised value(s)
+==25497==    at 0x804ABC5: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==25497==    by 0x40E8294: start_thread (pthread_create.c:333)
+==25497==    by 0x41E60AD: clone (clone.S:114)
+==25497==  Uninitialised value was created by a stack allocation
+==25497==    at 0x8049EFF: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 
+==25497== HEAP SUMMARY:
+==25497==     in use at exit: 27,705 bytes in 297 blocks
+==25497==   total heap usage: 24,807 allocs, 24,510 frees, 5,972,453 bytes allocated
+==25497== 
+==25497== Searching for pointers to 297 not-freed blocks
+==25497== Checked 128,132 bytes
+==25497== 
+==25497== Thread 1:
+==25497== 4 bytes in 1 blocks are still reachable in loss record 1 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x4078466: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 6 bytes in 1 blocks are still reachable in loss record 2 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x41742C5: strdup (strdup.c:42)
+==25497==    by 0x42C5010: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 12 bytes in 1 blocks are still reachable in loss record 3 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x41742C5: strdup (strdup.c:42)
+==25497==    by 0x42C1D9F: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C20B4: _nc_first_db (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA909: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 12 bytes in 1 blocks are still reachable in loss record 4 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C0356: _nc_add_to_try (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C29EC: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C19: _nc_keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C67: keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4061FA2: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 24 bytes in 1 blocks are still reachable in loss record 5 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C2923: _nc_home_terminfo (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C20A0: _nc_first_db (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA909: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 24 bytes in 1 blocks are still reachable in loss record 6 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C21DB: _nc_first_db (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA909: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 46 bytes in 1 blocks are still reachable in loss record 7 of 37
+==25497==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C2572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA3C5: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 66 bytes in 1 blocks are still reachable in loss record 8 of 37
+==25497==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C2572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C69AD: tparm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075318: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075C32: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 76 bytes in 1 blocks are still reachable in loss record 9 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C2593: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x406AA59: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x408001C: doupdate (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407744D: wrefresh (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4062098: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 76 bytes in 1 blocks are still reachable in loss record 10 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x406B6A5: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x406A9A9: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x408001C: doupdate (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407744D: wrefresh (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4062098: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 76 bytes in 1 blocks are still reachable in loss record 11 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x406B7DE: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x406A9A9: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x408001C: doupdate (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407744D: wrefresh (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4062098: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 78 bytes in 1 blocks are still reachable in loss record 12 of 37
+==25497==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C2572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA3E4: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 84 bytes in 1 blocks are still reachable in loss record 13 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x407614F: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x40763E9: newwin (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4078823: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 84 bytes in 1 blocks are still reachable in loss record 14 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x407614F: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x40763E9: newwin (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4078842: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 93 bytes in 1 blocks are still reachable in loss record 15 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C212A: _nc_first_db (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA909: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 112 bytes in 1 blocks are still reachable in loss record 16 of 37
+==25497==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C2572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C613E: _nc_tparm_analyze (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C6302: tparm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x407A831: vidputs (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407D82C: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407E202: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407E752: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407FA49: doupdate (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407744D: wrefresh (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4062028: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 128 bytes in 1 blocks are still reachable in loss record 17 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x4078439: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 128 bytes in 1 blocks are still reachable in loss record 18 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x406DC75: start_color (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061FAF: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 172 bytes in 1 blocks are still reachable in loss record 19 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C4FA0: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 228 bytes in 1 blocks are still reachable in loss record 20 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x407616E: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x40763E9: newwin (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4078823: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 228 bytes in 1 blocks are still reachable in loss record 21 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x407616E: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x40763E9: newwin (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4078842: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 252 bytes in 21 blocks are still reachable in loss record 22 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C027C: _nc_add_to_try (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C2A8D: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C19: _nc_keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C67: keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4061FA2: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 256 bytes in 1 blocks are still reachable in loss record 23 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42CA523: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 324 bytes in 1 blocks are still reachable in loss record 24 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x406DC57: start_color (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061FAF: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 512 bytes in 1 blocks are still reachable in loss record 25 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x4078419: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 600 bytes in 50 blocks are still reachable in loss record 26 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C02DC: _nc_add_to_try (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C2A8D: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C19: _nc_keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C67: keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4061FA2: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 751 bytes in 1 blocks are still reachable in loss record 27 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42CA5EB: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 800 bytes in 1 blocks are still reachable in loss record 28 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x406B368: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x406A9A9: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x408001C: doupdate (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x407744D: wrefresh (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4062098: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 840 bytes in 70 blocks are still reachable in loss record 29 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C027C: _nc_add_to_try (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C29EC: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C19: _nc_keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C67: keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4061FA2: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 1,044 bytes in 87 blocks are still reachable in loss record 30 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C02DC: _nc_add_to_try (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C29EC: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C19: _nc_keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C3C67: keypad (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4061FA2: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 1,336 bytes in 1 blocks are still reachable in loss record 31 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x40783F1: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 1,439 bytes in 1 blocks are still reachable in loss record 32 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C9E3B: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 1,578 bytes in 1 blocks are still reachable in loss record 33 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C2593: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x407B593: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4076F7B: vwprintw (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4076FD7: printw (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x406228C: nivel_gui_dibujar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x80505BB: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 1,848 bytes in 1 blocks are still reachable in loss record 34 of 37
+==25497==    at 0x402C17C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x4078528: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 1,904 bytes in 1 blocks are still reachable in loss record 35 of 37
+==25497==    at 0x402E2CC: realloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x42C2572: _nc_doalloc (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA404: _nc_read_termtype (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA7A7: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42CA993: _nc_read_entry (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4C4A: ??? (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x42C4FB7: _nc_setupterm (in /lib/i386-linux-gnu/libtinfo.so.5.9)
+==25497==    by 0x4075A4E: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 6,232 bytes in 19 blocks are still reachable in loss record 36 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x4076422: newwin (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4078823: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 6,232 bytes in 19 blocks are still reachable in loss record 37 of 37
+==25497==    at 0x402E0B8: calloc (in /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so)
+==25497==    by 0x4076422: newwin (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4078842: ??? (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4075A93: newterm (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4072130: initscr (in /lib/i386-linux-gnu/libncurses.so.5.9)
+==25497==    by 0x4061F89: nivel_gui_inicializar (in /usr/lib/libnivel-gui.so)
+==25497==    by 0x8050598: create_map (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x8049A97: main (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== LEAK SUMMARY:
+==25497==    definitely lost: 0 bytes in 0 blocks
+==25497==    indirectly lost: 0 bytes in 0 blocks
+==25497==      possibly lost: 0 bytes in 0 blocks
+==25497==    still reachable: 27,705 bytes in 297 blocks
+==25497==         suppressed: 0 bytes in 0 blocks
+==25497== 
+==25497== ERROR SUMMARY: 126 errors from 2 contexts (suppressed: 0 from 0)
+==25497== 
+==25497== 62 errors in context 1 of 2:
+==25497== Thread 2:
+==25497== Conditional jump or move depends on uninitialised value(s)
+==25497==    at 0x804ABC5: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==25497==    by 0x40E8294: start_thread (pthread_create.c:333)
+==25497==    by 0x41E60AD: clone (clone.S:114)
+==25497==  Uninitialised value was created by a stack allocation
+==25497==    at 0x8049EFF: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== 
+==25497== 64 errors in context 2 of 2:
+==25497== Conditional jump or move depends on uninitialised value(s)
+==25497==    at 0x804A98D: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497==    by 0x405DB85: _thread_function (in /usr/lib/libunnamed.so)
+==25497==    by 0x40E8294: start_thread (pthread_create.c:333)
+==25497==    by 0x41E60AD: clone (clone.S:114)
+==25497==  Uninitialised value was created by a stack allocation
+==25497==    at 0x8049EFF: segmentation_handler (in /home/utnso/shared/tp-2021-1c-Unnamed-Group/MiRAMHQ/main)
+==25497== 
+==25497== ERROR SUMMARY: 126 errors from 2 contexts (suppressed: 0 from 0)

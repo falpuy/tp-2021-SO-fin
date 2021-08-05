@@ -139,14 +139,15 @@ void destruirPCB(void* nodo){
 
 /*---------------------------FUNCION TRIPULANTE (EXEC)----------------------*/
 void funcionTripulante (void* elemento) {
-    parametrosThread* param = (parametrosThread*) elemento;
-    tcb *tcbTripulante;
 
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
 
     while(temp_validador){// MIENTRAS ESTÉ EN FUNCIONAMIENTO EL PROCESO
+
+        parametrosThread* param = (parametrosThread*) elemento;
+        tcb *tcbTripulante;
 
         sem_t* semaforo = list_get(listaSemaforos,param->idSemaforo);
         sem_wait(semaforo);
@@ -158,6 +159,10 @@ void funcionTripulante (void* elemento) {
         if(tcbTripulante && tcbTripulante->estaVivoElHilo && planificacion_viva && tcbTripulante->cicloCPUCumplido==0){
             hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param);
             tcbTripulante->cicloCPUCumplido=1;
+        }
+        if(tcbTripulante->estaVivoElHilo == 0){
+            free(param);
+            temp_validador=0;
         }
         
         sleep(ciclo_CPU);

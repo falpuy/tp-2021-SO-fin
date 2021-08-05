@@ -135,6 +135,31 @@ void funcionConsola(){
                             free(mensajeRecibido->identifier);
                             free(mensajeRecibido->payload);
                             free(mensajeRecibido);
+
+                            pcb *pcbEliminado = get_pcb_by_id(listaPCB, tcbTripulante -> pid);
+
+                            int todosTerminaron = list_iterate_todos_terminaron(pcbEliminado->listaTCB);
+
+                            if(todosTerminaron > 0){
+                                
+                                //pthread_mutex_lock(&mutexBuffer);
+                                void* buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
+                                int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+                                _send_message(conexion_RAM, "DIS", ELIMINAR_PATOTA, buffer, sizeof(int), logger);
+                                free(buffer);
+                                t_mensaje *mensajeRecibido = _receive_message(conexion_RAM, logger);
+                                close(conexion_RAM);
+                                //pthread_mutex_unlock(&mutexBuffer);
+
+                                if (mensajeRecibido->command == SUCCESS) {
+                                    log_info(logger, "Se eliminaron todos los tcb de la patota: %d en RAM", pcbEliminado->pid);
+                                    pcbEliminado->todosLosTCBsTerminaron = 1;
+                                }
+
+                                free(mensajeRecibido->identifier);
+                                free(mensajeRecibido->payload);
+                                free(mensajeRecibido);
+                            }
                         }
 
                         else{
@@ -339,7 +364,7 @@ void liberarMemoria(){
     pthread_mutex_lock(&mutexValidador);
     validador = 0;
     pthread_mutex_unlock(&mutexValidador);
-
+	
     queue_clean(cola_new);
     queue_clean(ready);
     queue_clean(exec);
@@ -357,6 +382,7 @@ void liberarMemoria(){
     queue_destroy(bloq_emer_sorted);
     queue_destroy(colaContSab);
     list_destroy_and_destroy_elements(listaPCB, destruirPCB);
+    list_destroy_and_destroy_elements(lista_parametros,destruirParametros);
 
   	pthread_mutex_destroy(&mutexNew);
   	pthread_mutex_destroy(&mutexReady);
@@ -389,6 +415,9 @@ void liberarMemoria(){
 
     log_destroy(logger);
   	config_destroy(config);
+    
+    	
+	free(hiloTripulante);
 
     exit(EXIT_SUCCESS);
   	

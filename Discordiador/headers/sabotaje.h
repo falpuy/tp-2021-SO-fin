@@ -176,6 +176,7 @@
     t_queue* cola_exit;
     t_queue* colaContSab;
 
+    t_list* lista_parametros;
     t_list* listaPCB;
     t_list* listaSemaforos;
 

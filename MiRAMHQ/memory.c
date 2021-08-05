@@ -195,7 +195,8 @@ uint32_t get_frame() {
                 replacing_frame -> number = i;
                 replacing_frame -> start = i * page_size;
                 replacing_frame -> presence = 0;
-                replacing_frame -> time = timer++;
+                // replacing_frame -> time = timer++;
+                // replacing_frame -> modified = 1;
                 // devuelvo el bit qe unsetie
                 // // printf("Devuelvo: %d\n", value);
                 return value;
@@ -334,8 +335,8 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
         temp_off += sizeof(uint32_t);
         // offset += sizeof(uint32_t);
 
-        // personaje_crear(nivel, tid, xpos, ypos);
-        // nivel_gui_dibujar(nivel);
+        personaje_crear(nivel, tid, xpos, ypos);
+        nivel_gui_dibujar(nivel);
     }
 
     // ---------------- GUARDO FRAMES ---------------- //
@@ -356,6 +357,7 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
             frame -> time = timer++;
+            frame -> modified = 1;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -366,18 +368,18 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
             page -> number = pnumber++;
             page -> frame = frame;
 
-            if (bytes_left < page_size) {
+            // if (bytes_left < page_size) {
                 // copio bytes_left
-                pthread_mutex_lock(&m_memoria);
-                memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
-                pthread_mutex_unlock(&m_memoria);
-            } else {
-                // copio page_size
-                pthread_mutex_lock(&m_memoria);
-                memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
-                pthread_mutex_unlock(&m_memoria);
-                bytes_left -= page_size;
-            }
+            pthread_mutex_lock(&m_memoria);
+            memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
+            pthread_mutex_unlock(&m_memoria);
+            // } else {
+            //     // copio page_size
+            //     pthread_mutex_lock(&m_memoria);
+            //     memcpy(memory + (n_frame * page_size), temp + (j * page_size), page_size);
+            //     pthread_mutex_unlock(&m_memoria);
+            //     bytes_left -= page_size;
+            // }
 
             queue_push(tabla, page);
             // Agrego tabla al diccionario
@@ -453,6 +455,7 @@ void update_task_from_page(void *memory, t_dictionary *admin_collection, t_dicti
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
 
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
@@ -475,6 +478,7 @@ void update_task_from_page(void *memory, t_dictionary *admin_collection, t_dicti
 
             // Creo frame
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
             page_aux -> frame -> number = new_frame;
             page_aux -> frame -> start = new_frame * page_size;
             page_aux -> frame -> modified = 1;
@@ -557,6 +561,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
 
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
@@ -580,6 +585,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
             // Creo frame
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
             page_aux -> frame -> number = new_frame;
             page_aux -> frame -> start = new_frame * page_size;
             page_aux -> frame -> modified = 1;
@@ -629,6 +635,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
                 memcpy(tareas, memory + (page2 -> frame) -> start, page_size);
                 pthread_mutex_unlock(&m_memoria);
                 page2 -> frame -> time = timer++;
+                page2 -> frame -> modified = 1;
                 
             } else {
                 pthread_mutex_lock(&m_virtual);
@@ -649,6 +656,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
                 // Creo frame
                 page2 -> frame -> time = timer++;
+                page2 -> frame -> modified = 1;
                 page2 -> frame -> number = new_frame;
                 page2 -> frame -> start = new_frame * page_size;
                 page2 -> frame -> modified = 1;
@@ -678,6 +686,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
                     memcpy(tareas + page_size, memory + (page2 -> frame) -> start, page_size);
                     pthread_mutex_unlock(&m_memoria);
                     page2 -> frame -> time = timer++;
+                    page2 -> frame -> modified = 1;
                     
                     // unset_bitmap(bitmap, (page2 -> frame) -> number);
                 } else {
@@ -701,6 +710,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
                     // Creo frame
                     page2 -> frame -> time = timer++;
+                    page2 -> frame -> modified = 1;
                     page2 -> frame -> number = new_frame;
                     page2 -> frame -> start = new_frame * page_size;
                     page2 -> frame -> modified = 1;
@@ -770,6 +780,7 @@ int remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_diction
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
             unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
             // printf("SWAP PAGE\n");
@@ -833,6 +844,7 @@ int remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_diction
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
             frame -> time = timer++;
+            frame -> modified = 1;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -856,6 +868,7 @@ int remove_tcb_from_page(void *memory, t_dictionary *admin_collection, t_diction
             // Creo frame
             frame_t *frame = malloc(sizeof(frame_t));
             frame -> time = timer++;
+            frame -> modified = 1;
             frame -> number = n_frame;
             frame -> start = n_frame * page_size;
             frame -> modified = 1;
@@ -898,7 +911,19 @@ void remove_pcb_from_page(void *memory, t_dictionary *admin_collection, t_dictio
     while(queue_size(self) > 0) {
         page_aux = queue_pop(self);
 
-        unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        if (! (page_aux ->frame) -> presence) {
+            int new_frame = get_frame();
+            page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
+            page_aux -> frame -> number = new_frame;
+            page_aux -> frame -> start = new_frame * page_size;
+            page_aux -> frame -> modified = 1;
+            page_aux -> frame -> presence = 1;
+
+            unset_bitmap(bitmap, new_frame);
+        } else {
+            unset_bitmap(bitmap, (page_aux -> frame) -> number);
+        }
 
         free(page_aux -> frame);
         free(page_aux);
@@ -937,6 +962,7 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
 
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
@@ -959,6 +985,7 @@ void update_position_from_page(void *memory, t_dictionary *admin_collection, t_d
 
             // Creo frame
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
             page_aux -> frame -> number = new_frame;
             page_aux -> frame -> start = new_frame * page_size;
             page_aux -> frame -> modified = 1;
@@ -1037,6 +1064,7 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
             memcpy(temp + (off * page_size), memory + (page_aux -> frame) -> start, page_size);
             pthread_mutex_unlock(&m_memoria);
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
 
             // unset_bitmap(bitmap, (page_aux -> frame) -> number);
         } else {
@@ -1059,6 +1087,7 @@ void update_status_from_page(void *memory, t_dictionary *admin_collection, t_dic
 
             // Creo frame
             page_aux -> frame -> time = timer++;
+            page_aux -> frame -> modified = 1;
             page_aux -> frame -> number = new_frame;
             page_aux -> frame -> start = new_frame * page_size;
             page_aux -> frame -> modified = 1;
@@ -1555,7 +1584,7 @@ bool list_sorter(void *a, void *b) {
     segment *aux = (segment *) a;
     segment *temp = (segment *) b;
 
-    return aux -> baseAddr < temp -> baseAddr;
+    return aux -> limit - aux -> baseAddr <= temp -> limit - temp -> baseAddr;
 }
 
 int memory_best_fit(void *admin, int mem_size, t_dictionary *collection, int total_size) {
@@ -2181,6 +2210,7 @@ int get_page_number(t_dictionary *self, uint32_t frame) {
                     pthread_mutex_unlock(&m_global_process);
                     pthread_mutex_lock(&m_global_page);
                     global_page = index;
+                    global_time = (page -> frame) -> time;
                     pthread_mutex_unlock(&m_global_page);
                     return 1;
                 }

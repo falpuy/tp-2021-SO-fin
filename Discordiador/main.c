@@ -34,6 +34,8 @@ void setearConfiguraciones (){
     ciclo_CPU = config_get_int_value (config, "RETARDO_CICLO_CPU");
     puerto_DIS = config_get_string_value(config, "PUERTO_DISCORDIADOR");
 
+    lista_parametros = list_create();
+
     pthread_mutex_init(&mutex_cantidadVieja, NULL);
     pthread_mutex_init(&mutex_cantidadActual, NULL);
     pthread_mutex_init(&mutexValidador, NULL);

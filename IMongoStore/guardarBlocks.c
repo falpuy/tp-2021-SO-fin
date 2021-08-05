@@ -61,14 +61,14 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
         }
     }
 
-    int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
-        
+    int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8); 
     if (err == -1){
         log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
     }
     bitarray_destroy(bitmap);
     free(memBitmap);
     free(pathSuperBloque);
+    close(superBloque);
 }
 
 void    guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){ 
@@ -295,6 +295,7 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso){
             bitarray_destroy(bitmap);
             free(memBitmap);
             free(pathSuperBloque);
+            close(superBloque);
             // memcpy(sb_memoria+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
 
             metadata = config_create(path);
@@ -328,6 +329,7 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso){
             bitarray_destroy(bitmap);
             free(memBitmap);
             free(pathSuperBloque);
+            close(superBloque);
             // memcpy(sb_memoria+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
 
             metadata = config_create(path);

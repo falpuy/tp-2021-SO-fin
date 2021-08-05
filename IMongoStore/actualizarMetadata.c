@@ -292,6 +292,7 @@ int validarBitsLibre(int cantidadBloquesAUsar){
     bitarray_destroy(bitmap);
     free(memBitmap);
     free(pathSuperBloque);
+    close(superBloque);
     return -1;
 }
 

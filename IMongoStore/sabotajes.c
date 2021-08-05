@@ -43,12 +43,11 @@ void validacionFiles(){
 
 void validarCantidadBloques(){
     log_info(logger,"---------------------------------------------------------");
-    // int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
-    // void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
+    int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+    sb_memoria = mmap(NULL, sizeof(uint32_t)*2, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
     
     uint32_t cantidadBloquesDisco;
     memcpy(&cantidadBloquesDisco, sb_memoria + sizeof(uint32_t), sizeof(uint32_t));
-    // munmap(superBloqueTemp,sizeof(uint32_t)*2);
 
     int sizeBlocks;    
     struct stat st;
@@ -69,7 +68,8 @@ void validarCantidadBloques(){
         msync(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8, MS_SYNC);
         log_info(logger, "Finalizó reparación de cantidadBloques");
     }
-    // close(archSB);
+    close(archSB);
+    munmap(sb_memoria,sizeof(uint32_t)*2);
     log_info(logger,"---------------------------------------------------------");
     
 }
@@ -152,20 +152,15 @@ void validarBitmapSabotaje(){
     char* strTestear;
     char* strVacio;
 
-    // int _superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+    int _superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
     int _blocks = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
     
-    // void* superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
+    sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
     void* blocksTemp = mmap(NULL,tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, _blocks, 0);
     
-    // void* copiaSuperBloque = malloc(sizeof(uint32_t ) * 2 + cantidadBloques/8);
-    // void* memoriaBitmap = malloc(cantidadBloques/8);
-
-    // memcpy(copiaSuperBloque, superBloqueTemp, sizeof(uint32_t ) * 2 + cantidadBloques/8);
-    // // memcpy(memoriaBitmap, superBloqueTemp + sizeof(uint32_t) *2, cantidadBloques/8);
-    // t_bitarray* bitmapFalso = bitarray_create_with_mode((char*) memoriaBitmap,cantidadBloques/8,MSB_FIRST);
-
-    // munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+    memBitmap = malloc(cantidadBloques/8);
+    memcpy(memBitmap, sb_memoria + sizeof(uint32_t) * 2, cantidadBloques/8);
+    bitmap = bitarray_create_with_mode((char*) memBitmap,cantidadBloques/8,MSB_FIRST);
 
     // log_info(logger, "*********************************************\n\n");
     
@@ -175,10 +170,7 @@ void validarBitmapSabotaje(){
     // }
 
     // log_info(logger, "*********************************************\n\n");
-     //Mapeo ahora para sacar el bitmap tmb
-    memBitmap = malloc(cantidadBloques/8);
-    memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
-    bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
+
    
     for(int i = 0; i < cantidadBloques; i++){
         int testBitmap = bitarray_test_bit(bitmap,i);
@@ -228,14 +220,13 @@ void validarBitmapSabotaje(){
     // superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
     // memcpy(superBloqueTemp, copiaSuperBloque, sizeof(uint32_t) * 2 + cantidadBloques/8);
     msync(sb_memoria, sizeof(uint32_t) * 2 + cantidadBloques/8, MS_SYNC);
-    // munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+    munmap(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8);
     munmap(blocksTemp,tamanioBloque*cantidadBloques);
-
 
     // free(copiaSuperBloque);
     bitarray_destroy(bitmap);
     free(memBitmap);
-    // close(_superBloque);
+    close(_superBloque);
     close(_blocks);
 
 

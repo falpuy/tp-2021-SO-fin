@@ -339,7 +339,10 @@ void liberarMemoria(){
     pthread_mutex_lock(&mutexValidador);
     validador = 0;
     pthread_mutex_unlock(&mutexValidador);
-
+	
+	
+		free(hiloTripulante);
+	
     queue_clean(cola_new);
     queue_clean(ready);
     queue_clean(exec);

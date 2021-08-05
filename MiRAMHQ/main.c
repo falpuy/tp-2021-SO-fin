@@ -63,6 +63,7 @@ int main() {
     pthread_mutex_init(&m_global_index, NULL);
     pthread_mutex_init(&m_global_segment, NULL);
     pthread_mutex_init(&m_global_type, NULL);
+    pthread_mutex_init(&m_map, NULL);
 
     // Creo el mapa
     // pthread_t map_thread;
@@ -146,8 +147,10 @@ void signal_handler(int sig_number) {
 
       // Eliminar Archivo Swap????
 
+      pthread_mutex_lock(&m_map);
       nivel_destruir(nivel);
       nivel_gui_terminar();
+      pthread_mutex_unlock(&m_map);
 
       pthread_mutex_destroy(&m_memoria);
       pthread_mutex_destroy(&m_virtual);
@@ -166,6 +169,7 @@ void signal_handler(int sig_number) {
       pthread_mutex_destroy(&m_global_index);
       pthread_mutex_destroy(&m_global_segment);
       pthread_mutex_destroy(&m_global_type);
+      pthread_mutex_destroy(&m_map);
 
       log_destroy(logger);
       config_destroy(config);
@@ -343,8 +347,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
                     segmento_aux -> baseAddr = found_segment;
                     segmento_aux -> limit = found_segment + 21;
 
+                    pthread_mutex_lock(&m_map);
                     personaje_crear(nivel, aux -> tid , aux -> xpos, aux -> ypos);
                     nivel_gui_dibujar(nivel);
+                    pthread_mutex_unlock(&m_map);
                     
                     save_tcb_in_memory(admin, memory, mem_size, segmento_aux, aux);
                     free(aux);
@@ -494,8 +500,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             }
             else{
 
+                pthread_mutex_lock(&m_map);
                 item_desplazar(nivel, idTCB , posX, posY);
                 nivel_gui_dibujar(nivel);
+                pthread_mutex_unlock(&m_map);
 
                 _send_message(fd, "RAM", SUCCESS , respuesta3, string_length(respuesta3), logger);
 								log_info(logger, "Se mando con éxito la ubicación del tripulante");
@@ -648,8 +656,10 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
 						// } else {
             
             //   // Elimino el tcb del mapa
+              pthread_mutex_lock(&m_map);
               item_borrar(nivel, idTCB );
               nivel_gui_dibujar(nivel);
+              pthread_mutex_unlock(&m_map);
 
               char* respuesta5 = string_new();
               string_append(&respuesta5, "Respuesta");
@@ -815,8 +825,10 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           free(idPCBkey);
 
           // Elimino el tcb del mapa
+          pthread_mutex_lock(&m_map);
           item_borrar(nivel, idTCB );
           nivel_gui_dibujar(nivel);
+          pthread_mutex_unlock(&m_map);
 
           respuesta = string_new();
           string_append(&respuesta, "Respuesta");
@@ -883,8 +895,10 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             
             update_position_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB, posX, posY);
 
+            pthread_mutex_lock(&m_map);
             item_desplazar(nivel, idTCB , posX, posY);
             nivel_gui_dibujar(nivel);
+            pthread_mutex_unlock(&m_map);
 
             free(idPCBkey);
 

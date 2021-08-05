@@ -38,6 +38,8 @@
     pthread_mutex_t mtablapaginas;
     pthread_mutex_t mdictionary;
     pthread_mutex_t madmin;
+
+    pthread_mutex_t m_map;
     
     pthread_mutex_t m_global_page;
     pthread_mutex_t m_global_process;

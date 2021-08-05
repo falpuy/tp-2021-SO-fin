@@ -335,8 +335,10 @@ int save_data_in_memory(void *memory, t_dictionary *table_collection, t_dictiona
         temp_off += sizeof(uint32_t);
         // offset += sizeof(uint32_t);
 
+        pthread_mutex_lock(&m_map);
         personaje_crear(nivel, tid, xpos, ypos);
         nivel_gui_dibujar(nivel);
+        pthread_mutex_unlock(&m_map);
     }
 
     // ---------------- GUARDO FRAMES ---------------- //

@@ -18,7 +18,9 @@ void sabotaje(){
     free(strPosiciones);
  
     log_info(logger, "Envié mensaje de sabotaje a discordiador");
-    //protocolo_fsck();
+    // pthread_mutex_lock(&blocks_bitmap);
+    // protocolo_fsck();
+    // pthread_mutex_unlock(&blocks_bitmap);
 }
 
 void protocolo_fsck(){
@@ -75,104 +77,25 @@ void validarCantidadBloques(){
 }
 
 
-void validarBitmapSabotaje(){
-    char* strTestear;
-    char* strVacio;
-
-    int _superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
-    void* superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
-
-
-    memcpy(copiaSB, superBloqueTemp, sizeof(uint32_t ) * 2 + cantidadBloques/8);
-    memcpy(memBitmap, superBloqueTemp + sizeof(uint32_t) *2, cantidadBloques/8);
-    bitarray_destroy(bitmap);
-    bitmap = bitarray_create_with_mode((char*) memBitmap,cantidadBloques/8,MSB_FIRST);
-
-    // log_info(logger, "Lo levantado bitmap:\n");
-    // for(int i=0; i < cantidadBloques; i++){
-    //     printf("%d", bitarray_test_bit(bitmapFalso,i));
-    // }
-   
-    for(int i = 0; i<cantidadBloques; i++){
-        int testBitmap = bitarray_test_bit(bitmap,i);
-        
-        strTestear = malloc(tamanioBloque + 1);
-        strVacio = malloc(tamanioBloque + 1);
-        memset(strVacio,' ',tamanioBloque);
-        strVacio[tamanioBloque] = '\0';
-
-        int value;
-        if(testBitmap){//Hay algo en bitmap
-            memcpy(strTestear, copiaBlocks + i * tamanioBloque,tamanioBloque);
-            strTestear[tamanioBloque] = '\0';
-            value = strcmp(strTestear,strVacio);
-            // log_info(logger, "Lo levantado es:%s del bloque:%d,", strTestear,i);
-        
-            if(value == 0){ //si es vacio lo que levante
-                log_info(logger,"Error en el bloque:%d. Bloque realmente vacio. Se cambia en bitmap",i);
-                bitarray_clean_bit(bitmap,i);
-                memcpy(copiaSB + sizeof(uint32_t) * 2, bitmap->bitarray, cantidadBloques/8);
-                // corregirBitmap(1,bitmap, copiaSB);
-            }
-        }else if(testBitmap == 0){ 
-            memcpy(strTestear, copiaBlocks + i*tamanioBloque,tamanioBloque);   
-            strTestear[tamanioBloque] ='\0';
-            value = strcmp(strTestear,strVacio);
-
-            // log_info(logger, "Lo levantado es:%s, del bloque:%d,", strTestear,i);
-            if(value != 0){ 
-                log_info(logger, "Error en el bloque:%d. Bloque no esta vacio. Se cambia en bitmap",i);
-                bitarray_set_bit(bitmap,i);
-                memcpy(copiaSB + sizeof(uint32_t) * 2, bitmap->bitarray, cantidadBloques/8);
-                // corregirBitmap(0,bitmap, copiaSB);
-            }
-        }
-        free(strTestear);
-        free(strVacio);
-    }
-    // log_info(logger,"Validacion Bitmap... OK");
-
-    // for(int i=0; i < cantidadBloques; i++){
-    //     printf("%d", bitarray_test_bit(bitmap,i));
-    // }
-
-    superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
-    memcpy(superBloqueTemp, copiaSB, sizeof(uint32_t) * 2 + cantidadBloques/8);
-    msync(superBloqueTemp, sizeof(uint32_t) * 2 + cantidadBloques/8, 0);
-    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
-
-
-    // free(copiaSB);
-    // bitarray_destroy(bitmapFalso);
-    // free(memoriaBitmap);
-    close(_superBloque);
-
-
-}
 // void validarBitmapSabotaje(){
 //     char* strTestear;
 //     char* strVacio;
 
 //     int _superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
 //     void* superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
-    
-//     void* copiaSuperBloque = malloc(sizeof(uint32_t ) * 2 + cantidadBloques/8);
-//     void* memoriaBitmap = malloc(cantidadBloques/8);
 
-//     memcpy(copiaSuperBloque, superBloqueTemp, sizeof(uint32_t ) * 2 + cantidadBloques/8);
-//     memcpy(memoriaBitmap, superBloqueTemp + sizeof(uint32_t) *2, cantidadBloques/8);
-//     t_bitarray* bitmapFalso = bitarray_create_with_mode((char*) memoriaBitmap,cantidadBloques/8,MSB_FIRST);
+//     memcpy(copiaSB, superBloqueTemp, sizeof(uint32_t ) * 2 + cantidadBloques/8);
+//     memcpy(memBitmap, superBloqueTemp + sizeof(uint32_t) *2, cantidadBloques/8);
+//     bitarray_destroy(bitmap);
+//     bitmap = bitarray_create_with_mode((char*) memBitmap,cantidadBloques/8,MSB_FIRST);
 
-//     munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
-
-    
 //     // log_info(logger, "Lo levantado bitmap:\n");
 //     // for(int i=0; i < cantidadBloques; i++){
 //     //     printf("%d", bitarray_test_bit(bitmapFalso,i));
 //     // }
    
 //     for(int i = 0; i<cantidadBloques; i++){
-//         int testBitmap = bitarray_test_bit(bitmapFalso,i);
+//         int testBitmap = bitarray_test_bit(bitmap,i);
         
 //         strTestear = malloc(tamanioBloque + 1);
 //         strVacio = malloc(tamanioBloque + 1);
@@ -188,9 +111,9 @@ void validarBitmapSabotaje(){
         
 //             if(value == 0){ //si es vacio lo que levante
 //                 log_info(logger,"Error en el bloque:%d. Bloque realmente vacio. Se cambia en bitmap",i);
-//                 bitarray_clean_bit(bitmapFalso,i);
-//                 memcpy(copiaSuperBloque + sizeof(uint32_t) * 2, bitmapFalso->bitarray, cantidadBloques/8);
-//                 // corregirBitmap(1,bitmapFalso, copiaSuperBloque);
+//                 bitarray_clean_bit(bitmap,i);
+//                 memcpy(copiaSB + sizeof(uint32_t) * 2, bitmap->bitarray, cantidadBloques/8);
+//                 // corregirBitmap(1,bitmap, copiaSB);
 //             }
 //         }else if(testBitmap == 0){ 
 //             memcpy(strTestear, copiaBlocks + i*tamanioBloque,tamanioBloque);   
@@ -200,9 +123,9 @@ void validarBitmapSabotaje(){
 //             // log_info(logger, "Lo levantado es:%s, del bloque:%d,", strTestear,i);
 //             if(value != 0){ 
 //                 log_info(logger, "Error en el bloque:%d. Bloque no esta vacio. Se cambia en bitmap",i);
-//                 bitarray_set_bit(bitmapFalso,i);
-//                 memcpy(copiaSuperBloque + sizeof(uint32_t) * 2, bitmapFalso->bitarray, cantidadBloques/8);
-//                 // corregirBitmap(0,bitmapFalso, copiaSuperBloque);
+//                 bitarray_set_bit(bitmap,i);
+//                 memcpy(copiaSB + sizeof(uint32_t) * 2, bitmap->bitarray, cantidadBloques/8);
+//                 // corregirBitmap(0,bitmap, copiaSB);
 //             }
 //         }
 //         free(strTestear);
@@ -211,22 +134,110 @@ void validarBitmapSabotaje(){
 //     // log_info(logger,"Validacion Bitmap... OK");
 
 //     // for(int i=0; i < cantidadBloques; i++){
-//     //     printf("%d", bitarray_test_bit(bitmapFalso,i));
+//     //     printf("%d", bitarray_test_bit(bitmap,i));
 //     // }
 
 //     superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
-//     memcpy(superBloqueTemp, copiaSuperBloque, sizeof(uint32_t) * 2 + cantidadBloques/8);
-//     msync(superBloqueTemp, sizeof(uint32_t) * 2 + cantidadBloques/8, 0);
+//     memcpy(superBloqueTemp, copiaSB, sizeof(uint32_t) * 2 + cantidadBloques/8);
+//     msync(superBloqueTemp, sizeof(uint32_t) * 2 + cantidadBloques/8, MS_SYNC);
 //     munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
 
 
-//     free(copiaSuperBloque);
-//     bitarray_destroy(bitmapFalso);
-//     free(memoriaBitmap);
+//     // free(copiaSB);
+//     // bitarray_destroy(bitmapFalso);
+//     // free(memoriaBitmap);
 //     close(_superBloque);
 
 
 // }
+void validarBitmapSabotaje(){
+    char* strTestear;
+    char* strVacio;
+
+    int _superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+    int _blocks = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
+    
+    void* superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
+    void* blocksTemp = mmap(NULL,tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, _blocks, 0);
+    
+    void* copiaSuperBloque = malloc(sizeof(uint32_t ) * 2 + cantidadBloques/8);
+    void* memoriaBitmap = malloc(cantidadBloques/8);
+
+    memcpy(copiaSuperBloque, superBloqueTemp, sizeof(uint32_t ) * 2 + cantidadBloques/8);
+    memcpy(memoriaBitmap, superBloqueTemp + sizeof(uint32_t) *2, cantidadBloques/8);
+    t_bitarray* bitmapFalso = bitarray_create_with_mode((char*) memoriaBitmap,cantidadBloques/8,MSB_FIRST);
+
+    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+
+    // log_info(logger, "*********************************************\n\n");
+    
+    // log_info(logger, "Lo levantado bitmap:\n");
+    // for(int i=0; i < cantidadBloques; i++){
+    //     printf("%d", bitarray_test_bit(bitmapFalso,i));
+    // }
+
+    // log_info(logger, "*********************************************\n\n");
+    
+   
+    for(int i = 0; i < cantidadBloques; i++){
+        int testBitmap = bitarray_test_bit(bitmapFalso,i);
+        
+        strTestear = malloc(tamanioBloque + 1);
+        strVacio = malloc(tamanioBloque + 1);
+        memset(strVacio,' ',tamanioBloque);
+        strVacio[tamanioBloque] = '\0';
+
+        int value;
+        if(testBitmap){//Hay algo en bitmap
+            memcpy(strTestear, blocksTemp + i * tamanioBloque,tamanioBloque);
+            strTestear[tamanioBloque] = '\0';
+            value = strcmp(strTestear,strVacio);
+            // log_info(logger, "Lo levantado es:%s del bloque:%d,", strTestear,i);
+        
+            if(value == 0){ //si es vacio lo que levante
+                log_info(logger,"Error en el bloque:%d. Bloque realmente vacio. Se cambia en bitmap",i);
+                bitarray_clean_bit(bitmapFalso,i);
+                memcpy(copiaSuperBloque + sizeof(uint32_t) * 2, bitmapFalso->bitarray, cantidadBloques/8);
+                // corregirBitmap(1,bitmapFalso, copiaSuperBloque);
+            }
+        }else if(testBitmap == 0){ 
+            memcpy(strTestear, blocksTemp + i*tamanioBloque,tamanioBloque);   
+            strTestear[tamanioBloque] ='\0';
+            value = strcmp(strTestear,strVacio);
+
+            // log_info(logger, "Lo levantado es:%s, del bloque:%d,", strTestear,i);
+            if(value != 0){ 
+                log_info(logger, "Error en el bloque:%d. Bloque no esta vacio. Se cambia en bitmap",i);
+                bitarray_set_bit(bitmapFalso,i);
+                memcpy(copiaSuperBloque + sizeof(uint32_t) * 2, bitmapFalso->bitarray, cantidadBloques/8);
+                // corregirBitmap(0,bitmapFalso, copiaSuperBloque);
+            }
+        }
+        free(strTestear);
+        free(strVacio);
+    }
+    log_info(logger,"Validacion Bitmap... OK");
+
+    // log_info(logger, "*********************************************\n\n");
+    // for(int i=0; i < cantidadBloques; i++){
+    //     printf("%d", bitarray_test_bit(bitmapFalso,i));
+    // }
+    // log_info(logger, "*********************************************\n\n");
+
+    superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
+    memcpy(superBloqueTemp, copiaSuperBloque, sizeof(uint32_t) * 2 + cantidadBloques/8);
+    msync(superBloqueTemp, sizeof(uint32_t) * 2 + cantidadBloques/8, MS_SYNC);
+    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+    munmap(blocksTemp,tamanioBloque*cantidadBloques);
+
+
+    free(copiaSuperBloque);
+    bitarray_destroy(bitmapFalso);
+    free(memoriaBitmap);
+    close(_superBloque);
+
+
+}
 void corregirBitmap(int encontroVacio, t_bitarray* bitmapFalso, void* copiaSuperBloque){
     corregirBitmapTripulantes(encontroVacio,bitmapFalso, copiaSuperBloque);
     corregirBitmapRecursos(encontroVacio,bitmapFalso, copiaSuperBloque);

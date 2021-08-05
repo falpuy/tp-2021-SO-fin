@@ -20,7 +20,7 @@ void handler(int client, char* identificador, int comando, void* payload, t_log*
             log_info(logger, "ID Tripulante:%d", idTripulante);
 
             strGuardar = string_new();
-            string_append(&strGuardar, "Se corre en pánico hacia la Ubicación del Sabotaje|");
+            string_append(&strGuardar, "Se corre en panico hacia la Ubicacion del Sabotaje|");
 
             tripulante = crearStrTripulante(idTripulante);
 

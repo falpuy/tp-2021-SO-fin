@@ -58,7 +58,8 @@
     char* puertoDiscordiador;
 
     void* copiaBlocks;
-    void* copiaSB;
+    void* sb_memoria;
+    // void* copiaSB;
     void* memBitmap;
     
     t_bitarray* bitmap;

@@ -20,16 +20,16 @@ void actualizarArchivoBlocks(){
         munmap(blocks_memory,tamanioBloque*cantidadBloques);
         log_info(logger, "Se actualizo Blocks.ims");
         
-        int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
-        void* sb_memoria = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
-        memcpy(sb_memoria,copiaSB,sizeof(uint32_t)*2 + cantidadBloques/8);
-        msync(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8,0);
-        munmap(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8);
+        // int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+        // void* sb_memoria = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
+        // memcpy(sb_memoria,copiaSB,sizeof(uint32_t)*2 + cantidadBloques/8);
+        // msync(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8,0);
+        // munmap(sb_memoria,sizeof(uint32_t)*2 + cantidadBloques/8);
         
-        log_info(logger, "Se actualizo Bitmap en SuperBloque.ims");
+        // log_info(logger, "Se actualizo Bitmap en SuperBloque.ims");
 
         close(archBloques);
-        close(archSB);
+        // close(archSB);
         
 
         // for(int i=0; i<cantidadBloques; i++){

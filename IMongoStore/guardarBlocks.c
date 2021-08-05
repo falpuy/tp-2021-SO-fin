@@ -5,11 +5,19 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
     int cantidadBloquesUsados = 0;
     int tamanioString = string_length(stringGuardar);
 
+    //Mapeo ahora para sacar el bitmap tmb
+    char* pathSuperBloque = pathCompleto("SuperBloque.ims");
+    int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
+    sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
+    memBitmap = malloc(cantidadBloques/8);
+    memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
+    bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
+
     for(int i=0; i < bitarray_get_max_bit(bitmap) && cantidadBloquesUsados != cantidadBloquesAUsar; i++){
         if(bitarray_test_bit(bitmap,i) == 0){
 
             bitarray_set_bit(bitmap,i);
-            memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+            memcpy(sb_memoria + sizeof(int) * 2,bitmap->bitarray,cantidadBloques/8);
 
             if((cantidadBloquesAUsar-cantidadBloquesUsados)==1){//ultimo bloque a escribir - posible fragmentación interna 
 
@@ -52,6 +60,15 @@ void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAU
             }
         }
     }
+
+    int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
+        
+    if (err == -1){
+        log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
+    }
+    bitarray_destroy(bitmap);
+    free(memBitmap);
+    free(pathSuperBloque);
 }
 
 void    guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){ 
@@ -261,8 +278,24 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso){
 
             memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', tamanioBloque);
 
+             //Mapeo ahora para sacar el bitmap tmb
+            char* pathSuperBloque = pathCompleto("SuperBloque.ims");
+            int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
+            sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
+    
+            memBitmap = malloc(cantidadBloques/8);
+            memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
+            bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
             bitarray_clean_bit(bitmap,bloqueABorrar);
-            memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+            int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
+                    
+            if (err == -1){
+                log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
+            }
+            bitarray_destroy(bitmap);
+            free(memBitmap);
+            free(pathSuperBloque);
+            // memcpy(sb_memoria+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
 
             metadata = config_create(path);
             actualizarSize(metadata, posicion, 0);
@@ -278,8 +311,24 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso){
             memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', posicion); //borro esos 5 limpio todo
             tamStrBorrar -= posicion; //nuevo tamanio--> 1
 
+             //Mapeo ahora para sacar el bitmap tmb
+            char* pathSuperBloque = pathCompleto("SuperBloque.ims");
+            int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
+            sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
+    
+            memBitmap = malloc(cantidadBloques/8);
+            memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
+            bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
             bitarray_clean_bit(bitmap,bloqueABorrar);
-            memcpy(copiaSB+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+            int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
+        
+            if (err == -1){
+                log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
+            }
+            bitarray_destroy(bitmap);
+            free(memBitmap);
+            free(pathSuperBloque);
+            // memcpy(sb_memoria+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
 
             metadata = config_create(path);
             actualizarSize(metadata, posicion, 0);

@@ -257,15 +257,41 @@ char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int 
 
 int validarBitsLibre(int cantidadBloquesAUsar){
     int contador = 0;
+    int err;
+     //Mapeo ahora para sacar el bitmap tmb
+    char* pathSuperBloque = pathCompleto("SuperBloque.ims");
+    int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
+    sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
+    
+     
+    memBitmap = malloc(cantidadBloques/8);
+    memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
+    bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
 
     for(int i=0; i < bitarray_get_max_bit(bitmap); i++){
         if(bitarray_test_bit(bitmap,i) == 0){
             contador++;
             if(contador == cantidadBloquesAUsar){
+                err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
+                        
+                if (err == -1){
+                    log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
+                }
+                bitarray_destroy(bitmap);
+                free(memBitmap);
+                free(pathSuperBloque);
                 return 1;
             }
         }
     }
+    err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
+        
+    if (err == -1){
+        log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
+    }
+    bitarray_destroy(bitmap);
+    free(memBitmap);
+    free(pathSuperBloque);
     return -1;
 }
 

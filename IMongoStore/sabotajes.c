@@ -43,12 +43,12 @@ void validacionFiles(){
 
 void validarCantidadBloques(){
     log_info(logger,"---------------------------------------------------------");
-    int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
-    void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
+    // int archSB = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+    // void* superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
     
     uint32_t cantidadBloquesDisco;
-    memcpy(&cantidadBloquesDisco, superBloqueTemp + sizeof(uint32_t), sizeof(uint32_t));
-    munmap(superBloqueTemp,sizeof(uint32_t)*2);
+    memcpy(&cantidadBloquesDisco, sb_memoria + sizeof(uint32_t), sizeof(uint32_t));
+    // munmap(superBloqueTemp,sizeof(uint32_t)*2);
 
     int sizeBlocks;    
     struct stat st;
@@ -57,21 +57,19 @@ void validarCantidadBloques(){
 
     uint32_t cantidadTemporal = (uint32_t) sizeBlocks / tamanioBloque;
 
-    if(cantidadBloques == cantidadBloquesDisco){
+    if(cantidadTemporal == cantidadBloquesDisco){
         log_info(logger,"Cantidad de bloques... OK");
     }else{
         log_info(logger, "Cantidad de Bloques... NOT OK.");
         log_info(logger,"Reparación: Se sobreescribe la cantidadBloques");
 
         cantidadBloques = cantidadTemporal;
-        superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
-        memcpy(superBloqueTemp + sizeof(uint32_t), &cantidadBloques, sizeof(uint32_t));
-        msync(superBloqueTemp, sizeof(uint32_t)*2 + cantidadBloques/8, MS_SYNC);
-        munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
-
+        // superBloqueTemp = mmap(NULL, sizeof(uint32_t)*2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSB, 0);
+        memcpy(sb_memoria + sizeof(uint32_t), &cantidadBloques, sizeof(uint32_t));
+        msync(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8, MS_SYNC);
         log_info(logger, "Finalizó reparación de cantidadBloques");
     }
-    close(archSB);
+    // close(archSB);
     log_info(logger,"---------------------------------------------------------");
     
 }
@@ -154,20 +152,20 @@ void validarBitmapSabotaje(){
     char* strTestear;
     char* strVacio;
 
-    int _superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
+    // int _superBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
     int _blocks = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
     
-    void* superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
+    // void* superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
     void* blocksTemp = mmap(NULL,tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, _blocks, 0);
     
-    void* copiaSuperBloque = malloc(sizeof(uint32_t ) * 2 + cantidadBloques/8);
-    void* memoriaBitmap = malloc(cantidadBloques/8);
+    // void* copiaSuperBloque = malloc(sizeof(uint32_t ) * 2 + cantidadBloques/8);
+    // void* memoriaBitmap = malloc(cantidadBloques/8);
 
-    memcpy(copiaSuperBloque, superBloqueTemp, sizeof(uint32_t ) * 2 + cantidadBloques/8);
-    memcpy(memoriaBitmap, superBloqueTemp + sizeof(uint32_t) *2, cantidadBloques/8);
-    t_bitarray* bitmapFalso = bitarray_create_with_mode((char*) memoriaBitmap,cantidadBloques/8,MSB_FIRST);
+    // memcpy(copiaSuperBloque, superBloqueTemp, sizeof(uint32_t ) * 2 + cantidadBloques/8);
+    // // memcpy(memoriaBitmap, superBloqueTemp + sizeof(uint32_t) *2, cantidadBloques/8);
+    // t_bitarray* bitmapFalso = bitarray_create_with_mode((char*) memoriaBitmap,cantidadBloques/8,MSB_FIRST);
 
-    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+    // munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
 
     // log_info(logger, "*********************************************\n\n");
     
@@ -177,10 +175,13 @@ void validarBitmapSabotaje(){
     // }
 
     // log_info(logger, "*********************************************\n\n");
-    
+     //Mapeo ahora para sacar el bitmap tmb
+    memBitmap = malloc(cantidadBloques/8);
+    memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
+    bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
    
     for(int i = 0; i < cantidadBloques; i++){
-        int testBitmap = bitarray_test_bit(bitmapFalso,i);
+        int testBitmap = bitarray_test_bit(bitmap,i);
         
         strTestear = malloc(tamanioBloque + 1);
         strVacio = malloc(tamanioBloque + 1);
@@ -196,9 +197,9 @@ void validarBitmapSabotaje(){
         
             if(value == 0){ //si es vacio lo que levante
                 log_info(logger,"Error en el bloque:%d. Bloque realmente vacio. Se cambia en bitmap",i);
-                bitarray_clean_bit(bitmapFalso,i);
-                memcpy(copiaSuperBloque + sizeof(uint32_t) * 2, bitmapFalso->bitarray, cantidadBloques/8);
-                // corregirBitmap(1,bitmapFalso, copiaSuperBloque);
+                bitarray_clean_bit(bitmap,i);
+                memcpy(sb_memoria + sizeof(uint32_t) * 2, bitmap->bitarray, cantidadBloques/8);
+                // corregirBitmap(1,bitmap, sb_memoria);
             }
         }else if(testBitmap == 0){ 
             memcpy(strTestear, blocksTemp + i*tamanioBloque,tamanioBloque);   
@@ -208,9 +209,9 @@ void validarBitmapSabotaje(){
             // log_info(logger, "Lo levantado es:%s, del bloque:%d,", strTestear,i);
             if(value != 0){ 
                 log_info(logger, "Error en el bloque:%d. Bloque no esta vacio. Se cambia en bitmap",i);
-                bitarray_set_bit(bitmapFalso,i);
-                memcpy(copiaSuperBloque + sizeof(uint32_t) * 2, bitmapFalso->bitarray, cantidadBloques/8);
-                // corregirBitmap(0,bitmapFalso, copiaSuperBloque);
+                bitarray_set_bit(bitmap,i);
+                memcpy(sb_memoria + sizeof(uint32_t) * 2, bitmap->bitarray, cantidadBloques/8);
+                // corregirBitmap(0,bitmapFalso, sb_memoria);
             }
         }
         free(strTestear);
@@ -224,17 +225,18 @@ void validarBitmapSabotaje(){
     // }
     // log_info(logger, "*********************************************\n\n");
 
-    superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
-    memcpy(superBloqueTemp, copiaSuperBloque, sizeof(uint32_t) * 2 + cantidadBloques/8);
-    msync(superBloqueTemp, sizeof(uint32_t) * 2 + cantidadBloques/8, MS_SYNC);
-    munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
+    // superBloqueTemp = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, _superBloque, 0);
+    // memcpy(superBloqueTemp, copiaSuperBloque, sizeof(uint32_t) * 2 + cantidadBloques/8);
+    msync(sb_memoria, sizeof(uint32_t) * 2 + cantidadBloques/8, MS_SYNC);
+    // munmap(superBloqueTemp,sizeof(uint32_t)*2 + cantidadBloques/8);
     munmap(blocksTemp,tamanioBloque*cantidadBloques);
 
 
-    free(copiaSuperBloque);
-    bitarray_destroy(bitmapFalso);
-    free(memoriaBitmap);
-    close(_superBloque);
+    // free(copiaSuperBloque);
+    bitarray_destroy(bitmap);
+    free(memBitmap);
+    // close(_superBloque);
+    close(_blocks);
 
 
 }
@@ -555,8 +557,8 @@ void validarBlocksRecursos(char* path){
     int archBloques = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
     void* falsoMemory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
     
-    void* copiaSB2 = malloc(tamanioBloque*cantidadBloques);
-    memcpy(copiaSB2,falsoMemory,tamanioBloque * cantidadBloques);
+    void* copiaBlocks2 = malloc(tamanioBloque*cantidadBloques);
+    memcpy(copiaBlocks2,falsoMemory,tamanioBloque * cantidadBloques);
     munmap(falsoMemory, tamanioBloque * cantidadBloques);
 
     if(access(path,F_OK) == 0){
@@ -583,7 +585,7 @@ void validarBlocksRecursos(char* path){
             
             while(contadorTamanio != tamanioBloque){
                 temporal = malloc(2);
-                memcpy(temporal, copiaSB2 + bloque * tamanioBloque + contadorTamanio, 1);
+                memcpy(temporal, copiaBlocks2 + bloque * tamanioBloque + contadorTamanio, 1);
                 temporal[1] = '\0';
 
                 string_append(&string_temp,temporal);
@@ -638,18 +640,18 @@ void validarBlocksRecursos(char* path){
             for(int i = 0; i < contador; i++){
                 bloque = atoi(listaBloques[i]);
                 if((contador - bloquesHastaAhora) > 1){ //no es el ultimo bloque-->no hay frag. interna
-                    memset(copiaSB2 + bloque * tamanioBloque,charPegar,tamanioBloque);
+                    memset(copiaBlocks2 + bloque * tamanioBloque,charPegar,tamanioBloque);
                     sizeTemporal -= tamanioBloque;
                     bloquesHastaAhora++;
                 }else{
-                    memset(copiaSB2 + bloque * tamanioBloque ,' ',tamanioBloque);
-                    memset(copiaSB2 + bloque * tamanioBloque,charPegar,sizeTemporal);
+                    memset(copiaBlocks2 + bloque * tamanioBloque ,' ',tamanioBloque);
+                    memset(copiaBlocks2 + bloque * tamanioBloque,charPegar,sizeTemporal);
                     bloquesHastaAhora++;
                 }
             }
             log_info(logger, "Se Restauró Blocks de la metadata.");
             falsoMemory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
-            memcpy(falsoMemory,copiaSB2,tamanioBloque * cantidadBloques);
+            memcpy(falsoMemory,copiaBlocks2,tamanioBloque * cantidadBloques);
             msync(falsoMemory, tamanioBloque*cantidadBloques,MS_SYNC);
             munmap(falsoMemory, tamanioBloque * cantidadBloques);
             
@@ -665,7 +667,7 @@ void validarBlocksRecursos(char* path){
         
 
     }
-    free(copiaSB2);
+    free(copiaBlocks2);
     close(archBloques);   
 }
 

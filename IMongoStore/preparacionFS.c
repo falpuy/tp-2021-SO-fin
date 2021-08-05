@@ -53,13 +53,14 @@ void validarSuperBloque(){
         
         posix_fallocate(superBloque, 0, sizeof(uint32_t) * 2 + cantidadBloques / 8);
         
-        copiaSB = malloc(tamanioBloque*cantidadBloques + cantidadBloques/8);
+        // copiaSB = malloc(tamanioBloque*cantidadBloques + cantidadBloques/8);
         
         void* sb_memoria = (char*) mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques / 8, PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
         if(sb_memoria == MAP_FAILED){
             perror("El error al abrir:");
         }
         memBitmap = malloc(cantidadBloques/8);
+        memcpy(memBitmap, sb_memoria + sizeof(uint32_t) * 2, cantidadBloques/8);
         bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
 
         for(int i=0; i<cantidadBloques; i++){
@@ -72,11 +73,11 @@ void validarSuperBloque(){
 
         }   
             
-        memcpy(copiaSB, &tamanioBloque, sizeof(uint32_t));
-        memcpy(copiaSB + sizeof(uint32_t), &cantidadBloques, sizeof(uint32_t));
-        memcpy(copiaSB + sizeof(uint32_t)*2,bitmap->bitarray, cantidadBloques/8);
+        memcpy(sb_memoria, &tamanioBloque, sizeof(uint32_t));
+        memcpy(sb_memoria + sizeof(uint32_t), &cantidadBloques, sizeof(uint32_t));
+        memcpy(sb_memoria + sizeof(uint32_t)*2,bitmap->bitarray, cantidadBloques/8);
 
-        memcpy(sb_memoria,copiaSB,2*sizeof(uint32_t)+cantidadBloques/8);
+        // memcpy(sb_memoria,copiaSB,2*sizeof(uint32_t)+cantidadBloques/8);
         
         int err = msync(sb_memoria, 2*sizeof(uint32_t) + cantidadBloques/8, MS_SYNC);
         if(err == -1){
@@ -90,6 +91,8 @@ void validarSuperBloque(){
 
         free(pathSuperBloque);
         close(superBloque);
+        free(memBitmap);
+        bitarray_destroy(bitmap);
         
 
         log_info(logger, "-----------------------------------------------------");
@@ -103,13 +106,12 @@ void validarSuperBloque(){
         int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
         
         //Mapeo para sacar el tamaño y cantidad solo
-        void* sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
+        sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
         memcpy(&tamanioBloque, sb_memoria, sizeof(uint32_t));
         memcpy(&cantidadBloques, sb_memoria + sizeof(uint32_t), sizeof(uint32_t));
-        int err = munmap(sb_memoria, sizeof(uint32_t)*2);
+        // int err = munmap(sb_memoria, sizeof(uint32_t)*2);
 
         //Mapeo ahora para sacar el bitmap tmb
-        sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
         memBitmap = malloc(cantidadBloques/8);
         memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
         bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
@@ -120,9 +122,9 @@ void validarSuperBloque(){
 
         }  
 
-        copiaSB = malloc(sizeof(uint32_t) * 2 + cantidadBloques/8);
-        memcpy(copiaSB, sb_memoria,sizeof(uint32_t) * 2 + cantidadBloques/8);
-        err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
+        // copiaSB = malloc(sizeof(uint32_t) * 2 + cantidadBloques/8);
+        // memcpy(copiaSB, sb_memoria,sizeof(uint32_t) * 2 + cantidadBloques/8);
+        int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
         
         if (err == -1){
             log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada de tamañoBloque y cantidadBloque");
@@ -130,6 +132,9 @@ void validarSuperBloque(){
 
         close(superBloque);
         free(pathSuperBloque);
+        bitarray_destroy(bitmap);
+        free(memBitmap);
+
 
         log_info(logger, "-----------------------------------------------------");
         log_info(logger, "Se muestra los datos del superBloque.");

@@ -74,9 +74,12 @@ void finalizarProceso(){
     log_destroy(logger);
 
     free(copiaBlocks);
-    free(copiaSB);
+    // free(copiaSB);
+
     bitarray_destroy(bitmap);
     free(memBitmap);
+    munmap(sb_memoria,sizeof(uint32_t) * 2 + cantidadBloques/8);
+    
     free(datosConfig);
 
     pthread_mutex_destroy(&blocks_bitmap); 

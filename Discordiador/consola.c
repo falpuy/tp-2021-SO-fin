@@ -135,6 +135,31 @@ void funcionConsola(){
                             free(mensajeRecibido->identifier);
                             free(mensajeRecibido->payload);
                             free(mensajeRecibido);
+
+                            pcb *pcbEliminado = get_pcb_by_id(listaPCB, tcbTripulante -> pid);
+
+                            int todosTerminaron = list_iterate_todos_terminaron(pcbEliminado->listaTCB);
+
+                            if(todosTerminaron > 0){
+                                
+                                //pthread_mutex_lock(&mutexBuffer);
+                                void* buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
+                                int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+                                _send_message(conexion_RAM, "DIS", ELIMINAR_PATOTA, buffer, sizeof(int), logger);
+                                free(buffer);
+                                t_mensaje *mensajeRecibido = _receive_message(conexion_RAM, logger);
+                                close(conexion_RAM);
+                                //pthread_mutex_unlock(&mutexBuffer);
+
+                                if (mensajeRecibido->command == SUCCESS) {
+                                    log_info(logger, "Se eliminaron todos los tcb de la patota: %d en RAM", pcbEliminado->pid);
+                                    pcbEliminado->todosLosTCBsTerminaron = 1;
+                                }
+
+                                free(mensajeRecibido->identifier);
+                                free(mensajeRecibido->payload);
+                                free(mensajeRecibido);
+                            }
                         }
 
                         else{

@@ -49,15 +49,12 @@ void funcionhNewaReady (t_log* logger) {
 
                 aux_TCB->status = 'R';
 
-                int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-                void *msg = _serialize(sizeof(int) * 2 + sizeof(char), "%d%d%c", aux_TCB->pid, aux_TCB->tid, aux_TCB->status);
-                _send_message(conexion_RAM, "DIS", ENVIAR_CAMBIO_DE_ESTADO, msg, sizeof(int) * 2 + sizeof(char), logger);
-                free(msg);
-                t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-                close(conexion_RAM);
-                free(mensaje->identifier);
-                free(mensaje->payload);
-                free(mensaje);
+                // int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+                // void *msg = _serialize(sizeof(int) * 2 + sizeof(char), "%d%d%c", aux_TCB->pid, aux_TCB->tid, aux_TCB->status);
+                // _send_message(conexion_RAM, "DIS", ENVIAR_CAMBIO_DE_ESTADO, msg, sizeof(int) * 2 + sizeof(char), logger);
+                // free(msg);
+                // t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+                // close(conexion_RAM);
 
                 pthread_mutex_lock(&mutexReady);
                 queue_push(ready, (void*) aux_TCB);
@@ -266,6 +263,31 @@ void funcionCambioExecExit(void* nodo){
         free(mensajeRecibido->identifier);
         free(mensajeRecibido->payload);
         free(mensajeRecibido);
+
+        pcb *pcbEliminado = get_pcb_by_id(listaPCB, tcbAMover -> pid);
+
+        int todosTerminaron = list_iterate_todos_terminaron(pcbEliminado->listaTCB);
+
+        if(todosTerminaron > 0){
+            
+            //pthread_mutex_lock(&mutexBuffer);
+            void* buffer = _serialize(sizeof(int), "%d", pcbEliminado->pid);
+            int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+            _send_message(conexion_RAM, "DIS", ELIMINAR_PATOTA, buffer, sizeof(int), logger);
+            free(buffer);
+            t_mensaje *mensajeRecibido = _receive_message(conexion_RAM, logger);
+            close(conexion_RAM);
+            //pthread_mutex_unlock(&mutexBuffer);
+
+            if (mensajeRecibido->command == SUCCESS) {
+                log_info(logger, "Se eliminaron todos los tcb de la patota: %d en RAM", pcbEliminado->pid);
+                pcbEliminado->todosLosTCBsTerminaron = 1;
+            }
+
+            free(mensajeRecibido->identifier);
+            free(mensajeRecibido->payload);
+            free(mensajeRecibido);
+        }
     }
 }
 

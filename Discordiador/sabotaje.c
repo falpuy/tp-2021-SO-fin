@@ -49,6 +49,9 @@ bool ordenarMasCercano(void* tripulante1, void* tripulante2){
 
     double modulo1 = sqrt(pow(diferenciatcb1X, 2) + pow(diferenciatcb1Y, 2));
     double modulo2 = sqrt(pow(diferenciatcb2X, 2) + pow(diferenciatcb2Y, 2));
-
-    return modulo1 < modulo2;
+	
+	if(modulo1 == modulo2)
+		return tcb1->tid < tcb2->tid;
+	else
+		return modulo1 < modulo2;
 }

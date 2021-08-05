@@ -12,7 +12,6 @@ tcb* crear_TCB(int idP, int posX, int posY, int idT, t_log* logger){
     nuevoTCB->tiempoEnBloqIO = 0;
     nuevoTCB->ciclosCumplidos = 0;
     nuevoTCB->mensajeInicialIMS = 0;
-    nuevoTCB->mensajeAtiSabIMS = 0;
     nuevoTCB->cicloCPUCumplido = 0;
 
     return nuevoTCB;
@@ -140,14 +139,15 @@ void destruirPCB(void* nodo){
 
 /*---------------------------FUNCION TRIPULANTE (EXEC)----------------------*/
 void funcionTripulante (void* elemento) {
-    parametrosThread* param = (parametrosThread*) elemento;
-    tcb *tcbTripulante;
 
     pthread_mutex_lock(&mutexValidador);
     int temp_validador = validador;
     pthread_mutex_unlock(&mutexValidador);
 
     while(temp_validador){// MIENTRAS ESTÉ EN FUNCIONAMIENTO EL PROCESO
+
+        parametrosThread* param = (parametrosThread*) elemento;
+        tcb *tcbTripulante;
 
         sem_t* semaforo = list_get(listaSemaforos,param->idSemaforo);
         sem_wait(semaforo);
@@ -159,6 +159,10 @@ void funcionTripulante (void* elemento) {
         if(tcbTripulante && tcbTripulante->estaVivoElHilo && planificacion_viva && tcbTripulante->cicloCPUCumplido==0){
             hiloTripulanteYPlaniVivos((void*) tcbTripulante,(void*) param);
             tcbTripulante->cicloCPUCumplido=1;
+        }
+        if(tcbTripulante->estaVivoElHilo == 0){
+            free(param);
+            temp_validador=0;
         }
         
         sleep(ciclo_CPU);
@@ -228,6 +232,10 @@ void resolviendoSabotaje(void* tcbTrip, void* param){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
         }
     }
     else {// NO LLEGÓ A LA POSICIÓN DEL SABOTAJE
@@ -242,6 +250,10 @@ void resolviendoSabotaje(void* tcbTrip, void* param){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
             tripulante->ciclosCumplidos = 0;
         }
     }
@@ -331,6 +343,10 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
             tripulante->ciclosCumplidos = 0;
             log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
         }                 
@@ -348,6 +364,10 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             free(msg);
             t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
             close(conexion_RAM);
+
+            free(mensaje->identifier);
+            free(mensaje->payload);
+            free(mensaje);
             tripulante->ciclosCumplidos = 0;
             log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
         }
@@ -410,6 +430,10 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
         free(msg);
         t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
         close(conexion_RAM);
+
+        free(mensaje->identifier);
+        free(mensaje->payload);
+        free(mensaje);
         tripulante->ciclosCumplidos = 0;
     }
 
@@ -421,6 +445,10 @@ void operandoSinSabotajeTareaIO(void* tcbTrip, void* param, char** tarea){
         free(msg);
         t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
         close(conexion_RAM);
+
+        free(mensaje->identifier);
+        free(mensaje->payload);
+        free(mensaje);
         tripulante->ciclosCumplidos = 0;
         log_info(logger, "El Tripulante: %d completó su quantum, se debe mover a Ready", tripulante->tid);
     }
@@ -483,6 +511,11 @@ void pedirProximaTarea(tcb* tcbTripulante){
         free(msg);
         t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
         close(conexion_RAM);
+
+        free(mensaje->identifier);
+        free(mensaje->payload);
+        free(mensaje);
+
         free(mensajito->payload);
         free(mensajito->identifier);
         free(mensajito);

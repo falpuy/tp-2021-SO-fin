@@ -68,7 +68,6 @@
         int tiempoEnBloqIO;
         int ciclosCumplidos;
         int mensajeInicialIMS;
-        int mensajeAtiSabIMS;
         int cicloCPUCumplido;
     }tcb;
 
@@ -166,6 +165,7 @@
     int posSabotajeY;
 
     int contadorCicloCPU;
+    int primerCicloSabotaje;
 
     t_queue* cola_new;
     t_queue* ready;

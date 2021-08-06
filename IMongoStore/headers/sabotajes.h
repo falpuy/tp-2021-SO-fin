@@ -20,6 +20,7 @@
     #include <string.h>
     #include <commons/bitarray.h>
     #include <sys/stat.h>
+    #include <math.h>
     
     enum COMANDOS{
         OBTENER_BITACORA = 760 ,
@@ -89,8 +90,15 @@
     void validarBlockCountRecurso(char* path);
     void validacionBlocks();
     void validarBlocksRecursos(char* path);
-
-
+    char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar, int flagEsGuardar,char* path);
+    int cantidad_bloques(char* string);    
+    int validarBitsLibre(int cantidadBloquesAUsar);
+    void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar);
+    
+    void actualizarBlocks(int bloque,int flagEsGuardar,char* path);
+    void setearMD5(char* pathMetadata);
+    void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar);
+    void actualizarSize(t_config* metadataBitacora,int tamanio, int flagEsGuardar);
 
     char* pathCompleto(char* strConcatenar);
     char* crearStrTripulante(int idTripulante);

@@ -216,7 +216,7 @@ void funcionConsola(){
                 
                 case C_SALIR: 
                     log_info(logger, "Salimos de la consola");
-                                       liberarMemoria();        
+                    liberarMemoria();        
                     break;
 
                 default:
@@ -416,10 +416,10 @@ void liberarMemoria(){
     log_destroy(logger);
   	config_destroy(config);
     
-    for(int i = 0; i<cantidadTCBTotales;i++){
-        free(&hiloTripulante[i]);
-    }
-	free(hiloTripulante);
+    // for(int i = 0; i<cantidadTCBTotales;i++){
+    //     free(hiloTripulante[i]);
+    // }
+    free(hiloTripulante);
 
     exit(EXIT_SUCCESS);
   	

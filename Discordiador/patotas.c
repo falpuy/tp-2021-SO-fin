@@ -166,7 +166,9 @@ void funcionTripulante (void* elemento) {
             tcbTripulante->cicloCPUCumplido=1;
         }
         if(tcbTripulante->estaVivoElHilo == 0){
+            int semParam = param->idSemaforo;
             free(param);
+            free(&hiloTripulante[semParam]);
             temp_validador=0;
         }
         

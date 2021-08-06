@@ -169,6 +169,7 @@ void funcionTripulante (void* elemento) {
             int semParam = param->idSemaforo;
             free(param);
             free(&hiloTripulante[semParam]);
+            //hiloTripulante[semParam]=NULL;
             temp_validador=0;
         }
         

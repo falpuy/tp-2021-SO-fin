@@ -90,6 +90,7 @@ void setearConfiguraciones (){
     pthread_mutex_init(&mutexBuffer,NULL);
     pthread_mutex_init(&mutexSemaforosTrip,NULL);
     pthread_mutex_init(&mutexContextoSabotaje,NULL);
+    pthread_mutex_init(&mutexBuffersAEnviar,NULL);
     
     sem_init(&semNR, 0, 0);
     sem_init(&semRE, 0, 0);

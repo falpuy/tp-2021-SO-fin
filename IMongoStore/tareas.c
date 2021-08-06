@@ -270,6 +270,7 @@ void generarOxigeno(int parametroTarea){
     }
 
     char* strGuardar = string_repeat('O',parametroTarea);
+    string_append(&strGuardar,"|");
     
     guardarEnBlocks(strGuardar,path_oxigeno,1);
 
@@ -287,6 +288,7 @@ void generarComida(int parametroTarea){
     }
 
     char* strGuardar = string_repeat('C',parametroTarea);
+    string_append(&strGuardar,"|");
     
     guardarEnBlocks(strGuardar,path_comida,1);
 
@@ -304,6 +306,7 @@ void generarBasura(int parametroTarea){
     }
 
     char* strGuardar = string_repeat('B',parametroTarea);
+    string_append(&strGuardar,"|");
     
     guardarEnBlocks(strGuardar,path_basura,1);
 

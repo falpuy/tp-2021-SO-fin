@@ -154,12 +154,15 @@ void validarBlocks(){
         log_error(logger, "No se encontró archivo Blocks.ims. Se crea archivo");
         
         int blocks = open(pathBlocks, O_CREAT | O_RDWR, 0664);
-        
         int tamanioAGuardar = (tamanioBloque * cantidadBloques);
-        copiaBlocks = malloc(tamanioBloque* cantidadBloques);
-        memset(copiaBlocks,' ',tamanioBloque* cantidadBloques);
-        
         posix_fallocate(blocks, 0, tamanioAGuardar);        
+        
+        copiaBlocks = malloc(tamanioBloque* cantidadBloques);
+        
+        void* blocks_memory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, blocks, 0);
+        memcpy(copiaBlocks, blocks_memory, tamanioBloque*cantidadBloques);
+        munmap(blocks_memory,tamanioBloque*cantidadBloques);
+                
         close(blocks);
         free(pathBlocks);
 

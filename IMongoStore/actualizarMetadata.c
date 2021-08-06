@@ -84,7 +84,7 @@ void setearMD5(char* pathMetadata){
 
     for(int i = 0; i < contador; i++){
         if((contador - bloquesHastaAhora) > 1){ //no es el ultimo bloque-->no hay frag. interna
-            
+            log_info(logger, "Se levanta del bloque.%d", i);
             bloque = atoi(listaBloques[bloquesHastaAhora]);
             char* temporalBloque = malloc(tamanioBloque+1);
             memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, tamanioBloque);
@@ -94,20 +94,20 @@ void setearMD5(char* pathMetadata){
             bloquesHastaAhora++;
             free(temporalBloque);
         }else{
+            log_info(logger, "Se levanta del bloque.%d", i);
             bloque = atoi(listaBloques[bloquesHastaAhora]);
 
             int sizeVieja = config_get_int_value(metadata, "SIZE");
-            int fragmentacion =sizeVieja-  bloquesHastaAhora*tamanioBloque;
+            int fragmentacion =tamanioBloque - (sizeVieja %  tamanioBloque);
 
             log_info(logger, "fragm interna:%d, sizeViejo:%d, Contador:%d",fragmentacion,sizeVieja,contador);
-            char* temporalBloque = malloc(fragmentacion+1);
-            memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, fragmentacion);
-            temporalBloque[fragmentacion] = '\0';
+            char* temporalBloque = malloc(sizeVieja+2);
+            memcpy(temporalBloque, copiaBlocks + bloque*tamanioBloque, sizeVieja + 1);
+            temporalBloque[sizeVieja + 1] = '\0';
                 
             string_append(&string_temp,temporalBloque);
             free(temporalBloque);
         }
-            
     }
     log_info(logger, "String total para el MD5:%s", string_temp);
     
@@ -317,6 +317,8 @@ char* obtenerBitacora(int tripulante){
         int tamanioTotal = config_get_int_value(metadata,"SIZE");
         int contadorBloques = 0;
         int posicionBloque = 0;
+
+        tamanioTotal +=1;
 
         while(listaBloques[contadorBloques]){
             contadorBloques++;

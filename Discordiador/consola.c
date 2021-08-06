@@ -216,7 +216,7 @@ void funcionConsola(){
                 
                 case C_SALIR: 
                     log_info(logger, "Salimos de la consola");
-                                       liberarMemoria();        
+                    liberarMemoria();        
                     break;
 
                 default:
@@ -319,7 +319,7 @@ void iterar_en_lista(t_list* self, void(*closure)(void*, t_list*, pthread_mutex_
 void extraerTripulante (void* nodo, t_list* cola, pthread_mutex_t mutexCola, int posicion){
     tcb* tripulanteAExpulsar = (tcb*) nodo;
     if (tripulanteAExpulsar->status=='X'){
-        tcb* aux_TCB = malloc (sizeof(tcb));
+        tcb* aux_TCB;
         pthread_mutex_lock(&mutexCola);
         aux_TCB = list_remove(cola, posicion);
         pthread_mutex_unlock(&mutexCola);
@@ -330,7 +330,7 @@ void extraerTripulante (void* nodo, t_list* cola, pthread_mutex_t mutexCola, int
 }
 
 void expulsarNodo (t_queue* cola, char* nombre_cola, pthread_mutex_t mutexCola){
-    tcb* tripulanteAExpulsar = malloc(sizeof(tcb));
+    tcb* tripulanteAExpulsar;
     tripulanteAExpulsar = list_find(cola->elements, buscarTripulante);
 
     if (tripulanteAExpulsar!=NULL) {
@@ -416,8 +416,12 @@ void liberarMemoria(){
     log_destroy(logger);
   	config_destroy(config);
     
-    	
-	free(hiloTripulante);
+    // for(int i = 0; i<cantidadTCBTotales;i++){
+    //     if(hiloTripulante[i]!=NULL){
+    //         free(&hiloTripulante[i]);
+    //     }
+    // }
+    free(hiloTripulante);
 
     exit(EXIT_SUCCESS);
   	

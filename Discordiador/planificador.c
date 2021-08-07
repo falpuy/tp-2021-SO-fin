@@ -65,6 +65,7 @@ void funcionhNewaReady (t_log* logger) {
     pthread_mutex_unlock(&mutexValidador);
 
     while (temp_validador) {
+        sem_wait(&pausar);
         sem_wait(&semNR);
         
         pthread_mutex_lock(&mutexPlanificacionViva);
@@ -76,7 +77,7 @@ void funcionhNewaReady (t_log* logger) {
         pthread_mutex_unlock(&mutexSabotajeActivado);
 
         if(temp_planificacion_viva && temp_sabotaje_activado == 0){
-            log_info(logger, "CICLO CPU NRO: %d", contadorCicloCPU);
+            // log_info(logger, "CICLO CPU NRO: %d", contadorCicloCPU);
 
             while(!queue_is_empty(buffersAEnviar)){
                 pthread_mutex_lock(&mutexBuffersAEnviar);
@@ -136,6 +137,7 @@ void funcionhNewaReady (t_log* logger) {
             }
         }
         sem_post(&semEBIO);
+        
     }
 }
 
@@ -148,6 +150,7 @@ void funcionhReadyaExec (t_log* logger){
     
     while (temp_validador) {
         sem_wait(&semRE);
+
 
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;
@@ -841,6 +844,7 @@ void funcionhExit (t_log* logger){
             pthread_mutex_unlock(&mutexBloqEmer);
             contadorCicloCPU++;
         }
+        sem_post(&pausar);
         sem_post(&semNR);
     }    
 }

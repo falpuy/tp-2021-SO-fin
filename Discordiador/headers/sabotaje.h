@@ -154,6 +154,7 @@
     sem_t* semTripulantes;
     sem_t semERM;
     sem_t semMR;
+    sem_t pausar;
 
     int cantidadVieja;
     int cantidadActual;

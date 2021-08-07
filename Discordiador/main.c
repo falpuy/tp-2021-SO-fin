@@ -101,6 +101,7 @@ void setearConfiguraciones (){
     sem_init(&semEaX, 0, 0);
     sem_init(&semERM, 0, 0);
     sem_init(&semMR, 0, 0);
+    sem_init(&pausar,0,0);
     
     pthread_create(&hNewaReady, NULL, (void *) funcionhNewaReady, logger);
     pthread_create(&hReadyaExec, NULL, (void *) funcionhReadyaExec, logger);

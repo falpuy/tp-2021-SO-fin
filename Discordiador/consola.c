@@ -17,16 +17,19 @@ void funcionConsola(){
                     planificacion_viva = 1;  //activa flag para que se ejecuten los hilos
                     log_info(logger, "Se inició la planificación. Estado de la flag: %d", planificacion_viva);
                     
+                    sem_post(&pausar); //Le avisa a New->Ready q es su turno sólo la primera vez
                     if (queue_is_empty(ready) && queue_is_empty(exec) && queue_is_empty(bloq_io) && queue_is_empty(bloq_emer) && queue_is_empty(cola_exit)){
                         sem_post(&semNR); //Le avisa a New->Ready q es su turno sólo la primera vez
+                        
                     }
                     break;
 
                 case C_PAUSAR_PLANIFICACION: 
                 	log_info(logger, "Entró comando: PAUSAR_PLANIFICACION");
-                	pthread_mutex_lock(&mutexPlanificacionViva);
-                    planificacion_viva = 0;
-                    pthread_mutex_unlock(&mutexPlanificacionViva);
+                	// pthread_mutex_lock(&mutexPlanificacionViva);
+                    sem_wait(&pausar);
+                    // planificacion_viva = 0;
+                    // pthread_mutex_unlock(&mutexPlanificacionViva);
                 	log_info(logger, "Se pausó la planificación.");
 
                     break;

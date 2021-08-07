@@ -497,18 +497,11 @@ void validarBlocksRecursos(char* path){
     int archSuperBloque = open("./Filesystem/SuperBloque.ims", O_CREAT | O_RDWR, 0664);
     
     sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8, PROT_READ | PROT_WRITE, MAP_SHARED, archSuperBloque, 0);
-    void* falsoMemory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
+    void* falsoFS = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
     
-    void* copiaBlocks2 = malloc(tamanioBloque*cantidadBloques);
-    memcpy(copiaBlocks2,falsoMemory,tamanioBloque * cantidadBloques);
-
     memBitmap = malloc(cantidadBloques/8);
     memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2,cantidadBloques/8);
     bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
-
-    munmap(falsoMemory, tamanioBloque * cantidadBloques);
-    close(archBloques);
-
     
     //**********************************VALIDANDO DESORDEN DE LISTA********************************************
     if(access(path,F_OK) >= 0){
@@ -539,7 +532,7 @@ void validarBlocksRecursos(char* path){
         
         for(int i = 0; i < contador; i++){
             bloque = atoi(listaBloques[i]);
-            memcpy(stringTemporal + i*tamanioBloque, copiaBlocks2 + bloque * tamanioBloque, tamanioBloque);
+            memcpy(stringTemporal + i*tamanioBloque, falsoFS + bloque * tamanioBloque, tamanioBloque);
         }
         stringTemporal[contador*tamanioBloque] = '\0';
 
@@ -591,57 +584,53 @@ void validarBlocksRecursos(char* path){
         }else{
             log_info(logger, "Validacion Blocks...NOT OK");
 
-            int sizeTemporal = size;
-            char* temp;
+            char* temporal = string_repeat(charPegar,size);
+            int tamanioTemporal = string_length(temporal);
+            string_append(&temporal,"|");
+            log_info(logger, "Pegando nuevo string...%s", temporal);
+            int bloqueLeido = 0;
 
-            for(int i = 0; i < contador; i++){
-                bloque = atoi(listaBloques[i]);
-                log_info(logger,"Bloque escribiendo:%d",bloque);
-                if((sizeTemporal > tamanioBloque)){ //no es el ultimo bloque-->no hay frag. interna
-                    log_info(logger,"No estoy en el ultimo bloque");
-                    temp = string_repeat(charPegar,tamanioBloque);
-                    memcpy(copiaBlocks2 + bloque * tamanioBloque,temp,tamanioBloque);
-                    log_info(logger, "String creado:%s",temp);
-                    sizeTemporal -= tamanioBloque;
-                    free(temp);
+            t_config* metadata2 = config_create(path);
+            char** lista2 = config_get_array_value(metadata2,"BLOCKS");
+            config_destroy(metadata2);
+            int contador2=0;
+
+            while(lista2[contador2]){
+                contador2++;
+            }
+
+
+            log_info(logger, "Muestro la puta lista");
+            for(int i = 0; i < contador2; i++){
+                log_info(logger, "El bloque es:%d", atoi(lista2[i]));
+            }
+
+            for(int i = 0; i < contador2; i++){
+                int bloque = atoi(lista2[i]);
+                log_info(logger,"Se va a pegar en el bloque:%d",bloque);
+                if(tamanioTemporal >= tamanioBloque){
+                    log_info(logger,"No soy ultimo bloque");
+                    
+                    memcpy(falsoFS + tamanioBloque*bloque,temporal + bloqueLeido*tamanioBloque,tamanioBloque);
+                    bloqueLeido++;
+                    tamanioTemporal -= tamanioBloque;
                 }else{
-                    log_info(logger,"Estoy en el ultimo bloque");
-                    log_info(logger, "Size temporal es:%d", sizeTemporal);
-
-                    if(sizeTemporal == tamanioBloque){
-                        log_info(logger, "SizeTemporal == tamanioBloque");
-                        temp = string_repeat(charPegar,sizeTemporal);
-                        memcpy(copiaBlocks2 + bloque * tamanioBloque,temp,sizeTemporal);
-                        log_info(logger, "String creado:%s",temp);
-
-                        int cantidadBloquesAUsar = cantidad_bloques("|");
-                        int err = validarBitsLibre(cantidadBloquesAUsar);
-                        if(err < 0){
-                            log_error(logger, "No existe más espacio para guardar en filesystem");
-                            log_error(logger,"Finalizando programa...");
-                            exit(-1);
-                        }
-                        char* stringPipe = string_new();
-                        string_append(&stringPipe,"|");
-                        guardarPorBloque(stringPipe,0,cantidadBloquesAUsar,path,1,1);
-                        free(stringPipe);
-                        free(temp);
-                    }else{
-                        temp = string_repeat(charPegar,sizeTemporal);
-                        string_append(&temp,"|");
-                        memcpy(copiaBlocks2 + bloque * tamanioBloque,temp,sizeTemporal + 1);
-                        log_info(logger, "String creado:%s",temp);
-                        free(temp);
-                    }
+                    log_info(logger,"soy ultimo bloque");                    
+                    memcpy(falsoFS + tamanioBloque*bloque,temporal + bloqueLeido*tamanioBloque,tamanioTemporal +1);
+                    tamanioTemporal = 0;
+                    bloqueLeido++;
                 }
             }
-            log_info(logger, "Se Restauró Blocks de la metadata.");
-            archBloques = open("./Filesystem/Blocks.ims", O_CREAT | O_RDWR, 0664);
-            falsoMemory = mmap(NULL, tamanioBloque*cantidadBloques, PROT_READ | PROT_WRITE, MAP_SHARED, archBloques, 0);
-            memcpy(falsoMemory,copiaBlocks2,tamanioBloque * cantidadBloques);
-            msync(falsoMemory, tamanioBloque*cantidadBloques,MS_SYNC);
-            munmap(falsoMemory, tamanioBloque * cantidadBloques);
+            msync(falsoFS, tamanioBloque*cantidadBloques,MS_SYNC);
+            memcpy(copiaBlocks,falsoFS,tamanioBloque*cantidadBloques);
+            free(temporal);
+            for(int i = 0; i < contador2; i++){
+                free(lista2[i]);
+            }
+            free(lista2);
+
         }
+
         for(int i = 0; i < contador; i++){
             free(listaBloques[i]);
         }
@@ -652,7 +641,8 @@ void validarBlocksRecursos(char* path){
     free(memBitmap);
     bitarray_destroy(bitmap);
     munmap(sb_memoria, sizeof(uint32_t) * 2 + cantidadBloques/8);
-    free(copiaBlocks2);
+    munmap(falsoFS, tamanioBloque * cantidadBloques);
+    // free(copiaBlocks2);
     close(archSuperBloque);
 }
 

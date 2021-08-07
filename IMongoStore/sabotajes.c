@@ -127,11 +127,12 @@ void validacionEsValidaListaRecursos(char* path){
             int bloque = atoi(listaBloques[i]);
             log_info(logger,"Bloque:%d", bloque);
             
-            if(bloque > cantidadBloques || bitarray_test_bit(bitmap,bloque)){
+            if(bloque > cantidadBloques || !bitarray_test_bit(bitmap,bloque)){
                 error = 1;
                 log_error(logger,"Se encontró un bloque inválido: %d", bloque);
             }else {
                 lista = crearNuevaListaBloques(temporal,bloque,1,path);
+                // log_info(logger,"Lista:%s", lista);
                 free(temporal);
                 temporal = string_new();
                 string_append(&temporal, lista);

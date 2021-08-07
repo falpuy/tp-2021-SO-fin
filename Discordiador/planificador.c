@@ -51,6 +51,9 @@ void iterate_next_task(t_list *self) {
             aux_TCB->status = 'X';
             
         }
+        free(mensaje->identifier);
+        free(mensaje->payload);
+        free(mensaje);
 
 		element = aux;
 	}

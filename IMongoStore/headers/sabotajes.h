@@ -93,7 +93,9 @@
     char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar, int flagEsGuardar,char* path);
     int cantidad_bloques(char* string);    
     int validarBitsLibre(int cantidadBloquesAUsar);
+    void validacionEsValidaLista();
     void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar);
+    void validacionEsValidaListaRecursos(char* path);
     
     void actualizarBlocks(int bloque,int flagEsGuardar,char* path);
     void setearMD5(char* pathMetadata);

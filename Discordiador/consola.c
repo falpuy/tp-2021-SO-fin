@@ -381,6 +381,7 @@ void liberarMemoria(){
     queue_destroy(cola_exit);
     queue_destroy(bloq_emer_sorted);
     queue_destroy(colaContSab);
+    queue_destroy_and_destroy_elements(buffersAEnviar,destruirBuffers);
     list_destroy_and_destroy_elements(listaPCB, destruirPCB);
     list_destroy_and_destroy_elements(lista_parametros,destruirParametros);
 
@@ -402,6 +403,7 @@ void liberarMemoria(){
     pthread_mutex_destroy(&mutex_contadorSemGlobal);
     pthread_mutex_destroy(&mutexValidacionPos);
     pthread_mutex_destroy(&mutexContextoSabotaje);
+    pthread_mutex_destroy(&mutexBuffersAEnviar);
     
     sem_destroy(&semNR);
     sem_destroy(&semRE);
@@ -416,11 +418,9 @@ void liberarMemoria(){
     log_destroy(logger);
   	config_destroy(config);
     
-    // for(int i = 0; i<cantidadTCBTotales;i++){
-    //     if(hiloTripulante[i]!=NULL){
-    //         free(&hiloTripulante[i]);
-    //     }
-    // }
+    /*for(int i=0; i<cantidadTCBTotales; i++){
+        pthread_detach(hiloTripulante[i]);
+    }*/
     free(hiloTripulante);
 
     exit(EXIT_SUCCESS);

@@ -10,6 +10,7 @@ void funcionPlanificador(t_log* logger) {
     bloq_emer_sorted = queue_create();
     cola_exit = queue_create();
     colaContSab = queue_create();
+    buffersAEnviar = queue_create();
     listaSemaforos = list_create();
 
     listaPCB = list_create();
@@ -35,6 +36,31 @@ void funcionhNewaReady (t_log* logger) {
         if(temp_planificacion_viva && temp_sabotaje_activado == 0){
             log_info(logger, "CICLO CPU NRO: %d", contadorCicloCPU);
 
+            while(!queue_is_empty(buffersAEnviar)){
+                pthread_mutex_lock(&mutexBuffersAEnviar);
+                t_mensaje* mensaje2 = (t_mensaje* ) queue_pop(buffersAEnviar);
+                pthread_mutex_unlock(&mutexBuffersAEnviar);
+
+                int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+                _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, mensaje2->payload, mensaje2->pay_len, logger);
+
+                t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+                close(conexion_RAM);
+
+                if (mensaje->command == SUCCESS) {
+                    log_info(logger,"Se guardó en Memoria OK");
+                }
+                else if (mensaje->command == ERROR_POR_FALTA_DE_MEMORIA){
+                    log_error(logger,"No hay memoria para almacenar este PCB");
+                }
+                free(mensaje->payload);
+                free(mensaje->identifier);
+                free(mensaje);
+
+                free(mensaje2->payload);
+                free(mensaje2);
+            }
+
             while(!queue_is_empty(cola_new)){   
                 
                 log_info(logger,"----------------------------------");
@@ -45,20 +71,43 @@ void funcionhNewaReady (t_log* logger) {
                 pthread_mutex_unlock(&mutexNew);
 
                 log_info(logger,"Tripulante: %d encontrado en New. Moviéndolo a Ready...", aux_TCB->tid);
-                log_info(logger,"Instruccion Actual: %s", aux_TCB->instruccion_actual);
 
                 aux_TCB->status = 'R';
 
-                // int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-                // void *msg = _serialize(sizeof(int) * 2 + sizeof(char), "%d%d%c", aux_TCB->pid, aux_TCB->tid, aux_TCB->status);
-                // _send_message(conexion_RAM, "DIS", ENVIAR_CAMBIO_DE_ESTADO, msg, sizeof(int) * 2 + sizeof(char), logger);
-                // free(msg);
-                // t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-                // close(conexion_RAM);
+                int tamanioBuffer = sizeof(int)*2;
+                void* buffer = _serialize(tamanioBuffer, "%d%d", aux_TCB->pid, aux_TCB->tid);
+                int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
+                _send_message(conexion_RAM, "DIS", ENVIAR_TAREA, buffer, tamanioBuffer, logger);
+                free(buffer);
 
-                pthread_mutex_lock(&mutexReady);
-                queue_push(ready, (void*) aux_TCB);
-                pthread_mutex_unlock(&mutexReady);
+                t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
+                close(conexion_RAM);
+                
+                if (mensaje->command == SUCCESS) { // Recibi la primer tarea
+                    int tamanioTarea;
+                    memmove(&tamanioTarea, mensaje->payload, sizeof(int));
+
+                    aux_TCB->instruccion_actual = malloc(tamanioTarea + 1);
+                    memmove(aux_TCB->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
+                    aux_TCB->instruccion_actual[tamanioTarea] = '\0';
+
+                    pthread_mutex_lock(&mutexReady);
+                    queue_push(ready, (void*) aux_TCB);
+                    pthread_mutex_unlock(&mutexReady);
+                    
+                    log_info(logger, "Tarea Inicial: %s", aux_TCB->instruccion_actual);
+                }
+                else{
+                    log_error(logger, "No hay tareas disponibles para el tripulante %d", aux_TCB->tid);
+                    aux_TCB->status = 'X';
+                    pthread_mutex_lock(&mutexExit);
+                    queue_push(cola_exit, (void*) aux_TCB);
+                    pthread_mutex_unlock(&mutexExit);
+                }
+
+                free(mensaje->payload);
+                free(mensaje->identifier);
+                free(mensaje);
 
                 log_info(logger,"----------------------------------");
                 log_info(logger,"Se ejecutó NEW->READY");
@@ -208,7 +257,6 @@ void funcionhExecaReady (t_log* logger) {
 
     while (temp_validador) {
         sem_wait(&semER);// Espera el _signal de los N tripulantes
-        //log_info(logger, "Llegan los _signal de todos los tripulantes");
 
         pthread_mutex_lock(&mutexPlanificacionViva);
         int temp_planificacion_viva = planificacion_viva;

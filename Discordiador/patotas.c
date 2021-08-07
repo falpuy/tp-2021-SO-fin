@@ -80,7 +80,8 @@ pcb* crear_PCB(char** parametros, t_log* logger){
         offset += sizeof(int);
         memcpy(buffer_a_enviar + offset, &nuevoTCB->pid, sizeof(int));
         offset += sizeof(int);
-        memcpy(buffer_a_enviar + offset, &nuevoTCB->status, sizeof(char));
+        char status = 'R';
+        memcpy(buffer_a_enviar + offset, &status, sizeof(char));
         offset += sizeof(char);
         memcpy(buffer_a_enviar + offset, &nuevoTCB->posicionX, sizeof(int));
         offset += sizeof(int);
@@ -91,29 +92,14 @@ pcb* crear_PCB(char** parametros, t_log* logger){
     pthread_mutex_lock(&mutex_cantidadActual);
     cantidadActual += cant_tripulantes;
     pthread_mutex_unlock(&mutex_cantidadActual);
-    
-    //pthread_mutex_lock(&mutexBuffer);
-    int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-    _send_message(conexion_RAM, "DIS", INICIAR_PATOTA, buffer_a_enviar, tamanioBuffer, logger);
-    free(buffer_a_enviar);
 
-  	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-    close(conexion_RAM);
-    //pthread_mutex_unlock(&mutexBuffer);
+    t_mensaje* mensaje = malloc(sizeof (t_mensaje));
+    mensaje->payload=buffer_a_enviar;
+    mensaje->pay_len=tamanioBuffer;
 
-  	if (mensaje->command == SUCCESS) {
-        log_info(logger,"Se guardó en Memoria OK");
-    }
-    else if (mensaje->command == ERROR_POR_FALTA_DE_MEMORIA){
-        free(mensaje->payload);
-        free(mensaje->identifier);
-        free(mensaje);
-        
-        return NULL;
-    }
-    free(mensaje->payload);
-    free(mensaje->identifier);
-    free(mensaje);
+    pthread_mutex_lock(&mutexBuffersAEnviar);
+    queue_push(buffersAEnviar, (void*) mensaje);
+    pthread_mutex_unlock(&mutexBuffersAEnviar);
 
   	return nuevoPCB;
 }
@@ -139,6 +125,12 @@ void destruirPCB(void* nodo){
 void destruirParametros(void* parametrosDeHilo){
     parametrosThread* parametrosADestruir = (parametrosThread*) parametrosDeHilo;
     free(parametrosADestruir);
+}
+
+void destruirBuffers(void* elemento){
+    t_mensaje* mensaje = (t_mensaje*) elemento;
+    free(mensaje->payload);
+    free(mensaje);
 }
 
 
@@ -309,14 +301,12 @@ void operandoSinSabotajeTareaNormal(void* tcbTrip, void* param, char** tarea){
             int tamanioNombreTarea = strlen(nombreTareaNormal);
             int tamanioBuffer = sizeof(int)*5 + tamanioNombreTarea;
                     
-            //pthread_mutex_lock(&mutexBuffer);
             void* buffer = _serialize(tamanioBuffer, "%d%s%d%d%d", tripulante->tid, nombreTareaNormal, posicionX, posicionY, tiempoTarea);
             int conexion_IMS = _connect(ip_IMS, puerto_IMS, logger);
             _send_message(conexion_IMS, "DIS", COMENZAR_EJECUCION_TAREA, buffer, tamanioBuffer, logger);
             close(conexion_IMS);
             free(buffer);
             tripulante->mensajeInicialIMS = 1;
-            //pthread_mutex_unlock(&mutexBuffer);
         }
 
         tripulante->tiempoEnExec++;
@@ -817,55 +807,24 @@ void create_tcb_by_list(t_list* self, void(*closure)(void*, int, t_log*), int ca
 void iniciar_tcb(void *elemento, int indice_tcb_temporal, t_log *logger) {
 
 	tcb *aux = (tcb *) elemento;
-  	int tamanioBuffer = sizeof(int) * 2;
 
-    
-    //pthread_mutex_lock(&mutexBuffer);
-  	void* buffer = _serialize(tamanioBuffer, "%d%d", aux->pid, aux->tid);
-    int conexion_RAM = _connect(ip_RAM, puerto_RAM, logger);
-  	_send_message(conexion_RAM, "DIS", ENVIAR_TAREA, buffer, tamanioBuffer, logger);
-    free(buffer);
+    aux->estaVivoElHilo = 1;
 
-  	t_mensaje *mensaje = _receive_message(conexion_RAM, logger);
-    close(conexion_RAM);
-    //pthread_mutex_unlock(&mutexBuffer);
-  	
-    if (mensaje->command == SUCCESS) { // Recibi la primer tarea
-        int tamanioTarea;
-        memmove(&tamanioTarea, mensaje->payload, sizeof(int));
+    pthread_mutex_lock(&mutexNew);
+    queue_push (cola_new, (void*) aux);
+    pthread_mutex_unlock(&mutexNew);
 
-        aux->instruccion_actual = malloc(tamanioTarea + 1);
-        memmove(aux->instruccion_actual, mensaje->payload + sizeof(int), tamanioTarea);
-        aux->instruccion_actual[tamanioTarea] = '\0';
-        
-        log_info(logger, "Tarea Inicial: %s", aux->instruccion_actual);
+    sem_t* semTripulante = malloc(sizeof(sem_t));
+    sem_init(semTripulante, 0, 0);
 
-        aux->estaVivoElHilo = 1;
+    list_add(listaSemaforos, semTripulante);
+    parametrosThread* parametrosHilo = malloc (sizeof(parametrosThread));
+    parametrosHilo->idSemaforo=indice_tcb_temporal;
 
-        pthread_mutex_lock(&mutexNew);
-        queue_push (cola_new, (void*) aux);
-        pthread_mutex_unlock(&mutexNew);
+    list_add(lista_parametros,parametrosHilo);
 
-        sem_t* semTripulante = malloc(sizeof(sem_t));
-        sem_init(semTripulante, 0, 0);
-
-        list_add(listaSemaforos, semTripulante);
-        parametrosThread* parametrosHilo = malloc (sizeof(parametrosThread));
-        parametrosHilo->idSemaforo=indice_tcb_temporal;
-
-        list_add(lista_parametros,parametrosHilo);
-
-        pthread_create(&hiloTripulante[parametrosHilo->idSemaforo], NULL, (void *) funcionTripulante, parametrosHilo);
-        pthread_detach(hiloTripulante[parametrosHilo->idSemaforo]);
-        //free(parametrosHilo); ???
-       
-    } else {
-    	log_error(logger, "No hay tareas disponibles");
-    }
-
-    free(mensaje->identifier);
-    free(mensaje->payload);
-    free(mensaje);
+    pthread_create(&hiloTripulante[parametrosHilo->idSemaforo], NULL, (void *) funcionTripulante, parametrosHilo);
+    pthread_detach(hiloTripulante[parametrosHilo->idSemaforo]);
 }
 
 void * get_by_id(t_list * self, int id) {

@@ -142,6 +142,7 @@
     pthread_mutex_t mutexValidacionPos;
     pthread_mutex_t mutex_contadorSemGlobal;
     pthread_mutex_t mutexContextoSabotaje;
+    pthread_mutex_t mutexBuffersAEnviar;
 
     sem_t semNR;
     sem_t semRE;
@@ -175,6 +176,7 @@
     t_queue* bloq_emer_sorted;
     t_queue* cola_exit;
     t_queue* colaContSab;
+    t_queue* buffersAEnviar;
 
     t_list* lista_parametros;
     t_list* listaPCB;

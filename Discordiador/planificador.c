@@ -52,12 +52,6 @@ void funcionhNewaReady (t_log* logger) {
                 }
                 else if (mensaje->command == ERROR_POR_FALTA_DE_MEMORIA){
                     log_error(logger,"No hay memoria para almacenar este PCB");
-                    free(mensaje->payload);
-                    free(mensaje->identifier);
-                    free(mensaje);
-
-                    free(mensaje2->payload);
-                    free(mensaje2);
                 }
                 free(mensaje->payload);
                 free(mensaje->identifier);

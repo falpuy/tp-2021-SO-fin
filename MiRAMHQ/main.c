@@ -530,40 +530,63 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             //-----------------------------------------------------------
 
             temp_id = string_itoa(idPCB);
-            segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
-            segment* segmento_tareas = find_task_segment(temp_id, table_collection);
-            free(temp_id); 
 
-            nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
-            log_info(logger, "La tarea %d empieza esta entre: %d - %d", nuestroTCB->next, segmento_tareas->baseAddr, segmento_tareas->limit);
-            char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit, segmento_tareas->baseAddr, logger);
-            log_info(logger, "La tarea a enviar es: %s",tarea);
-            
-            if(!tarea){
-								log_info(logger, "No hay mas tareas que mandar");
-                char* temp = string_new();
-                string_append(&temp, "sin tareas");
-                char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
+            log_info(logger,"ID STRING:%s", temp_id);
+            log_info(logger,"Result :%d", dictionary_has_key(table_collection, temp_id));
 
-                _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
+            if (!dictionary_has_key(table_collection, temp_id)) {
+                  log_info(logger, "No hay mas tareas que mandar");
+                  char* temp = string_new();
+                  string_append(&temp, "sin tareas");
+                  char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
 
-                free(temp);
-                free(mandamos);
-            }else{
-								
-              	nuestroTCB->next += strlen(tarea) + 1;
+                  _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
 
-                save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
+                  free(temp);
+                  free(mandamos);
+            } else {
 
-                char* buffer_a_enviar =  _serialize(sizeof(int)+strlen(tarea),"%s",tarea);
-                _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+string_length(tarea), logger);
-              	
-              	free(buffer_a_enviar);
-                free(tarea);
+              log_info(logger,"Entro al else");
+
+              segmento_tcb = find_tcb_segment(idTCB, temp_id, table_collection);
+              segment* segmento_tareas = find_task_segment(temp_id, table_collection);
+              
+
+              nuestroTCB = get_tcb_from_memory(memory, mem_size, segmento_tcb);
+              log_info(logger, "La tarea %d empieza esta entre: %d - %d", nuestroTCB->next, segmento_tareas->baseAddr, segmento_tareas->limit);
+              char* tarea = get_next_task(memory, nuestroTCB->next, segmento_tareas->limit, segmento_tareas->baseAddr, logger);
+              log_info(logger, "La tarea a enviar es: %s",tarea);
+              
+              if(!tarea){
+                  log_info(logger, "No hay mas tareas que mandar");
+                  char* temp = string_new();
+                  string_append(&temp, "sin tareas");
+                  char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
+
+                  _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
+
+                  free(temp);
+                  free(mandamos);
+              }else{
+                  
+                  nuestroTCB->next += strlen(tarea) + 1;
+
+                  save_tcb_in_memory(admin, memory, mem_size, segmento_tcb, nuestroTCB);
+
+                  char* buffer_a_enviar =  _serialize(sizeof(int)+strlen(tarea),"%s",tarea);
+                  _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+string_length(tarea), logger);
+                  
+                  free(buffer_a_enviar);
+                  free(tarea);
+
+              }
+
+              free(nuestroTCB);
 
             }
 
-            free(nuestroTCB);
+            free(temp_id);
+
 						log_info(logger,"-----------------------------------------------------");
         break;
 
@@ -579,26 +602,30 @@ void segmentation_handler(int fd, char *id, int opcode, void *buffer, t_log *log
             temp_id = string_itoa(idPCB);
             log_info(logger,"ID PCB: %s", temp_id);
 
-            // remove_pcb_from_memory(memory, mem_size, table_collection, temp_id);
-            segmento_aux = get_next_segment(table_collection, temp_id);
+            if (dictionary_has_key(table_collection, temp_id)) {
 
-            while (segmento_aux != NULL) {
-              if(remove_segment_from_memory(admin, mem_size, segmento_aux)) {
-
-                  segment *aux = malloc(sizeof(segment));
-                  aux -> id = -1;
-                  aux -> type = -1;
-                  aux -> nroSegmento = -1;
-                  aux -> baseAddr = segmento_aux -> baseAddr;
-                  aux -> limit = segmento_aux -> limit;
-
-                  list_add_sorted(segmentosLibres -> elements, aux, sort_by_addr);
-                  // queue_push(segmentosLibres, aux);
-
-                  remove_segment_from_table(table_collection, temp_id, segmento_aux);
-              }
-
+              log_info(logger,"Entro al if.....");
+              // remove_pcb_from_memory(memory, mem_size, table_collection, temp_id);
               segmento_aux = get_next_segment(table_collection, temp_id);
+
+              while (segmento_aux != NULL) {
+                if(remove_segment_from_memory(admin, mem_size, segmento_aux)) {
+
+                    segment *aux = malloc(sizeof(segment));
+                    aux -> id = -1;
+                    aux -> type = -1;
+                    aux -> nroSegmento = -1;
+                    aux -> baseAddr = segmento_aux -> baseAddr;
+                    aux -> limit = segmento_aux -> limit;
+
+                    list_add_sorted(segmentosLibres -> elements, aux, sort_by_addr);
+                    // queue_push(segmentosLibres, aux);
+
+                    remove_segment_from_table(table_collection, temp_id, segmento_aux);
+                }
+
+                segmento_aux = get_next_segment(table_collection, temp_id);
+              }
             }
 
             free(temp_id);
@@ -739,41 +766,45 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
           
           idPCBkey = string_itoa(idPCB);
 
-          char *tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
+          if (!dictionary_has_key(table_collection, idPCBkey)) {
+                  log_info(logger, "No hay mas tareas que mandar");
+                  char* temp = string_new();
+                  string_append(&temp, "sin tareas");
+                  char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
 
-          free(idPCBkey);
+                  _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
 
-          // log_info(logger, "Muestro valores del bitmap para REAL..");
-          // for(int i = 0; i < frames_memory; i++){
-          //     log_info(logger, "Bit %d: %d", i, bitmap[i]);
-          // }
-          // log_info(logger, "Muestro valores INICIALES del bitmap para VIRTUAL..");
-          // for(int i = 0; i < frames_virtual; i++){
-          //     log_info(logger, "Bit %d: %d", i, bitarray_test_bit(virtual_bitmap, i));
-          // }
+                  free(temp);
+                  free(mandamos);
+            } else {
 
-          if(!tarea){
-            log_info(logger, "No hay mas tareas que mandar");
-            char* temp = string_new();
-            string_append(&temp, "Sin tareas");
-            char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
+              char *tarea = get_task_from_page(memory, admin_collection, table_collection, idPCBkey, idTCB);
 
-            _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
+              if(!tarea){
+                log_info(logger, "No hay mas tareas que mandar");
+                char* temp = string_new();
+                string_append(&temp, "Sin tareas");
+                char* mandamos = _serialize(sizeof(int)+strlen(temp),"%s",temp);
 
-            free(temp);
-            free(mandamos);
-          }else{
-            
-            log_info(logger, "La tarea a enviar es: %s",tarea);
-            log_info(logger, "El tamaño de tarea a enviar es: %d",strlen(tarea));
+                _send_message(fd, "RAM", ERROR_NO_HAY_TAREAS, mandamos, sizeof(int)+strlen(mandamos), logger);
 
-            char* buffer_a_enviar =  _serialize(sizeof(int)+strlen(tarea),"%s",tarea);
-            _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+strlen(tarea), logger);
-            
-            free(buffer_a_enviar);
-            free(tarea);
+                free(temp);
+                free(mandamos);
+              }else{
+                
+                log_info(logger, "La tarea a enviar es: %s",tarea);
+                log_info(logger, "El tamaño de tarea a enviar es: %d",strlen(tarea));
 
-          }
+                char* buffer_a_enviar =  _serialize(sizeof(int)+strlen(tarea),"%s",tarea);
+                _send_message(fd, "RAM", SUCCESS, buffer_a_enviar, sizeof(int)+strlen(tarea), logger);
+                
+                free(buffer_a_enviar);
+                free(tarea);
+
+              }
+            }
+
+            free(idPCBkey);
 
           log_info(logger,"-----------------------------------------------------");
         break;
@@ -789,9 +820,11 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             idPCBkey = string_itoa(idPCB);
             log_info(logger,"ID PCB: %s", idPCBkey);
 
-            remove_pcb_from_page(memory, admin_collection, table_collection, idPCBkey);
+            if (dictionary_has_key(table_collection, idPCBkey)) {
+              remove_pcb_from_page(memory, admin_collection, table_collection, idPCBkey);
 
-            page_dump(table_collection);
+              page_dump(table_collection);
+            }
 
             free(idPCBkey); 
               

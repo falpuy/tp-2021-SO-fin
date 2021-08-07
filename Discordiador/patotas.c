@@ -94,6 +94,7 @@ pcb* crear_PCB(char** parametros, t_log* logger){
     pthread_mutex_unlock(&mutex_cantidadActual);
 
     t_mensaje* mensaje = malloc(sizeof (t_mensaje));
+    mensaje->command=nuevoPCB->pid;
     mensaje->payload=buffer_a_enviar;
     mensaje->pay_len=tamanioBuffer;
 

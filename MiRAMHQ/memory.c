@@ -2379,8 +2379,14 @@ void memory_dump(t_dictionary *self, void *memory) {
 void create_map() {
     nivel_gui_inicializar();
 
+    int pid = process_getpid();
+
+    char *temp = string_itoa(pid);
+
     // Drawing test
-    nivel = nivel_crear("Among OS");
+    nivel = nivel_crear(temp);
     nivel_gui_dibujar(nivel);
+
+    free(temp);
 
 }

@@ -741,6 +741,8 @@ void pagination_handler(int fd, char *id, int opcode, void *buffer, t_log *logge
             string_append(&respuesta, "Respuesta");
             _send_message(fd, "RAM", SUCCESS ,respuesta, string_length(respuesta), logger);
             free(respuesta); 
+
+            page_dump(table_collection);
               
           } else {
             log_error(logger, "No hay mas espacio en memoria");

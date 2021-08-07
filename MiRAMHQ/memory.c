@@ -671,7 +671,7 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
             // printf("PAGINA: %d - %d - %d - %d\n", pnumber, prevTask + task_counter, prevTask, memcmp(tareas + (prevTask % page_size) + task_counter, ";", 1));
 
             // busco la tarea
-            while (!falta_pagina && prevTask + task_counter < (data_tcb -> start ) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
+            while (!falta_pagina && prevTask + task_counter < ((data_tcb -> start ) - 8) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
 
                 task_counter++;
                 if ((prevTask + task_counter) % page_size == 0) {
@@ -721,13 +721,13 @@ char *get_task_from_page(void *memory, t_dictionary *admin_collection, t_diction
 
                 list_add_sorted(self -> elements, page2, sort_by_id);
 
-                while (prevTask + task_counter < (data_tcb -> start ) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
+                while (prevTask + task_counter < ((data_tcb -> start ) - 8) && memcmp(tareas + (prevTask % page_size) + task_counter, "|", 1)) {
                     
                     task_counter++;
                 }
             }
 
-            if (prevTask < (data_tcb -> start ) && prevTask + task_counter <= (data_tcb -> start )) {
+            if (prevTask < ((data_tcb -> start ) - 8) && prevTask + task_counter <= (data_tcb -> start )) {
                 recv_task = malloc(task_counter + 1);
                 memcpy(recv_task, tareas + (prevTask % page_size), task_counter);
                 recv_task[task_counter] = '\0';

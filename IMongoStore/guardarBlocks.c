@@ -1,79 +1,5 @@
 #include "./headers/guardarBlocks.h"
 
-void guardarPorBloque(char* stringGuardar,int posEnString, int cantidadBloquesAUsar,char* path,int esRecurso, int flagEsGuardar){
-
-    int cantidadBloquesUsados = 0;
-    int tamanioString = string_length(stringGuardar);
-
-    //Mapeo ahora para sacar el bitmap tmb
-    char* pathSuperBloque = pathCompleto("SuperBloque.ims");
-    int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
-    sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
-    memBitmap = malloc(cantidadBloques/8);
-    memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
-    bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
-
-    for(int i=0; i < bitarray_get_max_bit(bitmap) && cantidadBloquesUsados != cantidadBloquesAUsar; i++){
-        if(bitarray_test_bit(bitmap,i) == 0){
-
-            bitarray_set_bit(bitmap,i);
-            memcpy(sb_memoria + sizeof(int) * 2,bitmap->bitarray,cantidadBloques/8);
-
-            if((cantidadBloquesAUsar-cantidadBloquesUsados)==1){//ultimo bloque a escribir - posible fragmentación interna 
-
-                log_info(logger, "Se guarda en el bloque.%d", i);
-                //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego lo que me queda del string--> tamañoTotalStr - posicionAntEnStr*tamanioBloque
-                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioString-posEnString*tamanioBloque);                
-                posEnString ++;    
-
-                //--------------------------ACTUALIZO METADATA---------------------------
-                t_config* metadata = config_create(path);
-                actualizarSize(metadata,tamanioString-((posEnString-1)*tamanioBloque) - 1,flagEsGuardar);
-                config_destroy(metadata);
-
-                actualizarBlocks(i,flagEsGuardar,path);
-
-                metadata = config_create(path);
-                if(esRecurso){
-                    actualizarBlockCount(metadata,flagEsGuardar);
-                }
-                config_destroy(metadata);
-                cantidadBloquesUsados ++;
-            }else{
-                //Me muevo al bloque en si a guardar | pego en string moviendome hasta donde guarde antes | Pego todo el tamaño del bloque
-                memcpy(copiaBlocks + i*tamanioBloque,stringGuardar+posEnString*tamanioBloque,tamanioBloque);
-                posEnString ++;
-
-                //--------------------------ACTUALIZO METADATA---------------------------
-                t_config* metadata = config_create(path);
-                actualizarSize(metadata,tamanioBloque,flagEsGuardar);
-                config_destroy(metadata);
-
-                actualizarBlocks(i,flagEsGuardar,path);
-
-                metadata = config_create(path);
-                if(esRecurso){
-                    actualizarBlockCount(metadata,flagEsGuardar);
-                }
-                config_destroy(metadata); 
-
-                cantidadBloquesUsados ++;
-            }
-        }
-    }
-
-    int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8); 
-    if (err == -1){
-        log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
-    }
-    bitarray_destroy(bitmap);
-    free(memBitmap);
-    free(pathSuperBloque);
-    close(superBloque);
-}
-
-
-
 void guardarEnBlocks(char* stringGuardar,char* path,int esRecurso){ 
     int tamStr = string_length(stringGuardar);
     int flagEsGuardar = 1;
@@ -321,72 +247,79 @@ void borrarEnBlocks(char* stringABorrar,char* path,int esRecurso,char recurso){
         free(vacio2);
         config_save(metadata);
         config_destroy(metadata);
+        for(int i = 0; i <= contador; i++){
+            free(listaBloques[i]);
+        }
+        free(listaBloques);
     }else{
         while(tamStrBorrar) {
-        metadata = config_create(path);
-        sizeAnterior = config_get_int_value(metadata, "SIZE");
-        listaBloques = config_get_array_value(metadata,"BLOCKS");
-        config_destroy(metadata);
-
-        contador = 0;
-
-        while(listaBloques[contador]){ 
-            contador++;
-        }
-
-        bloqueABorrar = atoi(listaBloques[contador-1]);
-        fragmentacion = contador*tamanioBloque - sizeAnterior;
-        posicion = tamanioBloque - fragmentacion;
-
-        if(tamStrBorrar > posicion){ 
-            log_info(logger, "El tamanio que hay en el bloque es menor a lo que yo quiero borrar");
-
-            // memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', posicion); //borro esos 5 limpio todo
-            tamStrBorrar -= posicion; //nuevo tamanio--> 1
-
-             //Mapeo ahora para sacar el bitmap tmb
-            char* pathSuperBloque = pathCompleto("SuperBloque.ims");
-            int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
-            sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
-    
-            memBitmap = malloc(cantidadBloques/8);
-            memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
-            bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
-            bitarray_clean_bit(bitmap,bloqueABorrar);
-            memcpy(sb_memoria + sizeof(int) * 2,bitmap->bitarray,cantidadBloques/8);
-            int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
-        
-            if (err == -1){
-                log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
+            for(int i = 0; i <= contador; i++){
+                free(listaBloques[i]);
             }
-            bitarray_destroy(bitmap);
-            free(memBitmap);
-            free(pathSuperBloque);
-            close(superBloque);
-            // memcpy(sb_memoria+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
-
+            free(listaBloques);
             metadata = config_create(path);
-            actualizarSize(metadata, posicion, 0);
-            actualizarBlockCount(metadata,0);
+            sizeAnterior = config_get_int_value(metadata, "SIZE");
+            listaBloques = config_get_array_value(metadata,"BLOCKS");
             config_destroy(metadata);
-            actualizarBlocks(bloqueABorrar, 0,path);
-            // log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
-        }else{
-            memset(copiaBlocks + bloqueABorrar*tamanioBloque + (posicion-tamStrBorrar) ,'|', 1);
 
-            t_config* metadata2 = config_create(path);
-            actualizarSize(metadata2, tamStrBorrar, 0);     
-            config_destroy(metadata2);
-            tamStrBorrar = 0;
-        }
-        }
+            contador = 0;
 
-    
+            while(listaBloques[contador]){ 
+                contador++;
+            }
 
-    for(int i = 0; i <= contador; i++){
-        free(listaBloques[i]);
-    }
-    free(listaBloques);
+            bloqueABorrar = atoi(listaBloques[contador-1]);
+            fragmentacion = contador*tamanioBloque - sizeAnterior;
+            posicion = tamanioBloque - fragmentacion;
+
+            if(tamStrBorrar > posicion){ 
+                log_info(logger, "El tamanio que hay en el bloque es menor a lo que yo quiero borrar");
+
+                // memset(copiaBlocks + bloqueABorrar*tamanioBloque,' ', posicion); //borro esos 5 limpio todo
+                tamStrBorrar -= posicion; //nuevo tamanio--> 1
+
+                //Mapeo ahora para sacar el bitmap tmb
+                char* pathSuperBloque = pathCompleto("SuperBloque.ims");
+                int superBloque = open(pathSuperBloque, O_CREAT | O_RDWR, 0664);
+                sb_memoria = mmap(NULL, sizeof(uint32_t) * 2 + cantidadBloques/8 , PROT_READ | PROT_WRITE, MAP_SHARED, superBloque, 0);
+        
+                memBitmap = malloc(cantidadBloques/8);
+                memcpy(memBitmap, sb_memoria + sizeof(uint32_t)*2, cantidadBloques/8);
+                bitmap = bitarray_create_with_mode((char*)memBitmap, cantidadBloques / 8, MSB_FIRST);  
+                bitarray_clean_bit(bitmap,bloqueABorrar);
+                memcpy(sb_memoria + sizeof(int) * 2,bitmap->bitarray,cantidadBloques/8);
+                int err = munmap(sb_memoria, sizeof(uint32_t)*2 + cantidadBloques/8);
+            
+                if (err == -1){
+                    log_error(logger, "[SuperBloque] Error al liberal la memoria mapeada ");
+                }
+                bitarray_destroy(bitmap);
+                free(memBitmap);
+                free(pathSuperBloque);
+                close(superBloque);
+                // memcpy(sb_memoria+sizeof(int)*2,bitmap->bitarray,cantidadBloques/8);
+
+                metadata = config_create(path);
+                actualizarSize(metadata, posicion, 0);
+                actualizarBlockCount(metadata,0);
+                config_destroy(metadata);
+                actualizarBlocks(bloqueABorrar, 0,path);
+                // log_info(logger, "Tamanio string luego de borrado es:%d", tamStrBorrar);
+            }else{
+                memset(copiaBlocks + bloqueABorrar*tamanioBloque + (posicion-tamStrBorrar) ,'|', 1);
+
+                t_config* metadata2 = config_create(path);
+                actualizarSize(metadata2, tamStrBorrar, 0);     
+                config_destroy(metadata2);
+                tamStrBorrar = 0;
+            }
+            
+            for(int i = 0; i <= contador; i++){
+                free(listaBloques[i]);
+            }
+            free(listaBloques);
+            
+            }
     
     }
 

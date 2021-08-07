@@ -15,17 +15,13 @@
 
     #include <commons/bitarray.h>
 
-    char* crearNuevaListaBloques(char* listaVieja,int bloqueAgregar, int flagEsGuardar,char* path);
-    void actualizarBlocks(int bloque,int flagEsGuardar,char* path);
-    void setearMD5(char* pathMetadata);
-    void actualizarBlockCount(t_config* metadataBitacora,int flagEsGuardar);
-    void actualizarSize(t_config* metadataBitacora,int tamanio, int flagEsGuardar);
+    
     void crearMetadataBitacora(char* path_tripulante);
     void crearMetadataFiles(char* path,char* charLlenado);
     
-    int cantidad_bloques(char* string);
+    
     char* strMoverTripultante(int idTripulante,int posX_v,int posY_v,int posX_n,int posY_n);
-    int validarBitsLibre(int cantidadBloquesAUsar);
+    
     char* obtenerBitacora(int tripulante);
     int cantidadBloquesUsados(char** listaBloques);
     void liberarArray (char** array, int posiciones);

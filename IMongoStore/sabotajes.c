@@ -126,9 +126,8 @@ void validacionEsValidaListaRecursos(char* path){
         for(int i = 0; i < contador; i++){
             int bloque = atoi(listaBloques[i]);
             log_info(logger,"Bloque:%d", bloque);
-            int bit = bitarray_test_bit(bitmap,bloque);
-
-            if(bloque > cantidadBloques || !bit){
+            
+            if(bloque > cantidadBloques || bitarray_test_bit(bitmap,bloque)){
                 error = 1;
                 log_error(logger,"Se encontró un bloque inválido: %d", bloque);
             }else {
